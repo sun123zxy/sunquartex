@@ -174,7 +174,8 @@ plt.show()
 ```{dot}
 //| label: fig-real
 //| fig-cap: 实数完备性等价定理关系图
-//| fig-height: 3.5
+//| fig-width: 6.25
+//| fig-height: 2.5
 digraph G{
     //bgcolor="transparent"
     //node [style="filled", fillcolor="white"]
@@ -220,7 +221,7 @@ digraph G{
 
 ### 代码块、引用
 
-不必过多解释。
+本节测试代码块和引用。
 
 > 这是一个引用块和一个非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子。
 

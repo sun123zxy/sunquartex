@@ -1,7 +1,8 @@
 /.quarto/
 /_output/
 
-/index_files/
+/*_files/
+/*.ipynb
 /*.aux
 /*.bbl
 /*.bcf

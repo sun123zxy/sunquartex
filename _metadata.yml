@@ -5,14 +5,15 @@ fig-align: center
 
 format:
   html:
-    theme: "assets/custom.scss"
+    theme: "_assets/custom.scss"
     code-fold: true
     html-math-method: mathjax
     # toc: true
-    csl: "assets/gb-numeric.csl"
-  latex:
-    # pdf-engine: xelatex
-    template: "assets/suntemp.tex"
+    csl: "_assets/gb-numeric.csl"
+  pdf:
+    # keep-tex: true
+    pdf-engine: xelatex
+    template: "_assets/suntemp.tex"
     cite-method: biblatex
     execute:
       echo: false

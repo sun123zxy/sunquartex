@@ -12,7 +12,7 @@ number-sections: true
 
 ## 前言
 
-具体使用方法等参见 [sun123zxy/SunQuarTeX](https://github.com/sun123zxy/sunquartex)。
+具体使用方法等参见 [sun123zxy/sunquartex](https://github.com/sun123zxy/sunquartex)。
 
 ## 文章结构测试
 

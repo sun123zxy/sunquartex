@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{suncnart}[2022/12/20 modified from ctexart]
+\ProvidesClass{_suncnart}[2022/12/20 modified from ctexart]
 
 \LoadClass[fontset=fandol, zihao=5]{ctexart} % ctex, 5 size for text
 \RequirePackage[a4paper,top=2.75cm,bottom=2.25cm,left=2.75cm,right=2.75cm,marginparwidth=1.75cm]{geometry}

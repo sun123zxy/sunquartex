@@ -10,7 +10,9 @@
 
 使用命令行 `quarto render --to html` 或 `quarto render --to latex` 进行渲染，如成功运行，文件将输出至 `/output/` 文件夹下。
 
-你可在输出 PDF 前自行对输出的 LaTeX 文件（`*.tex`）做进一步修正，而后自行使用 `tex2pdf.bat` 完成 PDF 输出。输出前请确保已安装包含 XeLaTeX 和 Biber 的 LaTeX 发行版，且 `suncnart.cls` 和欲转换的 LaTeX 文件位于合适工作目录下。
+可在输出 PDF 前自行对输出的 LaTeX 文件（`*.tex`）做进一步修正，而后自行使用 `tex2pdf.bat` 完成 PDF 输出。输出前请确保已安装包含 XeLaTeX 和 Biber 的 LaTeX 发行版，且 `suncnart.cls` 和欲转换的 LaTeX 文件位于合适工作目录下。
+
+若文档中包含 Mermaid、Graphviz 等图表，请确保已安装 Chrome 或 Chromium。若无，可使用 `quarto install tool chromium` 安装。（参考 [Quarto - Diagrams # Chrome Install](https://quarto.org/docs/authoring/diagrams.html#chrome-install)）
 
 ## Reference
 

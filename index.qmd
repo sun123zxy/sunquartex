@@ -169,6 +169,49 @@ plt.show()
 
 交叉引用 @fig-polar 当然也是可以的.
 
+另外，支持使用 GraphViz 或 Mermaid 绘制有向图或流程图。
+
+```{dot}
+//| label: fig-real
+//| fig-cap: 实数完备性等价定理关系图
+//| fig-height: 3.5
+digraph G{
+    //bgcolor="transparent"
+    //node [style="filled", fillcolor="white"]
+    //edge [color="gray" penwidth=2]
+
+    //layout=neato
+    //ratio=0.5
+
+    rankdir=BT
+    sup[label="确界原理"];
+    mono[label="单调有界定理"];
+    nested[label="闭区间套定理"];
+    bw[label="Bolzano-Weierstrass 定理"];
+    cauchy["label"="Cauchy 收敛原理"];
+    
+    accu[label="（数列）聚点定理"]
+    finite[label="有限覆盖定理"];
+    lebesgue[label="Lebesgue 覆盖定理"];
+
+
+    { rank=max; finite }
+    { rank=same;  lebesgue }
+    { rank=same; sup, mono, nested, accu, bw }
+    { rank=min; cauchy}
+
+    sup -> mono -> nested; nested -> bw [style=invis]; bw -> cauchy;
+    cauchy -> mono[label="反证"];
+    nested -> sup[label="构造"];
+    nested -> finite[label="反证"];
+    nested -> accu[label="构造"];
+    finite -> accu[label="反证"];
+    accu -> bw[dir=both, label="构造"];
+    bw -> lebesgue[label="反证"]; lebesgue -> finite[label="构造"];
+    finite -> sup[label="反证"];
+}
+```
+
 ## HTML 专用测试
 
 目前暂未处理 LaTeX/PDF 格式的代码高亮和 callout，本节测试内容只会在 HTML 输出中被渲染。（参考：[Quarto - Conditional Content](https://quarto.org/docs/authoring/conditional.html)）

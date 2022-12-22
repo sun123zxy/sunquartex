@@ -1,0 +1,38 @@
+/*-- scss:rules --*/
+$theorem-border-left-color: $green;
+
+#quarto-appendix {
+    background-color: transparent!important;
+}
+
+.theorem{
+  border-left-color: $theorem-border-left-color!important;
+  @extend .callout;
+  @extend .callout-style-simple;
+  @extend .no-icon;
+  
+  >:first-child{
+    margin-top: 0.25rem;
+  }
+  >:last-child{
+    margin-bottom: 0.4rem;
+  }
+  /*.callout-body is not introduced to keep the original font size.*/
+}
+
+.proof:not(.remark)>:last-child::after{ /*QED symbol*/
+  content: "\220e";
+  float: right;
+}
+
+/*
+section p {
+    text-indent: 2em;
+}
+*/
+
+/*
+ol, ul {
+  padding-left: 2rem;
+}
+*/

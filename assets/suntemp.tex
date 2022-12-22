@@ -1,0 +1,60 @@
+\documentclass{suncnart}
+
+% --- math ---
+
+% amsmath, amsthm is included in suncnart
+
+\usepackage{amssymb} % better symbols like \varnothing. amsfonts inside (which support \mathbb etc.)
+
+\newtheorem{example}{例}[section] % counter reset on each section
+\newtheorem{theorem}{定理}[section] % counter reset on each section
+\newtheorem{corollary}{推论}[theorem] % counter reset on each theorem
+\newtheorem{lemma}[theorem]{引理} % share counter with theorem
+
+% --- bibliography ---
+
+\usepackage[backend=biber,style=gb7714-2015,autocite=plain]{biblatex} % gb style
+\addbibresource{$bibliography$}
+
+% --- floating ---
+
+\usepackage{graphicx} % for inserting pictures
+% \graphicspath{ {./img/} }
+
+\usepackage{float} % for better floating for tables and figures, such as "H" option for tables to make them stay HERE precisely
+
+% --- hyperref ---
+
+\usepackage[colorlinks=true, allcolors=blue]{hyperref} % render refs as hyperlinks
+
+% --- specials for quarto ---
+
+\usepackage{booktabs} % publication quality three-line tables
+\usepackage{subcaption}
+
+
+\providecommand{\tightlist}{} % a self-defined macro in Pandoc's template. disabled here.
+% \providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+% --- other definitions ---
+
+% --- main ---
+
+\title[$subtitle$]{$title$}
+\author{$author$}
+\date{$date$}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    $abstract$
+\end{abstract}
+
+$body$
+
+\printbibliography[title={参考文献}]
+
+\end{document}

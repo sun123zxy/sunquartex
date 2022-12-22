@@ -1,0 +1,34 @@
+number-depth: 3
+
+cap-location: bottom
+fig-align: center
+
+format:
+  html:
+    theme: "assets/custom.scss"
+    code-fold: true
+    html-math-method: mathjax
+    # toc: true
+    csl: "assets/gb-numeric.csl"
+  latex:
+    # pdf-engine: xelatex
+    template: "assets/suntemp.tex"
+    cite-method: biblatex
+    execute:
+      echo: false
+    fig-pos: H
+    crossref: 
+      tbl-prefix: "表"
+      fig-prefix: "图"
+      eq-prefix: "式"
+      sec-prefix: "小节"
+      thm-prefix: "定理"
+      lem-prefix: "引理"
+      cor-prefix: "推论"
+      prp-prefix: "命题"
+      cnj-prefix: "猜想"
+      def-prefix: "定义"
+      exm-prefix: "例"
+      exr-prefix: "习题"
+
+jupyter: python3

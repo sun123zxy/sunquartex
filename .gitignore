@@ -1,0 +1,13 @@
+/.quarto/
+/_output/
+
+/index_files/
+/*.aux
+/*.bbl
+/*.bcf
+/*.blg
+/*.log
+/*.out
+/*.run.xml
+/*.pdf
+/*.tex

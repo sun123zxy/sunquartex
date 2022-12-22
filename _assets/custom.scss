@@ -1,6 +1,10 @@
 /*-- scss:rules --*/
 $theorem-border-left-color: $green;
 
+figcaption, .panel-caption, .figure-caption{
+  text-align: center;
+}
+
 #quarto-appendix {
     background-color: transparent!important;
 }

@@ -2,7 +2,7 @@
 title: "SunQuarTeX 中文学术写作示例文档"
 subtitle: "这是副标题"
 author: "sun123zxy"
-date: "2022/12/22"
+date: "2022/12/07"
 date-modified: "2022/12/22"
 abstract: "使用 Quarto Markdown 语法，支持输出至 HTML、PDF/LaTeX 等多种格式的中文学术写作工具，覆盖交叉引用、插图绘制、定理系统等多种功能。"
 bibliography: index.bib

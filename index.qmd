@@ -214,7 +214,7 @@ digraph G{
 
 ## HTML 专用测试
 
-目前暂未处理 LaTeX/PDF 格式的代码高亮和 callout，本节测试内容只会在 HTML 输出中被渲染。（参考：[Quarto - Conditional Content](https://quarto.org/docs/authoring/conditional.html)）
+目前暂未处理 LaTeX/PDF 格式的代码高亮和 callout，本节测试内容只会在 HTML 输出中被渲染。（参见：[Quarto - Conditional Content](https://quarto.org/docs/authoring/conditional.html)）
 
 ::::: {.content-visible when-format="html"}
 

@@ -8,13 +8,13 @@
 
 修改项目根目录下 `index.qmd` 和 `index.bib` 为你需要的内容即可。
 
-使用命令行 `quarto render` 进行渲染，可添加参数 `--to=html` 或 `--to=pdf` 指定输出格式。如成功运行，文件将输出至 `/output/` 文件夹下。
+使用命令行 `quarto render` 进行渲染，可添加参数 `--to=html` 或 `--to=pdf` 指定输出格式。请注意，`freeze` 功能可能已生效，如需确保表格、图片等得到重新渲染，请显式指定渲染文件 `quarto render index.qmd`。如成功运行，文件将输出至 `/output/` 文件夹下。
 
 需要输出 PDF 时，请确保已安装 Quarto 支持的 LaTeX 发行版。如无，可使用 `quarto install tool tinytex` 安装。
 
 可在输出 PDF 前自行对 LaTeX 文件（`*.tex`）做进一步修正，再自行使用 `tex2pdf.bat` 输出 PDF。
 
-若文档中包含 Mermaid、Graphviz 等 diagram 且需输出 PDF，请确保已安装 Chrome 或 Chromium。若无，可使用 `quarto install tool chromium` 安装。（参考 [Quarto - Diagrams # Chrome Install](https://quarto.org/docs/authoring/diagrams.html#chrome-install)）
+若文档中包含 Mermaid、Graphviz 等 diagram 且需输出 PDF，请确保已安装 Chrome 或 Chromium。若无，可使用 `quarto install tool chromium` 安装。（参见 [Quarto - Diagrams # Chrome Install](https://quarto.org/docs/authoring/diagrams.html#chrome-install)）
 
 ## Issues
 

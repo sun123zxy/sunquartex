@@ -90,6 +90,26 @@ Quarto 的一大卖点。
 
 这一节我们测试数学相关内容. HTML 中的定理标号方式目前没有方法更改，但 LaTeX 中的定理标号可通过自行修改模板中 `amsthm` 宏包的定义实现.
 
+此外，根据 [Quarto - Markdown Basics # Equations](https://quarto.org/docs/authoring/markdown-basics.html#equations) 和 [Defining LaTeX commands for HTML and PDF rendering - Discussion #1793](https://github.com/quarto-dev/quarto-cli/discussions/1793)，可按如下面方式自定义 macro 并确保其在 HTML 和 LaTeX/PDF 中都得到正确渲染。值得注意的是，由于 `\DeclareMathOperator` 只能在 LaTeX 的导言区使用，这里我们用 `\newcommand` + `\operatorname` 的方式替代。
+
+::::: {.hidden}
+::: {.content-hidden unless-format="html"}
+$$
+\newcommand{\ran}{\operatorname{ran}}
+$$
+:::
+::: {.content-hidden unless-format="pdf"}
+```{=latex}
+\newcommand{\ran}{\operatorname{ran}}
+```
+:::
+:::::
+
+下面的公式使用了上面定义的 macro。
+$$
+\ran A := \{ y \mid (x,y) \in A \}
+$$
+
 两个集合 $A, B$ 的笛卡尔积定义为
 $$
 A \times B = \{\langle x,y \rangle \mid x \in A \land y \in B \}
@@ -173,7 +193,7 @@ plt.show()
 
 ```{dot}
 //| label: fig-real
-//| fig-cap: 实数完备性等价定理关系图
+//| fig-cap: GraphViz 有向图
 //| fig-width: 6.25
 //| fig-height: 2.5
 digraph G{
@@ -185,15 +205,15 @@ digraph G{
     //ratio=0.5
 
     rankdir=BT
-    sup[label="确界原理"];
-    mono[label="单调有界定理"];
-    nested[label="闭区间套定理"];
-    bw[label="Bolzano-Weierstrass 定理"];
-    cauchy["label"="Cauchy 收敛原理"];
+    sup[label="A"];
+    mono[label="B"];
+    nested[label="C"];
+    bw[label="D"];
+    cauchy[label="E"];
     
-    accu[label="（数列）聚点定理"]
-    finite[label="有限覆盖定理"];
-    lebesgue[label="Lebesgue 覆盖定理"];
+    accu[label="F"]
+    finite[label="G"];
+    lebesgue[label="H"];
 
 
     { rank=max; finite }
@@ -202,14 +222,14 @@ digraph G{
     { rank=min; cauchy}
 
     sup -> mono -> nested; nested -> bw [style=invis]; bw -> cauchy;
-    cauchy -> mono[label="反证"];
-    nested -> sup[label="构造"];
-    nested -> finite[label="反证"];
-    nested -> accu[label="构造"];
-    finite -> accu[label="反证"];
-    accu -> bw[dir=both, label="构造"];
-    bw -> lebesgue[label="反证"]; lebesgue -> finite[label="构造"];
-    finite -> sup[label="反证"];
+    cauchy -> mono[label="1"];
+    nested -> sup[label="2"];
+    nested -> finite[label="3"];
+    nested -> accu[label="4"];
+    finite -> accu[label="5"];
+    accu -> bw[dir=both, label="6"];
+    bw -> lebesgue[label="7"]; lebesgue -> finite[label="8"];
+    finite -> sup[label="9"];
 }
 ```
 

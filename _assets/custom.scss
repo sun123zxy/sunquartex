@@ -24,9 +24,14 @@ figcaption, .panel-caption, .figure-caption{
   /*.callout-body is not introduced to keep the original font size.*/
 }
 
-.proof:not(.remark)>:last-child::after{ /*QED symbol*/
-  content: "\220e";
-  float: right;
+.proof{
+  &:not(.remark)>:last-child::after{ /*QED symbol*/
+    content: "\220e";
+    float: right;
+  }
+  +*{
+    clear: right;
+  }
 }
 
 /*

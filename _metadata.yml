@@ -3,7 +3,7 @@ number-depth: 3
 cap-location: bottom
 fig-align: center
 
-csl: "_assets/china-national-standard-gb-t-7714-2015-numeric.csl"
+csl: "_assets/china-national-standard-gb-t-7714-2015-numeric-comma-name-delimiter.csl"
 
 format:
   html:

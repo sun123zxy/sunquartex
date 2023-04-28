@@ -3,8 +3,8 @@ title: "SunQuarTeX 中文学术写作示例文档"
 subtitle: "这是副标题"
 author: "sun123zxy"
 date: "2022/12/07"
-date-modified: "2022/12/22"
-abstract: "使用 Quarto Markdown 语法，支持输出至 HTML、PDF/LaTeX 等多种格式的中文学术写作工具，覆盖交叉引用、插图绘制、定理系统等多种功能。"
+date-modified: "2023/04/28"
+abstract: "使用 Quarto Markdown 语法，支持输出至 HTML、PDF/LaTeX、MS Word 等多种格式的中文学术写作工具，覆盖交叉引用、插图绘制、定理系统等多种功能。"
 bibliography: index.bib
 
 number-sections: true
@@ -90,7 +90,7 @@ Quarto 的一大卖点。
 
 这一节我们测试数学相关内容. HTML 中的定理标号方式目前没有方法更改，但 LaTeX 中的定理标号可通过自行修改模板中 `amsthm` 宏包的定义实现.
 
-此外，根据 [Quarto - Markdown Basics # Equations](https://quarto.org/docs/authoring/markdown-basics.html#equations) 和 [Defining LaTeX commands for HTML and PDF rendering - Discussion #1793](https://github.com/quarto-dev/quarto-cli/discussions/1793)，可按如下面方式自定义 macro 并确保其在 HTML 和 LaTeX/PDF 中都得到正确渲染。值得注意的是，由于 `\DeclareMathOperator` 只能在 LaTeX 的导言区使用，这里我们用 `\newcommand` + `\operatorname` 的方式替代。
+此外，根据 [Quarto - Markdown Basics # Equations](https://quarto.org/docs/authoring/markdown-basics.html#equations) 和 [Defining LaTeX commands for HTML and PDF rendering - Discussion #1793](https://github.com/quarto-dev/quarto-cli/discussions/1793) 和 [Quarto - Conditional Content](https://quarto.org/docs/authoring/conditional.html)，按如下面方式自定义 macro 可确保其在 HTML、 LaTeX/PDF 和 MS Word 中都得到正确渲染。值得注意的是，由于 `\DeclareMathOperator` 只能在 LaTeX 的导言区使用，这里我们用 `\newcommand` + `\operatorname` 的方式替代。
 
 ::::: {.hidden}
 ::: {.content-hidden unless-format="html"}
@@ -98,10 +98,8 @@ $$
 \newcommand{\ran}{\operatorname{ran}}
 $$
 :::
-::: {.content-hidden unless-format="pdf"}
-```{=latex}
+::: {.content-hidden when-format="html"}
 \newcommand{\ran}{\operatorname{ran}}
-```
 :::
 :::::
 
@@ -235,9 +233,9 @@ digraph G{
 
 ## HTML 专用测试
 
-目前暂未处理 LaTeX/PDF 格式的代码高亮和 callout，本节测试内容只会在 HTML 输出中被渲染。（参见：[Quarto - Conditional Content](https://quarto.org/docs/authoring/conditional.html)）
+目前暂未处理 LaTeX/PDF 格式的代码高亮和 callout，MS Word 格式可兼容但效果不佳。本节测试内容不会在 LaTeX/PDF 格式下被渲染。
 
-::::: {.content-visible when-format="html"}
+::::: {.content-hidden when-format="pdf"}
 
 ### 代码块、引用
 

@@ -3,6 +3,8 @@ number-depth: 3
 cap-location: bottom
 fig-align: center
 
+csl: "_assets/china-national-standard-gb-t-7714-2015-numeric.csl"
+
 format:
   html:
     theme: "_assets/custom.scss"
@@ -10,12 +12,12 @@ format:
     code-fold: true
     html-math-method: mathjax
     # toc: true
-    csl: "_assets/gb-numeric.csl"
+    
   pdf:
     # keep-tex: true
     pdf-engine: xelatex
     template: "_assets/suntemp.tex"
-    cite-method: biblatex
+    cite-method: biblatex # override the default csl cite method
     execute:
       echo: false
     fig-pos: H
@@ -32,5 +34,7 @@ format:
       def-prefix: "定义"
       exm-prefix: "例"
       exr-prefix: "习题"
+  docx:
+    reference-doc: "_assets/suntemp.docx"
 
 jupyter: python3

@@ -18,7 +18,7 @@
 
 ## Known Issues
 
-- PDF / MS Word 中的 Graphviz 图像可能拉伸变形，设置合适的 `fig-height` 和 `fig-width` 可解决问题。
+- PDF / MS Word 中的 Graphviz 图像可能拉伸变形，设置合适的 `fig-height` 和 `fig-width` 可解决问题。其它 figure 同样可能遇到此问题。
 - PDF 中的 Mermaid/Graphviz diagram 的 `figure` 环境在 LaTeX 中出现嵌套问题，导致自定义模板的元素定位出现异常。见 [Issue #3736](https://github.com/quarto-dev/quarto-cli/issues/3736)
 - 同时输出 HTML 和 LaTeX 时二者的 `index_files` 会发生冲突。
 - 见 [Discussion #4598](https://github.com/quarto-dev/quarto-cli/discussions/4598)，Pandoc 不支持 CSL-M 导致无有效方法处理 GB/T 7714-2015 中按语言切换“等”、`et al` 省略字样的规定。

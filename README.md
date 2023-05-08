@@ -1,10 +1,12 @@
 # SunQuarTex
 
-使用 Quarto Markdown 语法，支持输出至 HTML、PDF/LaTeX、MS Word 等多种格式的中文学术写作工具，覆盖交叉引用、插图绘制、定理系统等多种功能。
+基于 Quarto 的自用中文学术写作模板库。
+
+支持输出至 HTML、PDF/LaTeX、MS Word 等多种格式，覆盖交叉引用、插图绘制、定理系统等多种功能。
 
 ## Usage
 
-请先安装 [quarto-cli](https://github.com/quarto-dev/quarto-cli)。测试 Quarto 版本为 1.3.333。
+请先安装 [quarto-cli](https://github.com/quarto-dev/quarto-cli)。测试 Quarto 版本为 1.3.340。
 
 修改项目根目录下 `index.qmd` 为你的内容即可。
 
@@ -27,7 +29,7 @@
 
 - `index.qmd`, `index.bib`, `quarto.png`: 示例文件相关资源。
 - `_quarto.yml`, `_metadata.yml`: Quarto 相关配置文件。
-- `_suncnart.cls`: 对[CTeX 宏包](https://ctan.org/pkg/ctex) 的 `ctexart` 文档类的自定义包装。
+- `_suncnart.cls`: 对 [CTeX 宏包](https://ctan.org/pkg/ctex) 的 `ctexart` 文档类的自定义包装。
 - `suntemp.tex`: Pandoc 格式的自定义 LaTeX 模板文件，用于 Quarto 的 PDF/LaTeX 输出。
 - `suntemp.docx`: Word 模板文件。
 - `china-national-standard-gb-t-7714-2015-numeric-comma-names-delimiter.csl`: 修改自[此处](https://www.zotero.org/styles/china-national-standard-gb-t-7714-2015-numeric)，用于对 HTML 输出应用 GB/T 7714-2015 数字编号引用格式，更改 `names-delimiter` 为逗号。若需其他引用格式，也可在 [Zotero Style Repository](https://www.zotero.org/styles) 自行寻找 CSL 文件。

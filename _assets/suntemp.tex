@@ -50,16 +50,24 @@
 % --- main ---
 
 \title[$subtitle$]{$title$}
-\author{$author$}
+
+\author{$for(author)$$author$$sep$ \and $endfor$}
+
+$if(institute)$
+\institute{$for(institute)$$institute$$sep$ \and $endfor$}
+$endif$
+
 \date{$date$}
 
 \begin{document}
 
 \maketitle
 
+$if(abstract)$
 \begin{abstract}
     $abstract$
 \end{abstract}
+$endif$
 
 $body$
 

@@ -42,7 +42,9 @@
 {5pt plus 1pt minus 1pt}% Space after theorem head % default
 {\bfseries \thmname{#1}\thmnumber{ #2}\thmnote{（#3）}}% Theorem head spec % bold number
 
-\let \oldproofname \proofname % to avoid recursive call
-\renewcommand{\proofname}{\indent \heiti \oldproofname \nopunct} % strange that using \bfseries do not work properly...
-
 \theoremstyle{suncnthm}
+
+\newtheorem*{myproof}{证明}
+\renewenvironment{proof}{\begin{myproof}}{\qed \end{myproof}}
+% \let \oldproofname \proofname % to avoid recursive call
+% \renewcommand{\proofname}{\indent \heiti \oldproofname \nopunct} % strange that using \bfseries do not work properly...

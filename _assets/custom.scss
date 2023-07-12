@@ -5,10 +5,6 @@ figcaption, .panel-caption, .figure-caption{
   text-align: center;
 }
 
-#quarto-appendix {
-    background-color: transparent!important;
-}
-
 .theorem{
   border-left-color: $theorem-border-left-color!important;
   @extend .callout;

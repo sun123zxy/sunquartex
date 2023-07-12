@@ -3,7 +3,7 @@ title: "SunQuarTeX 中文学术写作示例文档"
 subtitle: "这是副标题"
 author: "sun123zxy"
 date: "2022/12/07"
-date-modified: "2023/05/05"
+date-modified: "2023/07/13"
 abstract: "使用 Quarto Markdown 语法，支持输出至 HTML、PDF/LaTeX、MS Word 等多种格式的中文学术写作工具，覆盖交叉引用、插图绘制、定理系统等多种功能。"
 bibliography: index.bib
 
@@ -75,7 +75,7 @@ Quarto 支持交叉引用。比如这一节的标题就已经被打上了标签�
 |||||
 |:-:|:-:|:-:|:-:|
 |$L_i^{C_j}$  | $2$           | $\mathbb N$   | $\mathbb R$     |      
-|$2$          | $4$           | $\mathbb N$   | $2^{\mathbb R}$ | 
+|$2$          | $4$           | $\mathbb R$   | $2^{\mathbb R}$ | 
 |$\mathbb N$  | $\mathbb N$   | ?             | ?               |
 |$\mathbb R$  | $\mathbb R$   | ?             | ?               |
 
@@ -303,9 +303,19 @@ digraph G{
 }
 ```
 
+## Layout
+
+如 [Quarto - Article Layout](https://quarto.org/docs/authoring/article-layout.html) 所述，有时可让文章某些部分超出常规的宽度限制。此功能主要在 HTML 中使用，PDF 中部分生效，其它格式不生效。
+
+:::{.column-page}
+| $n$ 个球 | $r$ 个盒 | 空盒 | 递推或封闭形式 | 生成函数 | 备注 |
+|:-:|:-:|:-:|:--:|:--:|:--:|
+| 有标号 | 无标号 	| 不允许 | $${n \brace r} = r {n-1 \brace r} + {n-1 \brace r-1}$$ | $$\mathrm{EGF}(x)=\frac {(e^x - 1)^r}{r!}$$ | 第二类 Stirling 数 |
+:::
+
 ## HTML 专用测试
 
-目前暂未处理 LaTeX/PDF 格式的代码高亮和 callout，MS Word 格式可兼容但效果不佳。本节测试内容不会在 LaTeX/PDF 格式下被渲染。
+目前暂未处理 LaTeX/PDF 格式的代码高亮和 callout，MS Word 格式可兼容但效果不佳。本节内容不会在 LaTeX/PDF 格式下被渲染。
 
 ::::: {.content-hidden when-format="pdf"}
 

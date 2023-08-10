@@ -1,0 +1,106 @@
+\documentclass{./_assets/sunenart}
+
+% --- math ---
+
+% amsmath, amsthm is included in suncnart
+
+\usepackage{amssymb} % better symbols like \varnothing. amsfonts inside (which support \mathbb etc.)
+
+% --- bibliography ---
+
+\addbibresource{$bibliography$}
+
+% --- graphics ---
+% copied from pandoc
+% \graphicspath{ {./img/} }
+
+$if(graphics)$
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+$endif$
+$if(svg)$
+\usepackage{svg}
+$endif$
+
+% --- floating ---
+
+\usepackage{float} % for better floating for tables and figures, such as "H" option for tables to make them stay HERE precisely
+
+% --- tables ---
+% tables, copied from Pandoc
+
+$if(tables)$ 
+\usepackage{longtable,booktabs,array} % booktabs: publication quality three-line tables
+$if(multirow)$
+\usepackage{multirow}
+$endif$
+\usepackage{calc} % for calculating minipage widths
+$if(beamer)$
+\usepackage{caption}
+% Make caption package work with longtable
+\makeatletter
+\def\fnum@table{\tablename~\thetable}
+\makeatother
+$else$
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+$endif$
+$endif$
+
+% --- hyperref ---
+
+\usepackage[colorlinks=true, allcolors=blue]{hyperref} % render refs as hyperlinks
+
+% --- specials for quarto ---
+
+\usepackage{subcaption}
+
+\providecommand{\tightlist}{} % a self-defined macro in Pandoc's template. disabled here.
+% \providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% --- other definitions ---
+
+% --- main ---
+
+\title[$subtitle$]{$title$}
+
+\author{$for(author)$$author$$sep$ \and $endfor$}
+
+$if(institute)$
+\institute{$for(institute)$$institute$$sep$ \and $endfor$}
+$endif$
+
+\date{$date$}
+
+\begin{document}
+
+\maketitle
+
+$if(abstract)$
+\begin{abstract}
+    $abstract$
+\end{abstract}
+$endif$
+
+$body$
+
+\printbibliography % [title={参考文献}]
+
+\end{document}

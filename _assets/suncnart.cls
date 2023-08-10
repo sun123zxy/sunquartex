@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{_suncnart}[2022/12/20 modified from ctexart]
+\ProvidesClass{suncnart}[a wrapper for ctexart]
 
 \LoadClass[fontset=fandol, zihao=5]{ctexart} % ctex, 5 size for text
 \RequirePackage[a4paper,top=2.75cm,bottom=2.25cm,left=2.75cm,right=2.75cm,marginparwidth=1.75cm]{geometry}
@@ -44,7 +44,22 @@
 
 \theoremstyle{suncnthm}
 
+\newtheorem{theorem}{定理}[section]     % counter reset on each section
+\newtheorem{lemma}{引理}[section]       % share counter with theorem
+\newtheorem{corollary}{推论}[section]   % counter reset on each theorem
+\newtheorem{proposition}{命题}[section] % counter reset on each section
+\newtheorem{conjecture}{猜想}[section]  % counter reset on each section
+\newtheorem{definition}{定义}[section]  % counter reset on each section
+\newtheorem{example}{例}[section]       % counter reset on each section
+\newtheorem{exercise}{习题}[section]    % counter reset on each section
+\newtheorem*{solution}{解}
+\newtheorem*{remark}{注记}
+
 \newtheorem*{myproof}{证明}
 \renewenvironment{proof}{\begin{myproof}}{\qed \end{myproof}}
 % \let \oldproofname \proofname % to avoid recursive call
 % \renewcommand{\proofname}{\indent \heiti \oldproofname \nopunct} % strange that using \bfseries do not work properly...
+
+% bib
+
+\usepackage[backend=biber,style=gb7714-2015,autocite=plain]{biblatex} % gb style

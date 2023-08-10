@@ -1,3 +1,7 @@
 project:
   title: "SunQuarTeX"
   output-dir: _output
+
+profile: 
+  group: 
+    - [cn, en]

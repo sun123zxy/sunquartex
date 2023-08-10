@@ -1,0 +1,51 @@
+---
+title: "SunQuarTeX Illustration Article"
+subtitle: "Subtitle Here"
+author: "sun123zxy"
+date: "2023/08/10"
+abstract: "This is an abstract."
+bibliography: "index-en.bib"
+
+number-sections: true
+---
+
+This is a reference[@deepface].
+
+::: {#exm-rtimesn}
+
+Prove that
+$$
+\mathbb R \times \mathbb N \approx \mathbb N \times \mathbb R \approx \mathbb R
+$$
+:::
+
+::: {.proof}
+
+Obvious as follows
+$$
+\mathbb R \approx \mathbb R \times 2 \preccurlyeq \mathbb R \times \mathbb N \preccurlyeq \mathbb R \times \mathbb R \approx \mathbb R
+\implies \mathbb R \times \mathbb N \approx \mathbb N \times \mathbb R \approx \mathbb R
+$$
+:::
+
+::: {#tbl-panel-unsolved layout-ncol=2}
+|||||
+|:-:|:-:|:-:|:-:|
+| $L_i \times C_j$   | $2$           | $\mathbb N$   | $\mathbb R$   |
+| $2$                | $4$           | $\mathbb N$   | $\mathbb R$   |
+| $\mathbb N$        | $\mathbb N$   | $\mathbb N$   | ?             |
+| $\mathbb R$        | $\mathbb R$   | ?             | $\mathbb R$   |
+
+:Cartesian (unsolved) {#tbl-cartesian-unsolved}
+
+|||||
+|:-:|:-:|:-:|:-:|
+|$L_i^{C_j}$  | $2$           | $\mathbb N$   | $\mathbb R$     |      
+|$2$          | $4$           | $\mathbb R$   | $2^{\mathbb R}$ | 
+|$\mathbb N$  | $\mathbb N$   | ?             | ?               |
+|$\mathbb R$  | $\mathbb R$   | ?             | ?               |
+
+:Power (unsolved) {#tbl-power-unsolved}
+
+Some Cardinality Results
+:::

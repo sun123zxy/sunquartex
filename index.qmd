@@ -313,19 +313,7 @@ digraph G{
 | 有标号 | 无标号 	| 不允许 | $${n \brace r} = r {n-1 \brace r} + {n-1 \brace r-1}$$ | $$\mathrm{EGF}(x)=\frac {(e^x - 1)^r}{r!}$$ | 第二类 Stirling 数 |
 :::
 
-## HTML 专用测试
-
-目前暂未处理 LaTeX/PDF 格式的代码高亮和 callout，MS Word 格式可兼容但效果不佳．本节内容不会在 LaTeX/PDF 格式下被渲染．
-
-::::: {.content-hidden when-format="pdf"}
-
-### 代码块、引用
-
-本节测试代码块和引用．
-
-> 这是一个引用块和一个非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．
-
-Quarto 具有 5 种 callout 类型：`note`，`warning`，`important`，`tip`，和 `caution`．
+## 代码块和引用
 
 下面是代码块．
 
@@ -344,7 +332,19 @@ ax.grid(True)
 plt.show()
 ```
 
+下面是引用块和一个非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．
+
+> 这是一个引用块和一个非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．
+
+## HTML 专用测试
+
+目前暂未处理 LaTeX/PDF 格式的 callout，MS Word 格式可兼容但效果不佳．本节后续内容将不会在 LaTeX/PDF 格式下被渲染．
+
+::::: {.content-hidden when-format="pdf"}
+
 ### Callouts
+
+Quarto 具有 5 种 callout 类型：`note`，`warning`，`important`，`tip`，和 `caution`．
 
 ::: {.callout-note}
 普通的 note callout．

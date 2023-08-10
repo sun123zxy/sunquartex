@@ -2,7 +2,7 @@
 \ProvidesClass{sunenart}
 
 \LoadClass{article}
-% \RequirePackage[a4paper,top=2.75cm,bottom=2.25cm,left=2.75cm,right=2.75cm,marginparwidth=1.75cm]{geometry}
+\RequirePackage[a4paper,top=2.75cm,bottom=2.25cm,left=2.75cm,right=2.75cm,marginparwidth=1.75cm]{geometry}
 
 % subtitle (optional) & title
 % need reconstruction (by titling?)
@@ -17,6 +17,7 @@
 \RequirePackage{amsmath} % better math. including \eqref
 \RequirePackage{amsthm} % better theorem-like environment support (such as proof, unordered, etc.)
 
+\theoremstyle{definition}
 \newtheorem{theorem}{Theorem}[section]     % counter reset on each section
 \newtheorem{lemma}{Lemma}[section]       % share counter with theorem
 \newtheorem{corollary}{Corollary}[section]   % counter reset on each theorem
@@ -25,6 +26,8 @@
 \newtheorem{definition}{Definition}[section]  % counter reset on each section
 \newtheorem{example}{Example}[section]       % counter reset on each section
 \newtheorem{exercise}{Exersise}[section]    % counter reset on each section
+
+\theoremstyle{remark}
 \newtheorem*{solution}{Solution}
 \newtheorem*{remark}{Remark}
 

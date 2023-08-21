@@ -1,5 +1,1 @@
 csl: "_assets/ieee.csl"
-
-format:
-  pdf:
-    template: "_assets/sunentemp.tex"

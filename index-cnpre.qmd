@@ -1,0 +1,43 @@
+---
+title: "SunQuarTeX-cnpre 测试文档"
+subtitle: "这是副标题"
+author: "sun123zxy"
+institute: "SunQuarTeX"
+date: "2023/08/21"
+thanks: "最后更新：2023/08/21"
+---
+
+# Section A
+
+## Slide A
+
+- Turn off alarm
+- Get out of bed
+
+## Slide B
+
+# Section B
+
+## Slide A
+
+```c++
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+
+    return 0;
+}
+```
+
+## Slide B
+
+:::{#thm-test}
+
+## 测试定理
+
+这是一个定理．
+$$
+\sum_{d \mid n} \varphi(d) = n
+$$
+:::

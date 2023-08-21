@@ -1,0 +1,18 @@
+format:
+  html:
+    theme: "_assets/custom.scss"
+    linestretch: 1.7
+    code-fold: true
+    html-math-method: mathjax
+    # toc: true
+    
+  pdf:
+    # keep-tex: true
+    pdf-engine: xelatex
+    cite-method: biblatex # override the default csl cite method
+    execute:
+      echo: false
+    fig-pos: H
+    
+  docx:
+    reference-doc: "_assets/suntemp.docx"

@@ -8,9 +8,11 @@
 
 请先安装 [quarto-cli](https://github.com/quarto-dev/quarto-cli)．测试 Quarto 版本为 1.3.340．
 
-修改项目根目录下 `index.qmd` 为你的内容即可．
+- `quarto render index-cnart.qmd --profile=cn,art,cnart`
+- `quarto render index-enart.qmd --profile=en,art,enart`
+- `quarto render index-cnpre.qmd --profile=cn,pre,cnpre`
 
-使用命令行 `quarto render index.qmd` 进行渲染，英文输出请使用 `quarto render index-en.qmd --profile=en`．可添加参数 `--to=html` 或 `--to=pdf` 指定输出格式．请注意，`freeze` 功能可能已生效，为确保表格、图片等得到重新渲染，可能需要显式指定渲染文件 `quarto render index.qmd`．如成功运行，文件将输出至 `/output/` 文件夹下．
+请注意，`freeze` 功能可能已生效，为确保表格、图片等得到重新渲染，可能需要显式指定渲染文件 `quarto render index.qmd`．如成功运行，文件将输出至 `/output/` 文件夹下．
 
 需要输出 PDF 时，请确保已安装 Quarto 支持的 LaTeX 发行版．若无，可使用 `quarto install tool tinytex` 安装．
 

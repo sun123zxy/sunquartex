@@ -1,0 +1,11 @@
+toc: true
+
+format:
+  revealjs: default
+  beamer:
+    pdf-engine: xelatex
+    theme: madrid
+    documentclass: ctexbeamer
+    classoption: ['notheorems','fontset=fandol'] # about "notheorems", see issue 3650
+    # section-titles: false
+  pptx: default

@@ -1,10 +1,10 @@
 ---
-title: "SunQuarTeX Illustration Article"
+title: "SunQuarTeX-enart Test"
 subtitle: "Subtitle Here"
 author: "sun123zxy"
 date: "2023/08/10"
 abstract: "This is an abstract."
-bibliography: "index-en.bib"
+bibliography: "index.bib"
 
 number-sections: true
 ---

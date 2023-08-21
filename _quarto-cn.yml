@@ -24,7 +24,3 @@ crossref:
   exm-title: "例"
   exr-prefix: "习题"
   exr-title: "习题"
-
-format:
-  pdf:
-    template: "_assets/suncntemp.tex"

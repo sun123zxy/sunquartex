@@ -5,3 +5,5 @@ project:
 profile: 
   group: 
     - [cn, en]
+    - [art, pre]
+    - [cnart, enart, cnpre, enpre]

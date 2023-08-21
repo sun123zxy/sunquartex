@@ -1,5 +1,5 @@
 ---
-title: "SunQuarTeX 中文学术写作示例文档"
+title: "SunQuarTeX-cnart 测试文档"
 subtitle: "这是副标题"
 author: "sun123zxy"
 date: "2022/12/07"

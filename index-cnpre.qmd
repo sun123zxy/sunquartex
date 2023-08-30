@@ -4,17 +4,27 @@ subtitle: "这是副标题"
 author: "sun123zxy"
 institute: "SunQuarTeX"
 date: "2023/08/21"
-thanks: "最后更新：2023/08/21"
+date-modified: "2023/08/30"
+
+bibliography: index.bib
 ---
 
 # Section A
 
 ## Slide A
 
-- Turn off alarm
-- Get out of bed
+- 这是列表。
+- 紧的列表。
+
+噢
+
+- 这是列表。
+
+- 松的列表。
 
 ## Slide B
+
+哇[@deepface]．哇哦[@define;@eigenfaces]．
 
 # Section B
 

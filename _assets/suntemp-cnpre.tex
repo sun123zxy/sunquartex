@@ -1,0 +1,81 @@
+\documentclass[fontset=fandol]{ctexbeamer}
+% -----
+
+% \usepackage[backend=biber,style=ieee]{biblatex}
+\usepackage[backend=biber,style=gb7714-2015,autocite=plain]{biblatex} % gb style
+\addbibresource{$bibliography$}
+
+\usepackage{xcolor}
+
+% --- basic ---
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+$if(highlighting-macros)$
+  $highlighting-macros$
+$endif$
+
+% --- styles ---
+
+\usetheme{Madrid}
+\usefonttheme[onlymath]{serif}
+
+\setlength{\parindent}{2em}
+\addtobeamertemplate{block begin}{}{\setlength\parindent{2em}}
+
+\setlength{\parskip}{3pt} % slighty more spacing
+
+\hypersetup{
+    colorlinks=true,
+    urlcolor=violet,
+    linkcolor=, % default color for other links
+    citecolor=beamer@blendedblue,
+    anchorcolor=,
+    filecolor=
+}
+
+\newcommand{\myemph}[1]{{\usebeamercolor[fg]{structure} #1}}
+
+% --- structures ---
+
+\AtBeginSection[]
+{
+  \begin{frame}
+    \frametitle{目录}
+    \tableofcontents[currentsection]
+  \end{frame}
+}
+\AtBeginSubsection[]
+{
+  \begin{frame}
+    \frametitle{目录}
+    \tableofcontents[currentsubsection]
+  \end{frame}
+}
+
+% -----
+
+\title{$title$}
+$if(subtitle)$
+\subtitle{$subtitle$}
+$endif$
+\author{$for(author)$$author$$sep$ \and $endfor$}
+$if(institute)$
+\institute{$for(institute)$$institute$$sep$ \and $endfor$}
+$endif$
+\date{$date$$if(date-modified)$\thanks{最后更新于 $date-modified$．}$endif$}
+
+\begin{document}
+
+\frame{\titlepage}
+
+$body$
+
+$if(bibliography)$
+\begin{frame}[allowframebreaks]{参考文献}
+    \printbibliography[heading=none]
+\end{frame}
+$endif$
+
+\end{document}

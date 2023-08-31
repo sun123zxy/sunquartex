@@ -16,13 +16,27 @@ $if(highlighting-macros)$
   $highlighting-macros$
 $endif$
 
-% --- styles ---
+\theoremstyle{theorem}
+% \newtheorem{lemma}{引理}[section]     % counter reset on each section
+% \newtheorem{corollary}{推论}[section] % counter reset on each section
+\newtheorem{proposition}{命题}[section] % counter reset on each section
+\newtheorem{conjecture}{猜想}[section]  % counter reset on each section
+\newtheorem*{remark}{评注}
+
+\theoremstyle{example}
+\newtheorem{exercise}{习题}[section]    % counter reset on each section
+
+\addtobeamertemplate{proof begin}{\setbeamercolor{block title}{bg=black}}{}
+\AtBeginEnvironment{solution}{\setbeamercolor{block title}{bg=black}}
+\AtBeginEnvironment{remark}{\setbeamercolor{block title}{bg=black}}
 
 \usetheme{Madrid}
 \usefonttheme[onlymath]{serif}
 
 \setlength{\parindent}{2em}
 \addtobeamertemplate{block begin}{}{\setlength\parindent{2em}}
+\addtobeamertemplate{block example begin}{}{\setlength\parindent{2em}}
+\addtobeamertemplate{alertblock alerted begin}{}{\setlength\parindent{2em}}
 
 \setlength{\parskip}{3pt} % slighty more spacing
 
@@ -35,7 +49,7 @@ $endif$
     filecolor=
 }
 
-\newcommand{\myemph}[1]{{\usebeamercolor[fg]{structure} #1}}
+% \newcommand{\myemph}[1]{{\usebeamercolor[fg]{structure} #1}}
 
 % --- structures ---
 

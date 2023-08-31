@@ -19,8 +19,8 @@
 
 \theoremstyle{definition}
 \newtheorem{theorem}{Theorem}[section]     % counter reset on each section
-\newtheorem{lemma}{Lemma}[section]       % share counter with theorem
-\newtheorem{corollary}{Corollary}[section]   % counter reset on each theorem
+\newtheorem{lemma}{Lemma}[section]       % counter reset on each section
+\newtheorem{corollary}{Corollary}[section]   % counter reset on each section
 \newtheorem{proposition}{Proposition}[section] % counter reset on each section
 \newtheorem{conjecture}{Conjecture}[section]  % counter reset on each section
 \newtheorem{definition}{Definition}[section]  % counter reset on each section

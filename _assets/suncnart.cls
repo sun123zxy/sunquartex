@@ -45,15 +45,15 @@
 \theoremstyle{suncnthm}
 
 \newtheorem{theorem}{定理}[section]     % counter reset on each section
-\newtheorem{lemma}{引理}[section]       % share counter with theorem
-\newtheorem{corollary}{推论}[section]   % counter reset on each theorem
+\newtheorem{lemma}{引理}[section]       % counter reset on each section
+\newtheorem{corollary}{推论}[section]   % counter reset on each section
 \newtheorem{proposition}{命题}[section] % counter reset on each section
 \newtheorem{conjecture}{猜想}[section]  % counter reset on each section
 \newtheorem{definition}{定义}[section]  % counter reset on each section
 \newtheorem{example}{例}[section]       % counter reset on each section
 \newtheorem{exercise}{习题}[section]    % counter reset on each section
 \newtheorem*{solution}{解}
-\newtheorem*{remark}{注记}
+\newtheorem*{remark}{评注}
 
 \newtheorem*{myproof}{证明}
 \renewenvironment{proof}{\begin{myproof}}{\qed \end{myproof}}

@@ -1,13 +1,23 @@
 \documentclass[fontset=fandol]{ctexbeamer}
-% -----
+
+% --- bib ---
 
 % \usepackage[backend=biber,style=ieee]{biblatex}
-\usepackage[backend=biber,style=gb7714-2015,autocite=plain]{biblatex} % gb style
+\usepackage[backend=biber,style=gb7714-2015,autocite=plain]{biblatex}
 \addbibresource{$bibliography$}
 
-\usepackage{xcolor}
+\makeatletter % force emph things in biblatex to be italic
+\renewrobustcmd*{\mkbibemph}{\mkbibitalic}
+\protected\long\def\blx@imc@mkbibemph#1{\blx@imc@mkbibitalic{#1}}
+\makeatother
 
-% --- basic ---
+\newcommand{\myemph}[1]{{\usebeamercolor[fg]{structure} #1}}
+\renewcommand{\emph}{\myemph}
+\let\textbf\alert
+
+% --- basics ---
+
+\usepackage{xcolor}
 
 \providecommand{\tightlist}{%
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
@@ -15,6 +25,8 @@
 $if(highlighting-macros)$
   $highlighting-macros$
 $endif$
+
+% --- thm ---
 
 \theoremstyle{theorem}
 % \newtheorem{lemma}{引理}[section]     % counter reset on each section
@@ -29,6 +41,8 @@ $endif$
 \addtobeamertemplate{proof begin}{\setbeamercolor{block title}{bg=black}}{}
 \AtBeginEnvironment{solution}{\setbeamercolor{block title}{bg=black}}
 \AtBeginEnvironment{remark}{\setbeamercolor{block title}{bg=black}}
+
+% --- styles ---
 
 \usetheme{Madrid}
 \usefonttheme[onlymath]{serif}
@@ -48,8 +62,6 @@ $endif$
     anchorcolor=,
     filecolor=
 }
-
-% \newcommand{\myemph}[1]{{\usebeamercolor[fg]{structure} #1}}
 
 % --- structures ---
 

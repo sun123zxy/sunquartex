@@ -12,7 +12,7 @@ format:
     cite-method: biblatex # override the default csl cite method
     execute:
       echo: false
-    fig-pos: H
+    fig-pos: false
     
   docx:
     reference-doc: "_assets/suntemp.docx"

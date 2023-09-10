@@ -36,6 +36,8 @@ $endif$
 % --- floating ---
 
 \usepackage{float} % for better floating for tables and figures, such as "H" option for tables to make them stay HERE precisely
+\floatplacement{figure}{H}
+\floatplacement{table}{H}
 
 % --- code ---
 % code, from Pandoc
@@ -86,7 +88,11 @@ $endif$
 
 % --- main ---
 
-\title[$subtitle$]{$title$}
+\title{$title$}
+
+$if(subtitle)$
+\subtitle{$subtitle$}
+$endif$
 
 \author{$for(author)$$author$$sep$ \and $endfor$}
 

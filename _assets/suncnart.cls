@@ -12,22 +12,33 @@
     subsubsection/format        += \zihao{5}\raggedright
 }
 
-% subtitle (optional) & title
-\let \oldtitle \title % to avoid recursive call
-\renewcommand{\title}[2][\vspace{-0.5em}]{\oldtitle{{\zihao{-2} \bfseries #2} \\ \vspace{0.5em} {\zihao{4} \kaishu #1}}}
+% --- title ---
 
+% title
+\RequirePackage{titling}
+\pretitle{\begin{center} \zihao{-2} \bfseries}
+\posttitle{\par\end{center}\vskip 0.5em}
+\RequirePackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{
+  \apptocmd{\@title}{\vskip 0.5em \par {\zihao{4} \kaishu #1 \par}}{}{}
+}
+\makeatother
 % author
-\let \oldauthor \author % to avoid recursive call
-\renewcommand{\author}[1]{\oldauthor{\zihao{-4} \kaishu #1}}
-
+\preauthor{\begin{center}\zihao{-4}\kaishu % \kaishu for Chinese only
+    \lineskip 0.5em%
+    \begin{tabular}[t]{c}}
+\postauthor{\end{tabular}\par\end{center}}
 % date
-\let \olddate \date % to avoid recursive call
-\renewcommand{\date}[1]{\olddate{\zihao{-4} \kaishu #1}}
+\predate{\begin{center} \zihao{-4} \kaishu}
+\postdate{\par\end{center}}
+
+% --- abstract ---
 
 \renewenvironment{abstract}{\subparagraph{摘要}\kaishu}{}
 \newenvironment{keywords}{\subparagraph{关键词}\kaishu}{}
 
-% amsthm
+% -- amsthm ---
 
 \RequirePackage{amsmath} % better math. including \eqref
 \RequirePackage{amsthm} % better theorem-like environment support (such as proof, unordered, etc.)
@@ -60,6 +71,6 @@
 % \let \oldproofname \proofname % to avoid recursive call
 % \renewcommand{\proofname}{\indent \heiti \oldproofname \nopunct} % strange that using \bfseries do not work properly...
 
-% bib
+% --- bib ---
 
 \usepackage[backend=biber,style=gb7714-2015,autocite=plain]{biblatex} % gb style

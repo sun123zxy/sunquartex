@@ -1,7 +1,9 @@
 ---
 title: "SunQuarTeX-cnart 测试文档"
 subtitle: "这是副标题"
-author: "sun123zxy"
+author: 
+  - "sun123zxy"
+  - "佚名"
 date: "2022/12/07"
 date-modified: "2023/08/10"
 abstract: "使用 Quarto Markdown 语法，支持输出至 HTML、PDF/LaTeX、MS Word 等多种格式的中文学术写作工具，覆盖交叉引用、插图绘制、定理系统等多种功能．"

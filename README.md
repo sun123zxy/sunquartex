@@ -32,16 +32,4 @@
 
 - 见 [Discussion #4598](https://github.com/quarto-dev/quarto-cli/discussions/4598)，Pandoc 不支持 CSL-M 导致无有效方法处理 GB/T 7714-2015 中按语言切换“等”、`et al` 省略字样的规定．
 
-- PDF 多作者字体设置未正确生效．
-
 - 表格与代码混排有时会使位置发生偏移，页面下部的代码块可能会溢出．
-
-## Reference
-
-- `index.qmd`, `index.bib`, `quarto.png`: 示例文件相关资源．
-- `_quarto.yml`, `_metadata.yml`: Quarto 相关配置文件．
-- `_suncnart.cls`: 对 [CTeX 宏包](https://ctan.org/pkg/ctex) 的 `ctexart` 文档类的自定义包装．
-- `suntemp.tex`: Pandoc 格式的自定义 LaTeX 模板文件，用于 Quarto 的 PDF/LaTeX 输出．
-- `suntemp.docx`: Word 模板文件．
-- `china-national-standard-gb-t-7714-2015-numeric-comma-names-delimiter.csl`: 修改自[此处](https://www.zotero.org/styles/china-national-standard-gb-t-7714-2015-numeric)，用于对 HTML 输出应用 GB/T 7714-2015 数字编号引用格式，更改 `names-delimiter` 为逗号．若需其他引用格式，也可在 [Zotero Style Repository](https://www.zotero.org/styles) 自行寻找 CSL 文件．
-- `custom.scss`: 用于 Quarto HTML 输出的自定义 SCSS 样式文件．

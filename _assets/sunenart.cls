@@ -4,33 +4,34 @@
 \LoadClass{article}
 \RequirePackage[a4paper,top=2.75cm,bottom=2.25cm,left=2.75cm,right=2.75cm,marginparwidth=1.75cm]{geometry}
 
-% subtitle (optional) & title
-% need reconstruction (by titling?)
-\let \oldtitle \title % to avoid recursive call
-\renewcommand{\title}[2][\vspace{-0.5em}]{\oldtitle{#2 \\ \vspace{0.5em} {\large #1}}}
+% --- title ---
 
-% \renewenvironment{abstract}{\subparagraph{摘要}\kaishu}{}
-% \newenvironment{keywords}{\subparagraph{关键词}\kaishu}{}
+\RequirePackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{
+  \apptocmd{\@title}{\vskip 0.5em \par {\large #1 \par}}{}{}
+}
+\makeatother
 
-% amsthm
+% --- amsthm ---
 
-\RequirePackage{amsmath} % better math. including \eqref
-\RequirePackage{amsthm} % better theorem-like environment support (such as proof, unordered, etc.)
+\RequirePackage{amsmath}
+\RequirePackage{amsthm}
 
 \theoremstyle{definition}
-\newtheorem{theorem}{Theorem}[section]     % counter reset on each section
-\newtheorem{lemma}{Lemma}[section]       % counter reset on each section
-\newtheorem{corollary}{Corollary}[section]   % counter reset on each section
-\newtheorem{proposition}{Proposition}[section] % counter reset on each section
-\newtheorem{conjecture}{Conjecture}[section]  % counter reset on each section
-\newtheorem{definition}{Definition}[section]  % counter reset on each section
-\newtheorem{example}{Example}[section]       % counter reset on each section
-\newtheorem{exercise}{Exersise}[section]    % counter reset on each section
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{conjecture}{Conjecture}[section]
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{exercise}{Exersise}[section]
 
 \theoremstyle{remark}
 \newtheorem*{solution}{Solution}
 \newtheorem*{remark}{Remark}
 
-% bib
+% --- bib ---
 
 \usepackage[backend=biber,style=ieee,autocite=plain]{biblatex} % ieee style

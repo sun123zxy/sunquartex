@@ -4,20 +4,20 @@ subtitle: "这是副标题"
 author: "sun123zxy"
 institute: "SunQuarTeX"
 date: "2023/08/21"
-date-modified: "2023/08/30"
+date-modified: "2023/09/10"
 
 bibliography: index.bib
 ---
 
 # Section A
 
-## 文字
+### 文字
 
 长长长**长长 long 长长**长长长长长*长长 long 长长*长长长长长长长长长长长长长长长长长长长长长长长长长长长句子．
 
 长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长段落．
 
-## 列表
+### 列表
 
 - 这是列表．
 - 紧的列表．
@@ -28,13 +28,13 @@ bibliography: index.bib
 
 - 松的列表．
 
-## 引用
+### 引用
 
 哇[@deepface]．哇哦[@define;@eigenfaces]．
 
 # Section B
 
-## 代码块
+### 代码块
 
 ```c++
 #include<bits/stdc++.h>
@@ -45,11 +45,11 @@ int main(){
 }
 ```
 
-## 表
+### 表
 
 待填．
 
-## 定理
+### 定理 {.allowframebreaks}
 
 :::{#thm-test}
 
@@ -71,8 +71,6 @@ $$
 这是一个定义．
 :::
 
-## 定理
-
 :::{#exm-test}
 
 ## 一个例子
@@ -90,10 +88,8 @@ $$
 :::
 
 :::{.remark}
-这是一个评注．
+这是一个评注，[@exr-test] 的评注．
 :::
-
-## 定理
 
 :::{#lem-test}
 
@@ -102,7 +98,7 @@ $$
 
 :::{#cor-test}
 
-这是一个推论．
+这是一个推论，[@thm-test] 的推论．
 :::
 
 :::{#prp-test}

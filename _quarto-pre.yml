@@ -9,4 +9,5 @@ format:
     execute:
       echo: false
     fig-pos: H
+    slide-level: 3
   pptx: default

@@ -1,4 +1,4 @@
-\documentclass[fontset=fandol]{ctexbeamer}
+\documentclass[fontset=fandol,envcountsect]{ctexbeamer}
 
 % --- bib ---
 
@@ -27,6 +27,8 @@ $if(highlighting-macros)$
 $endif$
 
 % --- thm ---
+
+\setbeamertemplate{theorems}[numbered]
 
 \theoremstyle{theorem}
 % \newtheorem{lemma}{引理}[section]     % counter reset on each section
@@ -67,15 +69,13 @@ $endif$
 
 \AtBeginSection[]
 {
-  \begin{frame}
-    \frametitle{目录}
+  \begin{frame}{目录}
     \tableofcontents[currentsection]
   \end{frame}
 }
 \AtBeginSubsection[]
 {
-  \begin{frame}
-    \frametitle{目录}
+  \begin{frame}{目录}
     \tableofcontents[currentsubsection]
   \end{frame}
 }
@@ -95,6 +95,10 @@ $endif$
 \begin{document}
 
 \frame{\titlepage}
+
+\begin{frame}{目录}
+  \tableofcontents
+\end{frame}
 
 $body$
 

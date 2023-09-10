@@ -34,6 +34,8 @@ bibliography: index.bib
 
 # Section B
 
+## Subsection 1
+
 ### 代码块
 
 ```c++
@@ -48,6 +50,8 @@ int main(){
 ### 表
 
 待填．
+
+## Subsection 2
 
 ### 定理 {.allowframebreaks}
 

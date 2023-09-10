@@ -30,15 +30,33 @@ $endif$
 
 \setbeamertemplate{theorems}[numbered]
 
+\makeatletter
+\def\cleartheorem#1{%
+    \expandafter\let\csname#1\endcsname\relax
+    \expandafter\let\csname c@#1\endcsname\relax
+}
+\makeatother
+
+\cleartheorem{theorem}
+\cleartheorem{lemma}
+\cleartheorem{corollary}
+\cleartheorem{definition}
+\cleartheorem{example}
+\cleartheorem{solution}
+
 \theoremstyle{theorem}
-% \newtheorem{lemma}{引理}[section]     % counter reset on each section
-% \newtheorem{corollary}{推论}[section] % counter reset on each section
-\newtheorem{proposition}{命题}[section] % counter reset on each section
-\newtheorem{conjecture}{猜想}[section]  % counter reset on each section
+\newtheorem{theorem}{定理}[section]
+\newtheorem{definition}{定义}[section]
+\newtheorem{lemma}{引理}[section]
+\newtheorem{corollary}{推论}[section]
+\newtheorem{proposition}{命题}[section]
+\newtheorem{conjecture}{猜想}[section]
+\newtheorem*{solution}{解}
 \newtheorem*{remark}{评注}
 
 \theoremstyle{example}
-\newtheorem{exercise}{习题}[section]    % counter reset on each section
+\newtheorem{example}{例}[section]
+\newtheorem{exercise}{习题}[section]
 
 \addtobeamertemplate{proof begin}{\setbeamercolor{block title}{bg=black}}{}
 \AtBeginEnvironment{solution}{\setbeamercolor{block title}{bg=black}}

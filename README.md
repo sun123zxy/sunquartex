@@ -33,3 +33,5 @@
 - 见 [Discussion #4598](https://github.com/quarto-dev/quarto-cli/discussions/4598)，Pandoc 不支持 CSL-M 导致无有效方法处理 GB/T 7714-2015 中按语言切换“等”、`et al` 省略字样的规定．
 
 - 表格与代码混排有时会使位置发生偏移，页面下部的代码块可能会溢出．
+
+- 试图使用 Pandoc 的 template partial 嵌套，但路径找不到且 Quarto 没有实现指定 Pandoc `data-dir` 的功能，待填．

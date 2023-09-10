@@ -1,14 +1,6 @@
 \documentclass{$documentclass$}
 
-% --- math ---
-
-% amsmath, amsthm is included in suncnart
-
-\usepackage{amssymb} % better symbols like \varnothing. amsfonts inside (which support \mathbb etc.)
-
-% --- bibliography ---
-
-\addbibresource{$bibliography$}
+% -----
 
 % --- graphics ---
 % copied from pandoc
@@ -32,12 +24,6 @@ $endif$
 $if(svg)$
 \usepackage{svg}
 $endif$
-
-% --- floating ---
-
-\usepackage{float} % for better floating for tables and figures, such as "H" option for tables to make them stay HERE precisely
-\floatplacement{figure}{H}
-\floatplacement{table}{H}
 
 % --- code ---
 % code, from Pandoc
@@ -73,17 +59,31 @@ $else$
 $endif$
 $endif$
 
-% --- hyperref ---
-
-\usepackage[colorlinks=true, allcolors=blue]{hyperref} % render refs as hyperlinks
-
 % --- specials for quarto ---
 
 \usepackage{subcaption}
 
 \providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
-% --- other definitions ---
+% --- math ---
+
+\usepackage{amssymb} % better symbols like \varnothing. amsfonts inside (which support \mathbb etc.)
+
+% --- bibliography ---
+
+\addbibresource{$bibliography$}
+
+% -----
+
+% --- hyperref ---
+
+\usepackage[colorlinks=true, allcolors=blue]{hyperref} % render refs as hyperlinks
+
+% --- floating ---
+
+\usepackage{float} % for better floating for tables and figures, such as "H" option for tables to make them stay HERE precisely
+\floatplacement{figure}{H}
+\floatplacement{table}{H}
 
 % --- main ---
 

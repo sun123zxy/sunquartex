@@ -1,20 +1,5 @@
 \documentclass[fontset=fandol,envcountsect]{ctexbeamer}
 
-% --- bib ---
-
-% \usepackage[backend=biber,style=ieee]{biblatex}
-\usepackage[backend=biber,style=gb7714-2015,autocite=plain]{biblatex}
-\addbibresource{$bibliography$}
-
-\makeatletter % force emph things in biblatex to be italic
-\renewrobustcmd*{\mkbibemph}{\mkbibitalic}
-\protected\long\def\blx@imc@mkbibemph#1{\blx@imc@mkbibitalic{#1}}
-\makeatother
-
-\newcommand{\myemph}[1]{{\usebeamercolor[fg]{structure} #1}}
-\renewcommand{\emph}{\myemph}
-\let\textbf\alert
-
 % --- basics ---
 
 \usepackage{xcolor}
@@ -25,6 +10,17 @@
 $if(highlighting-macros)$
   $highlighting-macros$
 $endif$
+
+% --- bib ---
+
+% \usepackage[backend=biber,style=ieee]{biblatex}
+\usepackage[backend=biber,style=gb7714-2015,autocite=plain]{biblatex}
+\addbibresource{$bibliography$}
+
+\makeatletter % force emph things in biblatex to be italic
+\renewrobustcmd*{\mkbibemph}{\mkbibitalic}
+\protected\long\def\blx@imc@mkbibemph#1{\blx@imc@mkbibitalic{#1}}
+\makeatother
 
 % --- thm ---
 
@@ -82,6 +78,10 @@ $endif$
     anchorcolor=,
     filecolor=
 }
+
+\newcommand{\myemph}[1]{{\usebeamercolor[fg]{structure} #1}}
+\renewcommand{\emph}{\myemph}
+\let\textbf\alert
 
 % --- structures ---
 

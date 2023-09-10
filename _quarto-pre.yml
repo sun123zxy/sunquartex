@@ -1,5 +1,5 @@
 toc: true
-
+slide-level: 3
 format:
   revealjs: default
   beamer:
@@ -9,5 +9,4 @@ format:
     execute:
       echo: false
     fig-pos: false
-    slide-level: 3
   pptx: default

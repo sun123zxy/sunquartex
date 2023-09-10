@@ -1,3 +1,6 @@
 format:
   pdf:
-    template: "_assets/suntemp-cnart.tex"
+    documentclass: | 
+      ```{=latex}
+      ./_assets/suncnart
+      ```

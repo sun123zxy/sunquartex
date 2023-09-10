@@ -1,6 +1,6 @@
 format:
   html:
-    theme: "_assets/custom.scss"
+    theme: "./_assets/custom.scss"
     linestretch: 1.7
     code-fold: true
     html-math-method: mathjax
@@ -13,6 +13,6 @@ format:
     execute:
       echo: false
     fig-pos: false
-    
+    template: "./_assets/suntemp-art.tex"
   docx:
-    reference-doc: "_assets/suntemp.docx"
+    reference-doc: "./_assets/suntemp-art.docx"

@@ -1,4 +1,4 @@
-\documentclass{./_assets/sunenart}
+\documentclass{$documentclass$}
 
 % --- math ---
 
@@ -81,8 +81,7 @@ $endif$
 
 \usepackage{subcaption}
 
-\providecommand{\tightlist}{} % a self-defined macro in Pandoc's template. disabled here.
-% \providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
 % --- other definitions ---
 
@@ -114,6 +113,6 @@ $endif$
 
 $body$
 
-\printbibliography % [title={参考文献}]
+\printbibliography
 
 \end{document}

@@ -1,15 +1,16 @@
 \documentclass[fontset=fandol,envcountsect]{ctexbeamer}
 
-% --- basics ---
+% --- pandoc ---
 
-\usepackage{xcolor}
-
-\providecommand{\tightlist}{%
-  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{subcaption}
 
 $if(highlighting-macros)$
   $highlighting-macros$
 $endif$
+
+$tightlist.tex()$
+$tables.tex()$
+$graphics.tex()$
 
 % --- bib ---
 
@@ -22,9 +23,12 @@ $endif$
 \protected\long\def\blx@imc@mkbibemph#1{\blx@imc@mkbibitalic{#1}}
 \makeatother
 
-% --- thm ---
+% --- numbering ---
 
 \setbeamertemplate{theorems}[numbered]
+\setbeamertemplate{caption}[numbered]
+
+% --- thm ---
 
 \makeatletter
 \def\cleartheorem#1{%

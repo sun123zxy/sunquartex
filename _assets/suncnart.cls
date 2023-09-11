@@ -9,7 +9,8 @@
 \ctexset{
     section/format              += \zihao{-4}\raggedright,
     subsection/format           += \zihao{5}\raggedright,
-    subsubsection/format        += \zihao{5}\raggedright
+    subsubsection/format        += \zihao{5}\raggedright,
+    subsubsection/numbering      = false
 }
 
 % --- title ---

@@ -1,4 +1,5 @@
-number-depth: 4
+number-sections: true
+number-depth: 2
 
 cap-location: bottom
 fig-align: center

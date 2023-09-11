@@ -1,5 +1,5 @@
 toc: true
-slide-level: 3
+# slide-level: # left default to handle automatically, see Pandoc manual
 format:
   revealjs: default
   beamer:

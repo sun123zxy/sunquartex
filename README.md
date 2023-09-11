@@ -14,7 +14,9 @@
 - `quarto render index-enart.qmd --profile=en,art,enart`
 - `quarto render index-cnpre.qmd --profile=cn,pre,cnpre`
 
-请注意，`freeze` 功能可能已生效，为确保表格、图片等得到重新渲染，可能需要显式指定渲染文件 `quarto render index.qmd`．如成功运行，文件将输出至 `/output/` 文件夹下．
+请注意，`freeze` 功能可能已生效，为确保表格、图片等得到重新渲染，可能需要显式指定渲染文件．如成功运行，文件将输出至 `/output/` 文件夹下．
+
+一般文档建议从二级标题开始编号（[相关讨论](https://community.rstudio.com/t/why-do-default-r-markdown-quarto-templates-use-second-level-headings-instead-of-first-level-ones/162127)）；Beamer 的 `slide-level` 可自适应标题级数，但其分节固定从一级标题开始，见 Pandoc 文档．
 
 ### 关于 PDF/LaTeX
 
@@ -25,8 +27,6 @@
 若文档中包含 Mermaid、Graphviz 等 diagram 且需输出 PDF，请确保已安装 Chrome 或 Chromium．若无，可使用 `quarto install tool chromium` 安装．（参见 [Quarto - Diagrams # Chrome Install](https://quarto.org/docs/authoring/diagrams.html#chrome-install)）
 
 ### 关于 Beamer
-
-设置 3 级标题为 `slide-level`，1、2 级标题留作 `section` 和 `subsection`．
 
 理论上与文档格式兼容，使用 `art` 编译即可方便地输出文稿版本．
 

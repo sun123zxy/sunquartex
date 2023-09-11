@@ -51,14 +51,20 @@ $graphics.tex()$
 \newtheorem{corollary}{推论}[section]
 \newtheorem{proposition}{命题}[section]
 \newtheorem{conjecture}{猜想}[section]
-\newtheorem*{solution}{解}
-\newtheorem*{remark}{评注}
 
 \theoremstyle{example}
 \newtheorem{example}{例}[section]
 \newtheorem{exercise}{习题}[section]
 
-\addtobeamertemplate{proof begin}{\setbeamercolor{block title}{bg=black}}{}
+\theoremstyle{remark}
+\newtheorem*{myproof}{证明}
+\newtheorem*{solution}{解}
+\newtheorem*{remark}{评注}
+
+\renewenvironment{proof}{\begin{myproof}}{\qed \end{myproof}}
+
+% \addtobeamertemplate{proof begin}{\setbeamercolor{block title}{bg=black}}{}
+\AtBeginEnvironment{proof}{\setbeamercolor{block title}{bg=black}}
 \AtBeginEnvironment{solution}{\setbeamercolor{block title}{bg=black}}
 \AtBeginEnvironment{remark}{\setbeamercolor{block title}{bg=black}}
 

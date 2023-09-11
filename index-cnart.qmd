@@ -60,6 +60,20 @@ Quarto 支持交叉引用．比如这一节的标题就已经被打上了标签�
 
 - 传递性．
 
+这是一个定义列表．
+
+自反性
+
+: $a \sim a$
+
+反对称性
+
+: $a \leq b \land b \leq a \implies a=b$
+
+传递性
+
+: $a \leq b \land b \leq c \implies a \leq c$
+
 当然也可以使用 Markdown 表格．例如 [@tbl-cartesian-unsolved].
 
 多表格并列．加上 [@tbl-power-unsolved]，它们共同组成了 [@tbl-panel-unsolved]．

@@ -42,6 +42,20 @@ bibliography: index.bib
 
 - 松的列表．
 
+下面是一个定义列表．
+
+自反性
+
+: $a \sim a$
+
+反对称性
+
+: $a \leq b \land b \leq a \implies a=b$
+
+传递性
+
+: $a \leq b \land b \leq c \implies a \leq c$
+
 ### 引用
 
 哇[@deepface]．哇哦[@define;@eigenfaces]．嗨^[这是一个脚注．]．

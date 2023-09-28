@@ -7,3 +7,13 @@ profile:
     - [cn, en]
     - [art, pre]
     - [cnart, enart, cnpre, enpre]
+
+# --- article ---
+
+number-sections: true
+number-depth: 3
+
+cap-location: bottom
+fig-align: center
+
+jupyter: python3

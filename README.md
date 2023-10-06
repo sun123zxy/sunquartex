@@ -45,3 +45,5 @@
 - 表格与代码混排有时会使位置发生偏移，页面下部的代码块可能会溢出．
 
 - 通用的定理编号目前尚难以自定义，见 [Discussion #5479](https://github.com/quarto-dev/quarto-cli/discussions/5479)
+
+- 目前对 HTML 格式下定理的 Callout 化比较粗糙，对 CSS 直接操作，引用、脚注放置于侧边栏时会导致格式错乱。Quarto 1.4 应会对定理系统生成的结构有所改进，届时可做调整。此外，见 [Issue #7158](https://github.com/quarto-dev/quarto-cli/issues/7158)，标题里的脚注也存在格式问题。

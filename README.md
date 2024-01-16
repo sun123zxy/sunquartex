@@ -1,8 +1,8 @@
 # SunQuarTex
 
-基于 Quarto 的自用中文学术写作模板库．
+基于 Quarto 的自用中英文学术写作模板库．
 
-支持输出至 HTML、PDF/LaTeX、MS Word 等多种格式，覆盖交叉引用、插图绘制、定理系统等多种功能．
+支持输出至 HTML、PDF/LaTeX、MS Word、Github Flavored Markdown (GFM) 等多种格式，覆盖交叉引用、插图绘制、定理系统等多种功能．
 
 现已支持中文 Beamer 输出．
 
@@ -48,8 +48,12 @@
 
 - 目前对 HTML 格式下定理的 Callout 化比较粗糙，对 CSS 直接操作，引用、脚注放置于侧边栏时会导致格式错乱。Quarto 1.4 应会对定理系统生成的结构有所改进，届时可做调整。此外，见 [Issue #7158](https://github.com/quarto-dev/quarto-cli/issues/7158)，标题里的脚注也存在格式问题。
 
+- GFM 格式下的定理字体加粗不正常，原因是加粗字符串尾部多出一个空格．待 Quarto 1.4 发布后处理．
+
 - TODO：在 yaml 中开启目录
 
 - TODO：使用 yaml 的 `lang` 控制模板语言本地化
 
 - TODO：PDF 格式 `cnart` 和 `enart` 的 `date-modified` 功能
+
+- TODO: (Quarto 1.4) Gisgus 支持自适应夜间主题了，正式上线后可实装

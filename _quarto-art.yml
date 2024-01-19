@@ -16,3 +16,5 @@ format:
     template: "./_assets/suntemp-art.tex"
   docx:
     reference-doc: "./_assets/suntemp-art.docx"
+  gfm:
+    wrap: preserve

@@ -16,8 +16,4 @@ number-depth: 3
 cap-location: bottom
 fig-align: center
 
-format:
-  gfm:
-    wrap: preserve
-
 jupyter: python3

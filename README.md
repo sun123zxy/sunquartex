@@ -10,9 +10,11 @@
 
 请先安装 [quarto-cli](https://github.com/quarto-dev/quarto-cli)．测试 Quarto 版本为 1.3.340．
 
-- `quarto render index-cnart.qmd --profile=cn,art,cnart`
-- `quarto render index-enart.qmd --profile=en,art,enart`
-- `quarto render index-cnpre.qmd --profile=cn,pre,cnpre`
+- `quarto render index-cnart.qmd --profile=cn,art,cnart --to=pdf`
+- `quarto render index-enart.qmd --profile=en,art,enart --to=pdf`
+- `quarto render index-cnpre.qmd --profile=cn,pre,cnpre --to=pdf`
+
+`art` 类型接受的 `--to` 参数包括 `html`, `pdf`, `docx`, `gfm`．建议每次渲染时均指定 `--to` 参数．
 
 请注意，`freeze` 功能可能已生效，为确保表格、图片等得到重新渲染，可能需要显式指定渲染文件．如成功运行，文件将输出至 `/output/` 文件夹下．
 
@@ -46,9 +48,11 @@
 
 - 通用的定理编号目前尚难以自定义，见 [Discussion #5479](https://github.com/quarto-dev/quarto-cli/discussions/5479)
 
-- 目前对 HTML 格式下定理的 Callout 化比较粗糙，对 CSS 直接操作，引用、脚注放置于侧边栏时会导致格式错乱。Quarto 1.4 应会对定理系统生成的结构有所改进，届时可做调整。此外，见 [Issue #7158](https://github.com/quarto-dev/quarto-cli/issues/7158)，标题里的脚注也存在格式问题。
+- 目前对 HTML 格式下定理的 Callout 化比较粗糙，对 CSS 直接操作，引用、脚注放置于侧边栏时会导致格式错乱．Quarto 1.4 应会对定理系统生成的结构有所改进，届时可做调整．此外，见 [Issue #7158](https://github.com/quarto-dev/quarto-cli/issues/7158)，标题里的脚注也存在格式问题．
 
 - GFM 格式下的定理字体加粗不正常，原因是加粗字符串尾部多出一个空格．待 Quarto 1.4 发布后处理．
+
+- GFM 格式与其它格式同时输出时发生冲突，原因未知．
 
 - TODO：在 yaml 中开启目录
 

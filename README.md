@@ -8,13 +8,13 @@
 
 ## Usage
 
-请先安装 [quarto-cli](https://github.com/quarto-dev/quarto-cli)．测试 Quarto 版本为 1.3.340．
+请先安装 [quarto-cli](https://github.com/quarto-dev/quarto-cli)．测试 Quarto 版本为 1.4.550．
 
 - `quarto render index-cnart.qmd --profile=cn,art,cnart --to=pdf`
 - `quarto render index-enart.qmd --profile=en,art,enart --to=pdf`
-- `quarto render index-cnpre.qmd --profile=cn,pre,cnpre --to=pdf`
+- `quarto render index-cnpre.qmd --profile=cn,pre,cnpre --to=beamer`
 
-`art` 类型接受的 `--to` 参数包括 `html`, `pdf`, `docx`, `gfm`．建议每次渲染时均指定 `--to` 参数．
+`art` 类型接受的 `--to` 参数包括 `html`, `pdf`， `beamer`, `docx`, `gfm`．每次渲染时应指定 `--to` 参数，或在文档中明确指定输出格式．
 
 请注意，`freeze` 功能可能已生效，为确保表格、图片等得到重新渲染，可能需要显式指定渲染文件．如成功运行，文件将输出至 `/output/` 文件夹下．
 
@@ -24,13 +24,13 @@
 
 需要输出 PDF 时，请确保已安装 Quarto 支持的 LaTeX 发行版．若无，可使用 `quarto install tool tinytex` 安装．
 
-可在输出 PDF 前自行对 LaTeX 文件（`*.tex`）做进一步修正，再自行使用 `tex2pdf.bat` 输出 PDF．
+可在输出 PDF 前自行对 LaTeX 文件（`*.tex`）做进一步修正，再自行使用 `xelatex` 和 `biber` 输出 PDF．
 
 若文档中包含 Mermaid、Graphviz 等 diagram 且需输出 PDF，请确保已安装 Chrome 或 Chromium．若无，可使用 `quarto install tool chromium` 安装．（参见 [Quarto - Diagrams # Chrome Install](https://quarto.org/docs/authoring/diagrams.html#chrome-install)）
 
 ### 关于 Beamer
 
-理论上与文档格式兼容，使用 `art` 编译即可方便地输出文稿版本．
+理论上与文档格式兼容，使用 profile `art` 编译即可方便地输出文稿版本．
 
 ## Known Issues
 

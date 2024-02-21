@@ -4,6 +4,9 @@ format:
     linestretch: 1.7
     code-fold: true
     html-math-method: mathjax
+    csl: "./_assets/ieee.csl"
+    reference-location: margin
+    # citation-location: margin
     # toc: true
     
   pdf:

@@ -7,6 +7,10 @@ abstract: "This is an abstract."
 bibliography: "index.bib"
 
 number-sections: true
+
+format:
+    html: default
+    pdf: default
 ---
 
 This is a reference[@deepface].

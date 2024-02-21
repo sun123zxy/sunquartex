@@ -10,13 +10,15 @@
 
 请先安装 [quarto-cli](https://github.com/quarto-dev/quarto-cli)．测试 Quarto 版本为 1.4.550．
 
-- `quarto render index-cnart.qmd --profile=cn,art,cnart --to=pdf`
-- `quarto render index-enart.qmd --profile=en,art,enart --to=pdf`
-- `quarto render index-cnpre.qmd --profile=cn,pre,cnpre --to=beamer`
+- `quarto render index-cnart.qmd`
+- `quarto render index-enart.qmd`
+- `quarto render index-cnpre.qmd`
 
-`art` 类型接受的 `--to` 参数包括 `html`, `pdf`， `beamer`, `docx`, `gfm`．每次渲染时应指定 `--to` 参数，或在文档中明确指定输出格式．
+`--to` 参数可指定输出类型，包括 `html`, `pdf`， `beamer`, `docx`, `gfm`．每次渲染时应指定 `--to` 参数，或在文档中明确指定输出格式．
 
-请注意，`freeze` 功能可能已生效，为确保表格、图片等得到重新渲染，可能需要显式指定渲染文件．如成功运行，文件将输出至 `/output/` 文件夹下．
+在文件中声明 `lang=zh` 或 `lang=en` 即可调整语言．
+
+`freeze` 功能可能已生效，为确保表格、图片等得到重新渲染，可能需要显式指定渲染文件．如成功运行，文件将输出至 `/output/` 文件夹下．
 
 一般文档建议从二级标题开始编号（[相关讨论](https://community.rstudio.com/t/why-do-default-r-markdown-quarto-templates-use-second-level-headings-instead-of-first-level-ones/162127)）；Beamer 的 `slide-level` 可自适应标题级数，但其分节固定从一级标题开始，见 Pandoc 文档．
 
@@ -30,7 +32,7 @@
 
 ### 关于 Beamer
 
-理论上与文档格式兼容，使用 profile `art` 编译即可方便地输出文稿版本．
+理论上与文档格式兼容，可直接设置 `--to=pdf` 输出文稿版本．
 
 ## Known Issues
 
@@ -48,15 +50,11 @@
 
 - 通用的定理编号目前尚难以自定义，见 [Discussion #5479](https://github.com/quarto-dev/quarto-cli/discussions/5479)
 
-- 目前对 HTML 格式下定理的 Callout 化比较粗糙，对 CSS 直接操作，引用、脚注放置于侧边栏时会导致格式错乱．Quarto 1.4 应会对定理系统生成的结构有所改进，届时可做调整．此外，见 [Issue #7158](https://github.com/quarto-dev/quarto-cli/issues/7158)，标题里的脚注也存在格式问题．
+- 目前对 HTML 格式下定理的 Callout 化比较粗糙，对 CSS 直接操作，引用、脚注放置于侧边栏时会导致格式错乱．．
 
 - GFM 格式下的定理字体加粗不正常，原因是加粗字符串尾部多出一个空格．待 Quarto 1.4 发布后处理．
 
 - GFM 格式与其它格式同时输出时发生冲突，原因未知．
-
-- TODO：在 yaml 中开启目录
-
-- TODO：使用 yaml 的 `lang` 控制模板语言本地化
 
 - TODO：PDF 格式 `cnart` 和 `enart` 的 `date-modified` 功能
 

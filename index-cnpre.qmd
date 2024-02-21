@@ -5,8 +5,8 @@ author: "sun123zxy"
 institute: "SunQuarTeX"
 date: "2023/08/21"
 date-modified: "2023/09/11"
-
 bibliography: index.bib
+lang: zh
 
 format:
     html: default

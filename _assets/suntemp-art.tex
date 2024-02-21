@@ -1,4 +1,5 @@
-\documentclass{$documentclass$}
+\RequirePackage{xstring}
+\IfBeginWith{$lang$}{zh}{\documentclass{_assets/suncnart}}{\documentclass{_assets/sunenart}}
 
 % --- pandoc ---
 

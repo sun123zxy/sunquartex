@@ -1,6 +1,0 @@
-format:
-  pdf:
-    documentclass: | 
-      ```{=latex}
-      ./_assets/suncnart
-      ```

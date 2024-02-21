@@ -8,6 +8,7 @@ date: "2022/12/07"
 date-modified: "2024/02/01"
 abstract: "使用 Quarto Markdown 语法，支持输出至 HTML、PDF/LaTeX、MS Word 等多种格式的中文学术写作工具，覆盖交叉引用、插图绘制、定理系统等多种功能．"
 bibliography: index.bib
+lang: zh
 
 number-sections: true
 

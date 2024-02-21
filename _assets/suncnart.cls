@@ -65,7 +65,7 @@
 \newtheorem{example}{例}[section]       % counter reset on each section
 \newtheorem{exercise}{习题}[section]    % counter reset on each section
 \newtheorem*{solution}{解}
-\newtheorem*{remark}{评注}
+\newtheorem*{remark}{注记}
 
 \newtheorem*{myproof}{证明}
 \renewenvironment{proof}{\begin{myproof}}{\qed \end{myproof}}

@@ -12,8 +12,6 @@ lang: zh
 
 number-sections: true
 
-# format-links: false
-
 format:
   html:
     other-links:
@@ -118,16 +116,7 @@ Quarto 的一大卖点．
 
 此外，根据 [Quarto - Markdown Basics # Equations](https://quarto.org/docs/authoring/markdown-basics.html#equations) 和 [Defining LaTeX commands for HTML and PDF rendering - Discussion #1793](https://github.com/quarto-dev/quarto-cli/discussions/1793) 和 [Quarto - Conditional Content](https://quarto.org/docs/authoring/conditional.html)，按如下面方式自定义 macro 可确保其在 HTML、 LaTeX/PDF 和 MS Word 中都得到正确渲染．值得注意的是，由于 `\DeclareMathOperator` 只能在 LaTeX 的导言区使用，这里我们用 `\newcommand` + `\operatorname` 的方式替代．
 
-::::: {.hidden}
-::: {.content-hidden unless-format="html"}
-$$
 \newcommand{\ran}{\operatorname{ran}}
-$$
-:::
-::: {.content-hidden when-format="html"}
-\newcommand{\ran}{\operatorname{ran}}
-:::
-:::::
 
 下面的公式使用了上面定义的 macro．
 $$

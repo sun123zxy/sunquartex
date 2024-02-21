@@ -1,5 +1,11 @@
 \RequirePackage{xstring}
-\IfBeginWith{$lang$}{zh}{\documentclass{_assets/suncnart}}{\documentclass{_assets/sunenart}}
+\IfBeginWith{$lang$}{zh}{
+    \documentclass{_assets/suncnart}
+    \def\transmodified{最后更新于}
+}{
+    \documentclass{_assets/sunenart}
+    \def\transmodified{Last modified on}
+}
 
 % --- pandoc ---
 
@@ -41,7 +47,7 @@ $endif$
 
 \author{$for(author)$$author$$sep$ \and $endfor$}
 
-\date{$date$}
+\date{$date$$if(date-modified)$\thanks{\transmodified \space $date-modified$.}$endif$}
 
 \begin{document}
 

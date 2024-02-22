@@ -1,11 +1,29 @@
+% --- lang test ---
+
+\newif\ifzh
 \RequirePackage{xstring}
 \IfBeginWith{$lang$}{zh}{
-    \documentclass{_assets/suncnart}
+    \zhtrue
+    \documentclass[fontset=fandol, zihao=5]{ctexart}
     \def\transmodified{最后更新于}
 }{
-    \documentclass{_assets/sunenart}
+    \zhfalse
+    \documentclass{article}
     \def\transmodified{Last modified on}
 }
+
+% --- beginning ---
+
+\usepackage[a4paper,top=2.75cm,bottom=2.25cm,left=2.75cm,right=2.75cm,marginparwidth=1.75cm]{geometry}
+\ifzh
+    \setCJKmainfont{FandolSong-Regular}[BoldFont = FandolHei-Regular, ItalicFont = KaiTi] % Hei represents bold, Kai represents italic
+    \ctexset{
+        section/format              += \zihao{-4}\raggedright,
+        subsection/format           += \zihao{5}\raggedright,
+        subsubsection/format        += \zihao{5}\raggedright,
+        subsubsection/numbering      = false
+    }
+\fi
 
 % --- pandoc ---
 
@@ -25,12 +43,9 @@ $if(highlighting-macros)$
 \renewenvironment{Shaded} {\begin{snugshade}\small} {\end{snugshade}}
 $endif$
 
-% --- math ---
-
-\usepackage{amssymb} % better symbols like \varnothing. amsfonts inside (which support \mathbb etc.)
-
 % --- bibliography ---
 
+\usepackage[backend=biber,style=ieee,autocite=plain]{biblatex}
 \addbibresource{$bibliography$}
 
 % --- hyperref ---
@@ -42,6 +57,123 @@ $endif$
 \usepackage{float} % for better floating for tables and figures, such as "H" option for tables to make them stay HERE precisely
 \floatplacement{figure}{H}
 \floatplacement{table}{H}
+
+% --- titling ---
+\ifzh
+    % title
+    \usepackage{titling}
+    \pretitle{\begin{center} \zihao{-2} \bfseries}
+    \posttitle{\par\end{center}\vskip 0.5em}
+    \usepackage{etoolbox}
+    \makeatletter
+    \providecommand{\subtitle}[1]{
+        \apptocmd{\@title}{\vskip 0.5em \par {\zihao{4} \kaishu #1 \par}}{}{}
+    }
+    \makeatother
+    % author
+    \preauthor{\begin{center}\zihao{-4}\kaishu % \kaishu for Chinese only
+        \lineskip 0.5em%
+        \begin{tabular}[t]{c}}
+    \postauthor{\end{tabular}\par\end{center}}
+    % date
+    \predate{\begin{center} \zihao{-4} \kaishu}
+    \postdate{\par\end{center}}
+\else
+    \usepackage{etoolbox}
+    \makeatletter
+    \providecommand{\subtitle}[1]{
+        \apptocmd{\@title}{\vskip 0.5em \par {\large #1 \par}}{}{}
+    }
+\makeatother
+\fi
+
+% --- abstract ---
+
+\ifzh
+    \renewenvironment{abstract}{\subparagraph{摘要}\kaishu}{}
+    % \newenvironment{keywords}{\subparagraph{关键词}\kaishu}{}
+\fi
+
+% -- math --
+
+\usepackage{amsmath} % better math. including \eqref
+\usepackage{amssymb} % better symbols like \varnothing. amsfonts inside (which support \mathbb etc.)
+
+% -- theorems ---
+
+\usepackage{amsthm} % better theorem-like environment support (such as proof, unordered, etc.)
+
+\RequirePackage{amsmath} % better math. including \eqref
+\RequirePackage{amsthm} % better theorem-like environment support (such as proof, unordered, etc.)
+
+\ifzh
+
+\newtheoremstyle{suncnthm}% name
+{}% Space above
+{}% Space below
+{}% Body font
+{\parindent}% Indent amount
+{}% Theorem head font
+{\phantom{.}}% Punctuation after theorem head % no punctuation
+{5pt plus 1pt minus 1pt}% Space after theorem head % default
+{\bfseries \thmname{#1}\thmnumber{ #2}\thmnote{（#3）}}% Theorem head spec % bold number
+
+\theoremstyle{suncnthm}
+
+\newtheorem{theorem}{定理}[section]     % counter reset on each section
+\newtheorem{lemma}{引理}[section]       % counter reset on each section
+\newtheorem{corollary}{推论}[section]   % counter reset on each section
+\newtheorem{proposition}{命题}[section] % counter reset on each section
+\newtheorem{conjecture}{猜想}[section]  % counter reset on each section
+\newtheorem{definition}{定义}[section]  % counter reset on each section
+\newtheorem{example}{例}[section]       % counter reset on each section
+\newtheorem{exercise}{习题}[section]    % counter reset on each section
+\newtheorem*{solution}{解}
+\newtheorem*{remark}{注记}
+
+% proof hack begin
+\makeatletter
+\newenvironment{myproof}[1][\myproofname]{\par
+  \pushQED{\qed}%
+  \normalfont \topsep6\p@\@plus6\p@\relax
+  \trivlist
+%<amsbook|amsproc>  \itemindent\normalparindent
+  \itemindent\parindent
+  \item[\hskip\labelsep
+%<amsbook|amsproc>        \scshape
+%<amsart|amsthm>        \itshape
+    \bfseries 
+    #1\phantom{.}%\@addpunct{.}
+    ]\ignorespaces
+}{%
+  \popQED\endtrivlist\@endpefalse
+}
+%    \end{macrocode}
+%    Default for \cn{proofname}:
+%    \begin{macrocode}
+\providecommand{\myproofname}{证明}
+
+\makeatother
+% hack end
+\renewenvironment{proof}{\begin{myproof}}{\end{myproof}}
+
+\else
+
+\theoremstyle{definition}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{conjecture}{Conjecture}[section]
+\newtheorem{definition}{Definition}[section]
+\newtheorem{example}{Example}[section]
+\newtheorem{exercise}{Exersise}[section]
+
+\theoremstyle{remark}
+\newtheorem*{solution}{Solution}
+\newtheorem*{remark}{Remark}
+
+\fi
 
 % --- main ---
 

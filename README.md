@@ -2,9 +2,7 @@
 
 基于 Quarto 的自用中英文学术写作模板库．
 
-支持输出至 HTML、PDF/LaTeX、MS Word、Github Flavored Markdown (GFM) 等多种格式，覆盖交叉引用、插图绘制、定理系统等多种功能．
-
-现已支持中文 Beamer 输出．
+支持输出至 HTML、PDF/LaTeX、Beamer、MS Word、Github Flavored Markdown (GFM) 等多种格式，覆盖交叉引用、插图绘制、定理系统等多种功能．
 
 ## Usage
 
@@ -13,6 +11,7 @@
 - `quarto render index-cnart.qmd`
 - `quarto render index-enart.qmd`
 - `quarto render index-cnpre.qmd`
+- `quarto render index-enpre.qmd`
 
 `--to` 参数可指定输出类型，包括 `html`, `pdf`， `beamer`, `docx`, `gfm`．每次渲染时应指定 `--to` 参数，或在文档中明确指定输出格式．
 

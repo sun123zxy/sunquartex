@@ -1,12 +1,12 @@
 ---
-title: "SunQuarTeX-cnpre 测试文档"
-subtitle: "这是副标题"
+title: "SunQuarTeX-enpre Test"
+subtitle: "Subtitle Here"
 author: "sun123zxy"
 institute: "SunQuarTeX"
-date: "2023/08/21"
+date: "2024/02/22"
 date-modified: "2024/02/22"
 bibliography: index.bib
-lang: zh
+lang: en
 
 format:
     beamer: default
@@ -14,60 +14,60 @@ format:
 
 # Section A
 
-### 文字
+### Texts
 
-长长长**长长 long 长长**长长长长长*长长 long 长长*长长长长长长长长长长长长长长长长长长长长长长长长长长长句子．
+long **long** long long long *long long long* long long long long long long long long long long long long long long long long long long sentence.
 
-长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长段落．
+long long long long long long long long long long long long long long long long long long long long long long long long long long long paragraph.
 
 ::::: {.columns}
 
 ::: {.column width="30%"}
-- 左栏．
-- 窄窄窄窄窄窄窄窄窄窄窄窄窄窄窄窄窄的左栏．
+- left bar.
+- narrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrow left bar.
 :::
 
 ::: {.column width="70%"}
-- 右栏．
-- 宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽的右栏．
+- right bar.
+- wiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiide right bar.
 :::
 
 :::::
 
-### 列表
+### Lists
 
-- 这是列表．
-- 紧的列表．
+- This is a list.
+- A compact list.
 
-噢
+Wow.
 
-- 这是列表．
+- This is a list.
 
-- 松的列表．
+- A sparse list.
 
-下面是一个定义列表．
+A definition list below.
 
-自反性
+Reflexivity
 
 : $a \sim a$
 
-反对称性
+Antisymmetry
 
 : $a \leq b \land b \leq a \implies a=b$
 
-传递性
+Transitivity
 
 : $a \leq b \land b \leq c \implies a \leq c$
 
-### 引用
+### Citations
 
-哇[@deepface]．哇哦[@define;@eigenfaces]．嗨^[这是一个脚注．]．
+Blah [@deepface]. Blah blah [@deepface;@eigenfaces]. Blah blah blah^[This is a footnote].
 
 # Section B
 
 ## Subsection 1
 
-### 代码块
+### Code
 
 ```c++
 #include<bits/stdc++.h>
@@ -78,7 +78,7 @@ int main(){
 }
 ```
 
-### 表
+### Tables
 
 ::: {#tbl-panel-unsolved layout-ncol=2}
 |||||
@@ -88,7 +88,7 @@ int main(){
 | $\mathbb N$        | $\mathbb N$   | $\mathbb N$   | ?             |
 | $\mathbb R$        | $\mathbb R$   | ?             | $\mathbb R$   |
 
-:笛卡尔积 {#tbl-cartesian-unsolved}
+:Products {#tbl-cartesian-unsolved}
 
 |||||
 |:-:|:-:|:-:|:-:|
@@ -97,23 +97,23 @@ int main(){
 |$\mathbb N$  | $\mathbb N$   | ?             | ?               |
 |$\mathbb R$  | $\mathbb R$   | ?             | ?               |
 
-:集合幂 {#tbl-power-unsolved}
+:Powers {#tbl-power-unsolved}
 
-相关集合的势（不完整版）
+Several results on cardinality
 :::
 
 
-引用一下 [@tbl-cartesian-unsolved]．
+Referable [@tbl-cartesian-unsolved].
 
-### 图
+### Figures
 
-![这是一张插图](index-quarto.png){#fig-quarto}
+![This is a figure](index-quarto.png){#fig-quarto}
 
-引用一下 [@fig-quarto]．
+Referable [@fig-quarto].
 
-### 计算图
+### Computations
 
-复杂的并列效果．（[@fig-light-on], [@fig-light-on-1], [@fig-light-on-2]）
+Complex side by side. ([@fig-light-on], [@fig-light-on-1], [@fig-light-on-2])
 
 ```{python}
 import numpy as np
@@ -139,10 +139,10 @@ P = U*I
 
 ```{python}
 #| label: fig-light-on
-#| fig-cap: 太阳能电池的负载特性
+#| fig-cap: solar panel
 #| fig-subcap:
-#|   - 输出电流与电压关系曲线
-#|   - 输出功率与负载电阻关系曲线
+#|   - I-U
+#|   - P-R
 #| layout-ncol: 2
 
 fig, ax = plt.subplots()
@@ -173,13 +173,13 @@ plt.show()
 
 ## Subsection 2
 
-### 定理 {.allowframebreaks}
+### Theorems {.allowframebreaks}
 
 :::{#thm-test}
 
-## 测试定理
+## Test
 
-这是一个定理．
+This is a theorem.
 $$
 \sum_{d \mid n} \varphi(d) = n
 $$
@@ -187,7 +187,7 @@ $$
 
 :::{.proof}
 
-这是一个以公式结尾的证明．
+This is a proof ended with a display math.
 $$
 \sum_{d \mid n} \mu(d) = [n=1]
 $$
@@ -195,52 +195,52 @@ $$
 
 :::{.proof}
 
-这是一个比较长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长的证明．
+This is a really really really really really really really really really really really really really really really really really really really really long proof.
 :::
 
 :::{#def-test}
 
-这是一个定义．
+This is a definition.
 :::
 
 :::{#exm-test}
 
-## 一个例子
+## An example
 
-这是一个例子．
+This is an example.
 :::
 
 :::{.solution}
 
-这是例子的解．
+This is the solution to the example.
 :::
 
 :::{#exr-test}
 
-这是一个练习．
+This is an exercise.
 :::
 
 :::{.remark}
 
-这是一个评注，[@exr-test] 的评注．
+This is a remark of [@exr-test].
 :::
 
 :::{#lem-test}
 
-这是一个引理．
+This is a lemma.
 :::
 
 :::{#cor-test}
 
-这是一个推论，[@thm-test] 的推论．
+This is a corollary of [@thm-test].
 :::
 
 :::{#prp-test}
 
-这是一个命题．
+This is a proposition.
 :::
 
 :::{#cnj-test}
 
-这是一个猜想．
+This is a conjecture.
 :::

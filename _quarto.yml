@@ -34,7 +34,7 @@ format:
       echo: false
     fig-pos: false
     toc: true
-    template: "./_assets/suntemp-cnpre.tex"
+    template: "./_assets/suntemp-pre.tex"
   # revealjs: default
   # pptx: default
 

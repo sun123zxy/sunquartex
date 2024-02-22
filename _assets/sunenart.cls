@@ -34,4 +34,4 @@
 
 % --- bib ---
 
-\usepackage[backend=biber,style=ieee,autocite=plain]{biblatex} % ieee style
+\RequirePackage[backend=biber,style=ieee,autocite=plain]{biblatex} % ieee style

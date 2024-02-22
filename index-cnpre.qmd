@@ -4,7 +4,7 @@ subtitle: "这是副标题"
 author: "sun123zxy"
 institute: "SunQuarTeX"
 date: "2023/08/21"
-date-modified: "2023/09/11"
+date-modified: "2024/02/22"
 bibliography: index.bib
 lang: zh
 
@@ -187,7 +187,16 @@ $$
 
 :::{.proof}
 
-这是一个证明．
+这是一个以公式结尾的证明．
+
+$$
+\sum_{d \mid n} \mu(d) = [n=1]
+$$
+:::
+
+:::{.proof}
+
+这是一个比较长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长的证明．
 :::
 
 :::{#def-test}

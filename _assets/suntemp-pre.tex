@@ -1,27 +1,36 @@
-\documentclass[fontset=fandol,envcountsect]{ctexbeamer}
+\RequirePackage{xstring}
+\IfBeginWith{$lang$}{zh}{
+    \documentclass{_assets/suncnpre}
+    \def\transmodified{最后更新于}
+    \def\transtoc{目录}
+    \def\transreferences{参考文献}
+}{
+    \documentclass{_assets/suncnpre}
+    \def\transmodified{Last modified on}
+    \def\transtoc{Table of Contents}
+    \def\transreferences{References}
+}
 
 % --- pandoc ---
 
 \usepackage{subcaption}
 
 $if(highlighting-macros)$
-  $highlighting-macros$
+$highlighting-macros$
 $endif$
 
 $tightlist.tex()$
 $tables.tex()$
 $graphics.tex()$
 
-% --- code font size ---
+% --- adjust code font size ---
 
 $if(highlighting-macros)$
 \renewenvironment{Shaded} {\begin{snugshade}\scriptsize} {\end{snugshade}}
 $endif$
 
-% --- bib ---
+% --- bibliography ---
 
-% \usepackage[backend=biber,style=ieee]{biblatex}
-\usepackage[backend=biber,style=gb7714-2015,autocite=plain]{biblatex}
 \addbibresource{$bibliography$}
 
 \makeatletter % force emph things in biblatex to be italic
@@ -29,45 +38,10 @@ $endif$
 \protected\long\def\blx@imc@mkbibemph#1{\blx@imc@mkbibitalic{#1}}
 \makeatother
 
-% --- numbering ---
+% --- theorem ---
 
 \setbeamertemplate{theorems}[numbered]
 \setbeamertemplate{caption}[numbered]
-
-% --- thm ---
-
-\makeatletter
-\def\cleartheorem#1{%
-    \expandafter\let\csname#1\endcsname\relax
-    \expandafter\let\csname c@#1\endcsname\relax
-}
-\makeatother
-
-\cleartheorem{theorem}
-\cleartheorem{lemma}
-\cleartheorem{corollary}
-\cleartheorem{definition}
-\cleartheorem{example}
-\cleartheorem{solution}
-
-\theoremstyle{theorem}
-\newtheorem{theorem}{定理}[section]
-\newtheorem{definition}{定义}[section]
-\newtheorem{lemma}{引理}[section]
-\newtheorem{corollary}{推论}[section]
-\newtheorem{proposition}{命题}[section]
-\newtheorem{conjecture}{猜想}[section]
-
-\theoremstyle{example}
-\newtheorem{example}{例}[section]
-\newtheorem{exercise}{习题}[section]
-
-\theoremstyle{remark}
-\newtheorem*{myproof}{证明}
-\newtheorem*{solution}{解}
-\newtheorem*{remark}{评注}
-
-\renewenvironment{proof}{\begin{myproof}}{\qed \end{myproof}}
 
 % \addtobeamertemplate{proof begin}{\setbeamercolor{block title}{bg=black}}{}
 \AtBeginEnvironment{proof}{\setbeamercolor{block title}{bg=black}}
@@ -78,13 +52,6 @@ $endif$
 
 \usetheme{Madrid}
 \usefonttheme[onlymath]{serif}
-
-\setlength{\parindent}{2em}
-\addtobeamertemplate{block begin}{}{\setlength\parindent{2em}}
-\addtobeamertemplate{block example begin}{}{\setlength\parindent{2em}}
-\addtobeamertemplate{alertblock alerted begin}{}{\setlength\parindent{2em}}
-
-\setlength{\parskip}{3pt} % slighty more spacing
 
 \hypersetup{
     colorlinks=true,
@@ -103,18 +70,18 @@ $endif$
 
 \AtBeginSection[]
 {
-  \begin{frame}{目录}
+  \begin{frame}{\transtoc}
     \tableofcontents[currentsection]
   \end{frame}
 }
 \AtBeginSubsection[]
 {
-  \begin{frame}{目录}
+  \begin{frame}{\transtoc}
     \tableofcontents[currentsubsection]
   \end{frame}
 }
 
-% -----
+% --- main ---
 
 \title{$title$}
 $if(subtitle)$
@@ -124,20 +91,20 @@ $endif$
 $if(institute)$
 \institute{$for(institute)$$institute$$sep$ \and $endfor$}
 $endif$
-\date{$date$$if(date-modified)$\thanks{最后更新于 $date-modified$．}$endif$}
+\date{$date$$if(date-modified)$\thanks{\transmodified \space $date-modified$.}$endif$}
 
 \begin{document}
 
 \frame{\titlepage}
 
-\begin{frame}{目录}
+\begin{frame}{\transtoc}
   \tableofcontents
 \end{frame}
 
 $body$
 
 $if(bibliography)$
-\begin{frame}[allowframebreaks]{参考文献}
+\begin{frame}[allowframebreaks]{\transreferences}
     \printbibliography[heading=none]
 \end{frame}
 $endif$

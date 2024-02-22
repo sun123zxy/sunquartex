@@ -39,7 +39,7 @@
 \renewenvironment{abstract}{\subparagraph{摘要}\kaishu}{}
 \newenvironment{keywords}{\subparagraph{关键词}\kaishu}{}
 
-% -- amsthm ---
+% -- theorem ---
 
 \RequirePackage{amsmath} % better math. including \eqref
 \RequirePackage{amsthm} % better theorem-like environment support (such as proof, unordered, etc.)
@@ -93,6 +93,6 @@
 % hack end
 \renewenvironment{proof}{\begin{myproof}}{\end{myproof}}
 
-% --- bib ---
+% --- bibliography ---
 
-\usepackage[backend=biber,style=gb7714-2015,autocite=plain]{biblatex} % gb style
+\RequirePackage[backend=biber,style=gb7714-2015,autocite=plain]{biblatex} % gb style

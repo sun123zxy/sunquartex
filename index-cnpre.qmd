@@ -9,7 +9,6 @@ bibliography: index.bib
 lang: zh
 
 format:
-    html: default
     beamer: default
 ---
 

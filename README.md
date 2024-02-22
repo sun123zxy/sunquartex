@@ -50,3 +50,9 @@
 - 【need-repro】表格与代码混排有时会使位置发生偏移，页面下部的代码块可能会溢出．
 
 - 通用的定理编号目前尚难以自定义，见 [Discussion #5479](https://github.com/quarto-dev/quarto-cli/discussions/5479)
+
+## Planning Enhancements
+
+- 考虑支持 `callouty-theorem` 独立为插件．
+
+- 考虑支持 [quarto_tikz](https://github.com/danmackinlay/quarto_tikz/) 插件．

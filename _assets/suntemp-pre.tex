@@ -1,11 +1,16 @@
+% --- lang test ---
+
+\newif\ifzh
 \RequirePackage{xstring}
 \IfBeginWith{$lang$}{zh}{
-    \documentclass{_assets/suncnpre}
+    \zhtrue
+    \documentclass[fontset=fandol,envcountsect]{ctexbeamer}
     \def\transmodified{最后更新于}
     \def\transtoc{目录}
     \def\transreferences{参考文献}
 }{
-    \documentclass{_assets/sunenpre}
+    \zhfalse
+    \documentclass[fontset=fandol,envcountsect]{beamer}
     \def\transmodified{Last modified on}
     \def\transtoc{Table of Contents}
     \def\transreferences{References}
@@ -31,6 +36,8 @@ $endif$
 
 % --- bibliography ---
 
+\RequirePackage[backend=biber,style=ieee,autocite=plain]{biblatex}
+% \RequirePackage[backend=biber,style=gb7714-2015,autocite=plain]{biblatex}
 \addbibresource{$bibliography$}
 
 \makeatletter % force emph things in biblatex to be italic
@@ -38,7 +45,62 @@ $endif$
 \protected\long\def\blx@imc@mkbibemph#1{\blx@imc@mkbibitalic{#1}}
 \makeatother
 
-% --- theorem ---
+% --- theorems ---
+
+\makeatletter
+\def\cleartheorem#1{%
+    \expandafter\let\csname#1\endcsname\relax
+    \expandafter\let\csname c@#1\endcsname\relax
+}
+\makeatother
+
+\cleartheorem{theorem}
+\cleartheorem{lemma}
+\cleartheorem{corollary}
+\cleartheorem{definition}
+\cleartheorem{example}
+\cleartheorem{solution}
+
+\ifzh % zhthm
+
+\theoremstyle{theorem}
+\newtheorem{theorem}{定理}[section]
+\newtheorem{definition}{定义}[section]
+\newtheorem{lemma}{引理}[section]
+\newtheorem{corollary}{推论}[section]
+\newtheorem{proposition}{命题}[section]
+\newtheorem{conjecture}{猜想}[section]
+
+\theoremstyle{example}
+\newtheorem{example}{例}[section]
+\newtheorem{exercise}{习题}[section]
+
+\theoremstyle{remark}
+\newtheorem*{myproof}{证明}
+\newtheorem*{solution}{解}
+\newtheorem*{remark}{评注}
+
+\renewenvironment{proof}{\begin{myproof}}{\qed \end{myproof}}
+
+\else % enthm
+
+\theoremstyle{theorem}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{definition}{Definition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{conjecture}{Conjecture}[section]
+
+\theoremstyle{example}
+\newtheorem{example}{Example}[section]
+\newtheorem{exercise}{Exercise}[section]
+
+\theoremstyle{remark}
+\newtheorem*{solution}{Solution}
+\newtheorem*{remark}{Remark}
+
+\fi % endthm
 
 \setbeamertemplate{theorems}[numbered]
 \setbeamertemplate{caption}[numbered]
@@ -65,6 +127,15 @@ $endif$
 \newcommand{\myemph}[1]{{\usebeamercolor[fg]{structure} #1}}
 \renewcommand{\emph}{\myemph}
 \let\textbf\alert
+
+\ifzh
+    \setlength{\parindent}{2em}
+    \addtobeamertemplate{block begin}{}{\setlength\parindent{2em}}
+    \addtobeamertemplate{block example begin}{}{\setlength\parindent{2em}}
+    \addtobeamertemplate{alertblock alerted begin}{}{\setlength\parindent{2em}}
+
+    \setlength{\parskip}{3pt} % slighty more spacing
+\fi
 
 % --- structures ---
 

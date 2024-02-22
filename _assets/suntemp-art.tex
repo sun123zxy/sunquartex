@@ -46,6 +46,7 @@ $endif$
 % --- bibliography ---
 
 \usepackage[backend=biber,style=ieee,autocite=plain]{biblatex}
+% \usepackage[backend=biber,style=gb7714-2015,autocite=plain]{biblatex}
 \addbibresource{$bibliography$}
 
 % --- hyperref ---
@@ -103,10 +104,7 @@ $endif$
 
 \usepackage{amsthm} % better theorem-like environment support (such as proof, unordered, etc.)
 
-\RequirePackage{amsmath} % better math. including \eqref
-\RequirePackage{amsthm} % better theorem-like environment support (such as proof, unordered, etc.)
-
-\ifzh
+\ifzh % zhthm
 
 \newtheoremstyle{suncnthm}% name
 {}% Space above
@@ -157,7 +155,7 @@ $endif$
 % hack end
 \renewenvironment{proof}{\begin{myproof}}{\end{myproof}}
 
-\else
+\else % enthm
 
 \theoremstyle{definition}
 \newtheorem{theorem}{Theorem}[section]
@@ -173,7 +171,7 @@ $endif$
 \newtheorem*{solution}{Solution}
 \newtheorem*{remark}{Remark}
 
-\fi
+\fi % endthm
 
 % --- main ---
 

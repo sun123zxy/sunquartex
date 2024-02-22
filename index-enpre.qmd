@@ -24,12 +24,12 @@ long long long long long long long long long long long long long long long long 
 
 ::: {.column width="30%"}
 - left bar.
-- narrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrow left bar.
+- narrow narrow narrow narrow narrow narrow narrow narrow narrow narrow narrow narrow left bar.
 :::
 
 ::: {.column width="70%"}
 - right bar.
-- wiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiide right bar.
+- wide wide wide wide wide wide wide wide wide wide wide wide wide wide wide wide wide right bar.
 :::
 
 :::::

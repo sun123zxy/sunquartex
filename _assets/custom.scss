@@ -30,6 +30,13 @@ figcaption, .panel-caption, .figure-caption{
   }
 }
 
+#quarto-appendix.default {
+  background-color: transparent;
+}
+table {
+  background: transparent!important;
+}
+
 em {
   font-weight: bold;
 }

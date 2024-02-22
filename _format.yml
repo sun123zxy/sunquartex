@@ -9,6 +9,8 @@ format:
     reference-location: margin
     # citation-location: margin
     toc: true
+    link-external-icon: true
+    link-external-newwindow: true
   pdf:
     # keep-tex: true
     pdf-engine: xelatex

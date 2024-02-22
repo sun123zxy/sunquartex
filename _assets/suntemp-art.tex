@@ -19,6 +19,12 @@ $tightlist.tex()$
 $tables.tex()$
 $graphics.tex()$
 
+% --- adjust code font size ---
+
+$if(highlighting-macros)$
+\renewenvironment{Shaded} {\begin{snugshade}\small} {\end{snugshade}}
+$endif$
+
 % --- math ---
 
 \usepackage{amssymb} % better symbols like \varnothing. amsfonts inside (which support \mathbb etc.)

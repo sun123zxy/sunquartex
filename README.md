@@ -51,6 +51,8 @@
 
 - 通用的定理编号目前尚难以自定义，见 [Discussion #5479](https://github.com/quarto-dev/quarto-cli/discussions/5479)
 
+- Citation hovering problem. see [Issue #8854](https://github.com/quarto-dev/quarto-cli/issues/8854)
+
 ## Planning Enhancements
 
 - 考虑支持 `callouty-theorem` 独立为插件．

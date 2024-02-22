@@ -5,6 +5,8 @@ figcaption, .panel-caption, .figure-caption{
   text-align: center;
 }
 
+/*
+// code before Quarto 1.4
 .theorem{
   border-left-color: $theorem-border-left-color!important;
   @extend .callout;
@@ -17,7 +19,15 @@ figcaption, .panel-caption, .figure-caption{
   >:last-child{
     margin-bottom: 0.4rem;
   }
-  /*.callout-body is not introduced to keep the original font size.*/
+  // .callout-body is not introduced to keep the original font size.
+}
+*/
+
+.callout-body:has(.theorem){
+  font-size: unset!important;
+  .theorem > :last-child{
+    margin-bottom: .2rem;
+  }
 }
 
 .proof{

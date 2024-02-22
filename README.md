@@ -15,9 +15,15 @@
 
 `--to` 参数可指定输出类型，包括 `html`, `pdf`， `beamer`, `docx`, `gfm`．每次渲染时应指定 `--to` 参数，或在文档中明确指定输出格式．
 
-在文件中声明 `lang=zh` 或 `lang=en` 即可调整语言．目前 `html` 格式下的中文渲染仅适配文章部分，且未使用国标引用．
-
 `freeze` 功能可能已生效，为确保表格、图片等得到重新渲染，请显式指定渲染文件．如成功运行，文件将输出至 `/output/` 文件夹下．
+
+在文件中声明 `lang=zh` 或 `lang=en` 即可调整语言．
+
+### 关于引用格式
+
+默认全部使用 IEEE 格式．如需修改，请自定义 `sun*****.cls` 和 `_format.yml`．
+
+### 关于标题
 
 一般文档建议从二级标题开始编号（[相关讨论](https://community.rstudio.com/t/why-do-default-r-markdown-quarto-templates-use-second-level-headings-instead-of-first-level-ones/162127)）；Beamer 的 `slide-level` 可自适应标题级数，但其分节固定从一级标题开始，见 Pandoc 文档．
 

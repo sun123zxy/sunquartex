@@ -5,7 +5,8 @@
 
 % --- bibliography ---
 
-\RequirePackage[backend=biber,style=gb7714-2015,autocite=plain]{biblatex}
+\RequirePackage[backend=biber,style=ieee,autocite=plain]{biblatex}
+% \RequirePackage[backend=biber,style=gb7714-2015,autocite=plain]{biblatex}
 
 % --- theorem ---
 

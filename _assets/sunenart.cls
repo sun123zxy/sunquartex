@@ -4,6 +4,10 @@
 \LoadClass{article}
 \RequirePackage[a4paper,top=2.75cm,bottom=2.25cm,left=2.75cm,right=2.75cm,marginparwidth=1.75cm]{geometry}
 
+% --- bibliography ---
+
+\RequirePackage[backend=biber,style=ieee,autocite=plain]{biblatex}
+
 % --- title ---
 
 \RequirePackage{etoolbox}
@@ -31,7 +35,3 @@
 \theoremstyle{remark}
 \newtheorem*{solution}{Solution}
 \newtheorem*{remark}{Remark}
-
-% --- bib ---
-
-\RequirePackage[backend=biber,style=ieee,autocite=plain]{biblatex} % ieee style

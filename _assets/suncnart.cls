@@ -13,6 +13,11 @@
     subsubsection/numbering      = false
 }
 
+% --- bibliography ---
+
+\RequirePackage[backend=biber,style=ieee,autocite=plain]{biblatex}
+% \RequirePackage[backend=biber,style=gb7714-2015,autocite=plain]{biblatex}
+
 % --- title ---
 
 % title
@@ -92,7 +97,3 @@
 \makeatother
 % hack end
 \renewenvironment{proof}{\begin{myproof}}{\end{myproof}}
-
-% --- bibliography ---
-
-\RequirePackage[backend=biber,style=gb7714-2015,autocite=plain]{biblatex} % gb style

@@ -5,7 +5,7 @@ author:
   - "sun123zxy"
   - "佚名"
 date: "2022/12/07"
-date-modified: "2024/02/01"
+date-modified: "2024/02/22"
 abstract: "使用 Quarto Markdown 语法，支持输出至 HTML、PDF/LaTeX、MS Word 等多种格式的中文学术写作工具，覆盖交叉引用、插图绘制、定理系统等多种功能．"
 bibliography: index.bib
 lang: zh
@@ -86,7 +86,7 @@ Quarto 支持交叉引用．比如这一节的标题就已经被打上了标签�
 
 多表格并列．加上 [@tbl-power-unsolved]，它们共同组成了 [@tbl-panel-unsolved]．
 
-::: {#tbl-panel-unsolved layout-ncol=2}
+:::{#tbl-panel-unsolved layout-ncol=2}
 |||||
 |:-:|:-:|:-:|:-:|
 | $L_i \times C_j$   | $2$           | $\mathbb N$   | $\mathbb R$   |
@@ -130,7 +130,7 @@ $$
 
 显然，笛卡尔积不满足交换律和结合律. 在势的视角下，它的表现如何呢？
 
-::: {#thm-cartesian-preserve}
+:::{#thm-cartesian-preserve}
 
 ## 笛卡尔积的保势性
 
@@ -141,7 +141,7 @@ A \preccurlyeq C \land B \preccurlyeq D \implies A \times B \preccurlyeq C \time
 $$
 :::
     
-::: {.proof}
+:::{.proof}
 
 建立单射
 $$
@@ -153,7 +153,7 @@ $$
 即可，其中 $f$ 和 $g$ 是由 $A \preccurlyeq C$ 和 $B \preccurlyeq D$ 确定的单射.
 :::
 
-::: {#cor-random}
+:::{#cor-random}
 等势意义下可用等势的集合替换参与笛卡尔积运算的集合，即
 $$
 A \approx C \land B \approx D \implies A \times B \approx C \times D
@@ -162,7 +162,7 @@ $$
 这是一个没有 caption 的定理.
 :::
 
-::: {#exm-rtimesn}
+:::{#exm-rtimesn}
 
 证明
 $$
@@ -170,12 +170,20 @@ $$
 $$
 :::
 
-::: {.proof}
+:::{.proof}
 利用 [@thm-cartesian-preserve] 对 $\mathbb R \times 2$ 和 $\mathbb R \times \mathbb R$ 夹逼，立刻得到
 $$
 \mathbb R \approx \mathbb R \times 2 \preccurlyeq \mathbb R \times \mathbb N \preccurlyeq \mathbb R \times \mathbb R \approx \mathbb R
 \implies \mathbb R \times \mathbb N \approx \mathbb N \times \mathbb R \approx \mathbb R
 $$
+:::
+
+:::{.solution}
+这是一个解．
+:::
+
+:::{.remark}
+这是一个注记．
 :::
 
 ## 数据可视化（Table, Figure & Diagram）
@@ -355,45 +363,46 @@ plt.show()
 
 目前暂未处理 LaTeX/PDF 格式的 callout，MS Word 格式可兼容但效果不佳．本节后续内容将不会在 LaTeX/PDF 格式下被渲染．
 
-::::: {.content-hidden when-format="pdf"}
+:::::{.content-hidden when-format="pdf"}
 
 ### Callouts
 
 Quarto 具有 5 种 callout 类型：`note`，`warning`，`important`，`tip`，和 `caution`．
 
-::: {.callout-note}
+:::{.callout-note}
 普通的 note callout．
 :::
 
-::: {.callout-warning}
+:::{.callout-warning}
 这是 warning callout 和一个和非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．
 :::
 
 这是两个 callout 中间的一个段落．
 
-::: {.callout-important}
+:::{.callout-important}
 这是 important callout．
 :::
 
-::: {.callout-tip}
+:::{.callout-tip}
+
 ## 有 caption 的 callout
 
 这是有 caption 的 callout．
 :::
 
-::: {.callout-caution collapse="true"}
+:::{.callout-caution collapse="true"}
 
 ## 可折叠的 callout
 
 开启 collapse 的可折叠 caution callout．
 :::
 
-::: {.callout-caution appearance="simple"}
+:::{.callout-caution appearance="simple"}
 
 simple 风格的 callout 和一个和非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．
 :::
 
-::: {.callout-caution appearance="minimal"}
+:::{.callout-caution appearance="minimal"}
 
 minimal 风格的 callout 和一个和非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．
 :::

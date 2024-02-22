@@ -67,10 +67,31 @@
 \newtheorem*{solution}{解}
 \newtheorem*{remark}{注记}
 
-\newtheorem*{myproof}{证明}
-\renewenvironment{proof}{\begin{myproof}}{\qed \end{myproof}}
-% \let \oldproofname \proofname % to avoid recursive call
-% \renewcommand{\proofname}{\indent \heiti \oldproofname \nopunct} % strange that using \bfseries do not work properly...
+% proof hack begin
+\makeatletter
+\newenvironment{myproof}[1][\myproofname]{\par
+  \pushQED{\qed}%
+  \normalfont \topsep6\p@\@plus6\p@\relax
+  \trivlist
+%<amsbook|amsproc>  \itemindent\normalparindent
+  \itemindent\parindent
+  \item[\hskip\labelsep
+%<amsbook|amsproc>        \scshape
+%<amsart|amsthm>        \itshape
+    \bfseries 
+    #1\phantom{.}%\@addpunct{.}
+    ]\ignorespaces
+}{%
+  \popQED\endtrivlist\@endpefalse
+}
+%    \end{macrocode}
+%    Default for \cn{proofname}:
+%    \begin{macrocode}
+\providecommand{\myproofname}{证明}
+
+\makeatother
+% hack end
+\renewenvironment{proof}{\begin{myproof}}{\end{myproof}}
 
 % --- bib ---
 

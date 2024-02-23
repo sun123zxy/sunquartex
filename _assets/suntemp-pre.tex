@@ -139,6 +139,7 @@ $endif$
 
 % --- structures ---
 
+$if(toc)$
 \AtBeginSection[]
 {
   \begin{frame}{\transtoc}
@@ -151,6 +152,7 @@ $endif$
     \tableofcontents[currentsubsection]
   \end{frame}
 }
+$endif$
 
 % --- main ---
 
@@ -168,9 +170,11 @@ $endif$
 
 \frame{\titlepage}
 
+$if(toc)$
 \begin{frame}{\transtoc}
   \tableofcontents
 \end{frame}
+$endif$
 
 $body$
 

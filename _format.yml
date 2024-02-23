@@ -11,9 +11,9 @@ format:
     csl: "./_assets/ieee.csl"
     reference-location: margin
     # citation-location: margin
-    toc: true
     link-external-icon: true
     link-external-newwindow: true
+    toc: true
   pdf:
     # keep-tex: true
     pdf-engine: xelatex
@@ -22,6 +22,7 @@ format:
       echo: false
     fig-pos: false
     template: "./_assets/suntemp-art.tex"
+    # toc: true
   docx:
     reference-doc: "./_assets/suntemp-art.docx"
   gfm:
@@ -34,7 +35,7 @@ format:
     execute:
       echo: false
     fig-pos: false
-    toc: true
     template: "./_assets/suntemp-pre.tex"
+    # toc: true
   # revealjs: default
   # pptx: default

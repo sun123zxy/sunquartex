@@ -17,7 +17,8 @@ format:
     other-links:
       - text: NASA Open Data
         href: https://data.nasa.gov/ # need specify resource metadata for attatched files
-  pdf: default
+  pdf:
+    toc: true
 ---
 
 ## 前言

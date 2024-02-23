@@ -6,10 +6,12 @@
     \zhtrue
     \documentclass[fontset=fandol, zihao=5]{ctexart}
     \def\transmodified{最后更新于}
+    \def\transtoc{目录}
 }{
     \zhfalse
     \documentclass{article}
     \def\transmodified{Last modified on}
+    \def\transtoc{Table of Contents}
 }
 
 % --- beginning ---
@@ -193,6 +195,16 @@ $if(abstract)$
 \begin{abstract}
     $abstract$
 \end{abstract}
+$endif$
+
+$if(toc)$
+$if(toc-title)$
+\renewcommand*\contentsname{\transtoc}
+$endif$
+{
+\setcounter{tocdepth}{$toc-depth$}
+\tableofcontents
+}
 $endif$
 
 $body$

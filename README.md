@@ -39,6 +39,22 @@
 
 理论上与文档格式兼容，可直接设置 `--to=pdf` 输出文稿版本．
 
+### 关于 GFM
+
+尽管开启了 `wrap: preserve`，生成的 markdown 文件的换行行为仍可能不尽人意．这里是一些基于（vscode 查找 / 替换）正则表达式替换的后期补救措施：
+
+- `(</span>)\s*\$\$` 替换为 `$1\n$$$$`：用于在定理紧邻 display math 时强制换行．
+
+- 考虑去除部分 HTML 标签（如`<div>`, `<span>`）
+
+  `<div(([\s\S])*?)>` 替换为空．
+  
+  `</div>` 替换为空．
+
+- `\n\n\n` 替换为 `\n\n`：删除多余空行．
+
+注意：这一方案未对代码块做特殊处理．
+
 ## Known Issues
 
 - PDF / MS Word 中的 Graphviz 图像可能拉伸变形，设置合适的 `fig-height` 和 `fig-width` 可解决问题．其它 figure / table 同样可能遇到此问题．

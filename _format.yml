@@ -1,4 +1,5 @@
 # --- format defaults ---
+csl: "./_assets/ieee.csl"
 format:
   html:
     filters:
@@ -8,7 +9,6 @@ format:
     linestretch: 1.7
     code-fold: true
     html-math-method: mathjax
-    csl: "./_assets/ieee.csl"
     reference-location: margin
     # citation-location: margin
     link-external-icon: true

@@ -73,4 +73,4 @@
 
 - 考虑支持 `callouty-theorem` 独立为插件．
 
-- 考虑支持 [quarto_tikz](https://github.com/danmackinlay/quarto_tikz/) 插件．
+- 考虑支持 PGF/TikZ 渲染．目前直接嵌入仅对 PDF 格式有效．目前市面上的插件均不太好使．

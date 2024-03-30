@@ -5,7 +5,7 @@ author:
   - "sun123zxy"
   - "佚名"
 date: "2022/12/07"
-date-modified: "2024/02/23"
+date-modified: "2024/03/30"
 abstract: "使用 Quarto Markdown 语法，支持输出至 HTML、PDF/LaTeX、MS Word 等多种格式的中文学术写作工具，覆盖交叉引用、插图绘制、定理系统等多种功能．"
 bibliography: index.bib
 lang: zh
@@ -19,11 +19,13 @@ format:
         href: https://data.nasa.gov/ # need specify resource metadata for attatched files
   pdf:
     toc: true
+  docx: default
+  gfm: default
 ---
 
 ## 前言
 
-具体使用方法等参见 [sun123zxy/sunquartex](https://github.com/sun123zxy/sunquartex)．
+具体使用方法参见 [sun123zxy/sunquartex](https://github.com/sun123zxy/sunquartex)．
 
 ## 文章结构测试
 
@@ -111,11 +113,7 @@ Quarto 支持交叉引用．比如这一节的标题就已经被打上了标签�
 
 ## 数学公式、定理系统测试
 
-Quarto 的一大卖点．
-
-这一节我们测试数学相关内容. HTML 中的定理标号方式目前没有方法更改，但 LaTeX 中的定理标号可通过自行修改模板中 `amsthm` 宏包的定义实现.
-
-此外，根据 [Quarto - Markdown Basics # Equations](https://quarto.org/docs/authoring/markdown-basics.html#equations) 和 [Defining LaTeX commands for HTML and PDF rendering - Discussion #1793](https://github.com/quarto-dev/quarto-cli/discussions/1793) 和 [Quarto - Conditional Content](https://quarto.org/docs/authoring/conditional.html)，按如下面方式自定义 macro 可确保其在 HTML、 LaTeX/PDF 和 MS Word 中都得到正确渲染．值得注意的是，由于 `\DeclareMathOperator` 只能在 LaTeX 的导言区使用，这里我们用 `\newcommand` + `\operatorname` 的方式替代．
+这一节我们测试数学相关内容．直接在源文件中写 raw LaTeX 就可声明公式所需的宏定义．由于 `\DeclareMathOperator` 只能在 LaTeX 的导言区使用，这里我们用 `\newcommand` + `\operatorname` 的方式替代．
 
 \newcommand{\ran}{\operatorname{ran}}
 
@@ -283,49 +281,24 @@ ax.set_ylim(0)
 plt.show()
 ```
 
-另外，支持使用 GraphViz 或 Mermaid 绘制有向图或流程图．
+## Diagrams
 
-```{dot}
-//| label: fig-real
-//| fig-cap: GraphViz 有向图
-//| fig-width: 6.25
-//| fig-height: 2.5
-digraph G{
-    //bgcolor="transparent"
-    //node [style="filled", fillcolor="white"]
-    //edge [color="gray" penwidth=2]
+Quarto 原生支持使用 GraphViz 或 Mermaid 绘制有向图或流程图．我们还额外支持基于 [pdf2svg](https://github.com/dawbarton/pdf2svg) 的 TikZ 或 `tikzcd` 渲染！
 
-    //layout=neato
-    //ratio=0.5
+:::{#fig-tikzcd}
 
-    rankdir=BT
-    sup[label="A"];
-    mono[label="B"];
-    nested[label="C"];
-    bw[label="D"];
-    cauchy[label="E"];
-    
-    accu[label="F"]
-    finite[label="G"];
-    lebesgue[label="H"];
-
-
-    { rank=max; finite }
-    { rank=same;  lebesgue }
-    { rank=same; sup, mono, nested, accu, bw }
-    { rank=min; cauchy}
-
-    sup -> mono -> nested; nested -> bw [style=invis]; bw -> cauchy;
-    cauchy -> mono[label="1"];
-    nested -> sup[label="2"];
-    nested -> finite[label="3"];
-    nested -> accu[label="4"];
-    finite -> accu[label="5"];
-    accu -> bw[dir=both, label="6"];
-    bw -> lebesgue[label="7"]; lebesgue -> finite[label="8"];
-    finite -> sup[label="9"];
-}
+```{tikz}
+\begin{tikzcd}
+        & {\mathbb C[x]}                                                              &  & \mathbb C^{\mathbb C}                                                           \\
+f(x)    & \sum_{i=0}^{n-1} a_i x^i \arrow[rr, "\operatorname{DFT}"] \arrow[d, dotted] &  & (f(\omega_k))_{k=0}^{n-1} \arrow[d]                                             \\
+(fg)(x) & \sum_{k=0}^{n-1} x^k \sum_{i+j = k} a_i b_j                             &  & (f(\omega_n^k)g(\omega_n^k))_{k=0}^{n-1} \arrow[ll, "\operatorname{DFT^{-1}}"'] \\
+g(x)    & \sum_{j=0}^{n-1} b_j x^j \arrow[rr, "\operatorname{DFT}"] \arrow[u, dotted] &  & (g(\omega_k))_{k=0}^{n-1} \arrow[u]                                            
+\end{tikzcd}
 ```
+
+An tikzcd image
+
+:::
 
 ## Layout
 

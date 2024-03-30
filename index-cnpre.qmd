@@ -172,6 +172,23 @@ ax.set_ylim(0)
 plt.show()
 ```
 
+### TikZ {.fragile}
+
+:::{#fig-tikzcd}
+
+```{tikz}
+\begin{tikzcd}
+        & {\mathbb C[x]}                                                              &  & \mathbb C^{\mathbb C}                                                           \\
+f(x)    & \sum_{i=0}^{n-1} a_i x^i \arrow[rr, "\operatorname{DFT}"] \arrow[d, dotted] &  & (f(\omega_k))_{k=0}^{n-1} \arrow[d]                                             \\
+(fg)(x) & \sum_{k=0}^{n-1} x^k \sum_{i+j = k} a_i b_j                             &  & (f(\omega_n^k)g(\omega_n^k))_{k=0}^{n-1} \arrow[ll, "\operatorname{DFT^{-1}}"'] \\
+g(x)    & \sum_{j=0}^{n-1} b_j x^j \arrow[rr, "\operatorname{DFT}"] \arrow[u, dotted] &  & (g(\omega_k))_{k=0}^{n-1} \arrow[u]                                            
+\end{tikzcd}
+```
+
+An tikzcd image
+
+:::
+
 ## Subsection 2
 
 ### 定理 {.allowframebreaks}

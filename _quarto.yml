@@ -5,3 +5,9 @@ project:
 metadata-files: 
   - "./_format.yml"
   - "./_article.yml"
+
+filters:
+  - at: pre-ast
+    path: "./_assets/callthm.lua"
+  - at: pre-ast
+    path: "./_assets/tikz.lua"

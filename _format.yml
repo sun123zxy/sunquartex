@@ -2,9 +2,6 @@
 csl: "./_assets/ieee.csl"
 format:
   html:
-    filters:
-      - at: pre-ast
-        path: "./_assets/callouty-theorem.lua"
     theme: "./_assets/custom.scss"
     linestretch: 1.7
     code-fold: true

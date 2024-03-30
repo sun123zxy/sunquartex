@@ -19,13 +19,11 @@
 
 在文件中声明 `lang=zh` 或 `lang=en` 即可调整语言．
 
-### 关于引用格式
+### 关于 TikZ / tikzcd
 
-默认全部使用 IEEE 格式．如需修改，请自定义 `sun*****.cls` 和 `_format.yml`．
+HTML / PDF 格式现已支持 TikZ！请确保 [pdf2svg](https://github.com/dawbarton/pdf2svg/) 已安装并添加至 PATH．在 Beamer 中使用时，所在幻灯片须添加 `{.fragile}` 标记．
 
-### 关于标题
-
-一般文档建议从二级标题开始编号（[相关讨论](https://community.rstudio.com/t/why-do-default-r-markdown-quarto-templates-use-second-level-headings-instead-of-first-level-ones/162127)）；Beamer 的 `slide-level` 可自适应标题级数，但其分节固定从一级标题开始，见 Pandoc 文档．
+若文档中包含 Mermaid、Graphviz 等 diagram 且需输出 PDF，请确保已安装 Chrome 或 Chromium．若无，可使用 `quarto install tool chromium` 安装．（参见 [Quarto - Diagrams # Chrome Install](https://quarto.org/docs/authoring/diagrams.html#chrome-install)）
 
 ### 关于 PDF/LaTeX
 
@@ -33,7 +31,15 @@
 
 可在输出 PDF 前自行对 LaTeX 文件（`*.tex`）做进一步修正，再自行使用 `xelatex` 和 `biber` 输出 PDF．
 
-若文档中包含 Mermaid、Graphviz 等 diagram 且需输出 PDF，请确保已安装 Chrome 或 Chromium．若无，可使用 `quarto install tool chromium` 安装．（参见 [Quarto - Diagrams # Chrome Install](https://quarto.org/docs/authoring/diagrams.html#chrome-install)）
+## 若干说明
+
+### 关于引用格式
+
+默认全部使用 IEEE 格式．如需修改，请自定义 `sun*****.cls` 和 `_format.yml`．
+
+### 关于标题
+
+一般文档建议从二级标题开始编号（[相关讨论](https://community.rstudio.com/t/why-do-default-r-markdown-quarto-templates-use-second-level-headings-instead-of-first-level-ones/162127)）；Beamer 的 `slide-level` 可自适应标题级数，但其分节固定从一级标题开始，见 Pandoc 文档．
 
 ### 关于 Beamer
 
@@ -71,6 +77,4 @@
 
 ## Planning Enhancements
 
-- 考虑支持 `callouty-theorem` 独立为插件．
-
-- 考虑支持 PGF/TikZ 渲染．目前直接嵌入仅对 PDF 格式有效．目前市面上的插件均不太好使．
+- 考虑支持 `callthm` 和 `tikz` 独立为插件．

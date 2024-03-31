@@ -283,7 +283,7 @@ plt.show()
 
 ## Diagrams
 
-Quarto 原生支持使用 GraphViz 或 Mermaid 绘制有向图或流程图．我们还额外支持基于 [pdf2svg](https://github.com/dawbarton/pdf2svg) 的 TikZ 或 `tikzcd` 渲染！
+Quarto 原生支持使用 GraphViz 或 Mermaid 绘制有向图或流程图．我们还额外支持基于 dvisvgm 的 TikZ 或 `tikzcd` 渲染！
 
 :::{#fig-tikzcd}
 

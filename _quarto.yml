@@ -9,5 +9,4 @@ metadata-files:
 filters:
   - at: pre-ast
     path: "./_assets/callthm.lua"
-  - at: pre-ast
-    path: "./_assets/tikz.lua"
+  - "./_assets/tikz.lua"

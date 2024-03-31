@@ -4,6 +4,7 @@ local system = require 'pandoc.system'
 
 local tikz_doc_template = [[
 \documentclass{standalone}
+\usepackage{xeCJK}
 \usepackage{xcolor}
 \usepackage{amsmath}
 \usepackage{amssymb}
@@ -15,20 +16,29 @@ local tikz_doc_template = [[
 \end{document}
 ]]
 
-local function tikz2image(src, filetype, outfile)
+local function tikz2image(src, filetype)
   local str = ""
   system.with_temporary_directory('tikz2image', function (tmpdir)
     system.with_working_directory(tmpdir, function()
       local f = io.open('tikz.tex', 'w')
+      if f == nil then
+        str = "failed to open extracted TeX file: tikz.tex"
+        return nil
+      end
       f:write(tikz_doc_template:format(src))
       f:close()
       os.execute('xelatex tikz.tex')
-      
-      os.execute('pdf2svg tikz.pdf ' .. outfile)
-      local g = io.open(outfile, 'r')
+      os.execute('dvisvgm tikz.pdf --pdf')
+      local g = io.open('tikz.svg', 'r')
+      if g == nil then
+        str = "failed to open converted SVG file: tikz.svg"
+        return nil
+      end
       str = g:read("a")
       g:close()
+      return nil
     end)
+    return nil
   end)
   return str
 end
@@ -51,12 +61,12 @@ function CodeBlock(el)
       return pandoc.RawInline("latex", el.text)
     elseif quarto.doc.is_format("html") then
       local filetype = 'svg'
-      local fbasename = pandoc.sha1(el.text) .. '.' .. filetype
-      local fname = fbasename
+      -- local fbasename = pandoc.sha1(el.text) .. '.' .. filetype
+      -- local fname = fbasename
       local svg = ""
-      if not file_exists(fname) then
-        svg = tikz2image(el.text, filetype, fname)
-      end
+      -- if not file_exists(fname) then
+      svg = tikz2image(el.text, filetype)
+      -- end
       return pandoc.Div(pandoc.RawInline("html", svg), pandoc.Attr("", {"tikz"}))
     else
       return el

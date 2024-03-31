@@ -15,13 +15,11 @@
 
 `--to` 参数可指定输出类型，包括 `html`, `pdf`， `beamer`, `docx`, `gfm`．每次渲染时应指定 `--to` 参数，或在文档中明确指定输出格式．
 
-`freeze` 功能可能已生效，为确保表格、图片等得到重新渲染，请显式指定渲染文件．如成功运行，文件将输出至 `/output/` 文件夹下．
-
 在文件中声明 `lang=zh` 或 `lang=en` 即可调整语言．
 
 ### 关于 TikZ / tikzcd
 
-HTML / PDF 格式现已支持 TikZ！请确保 [pdf2svg](https://github.com/dawbarton/pdf2svg/) 已安装并添加至 PATH．在 Beamer 中使用时，所在幻灯片须添加 `{.fragile}` 标记．
+HTML / PDF / Beamer 格式现已支持 TikZ！请确保 XeLaTeX 和 dvisvgm 已在 path 中（大部分 LaTeX 发行版均有内置）．在 Beamer 中使用时，所在幻灯片须添加 `{.fragile}` 标记．
 
 若文档中包含 Mermaid、Graphviz 等 diagram 且需输出 PDF，请确保已安装 Chrome 或 Chromium．若无，可使用 `quarto install tool chromium` 安装．（参见 [Quarto - Diagrams # Chrome Install](https://quarto.org/docs/authoring/diagrams.html#chrome-install)）
 

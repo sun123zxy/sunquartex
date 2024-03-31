@@ -28,7 +28,7 @@ local function tikz2image(src, filetype)
       f:write(tikz_doc_template:format(src))
       f:close()
       os.execute('xelatex tikz.tex')
-      os.execute('dvisvgm tikz.pdf --pdf')
+      os.execute('dvisvgm tikz.pdf --pdf --zoom=1.45')
       local g = io.open('tikz.svg', 'r')
       if g == nil then
         str = "failed to open converted SVG file: tikz.svg"

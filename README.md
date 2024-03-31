@@ -61,10 +61,6 @@ HTML / PDF / Beamer 格式现已支持 TikZ！请确保 XeLaTeX 和 dvisvgm 已�
 
 ## Known Issues
 
-- PDF / MS Word 中的 Graphviz 图像可能拉伸变形，设置合适的 `fig-height` 和 `fig-width` 可解决问题．其它 figure / table 同样可能遇到此问题．
-  
-  目前 PDF 格式中的问题应该已经修复．
-
 - 见 [Discussion #4598](https://github.com/quarto-dev/quarto-cli/discussions/4598)，Pandoc 不支持 CSL-M 导致无有效方法处理 GB/T 7714-2015 中按语言切换“等”、`et al` 省略字样的规定．
 
 - 【need-repro】表格与代码混排有时会使位置发生偏移，页面下部的代码块可能会溢出．
@@ -72,6 +68,8 @@ HTML / PDF / Beamer 格式现已支持 TikZ！请确保 XeLaTeX 和 dvisvgm 已�
 - 通用的定理编号目前尚难以自定义，见 [Discussion #5479](https://github.com/quarto-dev/quarto-cli/discussions/5479)
 
 - Citation hovering problem. see [Issue #8854](https://github.com/quarto-dev/quarto-cli/issues/8854)
+
+- HTML 子图图像拉伸问题，似乎是因为没有设置 `height: auto`，有空去发个 issue．
 
 ## Planning Enhancements
 

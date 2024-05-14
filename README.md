@@ -67,8 +67,6 @@ HTML / PDF / Beamer 格式现已支持 TikZ！请确保 XeLaTeX 和 dvisvgm 已�
 
 - 通用的定理编号目前尚难以自定义，见 [Discussion #5479](https://github.com/quarto-dev/quarto-cli/discussions/5479)
 
-- Citation hovering problem. see [Issue #8854](https://github.com/quarto-dev/quarto-cli/issues/8854)
-
 - HTML 子图图像拉伸问题，似乎是因为没有设置 `height: auto`，有空去发个 issue．
 
 ## Planning Enhancements

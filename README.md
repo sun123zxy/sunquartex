@@ -1,4 +1,4 @@
-# SunQuarTex
+# SunQuarTeX
 
 基于 Quarto 的自用中英文学术写作模板库．
 

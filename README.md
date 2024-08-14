@@ -6,7 +6,7 @@
 
 ## Usage
 
-请先安装 [quarto-cli](https://github.com/quarto-dev/quarto-cli)．测试 Quarto 版本为 1.4.550．
+请先安装 [quarto-cli](https://github.com/quarto-dev/quarto-cli)．测试 Quarto 版本为 1.5.56.
 
 - `quarto render index-cnart.qmd`
 - `quarto render index-enart.qmd`
@@ -19,13 +19,15 @@
 
 ### 关于 TikZ / tikzcd
 
-HTML / PDF / Beamer 格式现已支持 TikZ！请确保 XeLaTeX 和 dvisvgm 已在 path 中（大部分 LaTeX 发行版均有内置）．在 Beamer 中使用时，所在幻灯片须添加 `{.fragile}` 标记．
+HTML / PDF / Beamer 格式现已支持 TikZ / tikzcd / [quiver](https://q.uiver.app/)！
+
+如需在输出非 PDF / Beamer 格式下输出，请确保 XeLaTeX 和 dvisvgm 已在 PATH 中（大部分 LaTeX 发行版均有内置），且已安装需要使用的 LaTeX 宏包（如果使用 Quarto 自带的 TinyTeX，可先输出一次 PDF 自动补全所需宏包）．在 Beamer 中使用时，所在幻灯片须添加 `{.fragile}` 标记．
 
 若文档中包含 Mermaid、Graphviz 等 diagram 且需输出 PDF，请确保已安装 Chrome 或 Chromium．若无，可使用 `quarto install tool chromium` 安装．（参见 [Quarto - Diagrams # Chrome Install](https://quarto.org/docs/authoring/diagrams.html#chrome-install)）
 
 ### 关于 PDF/LaTeX
 
-需要输出 PDF 时，请确保已安装 Quarto 支持的 LaTeX 发行版．若无，可使用 `quarto install tool tinytex` 安装．
+需要输出 PDF 时，请确保已安装 Quarto 支持的 LaTeX 发行版．若无，可使用 `quarto install tinytex --update-path` 安装．
 
 可在输出 PDF 前自行对 LaTeX 文件（`*.tex`）做进一步修正，再自行使用 `xelatex` 和 `biber` 输出 PDF．
 
@@ -44,6 +46,8 @@ HTML / PDF / Beamer 格式现已支持 TikZ！请确保 XeLaTeX 和 dvisvgm 已�
 理论上与文档格式兼容，可直接设置 `--to=pdf` 输出文稿版本．
 
 ### 关于 GFM
+
+> Quarto 1.5 后 GFM 格式处理表格有一些问题，cf. [#9334](https://github.com/quarto-dev/quarto-cli/discussions/9334)．建议暂时停用 GFM．
 
 尽管开启了 `wrap: preserve`，生成的 markdown 文件的换行行为仍可能不尽人意．这里是一些基于（vscode 查找 / 替换）正则表达式替换的后期补救措施：
 

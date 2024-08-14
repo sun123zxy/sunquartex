@@ -10,6 +10,7 @@ local tikz_doc_template = [[
 \usepackage{amssymb}
 \usepackage{tikz}
 \usepackage{tikz-cd}
+\usepackage{quiver}
 \begin{document}
 \nopagecolor
 %s

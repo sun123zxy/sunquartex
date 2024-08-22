@@ -2,6 +2,9 @@
 
 local system = require 'pandoc.system'
 
+-- if use dvi/xdv output
+-- \documentclass[tikz,dvisvgm]{standalone}
+
 local tikz_doc_template = [[
 \documentclass{standalone}
 \usepackage{xeCJK}
@@ -21,18 +24,21 @@ local function tikz2image(src, filetype)
   local str = ""
   system.with_temporary_directory('tikz2image', function (tmpdir)
     system.with_working_directory(tmpdir, function()
-      local f = io.open('tikz.tex', 'w')
+      local f = io.open('mytikz.tex', 'w')
       if f == nil then
         str = "failed to open extracted TeX file: tikz.tex"
         return nil
       end
       f:write(tikz_doc_template:format(src))
       f:close()
-      os.execute('xelatex tikz.tex')
-      os.execute('dvisvgm tikz.pdf --pdf --zoom=1.45')
-      local g = io.open('tikz.svg', 'r')
+      -- if use dvi/xdv output
+      -- os.execute('xelatex -no-pdf mytikz.tex')
+      -- os.execute('dvisvgm mytikz.xdv --zoom=1.5 --font-format=woff2')
+      os.execute('xelatex mytikz.tex')
+      os.execute('dvisvgm mytikz.pdf --pdf --zoom=1.5 --font-format=woff2')
+      local g = io.open('mytikz.svg', 'r')
       if g == nil then
-        str = "failed to open converted SVG file: tikz.svg"
+        str = "failed to open converted SVG file: mytikz.svg"
         return nil
       end
       str = g:read("a")

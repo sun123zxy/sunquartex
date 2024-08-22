@@ -17,19 +17,25 @@
 
 在文件中声明 `lang=zh` 或 `lang=en` 即可调整语言．
 
-### 关于 TikZ / tikzcd
+### 关于 Computations
 
-HTML / PDF / Beamer 格式现已支持 TikZ / tikzcd / [quiver](https://q.uiver.app/)！
-
-如需在输出非 PDF / Beamer 格式下输出，请确保 XeLaTeX 和 dvisvgm 已在 PATH 中（大部分 LaTeX 发行版均有内置），且已安装需要使用的 LaTeX 宏包（如果使用 Quarto 自带的 TinyTeX，可先输出一次 PDF 自动补全所需宏包）．在 Beamer 中使用时，所在幻灯片须添加 `{.fragile}` 标记．
-
-若文档中包含 Mermaid、Graphviz 等 diagram 且需输出 PDF，请确保已安装 Chrome 或 Chromium．若无，可使用 `quarto install tool chromium` 安装．（参见 [Quarto - Diagrams # Chrome Install](https://quarto.org/docs/authoring/diagrams.html#chrome-install)）
+请确保安装恰当版本的 Python 和所需模块，如 Jupyter．
 
 ### 关于 PDF/LaTeX
 
 需要输出 PDF 时，请确保已安装 Quarto 支持的 LaTeX 发行版．若无，可使用 `quarto install tinytex --update-path` 安装．
 
 可在输出 PDF 前自行对 LaTeX 文件（`*.tex`）做进一步修正，再自行使用 `xelatex` 和 `biber` 输出 PDF．
+
+若文档中包含 Mermaid、Graphviz 等 diagram 且需输出 PDF，请确保已安装 Chrome 或 Chromium．若无，可使用 `quarto install tool chromium` 安装．（参见 [Quarto - Diagrams # Chrome Install](https://quarto.org/docs/authoring/diagrams.html#chrome-install)）
+
+### 关于 TikZ / tikzcd
+
+HTML / PDF / Beamer 格式现已支持 TikZ / tikzcd / [quiver](https://q.uiver.app/)．如需在输出非 PDF / Beamer 格式下输出，请确保 XeLaTeX、dvisvgm 和 mutool 均已在 PATH 中，且已安装需要使用的 LaTeX 宏包．（如使用 Quarto 自带的 TinyTeX，可先输出一次 PDF 自动补全所需宏包，执行 `tlmgr install dvisvgm` 下载 dvisvgm，自行安装 MuPDF 并添加至 PATH）．在 Beamer 中使用时，所在幻灯片须添加 `{.fragile}` 标记．
+
+> As of Ghostscript 10.01.0, this will no longer work due to the introduction of a new PDF interpreter. Therefore, an alternative conversion module based on mutool, a utility which is part of the MuPDF package, has been introduced. It’s automatically invoked if Ghostscript can’t be used and if a working mutool executable is present in a directory which is part of the system’s search path.
+> 
+> 来自 [dvisvgm manual](https://dvisvgm.de/Manpage/)
 
 ## 若干说明
 

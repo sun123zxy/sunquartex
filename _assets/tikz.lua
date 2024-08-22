@@ -33,9 +33,9 @@ local function tikz2image(src, filetype)
       f:close()
       -- if use dvi/xdv output
       -- os.execute('xelatex -no-pdf mytikz.tex')
-      -- os.execute('dvisvgm mytikz.xdv --zoom=1.5 --font-format=woff2')
+      -- os.execute('dvisvgm mytikz.xdv --zoom=1.5 --font-format=woff2 --no-styles')
       os.execute('xelatex mytikz.tex')
-      os.execute('dvisvgm mytikz.pdf --pdf --zoom=1.5 --font-format=woff2')
+      os.execute('dvisvgm mytikz.pdf --pdf --zoom=1.5 --font-format=woff2 --no-styles')
       local g = io.open('mytikz.svg', 'r')
       if g == nil then
         str = "failed to open converted SVG file: mytikz.svg"

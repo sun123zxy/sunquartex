@@ -22,12 +22,31 @@ jobs:
         uses: quarto-dev/quarto-actions/setup@v2
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
+        # with:
           # To install LaTeX to build PDF book 
-          tinytex: true 
+          # tinytex: true 
           # uncomment below and fill to pin a version
           # version: SPECIFIC-QUARTO-VERSION-HERE
+
+      - name: Set up TinyTeX via Quarto manually
+        # To update PATH
+        run: |
+          quarto install tinytex --update-path
       
+      - name: Install dvisvgm via TinyTeX
+        # To ensure dvisvgm installed
+        run: |
+          tlmgr install dvisvgm
+          tlmgr path add
+          dvisvgm --help
+
+      - name: Prepare for TikZ rendering
+        # To import libraries in advance for tikz image generation
+        run: |
+          echo "" >> temp.qmd
+          quarto render temp.qmd --to=pdf --template=_assets/suntemp-tikz.tex
+          rm temp.qmd
+
       # add software dependencies here and any libraries
       
       # From https://github.com/actions/setup-python

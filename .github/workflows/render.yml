@@ -34,8 +34,8 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v3
 
-      - name: Setup Jupyter
-        run: python3 -m pip install jupyter
+      - name: Setup Python dependencies
+        run: python3 -m pip install jupyter numpy matplotlib
 
       - name: Render Quarto Project
         uses: quarto-dev/quarto-actions/render@v2

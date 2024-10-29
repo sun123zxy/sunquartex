@@ -34,6 +34,9 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v3
 
+      - name: Setup Jupyter
+        run: python3 -m pip install jupyter
+
       - name: Render Quarto Project
         uses: quarto-dev/quarto-actions/render@v2
       # From https://github.com/r-lib/actions/tree/v2-branch/setup-r

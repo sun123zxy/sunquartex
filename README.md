@@ -31,16 +31,17 @@
 
 ### 关于 TikZ / tikzcd
 
-HTML / PDF / Beamer 格式现已支持 TikZ / tikzcd / [quiver](https://q.uiver.app/)．如需在输出非 PDF / Beamer 格式下输出，请确保 XeLaTeX、dvisvgm 已在 PATH 中，且已安装需要使用的 LaTeX 宏包（目前 TikZ 中使用的宏包无法在渲染过程中自动安装）．
+HTML / PDF / Beamer 格式现已支持 TikZ / tikzcd / [quiver](https://q.uiver.app/)．如需在输出非 PDF / Beamer 格式下输出，请确保 XeLaTeX、dvisvgm、mutool 已在 PATH 中，且已安装需要使用的 LaTeX 宏包（目前 TikZ 中使用的宏包无法在渲染过程中自动安装）．
 
 - 如使用 Quarto 自带的 TinyTeX：
   
   - 先输出一次 PDF 自动补全大部分所需宏包
   - 执行 `tlmgr install dvisvgm` 和 `tlmgr path add` 下载 dvisvgm 并添加至 PATH．
+  - Linux 执行 `sudo apt install mupdf-tools`．
 
 - 在 Beamer 中使用时，所在幻灯片须添加 `{.fragile}` 标记．
 
-- 可能还需要安装 mutool 并添加至 PATH：
+- 关于 mutool 必要性的一些说明：
 
   > As of Ghostscript 10.01.0, this will no longer work due to the introduction of a new PDF interpreter. Therefore, an alternative conversion module based on mutool, a utility which is part of the MuPDF package, has been introduced. It’s automatically invoked if Ghostscript can’t be used and if a working mutool executable is present in a directory which is part of the system’s search path.
   > 

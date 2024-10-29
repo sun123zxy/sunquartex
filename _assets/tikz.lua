@@ -23,7 +23,8 @@ local function tikz2image(src, filetype)
     system.with_working_directory(tmpdir, function()
       local f = io.open('mytikz.tex', 'w')
       if f == nil then
-        str = "failed to open extracted TeX file: tikz.tex"
+        str = "failed to open extracted TeX file"
+        error(str)
         return nil
       end
       f:write(tikz_doc_template:format(src))
@@ -35,7 +36,8 @@ local function tikz2image(src, filetype)
       os.execute('dvisvgm mytikz.pdf --pdf --zoom=1.5 --font-format=woff2 --no-styles')
       local g = io.open('mytikz.svg', 'r')
       if g == nil then
-        str = "failed to open converted SVG file: mytikz.svg"
+        str = "failed to open converted SVG file"
+        error(str)
         return nil
       end
       str = g:read("a")

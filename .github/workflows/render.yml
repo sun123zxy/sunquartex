@@ -39,6 +39,9 @@ jobs:
           tlmgr install dvisvgm
           tlmgr path add
           dvisvgm --help
+      
+      - name: Install mutool
+        run: sudo apt-get install mupdf-tools
 
       - name: Prepare for TikZ rendering
         # To import libraries in advance for tikz image generation

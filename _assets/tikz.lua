@@ -15,7 +15,7 @@ local function read_file(file)
   return content
 end
 
-local tikz_doc_template = read_file('_assets/suntemp-tikz.tex')
+local tikz_doc_template = read_file(os.getenv("QUARTO_PROJECT_DIR")..'/_assets/suntemp-tikz.tex')
 
 local function tikz2image(src, filetype)
   local str = ""

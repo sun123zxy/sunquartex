@@ -5,20 +5,17 @@ local system = require 'pandoc.system'
 -- if use dvi/xdv output
 -- \documentclass[tikz,dvisvgm]{standalone}
 
-local tikz_doc_template = [[
-\documentclass{standalone}
-\usepackage{xeCJK}
-\usepackage{xcolor}
-\usepackage{amsmath}
-\usepackage{amssymb}
-\usepackage{tikz}
-\usepackage{tikz-cd}
-\usepackage{quiver}
-\begin{document}
-\nopagecolor
-%s
-\end{document}
-]]
+local function read_file(file)
+  local f = io.open(file, 'r')
+  if f == nil then
+    return nil
+  end
+  local content = f:read('a')
+  f:close()
+  return content
+end
+
+local tikz_doc_template = read_file('_assets/suntemp-tikz.tex')
 
 local function tikz2image(src, filetype)
   local str = ""

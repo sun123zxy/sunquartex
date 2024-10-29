@@ -1,12 +1,12 @@
 # SunQuarTeX
 
-基于 Quarto 的自用中英文学术写作模板库．支持输出至 HTML、PDF/LaTeX、Beamer、MS Word、Github Flavored Markdown (GFM) 等多种格式，覆盖交叉引用、插图绘制、定理系统等多种功能．
-
-[DEMO](https://blog.sun123zxy.top/posts/20221223-quarto-test/)
+基于 Quarto 的自用中英文学术写作模板库．支持输出至 HTML、PDF/LaTeX、Beamer、MS Word、Github Flavored Markdown (GFM) 等多种格式，覆盖交叉引用、插图绘制、定理系统等多种功能．[demo](https://blog.sun123zxy.top/posts/20221223-quarto-test/)
 
 ## Usage
 
-请先安装 [quarto-cli](https://github.com/quarto-dev/quarto-cli)．测试 Quarto 版本为 1.5.56.
+安装及使用方法简述如下，细节可参见本仓库下的 Github Actions 配置文件．
+
+请先安装 [quarto-cli](https://github.com/quarto-dev/quarto-cli)．测试 Quarto 版本为 1.5.57.
 
 - `quarto render index-cnart.qmd`
 - `quarto render index-enart.qmd`
@@ -15,7 +15,7 @@
 
 `--to` 参数可指定输出类型，包括 `html`, `pdf`， `beamer`, `docx`, `gfm`．每次渲染时应指定 `--to` 参数，或在文档中明确指定输出格式．
 
-在文件中声明 `lang=zh` 或 `lang=en` 即可调整语言．
+在文件头声明 `lang=zh` 或 `lang=en` 即可调整语言．
 
 ### 关于 Computations
 
@@ -31,11 +31,20 @@
 
 ### 关于 TikZ / tikzcd
 
-HTML / PDF / Beamer 格式现已支持 TikZ / tikzcd / [quiver](https://q.uiver.app/)．如需在输出非 PDF / Beamer 格式下输出，请确保 XeLaTeX、dvisvgm 和 mutool 均已在 PATH 中，且已安装需要使用的 LaTeX 宏包．（如使用 Quarto 自带的 TinyTeX，可先输出一次 PDF 自动补全所需宏包，执行 `tlmgr install dvisvgm` 下载 dvisvgm，自行安装 MuPDF 并添加至 PATH）．在 Beamer 中使用时，所在幻灯片须添加 `{.fragile}` 标记．
+HTML / PDF / Beamer 格式现已支持 TikZ / tikzcd / [quiver](https://q.uiver.app/)．如需在输出非 PDF / Beamer 格式下输出，请确保 XeLaTeX、dvisvgm 已在 PATH 中，且已安装需要使用的 LaTeX 宏包（目前 TikZ 中使用的宏包无法在渲染过程中自动安装）．
 
-> As of Ghostscript 10.01.0, this will no longer work due to the introduction of a new PDF interpreter. Therefore, an alternative conversion module based on mutool, a utility which is part of the MuPDF package, has been introduced. It’s automatically invoked if Ghostscript can’t be used and if a working mutool executable is present in a directory which is part of the system’s search path.
-> 
-> 来自 [dvisvgm manual](https://dvisvgm.de/Manpage/)
+- 如使用 Quarto 自带的 TinyTeX：
+  
+  - 先输出一次 PDF 自动补全大部分所需宏包
+  - 执行 `tlmgr install dvisvgm` 和 `tlmgr path add` 下载 dvisvgm 并添加至 PATH．
+
+- 在 Beamer 中使用时，所在幻灯片须添加 `{.fragile}` 标记．
+
+- 可能还需要安装 mutool 并添加至 PATH：
+
+  > As of Ghostscript 10.01.0, this will no longer work due to the introduction of a new PDF interpreter. Therefore, an alternative conversion module based on mutool, a utility which is part of the MuPDF package, has been introduced. It’s automatically invoked if Ghostscript can’t be used and if a working mutool executable is present in a directory which is part of the system’s search path.
+  > 
+  > 来自 [dvisvgm manual](https://dvisvgm.de/Manpage/)
 
 ## 若干说明
 

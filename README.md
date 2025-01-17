@@ -6,7 +6,7 @@
 
 安装及使用方法简述如下，细节可参见本仓库下的 Github Actions 配置文件．
 
-请先安装 [quarto-cli](https://github.com/quarto-dev/quarto-cli)．测试 Quarto 版本为 1.5.57.
+请先安装 [quarto-cli](https://github.com/quarto-dev/quarto-cli)．测试 Quarto 版本为 1.6.39.
 
 - `quarto render index-cnart.qmd`
 - `quarto render index-enart.qmd`
@@ -63,7 +63,7 @@ HTML / PDF / Beamer 格式现已支持 TikZ / tikzcd / [quiver](https://q.uiver.
 
 ### 关于 GFM
 
-> Quarto 1.5 后 GFM 格式处理表格有一些问题，cf. [#9334](https://github.com/quarto-dev/quarto-cli/discussions/9334)．建议暂时停用 GFM．
+- 已修复：~~Quarto 1.5 后 GFM 格式处理表格有一些问题，cf. [#9334](https://github.com/quarto-dev/quarto-cli/discussions/9334)．建议暂时停用 GFM．~~
 
 尽管开启了 `wrap: preserve`，生成的 markdown 文件的换行行为仍可能不尽人意．这里是一些基于（vscode 查找 / 替换）正则表达式替换的后期补救措施：
 

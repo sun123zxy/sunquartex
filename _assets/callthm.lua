@@ -2,10 +2,10 @@ local function starts_with(start, str)
   return str:sub(1, #start) == start
 end
 
-function callout_tuple(type, appearance, collapse, icon)
-  appearance = appearance or "minimal"
-  collapse = collapse or "false"
-  icon = icon or "false"
+local function callout_dict(type, appearance, collapse, icon)
+  local appearance = appearance or "minimal"
+  local collapse = collapse or ""
+  local icon = icon or ""
   return {
     type = type,
     appearance = appearance,
@@ -15,21 +15,32 @@ function callout_tuple(type, appearance, collapse, icon)
 end
 
 local thmmap = {
-    thm = callout_tuple("note"),
-    lem = callout_tuple("note"),
-    cor = callout_tuple("note"),
-    prp = callout_tuple("note"),
-    cnj = callout_tuple("note"),
-    def = callout_tuple("note"),
-    exm = callout_tuple("tip"),
-    exr = callout_tuple("tip")
+  thm = callout_dict("note"),
+  lem = callout_dict("note"),
+  cor = callout_dict("note"),
+  prp = callout_dict("note"),
+  cnj = callout_dict("note"),
+  def = callout_dict("note"),
+  exm = callout_dict("tip"),
+  exr = callout_dict("tip")
 }
 
 local pfmap = {
-  proof = callout_tuple("note", "default", "true"),
-  solution = nil,
-  remark = nil
+  proof = callout_dict("note", "default", "true"),
+  solution = callout_dict("note", "default", "true"),
+  remark = callout_dict("tip", "default", "false")
 }
+
+local function fetch_header(el)
+  if el.content == nil then
+    return nil
+  end
+  if el.content[1].t == "Header" and el.content[1].level == 2 then
+    return pandoc.utils.stringify(el.content[1])
+  else 
+    return nil
+  end
+end
 
 if quarto.doc.is_format("html") then
   function Div(el)
@@ -37,20 +48,29 @@ if quarto.doc.is_format("html") then
       if starts_with(index, el.attr.identifier) then
         if value == nil then
           return el
-        else
-          return pandoc.Div(el,pandoc.Attr("", {"callout-"..value.type}, {appearance = value.appearance, collapse = value.collapse, icon = value.icon}))
         end
+
+        return pandoc.Div(el, pandoc.Attr("", {"callout-"..value.type}, {appearance = value.appearance, collapse = value.collapse, icon = value.icon}))
       end
     end
     
     for index, value in pairs(pfmap) do
       if pandoc.List.find(el.attr.classes, index) then
+        
         if value == nil then
           return el
-        else
-          -- TODO: change the title of the callout
-          return pandoc.Div(el,pandoc.Attr("", {"callout-"..value.type}, {appearance = value.appearance, collapse = value.collapse, icon = value.icon}))
         end
+
+        local title = fetch_header(el)
+        
+        if title ~= nil then
+          title = index .. ": " .. title
+        elseif value.collapse ~= "" then
+          title = index
+        end
+
+        local classes = {appearance = value.appearance, collapse = value.collapse, icon = value.icon, title = title}
+        return pandoc.Div(el, pandoc.Attr("", {"callout-"..value.type}, classes))
       end
     end
 

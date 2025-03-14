@@ -152,6 +152,20 @@ $$
 即可，其中 $f$ 和 $g$ 是由 $A \preccurlyeq C$ 和 $B \preccurlyeq D$ 确定的单射.
 :::
 
+:::{.proof}
+
+## 有标题的证明
+
+这是一个有 caption 的证明．
+:::
+
+:::{.proof}
+
+## [@thm-cartesian-preserve] 的证明
+
+这是一个带复杂 caption 的证明．
+:::
+
 :::{#cor-random}
 等势意义下可用等势的集合替换参与笛卡尔积运算的集合，即
 $$

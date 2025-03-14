@@ -7,6 +7,6 @@ metadata-files:
   - "./_article.yml"
 
 filters:
-  - at: post-ast
+  - at: pre-ast
     path: "./_assets/callthm.lua"
   - "./_assets/tikz.lua"

@@ -1,0 +1,9 @@
+---
+title: README
+format:
+  html: default
+
+number-sections: false
+---
+
+{{< include README.md >}}

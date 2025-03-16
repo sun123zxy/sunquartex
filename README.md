@@ -2,7 +2,8 @@
 
 基于 Quarto 的自用中英文学术写作模板库．支持输出至 HTML、PDF/LaTeX、Beamer、MS Word、GFM 等多种格式，覆盖交叉引用、插图绘制、定理系统等多种功能．
 
-[demo](https://blog.sun123zxy.top/posts/20221223-quarto-test/)
+- [仓库主页](https://github.com/sun123zxy/sunquartex)
+- [网页 Demo](https://sun123zxy.github.io/sunquartex)
 
 ## 核心功能
 
@@ -93,6 +94,13 @@
 
 注意：这一方案未对代码块做特殊处理．
 
+### 关于 Demo 站点
+
+本仓库同时采用 Github Actions 自动生成 Demo 站点，手动切换 Quarto profile 至 `website` 可激活网站生成模式．以下方法可以设置 Quarto 的 profile：
+
+- `quarto render --profile=website ...`
+- 设置环境变量 `QUARTO_PROFILE` 为 `website`
+
 ## Known Issues
 
 - 见 [Discussion #4598](https://github.com/quarto-dev/quarto-cli/discussions/4598)，Pandoc 不支持 CSL-M 导致无有效方法处理 GB/T 7714-2015 中按语言切换“等”、`et al` 省略字样的规定．
@@ -102,7 +110,3 @@
 - 通用的定理编号目前尚难以自定义，见 [Discussion #5479](https://github.com/quarto-dev/quarto-cli/discussions/5479)
 
 - HTML 子图图像拉伸问题，似乎是因为没有设置 `height: auto`，有空去发个 issue．
-
-## Planning Enhancements
-
-- 考虑支持 `tikz` 独立为插件．

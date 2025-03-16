@@ -1,0 +1,71 @@
+
+filters:
+  - "./_assets/tikz.lua"
+
+format:
+  html:
+    filters: 
+      - callouty-theorem
+
+callouty-theorem:
+  thm:
+    override-title: false
+    callout:
+      type: note
+      appearance: minimal
+  lem:
+    override-title: false
+    callout:
+      type: note
+      appearance: minimal
+  cor:
+    override-title: false
+    callout:
+      type: note
+      appearance: minimal
+  prp:
+    override-title: false
+    callout:
+      type: note
+      appearance: minimal
+  cnj:
+    override-title: false
+    callout:
+      type: note
+      appearance: minimal
+  def:
+    override-title: false
+    callout:
+      type: note
+      appearance: minimal
+  exm:
+    override-title: false
+    callout:
+      type: tip
+      appearance: minimal
+  exr:
+    override-title: false
+    callout:
+      type: tip
+      appearance: minimal
+  proof:
+    override-title: true
+    callout:
+      type: note
+      appearance: default
+      collapse: true
+      icon: true
+  solution:
+    override-title: true
+    callout:
+      type: note
+      appearance: default
+      collapse: true
+      icon: true
+  remark:
+    override-title: true
+    callout:
+      type: tip
+      appearance: default
+      collapse: false
+      icon: true

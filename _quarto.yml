@@ -5,8 +5,4 @@ project:
 metadata-files: 
   - "./_format.yml"
   - "./_article.yml"
-
-filters:
-  - at: post-ast
-    path: "./_assets/callthm.lua"
-  - "./_assets/tikz.lua"
+  - "./_filter.yml"

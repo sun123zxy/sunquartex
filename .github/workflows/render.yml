@@ -3,12 +3,12 @@ on:
     branches:
       - master
 
-name: Try Render
+name: Render and Publish to Github Pages
 
 # you need these permissions to publish to GitHub pages
-# permissions: 
-#     contents: write
-#     pages: write
+permissions: 
+  contents: write
+  pages: write
 
 jobs:
   build-deploy:
@@ -27,14 +27,14 @@ jobs:
           # tinytex: true 
           # uncomment below and fill to pin a version
           # version: SPECIFIC-QUARTO-VERSION-HERE
-
+      
+      # To update PATH
       - name: Set up TinyTeX via Quarto manually
-        # To update PATH
         run: |
           quarto install tinytex --update-path
-      
+
+      # To ensure dvisvgm installed
       - name: Install dvisvgm via TinyTeX
-        # To ensure dvisvgm installed
         run: |
           tlmgr install dvisvgm
           tlmgr path add
@@ -42,16 +42,14 @@ jobs:
       
       - name: Install mutool
         run: sudo apt-get install mupdf-tools
-
+      
+      # To import libraries in advance for tikz image generation
       - name: Prepare for TikZ rendering
-        # To import libraries in advance for tikz image generation
         run: |
           echo "" >> temp.qmd
           quarto render temp.qmd --to=pdf --template=_assets/suntemp-tikz.tex
           rm temp.qmd
 
-      # add software dependencies here and any libraries
-      
       # From https://github.com/actions/setup-python
       - name: Setup Python
         uses: actions/setup-python@v3
@@ -59,48 +57,14 @@ jobs:
       - name: Setup Python dependencies
         run: python3 -m pip install jupyter numpy matplotlib tabulate
 
-      - name: Render Quarto Project
-        uses: quarto-dev/quarto-actions/render@v2
-      # From https://github.com/r-lib/actions/tree/v2-branch/setup-r
-      # - name: Setup R
-      #   uses: r-lib/actions/setup-r@v2
-
-      # From https://github.com/julia-actions/setup-julia
-      # - name: Setup Julia
-      #   uses: julia-actions/setup-julia@v1
-
-      # See more at https://github.com/quarto-dev/quarto-actions/blob/main/examples/example-03-dependencies.md
-
-      # To publish to Netlify, RStudio Connect, or GitHub Pages, uncomment
-      # the appropriate block below
+      # - name: Render Quarto Project
+      #   uses: quarto-dev/quarto-actions/render@v2
       
-      # - name: Publish to Netlify (and render)
-      #   uses: quarto-dev/quarto-actions/publish@v2
-      #   with:
-      #     target: netlify
-      #     NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-        
-      # - name: Publish to RStudio Connect (and render)
-      #   uses: quarto-dev/quarto-actions/publish@v2
-      #   with:
-      #     target: connect
-      #     CONNECT_SERVER: enter-the-server-url-here
-      #     CONNECT_API_KEY: ${{ secrets.CONNECT_API_KEY }} 
-
       # NOTE: If Publishing to GitHub Pages, set the permissions correctly (see top of this yaml)
-      # - name: Publish to GitHub Pages (and render) 
-      #   uses: quarto-dev/quarto-actions/publish@v2
-      #   with:
-      #     target: gh-pages
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this secret is always available for github actions
-
-      # - name: Publish to confluence
-      #   uses: quarto-dev/quarto-actions/publish@v2
-      #   with:
-      #     target: confluence
-      #   env: 
-      #     CONFLUENCE_USER_EMAIL: ${{ secrets.CONFLUENCE_USER_EMAIL }}
-      #     CONFLUENCE_AUTH_TOKEN: ${{ secrets.CONFLUENCE_AUTH_TOKEN }}
-      #     CONFLUENCE_DOMAIN: ${{ secrets.CONFLUENCE_DOMAIN }}
-      
+      - name: Publish to GitHub Pages (and render)
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this secret is always available for github actions
+          QUARTO_PROFILE: website

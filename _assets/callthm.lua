@@ -1,69 +1,171 @@
-local function starts_with(start, str)
-  return str:sub(1, #start) == start
+-- copied from quarto-cli/src/resources/filters/common/refs.lua
+local refType = function (id)
+  local match = string.match(id, "^(%a+)%-")
+  if match then
+    return pandoc.text.lower(match)
+  else
+    return nil
+  end
 end
 
-local function callout_tbl(type, appearance, collapse, icon)
-  local appearance = appearance or "minimal"
-  local collapse = collapse or ""
-  local icon = icon or ""
-  return {
-    type = type,
-    appearance = appearance,
-    collapse = collapse,
-    icon = icon
+-- copied from quarto-cli/src/resources/filters/customnodes/theorem.lua
+local theorem_types = {
+  thm = {
+    env = "theorem",
+    style = "plain",
+    title = "Theorem"
+  },
+  lem = {
+    env = "lemma",
+    style = "plain",
+    title = "Lemma"
+  },
+  cor = {
+    env = "corollary",
+    style = "plain",
+    title = "Corollary",
+  },
+  prp = {
+    env = "proposition",
+    style = "plain",
+    title = "Proposition",
+  },
+  cnj = {
+    env = "conjecture",
+    style = "plain",
+    title = "Conjecture"
+  },
+  def = {
+    env = "definition",
+    style = "definition",
+    title = "Definition",
+  },
+  exm = {
+    env = "example",
+    style = "definition",
+    title = "Example",
+  },
+  exr  = {
+    env = "exercise",
+    style = "definition",
+    title = "Exercise"
   }
-end
-
-local thmmap = {
-  thm = {"Theorem", callout_tbl("note")},
-  lem = {"Lemma", callout_tbl("note")},
-  cor = {"Corollary", callout_tbl("note")},
-  prp = {"Proposition", callout_tbl("note")},
-  cnj = {"Conjecture", callout_tbl("note")},
-  def = {"Definition", callout_tbl("note")},
-  exm = {"Example", callout_tbl("tip")},
-  exr = {"Exercise", callout_tbl("tip")},
-  proof = {"Proof", callout_tbl("note", "default", "true")},
-  solution = {"Solution", callout_tbl("note", "default", "true")},
-  remark = {"Remark", callout_tbl("tip", "default", "false")}
 }
 
-local function fetch_header(el)
-  if el.content == nil then
-    return nil
+-- copied from quarto-cli/src/resources/filters/customnodes/proof.lua
+local proof_types = {
+  proof =  {
+    env = 'proof',
+    title = 'Proof'
+  },
+  remark =  {
+    env = 'remark',
+    title = 'Remark'
+  },
+  solution = {
+    env = 'solution',
+    title = 'Solution'
+  }
+}
+
+local thm_settings = {
+  enable_title = false,
+  callout_tbl = {
+    type = "note",
+    appearance = "minimal",
+    collapse = nil,
+    icon = nil
+  }
+}
+local pf_settings = {
+  enable_title = true,
+  callout_tbl = {
+    type = "note",
+    appearance = "default",
+    collapse = true,
+    icon = nil
+  }
+}
+local rem_settings = {
+  enable_title = true,
+  callout_tbl = {
+    type = "tip",
+    appearance = "default",
+    collapse = false,
+    icon = nil
+  }
+}
+
+local thmmap = {
+  thm = thm_settings,
+  lem = thm_settings,
+  cor = thm_settings,
+  prp = thm_settings,
+  cnj = thm_settings,
+  def = thm_settings,
+  exm = thm_settings,
+  exr = thm_settings,
+}
+
+local pfmap = {
+  proof = pf_settings,
+  solution = pf_settings,
+  remark = rem_settings
+}
+
+local function spawn_callout_title(type_title, name)
+  local my_name = pandoc.List({type_title})
+  if name then
+    my_name:insert(" (")
+    my_name:extend(pandoc.utils.blocks_to_inlines(pandoc.Blocks(name)))
+    my_name:insert(")")
   end
-  if el.content[1].t == "Header" and el.content[1].level == 2 then
-    return pandoc.utils.stringify(el.content[1])
-  else 
-    return nil
+  return my_name
+end
+
+local function calloutify_theorem(el)
+  local type = refType(el.identifier)
+  if not thmmap[type] then -- settings not given, return as is
+    return el
   end
+
+  local settings = thmmap[type]
+  local enable_title = settings.enable_title
+  local callout_tbl = settings.callout_tbl
+
+  if enable_title then
+    callout_tbl.title = spawn_callout_title(theorem_types[type].title, el.name)
+  end
+      
+  callout_tbl.content = quarto.Theorem(el)
+  local callout = quarto.Callout(callout_tbl)
+  return callout
+end
+
+local function calloutify_proof(el)
+  local type = el.type:lower()
+  if not pfmap[type] then -- settings not given, return as is
+    return el
+  end
+
+  local settings = pfmap[type]
+  local enable_title = settings.enable_title
+  local callout_tbl = settings.callout_tbl
+
+  if enable_title then
+    callout_tbl.title = spawn_callout_title(proof_types[type].title, el.name)
+  end
+
+  callout_tbl.content = quarto.Proof(el)
+  local callout = quarto.Callout(callout_tbl)
+  return callout
 end
 
 if quarto.doc.is_format("html") then
-  function Div(el)
-    for index, value in pairs(thmmap) do
-      local fullname = value[1]
-      local tbl = value[2]
-      if pandoc.List.find(el.attr.classes, index) or starts_with(index, el.attr.identifier) then
-        
-        if tbl == nil then
-          return el
-        end
-
-        local title = nil
-        if tbl.appearance ~= "minimal" then
-          title = fetch_header(el)
-          if title ~= nil then
-            title = fullname .. " (" .. title .. ")"
-          else
-            title = fullname
-          end
-        end
-        local classes = {appearance = tbl.appearance, collapse = tbl.collapse, icon = tbl.icon, title = title}
-        return pandoc.Div(el, pandoc.Attr("", {"callout-"..tbl.type}, classes))
-      end
-    end
-
-    return el
+  function Theorem(el)
+    return calloutify_theorem(el)
+  end
+  function Proof(el)
+    return calloutify_proof(el)
   end
 end

@@ -1,51 +1,67 @@
 # SunQuarTeX
 
-基于 Quarto 的自用中英文学术写作模板库．支持输出至 HTML、PDF/LaTeX、Beamer、MS Word、Github Flavored Markdown (GFM) 等多种格式，覆盖交叉引用、插图绘制、定理系统等多种功能．[demo](https://blog.sun123zxy.top/posts/20221223-quarto-test/)
+基于 Quarto 的自用中英文学术写作模板库．支持输出至 HTML、PDF/LaTeX、Beamer、MS Word、GFM 等多种格式，覆盖交叉引用、插图绘制、定理系统等多种功能．
+
+[demo](https://blog.sun123zxy.top/posts/20221223-quarto-test/)
+
+## 核心功能
+
+- 基于 Pandoc's Markdown 的完备学术写作语法
+- 强大的交叉引用与定理系统功能
+- HTML、PDF/LaTeX、Beamer、MS Word、Github Flavored Markdown (GFM) 全格式输出
+- 嵌入 Python 代码生成数据图表（Computation）
+- TikZ / [tikz-cd](https://ctan.org/pkg/tikz-cd) / [quiver](https://q.uiver.app/) 图表绘制
+- Mermaid、Graphviz 图表绘制（Diagram）
+- ...
+
+## 安装
+
+安装方法简述如下，另可参见本仓库下的 Github Actions 配置文件．
+
+- 下载并安装 [quarto-cli](https://github.com/quarto-dev/quarto-cli)．测试 Quarto 版本为 1.6.39.
+
+- （需要使用 Computation 等功能时）
+  
+  安装恰当版本的 Python 和所需模块，如 jupyter、numpy、matplotlib、tabulate 等．
+
+- （需要输出 LaTeX / PDF / Beamer 时）
+  
+  请确保已安装 Quarto 支持的 LaTeX 发行版．若无，可使用 `quarto install tinytex --update-path` 安装．
+
+- （需要使用 Mermaid、Graphviz 等 Diagram 功能且需输出 PDF）
+
+  请确保已安装 Chrome 或 Chromium．若无，可使用 `quarto install tool chromium` 安装．（参见 [Quarto - Diagrams # Chrome Install](https://quarto.org/docs/authoring/diagrams.html#chrome-install)）
+
+- （需要在非 LaTeX / PDF / Beamer 格式下（如 HTML）输出 TikZ 时）
+
+  请确保 XeLaTeX、dvisvgm、mutool 已在 PATH 中，且已安装需要使用的 LaTeX 宏包（目前 TikZ 中使用的宏包无法在渲染过程中自动安装）．
+
+  - 如使用 Quarto 自带的 TinyTeX：
+  
+    - 先输出一次 PDF 自动补全大部分所需宏包
+    - 执行 `tlmgr install dvisvgm` 和 `tlmgr path add` 下载 dvisvgm 并添加至 PATH．
+    - Linux 执行 `sudo apt install mupdf-tools`．
+
+  - 关于 mutool 必要性的一些说明：
+
+    > As of Ghostscript 10.01.0, this will no longer work due to the introduction of a new PDF interpreter. Therefore, an alternative conversion module based on mutool, a utility which is part of the MuPDF package, has been introduced. It’s automatically invoked if Ghostscript can’t be used and if a working mutool executable is present in a directory which is part of the system’s search path.
+    > 
+    > 来自 [dvisvgm manual](https://dvisvgm.de/Manpage/)
 
 ## Usage
-
-安装及使用方法简述如下，细节可参见本仓库下的 Github Actions 配置文件．
-
-请先安装 [quarto-cli](https://github.com/quarto-dev/quarto-cli)．测试 Quarto 版本为 1.6.39.
 
 - `quarto render index-cnart.qmd`
 - `quarto render index-enart.qmd`
 - `quarto render index-cnpre.qmd`
 - `quarto render index-enpre.qmd`
 
-`--to` 参数可指定输出类型，包括 `html`, `pdf`， `beamer`, `docx`, `gfm`．每次渲染时应指定 `--to` 参数，或在文档中明确指定输出格式．
+`--to` 参数可指定输出类型，包括 `html`, `pdf`， `beamer`, `docx`, `gfm`．每次渲染时应指定 `--to` 参数，或在文件头中明确指定输出格式．
 
 在文件头声明 `lang=zh` 或 `lang=en` 即可调整语言．
 
-### 关于 Computations
+输出 PDF 时，可在输出前自行对 LaTeX 文件（`*.tex`）做进一步修正，再自行使用 `xelatex` 和 `biber` 输出 PDF．
 
-请确保安装恰当版本的 Python 和所需模块，如 Jupyter．
-
-### 关于 PDF/LaTeX
-
-需要输出 PDF 时，请确保已安装 Quarto 支持的 LaTeX 发行版．若无，可使用 `quarto install tinytex --update-path` 安装．
-
-可在输出 PDF 前自行对 LaTeX 文件（`*.tex`）做进一步修正，再自行使用 `xelatex` 和 `biber` 输出 PDF．
-
-若文档中包含 Mermaid、Graphviz 等 diagram 且需输出 PDF，请确保已安装 Chrome 或 Chromium．若无，可使用 `quarto install tool chromium` 安装．（参见 [Quarto - Diagrams # Chrome Install](https://quarto.org/docs/authoring/diagrams.html#chrome-install)）
-
-### 关于 TikZ / tikzcd
-
-HTML / PDF / Beamer 格式现已支持 TikZ / tikzcd / [quiver](https://q.uiver.app/)．如需在输出非 PDF / Beamer 格式下输出，请确保 XeLaTeX、dvisvgm、mutool 已在 PATH 中，且已安装需要使用的 LaTeX 宏包（目前 TikZ 中使用的宏包无法在渲染过程中自动安装）．
-
-- 如使用 Quarto 自带的 TinyTeX：
-  
-  - 先输出一次 PDF 自动补全大部分所需宏包
-  - 执行 `tlmgr install dvisvgm` 和 `tlmgr path add` 下载 dvisvgm 并添加至 PATH．
-  - Linux 执行 `sudo apt install mupdf-tools`．
-
-- 在 Beamer 中使用时，所在幻灯片须添加 `{.fragile}` 标记．
-
-- 关于 mutool 必要性的一些说明：
-
-  > As of Ghostscript 10.01.0, this will no longer work due to the introduction of a new PDF interpreter. Therefore, an alternative conversion module based on mutool, a utility which is part of the MuPDF package, has been introduced. It’s automatically invoked if Ghostscript can’t be used and if a working mutool executable is present in a directory which is part of the system’s search path.
-  > 
-  > 来自 [dvisvgm manual](https://dvisvgm.de/Manpage/)
+在 Beamer 中使用 TikZ 时，所在幻灯片须添加 `{.fragile}` 标记．
 
 ## 若干说明
 
@@ -62,8 +78,6 @@ HTML / PDF / Beamer 格式现已支持 TikZ / tikzcd / [quiver](https://q.uiver.
 理论上与文档格式兼容，可直接设置 `--to=pdf` 输出文稿版本．
 
 ### 关于 GFM
-
-- 已修复：~~Quarto 1.5 后 GFM 格式处理表格有一些问题，cf. [#9334](https://github.com/quarto-dev/quarto-cli/discussions/9334)．建议暂时停用 GFM．~~
 
 尽管开启了 `wrap: preserve`，生成的 markdown 文件的换行行为仍可能不尽人意．这里是一些基于（vscode 查找 / 替换）正则表达式替换的后期补救措施：
 
@@ -91,4 +105,4 @@ HTML / PDF / Beamer 格式现已支持 TikZ / tikzcd / [quiver](https://q.uiver.
 
 ## Planning Enhancements
 
-- 考虑支持 `callthm` 和 `tikz` 独立为插件．
+- 考虑支持 `tikz` 独立为插件．

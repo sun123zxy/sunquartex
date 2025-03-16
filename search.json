@@ -1,5 +1,35 @@
 [
   {
+    "objectID": "index-enart.html",
+    "href": "index-enart.html",
+    "title": "SunQuarTeX-enart Test",
+    "section": "",
+    "text": "This is a reference[1].\n\n\n\n\n\n\n\nExample 1 Prove that \\[\n\\mathbb R \\times \\mathbb N \\approx \\mathbb N \\times \\mathbb R \\approx \\mathbb R\n\\]\n\n\n\n\n\n\n\n\n\n\nProof\n\n\n\n\n\n\nProof. Obvious as follows \\[\n\\mathbb R \\approx \\mathbb R \\times 2 \\preccurlyeq \\mathbb R \\times \\mathbb N \\preccurlyeq \\mathbb R \\times \\mathbb R \\approx \\mathbb R\n\\implies \\mathbb R \\times \\mathbb N \\approx \\mathbb N \\times \\mathbb R \\approx \\mathbb R\n\\]",
+    "crumbs": [
+      "SunQuarTeX-enart Test"
+    ]
+  },
+  {
+    "objectID": "index-enart.html#first",
+    "href": "index-enart.html#first",
+    "title": "SunQuarTeX-enart Test",
+    "section": "",
+    "text": "This is a reference[1].\n\n\n\n\n\n\n\nExample 1 Prove that \\[\n\\mathbb R \\times \\mathbb N \\approx \\mathbb N \\times \\mathbb R \\approx \\mathbb R\n\\]\n\n\n\n\n\n\n\n\n\n\nProof\n\n\n\n\n\n\nProof. Obvious as follows \\[\n\\mathbb R \\approx \\mathbb R \\times 2 \\preccurlyeq \\mathbb R \\times \\mathbb N \\preccurlyeq \\mathbb R \\times \\mathbb R \\approx \\mathbb R\n\\implies \\mathbb R \\times \\mathbb N \\approx \\mathbb N \\times \\mathbb R \\approx \\mathbb R\n\\]",
+    "crumbs": [
+      "SunQuarTeX-enart Test"
+    ]
+  },
+  {
+    "objectID": "index-enart.html#second",
+    "href": "index-enart.html#second",
+    "title": "SunQuarTeX-enart Test",
+    "section": "2 Second",
+    "text": "2 Second\n\n\n\n\n\n\n\n\n\n\n\n\\(L_i \\times C_j\\)\n\\(2\\)\n\\(\\mathbb N\\)\n\\(\\mathbb R\\)\n\n\n\\(2\\)\n\\(4\\)\n\\(\\mathbb N\\)\n\\(\\mathbb R\\)\n\n\n\\(\\mathbb N\\)\n\\(\\mathbb N\\)\n\\(\\mathbb N\\)\n?\n\n\n\\(\\mathbb R\\)\n\\(\\mathbb R\\)\n?\n\\(\\mathbb R\\)\n\n\n\n\n\n(a) Cartesian (unsolved)\n\n\n\n\n\n\n\n\n\n\n\n\\(L_i^{C_j}\\)\n\\(2\\)\n\\(\\mathbb N\\)\n\\(\\mathbb R\\)\n\n\n\\(2\\)\n\\(4\\)\n\\(\\mathbb R\\)\n\\(2^{\\mathbb R}\\)\n\n\n\\(\\mathbb N\\)\n\\(\\mathbb N\\)\n?\n?\n\n\n\\(\\mathbb R\\)\n\\(\\mathbb R\\)\n?\n?\n\n\n\n\n\n(b) Power (unsolved)\n\n\n\n\n\n\n\nTable 1: Some Cardinality Results",
+    "crumbs": [
+      "SunQuarTeX-enart Test"
+    ]
+  },
+  {
     "objectID": "index-cnart.html",
     "href": "index-cnart.html",
     "title": "SunQuarTeX-cnart 测试文档",
@@ -107,36 +137,6 @@
     "text": "10 引用、脚注测试\n这是一个脚注1．\n1 参见 Quarto - Citations & Footnotes人脸识别是以人面部特征作为识别个体身份的一种个体生物特征识别方法 [1]．……人脸识别的研究最早可追溯到上世纪 60 年代，Bledsoe and Chan 研究了编程计算机识别人脸的方法[2]．随后，萌芽期的人脸识别技术经历多轮蜕变，在发展中逐渐完善．然而，人脸识别的主要难点在于不同个体的人脸结构并无大异，而同一个体的人脸在不同表情、年龄、妆饰、光照等干扰因素下又往往差异显著[3]，这要求人脸识别技术既要克服类内因素的干扰，同时又要加强类间差距的显著性，而早期人脸识别方法关注人脸几何特征，识别效果不尽人意．为此，以 Eigenfaces[4] 为代表的子空间学习识别方法和 Gabor[5]、LBP[6] 等局部特征分析的滤波器提取方法在各自领域都有所突破．2014 年，应用新兴的深度卷积神经网络技术，DeepFace[7] 横空出世，以 97.35% 的 LFW 基准数据集识别准确率重塑了人脸识别领域的研究格局．随后，人脸识别技术迎来爆发式增长，并逐渐走进人们的日常生活之中．……个体层面，要加强公众的权利意识，塑造个人的“数字理性”[8]．",
     "crumbs": [
       "SunQuarTeX-cnart 测试文档"
-    ]
-  },
-  {
-    "objectID": "index-enart.html",
-    "href": "index-enart.html",
-    "title": "SunQuarTeX-enart Test",
-    "section": "",
-    "text": "This is a reference[1].\n\n\n\n\n\n\n\nExample 1 Prove that \\[\n\\mathbb R \\times \\mathbb N \\approx \\mathbb N \\times \\mathbb R \\approx \\mathbb R\n\\]\n\n\n\n\n\n\n\n\n\n\nProof\n\n\n\n\n\n\nProof. Obvious as follows \\[\n\\mathbb R \\approx \\mathbb R \\times 2 \\preccurlyeq \\mathbb R \\times \\mathbb N \\preccurlyeq \\mathbb R \\times \\mathbb R \\approx \\mathbb R\n\\implies \\mathbb R \\times \\mathbb N \\approx \\mathbb N \\times \\mathbb R \\approx \\mathbb R\n\\]",
-    "crumbs": [
-      "SunQuarTeX-enart Test"
-    ]
-  },
-  {
-    "objectID": "index-enart.html#first",
-    "href": "index-enart.html#first",
-    "title": "SunQuarTeX-enart Test",
-    "section": "",
-    "text": "This is a reference[1].\n\n\n\n\n\n\n\nExample 1 Prove that \\[\n\\mathbb R \\times \\mathbb N \\approx \\mathbb N \\times \\mathbb R \\approx \\mathbb R\n\\]\n\n\n\n\n\n\n\n\n\n\nProof\n\n\n\n\n\n\nProof. Obvious as follows \\[\n\\mathbb R \\approx \\mathbb R \\times 2 \\preccurlyeq \\mathbb R \\times \\mathbb N \\preccurlyeq \\mathbb R \\times \\mathbb R \\approx \\mathbb R\n\\implies \\mathbb R \\times \\mathbb N \\approx \\mathbb N \\times \\mathbb R \\approx \\mathbb R\n\\]",
-    "crumbs": [
-      "SunQuarTeX-enart Test"
-    ]
-  },
-  {
-    "objectID": "index-enart.html#second",
-    "href": "index-enart.html#second",
-    "title": "SunQuarTeX-enart Test",
-    "section": "2 Second",
-    "text": "2 Second\n\n\n\n\n\n\n\n\n\n\n\n\\(L_i \\times C_j\\)\n\\(2\\)\n\\(\\mathbb N\\)\n\\(\\mathbb R\\)\n\n\n\\(2\\)\n\\(4\\)\n\\(\\mathbb N\\)\n\\(\\mathbb R\\)\n\n\n\\(\\mathbb N\\)\n\\(\\mathbb N\\)\n\\(\\mathbb N\\)\n?\n\n\n\\(\\mathbb R\\)\n\\(\\mathbb R\\)\n?\n\\(\\mathbb R\\)\n\n\n\n\n\n(a) Cartesian (unsolved)\n\n\n\n\n\n\n\n\n\n\n\n\\(L_i^{C_j}\\)\n\\(2\\)\n\\(\\mathbb N\\)\n\\(\\mathbb R\\)\n\n\n\\(2\\)\n\\(4\\)\n\\(\\mathbb R\\)\n\\(2^{\\mathbb R}\\)\n\n\n\\(\\mathbb N\\)\n\\(\\mathbb N\\)\n?\n?\n\n\n\\(\\mathbb R\\)\n\\(\\mathbb R\\)\n?\n?\n\n\n\n\n\n(b) Power (unsolved)\n\n\n\n\n\n\n\nTable 1: Some Cardinality Results",
-    "crumbs": [
-      "SunQuarTeX-enart Test"
     ]
   }
 ]

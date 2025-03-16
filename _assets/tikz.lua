@@ -38,7 +38,7 @@ local function tikz2image(src, filetype)
       f:write(tikz_doc_template:format(src))
       f:close()
       
-      result, log = execute_command('xelatex mytikz.tex', 'xelatex_output.log')
+      local result, log = execute_command('xelatex mytikz.tex', 'xelatex_output.log')
       if not result then
         print(log)
         error("failed to compile TeX file to PDF. Logs printed above.")
@@ -50,7 +50,7 @@ local function tikz2image(src, filetype)
         error("failed to convert PDF file to SVG. Logs printed above.")
       end
       
-      str = read_file('mytikz.svg')
+      local str = read_file('mytikz.svg')
       if not str then
         error("failed to open converted SVG file")
       end

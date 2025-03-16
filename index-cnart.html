@@ -1,0 +1,1929 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-Hans" xml:lang="zh-Hans"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.39">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="sun123zxy">
+<meta name="author" content="佚名">
+
+<title>SunQuarTeX-cnart 测试文档 – SunQuarTeX</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-2a14dddd56bf1e6630bde8aae2eb0e43.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index-cnart.html">SunQuarTeX-cnart 测试文档</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">SunQuarTeX</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index-cnart.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">SunQuarTeX-cnart 测试文档</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index-cnpre.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SunQuarTeX-cnpre 测试文档</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index-enart.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SunQuarTeX-enart Test</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index-enpre.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">SunQuarTeX-enpre Test</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#前言" id="toc-前言" class="nav-link active" data-scroll-target="#前言"><span class="header-section-number">1</span> 前言</a></li>
+  <li><a href="#文章结构测试" id="toc-文章结构测试" class="nav-link" data-scroll-target="#文章结构测试"><span class="header-section-number">2</span> 文章结构测试</a>
+  <ul class="collapse">
+  <li><a href="#文章分节" id="toc-文章分节" class="nav-link" data-scroll-target="#文章分节"><span class="header-section-number">2.1</span> 文章分节</a></li>
+  </ul></li>
+  <li><a href="#图片表格列表测试" id="toc-图片表格列表测试" class="nav-link" data-scroll-target="#图片表格列表测试"><span class="header-section-number">3</span> 图片、表格、列表测试</a></li>
+  <li><a href="#数学公式定理系统测试" id="toc-数学公式定理系统测试" class="nav-link" data-scroll-target="#数学公式定理系统测试"><span class="header-section-number">4</span> 数学公式、定理系统测试</a></li>
+  <li><a href="#数据可视化table-figure-diagram" id="toc-数据可视化table-figure-diagram" class="nav-link" data-scroll-target="#数据可视化table-figure-diagram"><span class="header-section-number">5</span> 数据可视化（Table, Figure &amp; Diagram）</a></li>
+  <li><a href="#diagrams" id="toc-diagrams" class="nav-link" data-scroll-target="#diagrams"><span class="header-section-number">6</span> Diagrams</a></li>
+  <li><a href="#layout" id="toc-layout" class="nav-link" data-scroll-target="#layout"><span class="header-section-number">7</span> Layout</a></li>
+  <li><a href="#代码块和引用" id="toc-代码块和引用" class="nav-link" data-scroll-target="#代码块和引用"><span class="header-section-number">8</span> 代码块和引用</a></li>
+  <li><a href="#html-专用测试" id="toc-html-专用测试" class="nav-link" data-scroll-target="#html-专用测试"><span class="header-section-number">9</span> HTML 专用测试</a>
+  <ul class="collapse">
+  <li><a href="#callouts" id="toc-callouts" class="nav-link" data-scroll-target="#callouts"><span class="header-section-number">9.1</span> Callouts</a></li>
+  </ul></li>
+  <li><a href="#引用脚注测试" id="toc-引用脚注测试" class="nav-link" data-scroll-target="#引用脚注测试"><span class="header-section-number">10</span> 引用、脚注测试</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index-cnart.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="index-cnart.docx"><i class="bi bi-file-word"></i>MS Word</a></li><li><a href="index-cnart.md"><i class="bi bi-file-code"></i>Github (GFM)</a></li></ul></div><div class="quarto-other-links"><h2>Other Links</h2><ul><li><a href="https://data.nasa.gov/"><i class="bi bi-link-45deg"></i>NASA Open Data</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">SunQuarTeX-cnart 测试文档</h1>
+<p class="subtitle lead">这是副标题</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Authors</div>
+    <div class="quarto-title-meta-contents">
+             <p>sun123zxy </p>
+             <p>佚名 </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">2022年12月7日</p>
+    </div>
+  </div>
+  
+    <div>
+    <div class="quarto-title-meta-heading">Modified</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date-modified">2024年8月23日</p>
+    </div>
+  </div>
+    
+  </div>
+  
+<div>
+  <div class="abstract">
+    <div class="block-title">Abstract</div>
+    使用 Quarto Markdown 语法，支持输出至 HTML、PDF/LaTeX、MS Word 等多种格式的中文学术写作工具，覆盖交叉引用、插图绘制、定理系统等多种功能．
+  </div>
+</div>
+
+
+</header>
+
+
+<section id="前言" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="前言"><span class="header-section-number">1</span> 前言</h2>
+<p>具体使用方法参见 <a href="https://github.com/sun123zxy/sunquartex">sun123zxy/sunquartex</a>．</p>
+</section>
+<section id="文章结构测试" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="文章结构测试"><span class="header-section-number">2</span> 文章结构测试</h2>
+<p>这一节测试文章结构．</p>
+<section id="文章分节" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="文章分节"><span class="header-section-number">2.1</span> 文章分节</h3>
+<p>非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．</p>
+<section id="sec-test" class="level4">
+<h4 class="anchored" data-anchor-id="sec-test">文章分分节</h4>
+<p>Quarto 支持交叉引用．比如这一节的标题就已经被打上了标签．</p>
+<section id="分分分节" class="level5">
+<h5 class="anchored" data-anchor-id="分分分节">分分分节</h5>
+<p>本节中我们测试交叉引用 <a href="#sec-test" class="quarto-xref">小节&nbsp;2.1.1</a>．</p>
+<section id="分分分分节" class="level6">
+<h6 class="anchored" data-anchor-id="分分分分节">分分分分节</h6>
+<p>这是最小的一级了．</p>
+</section>
+</section>
+</section>
+</section>
+</section>
+<section id="图片表格列表测试" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="图片表格列表测试"><span class="header-section-number">3</span> 图片、表格、列表测试</h2>
+<p>这是 Quarto 的图标．</p>
+<div id="fig-quarto" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-quarto-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index-quarto.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-quarto-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+图&nbsp;1: 这是一张插图
+</figcaption>
+</figure>
+</div>
+<p>交叉引用 <a href="#fig-quarto" class="quarto-xref">图&nbsp;1</a> 当然也是可以的．</p>
+<p>这是一个紧凑列表．</p>
+<ul>
+<li>自反性．</li>
+<li>反对称性一个和非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．</li>
+<li>传递性．</li>
+</ul>
+<p>这是一个宽松列表．</p>
+<ul>
+<li><p>自反性．</p></li>
+<li><p>反对称性一个和非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．</p>
+<p>还多加了一段．</p></li>
+<li><p>传递性．</p></li>
+</ul>
+<p>这是一个定义列表．</p>
+<dl>
+<dt>自反性</dt>
+<dd>
+<p><span class="math inline">\(a \sim a\)</span></p>
+</dd>
+<dt>反对称性</dt>
+<dd>
+<p><span class="math inline">\(a \leq b \land b \leq a \implies a=b\)</span></p>
+</dd>
+<dt>传递性</dt>
+<dd>
+<p><span class="math inline">\(a \leq b \land b \leq c \implies a \leq c\)</span></p>
+</dd>
+</dl>
+<p>当然也可以使用 Markdown 表格．例如 <a href="#tbl-cartesian-unsolved" class="quarto-xref">表&nbsp;1 (a)</a>.</p>
+<p>多表格并列．加上 <a href="#tbl-power-unsolved" class="quarto-xref">表&nbsp;1 (b)</a>，它们共同组成了 <a href="#tbl-panel-unsolved" class="quarto-xref">表&nbsp;1</a>．</p>
+<div id="tbl-panel-unsolved" class="quarto-layout-panel anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<div aria-describedby="tbl-panel-unsolved-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="tbl-panel-unsolved" style="flex-basis: 50.0%;justify-content: center;">
+<div id="tbl-cartesian-unsolved" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-tbl figure">
+<div aria-describedby="tbl-cartesian-unsolved-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table">
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(L_i \times C_j\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb N\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb R\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(4\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb N\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb R\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\mathbb N\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb N\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb N\)</span></td>
+<td style="text-align: center;">?</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\mathbb R\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb R\)</span></td>
+<td style="text-align: center;">?</td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb R\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-tbl" id="tbl-cartesian-unsolved-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) 笛卡尔积
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="tbl-panel-unsolved" style="flex-basis: 50.0%;justify-content: center;">
+<div id="tbl-power-unsolved" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-tbl figure">
+<div aria-describedby="tbl-power-unsolved-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table">
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(L_i^{C_j}\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb N\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb R\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(4\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb R\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2^{\mathbb R}\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\mathbb N\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb N\)</span></td>
+<td style="text-align: center;">?</td>
+<td style="text-align: center;">?</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\mathbb R\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb R\)</span></td>
+<td style="text-align: center;">?</td>
+<td style="text-align: center;">?</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-tbl" id="tbl-power-unsolved-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) 集合幂
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-panel-unsolved-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+表&nbsp;1: 相关集合的势（不完整版）
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="数学公式定理系统测试" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="数学公式定理系统测试"><span class="header-section-number">4</span> 数学公式、定理系统测试</h2>
+<p>这一节我们测试数学相关内容．直接在源文件中写 raw LaTeX 就可声明公式所需的宏定义．由于 <code>\DeclareMathOperator</code> 只能在 LaTeX 的导言区使用，这里我们用 <code>\newcommand</code> + <code>\operatorname</code> 的方式替代．</p>
+<p>下面的公式使用了上面定义的 macro． <span class="math display">\[
+\operatorname{ran}A := \{ y \mid (x,y) \in A \}
+\]</span></p>
+<p>两个集合 <span class="math inline">\(A, B\)</span> 的笛卡尔积定义为 <span class="math display">\[
+A \times B = \{\langle x,y \rangle \mid x \in A \land y \in B \}
+\]</span></p>
+<p>显然，笛卡尔积不满足交换律和结合律. 在势的视角下，它的表现如何呢？</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="thm-cartesian-preserve" class="theorem">
+<p><span class="theorem-title"><strong>定理 1 (笛卡尔积的保势性)</strong></span> 这是一个有 caption 的定理.</p>
+<p><span class="math display">\[
+A \preccurlyeq C \land B \preccurlyeq D \implies A \times B \preccurlyeq C \times D
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>证明</em>. </span>建立单射 <span class="math display">\[
+\begin{aligned}
+\varphi: A \times B &amp;\to C \times D \\
+\langle x,y \rangle &amp;\mapsto \langle f(x), g(y) \rangle
+\end{aligned}
+\]</span> 即可，其中 <span class="math inline">\(f\)</span> 和 <span class="math inline">\(g\)</span> 是由 <span class="math inline">\(A \preccurlyeq C\)</span> 和 <span class="math inline">\(B \preccurlyeq D\)</span> 确定的单射.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof (有标题的证明)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>证明</em> (有标题的证明). </span>这是一个有 caption 的证明．</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof (<a href="#thm-cartesian-preserve" class="quarto-xref">定理&nbsp;1</a> 的证明)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>证明</em> (<a href="#thm-cartesian-preserve" class="quarto-xref">定理&nbsp;1</a> 的证明). </span>这是一个带复杂 caption 的证明．</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="cor-random" class="theorem corollary">
+<p><span class="theorem-title"><strong>推论 1</strong></span> 等势意义下可用等势的集合替换参与笛卡尔积运算的集合，即 <span class="math display">\[
+A \approx C \land B \approx D \implies A \times B \approx C \times D
+\]</span></p>
+<p>这是一个没有 caption 的定理.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-tip no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="exm-rtimesn" class="theorem example">
+<p><span class="theorem-title"><strong>例 1</strong></span> 证明 <span class="math display">\[
+\mathbb R \times \mathbb N \approx \mathbb N \times \mathbb R \approx \mathbb R
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>证明</em>. </span>利用 <a href="#thm-cartesian-preserve" class="quarto-xref">定理&nbsp;1</a> 对 <span class="math inline">\(\mathbb R \times 2\)</span> 和 <span class="math inline">\(\mathbb R \times \mathbb R\)</span> 夹逼，立刻得到 <span class="math display">\[
+\mathbb R \approx \mathbb R \times 2 \preccurlyeq \mathbb R \times \mathbb N \preccurlyeq \mathbb R \times \mathbb R \approx \mathbb R
+\implies \mathbb R \times \mathbb N \approx \mathbb N \times \mathbb R \approx \mathbb R
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof solution">
+<p><span class="proof-title"><em>解</em>. </span>这是一个解．</p>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Remark
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="proof remark">
+<p><span class="proof-title"><em>注记</em>. </span>这是一个注记．</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="数据可视化table-figure-diagram" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="数据可视化table-figure-diagram"><span class="header-section-number">5</span> 数据可视化（Table, Figure &amp; Diagram）</h2>
+<p>Quarto 的另一大卖点．</p>
+<div id="cell-fig-polar" class="cell" data-execution_count="1">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>theta <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  subplot_kw <span class="op">=</span> {<span class="st">'projection'</span>: <span class="st">'polar'</span>} </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>fig.patch.set_alpha(<span class="dv">0</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>ax.patch.set_alpha(<span class="dv">0</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>ax.plot(theta, r)</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>)</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="fig-polar" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-polar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index-cnart_files/figure-html/fig-polar-output-1.png" width="450" height="439" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-polar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+图&nbsp;2: A line plot on a polar axis
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>交叉引用 <a href="#fig-polar" class="quarto-xref">图&nbsp;2</a> 当然也是可以的.</p>
+<p>这里再测试一些较复杂的并列效果．（<a href="#tbl-light-on" class="quarto-xref">表&nbsp;2</a>, <a href="#tbl-light-on-1" class="quarto-xref">表&nbsp;2 (a)</a>, <a href="#tbl-light-on-2" class="quarto-xref">表&nbsp;2 (b)</a>, <a href="#fig-light-on" class="quarto-xref">图&nbsp;3</a>, <a href="#fig-light-on-1" class="quarto-xref">图&nbsp;3 (a)</a>, <a href="#fig-light-on-2" class="quarto-xref">图&nbsp;3 (b)</a>）</p>
+<div id="2acdbfcd" class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> Markdown, display</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tabulate <span class="im">import</span> tabulate</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>R <span class="op">=</span> np.array([<span class="dv">0</span>,<span class="dv">100</span>,<span class="dv">200</span>,<span class="dv">300</span>,<span class="dv">400</span>,<span class="dv">500</span>,<span class="dv">600</span>,<span class="dv">700</span>,<span class="dv">800</span>,<span class="dv">900</span>,<span class="dv">1000</span>,</span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="dv">1100</span>,<span class="dv">1110</span>,<span class="dv">1120</span>,<span class="dv">1130</span>,<span class="dv">1140</span>,<span class="dv">1150</span>,<span class="dv">1160</span>,<span class="dv">1170</span>,<span class="dv">1180</span>,<span class="dv">1190</span>,</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="dv">1200</span>,<span class="dv">1210</span>,<span class="dv">1220</span>,<span class="dv">1230</span>,<span class="dv">1240</span>,<span class="dv">1250</span>,<span class="dv">1260</span>,<span class="dv">1270</span>,<span class="dv">1280</span>,<span class="dv">1290</span>,</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="dv">1300</span>,<span class="dv">1400</span>,<span class="dv">1500</span>,<span class="dv">2000</span>,<span class="dv">4000</span>,math.inf])</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>U <span class="op">=</span> np.array([<span class="fl">24.2E-3</span>, <span class="fl">0.386</span>,<span class="fl">0.747</span>,<span class="fl">1.104</span>,<span class="fl">1.460</span>,<span class="fl">1.813</span>,<span class="fl">2.16</span>,<span class="fl">2.51</span>,<span class="fl">2.86</span>,<span class="fl">3.19</span>,<span class="fl">3.48</span>,</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="fl">3.70</span>,<span class="fl">3.75</span>,<span class="fl">3.77</span>,<span class="fl">3.78</span>,<span class="fl">3.80</span>,<span class="fl">3.81</span>,<span class="fl">3.83</span>,<span class="fl">3.84</span>,<span class="fl">3.85</span>,<span class="fl">3.86</span>,</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="fl">3.87</span>,<span class="fl">3.90</span>,<span class="fl">3.92</span>,<span class="fl">3.93</span>,<span class="fl">3.94</span>,<span class="fl">3.95</span>,<span class="fl">3.95</span>,<span class="fl">3.96</span>,<span class="fl">3.97</span>,<span class="fl">3.98</span>,</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="fl">3.99</span>,<span class="fl">4.08</span>,<span class="fl">4.16</span>,<span class="fl">4.39</span>,<span class="fl">4.66</span>,<span class="fl">4.85</span>])</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>I <span class="op">=</span> np.array([<span class="fl">3.6</span>,<span class="fl">3.6</span>,<span class="fl">3.6</span>,<span class="fl">3.6</span>,<span class="fl">3.6</span>,<span class="fl">3.5</span>,<span class="fl">3.5</span>,<span class="fl">3.5</span>,<span class="fl">3.5</span>,<span class="fl">3.5</span>,<span class="fl">3.4</span>,</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="fl">3.3</span>,<span class="fl">3.4</span>,<span class="fl">3.4</span>,<span class="fl">3.4</span>,<span class="fl">3.4</span>,<span class="fl">3.3</span>,<span class="fl">3.3</span>,<span class="fl">3.3</span>,<span class="fl">3.3</span>,<span class="fl">3.3</span>,</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="fl">3.2</span>,<span class="fl">3.2</span>,<span class="fl">3.2</span>,<span class="fl">3.2</span>,<span class="fl">3.2</span>,<span class="fl">3.2</span>,<span class="fl">3.2</span>,<span class="fl">3.1</span>,<span class="fl">3.1</span>,<span class="fl">3.1</span>,</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="fl">3.0</span>,<span class="fl">2.9</span>,<span class="fl">2.7</span>,<span class="fl">2.2</span>,<span class="fl">1.130</span>,<span class="fl">47.7E-3</span>])</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>P <span class="op">=</span> U<span class="op">*</span>I</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> [[R[i], U[i], I[i], P[i]] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">11</span>)) <span class="op">+</span> [<span class="dv">11</span>,<span class="dv">21</span>,<span class="dv">31</span>,<span class="dv">32</span>,<span class="dv">33</span>,<span class="dv">34</span>,<span class="dv">35</span>,<span class="dv">36</span>]]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>display(Markdown(tabulate(table, headers<span class="op">=</span>[<span class="st">"R (Ω)"</span>, <span class="st">"U (V)"</span>, <span class="st">"I (mA)"</span>, <span class="st">"P (mW)"</span>])))</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> [[R[i], U[i], I[i], P[i]] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">12</span>, <span class="dv">31</span>)]</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>display(Markdown(tabulate(table, headers<span class="op">=</span>[<span class="st">"R (Ω)"</span>, <span class="st">"U (V)"</span>, <span class="st">"I (mA)"</span>, <span class="st">"P (mW)"</span>])))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-light-on" class="quarto-layout-panel anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<div aria-describedby="tbl-light-on-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output cell-output-display cell-output-markdown quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="tbl-light-on" style="flex-basis: 50.0%;justify-content: center;">
+<div id="tbl-light-on-1" class="do-not-create-environment quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-tbl figure">
+<div aria-describedby="tbl-light-on-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table id="tbl-light-on-1" class="do-not-create-environment table">
+<thead>
+<tr class="header">
+<th style="text-align: right;">R (Ω)</th>
+<th style="text-align: right;">U (V)</th>
+<th style="text-align: right;">I (mA)</th>
+<th style="text-align: right;">P (mW)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0242</td>
+<td style="text-align: right;">3.6</td>
+<td style="text-align: right;">0.08712</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">0.386</td>
+<td style="text-align: right;">3.6</td>
+<td style="text-align: right;">1.3896</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">200</td>
+<td style="text-align: right;">0.747</td>
+<td style="text-align: right;">3.6</td>
+<td style="text-align: right;">2.6892</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">300</td>
+<td style="text-align: right;">1.104</td>
+<td style="text-align: right;">3.6</td>
+<td style="text-align: right;">3.9744</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">400</td>
+<td style="text-align: right;">1.46</td>
+<td style="text-align: right;">3.6</td>
+<td style="text-align: right;">5.256</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">500</td>
+<td style="text-align: right;">1.813</td>
+<td style="text-align: right;">3.5</td>
+<td style="text-align: right;">6.3455</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">600</td>
+<td style="text-align: right;">2.16</td>
+<td style="text-align: right;">3.5</td>
+<td style="text-align: right;">7.56</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">700</td>
+<td style="text-align: right;">2.51</td>
+<td style="text-align: right;">3.5</td>
+<td style="text-align: right;">8.785</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">800</td>
+<td style="text-align: right;">2.86</td>
+<td style="text-align: right;">3.5</td>
+<td style="text-align: right;">10.01</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">900</td>
+<td style="text-align: right;">3.19</td>
+<td style="text-align: right;">3.5</td>
+<td style="text-align: right;">11.165</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1000</td>
+<td style="text-align: right;">3.48</td>
+<td style="text-align: right;">3.4</td>
+<td style="text-align: right;">11.832</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1100</td>
+<td style="text-align: right;">3.7</td>
+<td style="text-align: right;">3.3</td>
+<td style="text-align: right;">12.21</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1200</td>
+<td style="text-align: right;">3.87</td>
+<td style="text-align: right;">3.2</td>
+<td style="text-align: right;">12.384</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1300</td>
+<td style="text-align: right;">3.99</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">11.97</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1400</td>
+<td style="text-align: right;">4.08</td>
+<td style="text-align: right;">2.9</td>
+<td style="text-align: right;">11.832</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1500</td>
+<td style="text-align: right;">4.16</td>
+<td style="text-align: right;">2.7</td>
+<td style="text-align: right;">11.232</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2000</td>
+<td style="text-align: right;">4.39</td>
+<td style="text-align: right;">2.2</td>
+<td style="text-align: right;">9.658</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4000</td>
+<td style="text-align: right;">4.66</td>
+<td style="text-align: right;">1.13</td>
+<td style="text-align: right;">5.2658</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">inf</td>
+<td style="text-align: right;">4.85</td>
+<td style="text-align: right;">0.0477</td>
+<td style="text-align: right;">0.231345</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-tbl" id="tbl-light-on-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) （粗）
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="tbl-light-on" style="flex-basis: 50.0%;justify-content: center;">
+<div id="tbl-light-on-2" class="do-not-create-environment quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-tbl figure">
+<div aria-describedby="tbl-light-on-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table id="tbl-light-on-2" class="do-not-create-environment table">
+<thead>
+<tr class="header">
+<th style="text-align: right;">R (Ω)</th>
+<th style="text-align: right;">U (V)</th>
+<th style="text-align: right;">I (mA)</th>
+<th style="text-align: right;">P (mW)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1110</td>
+<td style="text-align: right;">3.75</td>
+<td style="text-align: right;">3.4</td>
+<td style="text-align: right;">12.75</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1120</td>
+<td style="text-align: right;">3.77</td>
+<td style="text-align: right;">3.4</td>
+<td style="text-align: right;">12.818</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1130</td>
+<td style="text-align: right;">3.78</td>
+<td style="text-align: right;">3.4</td>
+<td style="text-align: right;">12.852</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1140</td>
+<td style="text-align: right;">3.8</td>
+<td style="text-align: right;">3.4</td>
+<td style="text-align: right;">12.92</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1150</td>
+<td style="text-align: right;">3.81</td>
+<td style="text-align: right;">3.3</td>
+<td style="text-align: right;">12.573</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1160</td>
+<td style="text-align: right;">3.83</td>
+<td style="text-align: right;">3.3</td>
+<td style="text-align: right;">12.639</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1170</td>
+<td style="text-align: right;">3.84</td>
+<td style="text-align: right;">3.3</td>
+<td style="text-align: right;">12.672</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1180</td>
+<td style="text-align: right;">3.85</td>
+<td style="text-align: right;">3.3</td>
+<td style="text-align: right;">12.705</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1190</td>
+<td style="text-align: right;">3.86</td>
+<td style="text-align: right;">3.3</td>
+<td style="text-align: right;">12.738</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1200</td>
+<td style="text-align: right;">3.87</td>
+<td style="text-align: right;">3.2</td>
+<td style="text-align: right;">12.384</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1210</td>
+<td style="text-align: right;">3.9</td>
+<td style="text-align: right;">3.2</td>
+<td style="text-align: right;">12.48</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1220</td>
+<td style="text-align: right;">3.92</td>
+<td style="text-align: right;">3.2</td>
+<td style="text-align: right;">12.544</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1230</td>
+<td style="text-align: right;">3.93</td>
+<td style="text-align: right;">3.2</td>
+<td style="text-align: right;">12.576</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1240</td>
+<td style="text-align: right;">3.94</td>
+<td style="text-align: right;">3.2</td>
+<td style="text-align: right;">12.608</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1250</td>
+<td style="text-align: right;">3.95</td>
+<td style="text-align: right;">3.2</td>
+<td style="text-align: right;">12.64</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1260</td>
+<td style="text-align: right;">3.95</td>
+<td style="text-align: right;">3.2</td>
+<td style="text-align: right;">12.64</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1270</td>
+<td style="text-align: right;">3.96</td>
+<td style="text-align: right;">3.1</td>
+<td style="text-align: right;">12.276</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1280</td>
+<td style="text-align: right;">3.97</td>
+<td style="text-align: right;">3.1</td>
+<td style="text-align: right;">12.307</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1290</td>
+<td style="text-align: right;">3.98</td>
+<td style="text-align: right;">3.1</td>
+<td style="text-align: right;">12.338</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-tbl" id="tbl-light-on-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) （细）
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-light-on-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+表&nbsp;2: 太阳能电池的负载特性
+</figcaption>
+</figure>
+</div>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>fig.patch.set_alpha(<span class="dv">0</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>ax.patch.set_alpha(<span class="dv">0</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"U (V)"</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"I (mA)"</span>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>ax.plot(U, I, marker<span class="op">=</span><span class="st">"o"</span>)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>)</span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="dv">0</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="dv">0</span>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>fig.patch.set_alpha(<span class="dv">0</span>)</span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>ax.patch.set_alpha(<span class="dv">0</span>)</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"R (Ω)"</span>)</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"P (mW)"</span>)</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>ax.plot(R, P, marker<span class="op">=</span><span class="st">"o"</span>)</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>)</span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>ax.set_xlim((<span class="dv">0</span>, <span class="dv">2000</span>))</span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="dv">0</span>)</span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="fig-light-on" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-light-on-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-light-on" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-light-on-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-light-on-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index-cnart_files/figure-html/fig-light-on-output-1.png" data-ref-parent="fig-light-on" width="589" height="429" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-light-on-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) 输出电流与电压关系曲线
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-light-on" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-light-on-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-light-on-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index-cnart_files/figure-html/fig-light-on-output-2.png" data-ref-parent="fig-light-on" width="602" height="429" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-light-on-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) 输出功率与负载电阻关系曲线
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-light-on-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+图&nbsp;3: 太阳能电池的负载特性
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="diagrams" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="diagrams"><span class="header-section-number">6</span> Diagrams</h2>
+<p>Quarto 原生支持使用 GraphViz 或 Mermaid 绘制有向图或流程图．我们还额外支持 TikZ / <code>tikzcd</code> 的渲染！</p>
+<div id="fig-tikzcd-han" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tikzcd-han-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="tikz">
+<!--?xml version='1.0' encoding='UTF-8'?-->
+<!-- This file was generated by dvisvgm 3.2.2 -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="573.195pt" height="201.165pt" viewbox="0 0 382.13 134.11">
+<style type="text/css">
+@font-face{font-family:PKLFLT-MSBM10;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAAKIAAoAAAAABCwAAAI/AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAANAqBdIFqCwYAATYCJAMIBCAFgkoHIBtpAwAuBuyG+lBMwiDGwnaQay9srZ8XD3xr7c/MopIsahaLIl6vI5qaJRqVbJbSNR6Vyhq0v2/27Yd0ABHNLIWqKMRrN3ra1s/Tdpd4ei6NdCDjZgRfYNiDgw049zCilcYB6GL//7+b/N+BX0C3rIGU2LQ1LNAFGmhRhFkgY1JiKQfiqZ5WB0cjQ7Y6XOKAFA/hmhKIN/H5X1kdUfglpzdUAC4FKYBc4Xi4BRwJjXT9L7AjXOedyoMIEmhGkSqy2EAGpBjLI89fTnCUJZCxnAf7UZS9hTRSWn0Otq8Exy1h+qm+3PrXuK/24+Lv2O729t7b0OcG3HTuHqbf+cIjjrtPw/a7w94Z90v1dl1Itiqde+ph9F/6CVu/8XYXokLM1LfnJful+L11pP7AdejJymtXPOp2mrSG3v9vPyUPU72t2tkLNI5tFJeU0ot0sl5y9FWI7cNb80/vl+cc9DfD6+VQzI9kf1NIunZ0i1kMNcvthEdCmNtdyEHbo+sAAQR42dNaa6SRf+UpAxT/sp5BLj7FD5RjwLn3kVjUySU+NcfyKENLQJSJ9gSurDSNGLCdPcmIsUkJIQUpJWaer2TgjiJZBUIgsRAWg2zCptFKOAym7woE2psY6mzqz83ITM4s9MoqiM/y830fD/28fWOtX8+pxuG2geGWLluAt7//sEgypFOTfrkyZEqWqZCXLAXiZfHjq1iTfgPa9Ohm48ebrwZS3G6dWGdQk8Yn9cbYNBrWZsCwFl1sAnjznxkFdAEA) format('woff2');}
+@font-face{font-family:QZJRZL-FandolSong-Regular;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAAbAAAoAAAAACjgAAAZ1AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAATAqNCIpUCwwAATYCJAMMBCAFgyEHIBtGCCCO1FZzFElyEw88x+wvKqx57dNosIHNh+Pje4cJeMRFR7Ah3LQL3gDVFK24UAPfj5KQigMVsTF1mJoiE/c/m9O2A1JAQhWNm7XlK8sBSiBbNzCShZwi+2rA7oWeW2ac2zB2mRtvCIVB4AmQCT4TLv5DwFTnQm9MC0QHbADJRcnFOXq5dlYByvFGz37iy39PAchEIH5dAEw+/geRoEgIlKER4AmSxbmkuKDg8YamQqfp2d/BSPHAhsAFS+YtGSPppYhjEUYSFkFwkljfDa0whmhrH4gJ5nxofDu7CDGVYhNKciWRkhhJRaWY0YD4oBtMKSyr1eqev+7YNjU8wScNY6ajkyZ0r9mMAxOHY7GoTSbU4uGqwzjD1WiuxexwzKiHGeBcNohxCAbn15jcT09AfDTss4FrF3IMK1izWLx5mzC22Xelee3cBStW8DLXWQoh+ATik4ZBaszorEd8AP2oNBpgFOAVlKDfsCdm/rx1Uja2kz2bRzTJ1VYMI6IsfLPVyuePsEEfvZdjUHq4YiVIQF9iRgPMcDVyI9eaMcQUVu2zyCbPDV4iCR6ulR3tDk9IKEykW3EYzaN74ziM0SF4CYKakMKcQsEnJkwIoyQQMR83IAH8pdKI6GFYGMjwhBgNBIMTLqYrVrbyFkG/AZ03b51fHGTeDUEw+IzBiX0GKHHzrQLNj960zeKldjNxUNbxGazhWAeTYKIj7cKmUHSJ2Ki9q3YgAYcsrLA1olEVPR8PXwaj2EIzt4s1a9umNLZk59qFSAhThRkRA8JIXWuAYVSycq2zccGKpLQkdA/KsuKX/NRsc6w1OJ1hQpC0nB4cUmN0K58Ph6j3Q9PUMiI+gJn/a1uJJACsK4YYiUZEj/gImFmYESBDoJ+zB+XNWqdmmyeuhiDGEUSg2RTENm9cuGEWyy3MZIrJXH04PBwG56/n0fKoXciOc1n5+iLtzjnhgmhFTteJv18vvBzhKme53b9ZAlW/FcS+Qr5eUJQ2VHnVB+5wLgLMFV28oI+1KVUaLA88r9jp5FblfDV5Zu2NzKSSUEtTnGqAnQ+tiBAoZN40qv9ucsEvjT2l8fi8c+TSf7PJbRc3pb7IV+yu0ayyRJolTTNzg/qyQ9+/qs7hHr4jCo1vmmjr8ao+WJwOLkU/jtiR4Z+1BtKRB/K9y8nE2YsXBFJZ++PJU8DFyoCi+tQ6JIr01lvc/YUpsxnXPZrgPzQgNTxHipyQN0Iewux1QnyGss8/P6pKFaribWfFSabwhPG6ROWdrqmzfuczCakvmKezBGoRLeSazPKB26MsYdKzaKt2vKsWCQMFHsLqpY4fw5uNTfPDBZ1h5ZKEnKmLW3szlw5Fn02IRUOUyyT5xLLmMmof4b8Ra/+s/GuA3ckKgsAZOP98Kh8WdZxiujo0naQd4vucsrokX4+RMLWfgTp6emn68X+dXkT6qmFZ229Vxtvc5wYmuw/TD6tSCbzOAd6aETd7RI89Q8x17MTOL2IU2B93HHnrmqqaMt0zdv2tqlucW9pbr78VRImS5QrrQ0U6MwelZjlEqI+HiU+5eojiprnPjabJCoJGUgiGi3wNS7jljUSI+VNb2Ytscb7mYeZSuVIvS3q+Z1xGJFbW1yLLFmrkHZGRCq8+psSpkd466CKyL9M4o+XA9r46xjFyd8FzxsWVakPmQIZgny+hOTGWoKPwGkU87orw0pnQkKd9iqBcjXdhc1JWjKBG5Jk6MWxqdrQw+74IjPzi84mgiqX07aXUKYNP+4kzM/ZeEESRnSaQpZjHDvaLojVvFxB1uBcLkY0hSeke7oSuG57E5Xt7VDFZwaeJ63c/95kXluHUldaTzUkrsvV19bndldltJnPAvrG1aWHs6Y8ad/ovcetzDwld4bm+68wHYm4ZCGZAInd/z1+V2qV8pRFJAK79/9kjzboPYYNIqC3utOUOpR3/gTBVjqF3XGpJ7FWxj2cMf9yLeAHUHkwJ1aRbIwgUg6iwBpiKSOlAFAbDbic1iRAFwjYgoKwcUmEjHVRE1WqIwuBBVNLEe2F5o7ap/g3hTcoCaW6BPLTOCv2Vn3zVPl9kWERrY89l8LSdNW2dVQ0e0WFRYVFAqFwjrSb1VJqwt4pSAanczGy50JYgtAWuTpUO9a1WajpUblNjt9tDpDARvSJFRmPvuOXa6WiLFXowV6tTjbZilYaqTrQwUYYhAhnIAwAA) format('woff2');}
+@font-face{font-family:QMBIPY-CMR10;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAAJYAAoAAAAABGQAAAIOAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAARAqBdIFbCwwAATYCJAMSBCAFgmIHIBuMAwAeg+Nu6T/vvz6UKQYMRRSiRFAtW8+G+ydHmVwsD0aRHQiFJ1uEwWElGuOZ6/dr+85UE5JOMdUmUSWqRhoh4V+GRmgkEpQh+//e4v8GvgGd6hOcrUujgAo8wcxuPG7Kb/DAAw4s3aaoeEVIo1lXEH0NUGMKraNTvsvzv8xa92ITRIMN8AAJXuXhaaobGA40VkhUwavNBAUVy75mGc0RMDZWcKheYyYO0G35mxd5DgGADibRcA48AtAAYY9bV7FYrXOLRBVBWAmymiSXZDIMq8S+KtU77ThWgWGLSEmSVfNElWdXubeEV+J4K4fNhcmB28ziIC6Tg8p+J1fbWkNNrmrtJQ8utg7sFaG2zg4F9+m+Jf1HzMRRU/u3FZyJsUTOe71rzf2Pz5+yn/wCsRWx5euUAy2XLR+237XDUYIN3AAQCF4vt2ubhdm/rEoD+Pt/zPPfAqmoMFZAUCUKa5RRAQgA0AoQXzpiRUboYJYSQrcOgZCCSc8MmEMRNtPmMO2mbNHBtL36SZsiqKKxIewqENqs66PdqgU6WLcfTTrzcLj1150rSwtjuSW1/nhhWTh0Z06EA6Gp2ENoWsdU7/hU96ApGojk0RA3bNCISRM6jTEpNKxDv96QUoVicpWo5RdXqExYSJVOY8b1GjbEJCwgVAFpM1RlWneCDr/N7EjuMKXXeFG3QSZRAZFQpAIA) format('woff2');}
+@font-face{font-family:CETBTR-CMMI7;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAAQoAAoAAAAABtwAAAPcAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAAPAqGdIUfCwwAATYCJAMUBCAFgmIHIBtKBVGUC04F8OPAOT8FO6kiJ+kp77Ygcr7rTwaflz8vKuyU3tTwF06CTqKX58nb299sN91NAg8wziDJLEhDaHIuv7a1aQYI6iXZQXb58fka09rUhgojAvVAuTiV/4LxBGiqR2BSNiYUXkNnW6FixcfGvYCLWEIqhLPZdOVTSoh4qQgK4+EOoGNOZoMF6qHO/VfFrGmSt4MG5yIFYBzgBFwU3S2lAKNcTYVYobWFWyoWAwAKQANUK+czGZYALk9QKtXQcrn0iBeL+TooWEU6pgCyAeSEQRnfBgqFIN1phMHjCUs+t+4easGbe7CAcaA5rSSLqA45dEaCnrfkTa5OAoSOa2WxzS2MBIbJvF7Z+Ry7zdcHlrwn8WbHTivM12zp18VeIDAAeIINUsUo8F9OV5OXuQdVtmzdMe6UldrDb8p9iYTP+m09P+vgrWJFo/vAp+PMfGiyAaistL22O9UghGEyk9XKzuMYKTfzGgFXywnUKPfJoVazrC7XCYflp+C7G4BxQ0OgOX779nutpBByrnqCN1VqOlPJu9JMOAjOK8MwEp7NXwhJ1zsVNWtYmQSX49/F97ASIUm3t3er/RTZy6JuD1FgDW08Lqr6r9IKTFS0GNA/oBKooLQ8XlK+bjVjd3VZII3YFaAZoPFKnNg2gy22Skr98VzuGjW7k8sCGA0c7+XsbdzlGVLnEHrrrWCUVzI7Hh7O94gk58RLyj54kXxYYB5elVaNzarWSv26QLxMNCRJnVICJfvOU03lYmgEAr7ixe9SI4viXJIzdeAw403kCn/cc1gW41kcV9jz0ffpy28e0pq2EZT6e4dE66h5fLl0f7wU82+p9+FBC5GTmlygHSsRbt5kPPnKsdSckgueJfjovzKV+iIlf0NC4HaKZNB1WG85ujlFUe2N4UWDzULF7OXx8ioBcgOFIiJYFeWleH3anmxHhel5q1kfODZbyWi74RZdJaU58VztGtbuimWPpKz10SdqgWoiRSWnFf0R3psvVuk2qcQKM9Hb/AEAAAEQWPfy2I1cBZ9vkjQDAHjyd1+ETxPzWUGdDSGJEindNAXqB2CUFdpy2UMmkhcO5QlAXYimFQfSYaWu1MGE0noQAhQQEjJkKWwTLBk6BEeW+XJp2pzQSJMCoS8qEQxNFQRL3QDB0bQ4kuZi26OZ9Oe1hUJwkigpwU6Ijg53f+PpcuQddrV8xh5X1FLe2FJabejMO9m9IahVrU6zJsUaGIpWqyjfU0MQLIlIkgR2BNGihXOXwtiNyvn+1TDkiOegEKrURCn5R4Iiu0C7xyzSolzjrFLVDDnjOXWWNAAAAAA=) format('woff2');}
+@font-face{font-family:PBNPBA-CMMI10;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAAVYAAoAAAAACIAAAAUOAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAATAqJeIc3CxAAATYCJAMcBCAFgmgHIBuABlGUDFIJ4GeCTYd+YSGiKRbTFJtl7DTTNj57PB7g7/2de/8YO90TKMBwYRZPsGWRlPnYmvYGvlP/ktYBL0LFpGLiCtFcZxKiEr7u/jb/PSP/+UELSXvgnLpoW3N8BWAvywZ9YyRoE0c0Xex8I7lty6AIighTujNfse2xJ6RiPdzKEB/j6n/bi+kPv8NgPRQQsog3vOv0/LwesHWUWkxJkBLQYGSS0MRMCm2Y1GZt51RRXhQd07uYWmSkjxTYZVLq2dGsJkHlEFX+AoB6S/h0pTUXv64wvjgs9Pig2BvcFa0/muJm91o6S8ViGSyFrvWwczEIGgFWCa1D1rfGmYDc5t5qYG2zN6ztHdVpmWYOpS3k8YZPi4oMsSydwbXLseYDuub10NkdNaSKglSU379Vzt1TbK5zrCkyo5T9KCOoU5XQWJWj7k+2A8u18K0xx7oVEVmvU9EqBBYo6PEap3gY9aSRbmwJMtZS+2HtHseaW2YQpeXCsOuTVbZlwPFxE8PU7m6qI/fQDCyeClVfaKDodRWQ6vHb6uHexpsNLrWuwXAss52qNUBBYRPFVKuDMnpxM1hL12ljh2qsBSj5uH54uF2v4lmAm62zsNaMAo3ATYGFNqLqW2MYPFpkcf15aHd/UnuzwcUIuvZvc2EYUTbkUgepDBSKiXIrsNh7XFu/IyzeDq1fZFsG+poQt5rd6yhuMz7kljMlKhrk0wHJ+rY4LZBs7q0zDEupZmotXeQzoSrZkffD/rdgZjFYW8ISlG4G96/7t8NVbU2I4mH33mu38YfxHYxTfsPjrWxcq2jTKb6LPJkltr978l2eROCV9kVGR3Qk6IB4ZF54hg1JpkhH8raDXQMXeHafQpHbvO1nNgRJFE5shxtLTxunNwO/DCUGXuwWbMTtARTI3PBML5k8HXlTqQbi6QcNe09LMQ7Op1Fztr/dIb8k7X8E7mtzIdq/eMn97fUHohQvzfZjiX5MewpcKIyWYSSSb7LeRYpf8TKRaH8QJ0aw8p3/mRXkuJ5AJSUZpFPsXz8oqBfNtPhk/0p+BgnNBXHpCPTZX775KkB+l3Sun3xWXYX67QPw8dbJuY6jugPIeBGHHZXlyozRatLS5VaUH+/T+Q8ei3y2biZlIpKQeRGpv/wvk6ciuaRvIjpfVjAe4AO37DaViM8/TCl242UEuR0wPasHDQHqIKcnM0F4pvl2ehgjBYXJEtuTN6p/eC622jheSm/rILm8JDh8OIl+4TXi/OePfLznOOsQ4zSFkQBUpoWyUpkVWWJb8mYV/obY6qSYLbqj6Zr41w0bmeWCIY9n2n8UknTxCcCRq1yCUk1SUppSUjp+eHJsODE6bdNPZwsQll1u1bwiEJ7pU60y0O5y4g+S0HNsbNKt7S0+s3f3IUQHryXtDCMFm7CIR6JFIgkAAAGB/czk4UAt6i+fSoOXnxP0rclSPIsQ8iLTebmMEC+gkol4dh2A8ak44RmerIQ/IeFDNR7gsIICKubQYxuRKbqEQIA1p62mVdTUjJKxmlUxfbloKIiVkC4IpqQkNW3oqJrRdV/NGirJFm3oe5R1/qkuniZJWarEvtLk5Hih4BVxWOgn2Gv68D8v7/yhM+f1x3iBfgH9ZUDqhGNOOuesfKfxJDshzy49Lo1EipYQ88X7k+XSeEICGlTijEOM8R7HI+RHwAGVruM8V/ZpYF4ixyXNnOe8Q86s0juGJ5CfgNq5FQEA) format('woff2');}
+@font-face{font-family:ESQGGT-LMRoman10-Regular;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAAPEAAoAAAAABpgAAAN4AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAAXAqFUIQ5CxAAATYCJAMcBCAFgxgHIBtCBQAeg+NuLDGZDDFvPYryfong+avN+3sdtFzxkiUeWGAXUHSKZlCY6PXTe9abWSdrpD2wXVgpVuxSOhFtTv6C/9D/APO7B86pmyVvQFEAuFFTA68xEnQIxc0TufDtVH4+iN/cpRYvrTVzjocPyQlZXEUDIAPSBd/5rwn9aqDPlQGWoQCAl4AI8Bg22zIRyPJRmjf9Z0C+Qxtw5/6CBGTARAriz0nzA0byMEs2TaZ8RUpHNWP3MLOmjBo2GGKQCjSCGoIXQCwBy3kBZwDd9sxSVCMUtdewiwmJhCaObtfDpPgSm8QEc5EmYGIHSQK/pRHZvUtfZnonQSCVlMnNI5qnaYmEzzACsZgeHVmrOCHm7LhjPWqrc0owvo0/zZ7SP+iz1Q75JJJPoyvbjKXmd1ohAZ7Y4RvfsHv11p1z+7p3pDx+THR9WsKVEF23N+9+rDch5uy5Q3bfYxjRxPaunY27dLQvP4blmFdpSsDrDMwzvkfOqNDoMV/CHdM+uAoxXXk8c8D7GiNA84H/Z4dvwQN9uYzA+HyoWiE5KaEvZCz0VfSRm8gXhJ/5ow+LisDbgjClaz9soGswYq9rYgHbK+FF96mqMKlo1NSIRSi5vDkax2NhGYSMY2DUy/P4hlsTh/aIFw18FJPdKhUP81YK3h+c7SyRE8G/rJSPKdUvoJFf/m7SR1YYNoDtWvP8QuJrhfMW3+DtM5zc0BCPYlFjHU5FyXWdSTgeN7RFxCnLBbM2uftRb8OxXIAyKRemHnGBve4Jy1vWH0qOcodZbRvY1MKgS37InMGwjRb1y13xbL9MfRKbmfSShcNO/smqzbD6RMRujuOjVHQ7wwHWn5F7f5PJKEnrPr/f6C4Ar4fmFTeTMTJH87EZAAQQ4PlK91aCitMfeSlpALz/Hg/wM/+nQnwcYKtKI8XtHkl3MKKFgAE1jFeFCSLKjmtgFEY+nGBrEIySPbAgoMJh7BC/VQeJqQDn53QptMkCiUWWdG1ebunzIgXlCoCoi0+kNDMFpAxtC6QsM0fTBCufgoKfZFbNzbwjw319aU5M5XxnJp1c+plzYY2r6aHUssziMlEuZcm1sB8HQYJFyJcrSR5zZrxFCufLF42j32iOCGlESuVIUoQvTZFimfLloZjjMoG+ch4bO0mJNKlOskqPnapMpuI5kVwUS1wWpb8UAwAAAA==) format('woff2');}
+@font-face{font-family:MUHZLB-MSBM7;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAAJoAAoAAAAABCQAAAIcAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAANAqBdIFqCwYAATYCJAMIBCAFgkQHIBtjAwAehXGbEw6pUaSnWXFb7iGCaOlm9/cSSmtCopA8MsLi8KW6GA/GImUswsIP6eXl8wAL0KOYwpO0yRsUjN3qtWXKf3STT+QfaNpCerGWrSGYQMBRhAmMSWFiYRyop9vUPXpIWNH2dEUbdPkco6CR36SHf7GRkcVfceyDARqBA9nDa1MxoOpfKPJfqrJ424YBQKLDFliASHYGKIiw5zrlNHIueEqCQocJ4BEABehuqOxPyAxzVYkn4UEomoAmzkqwxAHCfxpBZp5d7lEnNGnTDE8ikrfMicTpO1fkzhBZU01PSwZmE6BJppFpntLJX8LxZIJY2d1iJyyT1jSxQbbBts9xUN4P+IKqz9Nyhs2jy+DAqcv1++UP5Ti4pkTW0wIK+vGk5BR4C15LSF5AC3xqwbOaD95+TK++BuNzEq4avXER/z3JOUzWMkkagLLv99vN/V1ND6DoRPzGAAgEdy823dk8j386XGD2MGw9AobfPCW9AuYkBPc+kDNGjPM0Aq8Tw4SQJuCO0JoFU5BDC/akLGmkWbRORpYcjS84YAIWNS8suDVS9kSQZkcBGdnTdnLBtfHAxorCusjEkLQIP8vIeL9I5+dxz9bK5qj153l/QVNpfVNxpY69lZ2VHQjUqEKhOpEShUgTwY+lSPH8RHKWhK/VK1Wtig5bVmwUEBxWqcRcDQoVXMnTSkeBJqXqNSlWSYc9K3Yzg8EKAAAAAA==) format('woff2');}
+@font-face{font-family:IHTNLY-CMEX10;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAAIkAAoAAAAAA8wAAAHaAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAANAp4gQELBgABNgIkAwgEIAWCaAcgGx4DAC4HbGMYXoc4iX2UF9sssiEn5feOssbiDx2Mh+cPf+e+PxtzaRsHx4HM6YltwMUFuLUoCrRozrffvI9KsnQVl6Zir1PNI5lIo9RR4kLbWkmWHV4N/Oe1ykI7AF7SSqgo/v+9xf8NcAO9jkgDTDy7wQKL1vMEM7tBahZmmGhAnu3M9eiVlFQixuy3EzKZ9tjIkS7Sy1+9tbaRCMaCSCoPmQESS4fTGsD11jyKZn2OAJmmsi8CgP8gIYN6aAEZoxuQDYPemv/8k+8LAAlkEegFjAIgC4je9eatAWaE9LPwGH0Nl1eOrS9Tv29NjBWufsZJ06t3guAuuwOxX+71BO8zW5KrMMdx/n5ZuC/evmPY9JxrzMZ43Nhfkm6AQPCggZmjG7+KsuDjOyDq+1eBogSCdQyy07R0FRg2pOQVBEkvBATTlToCVKEIsipUiWlOmXaaV2EoolQrJbTIlgidvGKa1apNcxqtaF6rR19q3Pug5d9oPnbYw153QmTyWOIy6QV2KhNLc6NnybnytDGa1jpQIZbby8Ckp6NvYqxiCPLoKdP37XKwC/NySxAx8bCIk5GKqhgaaejpgmTEpD1gK7p9RWEalO8ULUBlUw0jUzUdkIKY3HM0ZAIAAAA=) format('woff2');}
+@font-face{font-family:CWOAQK-CMSY7;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAAHQAAoAAAAAA4QAAAGHAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAANAo0RwsGAAE2AiQDCAQgBYJiByAb3gIArgpsY2HYw3bbMRVmIU/58HE5Hh7uh3/uq0UGyIZpME8vG1ZwEkaCrHW6/mG2W7eM/7YNcJCUdt5FCQaSJhiANW7uXjKSyWRGu0oU0RR7j09zGYSk+ML931v8fTjQC0cTH+DEZ0fdHFgv0ARDCI+TAo0s0/ub4pZISA6lfZshTc5iTU5ykFz/40gUb8wZiTKUAjxFEKYXnlbQ+usr3PdnxAemNwgA/v8HCVI0YoFGWS+SyQT99f8//Ml9AkACMgQqUQ3IAFE5U711vHLSVLN7tHz4zdMq3rtzt4dPgUAw9ONqxt5LM/D6Z502pP3RgZRKQDCUvG7WmvZLiDyRcYqIRKUAQRXlFhFqjE8ylWpIrkIHKVQa7i7XzrDIyoRuFUim1SK5ZpsUWt2y3Ki3LuYzzK08cZhnkLCCjF6hDYWEak+L1918+vNpZ+AwGIXVbHO71A5As6rUDgsu4WA8BiJYAhmqqx1OvdUCUCAVUOxSZfNOUO0ZfsD06J0erRngwCxj0AIAAAA=) format('woff2');}
+@font-face{font-family:YAEUQU-CMR7;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAALkAAoAAAAABRwAAAKZAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAARAqDNIJdCwwAATYCJAMUBCAFglwHIBsKBMgeg22zeeQSI2KdJEn043LIUFoeoP1Rb+Zj5YNVJaRNB6sZpV1zgkK7thjan3+3e4P4ZUdBTXCE6uZS9tv6H8Aa8cQ1+SPtGyjVX/Apmh6wwaoAn3TW2Diy3Ww8Gs3cRsEvOGRGORDGMFxdNlitSeUBSXwfzsuIN+OHJp7Z4QWrKAwNZPgcIfBT1tV3VQOCviIS0ByJ4J9tFkQkqM2P1sIMAhQqFNGXj4hmi+S9yen9FSiZOV2MHPsA900ofVuCKIjt2gokNNrauHz95M2WCe3y/QMP6srQ1VunbtRG+rV7+++2qN/O3zL20+abc2/MHczKnaJdy0BL0Y/J48NU/GxZeGgJlgU75uKXj4O2jPP35a9MW7G1RyUlFizIz4fUU0/aZG8fe8DnLzNPl3cx2EYFczkPZ7/9C6X2dNtBCR1zN9P1+N2YRo1+73lZFRNaFKZvVizQezah5kTxS17YS0pv0YKUtlW5yOAb3YTel/gctm89/L9g5sCq+BG0fXQyWTvXGu/Vl5Xu1uYC2xauet9hTB2s8GRQb1uKU/cqXJbmkBAceqbYXIof55K8u8H2uv7R52Bw5+LD92Pdjt3dezmkfi/m+/4/AAIC50Z2uqxkhv8noRT8bnhL7aXmoVHxnLhyApF/4qChApJgELGiE0+OSfwYLaiByAwm9GhebC/oABV6ElMlKoAMaQPkSPfzxdrwhoS0SNBBKsRUCzVAhgwBObJUFBvm4rLQ/4adKolJKMgp8BibkRt0r68He3obrRfstnVdte1d1Y2qoZ6+83EQp1mjFp06VGqjkqFZBTzRpESMBAVyFPAQJ0OuIIWcb2lXq1kTFR+evM+AJLOJZJbSgYqoTG91hS612g9Va6Tix5Nv1YgAAAA=) format('woff2');}
+@font-face{font-family:IOCXPW-LMRoman7-Regular;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAALoAAoAAAAABSwAAAKcAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAARAqDFIJaCwoAATYCJAMQBCAFgw8HIBs2BCAehenGng3CZIgbb33Mr8h/rHv/3CRPmdrT13oKa9p+yF5RO2lFHr6d71cJBJZ5kVTnE5/yRjpd/vcCTN3UhkVRAX1DPdFoTAp8bN2igQSYFm/TLKAuwMll3qrFiMnYdO6zT5IWgKeDtAAV2M3u/nMxf6n00RhICAtAGIEkOAa6nGHdYVRIL+P/PQBxUSTM+E8YDMCxXXAE+wixADMzBihUTP8lTXbG/oJjgmTu9YmArZvfDDCEmkt45Oj7+hKX+7oNKbN3exlW75KSbB80LnV9oD9qOvdQylkrPMWKpYoy+1HO7keD5cOHupy1xBPKe7lJYfLRJV1ixU5FQdMkabUfLZsmPkzf9jCxcIlCJ304ViyvJMLg06tb5Vb8MHWJyxldNtvHT2zBZja12fu0nT6NLbF6pm72dPXanOoZvGQqa9f0997o1G0Gm57ZmNU7Pn+8+toYZPqiTsjpHhl6Tu2Ok7eDZM/aNsOwQP1i+t25HMcoV3VRKfd4OTp/4U9RsPUQX82JcUevTX9l7Yy4uBlkqTE557vvzTduuPC9IzmHi8pI66AJNxdsa2SVCHemgd8P9GJzuja7G4eqru+PAAAEIPj0zvtQe/vMX2YuAADv/pwoD2O8s9NQMgsgKPsmfCFOYg4DgRnhDxjPSD+QlgsRhwBCNEmJ29I4JLAZJVtwZ06BgcIfGLmL6Je85OGoWEActG5A0PQGBm5WAiPN/rCU6EVl1XPEREpZTUGL2uboKUV/5MWf2avEabGg3J3smXcZ1nPwsO59AxK0eC0elarU66+vjvpJUaZGgRZqNYse72S0el11N1QfHQ3SpKtBBuupv34CxNHE0sAlQj8qdkdDdNXF7GRkwO5imJ4Gd3XXV4AEmnjlyAEAAAAA) format('woff2');}
+@font-face{font-family:QVJYUI-LMRoman5-Regular;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAAIoAAoAAAAABAgAAAHeAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAAPAqBAHoLCAABNgIkAwwEIAWDDwcgG0oDIK4HeMN1kiNsITw2IQR7ntm5Stzj1yp6Ve9D8fD9fXru+3/HzAfLsumGkIAFKOM7RjDUihekE+BqHzz04+otiLT+/2BUuF3oyqx304UGJmVx+pZyf39uTRN4vvu0AuzAiMwFm+aGNJlh31SVtMoSTja6hZim+E3d5Bf55zHVX/TpW2AJ5Et8C2aBbesSyyhdJJ7tTK9EUolzY6+Z2QJF5AMV0kv5/2A9orgr+DAArIEC53M8PS3GEIrKpf9h5VkRBAByBgkKGKgoYKCWgpqagpJQlDPSzT/5pXAB/gMSjGEOUAIERRk7sAqL7bTdeLcJ0/JVkD5/rVeYtjp8j86OfmrjwmQ+BkJMfnuS4PvJhKdM8ZFwOr7y/MVnvZ2rnwcICPyiup2w1f61pBrw+UuXDWmfDqClBALb0ZO+WZtNFXoHoIgY4oNLFzwFFGIUQMi4Nw/w9bBxSj56CqBiIjlW88lQAL2gJiRFaUDBbmTkatIc1/Da5FrSSdKo1J99T/RS4lCsZ5GGzBefW9lzbJkiWQgq3FMOzT79+bQzlMjicnF6WXyrWW4hGhLTZSIaBPgmhWG11m2SO8Rqh1NvtQBFpEIaoLiFSs9datWeaT8w69E7PVozUEIqboYqAAAA) format('woff2');}
+
+</style>
+<g id="page1">
+<text font-family="PKLFLT-MSBM10" font-size="9.96" x="234.51778" y="-118.960946" transform="matrix(.999739 0 0 .999739 -128.28202 131.06)">C</text>
+<text font-family="QMBIPY-CMR10" font-size="9.96" x="241.711903" y="-118.960946" transform="matrix(.999739 0 0 .999739 -128.28202 131.06)">[</text>
+<text font-family="PBNPBA-CMMI10" font-size="9.96" x="244.47817" y="-118.960946" transform="matrix(.999739 0 0 .999739 -128.28202 131.06)">x</text>
+<text font-family="QMBIPY-CMR10" font-size="9.96" x="250.170694" y="-118.960946" transform="matrix(.999739 0 0 .999739 -128.28202 131.06)">]</text>
+<text font-family="QZJRZL-FandolSong-Regular" font-size="9.96" x="352.299034" y="-118.960946" transform="matrix(.999739 0 0 .999739 -157.91501 131.06)">离散</text>
+<text font-family="ESQGGT-LMRoman10-Regular" font-size="9.96" x="375.535969" y="-118.960946" transform="matrix(.999739 0 0 .999739 -157.91501 131.06)">F<tspan x="381.213177">ourier</tspan></text>
+<text font-family="QZJRZL-FandolSong-Regular" font-size="9.96" x="410.047959" y="-118.960946" transform="matrix(.999739 0 0 .999739 -157.91501 131.06)">变换</text>
+<text font-family="PKLFLT-MSBM10" font-size="9.96" x="460.200867" y="-118.960946" transform="matrix(.999739 0 0 .999739 -125.435009 131.06)">C</text>
+<text font-family="MUHZLB-MSBM7" font-size="6.97" x="467.261282" y="-122.54019" transform="matrix(.999455 0 0 .999455 -125.435009 131.06)">C</text>
+<text font-family="PBNPBA-CMMI10" font-size="9.96" x="139.450597" y="-81.744661" transform="matrix(.999739 0 0 .999739 -128.766 131.06)">f</text>
+<text font-family="QMBIPY-CMR10" font-size="9.96" x="145.399044" y="-81.744661" transform="matrix(.999739 0 0 .999739 -128.766 131.06)">(</text>
+<text font-family="PBNPBA-CMMI10" font-size="9.96" x="149.272023" y="-81.744661" transform="matrix(.999739 0 0 .999739 -128.766 131.06)">x</text>
+<text font-family="QMBIPY-CMR10" font-size="9.96" x="154.964537" y="-81.744661" transform="matrix(.999739 0 0 .999739 -128.766 131.06)">)</text>
+<text font-family="IHTNLY-CMEX10" font-size="9.96" x="234.51778" y="-89.214711" transform="matrix(.999739 0 0 .999739 -141.766 131.06)">∑</text>
+<text font-family="CETBTR-CMMI7" font-size="6.97" x="244.962448" y="-86.727717" transform="matrix(.999455 0 0 .999455 -141.766 131.06)">n</text>
+<text font-family="CWOAQK-CMSY7" font-size="6.97" x="249.883755" y="-86.727717" transform="matrix(.999455 0 0 .999455 -141.766 131.06)">−</text>
+<text font-family="YAEUQU-CMR7" font-size="6.97" x="256.107362" y="-86.727717" transform="matrix(.999455 0 0 .999455 -141.766 131.06)">1</text>
+<text font-family="CETBTR-CMMI7" font-size="6.97" x="244.962428" y="-78.734075" transform="matrix(.999455 0 0 .999455 -141.766 131.06)">i</text>
+<text font-family="YAEUQU-CMR7" font-size="6.97" x="247.778883" y="-78.734075" transform="matrix(.999455 0 0 .999455 -141.766 131.06)">=0</text>
+<text font-family="PBNPBA-CMMI10" font-size="9.96" x="262.308516" y="-81.744661" transform="matrix(.999739 0 0 .999739 -141.766 131.06)">a</text>
+<text font-family="CETBTR-CMMI7" font-size="6.97" x="267.497152" y="-80.22726" transform="matrix(.999455 0 0 .999455 -141.766 131.06)">i</text>
+<text font-family="PBNPBA-CMMI10" font-size="9.96" x="270.889256" y="-81.744661" transform="matrix(.999739 0 0 .999739 -141.766 131.06)">x</text>
+<text font-family="CETBTR-CMMI7" font-size="6.97" x="276.503222" y="-85.334476" transform="matrix(.999455 0 0 .999455 -141.766 131.06)">i</text>
+<text font-family="QMBIPY-CMR10" font-size="9.96" x="460.200867" y="-81.744661" transform="matrix(.999739 0 0 .999739 -143.156 131.06)">(</text>
+<text font-family="PBNPBA-CMMI10" font-size="9.96" x="464.073856" y="-81.744661" transform="matrix(.999739 0 0 .999739 -143.156 131.06)">f</text>
+<text font-family="QMBIPY-CMR10" font-size="9.96" x="470.022333" y="-81.744661" transform="matrix(.999739 0 0 .999739 -143.156 131.06)">(</text>
+<text font-family="PBNPBA-CMMI10" font-size="9.96" x="473.896322" y="-81.744661" transform="matrix(.999739 0 0 .999739 -143.156 131.06)">ω</text>
+<text font-family="CETBTR-CMMI7" font-size="6.97" x="479.959329" y="-80.22726" transform="matrix(.999455 0 0 .999455 -143.156 131.06)">k</text>
+<text font-family="QMBIPY-CMR10" font-size="9.96" x="484.996425" y="-81.744661" transform="matrix(.999739 0 0 .999739 -143.156 131.06)">))</text>
+<text font-family="CETBTR-CMMI7" font-size="6.97" x="492.603436" y="-85.980124" transform="matrix(.999455 0 0 .999455 -143.156 131.06)">n</text>
+<text font-family="CWOAQK-CMSY7" font-size="6.97" x="497.524783" y="-85.980124" transform="matrix(.999455 0 0 .999455 -143.156 131.06)">−</text>
+<text font-family="YAEUQU-CMR7" font-size="6.97" x="503.74836" y="-85.980124" transform="matrix(.999455 0 0 .999455 -143.156 131.06)">1</text>
+<text font-family="CETBTR-CMMI7" font-size="6.97" x="492.603436" y="-78.717084" transform="matrix(.999455 0 0 .999455 -143.156 131.06)">k</text>
+<text font-family="YAEUQU-CMR7" font-size="6.97" x="497.004067" y="-78.717084" transform="matrix(.999455 0 0 .999455 -143.156 131.06)">=0</text>
+<text font-family="QMBIPY-CMR10" font-size="9.96" x="139.450597" y="-44.013511" transform="matrix(.999739 0 0 .999739 -135.19602 131.06)">(</text>
+<text font-family="PBNPBA-CMMI10" font-size="9.96" x="143.323586" y="-44.013511" transform="matrix(.999739 0 0 .999739 -135.19602 131.06)">f<tspan x="149.259727">g</tspan></text>
+<text font-family="QMBIPY-CMR10" font-size="9.96" x="154.3797" y="-44.013511" transform="matrix(.999739 0 0 .999739 -135.19602 131.06)">)(</text>
+<text font-family="PBNPBA-CMMI10" font-size="9.96" x="162.126668" y="-44.013511" transform="matrix(.999739 0 0 .999739 -135.19602 131.06)">x</text>
+<text font-family="QMBIPY-CMR10" font-size="9.96" x="167.819182" y="-44.013511" transform="matrix(.999739 0 0 .999739 -135.19602 131.06)">)</text>
+<text font-family="IHTNLY-CMEX10" font-size="9.96" x="234.51778" y="-51.483561" transform="matrix(.999739 0 0 .999739 -165.54001 131.06)">∑</text>
+<text font-family="CETBTR-CMMI7" font-size="6.97" x="244.962448" y="-49.007282" transform="matrix(.999455 0 0 .999455 -165.54001 131.06)">n</text>
+<text font-family="CWOAQK-CMSY7" font-size="6.97" x="249.883755" y="-49.007282" transform="matrix(.999455 0 0 .999455 -165.54001 131.06)">−</text>
+<text font-family="YAEUQU-CMR7" font-size="6.97" x="256.107362" y="-49.007282" transform="matrix(.999455 0 0 .999455 -165.54001 131.06)">1</text>
+<text font-family="CETBTR-CMMI7" font-size="6.97" x="244.962428" y="-41.01364" transform="matrix(.999455 0 0 .999455 -165.54001 131.06)">k</text>
+<text font-family="YAEUQU-CMR7" font-size="6.97" x="249.363029" y="-41.01364" transform="matrix(.999455 0 0 .999455 -165.54001 131.06)">=0</text>
+<text font-family="PBNPBA-CMMI10" font-size="9.96" x="262.308516" y="-44.01351" transform="matrix(.999739 0 0 .999739 -165.54001 131.06)">x</text>
+<text font-family="CETBTR-CMMI7" font-size="6.97" x="267.924919" y="-47.614041" transform="matrix(.999455 0 0 .999455 -165.54001 131.06)">k</text>
+<text font-family="IHTNLY-CMEX10" font-size="9.96" x="274.561327" y="-51.48356" transform="matrix(.999739 0 0 .999739 -165.54001 131.06)">∑</text>
+<text font-family="CETBTR-CMMI7" font-size="6.97" x="284.993623" y="-41.013637" transform="matrix(.999455 0 0 .999455 -165.54001 131.06)">i</text>
+<text font-family="YAEUQU-CMR7" font-size="6.97" x="287.811087" y="-41.013637" transform="matrix(.999455 0 0 .999455 -165.54001 131.06)">+</text>
+<text font-family="CETBTR-CMMI7" font-size="6.97" x="293.923745" y="-41.013637" transform="matrix(.999455 0 0 .999455 -165.54001 131.06)">j</text>
+<text font-family="YAEUQU-CMR7" font-size="6.97" x="297.621739" y="-41.013637" transform="matrix(.999455 0 0 .999455 -165.54001 131.06)">=</text>
+<text font-family="CETBTR-CMMI7" font-size="6.97" x="303.733406" y="-41.013637" transform="matrix(.999455 0 0 .999455 -165.54001 131.06)">k</text>
+<text font-family="PBNPBA-CMMI10" font-size="9.96" x="310.380967" y="-44.013506" transform="matrix(.999739 0 0 .999739 -165.54001 131.06)">a</text>
+<text font-family="CETBTR-CMMI7" font-size="6.97" x="315.555941" y="-42.506822" transform="matrix(.999455 0 0 .999455 -165.54001 131.06)">i</text>
+<text font-family="PBNPBA-CMMI10" font-size="9.96" x="318.961697" y="-44.013506" transform="matrix(.999739 0 0 .999739 -165.54001 131.06)">b</text>
+<text font-family="CETBTR-CMMI7" font-size="6.97" x="323.143784" y="-42.506822" transform="matrix(.999455 0 0 .999455 -165.54001 131.06)">j</text>
+<text font-family="QMBIPY-CMR10" font-size="9.96" x="460.200867" y="-44.013511" transform="matrix(.999739 0 0 .999739 -155.658 131.06)">(</text>
+<text font-family="PBNPBA-CMMI10" font-size="9.96" x="464.073856" y="-44.013511" transform="matrix(.999739 0 0 .999739 -155.658 131.06)">f</text>
+<text font-family="QMBIPY-CMR10" font-size="9.96" x="470.022333" y="-44.013511" transform="matrix(.999739 0 0 .999739 -155.658 131.06)">(</text>
+<text font-family="PBNPBA-CMMI10" font-size="9.96" x="473.896322" y="-44.013511" transform="matrix(.999739 0 0 .999739 -155.658 131.06)">ω</text>
+<text font-family="CETBTR-CMMI7" font-size="6.97" x="480.316175" y="-47.614046" transform="matrix(.999455 0 0 .999455 -155.658 131.06)">k<tspan x="479.959379" y="-41.539358">n</tspan></text>
+<text font-family="QMBIPY-CMR10" font-size="9.96" x="485.517309" y="-44.013518" transform="matrix(.999739 0 0 .999739 -155.658 131.06)">)</text>
+<text font-family="PBNPBA-CMMI10" font-size="9.96" x="489.390298" y="-44.013518" transform="matrix(.999739 0 0 .999739 -155.658 131.06)">g</text>
+<text font-family="QMBIPY-CMR10" font-size="9.96" x="494.498944" y="-44.013518" transform="matrix(.999739 0 0 .999739 -155.658 131.06)">(</text>
+<text font-family="PBNPBA-CMMI10" font-size="9.96" x="498.371903" y="-44.013518" transform="matrix(.999739 0 0 .999739 -155.658 131.06)">ω</text>
+<text font-family="CETBTR-CMMI7" font-size="6.97" x="504.785794" y="-47.614049" transform="matrix(.999455 0 0 .999455 -155.658 131.06)">k<tspan x="504.427989" y="-41.539362">n</tspan></text>
+<text font-family="QMBIPY-CMR10" font-size="9.96" x="509.992869" y="-44.013521" transform="matrix(.999739 0 0 .999739 -155.658 131.06)">))</text>
+<text font-family="CETBTR-CMMI7" font-size="6.97" x="517.592812" y="-48.259699" transform="matrix(.999455 0 0 .999455 -155.658 131.06)">n</text>
+<text font-family="CWOAQK-CMSY7" font-size="6.97" x="522.515128" y="-48.259699" transform="matrix(.999455 0 0 .999455 -155.658 131.06)">−</text>
+<text font-family="YAEUQU-CMR7" font-size="6.97" x="528.738735" y="-48.259699" transform="matrix(.999455 0 0 .999455 -155.658 131.06)">1</text>
+<text font-family="CETBTR-CMMI7" font-size="6.97" x="517.592812" y="-40.996663" transform="matrix(.999455 0 0 .999455 -155.658 131.06)">k</text>
+<text font-family="YAEUQU-CMR7" font-size="6.97" x="521.994412" y="-40.996663" transform="matrix(.999455 0 0 .999455 -155.658 131.06)">=0</text>
+<text font-family="PBNPBA-CMMI10" font-size="9.96" x="139.450597" y="-4.94271" transform="matrix(.999739 0 0 .999739 -128.34601 131.06)">g</text>
+<text font-family="QMBIPY-CMR10" font-size="9.96" x="144.558264" y="-4.94271" transform="matrix(.999739 0 0 .999739 -128.34601 131.06)">(</text>
+<text font-family="PBNPBA-CMMI10" font-size="9.96" x="148.431243" y="-4.94271" transform="matrix(.999739 0 0 .999739 -128.34601 131.06)">x</text>
+<text font-family="QMBIPY-CMR10" font-size="9.96" x="154.123757" y="-4.94271" transform="matrix(.999739 0 0 .999739 -128.34601 131.06)">)</text>
+<text font-family="IHTNLY-CMEX10" font-size="9.96" x="234.51778" y="-12.41276" transform="matrix(.999739 0 0 .999739 -142.15201 131.06)">∑</text>
+<text font-family="CETBTR-CMMI7" font-size="6.97" x="244.962448" y="-9.947577" transform="matrix(.999455 0 0 .999455 -142.15201 131.06)">n</text>
+<text font-family="CWOAQK-CMSY7" font-size="6.97" x="249.883755" y="-9.947577" transform="matrix(.999455 0 0 .999455 -142.15201 131.06)">−</text>
+<text font-family="YAEUQU-CMR7" font-size="6.97" x="256.107362" y="-9.947577" transform="matrix(.999455 0 0 .999455 -142.15201 131.06)">1</text>
+<text font-family="CETBTR-CMMI7" font-size="6.97" x="244.962428" y="-1.953935" transform="matrix(.999455 0 0 .999455 -142.15201 131.06)">j</text>
+<text font-family="YAEUQU-CMR7" font-size="6.97" x="248.659422" y="-1.953935" transform="matrix(.999455 0 0 .999455 -142.15201 131.06)">=0</text>
+<text font-family="PBNPBA-CMMI10" font-size="9.96" x="262.308516" y="-4.94271" transform="matrix(.999739 0 0 .999739 -142.15201 131.06)">b</text>
+<text font-family="CETBTR-CMMI7" font-size="6.97" x="266.506692" y="-3.448121" transform="matrix(.999455 0 0 .999455 -142.15201 131.06)">j</text>
+<text font-family="PBNPBA-CMMI10" font-size="9.96" x="270.779305" y="-4.94271" transform="matrix(.999739 0 0 .999739 -142.15201 131.06)">x</text>
+<text font-family="CETBTR-CMMI7" font-size="6.97" x="276.393302" y="-8.554336" transform="matrix(.999455 0 0 .999455 -142.15201 131.06)">j</text>
+<text font-family="QMBIPY-CMR10" font-size="9.96" x="460.200867" y="-4.94271" transform="matrix(.999739 0 0 .999739 -142.73601 131.06)">(</text>
+<text font-family="PBNPBA-CMMI10" font-size="9.96" x="464.073856" y="-4.94271" transform="matrix(.999739 0 0 .999739 -142.73601 131.06)">g</text>
+<text font-family="QMBIPY-CMR10" font-size="9.96" x="469.182523" y="-4.94271" transform="matrix(.999739 0 0 .999739 -142.73601 131.06)">(</text>
+<text font-family="PBNPBA-CMMI10" font-size="9.96" x="473.055512" y="-4.94271" transform="matrix(.999739 0 0 .999739 -142.73601 131.06)">ω</text>
+<text font-family="CETBTR-CMMI7" font-size="6.97" x="479.118767" y="-3.44812" transform="matrix(.999455 0 0 .999455 -142.73601 131.06)">k</text>
+<text font-family="QMBIPY-CMR10" font-size="9.96" x="484.155604" y="-4.94271" transform="matrix(.999739 0 0 .999739 -142.73601 131.06)">))</text>
+<text font-family="CETBTR-CMMI7" font-size="6.97" x="491.762884" y="-9.200983" transform="matrix(.999455 0 0 .999455 -142.73601 131.06)">n</text>
+<text font-family="CWOAQK-CMSY7" font-size="6.97" x="496.68518" y="-9.200983" transform="matrix(.999455 0 0 .999455 -142.73601 131.06)">−</text>
+<text font-family="YAEUQU-CMR7" font-size="6.97" x="502.907808" y="-9.200983" transform="matrix(.999455 0 0 .999455 -142.73601 131.06)">1</text>
+<text font-family="CETBTR-CMMI7" font-size="6.97" x="491.762884" y="-1.937943" transform="matrix(.999455 0 0 .999455 -142.73601 131.06)">k</text>
+<text font-family="YAEUQU-CMR7" font-size="6.97" x="496.163465" y="-1.937943" transform="matrix(.999455 0 0 .999455 -142.73601 131.06)">=0</text>
+<path d="M142.69961 46.80281H312.27736" stroke="#000" fill="none" stroke-width=".39848" stroke-miterlimit="10"></path>
+<path d="M310.40447 44.4119C310.78304 45.84648 311.62665 46.52388 312.4766 46.80281C311.62665 47.08174 310.78304 47.75914 310.40447 49.19372" stroke="#000" fill="none" stroke-width=".39848" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path>
+<text font-family="IOCXPW-LMRoman7-Regular" font-size="6.97" x="119.002121" y="-4.941306" transform="matrix(.999455 0 0 .999455 100.207 49.401)">DFT</text>
+<path d="M115.51053 56.1315V73.284" stroke="#000" fill="none" stroke-width=".39848" stroke-miterlimit="10" stroke-dasharray=".39848 1.99255"></path>
+<path d="M117.90144 71.4111C116.46686 71.78967 115.78946 72.63328 115.51053 73.48323C115.2316 72.63328 114.5542 71.78967 113.11962 71.4111" stroke="#000" fill="none" stroke-width=".39848" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path>
+<path d="M341.25504 56.14798V74.0313" stroke="#000" fill="none" stroke-width=".39848" stroke-miterlimit="10"></path>
+<path d="M343.64596 72.1584C342.21138 72.53697 341.53398 73.38058 341.25505 74.23053C340.97612 73.38058 340.29872 72.53697 338.86414 72.1584" stroke="#000" fill="none" stroke-width=".39848" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path>
+<path d="M300.1739 84.54436H166.87215" stroke="#000" fill="none" stroke-width=".39848" stroke-miterlimit="10"></path>
+<path d="M168.74505 86.93527C168.36648 85.50069 167.52287 84.82329 166.67292 84.54436C167.52287 84.26543 168.36648 83.58803 168.74505 82.15345" stroke="#000" fill="none" stroke-width=".39848" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path>
+<text font-family="IOCXPW-LMRoman7-Regular" font-size="6.97" x="119.002121" y="-4.941306" transform="matrix(.999455 0 0 .999455 102.722 87.142)">DFT</text>
+<text font-family="QVJYUI-LMRoman5-Regular" font-size="4.98" x="135.859535" y="-7.947925" transform="matrix(.999739 0 0 .999739 102.722 87.142)">-1</text>
+<path d="M143.08534 123.62547H312.69768" stroke="#000" fill="none" stroke-width=".39848" stroke-miterlimit="10"></path>
+<path d="M310.82477 121.23456C311.20334 122.66914 312.04695 123.34654 312.8969 123.62547C312.04695 123.9044 311.20334 124.5818 310.82477 126.01638" stroke="#000" fill="none" stroke-width=".39848" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path>
+<text font-family="IOCXPW-LMRoman7-Regular" font-size="6.97" x="119.002121" y="-4.941306" transform="matrix(.999455 0 0 .999455 100.61 126.223)">DFT</text>
+<path d="M115.51053 112.7636V95.62755" stroke="#000" fill="none" stroke-width=".39848" stroke-miterlimit="10" stroke-dasharray=".39848 1.99255"></path>
+<path d="M113.11962 97.500448C114.5542 97.121878 115.2316 96.278268 115.51053 95.428318C115.78946 96.278268 116.46686 97.121878 117.90144 97.500448" stroke="#000" fill="none" stroke-width=".39848" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path>
+<path d="M341.25504 113.5109V94.288" stroke="#000" fill="none" stroke-width=".39848" stroke-miterlimit="10"></path>
+<path d="M338.86414 96.160878C340.29872 95.782308 340.97612 94.938698 341.25505 94.088748C341.53398 94.938698 342.21138 95.782308 343.64596 96.160878" stroke="#000" fill="none" stroke-width=".39848" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path>
+</g>
+</svg>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tikzcd-han-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+图&nbsp;4: 带中文的 tikzcd 测试图片
+</figcaption>
+</figure>
+</div>
+<div id="fig-tikzcd-quiver" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tikzcd-quiver-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="tikz">
+<!--?xml version='1.0' encoding='UTF-8'?-->
+<!-- This file was generated by dvisvgm 3.2.2 -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="341.13pt" height="102.735pt" viewbox="0 0 227.42 68.49">
+<style type="text/css">
+@font-face{font-family:GHDGPE-CMMI10;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAALQAAoAAAAABLgAAAKFAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAANAqCYIIzCwgAATYCJAMMBCAFgmgHIBvUAwguCmzXZCFOcu1U05DDOL98aZrFVTxQa/ze7t7dd0dMmokk8QqhENUTQ7QGCaJoEg+NCDc0Lg9vbW5LoF5SGsSmPHeGuF9Lc4MDLKNAOLHAWmjb8GTqYX96iRfUFicUYKu2w5G+Heim94v+6CYfv/8DTZCQEppDE1igCWa2cUyQDMOAI4LUbWU+qXDGuOfBZjZY3SHFh8Fy4pW4/1vtzyTcBZMDFVxAAq+y70TOD0hmG0mgRBKyk2UJIhJaUW5FMAAgh2sMmFOWmF2CPhfwE0ExneMg4Bwg43ujNCHV1LI2hs/rts+3WRfua3L5XLtOI7rQvnix7f4lbtAxNBcL94eet53EGlpr5lXVmPT2RZruLZeZvx/g/QU5AqfVvNpo7ufBqPn7VDdLWf1wr9Oi/ptB0nqupqf2ae1NdQZW/xnRjvo5jPdZJ9A8SgyT2S9uce+wSi9pDEqXv/TZgI9xdT+zDiA9eqzCoyq+vXQ/rwa3K892cXt2f9Kfb70VOhU9cXrep2LNUFVSClwyMfyvkzj6XFV6vd/xC7aYTsJxXD93BK58s0VRzY45ZnNQKhi/chJ9zu+dmFPrgYDAsUU/azb0/a1MGfj5T/Gl8l8q4mdUiiBwRGWlIVAqBESYmjsk+fRoEMlMGCrLUO00CIKGkWXqNCiaq9FLC3WGT1fr1gYLWZWgH5mimW4Rmmu3RgvdbvJqU7zfCMYHsPHJqbFJxXj9XKl0unnC7V2fOG5CXHmoNu3LBdM5f7R28rhJ7rBRcVEJWRleKbWk4jzq+8ZMmjJmksK4eqOkpKY1a6LjlZIWFBdTq1mDphpM+rGq79wIntSlSLJHTlC6zy+qVqsGLaYSAwAA) format('woff2');}
+@font-face{font-family:SXJUKA-MSAM10;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAAIcAAoAAAAAA9QAAAHTAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAANAqBHIEhCwYAATYCJAMIBCAFgkoHIBsgAyAehXHDXWIJSmubJf9H8yOoH/vtPfuiqIWIT4cUCY1OyGRaJxJVSrWhcXk/iG9EGaPSmpHAygpnuC6tLv+XCKadcZeGgb4WJR5gxP17eCKBTHBmA/5oOJGBj/QHOVUflwgi5tm1bIKcxaVKuko3f1VmPMWfcfYjH62BtwHp7LwvCnJ2fnYt8w8NlBxPCAD+gYSMeZkCMcs2oJTBzit67DckCIAECgK7gBMAFEDsOs1W7srEUrW5cPnOUrh1a35+buq/3df20cs1FhN2cXm5Bm8xIav2GpYxVsJK9cqle295KPXxVTT+LBf9LvMUTSLotsQtxUow8hMn0CYxT778o9NHlIKtKZ5xtnttcWJMzCruLIcVNItYVAGPAQAEgt78095S1n9eLuD750LFinwdx+hKILgtlWPMfCsQbXLgFAiSXRAQouu7AFQYRTFStaQamE3NCG6soW8VXqYoPaHvFFKs0pBqUYw0q8bW9h1YFfemwl1Gm8Ks5JPURr6aRn3VDmlkKr2/yrFQX7y7L5qGMsj0dGGBWK+UsC5GNgpmSnwkakZ8ajRUFmFdusW1awNFQ0ZdAVLbtib69QgLbQkYBBXSJ65bn6g0KAYyemGZYAQA) format('woff2');}
+@font-face{font-family:WWIXAJ-CMMI7;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAATgAAoAAAAAB8AAAASWAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAAPAqIUIZZCw4AATYCJAMYBCAFgmIHIBsIBlGUKk5P8CMhO8m6A5FkNPwWdPdTnv3LTJtCaVdEVoVXxAd9snBa8Py/t7v3p5SVwDpBQlFCeSAJppo1OWebbWzxAVmSpfxSN/lIdrOr5WtH/ECgntPmf66p9y+SYvH8GsAW35a4w2EF0IDXOPC2ta2FIskGyAOfuqmKoIcKoSgtQcS312B7dwLgNBPzgAnQja6NG8LckSS+NhsENA6AjwT+IYAMlB7tFSpHee3GMBEQQGCmQJiYkAFQAQMw1Aakk8EVAFlLQCprN5Eqr12xb2LlqH6XBCTwMxxA7Ei8AgAw8HAE4Y/Fs4+RwkcyrRhUzoiQj7TpeDjwVWLegLNixapSGOaCFCKEqEQozQBCCg8IkD6L9UvqvEQN16psTSJjFUGQDibYDdHC8NQpMR+AlBV8elV1EiQ/BvMHhegHOo6HILOWoLNPQcvXSklBRJzWsj+awm278BA/dUukUdMWxAMyZn9GaauNPuQty2VVS/+dJmAUo0mvu73xvn6uMIxIpXnc84qbdBrCIl5OUKmcu9CraSoVUFlNA+jijF6x9zjlptAPGIXx/XQlvjpu8T2Qv5htTyvF5QRpGsMoBuQx9IRKYs5oCg89YsH3O5IkOxHcd2W7MJSrMHx3SkQ5xXq3EI2HSTZMVVXJtMJUSxwKfVF4XObVgfp5rqgNCEH+45pT6vTcbX5US2fMDYkYdmFYhEjqO7FwJDYeuS5GghgjrQPz/eePr14G2MocLZd6/RWmK26LnV9qhemGmY/T45wc3PZigY9x5/8//u9Q1MPFvWazC+6IXV6C7dlwfE5zVgd6lWcYwbc1FusQ75nZXsLO97DHwYIG45ziFBwLmYNQo9JY5WthCp2JGulzPospgRrmk94HvbmB8QHz4l3+JopiRaAahdZxjieO10LsowzdqfUfTGRE7+FbRRi5Hz45T2y3y+a4pVg8X0s2bGF63XHtZ/Pdb9wxijOKpww1TbvU8R3vZBKpTd/k7jXVHAoJEufSkdafHDl/OMIHLJrcE88DnwtnZWyc53eEJ5mn5UjsTw3dDtrd4Z8MWa2gnEjBRYkqHKOhy5ESKjee3BzEi96iTF01b76WYZY4aJ0yvxpnCv3jfDJPr1PYKyqsBrmBtbav2uxgKu0tTW+vdtV542pl/EThGloKN2WBfxOo0FO8dZOoxGC5a2lsfBZOKpBd/D55XeGvEf3LdcbzV54RDnir8dwft/ySKZqmvCi+lI4sRANziCb7roFnAY1HJOazdrpPPTvqXuQdxK+MvX00ViCK/MfGDAAAeDN6UCE3TnhlL7oNAGyIRs9PQR94/jfR3oKuhaTRBHLMeGYrKAktJkvBXyMp4AaEUeDqR5hAhDODgU9kMPFYGCQ+5+1c5vxhROcAwZoiGAymqg0mY8MGydSyIlegnY9L/DtubUaGNDNO5kUrldKQN1uPn7fvuu4jflZpe1VLe0WdbYC3P5wNtAZ1GrVpVaaZLaUGpcmtlxHPk8oUR8YLTUlJKkS6LdOiSoN5cLb8ePOlIDlST0aKjkGpW6xLOEu1q9KyrEIdWwG8+WPzWAUA) format('woff2');}
+@font-face{font-family:MPHDJL-CMR5;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAAH4AAoAAAAAA6wAAAGvAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAANApkbgsGAAE2AiQDCAQgBYJcByAb/wIgngV2w3URDtKywSKu10FRnOLhv7XX+2bnB5AckkMV4SLjEkeSdMqqp76qni0pIl+ha7v/c827XoWNPs0uCmgdGlnPq8GHR3a4XjhNZ5csU/yTt3gf6Ab04VAnvvOBDewroMQijn58Pgs8kiKVbJuEIriIvHTQWDR0QJEO44EK6Un6+L/D1V1sisWohVbBAt3R6byBUOabFUoUAjZbliChQIdc6UAYgciywHxZNj+k/CIAJJARGIYYg4AMiOHj/PiVsd7zvbq3S1F/+8ZVefnDXRf1T/e7PyR8fw/SijO+OK3etJvKLMaLKVqMtDEO+7/UefgHAYHgk5ODgnXrn67I4O8vo/pEWk3PUCOBoFAivfTITVqFAgBSArwSSIahIISvc0mg2Y48q9cMKqQPVJHJ+Tp9eLjItcKQ8MizLk1QIXtQRV6hzpLfoWr/zJqKJYPecJTZPkgrV9X6PMsvVJ4f244uWpN5oweLrJhOIx4DPUMzUzVjIGagyqB/LinIKyyK4RGTpsgDvjLRMtAHBCweDgLlvpqx0iageqdsBVTNtUzMNfQACUssEgcjAAAA) format('woff2');}
+@font-face{font-family:RPVROO-CMSY7;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAAHwAAoAAAAAA6wAAAGoAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAANApcdwsGAAE2AiQDCAQgBYJiByAbDgMArod3xJLsKXv9Fk/ihsQeDGGDIFNpw0Li4Z/D333vjzUbmxZ5IPn0Eo+xky2wbFnezl6rbrwQPyhU6yYpUSiqEpXq6Fo7V8IDcnzAFfnRQPKZAOn8wVFSjjaFCsQkJAVuc4cgsf/L/6+ByVs8gQF+OMKBTuy19X1CXRZ3CQUWaOeBdLMw+ggCzbNu0cwrsbqmWhGRfm1QyLNIiXzJ/zgpiYxyGeDLwC0wN4+PnnAHX534uQB7sDACgH8gUcCQCAx5W1BUFBx8gbNfFxyABEUkpuAcQBGQzebtjHPn/fu7AZRWvZIvuCGuXwqGnRBo/mRMAhoz9VwE/R0hEAie98Of5btaEbz/pGSPrMQbqhIEm7CQ16AzkoJlmWb0AWnqPVI8UvcEQOggQFFTR4CShgUHypoOaY+6OSWiWBPWKqCiqYVKxjYqm7pt3ZV3vOznmVctw7N0nTfVDoVb6yQxDg2eIo+Zj/H66FfMVCrMbnW4u2ldoGbX8O9tLAaPRafjGZUtJOhaF1ej3QYlFD1AcZuXK1cCzZ7hDU0Po6uH3gplpDUREAIAAA==) format('woff2');}
+
+</style>
+<g id="page1">
+<text font-family="GHDGPE-CMMI10" font-size="9.96" x="50.018943" y="-39.109791" transform="matrix(.999739 0 0 .999739 -45.739999 75.408)">B</text>
+<text font-family="GHDGPE-CMMI10" font-size="9.96" x="114.175195" y="-39.109791" transform="matrix(.999739 0 0 .999739 -45.447999 75.408)">A</text>
+<text font-family="SXJUKA-MSAM10" font-size="9.96" x="155.379439" y="-39.109791" transform="matrix(.999739 0 0 .999739 -46.692998 75.408)">⇝</text>
+<text font-family="GHDGPE-CMMI10" font-size="9.96" x="196.876607" y="-39.109791" transform="matrix(.999739 0 0 .999739 -45.73999 75.408)">B</text>
+<text font-family="GHDGPE-CMMI10" font-size="9.96" x="261.032859" y="-39.109791" transform="matrix(.999739 0 0 .999739 -45.448007 75.408)">A</text>
+<path d="M64.26486 33.79724H17.24067" stroke="#000" fill="none" stroke-width=".39848" stroke-miterlimit="10"></path>
+<path d="M19.113573 36.188149C18.735003 34.753569 17.891393 34.076169 17.041443 33.797239C17.891393 33.518309 18.735003 32.840909 19.113573 31.406329" stroke="#000" fill="none" stroke-width=".39848" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path>
+<path d="M36.33807 38.12355H44.76899V29.47093H36.33807Z" fill="#fff"></path>
+<text font-family="WWIXAJ-CMMI7" font-size="6.97" x="41.687272" y="-39.098684" transform="matrix(.999455 0 0 .999455 -3.224998 73.741)">g</text>
+<path d="M67.73092 40.13705C50.03301 63.68553 30.78178 63.68553 13.3232 40.45558" stroke="#000" fill="none" stroke-width=".39848" stroke-miterlimit="10"></path>
+<path d="M12.537178 43.389149C13.456515 42.224661 13.491191 41.143328 13.203529 40.296319C13.937133 40.808176 14.985457 41.075573 16.359669 40.516327" stroke="#000" fill="none" stroke-width=".398469" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path>
+<text font-family="WWIXAJ-CMMI7" font-size="6.97" x="41.687272" y="-39.098684" transform="matrix(.999455 0 0 .999455 -3.636002 104.108)">f</text>
+<path d="M66.35865 25.63095C50.03301 3.90893 30.78178 3.90893 14.69549 25.31242" stroke="#000" fill="none" stroke-width=".39848" stroke-miterlimit="10"></path>
+<path d="M17.731979 25.251719C16.35776 24.692445 15.309419 24.959828 14.575798 25.47168C14.863477 24.624666 14.828818 23.543319 13.909488 22.378802" stroke="#000" fill="none" stroke-width=".398474" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path>
+<text font-family="WWIXAJ-CMMI7" font-size="6.97" x="41.687272" y="-39.098684" transform="matrix(.999455 0 0 .999455 -3.635002 46.113)">h</text>
+<path d="M213.2562 25.63095C196.93054 3.90893 177.6793 3.90893 161.59304 25.31242" stroke="#000" fill="none" stroke-width=".39848" stroke-miterlimit="10"></path>
+<path d="M164.629541 25.251719C163.255322 24.692445 162.206981 24.959828 161.47336 25.47168C161.761039 24.624666 161.72638 23.543319 160.80705 22.378802" stroke="#000" fill="none" stroke-width=".398474" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path>
+<text font-family="WWIXAJ-CMMI7" font-size="6.97" x="41.687272" y="-39.098684" transform="matrix(.999455 0 0 .999455 143.263 46.113)">h</text>
+<path d="M214.62847 40.13705C196.93054 63.68553 177.6793 63.68553 160.22076 40.45558" stroke="#000" fill="none" stroke-width=".39848" stroke-miterlimit="10"></path>
+<path d="M159.434729 43.389149C160.354066 42.224661 160.388742 41.143328 160.10108 40.296319C160.834684 40.808176 161.883008 41.075573 163.25722 40.516327" stroke="#000" fill="none" stroke-width=".398469" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path>
+<text font-family="WWIXAJ-CMMI7" font-size="6.97" x="41.687272" y="-39.098684" transform="matrix(.999455 0 0 .999455 143.262 104.108)">f</text>
+<path d="M40.43577 53.11615L40.51173 40.66876" stroke="#000" fill="none" stroke-width="2.33075" stroke-miterlimit="10"></path>
+<path d="M40.43577 53.11615L40.51173 40.66876" stroke="#fff" fill="none" stroke-width="1.53377" stroke-miterlimit="10"></path>
+<path d="M37.9438 41.947681C39.300083 41.327995 40.469649 39.644467 40.52383 38.678709C40.566244 39.645056 41.715218 41.342705 43.063852 41.978864" stroke="#000" fill="none" stroke-width=".398463" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path>
+<text font-family="WWIXAJ-CMMI7" font-size="6.97" x="41.687272" y="-39.098684" transform="matrix(.999455 0 0 .999455 1.116997 86.419)">α</text>
+<path d="M40.5256 29.11502L40.44839 16.21098" stroke="#000" fill="none" stroke-width="2.33075" stroke-miterlimit="10"></path>
+<path d="M40.5256 29.11502L40.44839 16.21098" stroke="#fff" fill="none" stroke-width="1.53377" stroke-miterlimit="10"></path>
+<path d="M37.896091 17.520777C39.244801 16.88478 40.393978 15.18727 40.436508 14.220929C40.490572 15.186693 41.659936 16.87036 43.016144 17.490208" stroke="#000" fill="none" stroke-width=".398463" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path>
+<text font-family="WWIXAJ-CMMI7" font-size="6.97" x="41.687272" y="-39.098684" transform="matrix(.999455 0 0 .999455 1.116997 62.432)">β</text>
+<path d="M187.3049 49.1308V20.19647" stroke="#000" fill="none" stroke-width="2.33075" stroke-miterlimit="10"></path>
+<path d="M187.3049 49.1308V20.19647" stroke="#fff" fill="none" stroke-width="1.53377" stroke-miterlimit="10"></path>
+<path d="M184.74472 21.491059C186.09726 20.863099 187.2566 19.172409 187.3049 18.206299C187.3532 19.172409 188.51254 20.863099 189.86508 21.491059" stroke="#000" fill="none" stroke-width=".39848" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path>
+<text font-family="WWIXAJ-CMMI7" font-size="6.97" x="41.687272" y="-39.098684" transform="matrix(.999455 0 0 .999455 147.94101 74.432)">β</text>
+<text font-family="RPVROO-CMSY7" font-size="6.97" x="46.560615" y="-39.098684" transform="matrix(.999455 0 0 .999455 147.94101 74.432)">◦</text>
+<text font-family="MPHDJL-CMR5" font-size="4.98" x="50.654777" y="-38.11305" transform="matrix(.999739 0 0 .999739 147.94101 74.432)">1</text>
+<text font-family="WWIXAJ-CMMI7" font-size="6.97" x="54.526273" y="-39.098684" transform="matrix(.999455 0 0 .999455 147.94101 74.432)">α</text>
+</g>
+</svg>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tikzcd-quiver-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+图&nbsp;5: quiver 风格的 tikzcd 测试图片
+</figcaption>
+</figure>
+</div>
+<div id="fig-tikzcd-another" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tikzcd-another-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="tikz">
+<!--?xml version='1.0' encoding='UTF-8'?-->
+<!-- This file was generated by dvisvgm 3.2.2 -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="253.425pt" height="83.085pt" viewbox="0 0 168.95 55.39">
+<style type="text/css">
+@font-face{font-family:POOWXZ-CMEX10;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAAKkAAoAAAAABLwAAAJaAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAAPAqCVIIcCwoAATYCJAMQBCAFgmgHIBvJAwieA+7OIhDDsBg2bdjXITG33BE8HP7u/TVW4ZqkCziMU08oTnD+Me59X9Qg+LqrkpIT2JaXRGC7327gw1gSyyyOPIxK4G7+6W++Nul5YGNxSAlGbSztHjcp6hIMw8Q2jmn1h9o///Y7PwqKFLqe65LRbPjb3yGZObEAaRIb+fDHNt+c+K4czkEAVAZp4AFcellt5YC1W9BQvL89SDbplQUc+v8HCSTRghKej7YDMumQsF/QBG3nKv+f/e0CUmSu/gi8E98nhBhKeecKd824xvV7+Uh//Uxff+Stc1bZT28w8Jz6/Oy7Wvn0lrKi32XTLu/8NWfTBl/SXl781hDljmGV4/v83klGvH4IcdtXaQgGPBFgNy5TwdLI6OvClk3z0M8rce0uHPHnIesdZFHj5vnk15CZfphdlK+8jqCt00MV3RkzQc7gfsMhtMjRw8PXgjB0dCaOSio164id8OW8vCNtJiUFK1zY2wy8FJzvoxFoA9mAHqEh2RCFkCjNzfY9c89y0+8ABILXc67Jp/n855JogK9PY+dL31nJGTgGchIguJr8MjEnZyAAWipk4ttEPDPRuicJUxaEojYGKHhDQVWQVEpZFZ1WNKIzyrbTBQMuUKIIECbiEJ0yUEOndYzRGQM7QcGJ47dA/fdrPCE+Pj0jyxIcG5rhsL/bZYfVbhc+UZtK2iqb28pr5c5Wp+4wBKtXq0GrFqWayMWqV4L+3zoJ4sVLlyGLRbBYoTI42KUp1aRZpXp15Bys7BoartepeuFBtMQr0jnxS7Sp1NxXrpacMyunqBAFAA==) format('woff2');}
+@font-face{font-family:JZZMWO-CMMI7;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAANcAAoAAAAABYwAAAMTAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAARAqEIINJCwoAATYCJAMQBCAFgmIHIBt4BAAeibGtgn2LoSxx4KPz4fOy95OpgXSKtCnhJTU4ro7CDSH+27X9F4QaUAJJ1nhmByZXr+cTN9PGAiqgqZ7AtLEsKhwTtEsowACz/WuDvPkkxVedIwshcAANY60+HOrhDaBrLVmGDFAf9ey/NpaGTT4jB15NASBlgRoBHkX566yCrKjcp8EDaATQYBzleQBAAWiANu1X2gTcAfLkUYAoZbnP814Xf53f8TcEBIg6GKq1DwD4Gn0uQBDUdPNQ7cteu1ZRd72unpFEkjUrShWxG/VFBuJMMSeVchuUdNZt2ndEvtOVchiKQ3Su6QTFHFQdvq+tsZ1v1s3Dr2LWxdk9yNiwbh2Gk62fsgkgxBG7Ky+ILbZeVJw9bDhyooTdunHv3v2G6804SnlEGrVhg846vEBbZK69U2eXONOL28OdcHvD3XMDEXvQvodZPlJOL/+nRl7HStirIp+fd0LhepV3pckbK4M7jbkkcTUyNylbj2v3VBXq0p2xXtGeLIqd6rSsNVNfKdFwrjwnDJ+y2T1HjmwjQ9QE1+QXl+LZI1yicunXGafzE1KulbzGzSm29qZtor24ymRY0SOs+McTbd7mm0dkVfV3SNvoIqqgJoYuiUmhzNKiq6mbnK0V1aClOizQGEXU0JvsO9erPi+gVtzWleqW1sRa2Q8ffHv+R5o8PR0Q+8/hs5Z+STyrpK8X990uNvNlfrrgZHwKYqpOyHbvLY7ppbRjMJT00E/JEYRxqEkVIna7mpQCAEAABBbsrqgUqQX/kY8AAPDx70Vmvchbpph6DUAepTRwzMKFsD9D7ZUDopVxEV+KCIsWx/IFwq5SA5miQYQBqsEkE1Cm5tMylBjRspTZHldkyBONdAUQppITLaCvlpaha5SWpW9jrsjbyQcZ9T9li4m5uQwndIlimAS/94OGh6t7qPLRt6+8s6ats6rB3MvVE+9GlCYNmnVoV6GVOUaTcgsbJcrFuzA4Qi6iMBgJ/GRxXq1NjSaNzHlw5a4A47RGlVZyJ7DcK9Wz4pfrVKNtqkoDc15ceRaBNAA=) format('woff2');}
+@font-face{font-family:ARRXBI-CMMI10;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAAPIAAoAAAAABjgAAAN+AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAARAqFSIQtCwoAATYCJAMQBCAFgmgHIBviBCiOwrZtE8OZTL5MQVXEQ9+9753dfe+XntYonSrRP8FgwOIRbSJRqIIzVZvucYhHVC/ULOpoxPWoKhSipkxfbf5Vn/+b8X9Zz4vHBAkpwTU1gR9YWyjAALONbUwoDagbdMR0u5Mlj7UmSWstce6UvHaoxR56CnCUT8zWf3nwhHzoLfIAI0gA1oMHP+X5JScW4K3lVZCoQjmZCQoqthKxBevmydBQwVqkvMy+Lr+yJh+AMNo4w1j9AyA25WtThFi5I7xELkUiMeuQQMduhssODgIxr+lIB1XWrgTiLkrTDkOkpCBUQM2VOx0EZ5oNx9l8Na2KGqhink3mKguHVlCBIpup+FKRL1JY6lAL5ZPPNJbb0Y6OWIfMw9jydfLgoXnvIUDnTgudlTY4IgUhekmgv8k8PoYknA4zCWdpT0M8Sb7frsqvUOqIZWqLAdq1JOGIKApCgFqLlSeZw9uqAuNOh/vbmhU9Rg+a0FZ9oYLByIGWRAJVj+s3HzIFinv8HTAqzGY4LUdIxcHZljUN8ehwO8TvMGpWNFw0l+8szbKjZDoA5qnBa1WmOmyHOD2w3T159tj0tsMZU6Vz8YgKVVpZm+1E6fe1JdJ4eyuCvjJ91VvwNWmXLr/bNPUtB6jAjq5DdbyhsZzGx6CYNFuC1PHu033Ph+dk1H3n1Y8/6sWA/EfIDvZwZDjZAOHNQTm1WvezD+vUcvWsZj72Vx32XnJI8KlTfrWuIg6FvSFWhAsm/JoPVsfdMRiT9rGjY5SkfDB45qQvYD3oPlg8Ja0muu57TtWLQguzJcrvNnx8bAvvplSpdPfK6T+VIb1Joz4xndT79UlH2mRGPV41Q1HVDdT5nFX3VqsNs8XL79VLl9rCabYa126w+2f/GdIvhunT5Gf8iSeIHNfVDQAIBHdvsFKo1KVvRBgL4PvvqCdF8r/iMJMAOBESuFk8AifgigOhol00y9cxDkyLK9AEoXmaU8Bw7BUEYIEEbGYWA6YzccT0Zi6mxw6cAotGAuGEV2CaA0lMZ8dtpnegMhx7MHwuyd/Qxm39/Lh2rhb2np6uiPUdUkYsrcXMc7kpKic+Myc2WZthaVMPA3upkqXJliVaBm2eUkXBuRS2/PjhsuPKgj1PnlwhrLF135opXqoU2hCWrE3A2UoxWuHrQFQQIb8VRskRL7MvVjJtDJZsskQYAAA=) format('woff2');}
+@font-face{font-family:KQDTXC-CMR10;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAAJ4AAoAAAAABLQAAAIvAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAATAqCNIIACw4AATYCJAMWBCAFgmIHIBu9AwAeg23LOWZcYqqGCnC4/vdMxMP3+9HOfV9WRKJl1a5ZNLTFbLpmGilBIzEkzd5IW3lDc+2GmU5CfBVLmCcxK4XQtpeGVBoRkgI3//9u8he5A5rqJ3i2SqPA8jDBzNo2NoYl2As0zXqZu06WUtJyufFdHiYo4kW8VpHepI//2Zp+/AzOTDSBanDwKFfXURsoMkVTyCiErjVnkFCg1/b1KrAIaNYoSaZNU9HkjCl+O3/PeL7Pd4J6RA1aUWEXcB8AJSBw9cHBqsbG82eraWk63Z/OyDKZtd4GHJfgOUnrtukzLsbx1Rj4mpHOpKVjO827a4SEIFzxvYGbtp321OHwdeu2obmpRXPdctrYHC0NzXF409x0YYC1I7L2+wpbI2eDYthoMTeVvzs+o/1ZjHs70MnlRz8YzhRbGis+HRkY/zH/VviPxa7th5r6zmkE77ON3++1vb210D6pVuZ1z6dNLyYXGWdMAwCBYPXv77qO1ZvG/BL8+I/DviFLCmiUQFDISAxojg+Ci1cJ8cJVf8VSYjFGJTSDUBsEgVDCZk8U0KE4KbXqIJUWI6TWaqK92TBUviibhHFskNIgJ6n0myW1QXtRs1lv2YD67KuWJSCL5aRJEkeIwEl2CpmCtxIvp1nmqCMUtXl6sCnUzwYkPh5+EWEWQT04fMz873mxCJCJyZFMIuEQQsCkLIJCHHy8eiCmwBFA094obbgJzIFRYiWaRTmEymw8emCmoE0yHwA=) format('woff2');}
+@font-face{font-family:CFVEHW-CMSY7;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAAIwAAoAAAAAA8wAAAHmAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAANAp8gQkLBgABNgIkAwgEIAWCYgcgGyADAL4M2MY0yu8NUXVrbDqKxg6hgIsW0IuNrcV+STz0HLJ/1xpDFweSzgG2tvUCWpxAmKeLoiVY83/MfixK4IMswzJCUzfbnm8WRROoKz+Rs/MYGxZnHd6yJAfg2MEW95jRrhZgpDWA1Ki2vHjU7ab0fH55Ba1dsf/T33x+l4aBLowSDzCxTWvbOu8CTTCEQMbGNYj+N2+5xygm1babiEi/KijIG7gCReQDevw1WjYjVoKJILRikBmAtLM7KAJaPyODvn8BPQ0XAcB/kChAIyzQiKIXUKhQ0F/KleH0zwSABIUIDAOmAVAIiOFm5c+bv2K9u3ps1ufGS/ThlkjeZK++Kmvo6e+c6jhO7/Wgn2/XmdIfjKIFmgaW91fWKd+iwek4qCz9qNsMBAgEL/7e12s0f6UQfP2Eeat/uUUugFIJgm2hNoCmZm5BwLiJ8ROINAyC0IXlLgBqoPimUKUaAYpU6ABBsUrDICjXTgSLwjKhm81GC7WqoEWaTdBirTZpuUnnAyd+p7lUawjoTUHuzXrD8ntsYehQ7nFymT8odwfFOlnEaDXVtfT15HUQdk05zGnQMgjQMwni0rLzCpMLcP6tq6ypgRDiEWQAo9zIktMrgdycjDEiZ6Csa6CojhDjEY04BkYAAAA=) format('woff2');}
+@font-face{font-family:DUUFTX-CMSY10;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAAHQAAoAAAAAA4gAAAGJAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAANAo0RwsGAAE2AiQDCAQgBYJoByAb5AIALgpsY+rQRbE8xwVoigdC+BrLopxGVAzd3ieUXi2Mxwl89U0YbJNdOSwShYoMFteOTr0kbYUP5H+DZdGa2DEWSLUgFa6H6ZOH0rggm5viC/fdsTM+DwN9LUo8wMSz2vPxwEYDmeAQhs9LYYAT3EBmN3MfL4mE5LFa++2ARl2HIXVf//DVPF/C2UsPWif4AEiHZ48ljFZHozqzPzugMdv4QAD4N6DQwDhHIA4sA81+WB01hp/xOQRAgSaCfgwCmoD0Hw32cvU6MXTzfPn00N7tm/mmp/8AIAit9vjdId/djSZo/RThRr1lEuhWICylzqvVtSCaUvGKhdIvIEzb6xwwZGPSNGCIdOgzTzoN2JrvNUtzpNkjFsVEmmbtSIdJH9Jp1q/rte9/XOxnmKe9qgrKlrhR0Ql+DR0LynODx8U4s8f6+ljuUVFJJbiO9k7ubuYuUORohrADT6USKLUIV6TQEbi66qtXa0cHSKB4D4Tu0OfG02AWMvGGZh7Wrh6W9pBCSc8cMAI=) format('woff2');}
+@font-face{font-family:MKTHMW-CMR7;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAAGoAAoAAAAAA2QAAAFhAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAANAocNwsGAAE2AiQDCAQgBYJcByAbyAIALg7shs8bIpUjVvh/JzXWIvga++27O0S9qTTthOKNSCcFplv6ldaplqjcxbrOJW8oB0+3Kx5wqC7pExMyIQEqm7PJjh+ebyc/+KAF1FUWauKdBxZYElBicUSTQBYOfDSxiGa37FglkiuT0m9/Q04LsSbSc/p/0NNzfJljK0I1oxOh+8fDEKE0PpBVZAEBQK0gIWMQLjCIMAtRFIFGrTarl9B5FD9Q+BFQAFEeOqPrZ98KIBC8v5Sueo7/WnMBn3/QN5J0DdEqgSCrSBcqdfwKAEBKjCMokiJACKXdE+hJtSk69NAk4zTLUm7XWXNwUdqEaS5MMWxEkzxoll9tt+2/Hunzy6vAy+2gok+k6tE5bqyuo3tIvLpvvD0M57C1uhm3aZbmVvZ2+jZAYKknLPY8OVugQtMEUqqScX5rbGkB8BicgI/VLvRtNFPoPWmdgZ6Dsa2DoTkgYgjZ4hAFAA==) format('woff2');}
+
+</style>
+<g id="page1">
+<text font-family="ARRXBI-CMMI10" font-size="9.96" x="61.56093" y="-80.475992" transform="matrix(.999739 0 0 .999739 -21.911999 92.53)">R</text>
+<text font-family="KQDTXC-CMR10" font-size="9.96" x="69.200935" y="-80.475992" transform="matrix(.999739 0 0 .999739 -21.911999 92.53)">[</text>
+<text font-family="ARRXBI-CMMI10" font-size="9.96" x="71.967213" y="-80.475992" transform="matrix(.999739 0 0 .999739 -21.911999 92.53)">x</text>
+<text font-family="KQDTXC-CMR10" font-size="9.96" x="77.659727" y="-80.475992" transform="matrix(.999739 0 0 .999739 -21.911999 92.53)">]</text>
+<text font-family="ARRXBI-CMMI10" font-size="9.96" x="169.919643" y="-80.475992" transform="matrix(.999739 0 0 .999739 -19.648005 92.53)">R</text>
+<text font-family="JZZMWO-CMMI7" font-size="6.97" x="177.508234" y="-84.067167" transform="matrix(.999455 0 0 .999455 -19.648005 92.53)">C</text>
+<text font-family="ARRXBI-CMMI10" font-size="9.96" x="61.56093" y="-44.294437" transform="matrix(.999739 0 0 .999739 -57.284997 92.53)">R</text>
+<text font-family="KQDTXC-CMR10" font-size="9.96" x="69.200935" y="-44.294437" transform="matrix(.999739 0 0 .999739 -57.284997 92.53)">[</text>
+<text font-family="ARRXBI-CMMI10" font-size="9.96" x="71.967213" y="-44.294437" transform="matrix(.999739 0 0 .999739 -57.284997 92.53)">x</text>
+<text font-family="KQDTXC-CMR10" font-size="9.96" x="77.659727" y="-44.294437" transform="matrix(.999739 0 0 .999739 -57.284997 92.53)">]/</text>
+<text font-family="POOWXZ-CMEX10" font-size="9.96" x="87.06628" y="-52.362331" transform="matrix(.999739 0 0 .999739 -57.284997 92.53)">(<tspan y="-51.764487">∏</tspan></text>
+<text font-family="JZZMWO-CMMI7" font-size="6.97" x="101.00993" y="-41.294487" transform="matrix(.999455 0 0 .999455 -57.284997 92.53)">c</text>
+<text font-family="CFVEHW-CMSY7" font-size="6.97" x="104.56799" y="-41.294487" transform="matrix(.999455 0 0 .999455 -57.284997 92.53)">∈</text>
+<text font-family="JZZMWO-CMMI7" font-size="6.97" x="109.934065" y="-41.294487" transform="matrix(.999455 0 0 .999455 -57.284997 92.53)">C</text>
+<text font-family="KQDTXC-CMR10" font-size="9.96" x="116.664555" y="-44.294437" transform="matrix(.999739 0 0 .999739 -57.284997 92.53)">(</text>
+<text font-family="ARRXBI-CMMI10" font-size="9.96" x="120.537544" y="-44.294437" transform="matrix(.999739 0 0 .999739 -57.284997 92.53)">x</text>
+<text font-family="DUUFTX-CMSY10" font-size="9.96" x="128.443471" y="-44.294437" transform="matrix(.999739 0 0 .999739 -57.284997 92.53)">−</text>
+<text font-family="ARRXBI-CMMI10" font-size="9.96" x="138.40387" y="-44.294437" transform="matrix(.999739 0 0 .999739 -57.284997 92.53)">c</text>
+<text font-family="KQDTXC-CMR10" font-size="9.96" x="142.713745" y="-44.294437" transform="matrix(.999739 0 0 .999739 -57.284997 92.53)">)</text>
+<text font-family="POOWXZ-CMEX10" font-size="9.96" x="146.586734" y="-52.362331" transform="matrix(.999739 0 0 .999739 -57.284997 92.53)">)</text>
+<path d="M63.02864 9.54155H145.42525" stroke="#000" fill="none" stroke-width=".39848" stroke-miterlimit="10"></path>
+<path d="M143.55237 7.15064C143.93094 8.58522 144.77455 9.26262 145.6245 9.54155C144.77455 9.82048 143.93094 10.49788 143.55237 11.93246" stroke="#000" fill="none" stroke-width=".39848" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path>
+<text font-family="JZZMWO-CMMI7" font-size="6.97" x="12.469202" y="-44.281858" transform="matrix(.999455 0 0 .999455 89.33 50.144998)">φ</text>
+<path d="M49.1002 18.37206V35.50807" stroke="#000" fill="none" stroke-width=".39848" stroke-miterlimit="10"></path>
+<path d="M51.491108 33.63517C50.056528 34.01374 49.379128 34.85735 49.100198 35.7073C48.821268 34.85735 48.143868 34.01374 46.709288 33.63517" stroke="#000" fill="none" stroke-width=".39848" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path>
+<path d="M78.52072 35.90656L145.44579 13.55992" stroke="#000" fill="none" stroke-width=".39848" stroke-miterlimit="10" stroke-dasharray="2.78941 1.59395"></path>
+<path d="M142.912154 11.885318C143.725556 13.12611 144.740244 13.501446 145.63475 13.496829C144.916918 14.03057 144.331295 14.940249 144.426557 16.420827" stroke="#000" fill="none" stroke-width=".398466" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path>
+<text font-family="MKTHMW-CMR7" font-size="6.97" x="13.746505" y="-44.281858" transform="matrix(.999455 0 0 .999455 92.11 65.274)">¯</text>
+<text font-family="JZZMWO-CMMI7" font-size="6.97" x="12.469202" y="-44.281858" transform="matrix(.999455 0 0 .999455 92.11 65.274)">φ</text>
+</g>
+</svg>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tikzcd-another-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+图&nbsp;6: 小心多 SVG 可能产生的样式冲突
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="layout" class="level2 page-columns page-full" data-number="7">
+<h2 data-number="7" class="anchored" data-anchor-id="layout"><span class="header-section-number">7</span> Layout</h2>
+<p>如 <a href="https://quarto.org/docs/authoring/article-layout.html">Quarto - Article Layout</a> 所述，有时可让文章某些部分超出常规的宽度限制．此功能主要在 HTML 中使用，PDF 中部分生效，其它格式不生效．</p>
+<div class="column-page">
+<table class="table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 14%">
+<col style="width: 19%">
+<col style="width: 19%">
+<col style="width: 19%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(n\)</span> 个球</th>
+<th style="text-align: center;"><span class="math inline">\(r\)</span> 个盒</th>
+<th style="text-align: center;">空盒</th>
+<th style="text-align: center;">递推或封闭形式</th>
+<th style="text-align: center;">生成函数</th>
+<th style="text-align: center;">备注</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">有标号</td>
+<td style="text-align: center;">无标号</td>
+<td style="text-align: center;">不允许</td>
+<td style="text-align: center;"><span class="math display">\[{n \brace r} = r {n-1 \brace r} + {n-1 \brace r-1}\]</span></td>
+<td style="text-align: center;"><span class="math display">\[\mathrm{EGF}(x)=\frac {(e^x - 1)^r}{r!}\]</span></td>
+<td style="text-align: center;">第二类 Stirling 数</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="代码块和引用" class="level2" data-number="8">
+<h2 data-number="8" class="anchored" data-anchor-id="代码块和引用"><span class="header-section-number">8</span> 代码块和引用</h2>
+<p>下面是代码块．</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>theta <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> r</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  subplot_kw <span class="op">=</span> {<span class="st">'projection'</span>: <span class="st">'polar'</span>} </span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>ax.plot(theta, r)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>下面是引用块和一个非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．</p>
+<blockquote class="blockquote">
+<p>这是一个引用块和一个非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．</p>
+</blockquote>
+</section>
+<section id="html-专用测试" class="level2" data-number="9">
+<h2 data-number="9" class="anchored" data-anchor-id="html-专用测试"><span class="header-section-number">9</span> HTML 专用测试</h2>
+<p>目前暂未处理 LaTeX/PDF 格式的 callout，MS Word 格式可兼容但效果不佳．本节后续内容将不会在 LaTeX/PDF 格式下被渲染．</p>
+<section id="callouts" class="level3" data-number="9.1">
+<h3 data-number="9.1" class="anchored" data-anchor-id="callouts"><span class="header-section-number">9.1</span> Callouts</h3>
+<p>Quarto 具有 5 种 callout 类型：<code>note</code>，<code>warning</code>，<code>important</code>，<code>tip</code>，和 <code>caution</code>．</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>普通的 note callout．</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-warning callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Warning
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>这是 warning callout 和一个和非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．</p>
+</div>
+</div>
+<p>这是两个 callout 中间的一个段落．</p>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>这是 important callout．</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+有 caption 的 callout
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>这是有 caption 的 callout．</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+可折叠的 callout
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>开启 collapse 的可折叠 caution callout．</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-caution">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>simple 风格的 callout 和一个和非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-caution no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p>minimal 风格的 callout 和一个和非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="引用脚注测试" class="level2 page-columns page-full" data-number="10">
+<h2 data-number="10" class="anchored" data-anchor-id="引用脚注测试"><span class="header-section-number">10</span> 引用、脚注测试</h2>
+<p>这是一个脚注<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>．</p>
+<div class="no-row-height column-margin column-container"><div id="fn1"><p><sup>1</sup>&nbsp;参见 <a href="https://quarto.org/docs/authoring/footnotes-and-citations.html">Quarto - Citations &amp; Footnotes</a></p></div></div><p>人脸识别是以人面部特征作为识别个体身份的一种个体生物特征识别方法 <span class="citation" data-cites="define"><a href="#ref-define" role="doc-biblioref">[1]</a></span>．……人脸识别的研究最早可追溯到上世纪 60 年代，Bledsoe and Chan 研究了编程计算机识别人脸的方法<span class="citation" data-cites="history"><a href="#ref-history" role="doc-biblioref">[2]</a></span>．随后，萌芽期的人脸识别技术经历多轮蜕变，在发展中逐渐完善．然而，人脸识别的主要难点在于不同个体的人脸结构并无大异，而同一个体的人脸在不同表情、年龄、妆饰、光照等干扰因素下又往往差异显著<span class="citation" data-cites="technical"><a href="#ref-technical" role="doc-biblioref">[3]</a></span>，这要求人脸识别技术既要克服类内因素的干扰，同时又要加强类间差距的显著性，而早期人脸识别方法关注人脸几何特征，识别效果不尽人意．为此，以 Eigenfaces<span class="citation" data-cites="eigenfaces"><a href="#ref-eigenfaces" role="doc-biblioref">[4]</a></span> 为代表的子空间学习识别方法和 Gabor<span class="citation" data-cites="gabor"><a href="#ref-gabor" role="doc-biblioref">[5]</a></span>、LBP<span class="citation" data-cites="lbp"><a href="#ref-lbp" role="doc-biblioref">[6]</a></span> 等局部特征分析的滤波器提取方法在各自领域都有所突破．2014 年，应用新兴的深度卷积神经网络技术，DeepFace<span class="citation" data-cites="deepface"><a href="#ref-deepface" role="doc-biblioref">[7]</a></span> 横空出世，以 97.35% 的 LFW 基准数据集识别准确率重塑了人脸识别领域的研究格局．随后，人脸识别技术迎来爆发式增长，并逐渐走进人们的日常生活之中．……个体层面，要加强公众的权利意识，塑造个人的“数字理性”<span class="citation" data-cites="guochunzhen"><a href="#ref-guochunzhen" role="doc-biblioref">[8]</a></span>．</p>
+
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography" id="quarto-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list">
+<div id="ref-define" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[1] </div><div class="csl-right-inline">全国信息安全标准化技术委员会, <span>《《信息安全技术远程人脸识别系统技术要求》（GB/T38671-2020）》</span>. <a href="https://std.samr.gov.cn/gb/search/gbDetailed?id=A47A713B767814ABE05397BE0A0ABB25" class="uri">https://std.samr.gov.cn/gb/search/gbDetailed?id=A47A713B767814ABE05397BE0A0ABB25</a>, 2020年.</div>
+</div>
+<div id="ref-history" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[2] </div><div class="csl-right-inline">W. W. Bledsoe 和 H. Chan, <span>《A man-machine facial recognition system—some preliminary results》</span>, <em>Panoramic Research, Inc, Palo Alto, California., Technical Report PRI A</em>, 卷 19, 页 1965, 1965.</div>
+</div>
+<div id="ref-technical" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[3] </div><div class="csl-right-inline">余璀璨 和 李慧斌, <span>《基于深度学习的人脸识别方法综述》</span>, <em>工程数学学报</em>, 卷 38, 期 4, 页 19, 2021.</div>
+</div>
+<div id="ref-eigenfaces" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[4] </div><div class="csl-right-inline">M. Turk 和 A. Pentland, <span>《Eigenfaces for Recognition》</span>, <em>Journal of Cognitive Neuroscience</em>, 卷 3, 期 1, 页 71–86.</div>
+</div>
+<div id="ref-gabor" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[5] </div><div class="csl-right-inline">C. Liu 和 H. Wechsler, <span>《A Gabor feature classifier for face recognition》</span>, 收入 <em>Proceedings Eighth IEEE International Conference on Computer Vision. ICCV 2001</em>, IEEE, 2001, 页 270–275.</div>
+</div>
+<div id="ref-lbp" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[6] </div><div class="csl-right-inline">T. Ahonen, A. Hadid, 和 M. Pietikäinen, <span>《Face recognition with local binary patterns》</span>, 收入 <em>European conference on computer vision</em>, Springer, 2004, 页 469–481.</div>
+</div>
+<div id="ref-deepface" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[7] </div><div class="csl-right-inline">Y. Taigman, M. Yang, M. Ranzato, 和 L. Wolf, <span>《Closing the gap to human-level performance in face verification. deepface》</span>, 收入 <em>Proceedings of the IEEE Computer Vision and Pattern Recognition (CVPR)</em>, 页 6.</div>
+</div>
+<div id="ref-guochunzhen" class="csl-entry" role="listitem">
+<div class="csl-left-margin">[8] </div><div class="csl-right-inline">郭春镇, <span>《数字人权时代人脸识别技术应用的治理》</span>, <em>现代法学</em>, 卷 42, 期 4, 页 18, 2020.</div>
+</div>
+</div></section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+          // default icon
+          link.classList.add("external");
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

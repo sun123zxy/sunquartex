@@ -36,6 +36,7 @@ jobs:
       # To ensure dvisvgm installed
       - name: Install dvisvgm via TinyTeX
         run: |
+          tlmgr update --self
           tlmgr install dvisvgm
           tlmgr path add
           dvisvgm --help

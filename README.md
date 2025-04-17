@@ -96,10 +96,12 @@
 
 ### 关于 Demo 站点
 
-本仓库同时采用 Github Actions 自动生成 Demo 站点，手动切换 Quarto profile 至 `website` 可激活网站生成模式．以下方法可以设置 Quarto 的 profile：
+本仓库同时采用 Github Actions + Github Pages 自动生成 Demo 站点，手动切换 Quarto profile 至 `website` 可激活网站生成模式．以下方法可以设置 Quarto 的 profile：
 
 - `quarto render --profile=website ...`
 - 设置环境变量 `QUARTO_PROFILE` 为 `website`
+
+如需自定义网站域名，请在根目录下添加 CNAME 文件，并修改 `_quarto-website.yml` 下 `site-url`．
 
 ## Known Issues
 

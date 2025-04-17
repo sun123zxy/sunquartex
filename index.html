@@ -268,11 +268,12 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="关于-demo-站点" class="level3">
 <h3 class="anchored" data-anchor-id="关于-demo-站点">关于 Demo 站点</h3>
-<p>本仓库同时采用 Github Actions 自动生成 Demo 站点，手动切换 Quarto profile 至 <code>website</code> 可激活网站生成模式．以下方法可以设置 Quarto 的 profile：</p>
+<p>本仓库同时采用 Github Actions + Github Pages 自动生成 Demo 站点，手动切换 Quarto profile 至 <code>website</code> 可激活网站生成模式．以下方法可以设置 Quarto 的 profile：</p>
 <ul>
 <li><code>quarto render --profile=website ...</code></li>
 <li>设置环境变量 <code>QUARTO_PROFILE</code> 为 <code>website</code></li>
 </ul>
+<p>如需自定义网站域名，请在根目录下添加 CNAME 文件，并修改 <code>_quarto-website.yml</code> 下 <code>site-url</code>．</p>
 </section>
 </section>
 <section id="known-issues" class="level2">

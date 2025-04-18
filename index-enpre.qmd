@@ -61,7 +61,7 @@ Transitivity
 
 ### Citations
 
-Blah [@deepface]. Blah blah [@deepface;@eigenfaces]. Blah blah blah^[This is a footnote].
+Blah [@deepface, {pp. 1, chapter 3, sec. 2, theorem 3}]. Blah blah [@deepface;@eigenfaces]. Blah blah blah^[This is a footnote].
 
 # Section B
 

@@ -62,7 +62,7 @@ format:
 
 ### 引用
 
-哇[@deepface]．哇哦[@define;@eigenfaces]．嗨^[这是一个脚注．]．
+哇[@deepface, {p.1}]．哇哦[@define;@eigenfaces]．嗨^[这是一个脚注．]．
 
 # Section B
 

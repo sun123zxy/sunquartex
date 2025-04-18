@@ -113,6 +113,6 @@
 
 - HTML 子图图像拉伸问题，似乎是因为没有设置 `height: auto`，有空去发个 issue．
 
-- 2025/04/15 Beamer 格式文献引用在添加标识符时出现渲染问题．
+- 2025/04/15 定理标题中的文献引用导致 LaTeX 中出现嵌套中括号，见 [Issue #12584](https://github.com/quarto-dev/quarto-cli/issues/12584)
 
 - 2025/04/16 更改 Beamer 的引用格式为非数字型；颜色自定义．

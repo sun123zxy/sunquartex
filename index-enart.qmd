@@ -18,7 +18,7 @@ format:
 
 ## First
 
-This is a reference[@deepface].
+This is a reference[@deepface, {p. 1}].
 
 ::: {#exm-rtimesn}
 

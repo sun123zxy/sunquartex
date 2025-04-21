@@ -78,6 +78,8 @@ PDF 输出使用 BibLaTeX numerical，Beamer 输出使用 BibLaTeX alphabetical�
 
 理论上与文档格式兼容，可直接设置 `--to=pdf` 输出文稿版本．
 
+支持使用 YAML 文档头自定义部分颜色，参见示例文件．
+
 ### 关于 GFM
 
 尽管开启了 `wrap: preserve`，生成的 markdown 文件的换行行为仍可能不尽人意．这里是一些基于（vscode 查找 / 替换）正则表达式替换的后期补救措施：
@@ -114,5 +116,3 @@ PDF 输出使用 BibLaTeX numerical，Beamer 输出使用 BibLaTeX alphabetical�
 - HTML 子图图像拉伸问题，似乎是因为没有设置 `height: auto`，有空去发个 issue．
 
 - 2025/04/15 定理标题中的文献引用导致 LaTeX 中出现嵌套中括号，见 [Issue #12584](https://github.com/quarto-dev/quarto-cli/issues/12584)
-
-- 2025/04/16 更改 Beamer 的引用格式为非数字型；颜色自定义．

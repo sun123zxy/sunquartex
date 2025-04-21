@@ -33,6 +33,13 @@ format:
       echo: false
     fig-pos: false
     template: "./_assets/suntemp-pre.tex"
-    # toc: true
+    
+    custom-color:
+      define: "\\definecolor{blueblk}{HTML}{1874D0}"
+      main: "green!38!black"
+      theorem: "green!30!black"
+      example: "blueblk!50!black"
+      remark: "white!15!black"
+      link: "lime!85!black"
   # revealjs: default
   # pptx: default

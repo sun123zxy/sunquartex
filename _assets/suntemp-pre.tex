@@ -111,27 +111,46 @@ $endif$
 \setbeamertemplate{theorems}[numbered]
 \setbeamertemplate{caption}[numbered]
 
-% \addtobeamertemplate{proof begin}{\setbeamercolor{block title}{bg=black}}{}
-\AtBeginEnvironment{proof}{\setbeamercolor{block title}{bg=black}}
-\AtBeginEnvironment{solution}{\setbeamercolor{block title}{bg=black}}
-\AtBeginEnvironment{remark}{\setbeamercolor{block title}{bg=black}}
-
 % --- styles ---
 
 \usetheme{Madrid}
 \usefonttheme[onlymath]{serif}
 
+$if(custom-color.define)$
+$custom-color.define$
+$endif$
+
+$if(custom-color.main)$
+\colorlet{beamer@blendedblue}{$custom-color.main$}
+$endif$
+
+$if(custom-color.theorem)$
+\setbeamercolor{block title}{bg=$custom-color.theorem$}
+$endif$
+
+$if(custom-color.example)$
+\setbeamercolor{block title example}{bg=$custom-color.example$}
+$endif$
+
+$if(custom-color.remark)$
+\AtBeginEnvironment{proof}{\setbeamercolor{block title}{bg=$custom-color.remark$}}
+\AtBeginEnvironment{solution}{\setbeamercolor{block title}{bg=$custom-color.remark$}}
+\AtBeginEnvironment{remark}{\setbeamercolor{block title}{bg=$custom-color.remark$}}
+$endif$
+
+$if(custom-color.link)$
 \hypersetup{
     colorlinks=true,
-    urlcolor=violet,
+    urlcolor=$custom-color.link$,
     linkcolor=, % default color for other links
-    citecolor=beamer@blendedblue,
+    citecolor=$custom-color.link$,
     anchorcolor=,
     filecolor=
 }
+$endif$
 
-\newcommand{\myemph}[1]{{\usebeamercolor[fg]{structure} #1}}
-\renewcommand{\emph}{\myemph}
+\let\oldemph\emph
+\renewcommand{\emph}[1]{\oldemph{\usebeamercolor[fg]{structure} #1}}
 \let\textbf\alert
 
 \ifzh

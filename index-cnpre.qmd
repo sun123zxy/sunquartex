@@ -9,8 +9,8 @@ bibliography: index.bib
 lang: zh
 
 format:
-    beamer:
-        toc: true
+  beamer:
+    toc: true
 ---
 
 # Section A

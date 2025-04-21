@@ -244,7 +244,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="若干说明">若干说明</h2>
 <section id="关于引用格式" class="level3">
 <h3 class="anchored" data-anchor-id="关于引用格式">关于引用格式</h3>
-<p>默认全部使用 IEEE 格式．如需修改，请自定义 <code>sun*****.cls</code> 和 <code>_format.yml</code>．</p>
+<p>PDF 输出使用 BibLaTeX numerical，Beamer 输出使用 BibLaTeX alphabetical，HTML 输出使用 IEEE．如需修改，请自定义 <code>sun*****.cls</code> 和 <code>_format.yml</code> 和 CSL 文件．</p>
 </section>
 <section id="关于标题" class="level3">
 <h3 class="anchored" data-anchor-id="关于标题">关于标题</h3>
@@ -253,6 +253,7 @@ ul.task-list li input[type="checkbox"] {
 <section id="关于-beamer" class="level3">
 <h3 class="anchored" data-anchor-id="关于-beamer">关于 Beamer</h3>
 <p>理论上与文档格式兼容，可直接设置 <code>--to=pdf</code> 输出文稿版本．</p>
+<p>支持使用 YAML 文档头自定义部分颜色，参见示例文件．</p>
 </section>
 <section id="关于-gfm" class="level3">
 <h3 class="anchored" data-anchor-id="关于-gfm">关于 GFM</h3>
@@ -284,7 +285,6 @@ ul.task-list li input[type="checkbox"] {
 <li><p>通用的定理编号目前尚难以自定义，见 <a href="https://github.com/quarto-dev/quarto-cli/discussions/5479">Discussion #5479</a></p></li>
 <li><p>HTML 子图图像拉伸问题，似乎是因为没有设置 <code>height: auto</code>，有空去发个 issue．</p></li>
 <li><p>2025/04/15 定理标题中的文献引用导致 LaTeX 中出现嵌套中括号，见 <a href="https://github.com/quarto-dev/quarto-cli/issues/12584">Issue #12584</a></p></li>
-<li><p>2025/04/16 更改 Beamer 的引用格式为非数字型；颜色自定义．</p></li>
 </ul>
 
 

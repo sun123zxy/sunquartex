@@ -36,8 +36,8 @@ format:
     
     custom-color:
       define: "\\definecolor{blueblk}{HTML}{1874D0}"
-      main: "green!38!black"
-      theorem: "green!30!black"
+      main: "green!40!black"
+      theorem: "green!32!black"
       example: "blueblk!50!black"
       remark: "white!15!black"
       link: "lime!85!black"

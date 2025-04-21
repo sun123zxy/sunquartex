@@ -68,7 +68,7 @@
 
 ### 关于引用格式
 
-默认全部使用 IEEE 格式．如需修改，请自定义 `sun*****.cls` 和 `_format.yml`．
+PDF 输出使用 BibLaTeX numerical，Beamer 输出使用 BibLaTeX alphabetical，HTML 输出使用 IEEE．如需修改，请自定义 `sun*****.cls` 和 `_format.yml` 和 CSL 文件．
 
 ### 关于标题
 

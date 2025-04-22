@@ -2,7 +2,8 @@
 title: "SunQuarTeX-cnpre 测试文档"
 subtitle: "这是副标题"
 author: "sun123zxy"
-institute: "SunQuarTeX"
+institute: "SunQuarTeX Institute of LaTeX Technology"
+shortinstitute: "SunQuarTeX"
 date: "2023/08/21"
 date-modified: "2024/02/22"
 bibliography: index.bib

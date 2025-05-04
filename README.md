@@ -66,6 +66,10 @@
 
 ## 若干说明
 
+### 关于定理编号
+
+Quarto 内置的定理编号系统无法修改，但我们提供通过 YAML 文档头自定义 PDF 格式定理编号的可能，示例见 `_format.yml`．
+
 ### 关于引用格式
 
 PDF 输出使用 BibLaTeX numerical，Beamer 输出使用 BibLaTeX alphabetical，HTML 输出使用 IEEE．如需修改，请自定义 `sun*****.cls` 和 `_format.yml` 和 CSL 文件．
@@ -78,7 +82,7 @@ PDF 输出使用 BibLaTeX numerical，Beamer 输出使用 BibLaTeX alphabetical�
 
 理论上与文档格式兼容，可直接设置 `--to=pdf` 输出文稿版本．
 
-支持使用 YAML 文档头自定义部分颜色，参见示例文件．
+支持使用 YAML 文档头自定义部分颜色，示例见 `_format.yml`．
 
 ### 关于 GFM
 

@@ -10,6 +10,7 @@
 }{
     \zhfalse
     \documentclass{article}
+    \usepackage{xeCJK}
     \def\transmodified{Last modified on}
     \def\transtoc{Table of Contents}
 }
@@ -112,6 +113,9 @@ $endif$
 
 \usepackage{amsthm} % better theorem-like environment support (such as proof, unordered, etc.)
 
+\newtheorem{counter}{Counter}$if(custom-theorem.numbered-within)$[$custom-theorem.numbered-within$]$endif$
+\newcommand{\mynewthm}[2]{\newtheorem{#1}$if(custom-theorem.numbered-alike)$[counter]{#2}$elseif(custom-theorem.numbered-within)${#2}[$custom-theorem.numbered-within$]$else${#2}$endif$}
+
 \ifzh % zhthm
 
 \newtheoremstyle{suncnthm}% name
@@ -126,14 +130,14 @@ $endif$
 
 \theoremstyle{suncnthm}
 
-\newtheorem{theorem}{定理}[section]     % counter reset on each section
-\newtheorem{lemma}{引理}[section]       % counter reset on each section
-\newtheorem{corollary}{推论}[section]   % counter reset on each section
-\newtheorem{proposition}{命题}[section] % counter reset on each section
-\newtheorem{conjecture}{猜想}[section]  % counter reset on each section
-\newtheorem{definition}{定义}[section]  % counter reset on each section
-\newtheorem{example}{例}[section]       % counter reset on each section
-\newtheorem{exercise}{习题}[section]    % counter reset on each section
+\mynewthm{theorem}{定理}
+\mynewthm{lemma}{引理}
+\mynewthm{corollary}{推论}
+\mynewthm{proposition}{命题}
+\mynewthm{conjecture}{猜想}
+\mynewthm{definition}{定义}
+\mynewthm{example}{例}
+\mynewthm{exercise}{习题}
 \newtheorem*{solution}{解}
 \newtheorem*{remark}{注记}
 
@@ -166,14 +170,14 @@ $endif$
 \else % enthm
 
 \theoremstyle{definition}
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{lemma}{Lemma}[section]
-\newtheorem{corollary}{Corollary}[section]
-\newtheorem{proposition}{Proposition}[section]
-\newtheorem{conjecture}{Conjecture}[section]
-\newtheorem{definition}{Definition}[section]
-\newtheorem{example}{Example}[section]
-\newtheorem{exercise}{Exercise}[section]
+\mynewthm{theorem}{Theorem}
+\mynewthm{lemma}{Lemma}
+\mynewthm{corollary}{Corollary}
+\mynewthm{proposition}{Proposition}
+\mynewthm{conjecture}{Conjecture}
+\mynewthm{definition}{Definition}
+\mynewthm{example}{Example}
+\mynewthm{exercise}{Exercise}
 
 \theoremstyle{remark}
 \newtheorem*{solution}{Solution}

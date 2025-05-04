@@ -11,6 +11,7 @@
 }{
     \zhfalse
     \documentclass[fontset=fandol,envcountsect]{beamer}
+    \usepackage{xeCJK}
     \def\transmodified{Last modified on}
     \def\transtoc{Table of Contents}
     \def\transreferences{References}
@@ -67,19 +68,21 @@ $endif$
 \cleartheorem{example}
 \cleartheorem{solution}
 
+\newcommand{\mynewthm}[2]{\newtheorem{#1}{#2}}
+
 \ifzh % zhthm
 
 \theoremstyle{theorem}
-\newtheorem{theorem}{定理}[section]
-\newtheorem{definition}{定义}[section]
-\newtheorem{lemma}{引理}[section]
-\newtheorem{corollary}{推论}[section]
-\newtheorem{proposition}{命题}[section]
-\newtheorem{conjecture}{猜想}[section]
+\mynewthm{theorem}{定理}
+\mynewthm{definition}{定义}
+\mynewthm{lemma}{引理}
+\mynewthm{corollary}{推论}
+\mynewthm{proposition}{命题}
+\mynewthm{conjecture}{猜想}
 
 \theoremstyle{example}
-\newtheorem{example}{例}[section]
-\newtheorem{exercise}{习题}[section]
+\mynewthm{example}{例}
+\mynewthm{exercise}{习题}
 
 \theoremstyle{remark}
 \newtheorem*{myproof}{证明}
@@ -91,25 +94,22 @@ $endif$
 \else % enthm
 
 \theoremstyle{theorem}
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{definition}{Definition}[section]
-\newtheorem{lemma}{Lemma}[section]
-\newtheorem{corollary}{Corollary}[section]
-\newtheorem{proposition}{Proposition}[section]
-\newtheorem{conjecture}{Conjecture}[section]
+\mynewthm{theorem}{Theorem}
+\mynewthm{definition}{Definition}
+\mynewthm{lemma}{Lemma}
+\mynewthm{corollary}{Corollary}
+\mynewthm{proposition}{Proposition}
+\mynewthm{conjecture}{Conjecture}
 
 \theoremstyle{example}
-\newtheorem{example}{Example}[section]
-\newtheorem{exercise}{Exercise}[section]
+\mynewthm{example}{Example}
+\mynewthm{exercise}{Exercise}
 
 \theoremstyle{remark}
 \newtheorem*{solution}{Solution}
 \newtheorem*{remark}{Remark}
 
 \fi % endthm
-
-\setbeamertemplate{theorems}[numbered]
-\setbeamertemplate{caption}[numbered]
 
 % --- styles ---
 

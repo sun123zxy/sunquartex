@@ -72,7 +72,7 @@ Quarto 内置的定理编号系统无法修改，但我们提供通过 YAML 文�
 
 ### 关于引用格式
 
-PDF 输出使用 BibLaTeX numerical，Beamer 输出使用 BibLaTeX alphabetical，HTML 输出使用 IEEE．如需修改，请自定义 `sun*****.cls` 和 `_format.yml` 和 CSL 文件．
+PDF / Beamer 输出使用 BibLaTeX alphabetical，HTML 输出使用 IEEE．如需修改，请自定义 `sun*****.cls` 和 `_format.yml` 和 CSL 文件．
 
 ### 关于标题
 

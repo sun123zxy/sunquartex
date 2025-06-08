@@ -48,7 +48,7 @@ $endif$
 
 % --- bibliography ---
 
-\usepackage[backend=biber,style=numeric,autocite=plain]{biblatex}
+\usepackage[backend=biber,style=alphabetic,autocite=plain]{biblatex}
 % \usepackage[backend=biber,style=gb7714-2015,autocite=plain]{biblatex}
 \addbibresource{$bibliography$}
 
@@ -219,6 +219,10 @@ $endif$
 
 $body$
 
-\printbibliography
+\ifzh
+  \printbibliography[title={参考文献}]
+\else
+  \printbibliography
+\fi
 
 \end{document}

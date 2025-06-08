@@ -222,7 +222,11 @@ $body$
 
 $if(bibliography)$
 \begin{frame}[allowframebreaks]{\transreferences}
+  \ifzh
+    \printbibliography[heading=none, title={参考文献}]
+  \else
     \printbibliography[heading=none]
+  \fi
 \end{frame}
 $endif$
 

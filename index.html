@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.31">
+<meta name="generator" content="quarto-1.7.32">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -36,10 +36,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-e1a5c8363afafaef2c763b6775fbf3ca.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-9ce2daa7ce60fa9658f10f9969036607.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-2fffcd71bc6a23021d20b51fc622daec.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -146,7 +146,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#核心功能" id="toc-核心功能" class="nav-link" data-scroll-target="#核心功能">核心功能</a></li>
   <li><a href="#安装" id="toc-安装" class="nav-link" data-scroll-target="#安装">安装</a></li>
   <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage">Usage</a></li>
-  <li><a href="#若干说明" id="toc-若干说明" class="nav-link" data-scroll-target="#若干说明">若干说明</a>
+  <li><a href="#faq" id="toc-faq" class="nav-link" data-scroll-target="#faq">FAQ</a>
   <ul class="collapse">
   <li><a href="#关于定理编号" id="toc-关于定理编号" class="nav-link" data-scroll-target="#关于定理编号">关于定理编号</a></li>
   <li><a href="#关于引用格式" id="toc-关于引用格式" class="nav-link" data-scroll-target="#关于引用格式">关于引用格式</a></li>
@@ -198,6 +198,7 @@ ul.task-list li input[type="checkbox"] {
 <li>嵌入 Python 代码生成数据图表（Computation）</li>
 <li>TikZ / <a href="https://ctan.org/pkg/tikz-cd">tikz-cd</a> / <a href="https://q.uiver.app/">quiver</a> 图表绘制</li>
 <li>Mermaid、Graphviz 图表绘制（Diagram）</li>
+<li>Github Actions 自动生成 Demo 站点</li>
 <li>…</li>
 </ul>
 </section>
@@ -231,6 +232,7 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="usage" class="level2">
 <h2 class="anchored" data-anchor-id="usage">Usage</h2>
+<p>部分示例文件包含可选支持内容，如未安装相应依赖，可删除对应内容后渲染．</p>
 <ul>
 <li><code>quarto render index-cnart.qmd</code></li>
 <li><code>quarto render index-enart.qmd</code></li>
@@ -239,11 +241,11 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p><code>--to</code> 参数可指定输出类型，包括 <code>html</code>, <code>pdf</code>， <code>beamer</code>, <code>docx</code>, <code>gfm</code>．每次渲染时应指定 <code>--to</code> 参数，或在文件头中明确指定输出格式．</p>
 <p>在文件头声明 <code>lang=zh</code> 或 <code>lang=en</code> 即可调整语言．</p>
-<p>输出 PDF 时，可在输出前自行对 LaTeX 文件（<code>*.tex</code>）做进一步修正，再自行使用 <code>xelatex</code> 和 <code>biber</code> 输出 PDF．</p>
+<p>输出 PDF 时，可在渲染时使用 <code>--to=latex</code> 选项输出 <code>.tex</code> 文件．</p>
 <p>在 Beamer 中使用 TikZ 时，所在幻灯片须添加 <code>{.fragile}</code> 标记．</p>
 </section>
-<section id="若干说明" class="level2">
-<h2 class="anchored" data-anchor-id="若干说明">若干说明</h2>
+<section id="faq" class="level2">
+<h2 class="anchored" data-anchor-id="faq">FAQ</h2>
 <section id="关于定理编号" class="level3">
 <h3 class="anchored" data-anchor-id="关于定理编号">关于定理编号</h3>
 <p>Quarto 内置的定理编号系统无法修改，但我们提供通过 YAML 文档头自定义 PDF 格式定理编号的可能，示例见 <code>_format.yml</code>．</p>
@@ -263,23 +265,17 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="关于-gfm" class="level3">
 <h3 class="anchored" data-anchor-id="关于-gfm">关于 GFM</h3>
-<p>尽管开启了 <code>wrap: preserve</code>，生成的 markdown 文件的换行行为仍可能不尽人意．这里是一些基于（vscode 查找 / 替换）正则表达式替换的后期补救措施：</p>
-<ul>
-<li><p><code>(&lt;/span&gt;)\s*\$\$</code> 替换为 <code>$1\n$$$$</code>：用于在定理紧邻 display math 时强制换行．</p></li>
-<li><p>考虑去除部分 HTML 标签（如<code>&lt;div&gt;</code>, <code>&lt;span&gt;</code>）</p>
-<p><code>&lt;div(([\s\S])*?)&gt;</code> 替换为空．</p>
-<p><code>&lt;/div&gt;</code> 替换为空．</p></li>
-<li><p><code>\n\n\n</code> 替换为 <code>\n\n</code>：删除多余空行．</p></li>
-</ul>
-<p>注意：这一方案未对代码块做特殊处理．</p>
+<p>该输出格式可用于使用 <a href="https://markdown.com.cn/editor/">markdown.com.cn</a> 的在线编辑器转知乎格式．</p>
 </section>
 <section id="关于-demo-站点" class="level3">
 <h3 class="anchored" data-anchor-id="关于-demo-站点">关于 Demo 站点</h3>
-<p>本仓库同时采用 Github Actions + Github Pages 自动生成 Demo 站点，手动切换 Quarto profile 至 <code>website</code> 可激活网站生成模式．以下方法可以设置 Quarto 的 profile：</p>
+<p>本仓库同时采用 Github Actions + Github Pages 自动生成 Demo 站点．首次使用时，在 Actions 分页中激活 Actions，在本地手动进行第一次网站发布：</p>
 <ul>
-<li><code>quarto render --profile=website ...</code></li>
-<li>设置环境变量 <code>QUARTO_PROFILE</code> 为 <code>website</code></li>
+<li>命令行内设置环境变量 <code>QUARTO_PROFILE</code> 为 <code>website</code></li>
+<li>执行 <code>quarto publish</code></li>
+<li>（清除环境变量）</li>
 </ul>
+<p>以后的每次 push 均会触发 Github Actions 自动完成的网站生成．</p>
 <p>如需自定义网站域名，请在根目录下添加 CNAME 文件，并修改 <code>_quarto-website.yml</code> 下 <code>site-url</code>．</p>
 </section>
 </section>
@@ -287,7 +283,6 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="known-issues">Known Issues</h2>
 <ul>
 <li><p>见 <a href="https://github.com/quarto-dev/quarto-cli/discussions/4598">Discussion #4598</a>，Pandoc 不支持 CSL-M 导致无有效方法处理 GB/T 7714-2015 中按语言切换“等”、<code>et al</code> 省略字样的规定．</p></li>
-<li><p>【need-repro】表格与代码混排有时会使位置发生偏移，页面下部的代码块可能会溢出．</p></li>
 <li><p>通用的定理编号目前尚难以自定义，见 <a href="https://github.com/quarto-dev/quarto-cli/discussions/5479">Discussion #5479</a></p></li>
 <li><p>HTML 子图图像拉伸问题，似乎是因为没有设置 <code>height: auto</code>，有空去发个 issue．</p></li>
 <li><p>2025/04/15 定理标题中的文献引用导致 LaTeX 中出现嵌套中括号，见 <a href="https://github.com/quarto-dev/quarto-cli/issues/12584">Issue #12584</a></p></li>

@@ -13,6 +13,7 @@
 - 嵌入 Python 代码生成数据图表（Computation）
 - TikZ / [tikz-cd](https://ctan.org/pkg/tikz-cd) / [quiver](https://q.uiver.app/) 图表绘制
 - Mermaid、Graphviz 图表绘制（Diagram）
+- Github Actions 自动生成 Demo 站点
 - ...
 
 ## 安装
@@ -51,6 +52,8 @@
 
 ## Usage
 
+部分示例文件包含可选支持内容，如未安装相应依赖，可删除对应内容后渲染．
+
 - `quarto render index-cnart.qmd`
 - `quarto render index-enart.qmd`
 - `quarto render index-cnpre.qmd`
@@ -60,11 +63,11 @@
 
 在文件头声明 `lang=zh` 或 `lang=en` 即可调整语言．
 
-输出 PDF 时，可在输出前自行对 LaTeX 文件（`*.tex`）做进一步修正，再自行使用 `xelatex` 和 `biber` 输出 PDF．
+输出 PDF 时，可在渲染时使用 `--to=latex` 选项输出 `.tex` 文件．
 
 在 Beamer 中使用 TikZ 时，所在幻灯片须添加 `{.fragile}` 标记．
 
-## 若干说明
+## FAQ
 
 ### 关于定理编号
 
@@ -86,34 +89,23 @@ PDF / Beamer 输出使用 BibLaTeX alphabetical，HTML 输出使用 IEEE．如�
 
 ### 关于 GFM
 
-尽管开启了 `wrap: preserve`，生成的 markdown 文件的换行行为仍可能不尽人意．这里是一些基于（vscode 查找 / 替换）正则表达式替换的后期补救措施：
-
-- `(</span>)\s*\$\$` 替换为 `$1\n$$$$`：用于在定理紧邻 display math 时强制换行．
-
-- 考虑去除部分 HTML 标签（如`<div>`, `<span>`）
-
-  `<div(([\s\S])*?)>` 替换为空．
-  
-  `</div>` 替换为空．
-
-- `\n\n\n` 替换为 `\n\n`：删除多余空行．
-
-注意：这一方案未对代码块做特殊处理．
+该输出格式可用于使用 [markdown.com.cn](https://markdown.com.cn/editor/) 的在线编辑器转知乎格式．
 
 ### 关于 Demo 站点
 
-本仓库同时采用 Github Actions + Github Pages 自动生成 Demo 站点，手动切换 Quarto profile 至 `website` 可激活网站生成模式．以下方法可以设置 Quarto 的 profile：
+本仓库同时采用 Github Actions + Github Pages 自动生成 Demo 站点．首次使用时，在 Actions 分页中激活 Actions，在本地手动进行第一次网站发布：
 
-- `quarto render --profile=website ...`
-- 设置环境变量 `QUARTO_PROFILE` 为 `website`
+- 命令行内设置环境变量 `QUARTO_PROFILE` 为 `website`
+- 执行 `quarto publish`
+- （清除环境变量）
+
+以后的每次 push 均会触发 Github Actions 自动完成的网站生成．
 
 如需自定义网站域名，请在根目录下添加 CNAME 文件，并修改 `_quarto-website.yml` 下 `site-url`．
 
 ## Known Issues
 
 - 见 [Discussion #4598](https://github.com/quarto-dev/quarto-cli/discussions/4598)，Pandoc 不支持 CSL-M 导致无有效方法处理 GB/T 7714-2015 中按语言切换“等”、`et al` 省略字样的规定．
-
-- 【need-repro】表格与代码混排有时会使位置发生偏移，页面下部的代码块可能会溢出．
 
 - 通用的定理编号目前尚难以自定义，见 [Discussion #5479](https://github.com/quarto-dev/quarto-cli/discussions/5479)
 

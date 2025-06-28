@@ -125,7 +125,7 @@ Quarto 支持交叉引用．比如这一节的标题就已经被打上了标签�
 
 我们还支持 [RST-style list tables](https://github.com/pandoc-ext/list-table)．该格式可以比较方便地合并单元格．
 
-:::{.list-table aligns=c,c,c}
+:::{.list-table aligns="c,c,c" width="1,3,3"}
    * - row 1, column 1
      - row 1, column 2
      - row 1, column 3

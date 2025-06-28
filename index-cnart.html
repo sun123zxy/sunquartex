@@ -449,6 +449,65 @@ window.Quarto = {
 </figcaption>
 </figure>
 </div>
+<p>我们支持 Markdown grid style 的表格．</p>
+<table class="table">
+<colgroup>
+<col style="width: 5%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 5%">
+<col style="width: 5%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>a</td>
+<td rowspan="2">be</td>
+<td>c</td>
+<td>d</td>
+<td>e</td>
+</tr>
+<tr class="even">
+<td>f</td>
+<td>ew</td>
+<td>a</td>
+<td>b</td>
+</tr>
+<tr class="odd">
+<td>c</td>
+<td>d</td>
+<td colspan="2">ewfe</td>
+<td>e</td>
+</tr>
+<tr class="even">
+<td>f</td>
+<td>g</td>
+<td>h</td>
+<td>r</td>
+<td>e</td>
+</tr>
+</tbody>
+</table>
+<p>我们还支持 <a href="https://github.com/pandoc-ext/list-table">RST-style list tables</a>．该格式可以比较方便地合并单元格．</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">row 1, column 1</th>
+<th style="text-align: center;">row 1, column 2</th>
+<th style="text-align: center;">row 1, column 3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">row 2, column 1</td>
+<td colspan="2" style="text-align: center;"> row 2, column 2–3</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">row 3, column 1</td>
+<td style="text-align: center;">row 3, column 2</td>
+<td style="text-align: center;">row 3, column 3</td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="数学公式定理系统测试" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="数学公式定理系统测试"><span class="header-section-number">4</span> 数学公式、定理系统测试</h2>
@@ -658,7 +717,7 @@ Remark
 </div>
 <p>交叉引用 <a href="#fig-polar" class="quarto-xref">图&nbsp;2</a> 当然也是可以的.</p>
 <p>这里再测试一些较复杂的并列效果．（<a href="#tbl-light-on" class="quarto-xref">表&nbsp;2</a>, <a href="#tbl-light-on-1" class="quarto-xref">表&nbsp;2 (a)</a>, <a href="#tbl-light-on-2" class="quarto-xref">表&nbsp;2 (b)</a>, <a href="#fig-light-on" class="quarto-xref">图&nbsp;3</a>, <a href="#fig-light-on-1" class="quarto-xref">图&nbsp;3 (a)</a>, <a href="#fig-light-on-2" class="quarto-xref">图&nbsp;3 (b)</a>）</p>
-<div id="073902e8" class="cell" data-execution_count="2">
+<div id="5706d120" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>

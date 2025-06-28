@@ -112,3 +112,5 @@ PDF / Beamer 输出使用 BibLaTeX alphabetical，HTML 输出使用 IEEE．如�
 - HTML 子图图像拉伸问题，似乎是因为没有设置 `height: auto`，有空去发个 issue．
 
 - 2025/04/15 定理标题中的文献引用导致 LaTeX 中出现嵌套中括号，见 [Issue #12584](https://github.com/quarto-dev/quarto-cli/issues/12584)
+
+- 2025/06/29 目前 RST-style list tables 的 row-span 在 PDF 格式下支持不良．

@@ -1,5 +1,6 @@
 
 filters:
+  - list-table
   - "./_assets/tikz.lua"
 
 format:

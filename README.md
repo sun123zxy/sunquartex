@@ -116,3 +116,5 @@ PDF / Beamer 输出使用 BibLaTeX alphabetical，HTML 输出使用 IEEE．如�
 - 2025/06/29 目前 RST-style list tables 的 row-span 在 PDF 格式下支持不良．
 
 - 2025/06/29 网站生成的 PDF 没有设置 base URL，相对链接无法正确解析．见 [Discussion #13000](https://github.com/quarto-dev/quarto-cli/discussions/13000)
+
+- 2025/06/30 手机端的 other formats / links 菜单不显示，这是 Quarto 那边的问题，见 [Issue #5961](https://github.com/quarto-dev/quarto-cli/issues/5961)

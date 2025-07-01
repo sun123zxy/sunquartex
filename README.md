@@ -20,7 +20,7 @@
 
 安装方法简述如下，另可参见本仓库下的 Github Actions 配置文件．
 
-- 下载并安装 [quarto-cli](https://github.com/quarto-dev/quarto-cli)．测试 Quarto 版本为 1.6.39.
+- 下载并安装 [quarto-cli](https://github.com/quarto-dev/quarto-cli)．本仓库渲染使用 Quarto 版本为 {{< version >}}．
 
 - （需要使用 Computation 等功能时）
   

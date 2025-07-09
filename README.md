@@ -38,11 +38,15 @@
 
   请确保 XeLaTeX、dvisvgm、mutool 已在 PATH 中，且已安装需要使用的 LaTeX 宏包（目前 TikZ 中使用的宏包无法在渲染过程中自动安装）．
 
-  - 如使用 Quarto 自带的 TinyTeX：
+  - 如使用 Quarto 自带的 TinyTeX 安装 `dvisvgm`：
   
-    - 先输出一次 PDF 自动补全大部分所需宏包
+    - 先输出一次示例 PDF 自动补全大部分所需宏包
     - 执行 `tlmgr install dvisvgm` 和 `tlmgr path add` 下载 dvisvgm 并添加至 PATH．
-    - Linux 执行 `sudo apt install mupdf-tools`．
+
+  - 如何安装 `mutool`：
+
+    - （Linux / WSL）执行 `sudo apt install mupdf-tools`．
+    - （Windows）请自行在 [MuPDF](https://mupdf.com/) 官网下载并安装 MuPDF，并确保 `mutool` 在 PATH 中．
 
   - 关于 mutool 必要性的一些说明：
 
@@ -67,31 +71,49 @@
 
 在 Beamer 中使用 TikZ 时，所在幻灯片须添加 `{.fragile}` 标记．
 
-## FAQ
+## Q&A
 
-### 关于定理编号
+### ？？？
 
-Quarto 内置的定理编号系统无法修改，但我们提供通过 YAML 文档头自定义 PDF 格式定理编号的可能，示例见 `_format.yml`．
+#### 我是学数学的，不懂 Computer Science，你能不能讲人话！
 
-### 关于引用格式
+请您活用 AI 工具降低学习门槛．推荐使用 VSCode 打开本仓库，使用自带的 Github Copilot，将 README 扔进对话框，提出您的具体需求并获得人话解答．
+
+### 样式相关
+
+#### 我不想给定理编号！/ 我要改定理编号格式！
+
+Quarto 内置的定理编号系统无法修改，但我们提供通过 YAML 文档头自定义 PDF 格式定理编号的可能，示例见 `_format.yml`．（目前仍然无法实现完全去除 PDF 格式中的定理编号）
+
+#### 我要改引用格式！
 
 PDF / Beamer 输出使用 BibLaTeX alphabetical，HTML 输出使用 IEEE．如需修改，请自定义 `sun*****.cls` 和 `_format.yml` 和 CSL 文件．
 
-### 关于标题
+### 我要画交换图！
 
-一般文档建议从二级标题开始编号（[相关讨论](https://community.rstudio.com/t/why-do-default-r-markdown-quarto-templates-use-second-level-headings-instead-of-first-level-ones/162127)）；Beamer 的 `slide-level` 可自适应标题级数，但其分节固定从一级标题开始，见 Pandoc 文档．
+格式见示例文件．只输出 PDF 见安装部分．
 
-### 关于 Beamer
-
-理论上与文档格式兼容，可直接设置 `--to=pdf` 输出文稿版本．
+#### 我要改 Beamer 样式！
 
 支持使用 YAML 文档头自定义部分颜色，示例见 `_format.yml`．
 
-### 关于 GFM
+### 写作相关
 
-该输出格式可用于使用 [markdown.com.cn](https://markdown.com.cn/editor/) 的在线编辑器转知乎格式．
+#### 标题应该用多少个 `#`？
 
-### 关于 Demo 站点
+一般文档建议从二级标题开始编号（[相关讨论](https://community.rstudio.com/t/why-do-default-r-markdown-quarto-templates-use-second-level-headings-instead-of-first-level-ones/162127)）；Beamer 的 `slide-level` 可自适应标题级数，但其分节固定从一级标题开始，见 Pandoc 文档．
+
+### 输出相关
+
+#### Beamer 可不可以输出文稿版本 PDF？
+
+理论上与文档格式兼容，可直接设置 `--to=pdf` 输出文稿版本．
+
+#### 我要输出到知乎！
+
+你可以使用 GFM 格式输出，输出内容可复制至 [markdown.com.cn](https://markdown.com.cn/editor/) 的在线编辑器转知乎格式．
+
+#### 我要在线直播写文！（搭建在线网站）
 
 本仓库同时采用 Github Actions + Github Pages 自动生成 Demo 站点．首次使用时，在 Actions 分页中激活 Actions，在本地手动进行第一次网站发布：
 
@@ -109,7 +131,7 @@ PDF / Beamer 输出使用 BibLaTeX alphabetical，HTML 输出使用 IEEE．如�
 
 - 通用的定理编号目前尚难以自定义，见 [Discussion #5479](https://github.com/quarto-dev/quarto-cli/discussions/5479)
 
-- HTML 子图图像拉伸问题，似乎是因为没有设置 `height: auto`，有空去发个 issue．
+- （need repro）HTML 子图图像拉伸问题，似乎是因为没有设置 `height: auto`．
 
 - 2025/04/15 定理标题中的文献引用导致 LaTeX 中出现嵌套中括号，见 [Issue #12584](https://github.com/quarto-dev/quarto-cli/issues/12584)
 

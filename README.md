@@ -116,6 +116,8 @@
 ```
 `````
 
+推荐使用 [quiver](https://q.uiver.app/) 在线编辑器生成交换图代码．
+
 #### 标题应该用多少个 `#`？
 
 一般文档建议从二级标题开始编号（[相关讨论](https://community.rstudio.com/t/why-do-default-r-markdown-quarto-templates-use-second-level-headings-instead-of-first-level-ones/162127)）；Beamer 的 `slide-level` 可自适应标题级数，但其分节固定从一级标题开始，见 Pandoc 文档．

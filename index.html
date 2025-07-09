@@ -146,14 +146,13 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#核心功能" id="toc-核心功能" class="nav-link" data-scroll-target="#核心功能">核心功能</a></li>
   <li><a href="#安装" id="toc-安装" class="nav-link" data-scroll-target="#安装">安装</a></li>
   <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage">Usage</a></li>
-  <li><a href="#faq" id="toc-faq" class="nav-link" data-scroll-target="#faq">FAQ</a>
+  <li><a href="#qa" id="toc-qa" class="nav-link" data-scroll-target="#qa">Q&amp;A</a>
   <ul class="collapse">
-  <li><a href="#关于定理编号" id="toc-关于定理编号" class="nav-link" data-scroll-target="#关于定理编号">关于定理编号</a></li>
-  <li><a href="#关于引用格式" id="toc-关于引用格式" class="nav-link" data-scroll-target="#关于引用格式">关于引用格式</a></li>
-  <li><a href="#关于标题" id="toc-关于标题" class="nav-link" data-scroll-target="#关于标题">关于标题</a></li>
-  <li><a href="#关于-beamer" id="toc-关于-beamer" class="nav-link" data-scroll-target="#关于-beamer">关于 Beamer</a></li>
-  <li><a href="#关于-gfm" id="toc-关于-gfm" class="nav-link" data-scroll-target="#关于-gfm">关于 GFM</a></li>
-  <li><a href="#关于-demo-站点" id="toc-关于-demo-站点" class="nav-link" data-scroll-target="#关于-demo-站点">关于 Demo 站点</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section">？？？</a></li>
+  <li><a href="#样式相关" id="toc-样式相关" class="nav-link" data-scroll-target="#样式相关">样式相关</a></li>
+  <li><a href="#我要画交换图" id="toc-我要画交换图" class="nav-link" data-scroll-target="#我要画交换图">我要画交换图！</a></li>
+  <li><a href="#写作相关" id="toc-写作相关" class="nav-link" data-scroll-target="#写作相关">写作相关</a></li>
+  <li><a href="#输出相关" id="toc-输出相关" class="nav-link" data-scroll-target="#输出相关">输出相关</a></li>
   </ul></li>
   <li><a href="#known-issues" id="toc-known-issues" class="nav-link" data-scroll-target="#known-issues">Known Issues</a></li>
   </ul></li>
@@ -206,7 +205,7 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="安装">安装</h2>
 <p>安装方法简述如下，另可参见本仓库下的 Github Actions 配置文件．</p>
 <ul>
-<li><p>下载并安装 <a href="https://github.com/quarto-dev/quarto-cli">quarto-cli</a>．测试 Quarto 版本为 1.6.39.</p></li>
+<li><p>下载并安装 <a href="https://github.com/quarto-dev/quarto-cli">quarto-cli</a>．本仓库渲染使用 Quarto 版本为 1.7.32．</p></li>
 <li><p>（需要使用 Computation 等功能时）</p>
 <p>安装恰当版本的 Python 和所需模块，如 jupyter、numpy、matplotlib、tabulate 等．</p></li>
 <li><p>（需要输出 LaTeX / PDF / Beamer 时）</p>
@@ -216,11 +215,15 @@ ul.task-list li input[type="checkbox"] {
 <li><p>（需要在非 LaTeX / PDF / Beamer 格式下（如 HTML）输出 TikZ 时）</p>
 <p>请确保 XeLaTeX、dvisvgm、mutool 已在 PATH 中，且已安装需要使用的 LaTeX 宏包（目前 TikZ 中使用的宏包无法在渲染过程中自动安装）．</p>
 <ul>
-<li><p>如使用 Quarto 自带的 TinyTeX：</p>
+<li><p>如使用 Quarto 自带的 TinyTeX 安装 <code>dvisvgm</code>：</p>
 <ul>
-<li>先输出一次 PDF 自动补全大部分所需宏包</li>
+<li>先输出一次示例 PDF 自动补全大部分所需宏包</li>
 <li>执行 <code>tlmgr install dvisvgm</code> 和 <code>tlmgr path add</code> 下载 dvisvgm 并添加至 PATH．</li>
-<li>Linux 执行 <code>sudo apt install mupdf-tools</code>．</li>
+</ul></li>
+<li><p>如何安装 <code>mutool</code>：</p>
+<ul>
+<li>（Linux / WSL）执行 <code>sudo apt install mupdf-tools</code>．</li>
+<li>（Windows）请自行在 <a href="https://mupdf.com/">MuPDF</a> 官网下载并安装 MuPDF，并确保 <code>mutool</code> 在 PATH 中．</li>
 </ul></li>
 <li><p>关于 mutool 必要性的一些说明：</p>
 <blockquote class="blockquote">
@@ -244,31 +247,53 @@ ul.task-list li input[type="checkbox"] {
 <p>输出 PDF 时，可在渲染时使用 <code>--to=latex</code> 选项输出 <code>.tex</code> 文件．</p>
 <p>在 Beamer 中使用 TikZ 时，所在幻灯片须添加 <code>{.fragile}</code> 标记．</p>
 </section>
-<section id="faq" class="level2">
-<h2 class="anchored" data-anchor-id="faq">FAQ</h2>
-<section id="关于定理编号" class="level3">
-<h3 class="anchored" data-anchor-id="关于定理编号">关于定理编号</h3>
-<p>Quarto 内置的定理编号系统无法修改，但我们提供通过 YAML 文档头自定义 PDF 格式定理编号的可能，示例见 <code>_format.yml</code>．</p>
+<section id="qa" class="level2">
+<h2 class="anchored" data-anchor-id="qa">Q&amp;A</h2>
+<section id="section" class="level3">
+<h3 class="anchored" data-anchor-id="section">？？？</h3>
+<section id="我是学数学的不懂-computer-science你能不能讲人话" class="level4">
+<h4 class="anchored" data-anchor-id="我是学数学的不懂-computer-science你能不能讲人话">我是学数学的，不懂 Computer Science，你能不能讲人话！</h4>
+<p>请您活用 AI 工具降低学习门槛．推荐使用 VSCode 打开本仓库，使用自带的 Github Copilot，将 README 扔进对话框，提出您的具体需求并获得人话解答．</p>
 </section>
-<section id="关于引用格式" class="level3">
-<h3 class="anchored" data-anchor-id="关于引用格式">关于引用格式</h3>
+</section>
+<section id="样式相关" class="level3">
+<h3 class="anchored" data-anchor-id="样式相关">样式相关</h3>
+<section id="我不想给定理编号-我要改定理编号格式" class="level4">
+<h4 class="anchored" data-anchor-id="我不想给定理编号-我要改定理编号格式">我不想给定理编号！/ 我要改定理编号格式！</h4>
+<p>Quarto 内置的定理编号系统无法修改，但我们提供通过 YAML 文档头自定义 PDF 格式定理编号的可能，示例见 <code>_format.yml</code>．（目前仍然无法实现完全去除 PDF 格式中的定理编号）</p>
+</section>
+<section id="我要改引用格式" class="level4">
+<h4 class="anchored" data-anchor-id="我要改引用格式">我要改引用格式！</h4>
 <p>PDF / Beamer 输出使用 BibLaTeX alphabetical，HTML 输出使用 IEEE．如需修改，请自定义 <code>sun*****.cls</code> 和 <code>_format.yml</code> 和 CSL 文件．</p>
 </section>
-<section id="关于标题" class="level3">
-<h3 class="anchored" data-anchor-id="关于标题">关于标题</h3>
-<p>一般文档建议从二级标题开始编号（<a href="https://community.rstudio.com/t/why-do-default-r-markdown-quarto-templates-use-second-level-headings-instead-of-first-level-ones/162127">相关讨论</a>）；Beamer 的 <code>slide-level</code> 可自适应标题级数，但其分节固定从一级标题开始，见 Pandoc 文档．</p>
 </section>
-<section id="关于-beamer" class="level3">
-<h3 class="anchored" data-anchor-id="关于-beamer">关于 Beamer</h3>
-<p>理论上与文档格式兼容，可直接设置 <code>--to=pdf</code> 输出文稿版本．</p>
+<section id="我要画交换图" class="level3">
+<h3 class="anchored" data-anchor-id="我要画交换图">我要画交换图！</h3>
+<p>格式见示例文件．只输出 PDF 见安装部分．</p>
+<section id="我要改-beamer-样式" class="level4">
+<h4 class="anchored" data-anchor-id="我要改-beamer-样式">我要改 Beamer 样式！</h4>
 <p>支持使用 YAML 文档头自定义部分颜色，示例见 <code>_format.yml</code>．</p>
 </section>
-<section id="关于-gfm" class="level3">
-<h3 class="anchored" data-anchor-id="关于-gfm">关于 GFM</h3>
-<p>该输出格式可用于使用 <a href="https://markdown.com.cn/editor/">markdown.com.cn</a> 的在线编辑器转知乎格式．</p>
 </section>
-<section id="关于-demo-站点" class="level3">
-<h3 class="anchored" data-anchor-id="关于-demo-站点">关于 Demo 站点</h3>
+<section id="写作相关" class="level3">
+<h3 class="anchored" data-anchor-id="写作相关">写作相关</h3>
+<section id="标题应该用多少个" class="level4">
+<h4 class="anchored" data-anchor-id="标题应该用多少个">标题应该用多少个 <code>#</code>？</h4>
+<p>一般文档建议从二级标题开始编号（<a href="https://community.rstudio.com/t/why-do-default-r-markdown-quarto-templates-use-second-level-headings-instead-of-first-level-ones/162127">相关讨论</a>）；Beamer 的 <code>slide-level</code> 可自适应标题级数，但其分节固定从一级标题开始，见 Pandoc 文档．</p>
+</section>
+</section>
+<section id="输出相关" class="level3">
+<h3 class="anchored" data-anchor-id="输出相关">输出相关</h3>
+<section id="beamer-可不可以输出文稿版本-pdf" class="level4">
+<h4 class="anchored" data-anchor-id="beamer-可不可以输出文稿版本-pdf">Beamer 可不可以输出文稿版本 PDF？</h4>
+<p>理论上与文档格式兼容，可直接设置 <code>--to=pdf</code> 输出文稿版本．</p>
+</section>
+<section id="我要输出到知乎" class="level4">
+<h4 class="anchored" data-anchor-id="我要输出到知乎">我要输出到知乎！</h4>
+<p>你可以使用 GFM 格式输出，输出内容可复制至 <a href="https://markdown.com.cn/editor/">markdown.com.cn</a> 的在线编辑器转知乎格式．</p>
+</section>
+<section id="我要在线直播写文搭建在线网站" class="level4">
+<h4 class="anchored" data-anchor-id="我要在线直播写文搭建在线网站">我要在线直播写文！（搭建在线网站）</h4>
 <p>本仓库同时采用 Github Actions + Github Pages 自动生成 Demo 站点．首次使用时，在 Actions 分页中激活 Actions，在本地手动进行第一次网站发布：</p>
 <ul>
 <li>命令行内设置环境变量 <code>QUARTO_PROFILE</code> 为 <code>website</code></li>
@@ -279,15 +304,17 @@ ul.task-list li input[type="checkbox"] {
 <p>如需自定义网站域名，请在根目录下添加 CNAME 文件，并修改 <code>_quarto-website.yml</code> 下 <code>site-url</code>．</p>
 </section>
 </section>
+</section>
 <section id="known-issues" class="level2">
 <h2 class="anchored" data-anchor-id="known-issues">Known Issues</h2>
 <ul>
 <li><p>见 <a href="https://github.com/quarto-dev/quarto-cli/discussions/4598">Discussion #4598</a>，Pandoc 不支持 CSL-M 导致无有效方法处理 GB/T 7714-2015 中按语言切换“等”、<code>et al</code> 省略字样的规定．</p></li>
 <li><p>通用的定理编号目前尚难以自定义，见 <a href="https://github.com/quarto-dev/quarto-cli/discussions/5479">Discussion #5479</a></p></li>
-<li><p>HTML 子图图像拉伸问题，似乎是因为没有设置 <code>height: auto</code>，有空去发个 issue．</p></li>
+<li><p>（need repro）HTML 子图图像拉伸问题，似乎是因为没有设置 <code>height: auto</code>．</p></li>
 <li><p>2025/04/15 定理标题中的文献引用导致 LaTeX 中出现嵌套中括号，见 <a href="https://github.com/quarto-dev/quarto-cli/issues/12584">Issue #12584</a></p></li>
 <li><p>2025/06/29 目前 RST-style list tables 的 row-span 在 PDF 格式下支持不良．</p></li>
 <li><p>2025/06/29 网站生成的 PDF 没有设置 base URL，相对链接无法正确解析．见 <a href="https://github.com/quarto-dev/quarto-cli/discussions/13000">Discussion #13000</a></p></li>
+<li><p>2025/06/30 手机端的 other formats / links 菜单不显示，这是 Quarto 那边的问题，见 <a href="https://github.com/quarto-dev/quarto-cli/issues/5961">Issue #5961</a></p></li>
 </ul>
 
 

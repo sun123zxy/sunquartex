@@ -184,9 +184,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#qa" id="toc-qa" class="nav-link" data-scroll-target="#qa">Q&amp;A</a>
   <ul class="collapse">
   <li><a href="#一般性的" id="toc-一般性的" class="nav-link" data-scroll-target="#一般性的">一般性的</a></li>
-  <li><a href="#样式相关" id="toc-样式相关" class="nav-link" data-scroll-target="#样式相关">样式相关</a></li>
   <li><a href="#写作相关" id="toc-写作相关" class="nav-link" data-scroll-target="#写作相关">写作相关</a></li>
   <li><a href="#输出相关" id="toc-输出相关" class="nav-link" data-scroll-target="#输出相关">输出相关</a></li>
+  <li><a href="#样式相关" id="toc-样式相关" class="nav-link" data-scroll-target="#样式相关">样式相关</a></li>
   </ul></li>
   <li><a href="#known-issues" id="toc-known-issues" class="nav-link" data-scroll-target="#known-issues">Known Issues</a></li>
   </ul></li>
@@ -298,23 +298,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>仓库主要为自用，如能为你的生活带来便利欢迎取用．想要的功能欢迎提 Issue 或 Discussion，会考虑但不保证会做．有能力欢迎 Fork 魔改和 Pull Request．欢迎学习底层软件 Quarto．</p>
 </section>
 </section>
-<section id="样式相关" class="level3">
-<h3 class="anchored" data-anchor-id="样式相关">样式相关</h3>
-<section id="我不想给-section-编号-我要改-section-编号格式" class="level4">
-<h4 class="anchored" data-anchor-id="我不想给-section-编号-我要改-section-编号格式">我不想给 section 编号 / 我要改 section 编号格式！</h4>
-<div class="sourceCode" id="cb1"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> # section 编号开关</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">number-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span><span class="co"> # section 编号深度</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="我不想给定理编号-我要改定理编号格式" class="level4">
-<h4 class="anchored" data-anchor-id="我不想给定理编号-我要改定理编号格式">我不想给定理编号！/ 我要改定理编号格式！</h4>
-<p>Quarto 内置的定理编号系统无法修改，但我们提供通过 YAML 文档头自定义 PDF 格式定理编号的可能．默认设置见 <code>_format.yml</code>（目前仍然无法实现完全关闭 PDF 格式中的定理编号）</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">custom-theorem</span><span class="kw">:</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">numbered-within</span><span class="kw">:</span><span class="at"> section</span><span class="co"> # 开启后定理编号分点，相对于 section（或 subsection 等）</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">numbered-alike</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> # 开启后不同类型的定理将共享编号</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="我要改引用格式" class="level4">
-<h4 class="anchored" data-anchor-id="我要改引用格式">我要改引用格式！</h4>
-<p>PDF / Beamer 输出使用 BibLaTeX alphabetical，HTML 输出使用 IEEE．如需修改，请自定义 <code>sun*****.cls</code> 和 <code>_format.yml</code> 和 CSL 文件．</p>
+<section id="写作相关" class="level3">
+<h3 class="anchored" data-anchor-id="写作相关">写作相关</h3>
+<section id="markdown-语法" class="level4">
+<h4 class="anchored" data-anchor-id="markdown-语法">Markdown 语法？</h4>
+<p>速成可直接参考示例文档或 <a href="https://quarto.org/docs/authoring/markdown-basics.html">Quarto</a> 官方教程．Quarto 使用的底层 Markdown 方言为 <a href="https://pandoc.org/MANUAL.html#pandocs-markdown">Pandoc’s Markdown</a>．</p>
 </section>
 <section id="我要画-tikz-交换图" class="level4">
 <h4 class="anchored" data-anchor-id="我要画-tikz-交换图">我要画 TikZ / 交换图！</h4>
@@ -335,24 +323,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 \end{tikzcd}
 ```</code></pre>
 </section>
-<section id="我要更丰富的-callout-定理包裹样式" class="level4">
-<h4 class="anchored" data-anchor-id="我要更丰富的-callout-定理包裹样式">我要更丰富的 Callout 定理包裹样式！</h4>
-<p>请移步 <a href="https://github.com/sun123zxy/quarto-callouty-theorem">sun123zxy/quarto-callouty-theorem</a> 学习如何配置．</p>
-</section>
-<section id="我要改-beamer-样式" class="level4">
-<h4 class="anchored" data-anchor-id="我要改-beamer-样式">我要改 Beamer 样式！</h4>
-<p>支持使用 YAML 文档头自定义部分颜色，默认设置见 <code>_format.yml</code>．</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">custom-color</span><span class="kw">:</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">define</span><span class="kw">:</span><span class="at"> </span><span class="st">"</span><span class="sc">\\</span><span class="st">definecolor{blueblk}{HTML}{1874D0}"</span><span class="co"> # 在这里用 LaTeX 自定义颜色供后面使用</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">main</span><span class="kw">:</span><span class="at"> </span><span class="st">"green!40!black"</span><span class="co"> # 主色调</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">theorem</span><span class="kw">:</span><span class="at"> </span><span class="st">"green!32!black"</span><span class="co"> # 各种定理环境颜色</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">example</span><span class="kw">:</span><span class="at"> </span><span class="st">"blueblk!50!black"</span><span class="co"> # Example / Exercise 环境颜色</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">remark</span><span class="kw">:</span><span class="at"> </span><span class="st">"white!15!black"</span><span class="co"> # Proof / Solution / Remark 环境颜色</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">link</span><span class="kw">:</span><span class="at"> </span><span class="st">"lime!85!black"</span><span class="co"> # 链接颜色</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-</section>
-<section id="写作相关" class="level3">
-<h3 class="anchored" data-anchor-id="写作相关">写作相关</h3>
 <section id="标题应该用多少个" class="level4">
 <h4 class="anchored" data-anchor-id="标题应该用多少个">标题应该用多少个 <code>#</code>？</h4>
 <p>一般文档建议从二级标题开始编号（<a href="https://community.rstudio.com/t/why-do-default-r-markdown-quarto-templates-use-second-level-headings-instead-of-first-level-ones/162127">相关讨论</a>）；Beamer 的 <code>slide-level</code> 可自适应标题级数，但其分节固定从一级标题开始，见 Pandoc 文档．</p>
@@ -378,6 +348,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>以后的每次 push 均会触发 Github Actions 自动完成的网站生成．</p>
 <p>如需自定义网站域名，请在根目录下添加 CNAME 文件，并修改 <code>_quarto-website.yml</code> 下 <code>site-url</code>．</p>
+</section>
+</section>
+<section id="样式相关" class="level3">
+<h3 class="anchored" data-anchor-id="样式相关">样式相关</h3>
+<section id="我不想给-section-编号-我要改-section-编号格式" class="level4">
+<h4 class="anchored" data-anchor-id="我不想给-section-编号-我要改-section-编号格式">我不想给 section 编号 / 我要改 section 编号格式！</h4>
+<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> # section 编号开关</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">number-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span><span class="co"> # section 编号深度</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="我不想给定理编号-我要改定理编号格式" class="level4">
+<h4 class="anchored" data-anchor-id="我不想给定理编号-我要改定理编号格式">我不想给定理编号！/ 我要改定理编号格式！</h4>
+<p>Quarto 内置的定理编号系统无法修改，但我们提供通过 YAML 文档头自定义 PDF 格式定理编号的可能．默认设置见 <code>_format.yml</code>（目前仍然无法实现完全关闭 PDF 格式中的定理编号）</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">custom-theorem</span><span class="kw">:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">numbered-within</span><span class="kw">:</span><span class="at"> section</span><span class="co"> # 开启后定理编号分点，相对于 section（或 subsection 等）</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">numbered-alike</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> # 开启后不同类型的定理将共享编号</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="我要改引用格式" class="level4">
+<h4 class="anchored" data-anchor-id="我要改引用格式">我要改引用格式！</h4>
+<p>PDF / Beamer 输出使用 BibLaTeX alphabetical，HTML 输出使用 IEEE．如需修改，请自定义 <code>sun*****.cls</code> 和 <code>_format.yml</code> 和 CSL 文件．</p>
+</section>
+<section id="我要更丰富的-callout-定理包裹样式" class="level4">
+<h4 class="anchored" data-anchor-id="我要更丰富的-callout-定理包裹样式">我要更丰富的 Callout 定理包裹样式！</h4>
+<p>请移步 <a href="https://github.com/sun123zxy/quarto-callouty-theorem">sun123zxy/quarto-callouty-theorem</a> 学习如何配置．</p>
+</section>
+<section id="我要改-beamer-样式" class="level4">
+<h4 class="anchored" data-anchor-id="我要改-beamer-样式">我要改 Beamer 样式！</h4>
+<p>支持使用 YAML 文档头自定义部分颜色，默认设置见 <code>_format.yml</code>．</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">custom-color</span><span class="kw">:</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">define</span><span class="kw">:</span><span class="at"> </span><span class="st">"</span><span class="sc">\\</span><span class="st">definecolor{blueblk}{HTML}{1874D0}"</span><span class="co"> # 在这里用 LaTeX 自定义颜色供后面使用</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">main</span><span class="kw">:</span><span class="at"> </span><span class="st">"green!40!black"</span><span class="co"> # 主色调</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">theorem</span><span class="kw">:</span><span class="at"> </span><span class="st">"green!32!black"</span><span class="co"> # 各种定理环境颜色</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">example</span><span class="kw">:</span><span class="at"> </span><span class="st">"blueblk!50!black"</span><span class="co"> # Example / Exercise 环境颜色</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">remark</span><span class="kw">:</span><span class="at"> </span><span class="st">"white!15!black"</span><span class="co"> # Proof / Solution / Remark 环境颜色</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">link</span><span class="kw">:</span><span class="at"> </span><span class="st">"lime!85!black"</span><span class="co"> # 链接颜色</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 </section>

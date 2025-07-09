@@ -28,17 +28,15 @@ Quarto 支持交叉引用．比如这一节的标题就已经被打上了标签�
 
 ## 图片、表格、列表测试
 
-这是 Quarto 的图标．
+<div id="fig-figure">
 
-<div id="fig-quarto">
-
-![](index-quarto.png)
+![](index-figure.png)
 
 图 1: 这是一张插图
 
 </div>
 
-交叉引用 <a href="#fig-quarto" class="quarto-xref">图 1</a> 当然也是可以的．
+交叉引用 <a href="#fig-figure" class="quarto-xref">图 1</a> 当然也是可以的．
 
 这是一个紧凑列表．
 
@@ -488,6 +486,20 @@ ax.plot(theta, r)
 ax.set_rticks([0.5, 1, 1.5, 2])
 ax.grid(True)
 plt.show()
+```
+
+``` latex
+\def\SunQuarTeX{
+\kern-.0em \mathbb{S}
+\kern-.0em\lower.5ex {\small \mathbb U}
+\kern-.05em {\small \mathbb N}
+\kern-.0em \mathbb{Q}
+\kern-.02em\raise.0ex {\small \mathbb{U}}
+\kern-.1em \lower.3ex {\small \mathbb{A}}
+\kern-.08em\lower.1ex \mathbb{R}
+\TeX
+}
+\SunQuarTeX
 ```
 
 下面是引用块和一个非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．

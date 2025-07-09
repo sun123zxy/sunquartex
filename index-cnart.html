@@ -318,18 +318,17 @@ window.Quarto = {
 </section>
 <section id="图片表格列表测试" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="图片表格列表测试"><span class="header-section-number">3</span> 图片、表格、列表测试</h2>
-<p>这是 Quarto 的图标．</p>
-<div id="fig-quarto" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-figure" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-quarto-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="index-quarto.png" class="img-fluid figure-img">
+<div aria-describedby="fig-figure-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="index-figure.png" class="img-fluid figure-img">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-quarto-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-figure-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 图&nbsp;1: 这是一张插图
 </figcaption>
 </figure>
 </div>
-<p>交叉引用 <a href="#fig-quarto" class="quarto-xref">图&nbsp;1</a> 当然也是可以的．</p>
+<p>交叉引用 <a href="#fig-figure" class="quarto-xref">图&nbsp;1</a> 当然也是可以的．</p>
 <p>这是一个紧凑列表．</p>
 <ul>
 <li>自反性．</li>
@@ -717,7 +716,7 @@ Remark
 </div>
 <p>交叉引用 <a href="#fig-polar" class="quarto-xref">图&nbsp;2</a> 当然也是可以的.</p>
 <p>这里再测试一些较复杂的并列效果．（<a href="#tbl-light-on" class="quarto-xref">表&nbsp;2</a>, <a href="#tbl-light-on-1" class="quarto-xref">表&nbsp;2 (a)</a>, <a href="#tbl-light-on-2" class="quarto-xref">表&nbsp;2 (b)</a>, <a href="#fig-light-on" class="quarto-xref">图&nbsp;3</a>, <a href="#fig-light-on-1" class="quarto-xref">图&nbsp;3 (a)</a>, <a href="#fig-light-on-2" class="quarto-xref">图&nbsp;3 (b)</a>）</p>
-<div id="593bde22" class="cell" data-execution_count="2">
+<div id="506fcede" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -1420,6 +1419,17 @@ Remark
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>)</span>
 <span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\def\SunQuarTeX</span>{</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\kern</span>-.0em <span class="fu">\mathbb</span>{S}</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\kern</span>-.0em<span class="fu">\lower</span>.5ex {<span class="fu">\small</span> <span class="fu">\mathbb</span> U}</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\kern</span>-.05em {<span class="fu">\small</span> <span class="fu">\mathbb</span> N}</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="fu">\kern</span>-.0em <span class="fu">\mathbb</span>{Q}</span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="fu">\kern</span>-.02em<span class="fu">\raise</span>.0ex {<span class="fu">\small</span> <span class="fu">\mathbb</span>{U}}</span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="fu">\kern</span>-.1em <span class="fu">\lower</span>.3ex {<span class="fu">\small</span> <span class="fu">\mathbb</span>{A}}</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu">\kern</span>-.08em<span class="fu">\lower</span>.1ex <span class="fu">\mathbb</span>{R}</span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">\TeX</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="fu">\SunQuarTeX</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>下面是引用块和一个非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．</p>
 <blockquote class="blockquote">
 <p>这是一个引用块和一个非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．</p>

@@ -87,28 +87,11 @@
 
 仓库主要为自用，如能为你的生活带来便利欢迎取用．想要的功能欢迎提 Issue 或 Discussion，会考虑但不保证会做．有能力欢迎 Fork 魔改和 Pull Request．欢迎学习底层软件 Quarto．
 
-### 样式相关
+### 写作相关
 
-#### 我不想给 section 编号 / 我要改 section 编号格式！
+#### Markdown 语法？
 
-```yaml
-number-sections: true # section 编号开关
-number-depth: 3 # section 编号深度
-```
-
-#### 我不想给定理编号！/ 我要改定理编号格式！
-
-Quarto 内置的定理编号系统无法修改，但我们提供通过 YAML 文档头自定义 PDF 格式定理编号的可能．默认设置见 `_format.yml`（目前仍然无法实现完全关闭 PDF 格式中的定理编号）
-
-```yaml
-custom-theorem:
-  numbered-within: section # 开启后定理编号分点，相对于 section（或 subsection 等）
-  numbered-alike: true # 开启后不同类型的定理将共享编号
-```
-
-#### 我要改引用格式！
-
-PDF / Beamer 输出使用 BibLaTeX alphabetical，HTML 输出使用 IEEE．如需修改，请自定义 `sun*****.cls` 和 `_format.yml` 和 CSL 文件．
+速成可直接参考示例文档或 [Quarto](https://quarto.org/docs/authoring/markdown-basics.html) 官方教程．Quarto 使用的底层 Markdown 方言为 [Pandoc's Markdown](https://pandoc.org/MANUAL.html#pandocs-markdown)．
 
 #### 我要画 TikZ / 交换图！
 
@@ -132,26 +115,6 @@ PDF / Beamer 输出使用 BibLaTeX alphabetical，HTML 输出使用 IEEE．如�
 \end{tikzcd}
 ```
 `````
-
-#### 我要更丰富的 Callout 定理包裹样式！
-
-请移步 [sun123zxy/quarto-callouty-theorem](https://github.com/sun123zxy/quarto-callouty-theorem) 学习如何配置．
-
-#### 我要改 Beamer 样式！
-
-支持使用 YAML 文档头自定义部分颜色，默认设置见 `_format.yml`．
-
-```yaml
-custom-color:
-  define: "\\definecolor{blueblk}{HTML}{1874D0}" # 在这里用 LaTeX 自定义颜色供后面使用
-  main: "green!40!black" # 主色调
-  theorem: "green!32!black" # 各种定理环境颜色
-  example: "blueblk!50!black" # Example / Exercise 环境颜色
-  remark: "white!15!black" # Proof / Solution / Remark 环境颜色
-  link: "lime!85!black" # 链接颜色
-```
-
-### 写作相关
 
 #### 标题应该用多少个 `#`？
 
@@ -178,6 +141,47 @@ custom-color:
 以后的每次 push 均会触发 Github Actions 自动完成的网站生成．
 
 如需自定义网站域名，请在根目录下添加 CNAME 文件，并修改 `_quarto-website.yml` 下 `site-url`．
+
+### 样式相关
+
+#### 我不想给 section 编号 / 我要改 section 编号格式！
+
+```yaml
+number-sections: true # section 编号开关
+number-depth: 3 # section 编号深度
+```
+
+#### 我不想给定理编号！/ 我要改定理编号格式！
+
+Quarto 内置的定理编号系统无法修改，但我们提供通过 YAML 文档头自定义 PDF 格式定理编号的可能．默认设置见 `_format.yml`（目前仍然无法实现完全关闭 PDF 格式中的定理编号）
+
+```yaml
+custom-theorem:
+  numbered-within: section # 开启后定理编号分点，相对于 section（或 subsection 等）
+  numbered-alike: true # 开启后不同类型的定理将共享编号
+```
+
+#### 我要改引用格式！
+
+PDF / Beamer 输出使用 BibLaTeX alphabetical，HTML 输出使用 IEEE．如需修改，请自定义 `sun*****.cls` 和 `_format.yml` 和 CSL 文件．
+
+#### 我要更丰富的 Callout 定理包裹样式！
+
+请移步 [sun123zxy/quarto-callouty-theorem](https://github.com/sun123zxy/quarto-callouty-theorem) 学习如何配置．
+
+#### 我要改 Beamer 样式！
+
+支持使用 YAML 文档头自定义部分颜色，默认设置见 `_format.yml`．
+
+```yaml
+custom-color:
+  define: "\\definecolor{blueblk}{HTML}{1874D0}" # 在这里用 LaTeX 自定义颜色供后面使用
+  main: "green!40!black" # 主色调
+  theorem: "green!32!black" # 各种定理环境颜色
+  example: "blueblk!50!black" # Example / Exercise 环境颜色
+  remark: "white!15!black" # Proof / Solution / Remark 环境颜色
+  link: "lime!85!black" # 链接颜色
+```
 
 ## Known Issues
 

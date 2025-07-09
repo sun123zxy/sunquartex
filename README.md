@@ -73,29 +73,83 @@
 
 ## Q&A
 
-### ？？？
+### 一般性的
 
-#### 我是学数学的，不懂 Computer Science，你能不能讲人话！
+#### 我不懂 Computer Science，你能不能讲人话！
 
 请您活用 AI 工具降低学习门槛．推荐使用 VSCode 打开本仓库，使用自带的 Github Copilot，将 README 扔进对话框，提出您的具体需求并获得人话解答．
 
+#### YAML 文档头是什么？怎么用？
+
+示例文档中开头部分 `---` 之间的内容称为 YAML 文档头（YAML Front Matter），用于设置文档相关元信息，也用于设置输出格式、样式等．您在自定义的过程中可能需要修改或添加它们．
+
+#### 我想要 XXX 功能！
+
+仓库主要为自用，如能为你的生活带来便利欢迎取用．想要的功能欢迎提 Issue 或 Discussion，会考虑但不保证会做．有能力欢迎 Fork 魔改和 Pull Request．欢迎学习底层软件 Quarto．
+
 ### 样式相关
+
+#### 我不想给 section 编号 / 我要改 section 编号格式！
+
+```yaml
+number-sections: true # section 编号开关
+number-depth: 3 # section 编号深度
+```
 
 #### 我不想给定理编号！/ 我要改定理编号格式！
 
-Quarto 内置的定理编号系统无法修改，但我们提供通过 YAML 文档头自定义 PDF 格式定理编号的可能，示例见 `_format.yml`．（目前仍然无法实现完全去除 PDF 格式中的定理编号）
+Quarto 内置的定理编号系统无法修改，但我们提供通过 YAML 文档头自定义 PDF 格式定理编号的可能．默认设置见 `_format.yml`（目前仍然无法实现完全关闭 PDF 格式中的定理编号）
+
+```yaml
+custom-theorem:
+  numbered-within: section # 开启后定理编号分点，相对于 section（或 subsection 等）
+  numbered-alike: true # 开启后不同类型的定理将共享编号
+```
 
 #### 我要改引用格式！
 
 PDF / Beamer 输出使用 BibLaTeX alphabetical，HTML 输出使用 IEEE．如需修改，请自定义 `sun*****.cls` 和 `_format.yml` 和 CSL 文件．
 
-### 我要画交换图！
+#### 我要画 TikZ / 交换图！
 
-格式见示例文件．只输出 PDF 见安装部分．
+只输出 PDF / Beamer 只需要有 LaTeX 发行版．其它格式需要进一步安装．见安装部分．
+
+交换图使用例：
+
+`````qmd
+
+```{tikz}
+\begin{tikzcd}
+	B && A & \rightsquigarrow & B && A
+	\arrow[""{name=0, anchor=center, inner sep=0}, "g"{description}, from=1-3, to=1-1]
+	\arrow[""{name=1, anchor=center, inner sep=0}, "f", curve={height=-30pt}, from=1-3, to=1-1]
+	\arrow[""{name=2, anchor=center, inner sep=0}, "h"', curve={height=30pt}, from=1-3, to=1-1]
+	\arrow[""{name=3, anchor=center, inner sep=0}, "h"', curve={height=30pt}, from=1-7, to=1-5]
+	\arrow[""{name=4, anchor=center, inner sep=0}, "f", curve={height=-30pt}, from=1-7, to=1-5]
+	\arrow["\alpha"', shorten <=4pt, shorten >=4pt, Rightarrow, from=1, to=0]
+	\arrow["\beta"', shorten <=4pt, shorten >=4pt, Rightarrow, from=0, to=2]
+	\arrow["{\beta \circ_1 \alpha}"', shorten <=8pt, shorten >=8pt, Rightarrow, from=4, to=3]
+\end{tikzcd}
+```
+`````
+
+#### 我要更丰富的 Callout 定理包裹样式！
+
+请移步 [sun123zxy/quarto-callouty-theorem](https://github.com/sun123zxy/quarto-callouty-theorem) 学习如何配置．
 
 #### 我要改 Beamer 样式！
 
-支持使用 YAML 文档头自定义部分颜色，示例见 `_format.yml`．
+支持使用 YAML 文档头自定义部分颜色，默认设置见 `_format.yml`．
+
+```yaml
+custom-color:
+  define: "\\definecolor{blueblk}{HTML}{1874D0}" # 在这里用 LaTeX 自定义颜色供后面使用
+  main: "green!40!black" # 主色调
+  theorem: "green!32!black" # 各种定理环境颜色
+  example: "blueblk!50!black" # Example / Exercise 环境颜色
+  remark: "white!15!black" # Proof / Solution / Remark 环境颜色
+  link: "lime!85!black" # 链接颜色
+```
 
 ### 写作相关
 

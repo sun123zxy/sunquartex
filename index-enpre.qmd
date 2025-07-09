@@ -107,9 +107,9 @@ Referable [@tbl-cartesian-unsolved].
 
 ### Figures
 
-![This is a figure](index-quarto.png){#fig-quarto}
+![This is a figure](index-figure.png){#fig-figure}
 
-Referable [@fig-quarto].
+Referable [@fig-figure].
 
 ### Computations
 

@@ -109,9 +109,9 @@ int main(){
 
 ### 图
 
-![这是一张插图](index-quarto.png){#fig-quarto}
+![这是一张插图](index-figure.png){#fig-figure}
 
-引用一下 [@fig-quarto]．
+引用一下 [@fig-figure]．
 
 ### 计算图
 

@@ -2,182 +2,182 @@
   {
     "objectID": "index-cnart.html",
     "href": "index-cnart.html",
-    "title": "SunQuarTeX-cnart 测试文档",
+    "title": "\\(\\SunQuarTeX\\)-cnart 测试文档",
     "section": "",
-    "text": "具体使用方法参见 sun123zxy/sunquartex．",
+    "text": "\\(\\SunQuarTeX\\) 的具体使用方法参见 sun123zxy/sunquartex．",
     "crumbs": [
-      "SunQuarTeX-cnart 测试文档"
+      "$\\SunQuarTeX$-cnart 测试文档"
     ]
   },
   {
     "objectID": "index-cnart.html#前言",
     "href": "index-cnart.html#前言",
-    "title": "SunQuarTeX-cnart 测试文档",
+    "title": "\\(\\SunQuarTeX\\)-cnart 测试文档",
     "section": "",
-    "text": "具体使用方法参见 sun123zxy/sunquartex．",
+    "text": "\\(\\SunQuarTeX\\) 的具体使用方法参见 sun123zxy/sunquartex．",
     "crumbs": [
-      "SunQuarTeX-cnart 测试文档"
+      "$\\SunQuarTeX$-cnart 测试文档"
     ]
   },
   {
-    "objectID": "index-cnart.html#文章结构测试",
-    "href": "index-cnart.html#文章结构测试",
-    "title": "SunQuarTeX-cnart 测试文档",
-    "section": "2 文章结构测试",
-    "text": "2 文章结构测试\n这一节测试文章结构．\n\n2.1 文章分节\n非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．\n\n文章分分节\nQuarto 支持交叉引用．比如这一节的标题就已经被打上了标签．\n\n分分分节\n本节中我们测试交叉引用 小节 2.1.1．\n\n分分分分节\n这是最小的一级了．",
+    "objectID": "index-cnart.html#文章结构测试-sunquartex",
+    "href": "index-cnart.html#文章结构测试-sunquartex",
+    "title": "\\(\\SunQuarTeX\\)-cnart 测试文档",
+    "section": "2 文章结构测试 \\(\\SunQuarTeX\\)",
+    "text": "2 文章结构测试 \\(\\SunQuarTeX\\)\n这一节测试文章结构．\n\n2.1 文章分 \\(\\SunQuarTeX\\) 节\n非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．\n\n文章分分 \\(\\SunQuarTeX\\) 节\nQuarto 支持交叉引用．比如这一节的标题就已经被打上了标签．\n\n分分分 \\(\\SunQuarTeX\\) 节\n本节中我们测试交叉引用 小节 2.1.1．\n\n分分分分 \\(\\SunQuarTeX\\) 节\n这是最小的一级了．\n\\[\n\\SunQuarTeX\n\\]",
     "crumbs": [
-      "SunQuarTeX-cnart 测试文档"
+      "$\\SunQuarTeX$-cnart 测试文档"
     ]
   },
   {
     "objectID": "index-cnart.html#图片表格列表测试",
     "href": "index-cnart.html#图片表格列表测试",
-    "title": "SunQuarTeX-cnart 测试文档",
+    "title": "\\(\\SunQuarTeX\\)-cnart 测试文档",
     "section": "3 图片、表格、列表测试",
     "text": "3 图片、表格、列表测试\n\n\n\n\n\n\n图 1: 这是一张插图\n\n\n\n交叉引用 图 1 当然也是可以的．\n这是一个紧凑列表．\n\n自反性．\n反对称性一个和非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．\n传递性．\n\n这是一个宽松列表．\n\n自反性．\n反对称性一个和非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．\n还多加了一段．\n传递性．\n\n这是一个定义列表．\n\n自反性\n\n\\(a \\sim a\\)\n\n反对称性\n\n\\(a \\leq b \\land b \\leq a \\implies a=b\\)\n\n传递性\n\n\\(a \\leq b \\land b \\leq c \\implies a \\leq c\\)\n\n\n当然也可以使用 Markdown 表格．例如 表 1 (a).\n多表格并列．加上 表 1 (b)，它们共同组成了 表 1．\n\n\n\n\n\n\n\n\n\n\n\n\\(L_i \\times C_j\\)\n\\(2\\)\n\\(\\mathbb N\\)\n\\(\\mathbb R\\)\n\n\n\\(2\\)\n\\(4\\)\n\\(\\mathbb N\\)\n\\(\\mathbb R\\)\n\n\n\\(\\mathbb N\\)\n\\(\\mathbb N\\)\n\\(\\mathbb N\\)\n?\n\n\n\\(\\mathbb R\\)\n\\(\\mathbb R\\)\n?\n\\(\\mathbb R\\)\n\n\n\n\n\n(a) 笛卡尔积\n\n\n\n\n\n\n\n\n\n\n\n\\(L_i^{C_j}\\)\n\\(2\\)\n\\(\\mathbb N\\)\n\\(\\mathbb R\\)\n\n\n\\(2\\)\n\\(4\\)\n\\(\\mathbb R\\)\n\\(2^{\\mathbb R}\\)\n\n\n\\(\\mathbb N\\)\n\\(\\mathbb N\\)\n?\n?\n\n\n\\(\\mathbb R\\)\n\\(\\mathbb R\\)\n?\n?\n\n\n\n\n\n(b) 集合幂\n\n\n\n\n\n\n\n表 1: 相关集合的势（不完整版）\n\n\n\n我们支持 Markdown grid style 的表格．\n\n\n\n\n\n\n\n\n\n\na\nbe\nc\nd\ne\n\n\nf\new\na\nb\n\n\nc\nd\newfe\ne\n\n\nf\ng\nh\nr\ne\n\n\n\n我们还支持 RST-style list tables．该格式可以比较方便地合并单元格．\n\n\n\nrow 1, column 1\nrow 1, column 2\nrow 1, column 3\n\n\n\n\nrow 2, column 1\n row 2, column 2–3\n\n\nrow 3, column 1\nrow 3, column 2\nrow 3, column 3",
     "crumbs": [
-      "SunQuarTeX-cnart 测试文档"
+      "$\\SunQuarTeX$-cnart 测试文档"
     ]
   },
   {
     "objectID": "index-cnart.html#数学公式定理系统测试",
     "href": "index-cnart.html#数学公式定理系统测试",
-    "title": "SunQuarTeX-cnart 测试文档",
+    "title": "\\(\\SunQuarTeX\\)-cnart 测试文档",
     "section": "4 数学公式、定理系统测试",
     "text": "4 数学公式、定理系统测试\n这一节我们测试数学相关内容．直接在源文件中写 raw LaTeX 就可声明公式所需的宏定义．由于 \\DeclareMathOperator 只能在 LaTeX 的导言区使用，这里我们用 \\newcommand + \\operatorname 的方式替代．\n下面的公式使用了上面定义的 macro． \\[\n\\operatorname{ran}A := \\{ y \\mid (x,y) \\in A \\}\n\\]\n两个集合 \\(A, B\\) 的笛卡尔积定义为 \\[\nA \\times B = \\{\\langle x,y \\rangle \\mid x \\in A \\land y \\in B \\}\n\\]\n显然，笛卡尔积不满足交换律和结合律. 在势的视角下，它的表现如何呢？\n\n\n\n\n\n\n\n定理 1 (笛卡尔积的保势性) 这是一个有 caption 的定理.\n\\[\nA \\preccurlyeq C \\land B \\preccurlyeq D \\implies A \\times B \\preccurlyeq C \\times D\n\\]\n\n\n\n\n\n\n\n\n\n\nProof\n\n\n\n\n\n\n证明. 建立单射 \\[\n\\begin{aligned}\n\\varphi: A \\times B &\\to C \\times D \\\\\n\\langle x,y \\rangle &\\mapsto \\langle f(x), g(y) \\rangle\n\\end{aligned}\n\\] 即可，其中 \\(f\\) 和 \\(g\\) 是由 \\(A \\preccurlyeq C\\) 和 \\(B \\preccurlyeq D\\) 确定的单射.\n\n\n\n\n\n\n\n\n\n\nProof (有标题的证明)\n\n\n\n\n\n\n证明 (有标题的证明). 这是一个有 caption 的证明．\n\n\n\n\n\n\n\n\n\n\nProof (定理 1 的证明)\n\n\n\n\n\n\n证明 (定理 1 的证明). 这是一个带复杂 caption 的证明．\n\n\n\n\n\n\n\n\n\n\n\n推论 1 等势意义下可用等势的集合替换参与笛卡尔积运算的集合，即 \\[\nA \\approx C \\land B \\approx D \\implies A \\times B \\approx C \\times D\n\\]\n这是一个没有 caption 的定理.\n\n\n\n\n\n\n\n\n\n\n\n例 1 证明 \\[\n\\mathbb R \\times \\mathbb N \\approx \\mathbb N \\times \\mathbb R \\approx \\mathbb R\n\\]\n\n\n\n\n\n\n\n\n\n\nProof\n\n\n\n\n\n\n证明. 利用 定理 1 对 \\(\\mathbb R \\times 2\\) 和 \\(\\mathbb R \\times \\mathbb R\\) 夹逼，立刻得到 \\[\n\\mathbb R \\approx \\mathbb R \\times 2 \\preccurlyeq \\mathbb R \\times \\mathbb N \\preccurlyeq \\mathbb R \\times \\mathbb R \\approx \\mathbb R\n\\implies \\mathbb R \\times \\mathbb N \\approx \\mathbb N \\times \\mathbb R \\approx \\mathbb R\n\\]\n\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\n解. 这是一个解．\n\n\n\n\n\n\n\n\n\n\nRemark\n\n\n\n\n\n\n注记. 这是一个注记．",
     "crumbs": [
-      "SunQuarTeX-cnart 测试文档"
+      "$\\SunQuarTeX$-cnart 测试文档"
     ]
   },
   {
     "objectID": "index-cnart.html#数据可视化table-figure-diagram",
     "href": "index-cnart.html#数据可视化table-figure-diagram",
-    "title": "SunQuarTeX-cnart 测试文档",
+    "title": "\\(\\SunQuarTeX\\)-cnart 测试文档",
     "section": "5 数据可视化（Table, Figure & Diagram）",
     "text": "5 数据可视化（Table, Figure & Diagram）\nQuarto 的另一大卖点．\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nfig.patch.set_alpha(0)\nax.patch.set_alpha(0)\n\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\n\n\n\n\n图 2: A line plot on a polar axis\n\n\n\n\n\n交叉引用 图 2 当然也是可以的.\n这里再测试一些较复杂的并列效果．（表 2, 表 2 (a), 表 2 (b), 图 3, 图 3 (a), 图 3 (b)）\n\n\nCode\nimport numpy as np\nimport math\nfrom IPython.display import Markdown, display\nfrom tabulate import tabulate\nimport matplotlib.pyplot as plt\n\nR = np.array([0,100,200,300,400,500,600,700,800,900,1000,\n1100,1110,1120,1130,1140,1150,1160,1170,1180,1190,\n1200,1210,1220,1230,1240,1250,1260,1270,1280,1290,\n1300,1400,1500,2000,4000,math.inf])\nU = np.array([24.2E-3, 0.386,0.747,1.104,1.460,1.813,2.16,2.51,2.86,3.19,3.48,\n3.70,3.75,3.77,3.78,3.80,3.81,3.83,3.84,3.85,3.86,\n3.87,3.90,3.92,3.93,3.94,3.95,3.95,3.96,3.97,3.98,\n3.99,4.08,4.16,4.39,4.66,4.85])\nI = np.array([3.6,3.6,3.6,3.6,3.6,3.5,3.5,3.5,3.5,3.5,3.4,\n3.3,3.4,3.4,3.4,3.4,3.3,3.3,3.3,3.3,3.3,\n3.2,3.2,3.2,3.2,3.2,3.2,3.2,3.1,3.1,3.1,\n3.0,2.9,2.7,2.2,1.130,47.7E-3])\nP = U*I\n\n\n\nCode\ntable = [[R[i], U[i], I[i], P[i]] for i in list(range(0, 11)) + [11,21,31,32,33,34,35,36]]\ndisplay(Markdown(tabulate(table, headers=[\"R (Ω)\", \"U (V)\", \"I (mA)\", \"P (mW)\"])))\ntable = [[R[i], U[i], I[i], P[i]] for i in range(12, 31)]\ndisplay(Markdown(tabulate(table, headers=[\"R (Ω)\", \"U (V)\", \"I (mA)\", \"P (mW)\"])))\n\n\n\n\n\n\n\n\n\n\n\n\nR (Ω)\nU (V)\nI (mA)\nP (mW)\n\n\n\n\n0\n0.0242\n3.6\n0.08712\n\n\n100\n0.386\n3.6\n1.3896\n\n\n200\n0.747\n3.6\n2.6892\n\n\n300\n1.104\n3.6\n3.9744\n\n\n400\n1.46\n3.6\n5.256\n\n\n500\n1.813\n3.5\n6.3455\n\n\n600\n2.16\n3.5\n7.56\n\n\n700\n2.51\n3.5\n8.785\n\n\n800\n2.86\n3.5\n10.01\n\n\n900\n3.19\n3.5\n11.165\n\n\n1000\n3.48\n3.4\n11.832\n\n\n1100\n3.7\n3.3\n12.21\n\n\n1200\n3.87\n3.2\n12.384\n\n\n1300\n3.99\n3\n11.97\n\n\n1400\n4.08\n2.9\n11.832\n\n\n1500\n4.16\n2.7\n11.232\n\n\n2000\n4.39\n2.2\n9.658\n\n\n4000\n4.66\n1.13\n5.2658\n\n\ninf\n4.85\n0.0477\n0.231345\n\n\n\n\n\n(a) （粗）\n\n\n\n\n\n\n\n\n\n\n\nR (Ω)\nU (V)\nI (mA)\nP (mW)\n\n\n\n\n1110\n3.75\n3.4\n12.75\n\n\n1120\n3.77\n3.4\n12.818\n\n\n1130\n3.78\n3.4\n12.852\n\n\n1140\n3.8\n3.4\n12.92\n\n\n1150\n3.81\n3.3\n12.573\n\n\n1160\n3.83\n3.3\n12.639\n\n\n1170\n3.84\n3.3\n12.672\n\n\n1180\n3.85\n3.3\n12.705\n\n\n1190\n3.86\n3.3\n12.738\n\n\n1200\n3.87\n3.2\n12.384\n\n\n1210\n3.9\n3.2\n12.48\n\n\n1220\n3.92\n3.2\n12.544\n\n\n1230\n3.93\n3.2\n12.576\n\n\n1240\n3.94\n3.2\n12.608\n\n\n1250\n3.95\n3.2\n12.64\n\n\n1260\n3.95\n3.2\n12.64\n\n\n1270\n3.96\n3.1\n12.276\n\n\n1280\n3.97\n3.1\n12.307\n\n\n1290\n3.98\n3.1\n12.338\n\n\n\n\n\n(b) （细）\n\n\n\n\n\n\n\n表 2: 太阳能电池的负载特性\n\n\n\n\nCode\nfig, ax = plt.subplots()\nfig.patch.set_alpha(0)\nax.patch.set_alpha(0)\n\nax.set_xlabel(\"U (V)\")\nax.set_ylabel(\"I (mA)\")\n\nax.plot(U, I, marker=\"o\")\nax.grid(True)\nax.set_xlim(0)\nax.set_ylim(0)\n\nplt.show()\n\n\nfig, ax = plt.subplots()\nfig.patch.set_alpha(0)\nax.patch.set_alpha(0)\n\nax.set_xlabel(\"R (Ω)\")\nax.set_ylabel(\"P (mW)\")\n\nax.plot(R, P, marker=\"o\")\nax.grid(True)\nax.set_xlim((0, 2000))\nax.set_ylim(0)\n\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\n(a) 输出电流与电压关系曲线\n\n\n\n\n\n\n\n\n\n\n\n(b) 输出功率与负载电阻关系曲线\n\n\n\n\n\n\n\n图 3: 太阳能电池的负载特性",
     "crumbs": [
-      "SunQuarTeX-cnart 测试文档"
+      "$\\SunQuarTeX$-cnart 测试文档"
     ]
   },
   {
     "objectID": "index-cnart.html#diagrams",
     "href": "index-cnart.html#diagrams",
-    "title": "SunQuarTeX-cnart 测试文档",
+    "title": "\\(\\SunQuarTeX\\)-cnart 测试文档",
     "section": "6 Diagrams",
     "text": "6 Diagrams\nQuarto 原生支持使用 GraphViz 或 Mermaid 绘制有向图或流程图．我们还额外支持 TikZ / tikzcd 的渲染！\n\n\n\n\n\n\n\n\n\nC\n[\nx\n]\n离散\nFourier\n变换\nC\nC\nf\n(\nx\n)\n∑\nn\n−\n1\ni\n=0\na\ni\nx\ni\n(\nf\n(\nω\nk\n))\nn\n−\n1\nk\n=0\n(\nfg\n)(\nx\n)\n∑\nn\n−\n1\nk\n=0\nx\nk\n∑\ni\n+\nj\n=\nk\na\ni\nb\nj\n(\nf\n(\nω\nkn\n)\ng\n(\nω\nkn\n))\nn\n−\n1\nk\n=0\ng\n(\nx\n)\n∑\nn\n−\n1\nj\n=0\nb\nj\nx\nj\n(\ng\n(\nω\nk\n))\nn\n−\n1\nk\n=0\n\n\nDFT\n\n\n\n\n\n\nDFT\n-1\n\n\nDFT\n\n\n\n\n\n\n\n\n\n图 4: 带中文的 tikzcd 测试图片\n\n\n\n\n\n\n\n\n\n\n\n\nB\nA\n⇝\nB\nA\n\n\n\ng\n\n\nf\n\n\nh\n\n\nh\n\n\nf\n\n\n\nα\n\n\n\nβ\n\n\n\nβ\n◦\n1\nα\n\n\n\n\n\n图 5: quiver 风格的 tikzcd 测试图片\n\n\n\n\n\n\n\n\n\n\n\n\nR\n[\nx\n]\nR\nC\nR\n[\nx\n]/\n(∏\nc\n∈\nC\n(\nx\n−\nc\n)\n)\n\n\nφ\n\n\n\n\n¯\nφ\n\n\n\n\n\n图 6: 小心多 SVG 可能产生的样式冲突",
     "crumbs": [
-      "SunQuarTeX-cnart 测试文档"
+      "$\\SunQuarTeX$-cnart 测试文档"
     ]
   },
   {
     "objectID": "index-cnart.html#layout",
     "href": "index-cnart.html#layout",
-    "title": "SunQuarTeX-cnart 测试文档",
+    "title": "\\(\\SunQuarTeX\\)-cnart 测试文档",
     "section": "7 Layout",
     "text": "7 Layout\n如 Quarto - Article Layout 所述，有时可让文章某些部分超出常规的宽度限制．此功能主要在 HTML 中使用，PDF 中部分生效，其它格式不生效．\n\n\n\n\n\n\n\n\n\n\n\n\n\\(n\\) 个球\n\\(r\\) 个盒\n空盒\n递推或封闭形式\n生成函数\n备注\n\n\n\n\n有标号\n无标号\n不允许\n\\[{n \\brace r} = r {n-1 \\brace r} + {n-1 \\brace r-1}\\]\n\\[\\mathrm{EGF}(x)=\\frac {(e^x - 1)^r}{r!}\\]\n第二类 Stirling 数",
     "crumbs": [
-      "SunQuarTeX-cnart 测试文档"
+      "$\\SunQuarTeX$-cnart 测试文档"
     ]
   },
   {
     "objectID": "index-cnart.html#代码块和引用",
     "href": "index-cnart.html#代码块和引用",
-    "title": "SunQuarTeX-cnart 测试文档",
+    "title": "\\(\\SunQuarTeX\\)-cnart 测试文档",
     "section": "8 代码块和引用",
     "text": "8 代码块和引用\n下面是代码块．\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\\def\\SunQuarTeX{\n\\kern-.0em \\mathbb{S}\n\\kern-.0em\\lower.5ex {\\small \\mathbb U}\n\\kern-.05em {\\small \\mathbb N}\n\\kern-.0em \\mathbb{Q}\n\\kern-.02em\\raise.0ex {\\small \\mathbb{U}}\n\\kern-.1em \\lower.3ex {\\small \\mathbb{A}}\n\\kern-.08em\\lower.1ex \\mathbb{R}\n\\TeX\n}\n\\SunQuarTeX\n下面是引用块和一个非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．\n\n这是一个引用块和一个非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．",
     "crumbs": [
-      "SunQuarTeX-cnart 测试文档"
+      "$\\SunQuarTeX$-cnart 测试文档"
     ]
   },
   {
     "objectID": "index-cnart.html#html-专用测试",
     "href": "index-cnart.html#html-专用测试",
-    "title": "SunQuarTeX-cnart 测试文档",
+    "title": "\\(\\SunQuarTeX\\)-cnart 测试文档",
     "section": "9 HTML 专用测试",
     "text": "9 HTML 专用测试\n目前暂未处理 LaTeX/PDF 格式的 callout，MS Word 格式可兼容但效果不佳．本节后续内容将不会在 LaTeX/PDF 格式下被渲染．\n\n9.1 Callouts\nQuarto 具有 5 种 callout 类型：note，warning，important，tip，和 caution．\n\n\n\n\n\n\nNote\n\n\n\n普通的 note callout．\n\n\n\n\n\n\n\n\nWarning\n\n\n\n这是 warning callout 和一个和非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．\n\n\n这是两个 callout 中间的一个段落．\n\n\n\n\n\n\nImportant\n\n\n\n这是 important callout．\n\n\n\n\n\n\n\n\n有 caption 的 callout\n\n\n\n这是有 caption 的 callout．\n\n\n\n\n\n\n\n\n可折叠的 callout\n\n\n\n\n\n开启 collapse 的可折叠 caution callout．\n\n\n\n\n\n\n\n\n\nsimple 风格的 callout 和一个和非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．\n\n\n\n\n\n\n\n\n\nminimal 风格的 callout 和一个和非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．",
     "crumbs": [
-      "SunQuarTeX-cnart 测试文档"
+      "$\\SunQuarTeX$-cnart 测试文档"
     ]
   },
   {
     "objectID": "index-cnart.html#引用脚注测试",
     "href": "index-cnart.html#引用脚注测试",
-    "title": "SunQuarTeX-cnart 测试文档",
+    "title": "\\(\\SunQuarTeX\\)-cnart 测试文档",
     "section": "10 引用、脚注测试",
     "text": "10 引用、脚注测试\n这是一个脚注1．\n1 参见 Quarto - Citations & Footnotes人脸识别是以人面部特征作为识别个体身份的一种个体生物特征识别方法 [1, p. 1]．……人脸识别的研究最早可追溯到上世纪 60 年代，Bledsoe and Chan 研究了编程计算机识别人脸的方法[2]．随后，萌芽期的人脸识别技术经历多轮蜕变，在发展中逐渐完善．然而，人脸识别的主要难点在于不同个体的人脸结构并无大异，而同一个体的人脸在不同表情、年龄、妆饰、光照等干扰因素下又往往差异显著[3]，这要求人脸识别技术既要克服类内因素的干扰，同时又要加强类间差距的显著性，而早期人脸识别方法关注人脸几何特征，识别效果不尽人意．为此，以 Eigenfaces[4] 为代表的子空间学习识别方法和 Gabor[5]、LBP[6] 等局部特征分析的滤波器提取方法在各自领域都有所突破．2014 年，应用新兴的深度卷积神经网络技术，DeepFace[7] 横空出世，以 97.35% 的 LFW 基准数据集识别准确率重塑了人脸识别领域的研究格局．随后，人脸识别技术迎来爆发式增长，并逐渐走进人们的日常生活之中．……个体层面，要加强公众的权利意识，塑造个人的“数字理性”[8]．",
     "crumbs": [
-      "SunQuarTeX-cnart 测试文档"
+      "$\\SunQuarTeX$-cnart 测试文档"
     ]
   },
   {
     "objectID": "index-enart.html",
     "href": "index-enart.html",
-    "title": "SunQuarTeX-enart Test",
+    "title": "\\(\\SunQuarTeX\\)-enart Test",
     "section": "",
     "text": "This is a reference[1, p. 1].\n\n\n\n\n\n\n\nExample 1 Prove that \\[\n\\mathbb R \\times \\mathbb N \\approx \\mathbb N \\times \\mathbb R \\approx \\mathbb R\n\\]\n\n\n\n\n\n\n\n\n\n\nProof\n\n\n\n\n\n\nProof. Obvious as follows \\[\n\\mathbb R \\approx \\mathbb R \\times 2 \\preccurlyeq \\mathbb R \\times \\mathbb N \\preccurlyeq \\mathbb R \\times \\mathbb R \\approx \\mathbb R\n\\implies \\mathbb R \\times \\mathbb N \\approx \\mathbb N \\times \\mathbb R \\approx \\mathbb R\n\\]",
     "crumbs": [
-      "SunQuarTeX-enart Test"
+      "$\\SunQuarTeX$-enart Test"
     ]
   },
   {
     "objectID": "index-enart.html#first",
     "href": "index-enart.html#first",
-    "title": "SunQuarTeX-enart Test",
+    "title": "\\(\\SunQuarTeX\\)-enart Test",
     "section": "",
     "text": "This is a reference[1, p. 1].\n\n\n\n\n\n\n\nExample 1 Prove that \\[\n\\mathbb R \\times \\mathbb N \\approx \\mathbb N \\times \\mathbb R \\approx \\mathbb R\n\\]\n\n\n\n\n\n\n\n\n\n\nProof\n\n\n\n\n\n\nProof. Obvious as follows \\[\n\\mathbb R \\approx \\mathbb R \\times 2 \\preccurlyeq \\mathbb R \\times \\mathbb N \\preccurlyeq \\mathbb R \\times \\mathbb R \\approx \\mathbb R\n\\implies \\mathbb R \\times \\mathbb N \\approx \\mathbb N \\times \\mathbb R \\approx \\mathbb R\n\\]",
     "crumbs": [
-      "SunQuarTeX-enart Test"
+      "$\\SunQuarTeX$-enart Test"
     ]
   },
   {
     "objectID": "index-enart.html#second",
     "href": "index-enart.html#second",
-    "title": "SunQuarTeX-enart Test",
+    "title": "\\(\\SunQuarTeX\\)-enart Test",
     "section": "2 Second",
     "text": "2 Second\n\n\n\n\n\n\n\n\n\n\n\n\\(L_i \\times C_j\\)\n\\(2\\)\n\\(\\mathbb N\\)\n\\(\\mathbb R\\)\n\n\n\\(2\\)\n\\(4\\)\n\\(\\mathbb N\\)\n\\(\\mathbb R\\)\n\n\n\\(\\mathbb N\\)\n\\(\\mathbb N\\)\n\\(\\mathbb N\\)\n?\n\n\n\\(\\mathbb R\\)\n\\(\\mathbb R\\)\n?\n\\(\\mathbb R\\)\n\n\n\n\n\n(a) Cartesian (unsolved)\n\n\n\n\n\n\n\n\n\n\n\n\\(L_i^{C_j}\\)\n\\(2\\)\n\\(\\mathbb N\\)\n\\(\\mathbb R\\)\n\n\n\\(2\\)\n\\(4\\)\n\\(\\mathbb R\\)\n\\(2^{\\mathbb R}\\)\n\n\n\\(\\mathbb N\\)\n\\(\\mathbb N\\)\n?\n?\n\n\n\\(\\mathbb R\\)\n\\(\\mathbb R\\)\n?\n?\n\n\n\n\n\n(b) Power (unsolved)\n\n\n\n\n\n\n\nTable 1: Some Cardinality Results",
     "crumbs": [
-      "SunQuarTeX-enart Test"
+      "$\\SunQuarTeX$-enart Test"
     ]
   },
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "README",
+    "title": "SunQuarTeX",
     "section": "",
     "text": "基于 Quarto 的自用中英文学术写作模板库．支持输出至 HTML、PDF/LaTeX、Beamer、MS Word、GFM 等多种格式，覆盖交叉引用、插图绘制、定理系统等多种功能．\n\n仓库主页\n网页 Demo\n\n\n\n\n基于 Pandoc’s Markdown 的完备学术写作语法\n强大的交叉引用与定理系统功能\nHTML、PDF/LaTeX、Beamer、MS Word、Github Flavored Markdown (GFM) 全格式输出\n嵌入 Python 代码生成数据图表（Computation）\nTikZ / tikz-cd / quiver 图表绘制\nMermaid、Graphviz 图表绘制（Diagram）\nGithub Actions 自动生成 Demo 站点\n…\n\n\n\n\n安装方法简述如下，另可参见本仓库下的 Github Actions 配置文件．\n\n下载并安装 quarto-cli．本仓库渲染使用 Quarto 版本为 1.7.32．\n（需要使用 Computation 等功能时）\n安装恰当版本的 Python 和所需模块，如 jupyter、numpy、matplotlib、tabulate 等．\n（需要输出 LaTeX / PDF / Beamer 时）\n请确保已安装 Quarto 支持的 LaTeX 发行版．若无，可使用 quarto install tinytex --update-path 安装．\n（需要使用 Mermaid、Graphviz 等 Diagram 功能且需输出 PDF）\n请确保已安装 Chrome 或 Chromium．若无，可使用 quarto install tool chromium 安装．（参见 Quarto - Diagrams # Chrome Install）\n（需要在非 LaTeX / PDF / Beamer 格式下（如 HTML）输出 TikZ 时）\n请确保 XeLaTeX、dvisvgm、mutool 已在 PATH 中，且已安装需要使用的 LaTeX 宏包（目前 TikZ 中使用的宏包无法在渲染过程中自动安装）．\n\n如使用 Quarto 自带的 TinyTeX 安装 dvisvgm：\n\n先输出一次示例 PDF 自动补全大部分所需宏包\n执行 tlmgr install dvisvgm 和 tlmgr path add 下载 dvisvgm 并添加至 PATH．\n\n如何安装 mutool：\n\n（Linux / WSL）执行 sudo apt install mupdf-tools．\n（Windows）请自行在 MuPDF 官网下载并安装 MuPDF，并确保 mutool 在 PATH 中．\n\n关于 mutool 必要性的一些说明：\n\nAs of Ghostscript 10.01.0, this will no longer work due to the introduction of a new PDF interpreter. Therefore, an alternative conversion module based on mutool, a utility which is part of the MuPDF package, has been introduced. It’s automatically invoked if Ghostscript can’t be used and if a working mutool executable is present in a directory which is part of the system’s search path.\n来自 dvisvgm manual\n\n\n\n\n\n\n部分示例文件包含可选支持内容，如未安装相应依赖，可删除对应内容后渲染．\n\nquarto render index-cnart.qmd\nquarto render index-enart.qmd\nquarto render index-cnpre.qmd\nquarto render index-enpre.qmd\n\n--to 参数可指定输出类型，包括 html, pdf， beamer, docx, gfm．每次渲染时应指定 --to 参数，或在文档头中 format 选项下列明输出格式．\n在文件头声明 lang=zh 或 lang=en 即可调整语言．\n输出 PDF 时，可在渲染时使用 --to=latex 选项输出 .tex 文件．\n在 Beamer 中使用 TikZ 时，所在幻灯片须添加 {.fragile} 标记．\n\n\n\n\n\n\n\n请您活用 AI 工具降低学习门槛．推荐使用 VSCode 打开本仓库，使用自带的 Github Copilot，将 README 扔进对话框，提出您的具体需求并获得人话解答．\n\n\n\n示例文档中开头部分 --- 之间的内容称为 YAML 文档头（YAML Front Matter），用于设置文档相关元信息，也用于设置输出格式、样式等．您在自定义的过程中可能需要修改或添加它们．\n针对特定输出格式的设置请在文档头 format 下对应格式选项下设置．希望全局生效的设置（一般）可在文档头顶层设置．\n\n\n\n仓库主要为自用，如能为你的生活带来便利欢迎取用．想要的功能欢迎提 Issue 或 Discussion，会考虑但不保证会做．有能力欢迎 Fork 魔改和 Pull Request．欢迎学习底层软件 Quarto．\n\n\n\n\n\n\n速成可直接参考示例文档或 Quarto 官方教程．Quarto 使用的底层 Markdown 方言为 Pandoc’s Markdown．\n\n\n\n只输出 PDF / Beamer 只需要有 LaTeX 发行版．其它格式需要进一步安装．见安装部分．\n交换图使用例：\n\n```{tikz}\n\\begin{tikzcd}\n    B && A & \\rightsquigarrow & B && A\n    \\arrow[\"\"{name=0, anchor=center, inner sep=0}, \"g\"{description}, from=1-3, to=1-1]\n    \\arrow[\"\"{name=1, anchor=center, inner sep=0}, \"f\", curve={height=-30pt}, from=1-3, to=1-1]\n    \\arrow[\"\"{name=2, anchor=center, inner sep=0}, \"h\"', curve={height=30pt}, from=1-3, to=1-1]\n    \\arrow[\"\"{name=3, anchor=center, inner sep=0}, \"h\"', curve={height=30pt}, from=1-7, to=1-5]\n    \\arrow[\"\"{name=4, anchor=center, inner sep=0}, \"f\", curve={height=-30pt}, from=1-7, to=1-5]\n    \\arrow[\"\\alpha\"', shorten &lt;=4pt, shorten &gt;=4pt, Rightarrow, from=1, to=0]\n    \\arrow[\"\\beta\"', shorten &lt;=4pt, shorten &gt;=4pt, Rightarrow, from=0, to=2]\n    \\arrow[\"{\\beta \\circ_1 \\alpha}\"', shorten &lt;=8pt, shorten &gt;=8pt, Rightarrow, from=4, to=3]\n\\end{tikzcd}\n```\n推荐使用 quiver 在线编辑器生成交换图代码．\n\n\n\n一般文档建议从二级标题开始编号（相关讨论）；Beamer 的 slide-level 可自适应标题级数，但其分节固定从一级标题开始，见 Pandoc 文档．\n\n\n\n\n\n\n理论上与文档格式兼容，可直接设置 --to=pdf 输出文稿版本．\n\n\n\n你可以使用 GFM 格式输出，输出内容可复制至 markdown.com.cn 的在线编辑器转知乎格式．\n\n\n\n本仓库同时采用 Github Actions + Github Pages 自动生成 Demo 站点．首次使用时，在 Actions 分页中激活 Actions，在本地手动进行第一次网站发布：\n\n命令行内设置环境变量 QUARTO_PROFILE 为 website\n执行 quarto publish\n（清除环境变量）\n\n以后的每次 push 均会触发 Github Actions 自动完成的网站生成．\n如需自定义网站域名，请在根目录下添加 CNAME 文件，并修改 _quarto-website.yml 下 site-url．\n\n\n\n\n\n\n目前仅支持 PDF 字号修改．英文文档默认字号为 10pt，中文文档默认字号为 10.5pt（五号，详见 CTeX 手册）．\nformat:\n  pdf:\n    fontsize: 12pt\n\n\n\ntoc: true # 开启目录\n该设置全局 / 特定格式下均生效．\n\n\n\nnumber-sections: true # section 编号开关\nnumber-depth: 3 # section 编号深度\n该设置全局 / 特定格式下均生效．\n\n\n\nQuarto 内置的定理编号系统无法修改，但我们提供通过 YAML 文档头自定义 PDF 格式定理编号的可能．（目前仍然无法实现完全关闭 PDF 格式中的定理编号）\nformat:\n  pdf:\n    custom-theorem:\n      numbered-within: section # 开启后定理编号分点，相对于 section（或 subsection 等）\n      numbered-alike: true # 开启后不同类型的定理将共享编号\n\n\n\nPDF / Beamer 输出使用 BibLaTeX alphabetical，HTML 输出使用 IEEE．如需修改，请自定义 sun*****.cls 和 _format.yml 和 CSL 文件．\n\n\n\n请移步 sun123zxy/quarto-callouty-theorem 学习配置方法．\n\n\n\n支持使用 YAML 文档头自定义部分颜色．\nformat:\n  beamter:\n    custom-color:\n    define: \"\\\\definecolor{blueblk}{HTML}{1874D0}\" # 在这里用 LaTeX 自定义颜色供后面使用\n    main: \"green!40!black\" # 主色调\n    theorem: \"green!32!black\" # 各种定理环境颜色\n    example: \"blueblk!50!black\" # Example / Exercise 环境颜色\n    remark: \"white!15!black\" # Proof / Solution / Remark 环境颜色\n    link: \"lime!85!black\" # 链接颜色\n\n\n\n\n\n\n见 Discussion #4598，Pandoc 不支持 CSL-M 导致无有效方法处理 GB/T 7714-2015 中按语言切换“等”、et al 省略字样的规定．\n通用的定理编号目前尚难以自定义，见 Discussion #5479\n（need repro）HTML 子图图像拉伸问题，似乎是因为没有设置 height: auto．\n2025/04/15 定理标题中的文献引用导致 LaTeX 中出现嵌套中括号，见 Issue #12584\n2025/06/29 目前 RST-style list tables 的 row-span 在 PDF 格式下支持不良．\n2025/06/29 网站生成的 PDF 没有设置 base URL，相对链接无法正确解析．见 Discussion #13000\n2025/06/30 手机端的 other formats / links 菜单不显示，这是 Quarto 那边的问题，见 Issue #5961"
   },
   {
     "objectID": "index.html#核心功能",
     "href": "index.html#核心功能",
-    "title": "README",
+    "title": "SunQuarTeX",
     "section": "",
     "text": "基于 Pandoc’s Markdown 的完备学术写作语法\n强大的交叉引用与定理系统功能\nHTML、PDF/LaTeX、Beamer、MS Word、Github Flavored Markdown (GFM) 全格式输出\n嵌入 Python 代码生成数据图表（Computation）\nTikZ / tikz-cd / quiver 图表绘制\nMermaid、Graphviz 图表绘制（Diagram）\nGithub Actions 自动生成 Demo 站点\n…"
   },
   {
     "objectID": "index.html#安装",
     "href": "index.html#安装",
-    "title": "README",
+    "title": "SunQuarTeX",
     "section": "",
     "text": "安装方法简述如下，另可参见本仓库下的 Github Actions 配置文件．\n\n下载并安装 quarto-cli．本仓库渲染使用 Quarto 版本为 1.7.32．\n（需要使用 Computation 等功能时）\n安装恰当版本的 Python 和所需模块，如 jupyter、numpy、matplotlib、tabulate 等．\n（需要输出 LaTeX / PDF / Beamer 时）\n请确保已安装 Quarto 支持的 LaTeX 发行版．若无，可使用 quarto install tinytex --update-path 安装．\n（需要使用 Mermaid、Graphviz 等 Diagram 功能且需输出 PDF）\n请确保已安装 Chrome 或 Chromium．若无，可使用 quarto install tool chromium 安装．（参见 Quarto - Diagrams # Chrome Install）\n（需要在非 LaTeX / PDF / Beamer 格式下（如 HTML）输出 TikZ 时）\n请确保 XeLaTeX、dvisvgm、mutool 已在 PATH 中，且已安装需要使用的 LaTeX 宏包（目前 TikZ 中使用的宏包无法在渲染过程中自动安装）．\n\n如使用 Quarto 自带的 TinyTeX 安装 dvisvgm：\n\n先输出一次示例 PDF 自动补全大部分所需宏包\n执行 tlmgr install dvisvgm 和 tlmgr path add 下载 dvisvgm 并添加至 PATH．\n\n如何安装 mutool：\n\n（Linux / WSL）执行 sudo apt install mupdf-tools．\n（Windows）请自行在 MuPDF 官网下载并安装 MuPDF，并确保 mutool 在 PATH 中．\n\n关于 mutool 必要性的一些说明：\n\nAs of Ghostscript 10.01.0, this will no longer work due to the introduction of a new PDF interpreter. Therefore, an alternative conversion module based on mutool, a utility which is part of the MuPDF package, has been introduced. It’s automatically invoked if Ghostscript can’t be used and if a working mutool executable is present in a directory which is part of the system’s search path.\n来自 dvisvgm manual"
   },
   {
     "objectID": "index.html#使用",
     "href": "index.html#使用",
-    "title": "README",
+    "title": "SunQuarTeX",
     "section": "",
     "text": "部分示例文件包含可选支持内容，如未安装相应依赖，可删除对应内容后渲染．\n\nquarto render index-cnart.qmd\nquarto render index-enart.qmd\nquarto render index-cnpre.qmd\nquarto render index-enpre.qmd\n\n--to 参数可指定输出类型，包括 html, pdf， beamer, docx, gfm．每次渲染时应指定 --to 参数，或在文档头中 format 选项下列明输出格式．\n在文件头声明 lang=zh 或 lang=en 即可调整语言．\n输出 PDF 时，可在渲染时使用 --to=latex 选项输出 .tex 文件．\n在 Beamer 中使用 TikZ 时，所在幻灯片须添加 {.fragile} 标记．"
   },
   {
     "objectID": "index.html#qa",
     "href": "index.html#qa",
-    "title": "README",
+    "title": "SunQuarTeX",
     "section": "",
     "text": "请您活用 AI 工具降低学习门槛．推荐使用 VSCode 打开本仓库，使用自带的 Github Copilot，将 README 扔进对话框，提出您的具体需求并获得人话解答．\n\n\n\n示例文档中开头部分 --- 之间的内容称为 YAML 文档头（YAML Front Matter），用于设置文档相关元信息，也用于设置输出格式、样式等．您在自定义的过程中可能需要修改或添加它们．\n针对特定输出格式的设置请在文档头 format 下对应格式选项下设置．希望全局生效的设置（一般）可在文档头顶层设置．\n\n\n\n仓库主要为自用，如能为你的生活带来便利欢迎取用．想要的功能欢迎提 Issue 或 Discussion，会考虑但不保证会做．有能力欢迎 Fork 魔改和 Pull Request．欢迎学习底层软件 Quarto．\n\n\n\n\n\n\n速成可直接参考示例文档或 Quarto 官方教程．Quarto 使用的底层 Markdown 方言为 Pandoc’s Markdown．\n\n\n\n只输出 PDF / Beamer 只需要有 LaTeX 发行版．其它格式需要进一步安装．见安装部分．\n交换图使用例：\n\n```{tikz}\n\\begin{tikzcd}\n    B && A & \\rightsquigarrow & B && A\n    \\arrow[\"\"{name=0, anchor=center, inner sep=0}, \"g\"{description}, from=1-3, to=1-1]\n    \\arrow[\"\"{name=1, anchor=center, inner sep=0}, \"f\", curve={height=-30pt}, from=1-3, to=1-1]\n    \\arrow[\"\"{name=2, anchor=center, inner sep=0}, \"h\"', curve={height=30pt}, from=1-3, to=1-1]\n    \\arrow[\"\"{name=3, anchor=center, inner sep=0}, \"h\"', curve={height=30pt}, from=1-7, to=1-5]\n    \\arrow[\"\"{name=4, anchor=center, inner sep=0}, \"f\", curve={height=-30pt}, from=1-7, to=1-5]\n    \\arrow[\"\\alpha\"', shorten &lt;=4pt, shorten &gt;=4pt, Rightarrow, from=1, to=0]\n    \\arrow[\"\\beta\"', shorten &lt;=4pt, shorten &gt;=4pt, Rightarrow, from=0, to=2]\n    \\arrow[\"{\\beta \\circ_1 \\alpha}\"', shorten &lt;=8pt, shorten &gt;=8pt, Rightarrow, from=4, to=3]\n\\end{tikzcd}\n```\n推荐使用 quiver 在线编辑器生成交换图代码．\n\n\n\n一般文档建议从二级标题开始编号（相关讨论）；Beamer 的 slide-level 可自适应标题级数，但其分节固定从一级标题开始，见 Pandoc 文档．\n\n\n\n\n\n\n理论上与文档格式兼容，可直接设置 --to=pdf 输出文稿版本．\n\n\n\n你可以使用 GFM 格式输出，输出内容可复制至 markdown.com.cn 的在线编辑器转知乎格式．\n\n\n\n本仓库同时采用 Github Actions + Github Pages 自动生成 Demo 站点．首次使用时，在 Actions 分页中激活 Actions，在本地手动进行第一次网站发布：\n\n命令行内设置环境变量 QUARTO_PROFILE 为 website\n执行 quarto publish\n（清除环境变量）\n\n以后的每次 push 均会触发 Github Actions 自动完成的网站生成．\n如需自定义网站域名，请在根目录下添加 CNAME 文件，并修改 _quarto-website.yml 下 site-url．\n\n\n\n\n\n\n目前仅支持 PDF 字号修改．英文文档默认字号为 10pt，中文文档默认字号为 10.5pt（五号，详见 CTeX 手册）．\nformat:\n  pdf:\n    fontsize: 12pt\n\n\n\ntoc: true # 开启目录\n该设置全局 / 特定格式下均生效．\n\n\n\nnumber-sections: true # section 编号开关\nnumber-depth: 3 # section 编号深度\n该设置全局 / 特定格式下均生效．\n\n\n\nQuarto 内置的定理编号系统无法修改，但我们提供通过 YAML 文档头自定义 PDF 格式定理编号的可能．（目前仍然无法实现完全关闭 PDF 格式中的定理编号）\nformat:\n  pdf:\n    custom-theorem:\n      numbered-within: section # 开启后定理编号分点，相对于 section（或 subsection 等）\n      numbered-alike: true # 开启后不同类型的定理将共享编号\n\n\n\nPDF / Beamer 输出使用 BibLaTeX alphabetical，HTML 输出使用 IEEE．如需修改，请自定义 sun*****.cls 和 _format.yml 和 CSL 文件．\n\n\n\n请移步 sun123zxy/quarto-callouty-theorem 学习配置方法．\n\n\n\n支持使用 YAML 文档头自定义部分颜色．\nformat:\n  beamter:\n    custom-color:\n    define: \"\\\\definecolor{blueblk}{HTML}{1874D0}\" # 在这里用 LaTeX 自定义颜色供后面使用\n    main: \"green!40!black\" # 主色调\n    theorem: \"green!32!black\" # 各种定理环境颜色\n    example: \"blueblk!50!black\" # Example / Exercise 环境颜色\n    remark: \"white!15!black\" # Proof / Solution / Remark 环境颜色\n    link: \"lime!85!black\" # 链接颜色"
   },
   {
     "objectID": "index.html#known-issues",
     "href": "index.html#known-issues",
-    "title": "README",
+    "title": "SunQuarTeX",
     "section": "",
     "text": "见 Discussion #4598，Pandoc 不支持 CSL-M 导致无有效方法处理 GB/T 7714-2015 中按语言切换“等”、et al 省略字样的规定．\n通用的定理编号目前尚难以自定义，见 Discussion #5479\n（need repro）HTML 子图图像拉伸问题，似乎是因为没有设置 height: auto．\n2025/04/15 定理标题中的文献引用导致 LaTeX 中出现嵌套中括号，见 Issue #12584\n2025/06/29 目前 RST-style list tables 的 row-span 在 PDF 格式下支持不良．\n2025/06/29 网站生成的 PDF 没有设置 base URL，相对链接无法正确解析．见 Discussion #13000\n2025/06/30 手机端的 other formats / links 菜单不显示，这是 Quarto 那边的问题，见 Issue #5961"
   }

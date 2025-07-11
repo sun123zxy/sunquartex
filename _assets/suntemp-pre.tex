@@ -216,6 +216,12 @@ $endif$
 
 \frame{\titlepage}
 
+
+$for(include-before)$
+$include-before$
+
+$endfor$
+
 $if(toc)$
 \begin{frame}{\transtoc}
   \tableofcontents
@@ -233,5 +239,10 @@ $if(bibliography)$
   \fi
 \end{frame}
 $endif$
+
+$for(include-after)$
+$include-after$
+
+$endfor$
 
 \end{document}

@@ -21,6 +21,8 @@ format:
       echo: false
     fig-pos: false
     template: "./_assets/suntemp-art.tex"
+    include-in-header:
+      text: ""
     # toc: true
     # custom-theorem:
       # numbered-within: section

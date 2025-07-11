@@ -195,6 +195,10 @@ $endif$
 
 \newcommand{\SunQuarTeX}{\phantom{}\kern-.0em\lower.0ex\hbox{\(\mathbf S\)}\kern-.045em\lower.0ex\hbox{\(\scriptstyle \mathbf U\)}\kern-.045em\hbox{\(\scriptstyle \mathbb N\)}\kern-.0em\hbox{\(\mathbb Q\)}\kern-.045em\lower.0ex\hbox{\(\scriptstyle \mathbf U\)}\kern-.135em\lower.0ex\hbox{\(\scriptstyle \mathbf A\)}\kern-.09em\lower.0ex\hbox{\(\scriptstyle \mathbb R\)}\kern-.072em\text{\bfseries\TeX}}
 
+$if(header-includes)$
+$header-includes/first$
+$endif$
+
 % --- main ---
 
 \title{$title$}
@@ -217,6 +221,11 @@ $if(abstract)$
 \end{abstract}
 $endif$
 
+$for(include-before)$
+$include-before$
+
+$endfor$
+
 $if(toc)$
 $if(toc-title)$
 \renewcommand*\contentsname{\transtoc}
@@ -234,5 +243,10 @@ $body$
 \else
   \printbibliography
 \fi
+
+$for(include-after)$
+$include-after$
+
+$endfor$
 
 \end{document}

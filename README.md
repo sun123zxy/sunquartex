@@ -85,7 +85,7 @@
 
 针对特定输出格式的设置请在文档头 `format` 下对应格式选项下设置．希望全局生效的设置（一般）可在文档头顶层设置．
 
-#### 我想要 XXX 功能！
+#### 我想要 XXX 功能！/ 我要自己魔改！
 
 仓库主要为自用，如能为你的生活带来便利欢迎取用．想要的功能欢迎提 Issue 或 Discussion，会考虑但不保证会做．有能力欢迎 Fork 魔改和 Pull Request．欢迎学习底层软件 Quarto．
 
@@ -210,6 +210,17 @@ format:
     remark: "white!15!black" # Proof / Solution / Remark 环境颜色
     link: "lime!85!black" # 链接颜色
 ```
+
+#### PDF / Beamer 宏包不够用，我要自己导入！
+
+```yaml
+format:
+  pdf:
+    header-includes:
+      text: \usepackage{euscript}
+```
+
+### 
 
 ## Known Issues
 

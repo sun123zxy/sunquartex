@@ -14,11 +14,15 @@ format:
   html: default
   pdf:
     toc: true
+    include-in-header:
+      text: \usepackage{euscript}
 ---
 
 ## First
 
-This is a reference[@deepface, {p. 1}].
+This is a reference [@deepface, {p. 1}].
+
+This is Euscript $\mathcal{A} \neq \EuScript{A}$.
 
 ::: {#exm-rtimesn}
 

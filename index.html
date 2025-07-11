@@ -217,6 +217,7 @@ window.Quarto = {
   <li><a href="#写作相关" id="toc-写作相关" class="nav-link" data-scroll-target="#写作相关">写作相关</a></li>
   <li><a href="#输出相关" id="toc-输出相关" class="nav-link" data-scroll-target="#输出相关">输出相关</a></li>
   <li><a href="#样式相关" id="toc-样式相关" class="nav-link" data-scroll-target="#样式相关">样式相关</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
   </ul></li>
   <li><a href="#known-issues" id="toc-known-issues" class="nav-link" data-scroll-target="#known-issues">Known Issues</a></li>
   </ul></li>
@@ -308,8 +309,8 @@ window.Quarto = {
 <p>示例文档中开头部分 <code>---</code> 之间的内容称为 YAML 文档头（YAML Front Matter），用于设置文档相关元信息，也用于设置输出格式、样式等．您在自定义的过程中可能需要修改或添加它们．</p>
 <p>针对特定输出格式的设置请在文档头 <code>format</code> 下对应格式选项下设置．希望全局生效的设置（一般）可在文档头顶层设置．</p>
 </section>
-<section id="我想要-xxx-功能" class="level4">
-<h4 class="anchored" data-anchor-id="我想要-xxx-功能">我想要 XXX 功能！</h4>
+<section id="我想要-xxx-功能-我要自己魔改" class="level4">
+<h4 class="anchored" data-anchor-id="我想要-xxx-功能-我要自己魔改">我想要 XXX 功能！/ 我要自己魔改！</h4>
 <p>仓库主要为自用，如能为你的生活带来便利欢迎取用．想要的功能欢迎提 Issue 或 Discussion，会考虑但不保证会做．有能力欢迎 Fork 魔改和 Pull Request．欢迎学习底层软件 Quarto．</p>
 </section>
 </section>
@@ -416,6 +417,16 @@ window.Quarto = {
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">remark</span><span class="kw">:</span><span class="at"> </span><span class="st">"white!15!black"</span><span class="co"> # Proof / Solution / Remark 环境颜色</span></span>
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">link</span><span class="kw">:</span><span class="at"> </span><span class="st">"lime!85!black"</span><span class="co"> # 链接颜色</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
+<section id="pdf-beamer-宏包不够用我要自己导入" class="level4">
+<h4 class="anchored" data-anchor-id="pdf-beamer-宏包不够用我要自己导入">PDF / Beamer 宏包不够用，我要自己导入！</h4>
+<div class="sourceCode" id="cb7"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">header-includes</span><span class="kw">:</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">text</span><span class="kw">:</span><span class="at"> \usepackage{euscript}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="section" class="level3">
+<h3 class="anchored" data-anchor-id="section"></h3>
 </section>
 </section>
 <section id="known-issues" class="level2">

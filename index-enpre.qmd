@@ -1,8 +1,8 @@
 ---
-title: "SunQuarTeX-enpre Test"
-subtitle: "Subtitle Here"
+title: $\SunQuarTeX$-enpre Test
+subtitle: Subtitle Here
 author: "sun123zxy"
-institute: "SunQuarTeX"
+institute: $\SunQuarTeX$
 date: "2024/02/22"
 date-modified: "2024/02/22"
 bibliography: index.bib

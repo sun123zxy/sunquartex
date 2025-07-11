@@ -1,4 +1,4 @@
-# $\kern-.0em \mathbb{S}\kern-.0em\lower.5ex {\small \mathbb U}\kern-.05em {\small \mathbb N}\kern-.0em \mathbb{Q}\kern-.02em\raise.0ex {\small \mathbb{U}}\kern-.1em \lower.3ex {\small \mathbb{A}}\kern-.08em\lower.1ex \mathbb{R}\TeX$
+# SunQuarTeX
 
 基于 Quarto 的自用中英文学术写作模板库．支持输出至 HTML、PDF/LaTeX、Beamer、MS Word、GFM 等多种格式，覆盖交叉引用、插图绘制、定理系统等多种功能．
 

@@ -11,9 +11,9 @@ lang: en
 number-sections: true
 
 format:
-    html: default
-    pdf:
-        toc: true
+  html: default
+  pdf:
+    toc: true
 ---
 
 ## First

@@ -4,12 +4,12 @@
 \RequirePackage{xstring}
 \IfBeginWith{$lang$}{zh}{
     \zhtrue
-    \documentclass[fontset=fandol, zihao=5]{ctexart}
+    \documentclass[fontset=fandol,$if(fontsize)$ $fontsize$,$endif$]{ctexart}
     \def\transmodified{最后更新于}
     \def\transtoc{目录}
 }{
     \zhfalse
-    \documentclass{article}
+    \documentclass[$if(fontsize)$ $fontsize$,$endif$]{article}
     \usepackage{xeCJK}
     \def\transmodified{Last modified on}
     \def\transtoc{Table of Contents}

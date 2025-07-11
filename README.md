@@ -54,7 +54,7 @@
     > 
     > 来自 [dvisvgm manual](https://dvisvgm.de/Manpage/)
 
-## Usage
+## 使用
 
 部分示例文件包含可选支持内容，如未安装相应依赖，可删除对应内容后渲染．
 
@@ -63,7 +63,7 @@
 - `quarto render index-cnpre.qmd`
 - `quarto render index-enpre.qmd`
 
-`--to` 参数可指定输出类型，包括 `html`, `pdf`， `beamer`, `docx`, `gfm`．每次渲染时应指定 `--to` 参数，或在文件头中明确指定输出格式．
+`--to` 参数可指定输出类型，包括 `html`, `pdf`， `beamer`, `docx`, `gfm`．每次渲染时应指定 `--to` 参数，或在文档头中 `format` 选项下列明输出格式．
 
 在文件头声明 `lang=zh` 或 `lang=en` 即可调整语言．
 
@@ -82,6 +82,8 @@
 #### YAML 文档头是什么？怎么用？
 
 示例文档中开头部分 `---` 之间的内容称为 YAML 文档头（YAML Front Matter），用于设置文档相关元信息，也用于设置输出格式、样式等．您在自定义的过程中可能需要修改或添加它们．
+
+针对特定输出格式的设置请在文档头 `format` 下对应格式选项下设置．希望全局生效的设置（一般）可在文档头顶层设置．
 
 #### 我想要 XXX 功能！
 
@@ -146,6 +148,24 @@
 
 ### 样式相关
 
+#### 我要改字号！
+
+目前仅支持 PDF 字号修改．英文文档默认字号为 10pt，中文文档默认字号为 10.5pt（五号，详见 CTeX 手册）．
+
+```yaml
+format:
+  pdf:
+    fontsize: 12pt
+```
+
+#### 我要 / 不想要目录！
+
+```yaml
+toc: true # 开启目录
+```
+
+该设置全局 / 特定格式下均生效．
+
 #### 我不想给 section 编号 / 我要改 section 编号格式！
 
 ```yaml
@@ -153,14 +173,18 @@ number-sections: true # section 编号开关
 number-depth: 3 # section 编号深度
 ```
 
+该设置全局 / 特定格式下均生效．
+
 #### 我不想给定理编号！/ 我要改定理编号格式！
 
-Quarto 内置的定理编号系统无法修改，但我们提供通过 YAML 文档头自定义 PDF 格式定理编号的可能．默认设置见 `_format.yml`（目前仍然无法实现完全关闭 PDF 格式中的定理编号）
+Quarto 内置的定理编号系统无法修改，但我们提供通过 YAML 文档头自定义 PDF 格式定理编号的可能．（目前仍然无法实现完全关闭 PDF 格式中的定理编号）
 
 ```yaml
-custom-theorem:
-  numbered-within: section # 开启后定理编号分点，相对于 section（或 subsection 等）
-  numbered-alike: true # 开启后不同类型的定理将共享编号
+format:
+  pdf:
+    custom-theorem:
+      numbered-within: section # 开启后定理编号分点，相对于 section（或 subsection 等）
+      numbered-alike: true # 开启后不同类型的定理将共享编号
 ```
 
 #### 我要改引用格式！
@@ -169,20 +193,22 @@ PDF / Beamer 输出使用 BibLaTeX alphabetical，HTML 输出使用 IEEE．如�
 
 #### 我要更丰富的 Callout 定理包裹样式！
 
-请移步 [sun123zxy/quarto-callouty-theorem](https://github.com/sun123zxy/quarto-callouty-theorem) 学习如何配置．
+请移步 [sun123zxy/quarto-callouty-theorem](https://github.com/sun123zxy/quarto-callouty-theorem) 学习配置方法．
 
-#### 我要改 Beamer 样式！
+#### 我要改 Beamer 幻灯片的颜色！
 
-支持使用 YAML 文档头自定义部分颜色，默认设置见 `_format.yml`．
+支持使用 YAML 文档头自定义部分颜色．
 
 ```yaml
-custom-color:
-  define: "\\definecolor{blueblk}{HTML}{1874D0}" # 在这里用 LaTeX 自定义颜色供后面使用
-  main: "green!40!black" # 主色调
-  theorem: "green!32!black" # 各种定理环境颜色
-  example: "blueblk!50!black" # Example / Exercise 环境颜色
-  remark: "white!15!black" # Proof / Solution / Remark 环境颜色
-  link: "lime!85!black" # 链接颜色
+format:
+  beamter:
+    custom-color:
+    define: "\\definecolor{blueblk}{HTML}{1874D0}" # 在这里用 LaTeX 自定义颜色供后面使用
+    main: "green!40!black" # 主色调
+    theorem: "green!32!black" # 各种定理环境颜色
+    example: "blueblk!50!black" # Example / Exercise 环境颜色
+    remark: "white!15!black" # Proof / Solution / Remark 环境颜色
+    link: "lime!85!black" # 链接颜色
 ```
 
 ## Known Issues

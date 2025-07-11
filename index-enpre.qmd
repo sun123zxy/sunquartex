@@ -9,7 +9,7 @@ bibliography: index.bib
 lang: en
 
 format:
-    beamer: default
+  beamer: default
 ---
 
 # Section A

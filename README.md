@@ -183,7 +183,7 @@ Quarto 内置的定理编号系统无法修改，但我们提供通过 YAML 文�
 format:
   pdf:
     custom-theorem:
-      numbered-within: section # 开启后定理编号分点，相对于 section（或 subsection 等）
+      numbered-within: section # 开启后将相对于 section（或 subsection, etc.）进行定理编号
       numbered-alike: true # 开启后不同类型的定理将共享编号
 ```
 
@@ -201,7 +201,7 @@ PDF / Beamer 输出使用 BibLaTeX alphabetical，HTML 输出使用 IEEE．如�
 
 ```yaml
 format:
-  beamter:
+  beamer:
     custom-color:
     define: "\\definecolor{blueblk}{HTML}{1874D0}" # 在这里用 LaTeX 自定义颜色供后面使用
     main: "green!40!black" # 主色调

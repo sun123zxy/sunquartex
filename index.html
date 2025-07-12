@@ -74,7 +74,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-2fffcd71bc6a23021d20b51fc622daec.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-d345959adb11cc705a2559764d23265e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -393,7 +393,7 @@ window.Quarto = {
 <div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">custom-theorem</span><span class="kw">:</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">numbered-within</span><span class="kw">:</span><span class="at"> section</span><span class="co"> # 开启后定理编号分点，相对于 section（或 subsection 等）</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">numbered-within</span><span class="kw">:</span><span class="at"> section</span><span class="co"> # 开启后将相对于 section（或 subsection, etc.）进行定理编号</span></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">numbered-alike</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> # 开启后不同类型的定理将共享编号</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="我要改引用格式" class="level4">
@@ -408,7 +408,7 @@ window.Quarto = {
 <h4 class="anchored" data-anchor-id="我要改-beamer-幻灯片的颜色">我要改 Beamer 幻灯片的颜色！</h4>
 <p>支持使用 YAML 文档头自定义部分颜色．</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">beamter</span><span class="kw">:</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">beamer</span><span class="kw">:</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">custom-color</span><span class="kw">:</span></span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">define</span><span class="kw">:</span><span class="at"> </span><span class="st">"</span><span class="sc">\\</span><span class="st">definecolor{blueblk}{HTML}{1874D0}"</span><span class="co"> # 在这里用 LaTeX 自定义颜色供后面使用</span></span>
 <span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">main</span><span class="kw">:</span><span class="at"> </span><span class="st">"green!40!black"</span><span class="co"> # 主色调</span></span>
@@ -417,8 +417,8 @@ window.Quarto = {
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">remark</span><span class="kw">:</span><span class="at"> </span><span class="st">"white!15!black"</span><span class="co"> # Proof / Solution / Remark 环境颜色</span></span>
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">link</span><span class="kw">:</span><span class="at"> </span><span class="st">"lime!85!black"</span><span class="co"> # 链接颜色</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-<section id="pdf-宏包不够用我要自己导入" class="level4">
-<h4 class="anchored" data-anchor-id="pdf-宏包不够用我要自己导入">PDF 宏包不够用，我要自己导入！</h4>
+<section id="pdf-beamer-宏包不够用我要自己导入" class="level4">
+<h4 class="anchored" data-anchor-id="pdf-beamer-宏包不够用我要自己导入">PDF / Beamer 宏包不够用，我要自己导入！</h4>
 <div class="sourceCode" id="cb7"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">header-includes</span><span class="kw">:</span></span>

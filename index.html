@@ -232,7 +232,7 @@ window.Quarto = {
 
 <section id="sunquartex" class="level1">
 <h1>SunQuarTeX</h1>
-<p>基于 Quarto 的自用中英文学术写作模板库．支持输出至 HTML、PDF/LaTeX、Beamer、MS Word、GFM 等多种格式，覆盖交叉引用、插图绘制、定理系统等多种功能．</p>
+<p>基于 Quarto 的自用中英文学术写作模板库．支持输出至 HTML、PDF/LaTeX、Beamer、GFM、MS Word、PPT 多格式输出．支持交叉引用、插图绘制、定理系统等多种功能．</p>
 <ul>
 <li><a href="https://github.com/sun123zxy/sunquartex">仓库主页</a></li>
 <li><a href="https://sun123zxy.github.io/sunquartex">网页 Demo</a></li>
@@ -242,7 +242,7 @@ window.Quarto = {
 <ul>
 <li>基于 Pandoc’s Markdown 的完备学术写作语法</li>
 <li>强大的交叉引用与定理系统功能</li>
-<li>HTML、PDF/LaTeX、Beamer、MS Word、Github Flavored Markdown (GFM) 全格式输出</li>
+<li>HTML、PDF/LaTeX、Beamer、Github Flavored Markdown (GFM) 全格式输出；MS Word、PPT 有限支持</li>
 <li>嵌入 Python 代码生成数据图表（Computation）</li>
 <li>TikZ / <a href="https://ctan.org/pkg/tikz-cd">tikz-cd</a> / <a href="https://q.uiver.app/">quiver</a> 图表绘制</li>
 <li>Mermaid、Graphviz 图表绘制（Diagram）</li>
@@ -256,7 +256,8 @@ window.Quarto = {
 <ul>
 <li><p>下载并安装 <a href="https://github.com/quarto-dev/quarto-cli">quarto-cli</a>．本仓库渲染使用 Quarto 版本为 1.7.32．</p></li>
 <li><p>（需要使用 Computation 等功能时）</p>
-<p>安装恰当版本的 Python 和所需模块，如 jupyter、numpy、matplotlib、tabulate 等．</p></li>
+<p>安装适当版本 Python 并安装 <code>requirement.txt</code> 列明的所需模块．</p>
+<p><code>pip install -r requirements.txt</code></p></li>
 <li><p>（需要输出 LaTeX / PDF / Beamer 时）</p>
 <p>请确保已安装 Quarto 支持的 LaTeX 发行版．若无，可使用 <code>quarto install tinytex --update-path</code> 安装．</p></li>
 <li><p>（需要使用 Mermaid、Graphviz 等 Diagram 功能且需输出 PDF）</p>
@@ -266,7 +267,8 @@ window.Quarto = {
 <ul>
 <li><p>如使用 Quarto 自带的 TinyTeX 安装 <code>dvisvgm</code>：</p>
 <ul>
-<li>先输出一次示例 PDF 自动补全大部分所需宏包</li>
+<li>先输出一次示例 PDF 自动补全大部分所需宏包．</li>
+<li>手动安装 <code>standalone</code> 宏包：执行 <code>tlmgr install standalone</code>．</li>
 <li>执行 <code>tlmgr install dvisvgm</code> 和 <code>tlmgr path add</code> 下载 dvisvgm 并添加至 PATH．</li>
 </ul></li>
 <li><p>如何安装 <code>mutool</code>：</p>
@@ -300,6 +302,10 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="qa">Q&amp;A</h2>
 <section id="一般性的" class="level3">
 <h3 class="anchored" data-anchor-id="一般性的">一般性的</h3>
+<section id="示例文件编译不了" class="level4">
+<h4 class="anchored" data-anchor-id="示例文件编译不了">示例文件编译不了！</h4>
+<p>示例文件包含了部分可选支持内容，如未安装相应依赖，请删除对应内容后渲染．</p>
+</section>
 <section id="我不懂-computer-science你能不能讲人话" class="level4">
 <h4 class="anchored" data-anchor-id="我不懂-computer-science你能不能讲人话">我不懂 Computer Science，你能不能讲人话！</h4>
 <p>请您活用 AI 工具降低学习门槛．推荐使用 VSCode 打开本仓库，使用自带的 Github Copilot，将 README 扔进对话框，提出您的具体需求并获得人话解答．</p>
@@ -343,6 +349,10 @@ window.Quarto = {
 <section id="标题应该用多少个" class="level4">
 <h4 class="anchored" data-anchor-id="标题应该用多少个">标题应该用多少个 <code>#</code>？</h4>
 <p>一般文档建议从二级标题开始编号（<a href="https://community.rstudio.com/t/why-do-default-r-markdown-quarto-templates-use-second-level-headings-instead-of-first-level-ones/162127">相关讨论</a>）；Beamer 的 <code>slide-level</code> 可自适应标题级数，但其分节固定从一级标题开始，见 Pandoc 文档．</p>
+</section>
+<section id="分页符" class="level4">
+<h4 class="anchored" data-anchor-id="分页符">分页符？</h4>
+<p><code></code>．见<a href="https://quarto.org/docs/authoring/markdown-basics.html#page-breaks">官方文档</a>．</p>
 </section>
 </section>
 <section id="输出相关" class="level3">

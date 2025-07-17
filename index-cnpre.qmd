@@ -12,6 +12,7 @@ lang: zh
 format:
   beamer:
     toc: true
+  pptx: default
 ---
 
 # Section A

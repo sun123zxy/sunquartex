@@ -1,6 +1,6 @@
 # SunQuarTeX
 
-基于 Quarto 的自用中英文学术写作模板库．支持输出至 HTML、PDF/LaTeX、Beamer、MS Word、GFM 等多种格式，覆盖交叉引用、插图绘制、定理系统等多种功能．
+基于 Quarto 的自用中英文学术写作模板库．支持输出至 HTML、PDF/LaTeX、Beamer、GFM、MS Word、PPT 多格式输出．支持交叉引用、插图绘制、定理系统等多种功能．
 
 - [仓库主页](https://github.com/sun123zxy/sunquartex)
 - [网页 Demo](https://sun123zxy.github.io/sunquartex)
@@ -9,7 +9,7 @@
 
 - 基于 Pandoc's Markdown 的完备学术写作语法
 - 强大的交叉引用与定理系统功能
-- HTML、PDF/LaTeX、Beamer、MS Word、Github Flavored Markdown (GFM) 全格式输出
+- HTML、PDF/LaTeX、Beamer、Github Flavored Markdown (GFM) 全格式输出；MS Word、PPT 有限支持
 - 嵌入 Python 代码生成数据图表（Computation）
 - TikZ / [tikz-cd](https://ctan.org/pkg/tikz-cd) / [quiver](https://q.uiver.app/) 图表绘制
 - Mermaid、Graphviz 图表绘制（Diagram）
@@ -24,7 +24,9 @@
 
 - （需要使用 Computation 等功能时）
   
-  安装恰当版本的 Python 和所需模块，如 jupyter、numpy、matplotlib、tabulate 等．
+  安装适当版本 Python 并安装  `requirement.txt` 列明的所需模块．
+
+  `pip install -r requirements.txt`
 
 - （需要输出 LaTeX / PDF / Beamer 时）
   
@@ -40,7 +42,8 @@
 
   - 如使用 Quarto 自带的 TinyTeX 安装 `dvisvgm`：
   
-    - 先输出一次示例 PDF 自动补全大部分所需宏包
+    - 先输出一次示例 PDF 自动补全大部分所需宏包．
+    - 手动安装 `standalone` 宏包：执行 `tlmgr install standalone`．
     - 执行 `tlmgr install dvisvgm` 和 `tlmgr path add` 下载 dvisvgm 并添加至 PATH．
 
   - 如何安装 `mutool`：
@@ -74,6 +77,10 @@
 ## Q&A
 
 ### 一般性的
+
+#### 示例文件编译不了！
+
+示例文件包含了部分可选支持内容，如未安装相应依赖，请删除对应内容后渲染．
 
 #### 我不懂 Computer Science，你能不能讲人话！
 
@@ -123,6 +130,10 @@
 #### 标题应该用多少个 `#`？
 
 一般文档建议从二级标题开始编号（[相关讨论](https://community.rstudio.com/t/why-do-default-r-markdown-quarto-templates-use-second-level-headings-instead-of-first-level-ones/162127)）；Beamer 的 `slide-level` 可自适应标题级数，但其分节固定从一级标题开始，见 Pandoc 文档．
+
+#### 分页符？
+
+``{{< pagebreak >}}``．见[官方文档](https://quarto.org/docs/authoring/markdown-basics.html#page-breaks)．
 
 ### 输出相关
 

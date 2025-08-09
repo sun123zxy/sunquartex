@@ -24,9 +24,9 @@
 
 - （需要使用 Computation 等功能时）
   
-  安装适当版本 Python 并安装  `requirement.txt` 列明的所需模块．
+  安装适当版本 Python 并安装 `pyproject.toml` 列明的所需模块．
 
-  `pip install -r requirements.txt`
+  `pip install .`
 
 - （需要输出 LaTeX / PDF / Beamer 时）
   

@@ -20,51 +20,50 @@
 
 安装方法简述如下，另可参见本仓库下的 Github Actions 配置文件．
 
+### 必选项
+
 - 下载并安装 [quarto-cli](https://github.com/quarto-dev/quarto-cli)．本仓库渲染使用 Quarto 版本为 {{< version >}}．
 
-- （需要使用 Computation 等功能时）
-  
-  安装适当版本 Python 并安装 `pyproject.toml` 列明的所需模块．
+### 可选项
 
-  `pip install .`
+#### 需要使用 Computation 等功能时
 
-- （需要输出 LaTeX / PDF / Beamer 时）
-  
-  请确保已安装 Quarto 支持的 LaTeX 发行版．若无，可使用 `quarto install tinytex --update-path` 安装．
+安装适当版本 Python 并安装 `pyproject.toml` 列明的所需模块：`pip install .`
 
-- （需要使用 Mermaid、Graphviz 等 Diagram 功能且需输出 PDF）
+#### 需要输出 LaTeX / PDF / Beamer 时
 
-  请确保已安装 Chrome 或 Chromium．若无，可使用 `quarto install tool chromium` 安装．（参见 [Quarto - Diagrams # Chrome Install](https://quarto.org/docs/authoring/diagrams.html#chrome-install)）
+请确保已安装 Quarto 支持的 LaTeX 发行版．若无，可使用 `quarto install tinytex --update-path` 安装．
 
-- （需要在非 LaTeX / PDF / Beamer 格式下（如 HTML）输出 TikZ 时）
+#### 需要使用 Mermaid、Graphviz 等 Diagram 功能且需输出 PDF
 
-  请确保 XeLaTeX、dvisvgm、mutool 已在 PATH 中，且已安装需要使用的 LaTeX 宏包（目前 TikZ 中使用的宏包无法在渲染过程中自动安装）．
+请确保已安装 Chrome 或 Chromium．若无，可使用 `quarto install tool chromium` 安装．（参见 [Quarto - Diagrams # Chrome Install](https://quarto.org/docs/authoring/diagrams.html#chrome-install)）
 
-  - 如使用 Quarto 自带的 TinyTeX 安装 `dvisvgm`：
-  
-    - 先输出一次示例 PDF 自动补全大部分所需宏包．
-    - 手动安装 `standalone` 宏包：执行 `tlmgr install standalone`．
-    - 执行 `tlmgr install dvisvgm` 和 `tlmgr path add` 下载 dvisvgm 并添加至 PATH．
+#### 需要在非 LaTeX / PDF / Beamer 格式下（如 HTML）输出 TikZ 时
 
-  - 如何安装 `mutool`：
+请确保 XeLaTeX、dvisvgm、mutool 已在 PATH 中，且已安装需要使用的 LaTeX 宏包（目前 TikZ 中使用的宏包无法在渲染过程中自动安装）．
 
-    - （Linux / WSL）执行 `sudo apt install mupdf-tools`．
-    - （Windows）请自行在 [MuPDF](https://mupdf.com/) 官网下载并安装 MuPDF，并确保 `mutool` 在 PATH 中．
+- 如使用 Quarto 自带的 TinyTeX 安装 `dvisvgm`：
 
-  - 关于 mutool 必要性的一些说明：
+  - 先输出一次示例 PDF 自动补全大部分所需宏包．
+  - 手动安装 `standalone` 宏包：执行 `tlmgr install standalone`．
+  - 执行 `tlmgr install dvisvgm` 和 `tlmgr path add` 下载 dvisvgm 并添加至 PATH．
 
-    > As of Ghostscript 10.01.0, this will no longer work due to the introduction of a new PDF interpreter. Therefore, an alternative conversion module based on mutool, a utility which is part of the MuPDF package, has been introduced. It’s automatically invoked if Ghostscript can’t be used and if a working mutool executable is present in a directory which is part of the system’s search path.
-    > 
-    > 来自 [dvisvgm manual](https://dvisvgm.de/Manpage/)
+- 如何安装 `mutool`：
+
+  - （Linux / WSL）执行 `sudo apt install mupdf-tools`．
+  - （Windows）请自行在 [MuPDF](https://mupdf.com/) 官网下载并安装 MuPDF，并确保 `mutool` 在 PATH 中．
+
+- 关于 mutool 必要性的一些说明：
+
+  > As of Ghostscript 10.01.0, this will no longer work due to the introduction of a new PDF interpreter. Therefore, an alternative conversion module based on mutool, a utility which is part of the MuPDF package, has been introduced. It’s automatically invoked if Ghostscript can’t be used and if a working mutool executable is present in a directory which is part of the system’s search path.
+  > 
+  > 来自 [dvisvgm manual](https://dvisvgm.de/Manpage/)
 
 ## 使用
 
-部分示例文件包含可选支持内容，如未安装相应依赖，可删除对应内容后渲染．
+- `quarto render helloworld.qmd`
 
-- `quarto render index-cnart.qmd`
-- `quarto render index-enart.qmd`
-- `quarto render index-cnpre.qmd`
-- `quarto render index-enpre.qmd`
+示例文件请在 `examples/` 目录下查看．其中可能包含可选支持内容，如未安装相应依赖，可删除对应内容后渲染．
 
 `--to` 参数可指定输出类型，包括 `html`, `pdf`， `beamer`, `docx`, `gfm`．每次渲染时应指定 `--to` 参数，或在文档头中 `format` 选项下列明输出格式．
 

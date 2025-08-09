@@ -7,7 +7,7 @@ author:
 date: "2022/12/07"
 date-modified: "2024/08/23"
 abstract: "使用 Quarto Markdown 语法，支持输出至 HTML、PDF/LaTeX、MS Word 等多种格式的中文学术写作工具，覆盖交叉引用、插图绘制、定理系统等多种功能．"
-bibliography: index.bib
+bibliography: bibliography.bib
 lang: zh
 
 number-sections: true
@@ -53,7 +53,7 @@ $$
 
 ## 图片、表格、列表测试
 
-![这是一张插图](index-figure.png){#fig-figure}
+![这是一张插图](figure.png){#fig-figure}
 
 交叉引用 [@fig-figure] 当然也是可以的．
 

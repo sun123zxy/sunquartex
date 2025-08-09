@@ -6,7 +6,7 @@ institute: $\SunQuarTeX$ Institute of LaTeX Technology
 shortinstitute: $\SunQuarTeX$
 date: "2023/08/21"
 date-modified: "2024/02/22"
-bibliography: index.bib
+bibliography: bibliography.bib
 lang: zh
 
 format:
@@ -110,7 +110,7 @@ int main(){
 
 ### 图
 
-![这是一张插图](index-figure.png){#fig-figure}
+![这是一张插图](figure.png){#fig-figure}
 
 引用一下 [@fig-figure]．
 

@@ -12,7 +12,7 @@ format:
     link-external-newwindow: true
     toc: true
     include-in-header:
-      - file: "_assets/html-preset.html"
+      - file: "./_assets/html-preset.html"
   pdf:
     # keep-tex: true
     pdf-engine: xelatex

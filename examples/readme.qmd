@@ -1,8 +1,9 @@
 ---
 format:
   html: default
-
+aliases: 
+  - "/index.html"
 number-sections: false
 ---
 
-{{< include README.md >}}
+{{< include ../README.md >}}

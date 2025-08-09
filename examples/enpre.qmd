@@ -5,7 +5,7 @@ author: "sun123zxy"
 institute: $\SunQuarTeX$
 date: "2024/02/22"
 date-modified: "2024/02/22"
-bibliography: index.bib
+bibliography: bibliography.bib
 lang: en
 
 format:
@@ -108,7 +108,7 @@ Referable [@tbl-cartesian-unsolved].
 
 ### Figures
 
-![This is a figure](index-figure.png){#fig-figure}
+![This is a figure](figure.png){#fig-figure}
 
 Referable [@fig-figure].
 

@@ -13,16 +13,4 @@ wheels/
 /.quarto/
 /_output/
 
-/*_files/
-/*.ipynb
-/*.aux
-/*.bbl
-/*.bcf
-/*.blg
-/*.log
-/*.out
-/*.run.xml
-/*.pdf
-/*.tex
 /.luarc.json
-/*.toc

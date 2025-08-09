@@ -5,7 +5,7 @@ author: "sun123zxy"
 date: "2023/08/10"
 date-modified: "2023/08/11"
 abstract: "This is an abstract."
-bibliography: "index.bib"
+bibliography: "bibliography.bib"
 lang: en
 
 number-sections: true

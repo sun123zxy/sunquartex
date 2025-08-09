@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>index – SunQuarTeX</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-a972e24594b246049d84a1e581a77ea4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script>
+MathJax = {
+  tex: {
+    macros: {
+        SunQuarTeX: String.raw`\phantom{}\kern-.0em\lower.0ex\hbox{$\mathbf S$}\kern-.045em\lower.0ex\hbox{$\scriptstyle \mathbf U$}\kern-.045em\hbox{$\scriptstyle \mathbb N$}\kern-.0em\hbox{$\mathbb Q$}\kern-.045em\lower.0ex\hbox{$\scriptstyle \mathbf U$}\kern-.135em\lower.0ex\hbox{$\scriptstyle \mathbf A$}\kern-.09em\lower.0ex\hbox{$\scriptstyle \mathbb R$}\kern-.072em\mathbf{\TeX}`
+    }
+  }
+};
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../examples/index.html">index.html</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">SunQuarTeX</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../helloworld.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Hello World</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../examples/index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">index.html</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../examples/cnart.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="math inline">\(\SunQuarTeX\)</span>-cnart 测试文档</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../examples/cnpre.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="math inline">\(\SunQuarTeX\)</span>-cnpre 测试文档</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../examples/enart.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="math inline">\(\SunQuarTeX\)</span>-enart Test</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../examples/enpre.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="math inline">\(\SunQuarTeX\)</span>-enpre Test</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#sunquartex" id="toc-sunquartex" class="nav-link active" data-scroll-target="#sunquartex">SunQuarTeX</a>
+  <ul class="collapse">
+  <li><a href="#核心功能" id="toc-核心功能" class="nav-link" data-scroll-target="#核心功能">核心功能</a></li>
+  <li><a href="#安装" id="toc-安装" class="nav-link" data-scroll-target="#安装">安装</a>
+  <ul class="collapse">
+  <li><a href="#必选项" id="toc-必选项" class="nav-link" data-scroll-target="#必选项">必选项</a></li>
+  <li><a href="#可选项" id="toc-可选项" class="nav-link" data-scroll-target="#可选项">可选项</a></li>
+  </ul></li>
+  <li><a href="#使用" id="toc-使用" class="nav-link" data-scroll-target="#使用">使用</a></li>
+  <li><a href="#qa" id="toc-qa" class="nav-link" data-scroll-target="#qa">Q&amp;A</a>
+  <ul class="collapse">
+  <li><a href="#一般性的" id="toc-一般性的" class="nav-link" data-scroll-target="#一般性的">一般性的</a></li>
+  <li><a href="#写作相关" id="toc-写作相关" class="nav-link" data-scroll-target="#写作相关">写作相关</a></li>
+  <li><a href="#输出相关" id="toc-输出相关" class="nav-link" data-scroll-target="#输出相关">输出相关</a></li>
+  <li><a href="#样式相关" id="toc-样式相关" class="nav-link" data-scroll-target="#样式相关">样式相关</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  </ul></li>
+  <li><a href="#known-issues" id="toc-known-issues" class="nav-link" data-scroll-target="#known-issues">Known Issues</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+
+
+
+
+<section id="sunquartex" class="level1">
+<h1>SunQuarTeX</h1>
+<p>基于 Quarto 的自用中英文学术写作模板库．支持输出至 HTML、PDF/LaTeX、Beamer、GFM、MS Word、PPT 多格式输出．支持交叉引用、插图绘制、定理系统等多种功能．</p>
+<ul>
+<li><a href="https://github.com/sun123zxy/sunquartex">仓库主页</a></li>
+<li><a href="https://sun123zxy.github.io/sunquartex">网页 Demo</a></li>
+</ul>
+<section id="核心功能" class="level2">
+<h2 class="anchored" data-anchor-id="核心功能">核心功能</h2>
+<ul>
+<li>基于 Pandoc’s Markdown 的完备学术写作语法</li>
+<li>强大的交叉引用与定理系统功能</li>
+<li>HTML、PDF/LaTeX、Beamer、Github Flavored Markdown (GFM) 全格式输出；MS Word、PPT 有限支持</li>
+<li>嵌入 Python 代码生成数据图表（Computation）</li>
+<li>TikZ / <a href="https://ctan.org/pkg/tikz-cd">tikz-cd</a> / <a href="https://q.uiver.app/">quiver</a> 图表绘制</li>
+<li>Mermaid、Graphviz 图表绘制（Diagram）</li>
+<li>Github Actions 自动生成 Demo 站点</li>
+<li>…</li>
+</ul>
+</section>
+<section id="安装" class="level2">
+<h2 class="anchored" data-anchor-id="安装">安装</h2>
+<p>安装方法简述如下，另可参见本仓库下的 Github Actions 配置文件．</p>
+<section id="必选项" class="level3">
+<h3 class="anchored" data-anchor-id="必选项">必选项</h3>
+<ul>
+<li>下载并安装 <a href="https://github.com/quarto-dev/quarto-cli">quarto-cli</a>．本仓库渲染使用 Quarto 版本为 1.7.33．</li>
+</ul>
+</section>
+<section id="可选项" class="level3">
+<h3 class="anchored" data-anchor-id="可选项">可选项</h3>
+<section id="需要使用-computation-等功能时" class="level4">
+<h4 class="anchored" data-anchor-id="需要使用-computation-等功能时">需要使用 Computation 等功能时</h4>
+<p>安装适当版本 Python 并安装 <code>pyproject.toml</code> 列明的所需模块：<code>pip install .</code></p>
+</section>
+<section id="需要输出-latex-pdf-beamer-时" class="level4">
+<h4 class="anchored" data-anchor-id="需要输出-latex-pdf-beamer-时">需要输出 LaTeX / PDF / Beamer 时</h4>
+<p>请确保已安装 Quarto 支持的 LaTeX 发行版．若无，可使用 <code>quarto install tinytex --update-path</code> 安装．</p>
+</section>
+<section id="需要使用-mermaidgraphviz-等-diagram-功能且需输出-pdf" class="level4">
+<h4 class="anchored" data-anchor-id="需要使用-mermaidgraphviz-等-diagram-功能且需输出-pdf">需要使用 Mermaid、Graphviz 等 Diagram 功能且需输出 PDF</h4>
+<p>请确保已安装 Chrome 或 Chromium．若无，可使用 <code>quarto install tool chromium</code> 安装．（参见 <a href="https://quarto.org/docs/authoring/diagrams.html#chrome-install">Quarto - Diagrams # Chrome Install</a>）</p>
+</section>
+<section id="需要在非-latex-pdf-beamer-格式下如-html输出-tikz-时" class="level4">
+<h4 class="anchored" data-anchor-id="需要在非-latex-pdf-beamer-格式下如-html输出-tikz-时">需要在非 LaTeX / PDF / Beamer 格式下（如 HTML）输出 TikZ 时</h4>
+<p>请确保 XeLaTeX、dvisvgm、mutool 已在 PATH 中，且已安装需要使用的 LaTeX 宏包（目前 TikZ 中使用的宏包无法在渲染过程中自动安装）．</p>
+<ul>
+<li><p>如使用 Quarto 自带的 TinyTeX 安装 <code>dvisvgm</code>：</p>
+<ul>
+<li>先输出一次示例 PDF 自动补全大部分所需宏包．</li>
+<li>手动安装 <code>standalone</code> 宏包：执行 <code>tlmgr install standalone</code>．</li>
+<li>执行 <code>tlmgr install dvisvgm</code> 和 <code>tlmgr path add</code> 下载 dvisvgm 并添加至 PATH．</li>
+</ul></li>
+<li><p>如何安装 <code>mutool</code>：</p>
+<ul>
+<li>（Linux / WSL）执行 <code>sudo apt install mupdf-tools</code>．</li>
+<li>（Windows）请自行在 <a href="https://mupdf.com/">MuPDF</a> 官网下载并安装 MuPDF，并确保 <code>mutool</code> 在 PATH 中．</li>
+</ul></li>
+<li><p>关于 mutool 必要性的一些说明：</p>
+<blockquote class="blockquote">
+<p>As of Ghostscript 10.01.0, this will no longer work due to the introduction of a new PDF interpreter. Therefore, an alternative conversion module based on mutool, a utility which is part of the MuPDF package, has been introduced. It’s automatically invoked if Ghostscript can’t be used and if a working mutool executable is present in a directory which is part of the system’s search path.</p>
+<p>来自 <a href="https://dvisvgm.de/Manpage/">dvisvgm manual</a></p>
+</blockquote></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="使用" class="level2">
+<h2 class="anchored" data-anchor-id="使用">使用</h2>
+<ul>
+<li><code>quarto render helloworld.qmd</code></li>
+</ul>
+<p>示例文件请在 <code>examples/</code> 目录下查看．其中可能包含可选支持内容，如未安装相应依赖，可删除对应内容后渲染．</p>
+<p><code>--to</code> 参数可指定输出类型，包括 <code>html</code>, <code>pdf</code>， <code>beamer</code>, <code>docx</code>, <code>gfm</code>．每次渲染时应指定 <code>--to</code> 参数，或在文档头中 <code>format</code> 选项下列明输出格式．</p>
+<p>在文件头声明 <code>lang=zh</code> 或 <code>lang=en</code> 即可调整语言．</p>
+<p>输出 PDF 时，可在渲染时使用 <code>--to=latex</code> 选项输出 <code>.tex</code> 文件．</p>
+<p>在 Beamer 中使用 TikZ 时，所在幻灯片须添加 <code>{.fragile}</code> 标记．</p>
+</section>
+<section id="qa" class="level2">
+<h2 class="anchored" data-anchor-id="qa">Q&amp;A</h2>
+<section id="一般性的" class="level3">
+<h3 class="anchored" data-anchor-id="一般性的">一般性的</h3>
+<section id="示例文件编译不了" class="level4">
+<h4 class="anchored" data-anchor-id="示例文件编译不了">示例文件编译不了！</h4>
+<p>示例文件包含了部分可选支持内容，如未安装相应依赖，请删除对应内容后渲染．</p>
+</section>
+<section id="我不懂-computer-science你能不能讲人话" class="level4">
+<h4 class="anchored" data-anchor-id="我不懂-computer-science你能不能讲人话">我不懂 Computer Science，你能不能讲人话！</h4>
+<p>请您活用 AI 工具降低学习门槛．推荐使用 VSCode 打开本仓库，使用自带的 Github Copilot，将 README 扔进对话框，提出您的具体需求并获得人话解答．</p>
+</section>
+<section id="yaml-文档头是什么怎么用" class="level4">
+<h4 class="anchored" data-anchor-id="yaml-文档头是什么怎么用">YAML 文档头是什么？怎么用？</h4>
+<p>示例文档中开头部分 <code>---</code> 之间的内容称为 YAML 文档头（YAML Front Matter），用于设置文档相关元信息，也用于设置输出格式、样式等．您在自定义的过程中可能需要修改或添加它们．</p>
+<p>针对特定输出格式的设置请在文档头 <code>format</code> 下对应格式选项下设置．希望全局生效的设置（一般）可在文档头顶层设置．</p>
+</section>
+<section id="我想要-xxx-功能-我要自己魔改" class="level4">
+<h4 class="anchored" data-anchor-id="我想要-xxx-功能-我要自己魔改">我想要 XXX 功能！/ 我要自己魔改！</h4>
+<p>仓库主要为自用，如能为你的生活带来便利欢迎取用．想要的功能欢迎提 Issue 或 Discussion，会考虑但不保证会做．有能力欢迎 Fork 魔改和 Pull Request．欢迎学习底层软件 Quarto．</p>
+</section>
+</section>
+<section id="写作相关" class="level3">
+<h3 class="anchored" data-anchor-id="写作相关">写作相关</h3>
+<section id="markdown-语法" class="level4">
+<h4 class="anchored" data-anchor-id="markdown-语法">Markdown 语法？</h4>
+<p>速成可直接参考示例文档或 <a href="https://quarto.org/docs/authoring/markdown-basics.html">Quarto</a> 官方教程．Quarto 使用的底层 Markdown 方言为 <a href="https://pandoc.org/MANUAL.html#pandocs-markdown">Pandoc’s Markdown</a>．</p>
+</section>
+<section id="我要画-tikz-交换图" class="level4">
+<h4 class="anchored" data-anchor-id="我要画-tikz-交换图">我要画 TikZ / 交换图！</h4>
+<p>只输出 PDF / Beamer 只需要有 LaTeX 发行版．其它格式需要进一步安装．见安装部分．</p>
+<p>交换图使用例：</p>
+<pre class="qmd"><code>
+```{tikz}
+\begin{tikzcd}
+    B &amp;&amp; A &amp; \rightsquigarrow &amp; B &amp;&amp; A
+    \arrow[""{name=0, anchor=center, inner sep=0}, "g"{description}, from=1-3, to=1-1]
+    \arrow[""{name=1, anchor=center, inner sep=0}, "f", curve={height=-30pt}, from=1-3, to=1-1]
+    \arrow[""{name=2, anchor=center, inner sep=0}, "h"', curve={height=30pt}, from=1-3, to=1-1]
+    \arrow[""{name=3, anchor=center, inner sep=0}, "h"', curve={height=30pt}, from=1-7, to=1-5]
+    \arrow[""{name=4, anchor=center, inner sep=0}, "f", curve={height=-30pt}, from=1-7, to=1-5]
+    \arrow["\alpha"', shorten &lt;=4pt, shorten &gt;=4pt, Rightarrow, from=1, to=0]
+    \arrow["\beta"', shorten &lt;=4pt, shorten &gt;=4pt, Rightarrow, from=0, to=2]
+    \arrow["{\beta \circ_1 \alpha}"', shorten &lt;=8pt, shorten &gt;=8pt, Rightarrow, from=4, to=3]
+\end{tikzcd}
+```</code></pre>
+<p>推荐使用 <a href="https://q.uiver.app/">quiver</a> 在线编辑器生成交换图代码．</p>
+</section>
+<section id="标题应该用多少个" class="level4">
+<h4 class="anchored" data-anchor-id="标题应该用多少个">标题应该用多少个 <code>#</code>？</h4>
+<p>一般文档建议从二级标题开始编号（<a href="https://community.rstudio.com/t/why-do-default-r-markdown-quarto-templates-use-second-level-headings-instead-of-first-level-ones/162127">相关讨论</a>）；Beamer 的 <code>slide-level</code> 可自适应标题级数，但其分节固定从一级标题开始，见 Pandoc 文档．</p>
+</section>
+<section id="分页符" class="level4">
+<h4 class="anchored" data-anchor-id="分页符">分页符？</h4>
+<p><code></code>．见<a href="https://quarto.org/docs/authoring/markdown-basics.html#page-breaks">官方文档</a>．</p>
+</section>
+</section>
+<section id="输出相关" class="level3">
+<h3 class="anchored" data-anchor-id="输出相关">输出相关</h3>
+<section id="beamer-可不可以输出文稿版本-pdf" class="level4">
+<h4 class="anchored" data-anchor-id="beamer-可不可以输出文稿版本-pdf">Beamer 可不可以输出文稿版本 PDF？</h4>
+<p>理论上与文档格式兼容，可直接设置 <code>--to=pdf</code> 输出文稿版本．</p>
+</section>
+<section id="我要输出到知乎" class="level4">
+<h4 class="anchored" data-anchor-id="我要输出到知乎">我要输出到知乎！</h4>
+<p>你可以使用 GFM 格式输出，输出内容可复制至 <a href="https://markdown.com.cn/editor/">markdown.com.cn</a> 的在线编辑器转知乎格式．</p>
+</section>
+<section id="我要在线直播写文搭建在线网站" class="level4">
+<h4 class="anchored" data-anchor-id="我要在线直播写文搭建在线网站">我要在线直播写文！（搭建在线网站）</h4>
+<p>本仓库同时采用 Github Actions + Github Pages 自动生成 Demo 站点．首次使用时，在 Actions 分页中激活 Actions，在本地手动进行第一次网站发布：</p>
+<ul>
+<li>命令行内设置环境变量 <code>QUARTO_PROFILE</code> 为 <code>website</code></li>
+<li>执行 <code>quarto publish</code></li>
+<li>（清除环境变量）</li>
+</ul>
+<p>以后的每次 push 均会触发 Github Actions 自动完成的网站生成．</p>
+<p>如需自定义网站域名，请在根目录下添加 CNAME 文件，并修改 <code>_quarto-website.yml</code> 下 <code>site-url</code>．</p>
+</section>
+</section>
+<section id="样式相关" class="level3">
+<h3 class="anchored" data-anchor-id="样式相关">样式相关</h3>
+<section id="我要改字号" class="level4">
+<h4 class="anchored" data-anchor-id="我要改字号">我要改字号！</h4>
+<p>目前仅支持 PDF 字号修改．英文文档默认字号为 10pt，中文文档默认字号为 10.5pt（五号，详见 CTeX 手册）．</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">fontsize</span><span class="kw">:</span><span class="at"> 12pt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="我要-不想要目录" class="level4">
+<h4 class="anchored" data-anchor-id="我要-不想要目录">我要 / 不想要目录！</h4>
+<div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> # 开启目录</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>该设置全局 / 特定格式下均生效．</p>
+</section>
+<section id="我不想给-section-编号-我要改-section-编号格式" class="level4">
+<h4 class="anchored" data-anchor-id="我不想给-section-编号-我要改-section-编号格式">我不想给 section 编号 / 我要改 section 编号格式！</h4>
+<div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> # section 编号开关</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">number-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span><span class="co"> # section 编号深度</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>该设置全局 / 特定格式下均生效．</p>
+</section>
+<section id="我不想给定理编号-我要改定理编号格式" class="level4">
+<h4 class="anchored" data-anchor-id="我不想给定理编号-我要改定理编号格式">我不想给定理编号！/ 我要改定理编号格式！</h4>
+<p>Quarto 内置的定理编号系统无法修改，但我们提供通过 YAML 文档头自定义 PDF 格式定理编号的可能．（目前仍然无法实现完全关闭 PDF 格式中的定理编号）</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">custom-theorem</span><span class="kw">:</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">numbered-within</span><span class="kw">:</span><span class="at"> section</span><span class="co"> # 开启后将相对于 section（或 subsection, etc.）进行定理编号</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">numbered-alike</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> # 开启后不同类型的定理将共享编号</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="我要改引用格式" class="level4">
+<h4 class="anchored" data-anchor-id="我要改引用格式">我要改引用格式！</h4>
+<p>PDF / Beamer 输出使用 BibLaTeX alphabetical，HTML 输出使用 IEEE．如需修改，请自定义 <code>sun*****.cls</code> 和 <code>_format.yml</code> 和 CSL 文件．</p>
+</section>
+<section id="我要更丰富的-callout-定理包裹样式" class="level4">
+<h4 class="anchored" data-anchor-id="我要更丰富的-callout-定理包裹样式">我要更丰富的 Callout 定理包裹样式！</h4>
+<p>请移步 <a href="https://github.com/sun123zxy/quarto-callouty-theorem">sun123zxy/quarto-callouty-theorem</a> 学习配置方法．</p>
+</section>
+<section id="我要改-beamer-幻灯片的颜色" class="level4">
+<h4 class="anchored" data-anchor-id="我要改-beamer-幻灯片的颜色">我要改 Beamer 幻灯片的颜色！</h4>
+<p>支持使用 YAML 文档头自定义部分颜色．</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">beamer</span><span class="kw">:</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">custom-color</span><span class="kw">:</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">define</span><span class="kw">:</span><span class="at"> </span><span class="st">"</span><span class="sc">\\</span><span class="st">definecolor{blueblk}{HTML}{1874D0}"</span><span class="co"> # 在这里用 LaTeX 自定义颜色供后面使用</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">main</span><span class="kw">:</span><span class="at"> </span><span class="st">"green!40!black"</span><span class="co"> # 主色调</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theorem</span><span class="kw">:</span><span class="at"> </span><span class="st">"green!32!black"</span><span class="co"> # 各种定理环境颜色</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">example</span><span class="kw">:</span><span class="at"> </span><span class="st">"blueblk!50!black"</span><span class="co"> # Example / Exercise 环境颜色</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">remark</span><span class="kw">:</span><span class="at"> </span><span class="st">"white!15!black"</span><span class="co"> # Proof / Solution / Remark 环境颜色</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">link</span><span class="kw">:</span><span class="at"> </span><span class="st">"lime!85!black"</span><span class="co"> # 链接颜色</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="pdf-beamer-宏包不够用我要自己导入" class="level4">
+<h4 class="anchored" data-anchor-id="pdf-beamer-宏包不够用我要自己导入">PDF / Beamer 宏包不够用，我要自己导入！</h4>
+<div class="sourceCode" id="cb7"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">header-includes</span><span class="kw">:</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">text</span><span class="kw">:</span><span class="at"> \usepackage{euscript}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="section" class="level3">
+<h3 class="anchored" data-anchor-id="section"></h3>
+</section>
+</section>
+<section id="known-issues" class="level2">
+<h2 class="anchored" data-anchor-id="known-issues">Known Issues</h2>
+<ul>
+<li><p>见 <a href="https://github.com/quarto-dev/quarto-cli/discussions/4598">Discussion #4598</a>，Pandoc 不支持 CSL-M 导致无有效方法处理 GB/T 7714-2015 中按语言切换“等”、<code>et al</code> 省略字样的规定．</p></li>
+<li><p>通用的定理编号目前尚难以自定义，见 <a href="https://github.com/quarto-dev/quarto-cli/discussions/5479">Discussion #5479</a></p></li>
+<li><p>（need repro）HTML 子图图像拉伸问题，似乎是因为没有设置 <code>height: auto</code>．</p></li>
+<li><p>2025/04/15 定理标题中的文献引用导致 LaTeX 中出现嵌套中括号，见 <a href="https://github.com/quarto-dev/quarto-cli/issues/12584">Issue #12584</a></p></li>
+<li><p>2025/06/29 目前 RST-style list tables 的 row-span 在 PDF 格式下支持不良．</p></li>
+<li><p>2025/06/29 网站生成的 PDF 没有设置 base URL，相对链接无法正确解析．见 <a href="https://github.com/quarto-dev/quarto-cli/discussions/13000">Discussion #13000</a></p></li>
+<li><p>2025/06/30 手机端的 other formats / links 菜单不显示，这是 Quarto 那边的问题，见 <a href="https://github.com/quarto-dev/quarto-cli/issues/5961">Issue #5961</a></p></li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/sun123zxy\.github\.io\/sunquartex\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+            // default icon
+            link.classList.add("external");
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

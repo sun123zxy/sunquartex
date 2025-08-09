@@ -180,30 +180,41 @@ window.Quarto = {
         </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Examples</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index-cnart.html" class="sidebar-item-text sidebar-link">
+  <a href="./examples/cnart.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="math inline">\(\SunQuarTeX\)</span>-cnart 测试文档</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index-cnpre.pdf" class="sidebar-item-text sidebar-link">
+  <a href="./examples/cnpre.pdf" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="math inline">\(\SunQuarTeX\)</span>-cnpre 测试文档</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index-enart.html" class="sidebar-item-text sidebar-link">
+  <a href="./examples/enart.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="math inline">\(\SunQuarTeX\)</span>-enart Test</span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index-enpre.pdf" class="sidebar-item-text sidebar-link">
+  <a href="./examples/enpre.pdf" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="math inline">\(\SunQuarTeX\)</span>-enpre Test</span></a>
   </div>
 </li>
+      </ul>
+  </li>
     </ul>
     </div>
 </nav>
@@ -296,10 +307,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="使用">使用</h2>
 <p>部分示例文件包含可选支持内容，如未安装相应依赖，可删除对应内容后渲染．</p>
 <ul>
-<li><code>quarto render index-cnart.qmd</code></li>
-<li><code>quarto render index-enart.qmd</code></li>
-<li><code>quarto render index-cnpre.qmd</code></li>
-<li><code>quarto render index-enpre.qmd</code></li>
+<li><code>quarto render your_file.qmd</code></li>
 </ul>
 <p><code>--to</code> 参数可指定输出类型，包括 <code>html</code>, <code>pdf</code>， <code>beamer</code>, <code>docx</code>, <code>gfm</code>．每次渲染时应指定 <code>--to</code> 参数，或在文档头中 <code>format</code> 选项下列明输出格式．</p>
 <p>在文件头声明 <code>lang=zh</code> 或 <code>lang=en</code> 即可调整语言．</p>

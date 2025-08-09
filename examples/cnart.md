@@ -34,7 +34,7 @@ $$
 
 <div id="fig-figure">
 
-![](index-figure.png)
+![](figure.png)
 
 图 1: 这是一张插图
 
@@ -238,7 +238,7 @@ plt.show()
 
 <div id="fig-polar">
 
-![](index-cnart_files/figure-commonmark/fig-polar-output-1.png)
+![](cnart_files/figure-commonmark/fig-polar-output-1.png)
 
 图 2: A line plot on a polar axis
 
@@ -384,7 +384,7 @@ plt.show()
 
 <div id="fig-light-on-1">
 
-<img src="index-cnart_files/figure-commonmark/fig-light-on-output-1.png" data-ref-parent="fig-light-on" />
+<img src="cnart_files/figure-commonmark/fig-light-on-output-1.png" data-ref-parent="fig-light-on" />
 
 (a) 输出电流与电压关系曲线
 
@@ -396,7 +396,7 @@ plt.show()
 
 <div id="fig-light-on-2">
 
-<img src="index-cnart_files/figure-commonmark/fig-light-on-output-2.png" data-ref-parent="fig-light-on" />
+<img src="cnart_files/figure-commonmark/fig-light-on-output-2.png" data-ref-parent="fig-light-on" />
 
 (b) 输出功率与负载电阻关系曲线
 

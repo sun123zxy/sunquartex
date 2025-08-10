@@ -14,7 +14,7 @@
     "href": "examples/readme.html",
     "title": "README",
     "section": "",
-    "text": "Write once, present everywhere!基于 Quarto 的多格式输出中英文学术写作模板库\nGithub 仓库 · 网页 Demo\n推荐在网页 Demo 中阅读本 README．部分效果示例源码请参考源文件．",
+    "text": "\\(e\\kern-.0em\\lower.0ex\\hbox{\\)S\\(}\\kern-.045em\\lower.0ex\\hbox{\\)U\\(}\\kern-.045em\\hbox{\\)N\\(}\\kern-.0em\\hbox{\\)Q\\(}\\kern-.045em\\lower.0ex\\hbox{\\)U\\(}\\kern-.135em\\lower.0ex\\hbox{\\)A\\(}\\kern-.09em\\lower.0ex\\hbox{\\)R\\(}\\kern-.072em\\mathbf{\\TeX}\\)\nWrite once, present everywhere!基于 Quarto 的多格式输出中英文学术写作模板库\nGithub 仓库 · 网页 Demo\n推荐在网页 Demo 中阅读本 README．部分效果示例源码请参考源文件．",
     "crumbs": [
       "Examples",
       "README"

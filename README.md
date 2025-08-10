@@ -1,12 +1,10 @@
-<h1 align="center">SunQuarTeX</h1>
+<h1><p>$$\Huge\kern-.0em\lower.0ex\hbox{$\mathbf S$}\kern-.045em\lower.0ex\hbox{$\scriptstyle \mathbf U$}\kern-.045em\hbox{$\scriptstyle \mathbb N$}\kern-.0em\hbox{$\mathbb Q$}\kern-.045em\lower.0ex\hbox{$\scriptstyle \mathbf U$}\kern-.135em\lower.0ex\hbox{$\scriptstyle \mathbf A$}\kern-.09em\lower.0ex\hbox{$\scriptstyle \mathbb R$}\kern-.072em\mathbf{\TeX}$$</p></h1>
 <p align="center">
   Write once, present everywhere!<br/>基于 Quarto 的多格式输出中英文学术写作模板库
 </p>
 <p align="center">
   <a href="https://github.com/sun123zxy/sunquartex">Github 仓库</a> · <a href="https://sun123zxy.github.io/sunquartex">网页 Demo</a>
 </p>
-
-推荐在网页 Demo 中阅读本 README．部分效果示例源码请参考源文件．
 
 ## 核心功能
 
@@ -18,6 +16,8 @@
 - Mermaid、Graphviz 流程图绘制（Diagram）
 - Github Actions 自动生成 Demo 站点
 - ...
+
+推荐在网页 Demo 中阅读本 README．
 
 ## 基础安装
 

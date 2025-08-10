@@ -1,5 +1,5 @@
 # $\SunQuarTeX$-cnart 测试文档
-sun123zxy, 佚名
+sun123zxy, Luna
 2022-12-07
 
 ## 前言

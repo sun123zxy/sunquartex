@@ -674,8 +674,17 @@ Remark
 <p>一般文档建议从二级标题开始编号（<a href="https://community.rstudio.com/t/why-do-default-r-markdown-quarto-templates-use-second-level-headings-instead-of-first-level-ones/162127">相关讨论</a>）；Beamer 的 <code>slide-level</code> 可自适应标题级数，但其分节固定从一级标题开始，见 Pandoc 文档．</p>
 </section>
 <section id="分页符" class="level4">
-<h4 class="anchored" data-anchor-id="分页符">分页符？</h4>
+<h4 class="anchored" data-anchor-id="分页符">分页符</h4>
 <p><code></code>．见<a href="https://quarto.org/docs/authoring/markdown-basics.html#page-breaks">官方文档</a>．</p>
+</section>
+<section id="yaml-文档头里的字符串到底打不打引号" class="level4">
+<h4 class="anchored" data-anchor-id="yaml-文档头里的字符串到底打不打引号">YAML 文档头里的字符串到底打不打引号？</h4>
+<p>可打可不打．打了的话需要注意特殊字符的转义问题（如 <code>\</code>）．</p>
+</section>
+<section id="用-包裹行内公式的正确格式" class="level4">
+<h4 class="anchored" data-anchor-id="用-包裹行内公式的正确格式">用 <code>$</code> 包裹行内公式的正确格式</h4>
+<p>示例：<code>我们有 $(a + b)^2 = a^2 + 2ab + b^2$．证毕．</code></p>
+<p><code>$</code> 内侧应紧接着公式中的非空格字符，外侧与中英文字符之间应有空格，与标点符号、连字符之间不留空格．参考 <a href="https://pandoc.org/MANUAL.html#extension-tex_math_dollars">Pandoc 文档</a>．</p>
 </section>
 </section>
 <section id="输出相关" class="level3" data-number="7.3">

@@ -1,6 +1,6 @@
 # SunQuarTeX
 
-基于 Quarto 的自用中英文学术写作模板库．支持输出至 HTML、PDF/LaTeX、Beamer、GFM、MS Word、PPT 多格式输出．支持交叉引用、插图绘制、定理系统等多种功能．
+Write once, present everywhere! 基于 Quarto 的多格式输出中英文学术写作模板库．
 
 - [仓库主页](https://github.com/sun123zxy/sunquartex)
 - [网页 Demo](https://sun123zxy.github.io/sunquartex)

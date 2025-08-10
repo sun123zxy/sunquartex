@@ -244,6 +244,7 @@ window.Quarto = {
   <li><a href="#可选项" id="toc-可选项" class="nav-link" data-scroll-target="#可选项">可选项</a></li>
   </ul></li>
   <li><a href="#使用" id="toc-使用" class="nav-link" data-scroll-target="#使用">使用</a></li>
+  <li><a href="#更新" id="toc-更新" class="nav-link" data-scroll-target="#更新">更新</a></li>
   <li><a href="#qa" id="toc-qa" class="nav-link" data-scroll-target="#qa">Q&amp;A</a>
   <ul class="collapse">
   <li><a href="#一般性的" id="toc-一般性的" class="nav-link" data-scroll-target="#一般性的">一般性的</a></li>
@@ -286,6 +287,7 @@ window.Quarto = {
 <section id="安装" class="level2">
 <h2 class="anchored" data-anchor-id="安装">安装</h2>
 <p>安装方法简述如下，另可参见本仓库下的 Github Actions 配置文件．</p>
+<p>推荐创建新文章时使用 Github Template 以本仓库为模板建立新仓库．你也可以下载本仓库的压缩包或 clone 到本地．</p>
 <section id="必选项" class="level3">
 <h3 class="anchored" data-anchor-id="必选项">必选项</h3>
 <ul>
@@ -340,6 +342,17 @@ window.Quarto = {
 <p>在文件头声明 <code>lang=zh</code> 或 <code>lang=en</code> 即可调整语言．</p>
 <p>输出 PDF 时，可在渲染时使用 <code>--to=latex</code> 选项输出 <code>.tex</code> 文件．</p>
 <p>在 Beamer 中使用 TikZ 时，所在幻灯片须添加 <code>{.fragile}</code> 标记．</p>
+</section>
+<section id="更新" class="level2">
+<h2 class="anchored" data-anchor-id="更新">更新</h2>
+<p>如果您文章的仓库由 Github Template 创建，或者已经在使用 Git 版本控制，我们推荐使用类似下面的方式来更新：</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> remote add sunquartex git@github.com:sun123zxy/sunquartex.git <span class="co"># 添加 sunquartex 作为第二远程仓库</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> pull sunquartex master <span class="at">--allow-unrelated-histories</span> <span class="at">--no-commit</span> <span class="co"># 拉取并尝试合并 sunquartex 的更新</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 手动合并</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"merge updates from sunquartex"</span> <span class="co"># commit 合并</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="co"># push 到你的远程仓库</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>--allow-unrelated-histories</code> 选项只有在第一次合并时需要添加．<code>--no-commit</code> 选项用于防止自动 commit 合并．</p>
 </section>
 <section id="qa" class="level2">
 <h2 class="anchored" data-anchor-id="qa">Q&amp;A</h2>
@@ -425,29 +438,29 @@ window.Quarto = {
 <section id="我要改字号" class="level4">
 <h4 class="anchored" data-anchor-id="我要改字号">我要改字号！</h4>
 <p>目前仅支持 PDF 字号修改．英文文档默认字号为 10pt，中文文档默认字号为 10.5pt（五号，详见 CTeX 手册）．</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">fontsize</span><span class="kw">:</span><span class="at"> 12pt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">fontsize</span><span class="kw">:</span><span class="at"> 12pt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="我要-不想要目录" class="level4">
 <h4 class="anchored" data-anchor-id="我要-不想要目录">我要 / 不想要目录！</h4>
-<div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> # 开启目录</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> # 开启目录</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>该设置全局 / 特定格式下均生效．</p>
 </section>
 <section id="我不想给-section-编号-我要改-section-编号格式" class="level4">
 <h4 class="anchored" data-anchor-id="我不想给-section-编号-我要改-section-编号格式">我不想给 section 编号 / 我要改 section 编号格式！</h4>
-<div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> # section 编号开关</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">number-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span><span class="co"> # section 编号深度</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> # section 编号开关</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">number-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span><span class="co"> # section 编号深度</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>该设置全局 / 特定格式下均生效．</p>
 </section>
 <section id="我不想给定理编号-我要改定理编号格式" class="level4">
 <h4 class="anchored" data-anchor-id="我不想给定理编号-我要改定理编号格式">我不想给定理编号！/ 我要改定理编号格式！</h4>
 <p>Quarto 内置的定理编号系统无法修改，但我们提供通过 YAML 文档头自定义 PDF 格式定理编号的可能．（目前仍然无法实现完全关闭 PDF 格式中的定理编号）</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">custom-theorem</span><span class="kw">:</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">numbered-within</span><span class="kw">:</span><span class="at"> section</span><span class="co"> # 开启后将相对于 section（或 subsection, etc.）进行定理编号</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">numbered-alike</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> # 开启后不同类型的定理将共享编号</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">custom-theorem</span><span class="kw">:</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">numbered-within</span><span class="kw">:</span><span class="at"> section</span><span class="co"> # 开启后将相对于 section（或 subsection, etc.）进行定理编号</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">numbered-alike</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> # 开启后不同类型的定理将共享编号</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="我要改引用格式" class="level4">
 <h4 class="anchored" data-anchor-id="我要改引用格式">我要改引用格式！</h4>
@@ -460,22 +473,22 @@ window.Quarto = {
 <section id="我要改-beamer-幻灯片的颜色" class="level4">
 <h4 class="anchored" data-anchor-id="我要改-beamer-幻灯片的颜色">我要改 Beamer 幻灯片的颜色！</h4>
 <p>支持使用 YAML 文档头自定义部分颜色．</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">beamer</span><span class="kw">:</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">custom-color</span><span class="kw">:</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">define</span><span class="kw">:</span><span class="at"> </span><span class="st">"</span><span class="sc">\\</span><span class="st">definecolor{blueblk}{HTML}{1874D0}"</span><span class="co"> # 在这里用 LaTeX 自定义颜色供后面使用</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">main</span><span class="kw">:</span><span class="at"> </span><span class="st">"green!40!black"</span><span class="co"> # 主色调</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theorem</span><span class="kw">:</span><span class="at"> </span><span class="st">"green!32!black"</span><span class="co"> # 各种定理环境颜色</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">example</span><span class="kw">:</span><span class="at"> </span><span class="st">"blueblk!50!black"</span><span class="co"> # Example / Exercise 环境颜色</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">remark</span><span class="kw">:</span><span class="at"> </span><span class="st">"white!15!black"</span><span class="co"> # Proof / Solution / Remark 环境颜色</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">link</span><span class="kw">:</span><span class="at"> </span><span class="st">"lime!85!black"</span><span class="co"> # 链接颜色</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">beamer</span><span class="kw">:</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">custom-color</span><span class="kw">:</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">define</span><span class="kw">:</span><span class="at"> </span><span class="st">"</span><span class="sc">\\</span><span class="st">definecolor{blueblk}{HTML}{1874D0}"</span><span class="co"> # 在这里用 LaTeX 自定义颜色供后面使用</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">main</span><span class="kw">:</span><span class="at"> </span><span class="st">"green!40!black"</span><span class="co"> # 主色调</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theorem</span><span class="kw">:</span><span class="at"> </span><span class="st">"green!32!black"</span><span class="co"> # 各种定理环境颜色</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">example</span><span class="kw">:</span><span class="at"> </span><span class="st">"blueblk!50!black"</span><span class="co"> # Example / Exercise 环境颜色</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">remark</span><span class="kw">:</span><span class="at"> </span><span class="st">"white!15!black"</span><span class="co"> # Proof / Solution / Remark 环境颜色</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">link</span><span class="kw">:</span><span class="at"> </span><span class="st">"lime!85!black"</span><span class="co"> # 链接颜色</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="pdf-beamer-宏包不够用我要自己导入" class="level4">
 <h4 class="anchored" data-anchor-id="pdf-beamer-宏包不够用我要自己导入">PDF / Beamer 宏包不够用，我要自己导入！</h4>
-<div class="sourceCode" id="cb7"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">header-includes</span><span class="kw">:</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">text</span><span class="kw">:</span><span class="at"> \usepackage{euscript}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">header-includes</span><span class="kw">:</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">text</span><span class="kw">:</span><span class="at"> \usepackage{euscript}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="section" class="level3">

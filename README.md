@@ -290,9 +290,19 @@ format:
 
 一般文档建议从二级标题开始编号（[相关讨论](https://community.rstudio.com/t/why-do-default-r-markdown-quarto-templates-use-second-level-headings-instead-of-first-level-ones/162127)）；Beamer 的 `slide-level` 可自适应标题级数，但其分节固定从一级标题开始，见 Pandoc 文档．
 
-#### 分页符？
+#### 分页符
 
 `{{< pagebreak >}}`．见[官方文档](https://quarto.org/docs/authoring/markdown-basics.html#page-breaks)．
+
+#### YAML 文档头里的字符串到底打不打引号？
+
+可打可不打．打了的话需要注意特殊字符的转义问题（如 `\`）．
+
+#### 用 `$` 包裹行内公式的正确格式
+
+示例：`我们有 $(a + b)^2 = a^2 + 2ab + b^2$．证毕．`
+
+`$` 内侧应紧接着公式中的非空格字符，外侧与中英文字符之间应有空格，与标点符号、连字符之间不留空格．参考 [Pandoc 文档](https://pandoc.org/MANUAL.html#extension-tex_math_dollars)．
 
 ### 输出相关
 

@@ -181,7 +181,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../helloworld.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Hello World</span></a>
+ <span class="menu-text">你好，<span class="math inline">\(\SunQuarTeX\)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -243,7 +243,11 @@ window.Quarto = {
   <li><a href="#必选项" id="toc-必选项" class="nav-link" data-scroll-target="#必选项">必选项</a></li>
   <li><a href="#可选项" id="toc-可选项" class="nav-link" data-scroll-target="#可选项">可选项</a></li>
   </ul></li>
-  <li><a href="#使用" id="toc-使用" class="nav-link" data-scroll-target="#使用">使用</a></li>
+  <li><a href="#使用" id="toc-使用" class="nav-link" data-scroll-target="#使用">使用</a>
+  <ul class="collapse">
+  <li><a href="#渲染" id="toc-渲染" class="nav-link" data-scroll-target="#渲染">渲染</a></li>
+  <li><a href="#写作" id="toc-写作" class="nav-link" data-scroll-target="#写作">写作</a></li>
+  </ul></li>
   <li><a href="#更新" id="toc-更新" class="nav-link" data-scroll-target="#更新">更新</a></li>
   <li><a href="#qa" id="toc-qa" class="nav-link" data-scroll-target="#qa">Q&amp;A</a>
   <ul class="collapse">
@@ -286,23 +290,27 @@ window.Quarto = {
 </section>
 <section id="安装" class="level2">
 <h2 class="anchored" data-anchor-id="安装">安装</h2>
-<p>安装方法简述如下，另可参见本仓库下的 Github Actions 配置文件．</p>
-<p>推荐创建新文章时使用 Github Template 以本仓库为模板建立新仓库．你也可以下载本仓库的压缩包或 clone 到本地．</p>
+<ul>
+<li>推荐创建新文章时使用 Github Template 以本仓库为模板建立新仓库．你也可以下载本仓库的压缩包或 clone 到本地．</li>
+<li>推荐使用 VSCode IDE 并安装 Quarto 插件．</li>
+<li>纯命令行的自动化流程可参见本仓库下的 Github Actions 配置文件．</li>
+</ul>
 <section id="必选项" class="level3">
 <h3 class="anchored" data-anchor-id="必选项">必选项</h3>
 <ul>
 <li>下载并安装 <a href="https://github.com/quarto-dev/quarto-cli">quarto-cli</a>．本仓库渲染使用 Quarto 版本为 1.7.33．</li>
 </ul>
+<p>仓库根目录命令行执行 <code>quarto render helloworld.qmd --to=html</code> 测试必选项安装情况．</p>
 </section>
 <section id="可选项" class="level3">
 <h3 class="anchored" data-anchor-id="可选项">可选项</h3>
-<section id="需要使用-computation-等功能时" class="level4">
-<h4 class="anchored" data-anchor-id="需要使用-computation-等功能时">需要使用 Computation 等功能时</h4>
-<p>安装适当版本 Python 并安装 <code>pyproject.toml</code> 列明的所需模块：<code>pip install .</code></p>
-</section>
 <section id="需要输出-latex-pdf-beamer-时" class="level4">
 <h4 class="anchored" data-anchor-id="需要输出-latex-pdf-beamer-时">需要输出 LaTeX / PDF / Beamer 时</h4>
 <p>请确保已安装 Quarto 支持的 LaTeX 发行版．若无，可使用 <code>quarto install tinytex --update-path</code> 安装．</p>
+</section>
+<section id="需要使用-computation-等功能时" class="level4">
+<h4 class="anchored" data-anchor-id="需要使用-computation-等功能时">需要使用 Computation 等功能时</h4>
+<p>安装适当版本 Python 并安装 <code>pyproject.toml</code> 列明的所需模块：<code>pip install .</code></p>
 </section>
 <section id="需要使用-mermaidgraphviz-等-diagram-功能且需输出-pdf" class="level4">
 <h4 class="anchored" data-anchor-id="需要使用-mermaidgraphviz-等-diagram-功能且需输出-pdf">需要使用 Mermaid、Graphviz 等 Diagram 功能且需输出 PDF</h4>
@@ -334,14 +342,19 @@ window.Quarto = {
 </section>
 <section id="使用" class="level2">
 <h2 class="anchored" data-anchor-id="使用">使用</h2>
+<section id="渲染" class="level3">
+<h3 class="anchored" data-anchor-id="渲染">渲染</h3>
+<p>在仓库根目录命令行执行 <code>quarto render path/to/your_file.qmd --to=your_format</code>．</p>
 <ul>
-<li><code>quarto render helloworld.qmd</code></li>
+<li>使用 <code>--to</code> 参数指定输出类型，包括 <code>html</code>, <code>pdf</code>， <code>beamer</code>, <code>docx</code>, <code>gfm</code>．如果已经在文档头中 <code>format</code> 选项下列明输出格式，也可不在命令行中指定该选项．</li>
 </ul>
-<p>示例文件请在 <code>examples/</code> 目录下查看．其中可能包含可选支持内容，如未安装相应依赖，可删除对应内容后渲染．</p>
-<p><code>--to</code> 参数可指定输出类型，包括 <code>html</code>, <code>pdf</code>， <code>beamer</code>, <code>docx</code>, <code>gfm</code>．每次渲染时应指定 <code>--to</code> 参数，或在文档头中 <code>format</code> 选项下列明输出格式．</p>
-<p>在文件头声明 <code>lang=zh</code> 或 <code>lang=en</code> 即可调整语言．</p>
-<p>输出 PDF 时，可在渲染时使用 <code>--to=latex</code> 选项输出 <code>.tex</code> 文件．</p>
-<p>在 Beamer 中使用 TikZ 时，所在幻灯片须添加 <code>{.fragile}</code> 标记．</p>
+<p>示例文件请在 <code>examples/</code> 目录下查看．其中或包含可选支持内容，请安装相应依赖或删除对应内容后渲染．</p>
+</section>
+<section id="写作" class="level3">
+<h3 class="anchored" data-anchor-id="写作">写作</h3>
+<p>（重要）在文件头声明 <code>lang=zh</code> 或 <code>lang=en</code> 调整语言．该选项会影响文档的格式和渲染方式。</p>
+<p>Quarto 使用的底层 Markdown 方言为 <a href="https://pandoc.org/MANUAL.html#pandocs-markdown">Pandoc’s Markdown</a>．速成可直接参考示例文档或 <a href="https://quarto.org/docs/authoring/markdown-basics.html">Quarto</a> 官方教程．</p>
+</section>
 </section>
 <section id="更新" class="level2">
 <h2 class="anchored" data-anchor-id="更新">更新</h2>
@@ -381,13 +394,13 @@ window.Quarto = {
 </section>
 <section id="写作相关" class="level3">
 <h3 class="anchored" data-anchor-id="写作相关">写作相关</h3>
-<section id="markdown-语法" class="level4">
-<h4 class="anchored" data-anchor-id="markdown-语法">Markdown 语法？</h4>
-<p>速成可直接参考示例文档或 <a href="https://quarto.org/docs/authoring/markdown-basics.html">Quarto</a> 官方教程．Quarto 使用的底层 Markdown 方言为 <a href="https://pandoc.org/MANUAL.html#pandocs-markdown">Pandoc’s Markdown</a>．</p>
+<section id="我不要渲染好的-pdf我想要中间过程的-latex-代码" class="level4">
+<h4 class="anchored" data-anchor-id="我不要渲染好的-pdf我想要中间过程的-latex-代码">我不要渲染好的 PDF，我想要中间过程的 LaTeX 代码！</h4>
+<p>可在渲染时使用 <code>--to=latex</code> 选项输出 <code>.tex</code> 文件．</p>
 </section>
 <section id="我要画-tikz-交换图" class="level4">
 <h4 class="anchored" data-anchor-id="我要画-tikz-交换图">我要画 TikZ / 交换图！</h4>
-<p>只输出 PDF / Beamer 只需要有 LaTeX 发行版．其它格式需要进一步安装．见安装部分．</p>
+<p>如果只是输出到 PDF / Beamer，除了安装 LaTeX 发行版之外没有别的额外步骤．如还需输出至其它格式，请参考安装部分的说明．</p>
 <p>交换图使用例：</p>
 <pre class="qmd"><code>
 ```{tikz}
@@ -404,6 +417,10 @@ window.Quarto = {
 \end{tikzcd}
 ```</code></pre>
 <p>推荐使用 <a href="https://q.uiver.app/">quiver</a> 在线编辑器生成交换图代码．</p>
+</section>
+<section id="beamer-里画-tikz-交换图报错" class="level4">
+<h4 class="anchored" data-anchor-id="beamer-里画-tikz-交换图报错">Beamer 里画 TikZ 交换图报错？</h4>
+<p>在 Beamer 中使用 TikZ 时，所在幻灯片须添加 <code>{.fragile}</code> 标记．</p>
 </section>
 <section id="标题应该用多少个" class="level4">
 <h4 class="anchored" data-anchor-id="标题应该用多少个">标题应该用多少个 <code>#</code>？</h4>

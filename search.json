@@ -12,7 +12,7 @@
   {
     "objectID": "examples/readme.html",
     "href": "examples/readme.html",
-    "title": "$\\SunQuarTeX$",
+    "title": "\nSunQuarTeX\n",
     "section": "",
     "text": "SunQuarTeX\nWrite once, present everywhere!基于 Quarto 的多格式输出中英文学术写作模板库\nGithub 仓库 · 网页 Demo\n推荐在网页 Demo 中阅读本 README．部分效果示例源码请参考源文件．",
     "crumbs": [
@@ -23,7 +23,7 @@
   {
     "objectID": "examples/readme.html#核心功能",
     "href": "examples/readme.html#核心功能",
-    "title": "$\\SunQuarTeX$",
+    "title": "\nSunQuarTeX\n",
     "section": "1 核心功能",
     "text": "1 核心功能\n\n基于 Pandoc’s Markdown 的完备学术写作语法\n强大的交叉引用与定理系统功能\nHTML、PDF/LaTeX、Beamer、Github Flavored Markdown (GFM) 全格式输出；MS Word、PPT 有限支持\n嵌入 Python 代码生成数据图表（Computation）\nTikZ / tikz-cd / quiver 图表绘制\nMermaid、Graphviz 流程图绘制（Diagram）\nGithub Actions 自动生成 Demo 站点\n…",
     "crumbs": [
@@ -34,7 +34,7 @@
   {
     "objectID": "examples/readme.html#基础安装",
     "href": "examples/readme.html#基础安装",
-    "title": "$\\SunQuarTeX$",
+    "title": "\nSunQuarTeX\n",
     "section": "2 基础安装",
     "text": "2 基础安装\n\n下载并安装 quarto-cli．本仓库渲染使用 Quarto 版本为 1.7.33．\n\n（推荐）安装 VSCode IDE 并安装 Quarto 插件．\n\n创建新文章时使用 Github Template 以本仓库为模板建立新仓库．您也可以下载本仓库的压缩包或 clone 到本地．\n仓库根目录命令行执行 quarto render helloworld.qmd --to=html 测试安装情况．\n\nPDF / Beamer 输出等可选项安装和使用方法参见后文 Section 5．另外，纯命令行的自动化 CI 流程可参见本仓库下的 Github Actions 配置文件．",
     "crumbs": [
@@ -45,7 +45,7 @@
   {
     "objectID": "examples/readme.html#基础使用",
     "href": "examples/readme.html#基础使用",
-    "title": "$\\SunQuarTeX$",
+    "title": "\nSunQuarTeX\n",
     "section": "3 基础使用",
     "text": "3 基础使用\n\n3.1 渲染\n在仓库根目录命令行执行 quarto render path/to/your_file.qmd --to=your_format．\n\n使用 --to 参数指定输出类型，包括 html, pdf， beamer, docx, gfm．如果已经在文档头中 format 选项下列明输出格式，也可不在命令行中指定该选项．\n\n示例文件请在 examples/ 目录下查看．其中或包含可选支持内容，请安装相应依赖或删除对应内容后渲染．\n\n\n3.2 写作\nQuarto 使用的底层 Markdown 方言为 Pandoc’s Markdown．速成可直接参考示例文档或 Quarto 官方教程．\n文档中开头部分 --- 之间的内容称为 YAML 文档头（YAML Front Matter），用于设置文档相关元信息，也用于设置输出格式、样式等．您在自定义的过程中可能需要修改或添加它们．\n针对特定输出格式的设置请在文档头 format 下对应格式选项下设置．希望全局生效的设置（一般）可在文档头顶层设置．\n（重要）在文件头声明 lang=zh 或 lang=en 调整语言．该选项会影响文档的格式和渲染方式。",
     "crumbs": [
@@ -56,7 +56,7 @@
   {
     "objectID": "examples/readme.html#更新",
     "href": "examples/readme.html#更新",
-    "title": "$\\SunQuarTeX$",
+    "title": "\nSunQuarTeX\n",
     "section": "4 更新",
     "text": "4 更新\n如果您文章的仓库由 Github Template 创建，或者已经在使用 Git 版本控制，我们推荐使用类似下面的方式来更新：\ngit remote add sunquartex git@github.com:sun123zxy/sunquartex.git # 添加 sunquartex 作为第二远程仓库\ngit pull sunquartex master --allow-unrelated-histories --no-commit # 拉取并尝试合并 sunquartex 的更新\n# 手动处理合并冲突\ngit add .\ngit commit -m \"merge updates from sunquartex\" # commit 合并\ngit push # push 到你的远程仓库\n\n--allow-unrelated-histories 选项只有在第一次合并时需要添加．\n--no-commit 选项用于防止自动 commit 合并．本仓库更新很不稳定，建议每次合并都手动处理．",
     "crumbs": [
@@ -67,7 +67,7 @@
   {
     "objectID": "examples/readme.html#sec-optional",
     "href": "examples/readme.html#sec-optional",
-    "title": "$\\SunQuarTeX$",
+    "title": "\nSunQuarTeX\n",
     "section": "5 可选项安装与使用",
     "text": "5 可选项安装与使用\n\n5.1 LaTeX / PDF / Beamer 输出\n我们没有直接使用 Quarto 默认的 PDF 输出，而是完全重新设计了输出模板（_assets/suntemp-art.tex, _assets/suntemp-pre.tex）．大动干戈的目的有个人喜好方面的考量：Quarto 默认使用 Koma-Script 系列的 scrartcl 文档类，而我们希望在英文环境下保留 article 文档类的原汁原味，也希望在中文环境下使用 ctexart / ctexbeamer 文档类获得更好的排版格式．\n重新设计 PDF 模板，您可以参考 Quarto 的模板自定义教程．\n\n安装\n安装 Quarto 支持的 LaTeX 发行版．若无，可使用 quarto install tinytex --update-path 安装．\n\n\n使用\n正常指定 format 即可．\n\n可在渲染时使用 --to=latex 选项输出中间 .tex 文件．\n\n\n\n\n5.2 Computation 功能\n直接嵌入 Python 代码就可以动态生成数据图表．Quarto 文档\n\n安装\n\n安装适当版本 Python\n命令行 pip install . 安装 pyproject.toml 列明的所需模块\n\n\n\n使用\n使用例：\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nfig.patch.set_alpha(0)\nax.patch.set_alpha(0)\n\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\n\n\n\n\nFigure 1: A line plot on a polar axis\n\n\n\n\n\n\n\n\n5.3 Diagram 流程图（Mermaid、Graphviz 等）\nQuarto 文档\n\n安装\n非 HTML 格式下需要额外安装 Chrome 或 Chromium．\n\n若无，可使用 quarto install tool chromium 安装，见 Quarto - Diagrams # Chrome Install\n\n\n\n\n5.4 TikZ / TikZ-cd / Quiver 交换图\n该功能由 _assets/tikz.lua 实现．\n\n安装\n如果只是输出到 PDF / Beamer，除了安装 LaTeX 发行版之外没有别的额外步骤．\n如还需输出至其它格式：请确保 XeLaTeX、dvisvgm、mutool 已在 PATH 中，且已安装需要使用的 LaTeX 宏包（目前 TikZ 中使用的宏包无法在渲染过程中自动安装）．\n\n例如，使用 Quarto 自带的 TinyTeX 安装 dvisvgm：\n\n先输出一次示例 PDF 自动补全大部分所需宏包．\n手动安装 standalone 宏包：执行 tlmgr install standalone．\n执行 tlmgr install dvisvgm 和 tlmgr path add 下载 dvisvgm 并添加至 PATH．\n\n如何安装 mutool：\n\n（Linux / WSL）执行 sudo apt install mupdf-tools．\n（Windows）请自行在 MuPDF 官网下载并安装 MuPDF，并确保 mutool 在 PATH 中．\n\n\n\n\n\n\n\n\nRemark\n\n\n\n\n\n\nRemark. 关于 mutool 必要性的说明：\n\nAs of Ghostscript 10.01.0, this will no longer work due to the introduction of a new PDF interpreter. Therefore, an alternative conversion module based on mutool, a utility which is part of the MuPDF package, has been introduced. It’s automatically invoked if Ghostscript can’t be used and if a working mutool executable is present in a directory which is part of the system’s search path.\n来自 dvisvgm manual\n\n\n\n\n\n\n\n使用\n推荐使用 quiver 在线编辑器生成交换图代码．交换图使用例：\n\n\n\n\n\n\nB\nA\n⇝\nB\nA\n\n\n\ng\n\n\nf\n\n\nh\n\n\nh\n\n\nf\n\n\n\nα\n\n\n\nβ\n\n\n\nβ\n◦\n1\nα\n\n\n\n\n\n\n\n\n\nRemark\n\n\n\n\n\n\nRemark. 在 Beamer 中使用 TikZ 时，所在幻灯片须添加 {.fragile} 标记．",
     "crumbs": [
@@ -78,7 +78,7 @@
   {
     "objectID": "examples/readme.html#样式自定义",
     "href": "examples/readme.html#样式自定义",
-    "title": "$\\SunQuarTeX$",
+    "title": "\nSunQuarTeX\n",
     "section": "6 样式自定义",
     "text": "6 样式自定义\n修改 YAML 文档头可以自定义部分默认样式．\n\n6.1 我要改字号！\n目前仅支持 PDF 字号修改．英文文档默认字号为 10pt，中文文档默认字号为 10.5pt（五号，详见 CTeX 手册）．\nformat:\n  pdf:\n    fontsize: 12pt\n\n\n6.2 我要 / 不想要目录！\ntoc: true # 开启目录\n该设置全局 / 特定格式下均生效．\n\n\n6.3 我不想给 section 编号 / 我要改 section 编号格式！\nnumber-sections: true # section 编号开关\nnumber-depth: 3 # section 编号深度\n该设置全局 / 特定格式下均生效．\n\n\n6.4 我不想给定理编号！/ 我要改定理编号格式！\nQuarto 内置的定理编号系统目前无法修改（见 Quarto Discussion #5479），但我们提供自定义 PDF 格式定理编号的可能．（目前仍然无法实现完全关闭 PDF 格式中的定理编号）\nformat:\n  pdf:\n    custom-theorem:\n      numbered-within: section # 开启后将相对于 section（或 subsection, etc.）进行定理编号\n      numbered-alike: true # 开启后不同类型的定理将共享编号\n\n\n6.5 我要改引用格式！\nPDF / Beamer 输出使用 BibLaTeX alphabetical，HTML 输出使用 IEEE．如需修改，请自定义 sun*****.cls 和 _format.yml 和 CSL 文件．\n\n\n6.6 我要更丰富的 Callout 定理包裹样式！\n请移步 sun123zxy/quarto-callouty-theorem 学习配置方法．\n\n\n6.7 我要改 Beamer 幻灯片的颜色！\nformat:\n  beamer:\n    custom-color:\n    define: \"\\\\definecolor{blueblk}{HTML}{1874D0}\" # 在这里用 LaTeX 自定义颜色供后面使用\n    main: \"green!40!black\" # 主色调\n    theorem: \"green!32!black\" # 各种定理环境颜色\n    example: \"blueblk!50!black\" # Example / Exercise 环境颜色\n    remark: \"white!15!black\" # Proof / Solution / Remark 环境颜色\n    link: \"lime!85!black\" # 链接颜色\n\n\n6.8 PDF / Beamer 宏包不够用，我要自己导入！\nformat:\n  pdf:\n    header-includes:\n      text: \\usepackage{euscript}\n暂时不支持其它格式下的宏包导入．",
     "crumbs": [
@@ -89,7 +89,7 @@
   {
     "objectID": "examples/readme.html#qa",
     "href": "examples/readme.html#qa",
-    "title": "$\\SunQuarTeX$",
+    "title": "\nSunQuarTeX\n",
     "section": "7 Q&A",
     "text": "7 Q&A\n\n7.1 一般性的\n\n示例文件编译不了！\n示例文件包含了部分可选支持内容，如未安装相应依赖，请删除对应内容后渲染．\n\n\n我不懂 Computer Science，你能不能讲人话！\n请您活用 AI 工具降低学习门槛．推荐使用 VSCode 打开本仓库，使用自带的 Github Copilot，将 README 扔进对话框，提出您的具体需求并获得人话解答．\n\n\n我想要 XXX 功能！/ 我要自己魔改！\n仓库主要为自用，如能为您的生活带来便利欢迎取用．想要的功能欢迎提 Issue 或 Discussion！（虽然不保证会做 :p\n我们提供的 YAML 文档头样式只覆盖了了极小一部分功能．更深入的魔改需要您\n\n进一步学习底层软件 Quarto，魔改本仓库的默认配置\n进一步学习 Pandoc，编写 LaTeX 模板 / Lua filter\n\n有能力欢迎 Fork 和 Pull Request．\n\n\n\n7.2 写作相关\n\n标题应该用多少个 #？\n一般文档建议从二级标题开始编号（相关讨论）；Beamer 的 slide-level 可自适应标题级数，但其分节固定从一级标题开始，见 Pandoc 文档．\n\n\n分页符？\n．见官方文档．\n\n\n\n7.3 输出相关\n\n写好的 Beamer 也想输出一份文稿版本的 PDF？\n理论上与文档格式兼容，可直接设置 --to=pdf 输出文稿版本．\n\n\n我要输出到知乎！\n您可以使用 GFM 格式输出，输出内容可复制至 markdown.com.cn 的在线编辑器转知乎格式．\n\n\n我要在线直播写文！（搭建在线网站）\n本仓库同时采用 Github Actions + Github Pages 自动生成 Demo 站点．首次使用时，在 Actions 分页中激活 Actions，在本地手动进行第一次网站发布：\n\n命令行内设置环境变量 QUARTO_PROFILE 为 website\n执行 quarto publish\n（清除环境变量）\n\n以后的每次 push 均会触发 Github Actions 自动完成的网站生成．\n如需自定义网站域名，请在根目录下添加 CNAME 文件，并修改 _quarto-website.yml 下 site-url．",
     "crumbs": [

@@ -5,3 +5,8 @@ website:
   site-url: "https://sun123zxy.github.io/sunquartex/"
   sidebar:
     contents: auto
+
+format:
+  html:
+    include-in-header:
+      file: ./_website/ai.html

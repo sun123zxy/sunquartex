@@ -20,6 +20,8 @@
 
 安装方法简述如下，另可参见本仓库下的 Github Actions 配置文件．
 
+推荐创建新文章时使用 Github Template 以本仓库为模板建立新仓库．你也可以下载本仓库的压缩包或 clone 到本地．
+
 ### 必选项
 
 - 下载并安装 [quarto-cli](https://github.com/quarto-dev/quarto-cli)．本仓库渲染使用 Quarto 版本为 {{< version >}}．
@@ -72,6 +74,22 @@
 输出 PDF 时，可在渲染时使用 `--to=latex` 选项输出 `.tex` 文件．
 
 在 Beamer 中使用 TikZ 时，所在幻灯片须添加 `{.fragile}` 标记．
+
+## 更新
+
+如果您文章的仓库由 Github Template 创建，或者已经在使用 Git 版本控制，我们推荐使用类似下面的方式来更新：
+
+```sh
+git remote add sunquartex git@github.com:sun123zxy/sunquartex.git # 添加 sunquartex 作为第二远程仓库
+git pull sunquartex master --allow-unrelated-histories --no-commit # 拉取并尝试合并 sunquartex 的更新
+# 手动处理合并冲突
+git add .
+git commit -m "merge updates from sunquartex" # commit 合并
+git push # push 到你的远程仓库
+```
+
+- `--allow-unrelated-histories` 选项只有在第一次合并时需要添加．
+- `--no-commit` 选项用于防止自动 commit 合并．本仓库更新很不稳定，建议每次合并都手动处理．
 
 ## Q&A
 

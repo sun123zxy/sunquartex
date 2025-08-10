@@ -53,7 +53,7 @@ Quarto 使用的底层 Markdown 方言为 [Pandoc's Markdown](https://pandoc.org
 
 ## 更新
 
-如果您文章的仓库由 Github Template 创建，或者已经在使用 Git 版本控制，我们推荐使用类似下面的方式来更新：
+如果您文章的仓库由 Github Template 创建，或者已经在使用 Git 版本控制，我们推荐使用如下方式拉取源仓库的更新：
 
 ```sh
 git remote add sunquartex git@github.com:sun123zxy/sunquartex.git # 添加 sunquartex 作为第二远程仓库

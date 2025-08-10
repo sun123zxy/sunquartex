@@ -1,7 +1,10 @@
-Write once, present everywhere! 基于 Quarto 的多格式输出中英文学术写作模板库．
-
-- [仓库主页](https://github.com/sun123zxy/sunquartex)
-- [网页 Demo](https://sun123zxy.github.io/sunquartex)
+<h1 align="center">SunQuarTeX</h1>
+<p align="center">
+  Write once, present everywhere!<br/>基于 Quarto 的多格式输出中英文学术写作模板库
+</p>
+<p align="center">
+  <a href="https://github.com/sun123zxy/sunquartex">Github 仓库</a> · <a href="https://sun123zxy.github.io/sunquartex">网页 Demo</a>
+</p>
 
 推荐在网页 Demo 中阅读本 README．部分效果示例源码请参考源文件．
 

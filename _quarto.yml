@@ -1,5 +1,5 @@
 project:
-  title: "SunQuarTeX"
+  title: $\SunQuarTeX$
   output-dir: _output
 
 metadata-files: 

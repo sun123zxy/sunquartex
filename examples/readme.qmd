@@ -1,5 +1,5 @@
 ---
-title: " "
+title: "README"
 
 aliases: 
   - "/index.html"
@@ -7,7 +7,9 @@ aliases:
 number-sections: true
 
 format:
-  html: default
+  html:
+    include-in-header:
+      - file: ai.html
 ---
 
 {{< include ../README.md >}}

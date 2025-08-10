@@ -1,8 +1,8 @@
 ---
-title: "README"
+title: README
 
 aliases: 
-  - "/index.html"
+  - /index.html
 
 number-sections: true
 

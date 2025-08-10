@@ -238,24 +238,36 @@ window.Quarto = {
   <li><a href="#sunquartex" id="toc-sunquartex" class="nav-link active" data-scroll-target="#sunquartex">SunQuarTeX</a>
   <ul class="collapse">
   <li><a href="#核心功能" id="toc-核心功能" class="nav-link" data-scroll-target="#核心功能">核心功能</a></li>
-  <li><a href="#安装" id="toc-安装" class="nav-link" data-scroll-target="#安装">安装</a>
-  <ul class="collapse">
-  <li><a href="#必选项" id="toc-必选项" class="nav-link" data-scroll-target="#必选项">必选项</a></li>
-  <li><a href="#可选项" id="toc-可选项" class="nav-link" data-scroll-target="#可选项">可选项</a></li>
-  </ul></li>
-  <li><a href="#使用" id="toc-使用" class="nav-link" data-scroll-target="#使用">使用</a>
+  <li><a href="#基础安装" id="toc-基础安装" class="nav-link" data-scroll-target="#基础安装">基础安装</a></li>
+  <li><a href="#基础使用" id="toc-基础使用" class="nav-link" data-scroll-target="#基础使用">基础使用</a>
   <ul class="collapse">
   <li><a href="#渲染" id="toc-渲染" class="nav-link" data-scroll-target="#渲染">渲染</a></li>
   <li><a href="#写作" id="toc-写作" class="nav-link" data-scroll-target="#写作">写作</a></li>
   </ul></li>
   <li><a href="#更新" id="toc-更新" class="nav-link" data-scroll-target="#更新">更新</a></li>
+  <li><a href="#sec-optional" id="toc-sec-optional" class="nav-link" data-scroll-target="#sec-optional">可选项安装与使用</a>
+  <ul class="collapse">
+  <li><a href="#latex-pdf-beamer-输出" id="toc-latex-pdf-beamer-输出" class="nav-link" data-scroll-target="#latex-pdf-beamer-输出">LaTeX / PDF / Beamer 输出</a></li>
+  <li><a href="#computation-功能" id="toc-computation-功能" class="nav-link" data-scroll-target="#computation-功能">Computation 功能</a></li>
+  <li><a href="#pdf-格式下-diagram-功能mermaidgraphviz-等" id="toc-pdf-格式下-diagram-功能mermaidgraphviz-等" class="nav-link" data-scroll-target="#pdf-格式下-diagram-功能mermaidgraphviz-等">PDF 格式下 Diagram 功能（Mermaid、Graphviz 等）</a></li>
+  <li><a href="#tikz-tikz-cd-交换图" id="toc-tikz-tikz-cd-交换图" class="nav-link" data-scroll-target="#tikz-tikz-cd-交换图">TikZ / TikZ-cd 交换图</a></li>
+  </ul></li>
+  <li><a href="#样式自定义" id="toc-样式自定义" class="nav-link" data-scroll-target="#样式自定义">样式自定义</a>
+  <ul class="collapse">
+  <li><a href="#我要改字号" id="toc-我要改字号" class="nav-link" data-scroll-target="#我要改字号">我要改字号！</a></li>
+  <li><a href="#我要-不想要目录" id="toc-我要-不想要目录" class="nav-link" data-scroll-target="#我要-不想要目录">我要 / 不想要目录！</a></li>
+  <li><a href="#我不想给-section-编号-我要改-section-编号格式" id="toc-我不想给-section-编号-我要改-section-编号格式" class="nav-link" data-scroll-target="#我不想给-section-编号-我要改-section-编号格式">我不想给 section 编号 / 我要改 section 编号格式！</a></li>
+  <li><a href="#我不想给定理编号-我要改定理编号格式" id="toc-我不想给定理编号-我要改定理编号格式" class="nav-link" data-scroll-target="#我不想给定理编号-我要改定理编号格式">我不想给定理编号！/ 我要改定理编号格式！</a></li>
+  <li><a href="#我要改引用格式" id="toc-我要改引用格式" class="nav-link" data-scroll-target="#我要改引用格式">我要改引用格式！</a></li>
+  <li><a href="#我要更丰富的-callout-定理包裹样式" id="toc-我要更丰富的-callout-定理包裹样式" class="nav-link" data-scroll-target="#我要更丰富的-callout-定理包裹样式">我要更丰富的 Callout 定理包裹样式！</a></li>
+  <li><a href="#我要改-beamer-幻灯片的颜色" id="toc-我要改-beamer-幻灯片的颜色" class="nav-link" data-scroll-target="#我要改-beamer-幻灯片的颜色">我要改 Beamer 幻灯片的颜色！</a></li>
+  <li><a href="#pdf-beamer-宏包不够用我要自己导入" id="toc-pdf-beamer-宏包不够用我要自己导入" class="nav-link" data-scroll-target="#pdf-beamer-宏包不够用我要自己导入">PDF / Beamer 宏包不够用，我要自己导入！</a></li>
+  </ul></li>
   <li><a href="#qa" id="toc-qa" class="nav-link" data-scroll-target="#qa">Q&amp;A</a>
   <ul class="collapse">
   <li><a href="#一般性的" id="toc-一般性的" class="nav-link" data-scroll-target="#一般性的">一般性的</a></li>
   <li><a href="#写作相关" id="toc-写作相关" class="nav-link" data-scroll-target="#写作相关">写作相关</a></li>
   <li><a href="#输出相关" id="toc-输出相关" class="nav-link" data-scroll-target="#输出相关">输出相关</a></li>
-  <li><a href="#样式相关" id="toc-样式相关" class="nav-link" data-scroll-target="#样式相关">样式相关</a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
   </ul></li>
   <li><a href="#known-issues" id="toc-known-issues" class="nav-link" data-scroll-target="#known-issues">Known Issues</a></li>
   </ul></li>
@@ -275,6 +287,7 @@ window.Quarto = {
 <li><a href="https://github.com/sun123zxy/sunquartex">仓库主页</a></li>
 <li><a href="https://sun123zxy.github.io/sunquartex">网页 Demo</a></li>
 </ul>
+<p>推荐在网页 Demo 中阅读本 README．</p>
 <section id="核心功能" class="level2">
 <h2 class="anchored" data-anchor-id="核心功能">核心功能</h2>
 <ul>
@@ -288,60 +301,20 @@ window.Quarto = {
 <li>…</li>
 </ul>
 </section>
-<section id="安装" class="level2">
-<h2 class="anchored" data-anchor-id="安装">安装</h2>
+<section id="基础安装" class="level2">
+<h2 class="anchored" data-anchor-id="基础安装">基础安装</h2>
 <ul>
-<li>推荐创建新文章时使用 Github Template 以本仓库为模板建立新仓库．你也可以下载本仓库的压缩包或 clone 到本地．</li>
-<li>推荐使用 VSCode IDE 并安装 Quarto 插件．</li>
-<li>纯命令行的自动化流程可参见本仓库下的 Github Actions 配置文件．</li>
-</ul>
-<section id="必选项" class="level3">
-<h3 class="anchored" data-anchor-id="必选项">必选项</h3>
+<li><p>下载并安装 <a href="https://github.com/quarto-dev/quarto-cli">quarto-cli</a>．本仓库渲染使用 Quarto 版本为 1.7.33．</p>
 <ul>
-<li>下载并安装 <a href="https://github.com/quarto-dev/quarto-cli">quarto-cli</a>．本仓库渲染使用 Quarto 版本为 1.7.33．</li>
-</ul>
-<p>仓库根目录命令行执行 <code>quarto render helloworld.qmd --to=html</code> 测试必选项安装情况．</p>
-</section>
-<section id="可选项" class="level3">
-<h3 class="anchored" data-anchor-id="可选项">可选项</h3>
-<section id="需要输出-latex-pdf-beamer-时" class="level4">
-<h4 class="anchored" data-anchor-id="需要输出-latex-pdf-beamer-时">需要输出 LaTeX / PDF / Beamer 时</h4>
-<p>请确保已安装 Quarto 支持的 LaTeX 发行版．若无，可使用 <code>quarto install tinytex --update-path</code> 安装．</p>
-</section>
-<section id="需要使用-computation-等功能时" class="level4">
-<h4 class="anchored" data-anchor-id="需要使用-computation-等功能时">需要使用 Computation 等功能时</h4>
-<p>安装适当版本 Python 并安装 <code>pyproject.toml</code> 列明的所需模块：<code>pip install .</code></p>
-</section>
-<section id="需要使用-mermaidgraphviz-等-diagram-功能且需输出-pdf" class="level4">
-<h4 class="anchored" data-anchor-id="需要使用-mermaidgraphviz-等-diagram-功能且需输出-pdf">需要使用 Mermaid、Graphviz 等 Diagram 功能且需输出 PDF</h4>
-<p>请确保已安装 Chrome 或 Chromium．若无，可使用 <code>quarto install tool chromium</code> 安装．（参见 <a href="https://quarto.org/docs/authoring/diagrams.html#chrome-install">Quarto - Diagrams # Chrome Install</a>）</p>
-</section>
-<section id="需要在非-latex-pdf-beamer-格式下如-html输出-tikz-时" class="level4">
-<h4 class="anchored" data-anchor-id="需要在非-latex-pdf-beamer-格式下如-html输出-tikz-时">需要在非 LaTeX / PDF / Beamer 格式下（如 HTML）输出 TikZ 时</h4>
-<p>请确保 XeLaTeX、dvisvgm、mutool 已在 PATH 中，且已安装需要使用的 LaTeX 宏包（目前 TikZ 中使用的宏包无法在渲染过程中自动安装）．</p>
-<ul>
-<li><p>如使用 Quarto 自带的 TinyTeX 安装 <code>dvisvgm</code>：</p>
-<ul>
-<li>先输出一次示例 PDF 自动补全大部分所需宏包．</li>
-<li>手动安装 <code>standalone</code> 宏包：执行 <code>tlmgr install standalone</code>．</li>
-<li>执行 <code>tlmgr install dvisvgm</code> 和 <code>tlmgr path add</code> 下载 dvisvgm 并添加至 PATH．</li>
+<li>（推荐）安装 <a href="https://code.visualstudio.com/">VSCode</a> IDE 并安装 <a href="https://marketplace.visualstudio.com/items?itemName=quarto.quarto">Quarto</a> 插件．</li>
 </ul></li>
-<li><p>如何安装 <code>mutool</code>：</p>
-<ul>
-<li>（Linux / WSL）执行 <code>sudo apt install mupdf-tools</code>．</li>
-<li>（Windows）请自行在 <a href="https://mupdf.com/">MuPDF</a> 官网下载并安装 MuPDF，并确保 <code>mutool</code> 在 PATH 中．</li>
-</ul></li>
-<li><p>关于 mutool 必要性的一些说明：</p>
-<blockquote class="blockquote">
-<p>As of Ghostscript 10.01.0, this will no longer work due to the introduction of a new PDF interpreter. Therefore, an alternative conversion module based on mutool, a utility which is part of the MuPDF package, has been introduced. It’s automatically invoked if Ghostscript can’t be used and if a working mutool executable is present in a directory which is part of the system’s search path.</p>
-<p>来自 <a href="https://dvisvgm.de/Manpage/">dvisvgm manual</a></p>
-</blockquote></li>
+<li><p>创建新文章时使用 Github Template 以本仓库为模板建立新仓库．你也可以下载本仓库的压缩包或 clone 到本地．</p></li>
+<li><p>仓库根目录命令行执行 <code>quarto render helloworld.qmd --to=html</code> 测试安装情况．</p></li>
 </ul>
+<p>PDF / Beamer 输出等可选项安装和使用方法参见后文 <a href="#sec-optional" class="quarto-xref">Section&nbsp;1.5</a>．另外，纯命令行的自动化 CI 流程可参见本仓库下的 Github Actions 配置文件．</p>
 </section>
-</section>
-</section>
-<section id="使用" class="level2">
-<h2 class="anchored" data-anchor-id="使用">使用</h2>
+<section id="基础使用" class="level2">
+<h2 class="anchored" data-anchor-id="基础使用">基础使用</h2>
 <section id="渲染" class="level3">
 <h3 class="anchored" data-anchor-id="渲染">渲染</h3>
 <p>在仓库根目录命令行执行 <code>quarto render path/to/your_file.qmd --to=your_format</code>．</p>
@@ -352,8 +325,10 @@ window.Quarto = {
 </section>
 <section id="写作" class="level3">
 <h3 class="anchored" data-anchor-id="写作">写作</h3>
-<p>（重要）在文件头声明 <code>lang=zh</code> 或 <code>lang=en</code> 调整语言．该选项会影响文档的格式和渲染方式。</p>
 <p>Quarto 使用的底层 Markdown 方言为 <a href="https://pandoc.org/MANUAL.html#pandocs-markdown">Pandoc’s Markdown</a>．速成可直接参考示例文档或 <a href="https://quarto.org/docs/authoring/markdown-basics.html">Quarto</a> 官方教程．</p>
+<p>文档中开头部分 <code>---</code> 之间的内容称为 YAML 文档头（YAML Front Matter），用于设置文档相关元信息，也用于设置输出格式、样式等．您在自定义的过程中可能需要修改或添加它们．</p>
+<p>针对特定输出格式的设置请在文档头 <code>format</code> 下对应格式选项下设置．希望全局生效的设置（一般）可在文档头顶层设置．</p>
+<p>（重要）在文件头声明 <code>lang=zh</code> 或 <code>lang=en</code> 调整语言．该选项会影响文档的格式和渲染方式。</p>
 </section>
 </section>
 <section id="更新" class="level2">
@@ -370,38 +345,87 @@ window.Quarto = {
 <li><code>--no-commit</code> 选项用于防止自动 commit 合并．本仓库更新很不稳定，建议每次合并都手动处理．</li>
 </ul>
 </section>
-<section id="qa" class="level2">
-<h2 class="anchored" data-anchor-id="qa">Q&amp;A</h2>
-<section id="一般性的" class="level3">
-<h3 class="anchored" data-anchor-id="一般性的">一般性的</h3>
-<section id="示例文件编译不了" class="level4">
-<h4 class="anchored" data-anchor-id="示例文件编译不了">示例文件编译不了！</h4>
-<p>示例文件包含了部分可选支持内容，如未安装相应依赖，请删除对应内容后渲染．</p>
+<section id="sec-optional" class="level2">
+<h2 class="anchored" data-anchor-id="sec-optional">可选项安装与使用</h2>
+<section id="latex-pdf-beamer-输出" class="level3">
+<h3 class="anchored" data-anchor-id="latex-pdf-beamer-输出">LaTeX / PDF / Beamer 输出</h3>
+<section id="安装" class="level4">
+<h4 class="anchored" data-anchor-id="安装">安装</h4>
+<p>安装 Quarto 支持的 LaTeX 发行版．若无，可使用 <code>quarto install tinytex --update-path</code> 安装．</p>
 </section>
-<section id="我不懂-computer-science你能不能讲人话" class="level4">
-<h4 class="anchored" data-anchor-id="我不懂-computer-science你能不能讲人话">我不懂 Computer Science，你能不能讲人话！</h4>
-<p>请您活用 AI 工具降低学习门槛．推荐使用 VSCode 打开本仓库，使用自带的 Github Copilot，将 README 扔进对话框，提出您的具体需求并获得人话解答．</p>
-</section>
-<section id="yaml-文档头是什么怎么用" class="level4">
-<h4 class="anchored" data-anchor-id="yaml-文档头是什么怎么用">YAML 文档头是什么？怎么用？</h4>
-<p>示例文档中开头部分 <code>---</code> 之间的内容称为 YAML 文档头（YAML Front Matter），用于设置文档相关元信息，也用于设置输出格式、样式等．您在自定义的过程中可能需要修改或添加它们．</p>
-<p>针对特定输出格式的设置请在文档头 <code>format</code> 下对应格式选项下设置．希望全局生效的设置（一般）可在文档头顶层设置．</p>
-</section>
-<section id="我想要-xxx-功能-我要自己魔改" class="level4">
-<h4 class="anchored" data-anchor-id="我想要-xxx-功能-我要自己魔改">我想要 XXX 功能！/ 我要自己魔改！</h4>
-<p>仓库主要为自用，如能为你的生活带来便利欢迎取用．想要的功能欢迎提 Issue 或 Discussion，会考虑但不保证会做．有能力欢迎 Fork 魔改和 Pull Request．欢迎学习底层软件 Quarto．</p>
+<section id="使用" class="level4">
+<h4 class="anchored" data-anchor-id="使用">使用</h4>
+<p>Trivial.</p>
+<ul>
+<li>可在渲染时使用 <code>--to=latex</code> 选项输出中间 <code>.tex</code> 文件．</li>
+</ul>
 </section>
 </section>
-<section id="写作相关" class="level3">
-<h3 class="anchored" data-anchor-id="写作相关">写作相关</h3>
-<section id="我不要渲染好的-pdf我想要中间过程的-latex-代码" class="level4">
-<h4 class="anchored" data-anchor-id="我不要渲染好的-pdf我想要中间过程的-latex-代码">我不要渲染好的 PDF，我想要中间过程的 LaTeX 代码！</h4>
-<p>可在渲染时使用 <code>--to=latex</code> 选项输出 <code>.tex</code> 文件．</p>
+<section id="computation-功能" class="level3">
+<h3 class="anchored" data-anchor-id="computation-功能">Computation 功能</h3>
+<section id="安装-1" class="level4">
+<h4 class="anchored" data-anchor-id="安装-1">安装</h4>
+<ul>
+<li>安装适当版本 Python</li>
+<li>命令行 <code>pip install .</code> 安装 <code>pyproject.toml</code> 列明的所需模块</li>
+</ul>
 </section>
-<section id="我要画-tikz-交换图" class="level4">
-<h4 class="anchored" data-anchor-id="我要画-tikz-交换图">我要画 TikZ / 交换图！</h4>
-<p>如果只是输出到 PDF / Beamer，除了安装 LaTeX 发行版之外没有别的额外步骤．如还需输出至其它格式，请参考安装部分的说明．</p>
-<p>交换图使用例：</p>
+</section>
+<section id="pdf-格式下-diagram-功能mermaidgraphviz-等" class="level3">
+<h3 class="anchored" data-anchor-id="pdf-格式下-diagram-功能mermaidgraphviz-等">PDF 格式下 Diagram 功能（Mermaid、Graphviz 等）</h3>
+<section id="安装-2" class="level4">
+<h4 class="anchored" data-anchor-id="安装-2">安装</h4>
+<p>请确保已安装 Chrome 或 Chromium．</p>
+<ul>
+<li>若无，可使用 <code>quarto install tool chromium</code> 安装，见 <a href="https://quarto.org/docs/authoring/diagrams.html#chrome-install">Quarto - Diagrams # Chrome Install</a></li>
+</ul>
+</section>
+</section>
+<section id="tikz-tikz-cd-交换图" class="level3">
+<h3 class="anchored" data-anchor-id="tikz-tikz-cd-交换图">TikZ / TikZ-cd 交换图</h3>
+<section id="安装-3" class="level4">
+<h4 class="anchored" data-anchor-id="安装-3">安装</h4>
+<p>如果只是输出到 PDF / Beamer，除了安装 LaTeX 发行版之外没有别的额外步骤．</p>
+<p>如还需输出至其它格式：请确保 XeLaTeX、dvisvgm、mutool 已在 PATH 中，且已安装需要使用的 LaTeX 宏包（目前 TikZ 中使用的宏包无法在渲染过程中自动安装）．</p>
+<ul>
+<li><p>例如，使用 Quarto 自带的 TinyTeX 安装 <code>dvisvgm</code>：</p>
+<ul>
+<li>先输出一次示例 PDF 自动补全大部分所需宏包．</li>
+<li>手动安装 <code>standalone</code> 宏包：执行 <code>tlmgr install standalone</code>．</li>
+<li>执行 <code>tlmgr install dvisvgm</code> 和 <code>tlmgr path add</code> 下载 dvisvgm 并添加至 PATH．</li>
+</ul></li>
+<li><p>如何安装 <code>mutool</code>：</p>
+<ul>
+<li>（Linux / WSL）执行 <code>sudo apt install mupdf-tools</code>．</li>
+<li>（Windows）请自行在 <a href="https://mupdf.com/">MuPDF</a> 官网下载并安装 MuPDF，并确保 <code>mutool</code> 在 PATH 中．</li>
+</ul></li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Remark (关于 mutool 必要性的说明)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="proof remark">
+<p><span class="proof-title"><em>Remark</em> (关于 mutool 必要性的说明). </span></p>
+<blockquote class="blockquote">
+<p>As of Ghostscript 10.01.0, this will no longer work due to the introduction of a new PDF interpreter. Therefore, an alternative conversion module based on mutool, a utility which is part of the MuPDF package, has been introduced. It’s automatically invoked if Ghostscript can’t be used and if a working mutool executable is present in a directory which is part of the system’s search path.</p>
+<p>来自 <a href="https://dvisvgm.de/Manpage/">dvisvgm manual</a></p>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="使用-1" class="level4">
+<h4 class="anchored" data-anchor-id="使用-1">使用</h4>
+<p>推荐使用 <a href="https://q.uiver.app/">quiver</a> 在线编辑器生成交换图代码．交换图使用例：</p>
 <pre class="qmd"><code>
 ```{tikz}
 \begin{tikzcd}
@@ -416,12 +440,111 @@ window.Quarto = {
     \arrow["{\beta \circ_1 \alpha}"', shorten &lt;=8pt, shorten &gt;=8pt, Rightarrow, from=4, to=3]
 \end{tikzcd}
 ```</code></pre>
-<p>推荐使用 <a href="https://q.uiver.app/">quiver</a> 在线编辑器生成交换图代码．</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Remark
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="proof remark">
+<p><span class="proof-title"><em>Remark</em>. </span>在 Beamer 中使用 TikZ 时，所在幻灯片须添加 <code>{.fragile}</code> 标记．</p>
+</div>
+</div>
+</div>
+</div>
 </section>
-<section id="beamer-里画-tikz-交换图报错" class="level4">
-<h4 class="anchored" data-anchor-id="beamer-里画-tikz-交换图报错">Beamer 里画 TikZ 交换图报错？</h4>
-<p>在 Beamer 中使用 TikZ 时，所在幻灯片须添加 <code>{.fragile}</code> 标记．</p>
 </section>
+</section>
+<section id="样式自定义" class="level2">
+<h2 class="anchored" data-anchor-id="样式自定义">样式自定义</h2>
+<p>通过更改 YAML 文档头可以自定义部分样式．</p>
+<section id="我要改字号" class="level3">
+<h3 class="anchored" data-anchor-id="我要改字号">我要改字号！</h3>
+<p>目前仅支持 PDF 字号修改．英文文档默认字号为 10pt，中文文档默认字号为 10.5pt（五号，详见 CTeX 手册）．</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">fontsize</span><span class="kw">:</span><span class="at"> 12pt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="我要-不想要目录" class="level3">
+<h3 class="anchored" data-anchor-id="我要-不想要目录">我要 / 不想要目录！</h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> # 开启目录</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>该设置全局 / 特定格式下均生效．</p>
+</section>
+<section id="我不想给-section-编号-我要改-section-编号格式" class="level3">
+<h3 class="anchored" data-anchor-id="我不想给-section-编号-我要改-section-编号格式">我不想给 section 编号 / 我要改 section 编号格式！</h3>
+<div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> # section 编号开关</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">number-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span><span class="co"> # section 编号深度</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>该设置全局 / 特定格式下均生效．</p>
+</section>
+<section id="我不想给定理编号-我要改定理编号格式" class="level3">
+<h3 class="anchored" data-anchor-id="我不想给定理编号-我要改定理编号格式">我不想给定理编号！/ 我要改定理编号格式！</h3>
+<p>Quarto 内置的定理编号系统无法修改，但我们提供自定义 PDF 格式定理编号的可能．（目前仍然无法实现完全关闭 PDF 格式中的定理编号）</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">custom-theorem</span><span class="kw">:</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">numbered-within</span><span class="kw">:</span><span class="at"> section</span><span class="co"> # 开启后将相对于 section（或 subsection, etc.）进行定理编号</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">numbered-alike</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> # 开启后不同类型的定理将共享编号</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="我要改引用格式" class="level3">
+<h3 class="anchored" data-anchor-id="我要改引用格式">我要改引用格式！</h3>
+<p>PDF / Beamer 输出使用 BibLaTeX alphabetical，HTML 输出使用 IEEE．如需修改，请自定义 <code>sun*****.cls</code> 和 <code>_format.yml</code> 和 CSL 文件．</p>
+</section>
+<section id="我要更丰富的-callout-定理包裹样式" class="level3">
+<h3 class="anchored" data-anchor-id="我要更丰富的-callout-定理包裹样式">我要更丰富的 Callout 定理包裹样式！</h3>
+<p>请移步 <a href="https://github.com/sun123zxy/quarto-callouty-theorem">sun123zxy/quarto-callouty-theorem</a> 学习配置方法．</p>
+</section>
+<section id="我要改-beamer-幻灯片的颜色" class="level3">
+<h3 class="anchored" data-anchor-id="我要改-beamer-幻灯片的颜色">我要改 Beamer 幻灯片的颜色！</h3>
+<div class="sourceCode" id="cb7"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">beamer</span><span class="kw">:</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">custom-color</span><span class="kw">:</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">define</span><span class="kw">:</span><span class="at"> </span><span class="st">"</span><span class="sc">\\</span><span class="st">definecolor{blueblk}{HTML}{1874D0}"</span><span class="co"> # 在这里用 LaTeX 自定义颜色供后面使用</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">main</span><span class="kw">:</span><span class="at"> </span><span class="st">"green!40!black"</span><span class="co"> # 主色调</span></span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theorem</span><span class="kw">:</span><span class="at"> </span><span class="st">"green!32!black"</span><span class="co"> # 各种定理环境颜色</span></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">example</span><span class="kw">:</span><span class="at"> </span><span class="st">"blueblk!50!black"</span><span class="co"> # Example / Exercise 环境颜色</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">remark</span><span class="kw">:</span><span class="at"> </span><span class="st">"white!15!black"</span><span class="co"> # Proof / Solution / Remark 环境颜色</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">link</span><span class="kw">:</span><span class="at"> </span><span class="st">"lime!85!black"</span><span class="co"> # 链接颜色</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="pdf-beamer-宏包不够用我要自己导入" class="level3">
+<h3 class="anchored" data-anchor-id="pdf-beamer-宏包不够用我要自己导入">PDF / Beamer 宏包不够用，我要自己导入！</h3>
+<div class="sourceCode" id="cb8"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">header-includes</span><span class="kw">:</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">text</span><span class="kw">:</span><span class="at"> \usepackage{euscript}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>暂时不支持其它格式下的宏包导入．</p>
+</section>
+</section>
+<section id="qa" class="level2">
+<h2 class="anchored" data-anchor-id="qa">Q&amp;A</h2>
+<section id="一般性的" class="level3">
+<h3 class="anchored" data-anchor-id="一般性的">一般性的</h3>
+<section id="示例文件编译不了" class="level4">
+<h4 class="anchored" data-anchor-id="示例文件编译不了">示例文件编译不了！</h4>
+<p>示例文件包含了部分可选支持内容，如未安装相应依赖，请删除对应内容后渲染．</p>
+</section>
+<section id="我不懂-computer-science你能不能讲人话" class="level4">
+<h4 class="anchored" data-anchor-id="我不懂-computer-science你能不能讲人话">我不懂 Computer Science，你能不能讲人话！</h4>
+<p>请您活用 AI 工具降低学习门槛．推荐使用 VSCode 打开本仓库，使用自带的 Github Copilot，将 README 扔进对话框，提出您的具体需求并获得人话解答．</p>
+</section>
+<section id="我想要-xxx-功能-我要自己魔改" class="level4">
+<h4 class="anchored" data-anchor-id="我想要-xxx-功能-我要自己魔改">我想要 XXX 功能！/ 我要自己魔改！</h4>
+<p>仓库主要为自用，如能为你的生活带来便利欢迎取用．想要的功能欢迎提 Issue 或 Discussion！（虽然不保证会做 :p</p>
+<p>我们提供的 YAML 文档头样式只覆盖了了极小一部分功能．更深入的魔改需要您</p>
+<ul>
+<li>进一步学习底层软件 Quarto，魔改本仓库的默认配置</li>
+<li>进一步学习 Pandoc，编写 LaTeX 模板 / Lua filter</li>
+</ul>
+<p>有能力欢迎 Fork 和 Pull Request．</p>
+</section>
+</section>
+<section id="写作相关" class="level3">
+<h3 class="anchored" data-anchor-id="写作相关">写作相关</h3>
 <section id="标题应该用多少个" class="level4">
 <h4 class="anchored" data-anchor-id="标题应该用多少个">标题应该用多少个 <code>#</code>？</h4>
 <p>一般文档建议从二级标题开始编号（<a href="https://community.rstudio.com/t/why-do-default-r-markdown-quarto-templates-use-second-level-headings-instead-of-first-level-ones/162127">相关讨论</a>）；Beamer 的 <code>slide-level</code> 可自适应标题级数，但其分节固定从一级标题开始，见 Pandoc 文档．</p>
@@ -433,8 +556,8 @@ window.Quarto = {
 </section>
 <section id="输出相关" class="level3">
 <h3 class="anchored" data-anchor-id="输出相关">输出相关</h3>
-<section id="beamer-可不可以输出文稿版本-pdf" class="level4">
-<h4 class="anchored" data-anchor-id="beamer-可不可以输出文稿版本-pdf">Beamer 可不可以输出文稿版本 PDF？</h4>
+<section id="写好的-beamer-可不可以也输出一份文稿版本的-pdf" class="level4">
+<h4 class="anchored" data-anchor-id="写好的-beamer-可不可以也输出一份文稿版本的-pdf">写好的 Beamer 可不可以也输出一份文稿版本的 PDF？</h4>
 <p>理论上与文档格式兼容，可直接设置 <code>--to=pdf</code> 输出文稿版本．</p>
 </section>
 <section id="我要输出到知乎" class="level4">
@@ -452,67 +575,6 @@ window.Quarto = {
 <p>以后的每次 push 均会触发 Github Actions 自动完成的网站生成．</p>
 <p>如需自定义网站域名，请在根目录下添加 CNAME 文件，并修改 <code>_quarto-website.yml</code> 下 <code>site-url</code>．</p>
 </section>
-</section>
-<section id="样式相关" class="level3">
-<h3 class="anchored" data-anchor-id="样式相关">样式相关</h3>
-<section id="我要改字号" class="level4">
-<h4 class="anchored" data-anchor-id="我要改字号">我要改字号！</h4>
-<p>目前仅支持 PDF 字号修改．英文文档默认字号为 10pt，中文文档默认字号为 10.5pt（五号，详见 CTeX 手册）．</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">fontsize</span><span class="kw">:</span><span class="at"> 12pt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="我要-不想要目录" class="level4">
-<h4 class="anchored" data-anchor-id="我要-不想要目录">我要 / 不想要目录！</h4>
-<div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> # 开启目录</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>该设置全局 / 特定格式下均生效．</p>
-</section>
-<section id="我不想给-section-编号-我要改-section-编号格式" class="level4">
-<h4 class="anchored" data-anchor-id="我不想给-section-编号-我要改-section-编号格式">我不想给 section 编号 / 我要改 section 编号格式！</h4>
-<div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> # section 编号开关</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">number-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span><span class="co"> # section 编号深度</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>该设置全局 / 特定格式下均生效．</p>
-</section>
-<section id="我不想给定理编号-我要改定理编号格式" class="level4">
-<h4 class="anchored" data-anchor-id="我不想给定理编号-我要改定理编号格式">我不想给定理编号！/ 我要改定理编号格式！</h4>
-<p>Quarto 内置的定理编号系统无法修改，但我们提供通过 YAML 文档头自定义 PDF 格式定理编号的可能．（目前仍然无法实现完全关闭 PDF 格式中的定理编号）</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">custom-theorem</span><span class="kw">:</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">numbered-within</span><span class="kw">:</span><span class="at"> section</span><span class="co"> # 开启后将相对于 section（或 subsection, etc.）进行定理编号</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">numbered-alike</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> # 开启后不同类型的定理将共享编号</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="我要改引用格式" class="level4">
-<h4 class="anchored" data-anchor-id="我要改引用格式">我要改引用格式！</h4>
-<p>PDF / Beamer 输出使用 BibLaTeX alphabetical，HTML 输出使用 IEEE．如需修改，请自定义 <code>sun*****.cls</code> 和 <code>_format.yml</code> 和 CSL 文件．</p>
-</section>
-<section id="我要更丰富的-callout-定理包裹样式" class="level4">
-<h4 class="anchored" data-anchor-id="我要更丰富的-callout-定理包裹样式">我要更丰富的 Callout 定理包裹样式！</h4>
-<p>请移步 <a href="https://github.com/sun123zxy/quarto-callouty-theorem">sun123zxy/quarto-callouty-theorem</a> 学习配置方法．</p>
-</section>
-<section id="我要改-beamer-幻灯片的颜色" class="level4">
-<h4 class="anchored" data-anchor-id="我要改-beamer-幻灯片的颜色">我要改 Beamer 幻灯片的颜色！</h4>
-<p>支持使用 YAML 文档头自定义部分颜色．</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">beamer</span><span class="kw">:</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">custom-color</span><span class="kw">:</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">define</span><span class="kw">:</span><span class="at"> </span><span class="st">"</span><span class="sc">\\</span><span class="st">definecolor{blueblk}{HTML}{1874D0}"</span><span class="co"> # 在这里用 LaTeX 自定义颜色供后面使用</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">main</span><span class="kw">:</span><span class="at"> </span><span class="st">"green!40!black"</span><span class="co"> # 主色调</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">theorem</span><span class="kw">:</span><span class="at"> </span><span class="st">"green!32!black"</span><span class="co"> # 各种定理环境颜色</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">example</span><span class="kw">:</span><span class="at"> </span><span class="st">"blueblk!50!black"</span><span class="co"> # Example / Exercise 环境颜色</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">remark</span><span class="kw">:</span><span class="at"> </span><span class="st">"white!15!black"</span><span class="co"> # Proof / Solution / Remark 环境颜色</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">link</span><span class="kw">:</span><span class="at"> </span><span class="st">"lime!85!black"</span><span class="co"> # 链接颜色</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="pdf-beamer-宏包不够用我要自己导入" class="level4">
-<h4 class="anchored" data-anchor-id="pdf-beamer-宏包不够用我要自己导入">PDF / Beamer 宏包不够用，我要自己导入！</h4>
-<div class="sourceCode" id="cb8"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">header-includes</span><span class="kw">:</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">text</span><span class="kw">:</span><span class="at"> \usepackage{euscript}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-</section>
-<section id="section" class="level3">
-<h3 class="anchored" data-anchor-id="section"></h3>
 </section>
 </section>
 <section id="known-issues" class="level2">

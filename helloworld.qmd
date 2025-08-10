@@ -1,7 +1,16 @@
 ---
-title: "Hello World"
+title: 你好，$\SunQuarTeX$
+subtitle: 这是副标题
+date: 2025/08/10
+author: sun123zxy
+lang: zh
+
 format:
   html: default
+  pdf: default
+  docx: default
+  gfm: default
+  pptx: default
 ---
 
-Hello, $\SunQuarTeX$!
+你好，$\SunQuarTeX$!

@@ -18,23 +18,25 @@ Write once, present everywhere! 基于 Quarto 的多格式输出中英文学术�
 
 ## 安装
 
-安装方法简述如下，另可参见本仓库下的 Github Actions 配置文件．
-
-推荐创建新文章时使用 Github Template 以本仓库为模板建立新仓库．你也可以下载本仓库的压缩包或 clone 到本地．
+- 推荐创建新文章时使用 Github Template 以本仓库为模板建立新仓库．你也可以下载本仓库的压缩包或 clone 到本地．
+- 推荐使用 VSCode IDE 并安装 Quarto 插件．
+- 纯命令行的自动化流程可参见本仓库下的 Github Actions 配置文件．
 
 ### 必选项
 
 - 下载并安装 [quarto-cli](https://github.com/quarto-dev/quarto-cli)．本仓库渲染使用 Quarto 版本为 {{< version >}}．
 
+仓库根目录命令行执行 `quarto render helloworld.qmd --to=html` 测试必选项安装情况．
+
 ### 可选项
-
-#### 需要使用 Computation 等功能时
-
-安装适当版本 Python 并安装 `pyproject.toml` 列明的所需模块：`pip install .`
 
 #### 需要输出 LaTeX / PDF / Beamer 时
 
 请确保已安装 Quarto 支持的 LaTeX 发行版．若无，可使用 `quarto install tinytex --update-path` 安装．
+
+#### 需要使用 Computation 等功能时
+
+安装适当版本 Python 并安装 `pyproject.toml` 列明的所需模块：`pip install .`
 
 #### 需要使用 Mermaid、Graphviz 等 Diagram 功能且需输出 PDF
 
@@ -63,17 +65,19 @@ Write once, present everywhere! 基于 Quarto 的多格式输出中英文学术�
 
 ## 使用
 
-- `quarto render helloworld.qmd`
+### 渲染
 
-示例文件请在 `examples/` 目录下查看．其中可能包含可选支持内容，如未安装相应依赖，可删除对应内容后渲染．
+在仓库根目录命令行执行 `quarto render path/to/your_file.qmd --to=your_format`．
 
-`--to` 参数可指定输出类型，包括 `html`, `pdf`， `beamer`, `docx`, `gfm`．每次渲染时应指定 `--to` 参数，或在文档头中 `format` 选项下列明输出格式．
+- 使用 `--to` 参数指定输出类型，包括 `html`, `pdf`， `beamer`, `docx`, `gfm`．如果已经在文档头中 `format` 选项下列明输出格式，也可不在命令行中指定该选项．
 
-在文件头声明 `lang=zh` 或 `lang=en` 即可调整语言．
+示例文件请在 `examples/` 目录下查看．其中或包含可选支持内容，请安装相应依赖或删除对应内容后渲染．
 
-输出 PDF 时，可在渲染时使用 `--to=latex` 选项输出 `.tex` 文件．
+### 写作
 
-在 Beamer 中使用 TikZ 时，所在幻灯片须添加 `{.fragile}` 标记．
+（重要）在文件头声明 `lang=zh` 或 `lang=en` 调整语言．该选项会影响文档的格式和渲染方式。
+
+Quarto 使用的底层 Markdown 方言为 [Pandoc's Markdown](https://pandoc.org/MANUAL.html#pandocs-markdown)．速成可直接参考示例文档或 [Quarto](https://quarto.org/docs/authoring/markdown-basics.html) 官方教程．
 
 ## 更新
 
@@ -115,13 +119,13 @@ git push # push 到你的远程仓库
 
 ### 写作相关
 
-#### Markdown 语法？
+#### 我不要渲染好的 PDF，我想要中间过程的 LaTeX 代码！
 
-速成可直接参考示例文档或 [Quarto](https://quarto.org/docs/authoring/markdown-basics.html) 官方教程．Quarto 使用的底层 Markdown 方言为 [Pandoc's Markdown](https://pandoc.org/MANUAL.html#pandocs-markdown)．
+可在渲染时使用 `--to=latex` 选项输出 `.tex` 文件．
 
 #### 我要画 TikZ / 交换图！
 
-只输出 PDF / Beamer 只需要有 LaTeX 发行版．其它格式需要进一步安装．见安装部分．
+如果只是输出到 PDF / Beamer，除了安装 LaTeX 发行版之外没有别的额外步骤．如还需输出至其它格式，请参考安装部分的说明．
 
 交换图使用例：
 
@@ -143,6 +147,10 @@ git push # push 到你的远程仓库
 `````
 
 推荐使用 [quiver](https://q.uiver.app/) 在线编辑器生成交换图代码．
+
+#### Beamer 里画 TikZ 交换图报错？
+
+在 Beamer 中使用 TikZ 时，所在幻灯片须添加 `{.fragile}` 标记．
 
 #### 标题应该用多少个 `#`？
 

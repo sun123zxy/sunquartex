@@ -58,7 +58,7 @@
     "href": "examples/readme.html#更新",
     "title": "\nSunQuarTeX\n",
     "section": "4 更新",
-    "text": "4 更新\n如果您文章的仓库由 Github Template 创建，或者已经在使用 Git 版本控制，我们推荐使用类似下面的方式来更新：\ngit remote add sunquartex git@github.com:sun123zxy/sunquartex.git # 添加 sunquartex 作为第二远程仓库\ngit pull sunquartex master --allow-unrelated-histories --no-commit # 拉取并尝试合并 sunquartex 的更新\n# 手动处理合并冲突\ngit add .\ngit commit -m \"merge updates from sunquartex\" # commit 合并\ngit push # push 到你的远程仓库\n\n--allow-unrelated-histories 选项只有在第一次合并时需要添加．\n--no-commit 选项用于防止自动 commit 合并．本仓库更新很不稳定，建议每次合并都手动处理．",
+    "text": "4 更新\n如果您文章的仓库由 Github Template 创建，或者已经在使用 Git 版本控制，我们推荐使用如下方式拉取源仓库的更新：\ngit remote add sunquartex git@github.com:sun123zxy/sunquartex.git # 添加 sunquartex 作为第二远程仓库\ngit pull sunquartex master --allow-unrelated-histories --no-commit # 拉取并尝试合并 sunquartex 的更新\n# 手动处理合并冲突\ngit add .\ngit commit -m \"merge updates from sunquartex\" # commit 合并\ngit push # push 到你的远程仓库\n\n--allow-unrelated-histories 选项只有在第一次合并时需要添加．\n--no-commit 选项用于防止自动 commit 合并．本仓库更新很不稳定，建议每次合并都手动处理．",
     "crumbs": [
       "Examples",
       "Readme"

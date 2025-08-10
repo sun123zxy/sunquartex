@@ -1,11 +1,9 @@
-# SunQuarTeX
-
 Write once, present everywhere! 基于 Quarto 的多格式输出中英文学术写作模板库．
 
 - [仓库主页](https://github.com/sun123zxy/sunquartex)
 - [网页 Demo](https://sun123zxy.github.io/sunquartex)
 
-推荐在网页 Demo 中阅读本 README．
+推荐在网页 Demo 中阅读本 README．部分效果示例源码请参考源文件．
 
 ## 核心功能
 
@@ -14,7 +12,7 @@ Write once, present everywhere! 基于 Quarto 的多格式输出中英文学术�
 - HTML、PDF/LaTeX、Beamer、Github Flavored Markdown (GFM) 全格式输出；MS Word、PPT 有限支持
 - 嵌入 Python 代码生成数据图表（Computation）
 - TikZ / [tikz-cd](https://ctan.org/pkg/tikz-cd) / [quiver](https://q.uiver.app/) 图表绘制
-- Mermaid、Graphviz 图表绘制（Diagram）
+- Mermaid、Graphviz 流程图绘制（Diagram）
 - Github Actions 自动生成 Demo 站点
 - ...
 
@@ -24,7 +22,7 @@ Write once, present everywhere! 基于 Quarto 的多格式输出中英文学术�
 
   - （推荐）安装 [VSCode](https://code.visualstudio.com/) IDE 并安装 [Quarto](https://marketplace.visualstudio.com/items?itemName=quarto.quarto) 插件．
 
-- 创建新文章时使用 Github Template 以本仓库为模板建立新仓库．你也可以下载本仓库的压缩包或 clone 到本地．
+- 创建新文章时使用 Github Template 以本仓库为模板建立新仓库．您也可以下载本仓库的压缩包或 clone 到本地．
 
 - 仓库根目录命令行执行 `quarto render helloworld.qmd --to=html` 测试安装情况．
 
@@ -70,24 +68,57 @@ git push # push 到你的远程仓库
 
 ### LaTeX / PDF / Beamer 输出
 
+我们没有直接使用 Quarto 默认的 PDF 输出，而是完全重新设计了输出模板（`_assets/suntemp-art.tex`, `_assets/suntemp-pre.tex`）．大动干戈的目的有个人喜好方面的考量：Quarto 默认使用 Koma-Script 系列的 `scrartcl` 文档类，而我们希望在英文环境下保留 `article` 文档类的原汁原味，也希望在中文环境下使用 `ctexart` / `ctexbeamer` 文档类获得更好的排版格式．
+
+重新设计 PDF 模板，您可以参考 [Quarto 的模板自定义教程](https://quarto.org/docs/journals/templates.html)．
+
 #### 安装
 
 安装 Quarto 支持的 LaTeX 发行版．若无，可使用 `quarto install tinytex --update-path` 安装．
 
 #### 使用
 
-Trivial.
+正常指定 format 即可．
 
 - 可在渲染时使用 `--to=latex` 选项输出中间 `.tex` 文件．
 
 ### Computation 功能
+
+直接嵌入 Python 代码就可以动态生成数据图表．[Quarto 文档](https://quarto.org/docs/computations/python.html)
 
 #### 安装
 
 - 安装适当版本 Python
 - 命令行 `pip install .` 安装 `pyproject.toml` 列明的所需模块
 
-### Diagram 功能（Mermaid、Graphviz 等）
+#### 使用
+
+使用例：
+
+```{python}
+#| label: fig-polar
+#| fig-cap: "A line plot on a polar axis"
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+r = np.arange(0, 2, 0.01)
+theta = 2 * np.pi * r
+fig, ax = plt.subplots(
+  subplot_kw = {'projection': 'polar'} 
+)
+fig.patch.set_alpha(0)
+ax.patch.set_alpha(0)
+
+ax.plot(theta, r)
+ax.set_rticks([0.5, 1, 1.5, 2])
+ax.grid(True)
+plt.show()
+```
+
+### Diagram 流程图（Mermaid、Graphviz 等）
+
+[Quarto 文档](https://quarto.org/docs/authoring/diagrams.html)
 
 #### 安装
 
@@ -96,6 +127,8 @@ Trivial.
 - 若无，可使用 `quarto install tool chromium` 安装，见 [Quarto - Diagrams # Chrome Install](https://quarto.org/docs/authoring/diagrams.html#chrome-install)
 
 ### TikZ / TikZ-cd / Quiver 交换图
+
+该功能由 `_assets/tikz.lua` 实现．
 
 #### 安装
 
@@ -116,7 +149,7 @@ Trivial.
 
 :::{.remark}
 
-## 关于 mutool 必要性的说明
+关于 mutool 必要性的说明：
 
 > As of Ghostscript 10.01.0, this will no longer work due to the introduction of a new PDF interpreter. Therefore, an alternative conversion module based on mutool, a utility which is part of the MuPDF package, has been introduced. It’s automatically invoked if Ghostscript can’t be used and if a working mutool executable is present in a directory which is part of the system’s search path.
 > 
@@ -126,8 +159,6 @@ Trivial.
 #### 使用
 
 推荐使用 [quiver](https://q.uiver.app/) 在线编辑器生成交换图代码．交换图使用例：
-
-`````qmd
 
 ```{tikz}
 \begin{tikzcd}
@@ -142,7 +173,6 @@ Trivial.
 	\arrow["{\beta \circ_1 \alpha}"', shorten <=8pt, shorten >=8pt, Rightarrow, from=4, to=3]
 \end{tikzcd}
 ```
-`````
 
 :::{.remark}
 
@@ -151,7 +181,7 @@ Trivial.
 
 ## 样式自定义
 
-通过更改 YAML 文档头可以自定义部分样式．
+修改 YAML 文档头可以自定义部分默认样式．
 
 ### 我要改字号！
 
@@ -239,7 +269,7 @@ format:
 
 #### 我想要 XXX 功能！/ 我要自己魔改！
 
-仓库主要为自用，如能为你的生活带来便利欢迎取用．想要的功能欢迎提 Issue 或 Discussion！（虽然不保证会做 :p
+仓库主要为自用，如能为您的生活带来便利欢迎取用．想要的功能欢迎提 Issue 或 Discussion！（虽然不保证会做 :p
 
 我们提供的 YAML 文档头样式只覆盖了了极小一部分功能．更深入的魔改需要您
 
@@ -260,13 +290,13 @@ format:
 
 ### 输出相关
 
-#### 写好的 Beamer 可不可以也输出一份文稿版本的 PDF？
+#### 写好的 Beamer 也想输出一份文稿版本的 PDF？
 
 理论上与文档格式兼容，可直接设置 `--to=pdf` 输出文稿版本．
 
 #### 我要输出到知乎！
 
-你可以使用 GFM 格式输出，输出内容可复制至 [markdown.com.cn](https://markdown.com.cn/editor/) 的在线编辑器转知乎格式．
+您可以使用 GFM 格式输出，输出内容可复制至 [markdown.com.cn](https://markdown.com.cn/editor/) 的在线编辑器转知乎格式．
 
 #### 我要在线直播写文！（搭建在线网站）
 

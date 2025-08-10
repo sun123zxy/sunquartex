@@ -1,4 +1,6 @@
 ---
+title: \SunQuarTeX README
+
 aliases: 
   - "/index.html"
 

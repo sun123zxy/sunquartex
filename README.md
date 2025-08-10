@@ -1,4 +1,4 @@
-<h1><p>$$\Huge\kern-.0em\lower.0ex\hbox{$\mathbf S$}\kern-.045em\lower.0ex\hbox{$\scriptstyle \mathbf U$}\kern-.045em\hbox{$\scriptstyle \mathbb N$}\kern-.0em\hbox{$\mathbb Q$}\kern-.045em\lower.0ex\hbox{$\scriptstyle \mathbf U$}\kern-.135em\lower.0ex\hbox{$\scriptstyle \mathbf A$}\kern-.09em\lower.0ex\hbox{$\scriptstyle \mathbb R$}\kern-.072em\mathbf{\TeX}$$</p></h1>
+<h1 align="center">SunQuarTeX</h1>
 <p align="center">
   Write once, present everywhere!<br/>基于 Quarto 的多格式输出中英文学术写作模板库
 </p>

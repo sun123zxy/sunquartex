@@ -5,6 +5,8 @@ Write once, present everywhere! 基于 Quarto 的多格式输出中英文学术�
 - [仓库主页](https://github.com/sun123zxy/sunquartex)
 - [网页 Demo](https://sun123zxy.github.io/sunquartex)
 
+推荐在网页 Demo 中阅读本 README．
+
 ## 核心功能
 
 - 基于 Pandoc's Markdown 的完备学术写作语法
@@ -16,54 +18,19 @@ Write once, present everywhere! 基于 Quarto 的多格式输出中英文学术�
 - Github Actions 自动生成 Demo 站点
 - ...
 
-## 安装
-
-- 推荐创建新文章时使用 Github Template 以本仓库为模板建立新仓库．你也可以下载本仓库的压缩包或 clone 到本地．
-- 推荐使用 VSCode IDE 并安装 Quarto 插件．
-- 纯命令行的自动化流程可参见本仓库下的 Github Actions 配置文件．
-
-### 必选项
+## 基础安装
 
 - 下载并安装 [quarto-cli](https://github.com/quarto-dev/quarto-cli)．本仓库渲染使用 Quarto 版本为 {{< version >}}．
 
-仓库根目录命令行执行 `quarto render helloworld.qmd --to=html` 测试必选项安装情况．
+  - （推荐）安装 [VSCode](https://code.visualstudio.com/) IDE 并安装 [Quarto](https://marketplace.visualstudio.com/items?itemName=quarto.quarto) 插件．
 
-### 可选项
+- 创建新文章时使用 Github Template 以本仓库为模板建立新仓库．你也可以下载本仓库的压缩包或 clone 到本地．
 
-#### 需要输出 LaTeX / PDF / Beamer 时
+- 仓库根目录命令行执行 `quarto render helloworld.qmd --to=html` 测试安装情况．
 
-请确保已安装 Quarto 支持的 LaTeX 发行版．若无，可使用 `quarto install tinytex --update-path` 安装．
+PDF / Beamer 输出等可选项安装和使用方法参见后文 [@sec-optional]．另外，纯命令行的自动化 CI 流程可参见本仓库下的 Github Actions 配置文件．
 
-#### 需要使用 Computation 等功能时
-
-安装适当版本 Python 并安装 `pyproject.toml` 列明的所需模块：`pip install .`
-
-#### 需要使用 Mermaid、Graphviz 等 Diagram 功能且需输出 PDF
-
-请确保已安装 Chrome 或 Chromium．若无，可使用 `quarto install tool chromium` 安装．（参见 [Quarto - Diagrams # Chrome Install](https://quarto.org/docs/authoring/diagrams.html#chrome-install)）
-
-#### 需要在非 LaTeX / PDF / Beamer 格式下（如 HTML）输出 TikZ 时
-
-请确保 XeLaTeX、dvisvgm、mutool 已在 PATH 中，且已安装需要使用的 LaTeX 宏包（目前 TikZ 中使用的宏包无法在渲染过程中自动安装）．
-
-- 如使用 Quarto 自带的 TinyTeX 安装 `dvisvgm`：
-
-  - 先输出一次示例 PDF 自动补全大部分所需宏包．
-  - 手动安装 `standalone` 宏包：执行 `tlmgr install standalone`．
-  - 执行 `tlmgr install dvisvgm` 和 `tlmgr path add` 下载 dvisvgm 并添加至 PATH．
-
-- 如何安装 `mutool`：
-
-  - （Linux / WSL）执行 `sudo apt install mupdf-tools`．
-  - （Windows）请自行在 [MuPDF](https://mupdf.com/) 官网下载并安装 MuPDF，并确保 `mutool` 在 PATH 中．
-
-- 关于 mutool 必要性的一些说明：
-
-  > As of Ghostscript 10.01.0, this will no longer work due to the introduction of a new PDF interpreter. Therefore, an alternative conversion module based on mutool, a utility which is part of the MuPDF package, has been introduced. It’s automatically invoked if Ghostscript can’t be used and if a working mutool executable is present in a directory which is part of the system’s search path.
-  > 
-  > 来自 [dvisvgm manual](https://dvisvgm.de/Manpage/)
-
-## 使用
+## 基础使用
 
 ### 渲染
 
@@ -75,9 +42,13 @@ Write once, present everywhere! 基于 Quarto 的多格式输出中英文学术�
 
 ### 写作
 
-（重要）在文件头声明 `lang=zh` 或 `lang=en` 调整语言．该选项会影响文档的格式和渲染方式。
-
 Quarto 使用的底层 Markdown 方言为 [Pandoc's Markdown](https://pandoc.org/MANUAL.html#pandocs-markdown)．速成可直接参考示例文档或 [Quarto](https://quarto.org/docs/authoring/markdown-basics.html) 官方教程．
+
+文档中开头部分 `---` 之间的内容称为 YAML 文档头（YAML Front Matter），用于设置文档相关元信息，也用于设置输出格式、样式等．您在自定义的过程中可能需要修改或添加它们．
+
+针对特定输出格式的设置请在文档头 `format` 下对应格式选项下设置．希望全局生效的设置（一般）可在文档头顶层设置．
+
+（重要）在文件头声明 `lang=zh` 或 `lang=en` 调整语言．该选项会影响文档的格式和渲染方式。
 
 ## 更新
 
@@ -95,39 +66,66 @@ git push # push 到你的远程仓库
 - `--allow-unrelated-histories` 选项只有在第一次合并时需要添加．
 - `--no-commit` 选项用于防止自动 commit 合并．本仓库更新很不稳定，建议每次合并都手动处理．
 
-## Q&A
+## 可选项安装与使用 {#sec-optional}
 
-### 一般性的
+### LaTeX / PDF / Beamer 输出
 
-#### 示例文件编译不了！
+#### 安装
 
-示例文件包含了部分可选支持内容，如未安装相应依赖，请删除对应内容后渲染．
+安装 Quarto 支持的 LaTeX 发行版．若无，可使用 `quarto install tinytex --update-path` 安装．
 
-#### 我不懂 Computer Science，你能不能讲人话！
+#### 使用
 
-请您活用 AI 工具降低学习门槛．推荐使用 VSCode 打开本仓库，使用自带的 Github Copilot，将 README 扔进对话框，提出您的具体需求并获得人话解答．
+Trivial.
 
-#### YAML 文档头是什么？怎么用？
+- 可在渲染时使用 `--to=latex` 选项输出中间 `.tex` 文件．
 
-示例文档中开头部分 `---` 之间的内容称为 YAML 文档头（YAML Front Matter），用于设置文档相关元信息，也用于设置输出格式、样式等．您在自定义的过程中可能需要修改或添加它们．
+### Computation 功能
 
-针对特定输出格式的设置请在文档头 `format` 下对应格式选项下设置．希望全局生效的设置（一般）可在文档头顶层设置．
+#### 安装
 
-#### 我想要 XXX 功能！/ 我要自己魔改！
+- 安装适当版本 Python
+- 命令行 `pip install .` 安装 `pyproject.toml` 列明的所需模块
 
-仓库主要为自用，如能为你的生活带来便利欢迎取用．想要的功能欢迎提 Issue 或 Discussion，会考虑但不保证会做．有能力欢迎 Fork 魔改和 Pull Request．欢迎学习底层软件 Quarto．
+### PDF 格式下 Diagram 功能（Mermaid、Graphviz 等）
 
-### 写作相关
+#### 安装
 
-#### 我不要渲染好的 PDF，我想要中间过程的 LaTeX 代码！
+请确保已安装 Chrome 或 Chromium．
 
-可在渲染时使用 `--to=latex` 选项输出 `.tex` 文件．
+- 若无，可使用 `quarto install tool chromium` 安装，见 [Quarto - Diagrams # Chrome Install](https://quarto.org/docs/authoring/diagrams.html#chrome-install)
 
-#### 我要画 TikZ / 交换图！
+### TikZ / TikZ-cd 交换图
 
-如果只是输出到 PDF / Beamer，除了安装 LaTeX 发行版之外没有别的额外步骤．如还需输出至其它格式，请参考安装部分的说明．
+#### 安装
 
-交换图使用例：
+如果只是输出到 PDF / Beamer，除了安装 LaTeX 发行版之外没有别的额外步骤．
+
+如还需输出至其它格式：请确保 XeLaTeX、dvisvgm、mutool 已在 PATH 中，且已安装需要使用的 LaTeX 宏包（目前 TikZ 中使用的宏包无法在渲染过程中自动安装）．
+
+- 例如，使用 Quarto 自带的 TinyTeX 安装 `dvisvgm`：
+
+  - 先输出一次示例 PDF 自动补全大部分所需宏包．
+  - 手动安装 `standalone` 宏包：执行 `tlmgr install standalone`．
+  - 执行 `tlmgr install dvisvgm` 和 `tlmgr path add` 下载 dvisvgm 并添加至 PATH．
+
+- 如何安装 `mutool`：
+
+  - （Linux / WSL）执行 `sudo apt install mupdf-tools`．
+  - （Windows）请自行在 [MuPDF](https://mupdf.com/) 官网下载并安装 MuPDF，并确保 `mutool` 在 PATH 中．
+
+:::{.remark}
+
+## 关于 mutool 必要性的说明
+
+> As of Ghostscript 10.01.0, this will no longer work due to the introduction of a new PDF interpreter. Therefore, an alternative conversion module based on mutool, a utility which is part of the MuPDF package, has been introduced. It’s automatically invoked if Ghostscript can’t be used and if a working mutool executable is present in a directory which is part of the system’s search path.
+> 
+> 来自 [dvisvgm manual](https://dvisvgm.de/Manpage/)
+:::
+
+#### 使用
+
+推荐使用 [quiver](https://q.uiver.app/) 在线编辑器生成交换图代码．交换图使用例：
 
 `````qmd
 
@@ -146,11 +144,111 @@ git push # push 到你的远程仓库
 ```
 `````
 
-推荐使用 [quiver](https://q.uiver.app/) 在线编辑器生成交换图代码．
-
-#### Beamer 里画 TikZ 交换图报错？
+:::{.remark}
 
 在 Beamer 中使用 TikZ 时，所在幻灯片须添加 `{.fragile}` 标记．
+:::
+
+## 样式自定义
+
+通过更改 YAML 文档头可以自定义部分样式．
+
+### 我要改字号！
+
+目前仅支持 PDF 字号修改．英文文档默认字号为 10pt，中文文档默认字号为 10.5pt（五号，详见 CTeX 手册）．
+
+```yaml
+format:
+  pdf:
+    fontsize: 12pt
+```
+
+### 我要 / 不想要目录！
+
+```yaml
+toc: true # 开启目录
+```
+
+该设置全局 / 特定格式下均生效．
+
+### 我不想给 section 编号 / 我要改 section 编号格式！
+
+```yaml
+number-sections: true # section 编号开关
+number-depth: 3 # section 编号深度
+```
+
+该设置全局 / 特定格式下均生效．
+
+### 我不想给定理编号！/ 我要改定理编号格式！
+
+Quarto 内置的定理编号系统无法修改，但我们提供自定义 PDF 格式定理编号的可能．（目前仍然无法实现完全关闭 PDF 格式中的定理编号）
+
+```yaml
+format:
+  pdf:
+    custom-theorem:
+      numbered-within: section # 开启后将相对于 section（或 subsection, etc.）进行定理编号
+      numbered-alike: true # 开启后不同类型的定理将共享编号
+```
+
+### 我要改引用格式！
+
+PDF / Beamer 输出使用 BibLaTeX alphabetical，HTML 输出使用 IEEE．如需修改，请自定义 `sun*****.cls` 和 `_format.yml` 和 CSL 文件．
+
+### 我要更丰富的 Callout 定理包裹样式！
+
+请移步 [sun123zxy/quarto-callouty-theorem](https://github.com/sun123zxy/quarto-callouty-theorem) 学习配置方法．
+
+### 我要改 Beamer 幻灯片的颜色！
+
+```yaml
+format:
+  beamer:
+    custom-color:
+    define: "\\definecolor{blueblk}{HTML}{1874D0}" # 在这里用 LaTeX 自定义颜色供后面使用
+    main: "green!40!black" # 主色调
+    theorem: "green!32!black" # 各种定理环境颜色
+    example: "blueblk!50!black" # Example / Exercise 环境颜色
+    remark: "white!15!black" # Proof / Solution / Remark 环境颜色
+    link: "lime!85!black" # 链接颜色
+```
+
+### PDF / Beamer 宏包不够用，我要自己导入！
+
+```yaml
+format:
+  pdf:
+    header-includes:
+      text: \usepackage{euscript}
+```
+
+暂时不支持其它格式下的宏包导入．
+
+## Q&A
+
+### 一般性的
+
+#### 示例文件编译不了！
+
+示例文件包含了部分可选支持内容，如未安装相应依赖，请删除对应内容后渲染．
+
+#### 我不懂 Computer Science，你能不能讲人话！
+
+请您活用 AI 工具降低学习门槛．推荐使用 VSCode 打开本仓库，使用自带的 Github Copilot，将 README 扔进对话框，提出您的具体需求并获得人话解答．
+
+#### 我想要 XXX 功能！/ 我要自己魔改！
+
+仓库主要为自用，如能为你的生活带来便利欢迎取用．想要的功能欢迎提 Issue 或 Discussion！（虽然不保证会做 :p
+
+我们提供的 YAML 文档头样式只覆盖了了极小一部分功能．更深入的魔改需要您
+
+- 进一步学习底层软件 Quarto，魔改本仓库的默认配置
+- 进一步学习 Pandoc，编写 LaTeX 模板 / Lua filter
+
+有能力欢迎 Fork 和 Pull Request．
+
+### 写作相关
 
 #### 标题应该用多少个 `#`？
 
@@ -158,11 +256,11 @@ git push # push 到你的远程仓库
 
 #### 分页符？
 
-``{{< pagebreak >}}``．见[官方文档](https://quarto.org/docs/authoring/markdown-basics.html#page-breaks)．
+`{{< pagebreak >}}`．见[官方文档](https://quarto.org/docs/authoring/markdown-basics.html#page-breaks)．
 
 ### 输出相关
 
-#### Beamer 可不可以输出文稿版本 PDF？
+#### 写好的 Beamer 可不可以也输出一份文稿版本的 PDF？
 
 理论上与文档格式兼容，可直接设置 `--to=pdf` 输出文稿版本．
 
@@ -181,82 +279,6 @@ git push # push 到你的远程仓库
 以后的每次 push 均会触发 Github Actions 自动完成的网站生成．
 
 如需自定义网站域名，请在根目录下添加 CNAME 文件，并修改 `_quarto-website.yml` 下 `site-url`．
-
-### 样式相关
-
-#### 我要改字号！
-
-目前仅支持 PDF 字号修改．英文文档默认字号为 10pt，中文文档默认字号为 10.5pt（五号，详见 CTeX 手册）．
-
-```yaml
-format:
-  pdf:
-    fontsize: 12pt
-```
-
-#### 我要 / 不想要目录！
-
-```yaml
-toc: true # 开启目录
-```
-
-该设置全局 / 特定格式下均生效．
-
-#### 我不想给 section 编号 / 我要改 section 编号格式！
-
-```yaml
-number-sections: true # section 编号开关
-number-depth: 3 # section 编号深度
-```
-
-该设置全局 / 特定格式下均生效．
-
-#### 我不想给定理编号！/ 我要改定理编号格式！
-
-Quarto 内置的定理编号系统无法修改，但我们提供通过 YAML 文档头自定义 PDF 格式定理编号的可能．（目前仍然无法实现完全关闭 PDF 格式中的定理编号）
-
-```yaml
-format:
-  pdf:
-    custom-theorem:
-      numbered-within: section # 开启后将相对于 section（或 subsection, etc.）进行定理编号
-      numbered-alike: true # 开启后不同类型的定理将共享编号
-```
-
-#### 我要改引用格式！
-
-PDF / Beamer 输出使用 BibLaTeX alphabetical，HTML 输出使用 IEEE．如需修改，请自定义 `sun*****.cls` 和 `_format.yml` 和 CSL 文件．
-
-#### 我要更丰富的 Callout 定理包裹样式！
-
-请移步 [sun123zxy/quarto-callouty-theorem](https://github.com/sun123zxy/quarto-callouty-theorem) 学习配置方法．
-
-#### 我要改 Beamer 幻灯片的颜色！
-
-支持使用 YAML 文档头自定义部分颜色．
-
-```yaml
-format:
-  beamer:
-    custom-color:
-    define: "\\definecolor{blueblk}{HTML}{1874D0}" # 在这里用 LaTeX 自定义颜色供后面使用
-    main: "green!40!black" # 主色调
-    theorem: "green!32!black" # 各种定理环境颜色
-    example: "blueblk!50!black" # Example / Exercise 环境颜色
-    remark: "white!15!black" # Proof / Solution / Remark 环境颜色
-    link: "lime!85!black" # 链接颜色
-```
-
-#### PDF / Beamer 宏包不够用，我要自己导入！
-
-```yaml
-format:
-  pdf:
-    header-includes:
-      text: \usepackage{euscript}
-```
-
-### 
 
 ## Known Issues
 

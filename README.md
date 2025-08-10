@@ -87,15 +87,15 @@ Trivial.
 - 安装适当版本 Python
 - 命令行 `pip install .` 安装 `pyproject.toml` 列明的所需模块
 
-### PDF 格式下 Diagram 功能（Mermaid、Graphviz 等）
+### Diagram 功能（Mermaid、Graphviz 等）
 
 #### 安装
 
-请确保已安装 Chrome 或 Chromium．
+非 HTML 格式下需要额外安装 Chrome 或 Chromium．
 
 - 若无，可使用 `quarto install tool chromium` 安装，见 [Quarto - Diagrams # Chrome Install](https://quarto.org/docs/authoring/diagrams.html#chrome-install)
 
-### TikZ / TikZ-cd 交换图
+### TikZ / TikZ-cd / Quiver 交换图
 
 #### 安装
 
@@ -182,7 +182,7 @@ number-depth: 3 # section 编号深度
 
 ### 我不想给定理编号！/ 我要改定理编号格式！
 
-Quarto 内置的定理编号系统无法修改，但我们提供自定义 PDF 格式定理编号的可能．（目前仍然无法实现完全关闭 PDF 格式中的定理编号）
+Quarto 内置的定理编号系统目前无法修改（见 [Quarto Discussion #5479](https://github.com/quarto-dev/quarto-cli/discussions/5479)），但我们提供自定义 PDF 格式定理编号的可能．（目前仍然无法实现完全关闭 PDF 格式中的定理编号）
 
 ```yaml
 format:
@@ -279,19 +279,3 @@ format:
 以后的每次 push 均会触发 Github Actions 自动完成的网站生成．
 
 如需自定义网站域名，请在根目录下添加 CNAME 文件，并修改 `_quarto-website.yml` 下 `site-url`．
-
-## Known Issues
-
-- 见 [Discussion #4598](https://github.com/quarto-dev/quarto-cli/discussions/4598)，Pandoc 不支持 CSL-M 导致无有效方法处理 GB/T 7714-2015 中按语言切换“等”、`et al` 省略字样的规定．
-
-- 通用的定理编号目前尚难以自定义，见 [Discussion #5479](https://github.com/quarto-dev/quarto-cli/discussions/5479)
-
-- （need repro）HTML 子图图像拉伸问题，似乎是因为没有设置 `height: auto`．
-
-- 2025/04/15 定理标题中的文献引用导致 LaTeX 中出现嵌套中括号，见 [Issue #12584](https://github.com/quarto-dev/quarto-cli/issues/12584)
-
-- 2025/06/29 目前 RST-style list tables 的 row-span 在 PDF 格式下支持不良．
-
-- 2025/06/29 网站生成的 PDF 没有设置 base URL，相对链接无法正确解析．见 [Discussion #13000](https://github.com/quarto-dev/quarto-cli/discussions/13000)
-
-- 2025/06/30 手机端的 other formats / links 菜单不显示，这是 Quarto 那边的问题，见 [Issue #5961](https://github.com/quarto-dev/quarto-cli/issues/5961)

@@ -1,9 +1,11 @@
 ---
-format:
-  html: default
 aliases: 
   - "/index.html"
-number-sections: false
+
+number-sections: true
+
+format:
+  html: default
 ---
 
 {{< include ../README.md >}}

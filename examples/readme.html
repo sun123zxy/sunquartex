@@ -701,7 +701,10 @@ Remark
 <h4 class="anchored" data-anchor-id="我要在线直播写文搭建在线网站">我要在线直播写文！（搭建在线网站）</h4>
 <p>本仓库同时采用 Github Actions + Github Pages 自动生成 Demo 站点．首次使用时，在 Actions 分页中激活 Actions，在本地手动进行第一次网站发布：</p>
 <ul>
-<li>修改 <code>_quarto-website.yml</code> 下 <code>site-url</code> 为你的域名（如您使用非 Github Pages 的默认网站域名，请在根目录下额外添加 CNAME 文件）</li>
+<li>修改 <code>_quarto-website.yml</code> 下 <code>site-url</code> 为你的域名（如您使用非 Github Pages 的默认网站域名，请在根目录下额外添加 CNAME 文件）
+<ul>
+<li>嫌麻烦的话也可以直接删除这个选项．</li>
+</ul></li>
 <li>命令行内设置环境变量 <code>QUARTO_PROFILE</code> 为 <code>website</code></li>
 <li>执行 <code>quarto publish</code></li>
 <li>（清除环境变量）</li>

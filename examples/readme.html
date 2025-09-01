@@ -276,6 +276,7 @@ window.Quarto = {
   <li><a href="#computation-功能" id="toc-computation-功能" class="nav-link" data-scroll-target="#computation-功能"><span class="header-section-number">5.2</span> Computation 功能</a></li>
   <li><a href="#diagram-流程图mermaidgraphviz-等" id="toc-diagram-流程图mermaidgraphviz-等" class="nav-link" data-scroll-target="#diagram-流程图mermaidgraphviz-等"><span class="header-section-number">5.3</span> Diagram 流程图（Mermaid、Graphviz 等）</a></li>
   <li><a href="#tikz-tikz-cd-quiver-交换图" id="toc-tikz-tikz-cd-quiver-交换图" class="nav-link" data-scroll-target="#tikz-tikz-cd-quiver-交换图"><span class="header-section-number">5.4</span> TikZ / TikZ-cd / Quiver 交换图</a></li>
+  <li><a href="#github-actions-github-pages-网站生成" id="toc-github-actions-github-pages-网站生成" class="nav-link" data-scroll-target="#github-actions-github-pages-网站生成"><span class="header-section-number">5.5</span> Github Actions + Github Pages 网站生成</a></li>
   </ul></li>
   <li><a href="#样式自定义" id="toc-样式自定义" class="nav-link" data-scroll-target="#样式自定义"><span class="header-section-number">6</span> 样式自定义</a>
   <ul class="collapse">
@@ -580,6 +581,27 @@ Remark
 </div>
 </section>
 </section>
+<section id="github-actions-github-pages-网站生成" class="level3" data-number="5.5">
+<h3 data-number="5.5" class="anchored" data-anchor-id="github-actions-github-pages-网站生成"><span class="header-section-number">5.5</span> Github Actions + Github Pages 网站生成</h3>
+<p>本仓库同时采用 Github Actions + Github Pages 自动生成 Demo 站点．</p>
+<section id="安装-4" class="level4">
+<h4 class="anchored" data-anchor-id="安装-4">安装</h4>
+<p>首次使用时，在 Actions 分页中激活 Actions，在本地手动进行第一次网站发布：</p>
+<ul>
+<li>修改 <code>_quarto-website.yml</code> 下 <code>site-url</code> 为你的域名（如您使用非 Github Pages 的默认网站域名，请在根目录下额外添加 CNAME 文件）
+<ul>
+<li>嫌麻烦的话也可以直接删除这个选项．</li>
+</ul></li>
+<li>命令行内设置环境变量 <code>QUARTO_PROFILE</code> 为 <code>website</code></li>
+<li>执行 <code>quarto publish</code></li>
+<li>（清除环境变量）</li>
+</ul>
+</section>
+<section id="使用-3" class="level4">
+<h4 class="anchored" data-anchor-id="使用-3">使用</h4>
+<p>以后的每次 push 均会触发 Github Actions 自动完成的网站生成．</p>
+</section>
+</section>
 </section>
 <section id="样式自定义" class="level2" data-number="6">
 <h2 data-number="6" class="anchored" data-anchor-id="样式自定义"><span class="header-section-number">6</span> 样式自定义</h2>
@@ -696,20 +718,6 @@ Remark
 <section id="我要输出到知乎" class="level4">
 <h4 class="anchored" data-anchor-id="我要输出到知乎">我要输出到知乎！</h4>
 <p>您可以使用 GFM 格式输出，输出内容可复制至 <a href="https://markdown.com.cn/editor/">markdown.com.cn</a> 的在线编辑器转知乎格式．</p>
-</section>
-<section id="我要在线直播写文搭建在线网站" class="level4">
-<h4 class="anchored" data-anchor-id="我要在线直播写文搭建在线网站">我要在线直播写文！（搭建在线网站）</h4>
-<p>本仓库同时采用 Github Actions + Github Pages 自动生成 Demo 站点．首次使用时，在 Actions 分页中激活 Actions，在本地手动进行第一次网站发布：</p>
-<ul>
-<li>修改 <code>_quarto-website.yml</code> 下 <code>site-url</code> 为你的域名（如您使用非 Github Pages 的默认网站域名，请在根目录下额外添加 CNAME 文件）
-<ul>
-<li>嫌麻烦的话也可以直接删除这个选项．</li>
-</ul></li>
-<li>命令行内设置环境变量 <code>QUARTO_PROFILE</code> 为 <code>website</code></li>
-<li>执行 <code>quarto publish</code></li>
-<li>（清除环境变量）</li>
-</ul>
-<p>以后的每次 push 均会触发 Github Actions 自动完成的网站生成．</p>
 
 
 </section>

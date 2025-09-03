@@ -40,6 +40,8 @@ format:
       echo: false
     fig-pos: false
     template: "./_assets/suntemp-pre.tex"
+    include-in-header:
+      text: ""
     custom-color:
       define: "\\definecolor{blueblk}{HTML}{1874D0}"
       main: "green!40!black"

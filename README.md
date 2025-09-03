@@ -252,7 +252,7 @@ format:
 ```yaml
 format:
   pdf:
-    header-includes:
+    include-in-header:
       text: \usepackage{euscript}
 ```
 

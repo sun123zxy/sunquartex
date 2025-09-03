@@ -9,7 +9,9 @@ bibliography: bibliography.bib
 lang: en
 
 format:
-  beamer: default
+  beamer:
+    include-in-header:
+      text: \usepackage{euscript}
   pptx: default
 ---
 
@@ -20,6 +22,8 @@ format:
 long **long** long long long *long long long* long long long long long long long long long long long long long long long long long long sentence.
 
 long long long long long long long long long long long long long long long long long long long long long long long long long long long paragraph.
+
+This is Euscript $\mathcal{A} \neq \EuScript{A}$.
 
 ::::: {.columns}
 

@@ -182,6 +182,24 @@ plt.show()
 在 Beamer 中使用 TikZ 时，所在幻灯片须添加 `{.fragile}` 标记．
 :::
 
+### Github Actions + Github Pages 网站生成
+
+本仓库同时采用 Github Actions + Github Pages 自动生成 Demo 站点．
+
+#### 安装
+
+首次使用时，在 Actions 分页中激活 Actions，在本地手动进行第一次网站发布：
+
+- 修改 `_quarto-website.yml` 下 `site-url` 为你的域名（如您使用非 Github Pages 的默认网站域名，请在根目录下额外添加 CNAME 文件）
+  - 嫌麻烦的话也可以直接删除这个选项．
+- 命令行内设置环境变量 `QUARTO_PROFILE` 为 `website`
+- 执行 `quarto publish`
+- （清除环境变量）
+
+#### 使用
+
+以后的每次 push 均会触发 Github Actions 自动完成的网站生成．
+
 ## 样式自定义
 
 修改 YAML 文档头可以自定义部分默认样式．
@@ -239,12 +257,12 @@ PDF / Beamer 输出使用 BibLaTeX alphabetical，HTML 输出使用 IEEE．如�
 format:
   beamer:
     custom-color:
-    define: "\\definecolor{blueblk}{HTML}{1874D0}" # 在这里用 LaTeX 自定义颜色供后面使用
-    main: "green!40!black" # 主色调
-    theorem: "green!32!black" # 各种定理环境颜色
-    example: "blueblk!50!black" # Example / Exercise 环境颜色
-    remark: "white!15!black" # Proof / Solution / Remark 环境颜色
-    link: "lime!85!black" # 链接颜色
+      define: "\\definecolor{blueblk}{HTML}{1874D0}" # 在这里用 LaTeX 自定义颜色供后面使用
+      main: "green!40!black" # 主色调
+      theorem: "green!32!black" # 各种定理环境颜色
+      example: "blueblk!50!black" # Example / Exercise 环境颜色
+      remark: "white!15!black" # Proof / Solution / Remark 环境颜色
+      link: "lime!85!black" # 链接颜色
 ```
 
 ### PDF / Beamer 宏包不够用，我要自己导入！
@@ -313,15 +331,3 @@ format:
 #### 我要输出到知乎！
 
 您可以使用 GFM 格式输出，输出内容可复制至 [markdown.com.cn](https://markdown.com.cn/editor/) 的在线编辑器转知乎格式．
-
-#### 我要在线直播写文！（搭建在线网站）
-
-本仓库同时采用 Github Actions + Github Pages 自动生成 Demo 站点．首次使用时，在 Actions 分页中激活 Actions，在本地手动进行第一次网站发布：
-
-- 命令行内设置环境变量 `QUARTO_PROFILE` 为 `website`
-- 执行 `quarto publish`
-- （清除环境变量）
-
-以后的每次 push 均会触发 Github Actions 自动完成的网站生成．
-
-如需自定义网站域名，请在根目录下添加 CNAME 文件，并修改 `_quarto-website.yml` 下 `site-url`．

@@ -5,7 +5,7 @@ author:
   - sun123zxy
   - Luna
 date: 2022/12/07
-date-modified: 2024/08/23
+date-modified: 2025/09/13
 abstract: 使用 Quarto Markdown 语法，支持输出至 HTML、PDF/LaTeX、MS Word 等多种格式的中文学术写作工具，覆盖交叉引用、插图绘制、定理系统等多种功能．
 bibliography: bibliography.bib
 lang: zh
@@ -111,33 +111,6 @@ $$
 :集合幂 {#tbl-power-unsolved}
 
 相关集合的势（不完整版）
-:::
-
-我们支持 Markdown grid style 的表格．
-
-+---+----+----+---+---+
-| a | be | c  | d | e |
-+---+    +----+---+---+
-| f |    | ew | a | b |
-+---+----+----+---+---+
-| c | d  | ewfe   | e |
-+---+----+----+---+---+
-| f | g  | h  | r | e |
-+---+----+----+---+---+
-
-我们还支持 [RST-style list tables](https://github.com/pandoc-ext/list-table)．该格式可以比较方便地合并单元格．
-
-:::{.list-table aligns="c,c,c" width="1,3,3"}
-   * - row 1, column 1
-     - row 1, column 2
-     - row 1, column 3
-
-   * - row 2, column 1
-     - []{colspan=2} row 2, column 2--3
-
-   * - row 3, column 1
-     - row 3, column 2
-     - row 3, column 3
 :::
 
 ## 数学公式、定理系统测试

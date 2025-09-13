@@ -121,22 +121,17 @@ plt.show()
 
 ### 表格
 
-我们支持：
-
 #### 传统 Markdown 表格
 
-```markdown
 |||||
 |:-:|:-:|:-:|:-:|
 | $L_i \times C_j$   | $2$           | $\mathbb N$   | $\mathbb R$   |
 | $2$                | $4$           | $\mathbb N$   | $\mathbb R$   |
 | $\mathbb N$        | $\mathbb N$   | $\mathbb N$   | ?             |
 | $\mathbb R$        | $\mathbb R$   | ?             | $\mathbb R$   |
-```
 
 #### Markdown grid style tables
 
-```markdown
 +---+----+----+---+---+
 | a | be | c  | d | e |
 +---+    +----+---+---+
@@ -146,17 +141,15 @@ plt.show()
 +---+----+----+---+---+
 | f | g  | h  | r | e |
 +---+----+----+---+---+
-```
 
 #### RST-style list tables
 
 我们还支持 [RST-style list tables](https://github.com/pandoc-ext/list-table)．该格式可以比较方便地合并单元格．
 
-```markdown
 :::{.list-table aligns="c,c,c" width="1,3,3"}
 
 * - row 1, column 1
- - row 1, column 2
+  - row 1, column 2
   - row 1, column 3
 
 * - row 2, column 1
@@ -166,7 +159,103 @@ plt.show()
   - row 3, column 2
   - row 3, column 3
 :::
+
+#### Computation based tables
+
+您也可以直接使用代码生成表格：
+
+```{python}
+import numpy as np
+import math
+from IPython.display import Markdown, display
+from tabulate import tabulate
+import matplotlib.pyplot as plt
+
+R = np.array([0,100,200,300,400,500,600,700,800,900,1000,
+1100,1110,1120,1130,1140,1150,1160,1170,1180,1190,
+1200,1210,1220,1230,1240,1250,1260,1270,1280,1290,
+1300,1400,1500,2000,4000,math.inf])
+U = np.array([24.2E-3, 0.386,0.747,1.104,1.460,1.813,2.16,2.51,2.86,3.19,3.48,
+3.70,3.75,3.77,3.78,3.80,3.81,3.83,3.84,3.85,3.86,
+3.87,3.90,3.92,3.93,3.94,3.95,3.95,3.96,3.97,3.98,
+3.99,4.08,4.16,4.39,4.66,4.85])
+I = np.array([3.6,3.6,3.6,3.6,3.6,3.5,3.5,3.5,3.5,3.5,3.4,
+3.3,3.4,3.4,3.4,3.4,3.3,3.3,3.3,3.3,3.3,
+3.2,3.2,3.2,3.2,3.2,3.2,3.2,3.1,3.1,3.1,
+3.0,2.9,2.7,2.2,1.130,47.7E-3])
+P = U*I
 ```
+
+```{python}
+#| label: tbl-light-on
+#| tbl-cap: 太阳能电池的负载特性
+#| tbl-subcap: 
+#|   - "（粗）"
+#|   - "（细）"
+#| layout-ncol: 2
+
+table = [[R[i], U[i], I[i], P[i]] for i in list(range(0, 11)) + [11,21,31,32,33,34,35,36]]
+display(Markdown(tabulate(table, headers=["R (Ω)", "U (V)", "I (mA)", "P (mW)"])))
+table = [[R[i], U[i], I[i], P[i]] for i in range(12, 31)]
+display(Markdown(tabulate(table, headers=["R (Ω)", "U (V)", "I (mA)", "P (mW)"])))
+```
+
+```{python}
+#| label: fig-light-on
+#| fig-cap: 太阳能电池的负载特性
+#| fig-subcap:
+#|   - 输出电流与电压关系曲线
+#|   - 输出功率与负载电阻关系曲线
+#| layout-ncol: 2
+
+fig, ax = plt.subplots()
+fig.patch.set_alpha(0)
+ax.patch.set_alpha(0)
+
+ax.set_xlabel("U (V)")
+ax.set_ylabel("I (mA)")
+
+ax.plot(U, I, marker="o")
+ax.grid(True)
+ax.set_xlim(0)
+ax.set_ylim(0)
+
+plt.show()
+
+
+fig, ax = plt.subplots()
+fig.patch.set_alpha(0)
+ax.patch.set_alpha(0)
+
+ax.set_xlabel("R (Ω)")
+ax.set_ylabel("P (mW)")
+
+ax.plot(R, P, marker="o")
+ax.grid(True)
+ax.set_xlim((0, 2000))
+ax.set_ylim(0)
+
+plt.show()
+```
+
+#### 交叉引用
+
+在表格外侧包裹 `::: {#tbl-label}` 块．表格 caption 置于块的最后一行．例如：
+
+:::{#tbl-table-example}
+
++---+----+----+---+---+
+| a | be | c  | d | e |
++---+    +----+---+---+
+| f |    | ew | a | b |
++---+----+----+---+---+
+| c | d  | ewfe   | e |
++---+----+----+---+---+
+| f | g  | h  | r | e |
++---+----+----+---+---+
+
+A Table
+:::
 
 ### Diagram 流程图（Mermaid、Graphviz 等）
 

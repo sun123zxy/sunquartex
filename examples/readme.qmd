@@ -1,5 +1,7 @@
 ---
 title: README
+author: sun123zxy
+lang: zh
 
 aliases: 
   - /index.html
@@ -10,6 +12,9 @@ format:
   html:
     include-in-header:
       - file: ai.html
+  pdf: default
+  docx: default
+  gfm: default
 ---
 
 {{< include ../README.md >}}

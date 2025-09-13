@@ -119,6 +119,55 @@ ax.grid(True)
 plt.show()
 ```
 
+### 表格
+
+我们支持：
+
+#### 传统 Markdown 表格
+
+```markdown
+|||||
+|:-:|:-:|:-:|:-:|
+| $L_i \times C_j$   | $2$           | $\mathbb N$   | $\mathbb R$   |
+| $2$                | $4$           | $\mathbb N$   | $\mathbb R$   |
+| $\mathbb N$        | $\mathbb N$   | $\mathbb N$   | ?             |
+| $\mathbb R$        | $\mathbb R$   | ?             | $\mathbb R$   |
+```
+
+#### Markdown grid style tables
+
+```markdown
++---+----+----+---+---+
+| a | be | c  | d | e |
++---+    +----+---+---+
+| f |    | ew | a | b |
++---+----+----+---+---+
+| c | d  | ewfe   | e |
++---+----+----+---+---+
+| f | g  | h  | r | e |
++---+----+----+---+---+
+```
+
+#### RST-style list tables
+
+我们还支持 [RST-style list tables](https://github.com/pandoc-ext/list-table)．该格式可以比较方便地合并单元格．
+
+```markdown
+:::{.list-table aligns="c,c,c" width="1,3,3"}
+
+* - row 1, column 1
+ - row 1, column 2
+  - row 1, column 3
+
+* - row 2, column 1
+  - []{colspan=2} row 2, column 2--3
+
+* - row 3, column 1
+  - row 3, column 2
+  - row 3, column 3
+:::
+```
+
 ### Diagram 流程图（Mermaid、Graphviz 等）
 
 [Quarto 文档](https://quarto.org/docs/authoring/diagrams.html)

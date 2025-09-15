@@ -105,22 +105,6 @@ $a \leq b \land b \leq c \implies a \leq c$
 
 </div>
 
-我们支持 Markdown grid style 的表格．
-
-|     |     |      |     |     |
-|-----|-----|------|-----|-----|
-| a   | be  | c    | d   | e   |
-| f   |     | ew   | a   | b   |
-| c   | d   | ewfe |     | e   |
-| f   | g   | h    | r   | e   |
-
-我们还支持 [RST-style list tables](https://github.com/pandoc-ext/list-table)．该格式可以比较方便地合并单元格．
-
-| row 1, column 1 |  row 1, column 2   | row 1, column 3 |
-|:---------------:|:------------------:|:---------------:|
-| row 2, column 1 |  row 2, column 2–3 |                 |
-| row 3, column 1 |  row 3, column 2   | row 3, column 3 |
-
 ## 数学公式、定理系统测试
 
 这一节我们测试数学相关内容．直接在源文件中写 raw LaTeX 就可声明公式所需的宏定义．由于 `\DeclareMathOperator` 只能在 LaTeX 的导言区使用，这里我们用 `\newcommand` + `\operatorname` 的方式替代．
@@ -149,7 +133,7 @@ $$
 
 <div class="proof">
 
-<span class="proof-title">*证明*. </span>建立单射
+<span class="proof-title">*证*. </span>建立单射
 $$
 \begin{aligned}
 \varphi: A \times B &\to C \times D \\
@@ -162,13 +146,13 @@ $$
 
 <div class="proof">
 
-<span class="proof-title">*证明* (有标题的证明). </span>这是一个有 caption 的证明．
+<span class="proof-title">*证* (有标题的证明). </span>这是一个有 caption 的证明．
 
 </div>
 
 <div class="proof">
 
-<span class="proof-title">*证明* (<a href="#thm-cartesian-preserve" class="quarto-xref">定理 1</a> 的证明). </span>这是一个带复杂 caption 的证明．
+<span class="proof-title">*证* (<a href="#thm-cartesian-preserve" class="quarto-xref">定理 1</a> 的证明). </span>这是一个带复杂 caption 的证明．
 
 </div>
 
@@ -194,7 +178,7 @@ $$
 
 <div class="proof">
 
-<span class="proof-title">*证明*. </span>利用 <a href="#thm-cartesian-preserve" class="quarto-xref">定理 1</a> 对 $\mathbb R \times 2$ 和 $\mathbb R \times \mathbb R$ 夹逼，立刻得到
+<span class="proof-title">*证*. </span>利用 <a href="#thm-cartesian-preserve" class="quarto-xref">定理 1</a> 对 $\mathbb R \times 2$ 和 $\mathbb R \times \mathbb R$ 夹逼，立刻得到
 $$
 \mathbb R \approx \mathbb R \times 2 \preccurlyeq \mathbb R \times \mathbb N \preccurlyeq \mathbb R \times \mathbb R \approx \mathbb R
 \implies \mathbb R \times \mathbb N \approx \mathbb N \times \mathbb R \approx \mathbb R

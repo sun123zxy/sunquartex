@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://sun123zxy.github.io/sunquartex/examples/cnart.html</loc>
-    <lastmod>2025-09-03T08:12:07.465Z</lastmod>
-  </url>
-  <url>
-    <loc>https://sun123zxy.github.io/sunquartex/helloworld.html</loc>
-    <lastmod>2025-09-03T08:12:07.467Z</lastmod>
+    <loc>https://sun123zxy.github.io/sunquartex/examples/timetable.html</loc>
+    <lastmod>2025-09-15T09:29:27.700Z</lastmod>
   </url>
   <url>
     <loc>https://sun123zxy.github.io/sunquartex/examples/readme.html</loc>
-    <lastmod>2025-09-03T08:12:07.467Z</lastmod>
+    <lastmod>2025-09-15T09:29:27.700Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sun123zxy.github.io/sunquartex/helloworld.html</loc>
+    <lastmod>2025-09-15T09:29:27.700Z</lastmod>
+  </url>
+  <url>
+    <loc>https://sun123zxy.github.io/sunquartex/examples/cnart.html</loc>
+    <lastmod>2025-09-15T09:29:27.699Z</lastmod>
   </url>
   <url>
     <loc>https://sun123zxy.github.io/sunquartex/examples/enart.html</loc>
-    <lastmod>2025-09-03T08:12:07.465Z</lastmod>
+    <lastmod>2025-09-15T09:29:27.699Z</lastmod>
   </url>
 </urlset>

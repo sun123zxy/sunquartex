@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-Hans" xml:lang="zh-Hans"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.7.34">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="sun123zxy">
 
 <title>README – SunQuarTeX</title>
 <style>
@@ -89,17 +90,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "没有结果",
+    "search-matching-documents-text": "匹配的文档",
+    "search-copy-link-title": "复制搜索链接",
+    "search-hide-matches-text": "隐藏其它匹配结果",
+    "search-more-match-text": "更多匹配结果",
+    "search-more-matches-text": "更多匹配结果",
+    "search-clear-button-title": "清除",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "取消",
+    "search-submit-button-title": "提交",
+    "search-label": "搜索"
   }
 }</script>
 <script>
@@ -177,13 +178,13 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="展开或折叠侧边栏导航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../examples/cnart.html">Examples</a></li><li class="breadcrumb-item"><a href="../examples/readme.html">README</a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="展开或折叠侧边栏导航" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="搜索" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -200,7 +201,7 @@ window.Quarto = {
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
+        <div id="quarto-search" class="" title="搜索"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
@@ -215,7 +216,7 @@ window.Quarto = {
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
  <span class="menu-text">Examples</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="展开或折叠此栏">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -250,6 +251,12 @@ window.Quarto = {
  <span class="menu-text">README</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../examples/timetable.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">课表</span></a>
+  </div>
+</li>
       </ul>
   </li>
     </ul>
@@ -259,7 +266,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
+    <h2 id="toc-title">该页面内容</h2>
    
   <ul>
   <li><a href="#核心功能" id="toc-核心功能" class="nav-link active" data-scroll-target="#核心功能"><span class="header-section-number">1</span> 核心功能</a></li>
@@ -274,9 +281,10 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#latex-pdf-beamer-输出" id="toc-latex-pdf-beamer-输出" class="nav-link" data-scroll-target="#latex-pdf-beamer-输出"><span class="header-section-number">5.1</span> LaTeX / PDF / Beamer 输出</a></li>
   <li><a href="#computation-功能" id="toc-computation-功能" class="nav-link" data-scroll-target="#computation-功能"><span class="header-section-number">5.2</span> Computation 功能</a></li>
-  <li><a href="#diagram-流程图mermaidgraphviz-等" id="toc-diagram-流程图mermaidgraphviz-等" class="nav-link" data-scroll-target="#diagram-流程图mermaidgraphviz-等"><span class="header-section-number">5.3</span> Diagram 流程图（Mermaid、Graphviz 等）</a></li>
-  <li><a href="#tikz-tikz-cd-quiver-交换图" id="toc-tikz-tikz-cd-quiver-交换图" class="nav-link" data-scroll-target="#tikz-tikz-cd-quiver-交换图"><span class="header-section-number">5.4</span> TikZ / TikZ-cd / Quiver 交换图</a></li>
-  <li><a href="#github-actions-github-pages-网站生成" id="toc-github-actions-github-pages-网站生成" class="nav-link" data-scroll-target="#github-actions-github-pages-网站生成"><span class="header-section-number">5.5</span> Github Actions + Github Pages 网站生成</a></li>
+  <li><a href="#表格" id="toc-表格" class="nav-link" data-scroll-target="#表格"><span class="header-section-number">5.3</span> 表格</a></li>
+  <li><a href="#diagram-流程图mermaidgraphviz-等" id="toc-diagram-流程图mermaidgraphviz-等" class="nav-link" data-scroll-target="#diagram-流程图mermaidgraphviz-等"><span class="header-section-number">5.4</span> Diagram 流程图（Mermaid、Graphviz 等）</a></li>
+  <li><a href="#tikz-tikz-cd-quiver-交换图" id="toc-tikz-tikz-cd-quiver-交换图" class="nav-link" data-scroll-target="#tikz-tikz-cd-quiver-交换图"><span class="header-section-number">5.5</span> TikZ / TikZ-cd / Quiver 交换图</a></li>
+  <li><a href="#github-actions-github-pages-网站生成" id="toc-github-actions-github-pages-网站生成" class="nav-link" data-scroll-target="#github-actions-github-pages-网站生成"><span class="header-section-number">5.6</span> Github Actions + Github Pages 网站生成</a></li>
   </ul></li>
   <li><a href="#样式自定义" id="toc-样式自定义" class="nav-link" data-scroll-target="#样式自定义"><span class="header-section-number">6</span> 样式自定义</a>
   <ul class="collapse">
@@ -296,7 +304,7 @@ window.Quarto = {
   <li><a href="#输出相关" id="toc-输出相关" class="nav-link" data-scroll-target="#输出相关"><span class="header-section-number">7.3</span> 输出相关</a></li>
   </ul></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>其他格式</h2><ul><li><a href="readme.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="readme.docx"><i class="bi bi-file-word"></i>MS Word</a></li><li><a href="readme.md"><i class="bi bi-file-code"></i>Github (GFM)</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -310,6 +318,12 @@ window.Quarto = {
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">作者</div>
+    <div class="quarto-title-meta-contents">
+             <p>sun123zxy </p>
+          </div>
+  </div>
     
   
     
@@ -353,7 +367,7 @@ Write once, present everywhere!<br>基于 Quarto 的多格式输出中英文学�
 <li><p>创建新文章时使用 Github Template 以本仓库为模板建立新仓库．您也可以下载本仓库的压缩包或 clone 到本地．</p></li>
 <li><p>仓库根目录命令行执行 <code>quarto render helloworld.qmd --to=html</code> 测试安装情况．</p></li>
 </ul>
-<p>PDF / Beamer 输出等可选项安装和使用方法参见后文 <a href="#sec-optional" class="quarto-xref">Section&nbsp;5</a>．另外，纯命令行的自动化 CI 流程可参见本仓库下的 Github Actions 配置文件．</p>
+<p>PDF / Beamer 输出等可选项安装和使用方法参见后文 <a href="#sec-optional" class="quarto-xref">小节&nbsp;5</a>．另外，纯命令行的自动化 CI 流程可参见本仓库下的 Github Actions 配置文件．</p>
 </section>
 <section id="基础使用" class="level2" data-number="3">
 <h2 data-number="3" class="anchored" data-anchor-id="基础使用"><span class="header-section-number">3</span> 基础使用</h2>
@@ -381,7 +395,7 @@ Write once, present everywhere!<br>基于 Quarto 的多格式输出中英文学�
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 手动处理合并冲突</span></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> add .</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> commit <span class="at">-m</span> <span class="st">"merge updates from sunquartex"</span> <span class="co"># commit 合并</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="co"># push 到你的远程仓库</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> push <span class="co"># push 到你的远程仓库</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
 <li><code>--allow-unrelated-histories</code> 选项只有在第一次合并时需要添加．</li>
 <li><code>--no-commit</code> 选项用于防止自动 commit 合并．本仓库更新很不稳定，建议每次合并都手动处理．</li>
@@ -420,7 +434,7 @@ Write once, present everywhere!<br>基于 Quarto 的多格式输出中英文学�
 <p>使用例：</p>
 <div id="cell-fig-polar" class="cell" data-execution_count="1">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>代码</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -435,7 +449,7 @@ Write once, present everywhere!<br>基于 Quarto 的多格式输出中英文学�
 <span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>ax.plot(theta, r)</span>
 <span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>)</span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="fig-polar" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -444,7 +458,7 @@ Write once, present everywhere!<br>基于 Quarto 的多格式输出中英文学�
 <img src="readme_files/figure-html/fig-polar-output-1.png" width="450" height="439" class="figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-polar-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: A line plot on a polar axis
+图&nbsp;1: A line plot on a polar axis
 </figcaption>
 </figure>
 </div>
@@ -452,8 +466,542 @@ Figure&nbsp;1: A line plot on a polar axis
 </div>
 </section>
 </section>
-<section id="diagram-流程图mermaidgraphviz-等" class="level3" data-number="5.3">
-<h3 data-number="5.3" class="anchored" data-anchor-id="diagram-流程图mermaidgraphviz-等"><span class="header-section-number">5.3</span> Diagram 流程图（Mermaid、Graphviz 等）</h3>
+<section id="表格" class="level3" data-number="5.3">
+<h3 data-number="5.3" class="anchored" data-anchor-id="表格"><span class="header-section-number">5.3</span> 表格</h3>
+<section id="传统-markdown-表格" class="level4">
+<h4 class="anchored" data-anchor-id="传统-markdown-表格">传统 Markdown 表格</h4>
+<table class="table">
+<tbody>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(L_i \times C_j\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb N\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb R\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(2\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(4\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb N\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb R\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;"><span class="math inline">\(\mathbb N\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb N\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb N\)</span></td>
+<td style="text-align: center;">?</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\mathbb R\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb R\)</span></td>
+<td style="text-align: center;">?</td>
+<td style="text-align: center;"><span class="math inline">\(\mathbb R\)</span></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="markdown-grid-style-tables" class="level4">
+<h4 class="anchored" data-anchor-id="markdown-grid-style-tables">Markdown grid style tables</h4>
+<table class="table">
+<colgroup>
+<col style="width: 5%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 5%">
+<col style="width: 5%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>a</td>
+<td rowspan="2">be</td>
+<td>c</td>
+<td>d</td>
+<td>e</td>
+</tr>
+<tr class="even">
+<td>f</td>
+<td>ew</td>
+<td>a</td>
+<td>b</td>
+</tr>
+<tr class="odd">
+<td>c</td>
+<td>d</td>
+<td colspan="2">ewfe</td>
+<td>e</td>
+</tr>
+<tr class="even">
+<td>f</td>
+<td>g</td>
+<td>h</td>
+<td>r</td>
+<td>e</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="rst-style-list-tables" class="level4">
+<h4 class="anchored" data-anchor-id="rst-style-list-tables">RST-style list tables</h4>
+<p>我们还支持 <a href="https://github.com/pandoc-ext/list-table">RST-style list tables</a>．该格式可以比较方便地合并单元格．</p>
+<table width="1,3,3" class="table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">row 1, column 1</th>
+<th style="text-align: center;">row 1, column 2</th>
+<th style="text-align: center;">row 1, column 3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">row 2, column 1</td>
+<td colspan="2" style="text-align: center;"> row 2, column 2–3</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">row 3, column 1</td>
+<td style="text-align: center;">row 3, column 2</td>
+<td style="text-align: center;">row 3, column 3</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="computation-based-tables" class="level4">
+<h4 class="anchored" data-anchor-id="computation-based-tables">Computation based tables</h4>
+<p>您也可以直接使用代码生成表格：</p>
+<div id="82e7c7c5" class="cell" data-execution_count="2">
+<details class="code-fold">
+<summary>代码</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> Markdown, display</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tabulate <span class="im">import</span> tabulate</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>R <span class="op">=</span> np.array([<span class="dv">0</span>,<span class="dv">100</span>,<span class="dv">200</span>,<span class="dv">300</span>,<span class="dv">400</span>,<span class="dv">500</span>,<span class="dv">600</span>,<span class="dv">700</span>,<span class="dv">800</span>,<span class="dv">900</span>,<span class="dv">1000</span>,</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="dv">1100</span>,<span class="dv">1110</span>,<span class="dv">1120</span>,<span class="dv">1130</span>,<span class="dv">1140</span>,<span class="dv">1150</span>,<span class="dv">1160</span>,<span class="dv">1170</span>,<span class="dv">1180</span>,<span class="dv">1190</span>,</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="dv">1200</span>,<span class="dv">1210</span>,<span class="dv">1220</span>,<span class="dv">1230</span>,<span class="dv">1240</span>,<span class="dv">1250</span>,<span class="dv">1260</span>,<span class="dv">1270</span>,<span class="dv">1280</span>,<span class="dv">1290</span>,</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="dv">1300</span>,<span class="dv">1400</span>,<span class="dv">1500</span>,<span class="dv">2000</span>,<span class="dv">4000</span>,math.inf])</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>U <span class="op">=</span> np.array([<span class="fl">24.2E-3</span>, <span class="fl">0.386</span>,<span class="fl">0.747</span>,<span class="fl">1.104</span>,<span class="fl">1.460</span>,<span class="fl">1.813</span>,<span class="fl">2.16</span>,<span class="fl">2.51</span>,<span class="fl">2.86</span>,<span class="fl">3.19</span>,<span class="fl">3.48</span>,</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fl">3.70</span>,<span class="fl">3.75</span>,<span class="fl">3.77</span>,<span class="fl">3.78</span>,<span class="fl">3.80</span>,<span class="fl">3.81</span>,<span class="fl">3.83</span>,<span class="fl">3.84</span>,<span class="fl">3.85</span>,<span class="fl">3.86</span>,</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="fl">3.87</span>,<span class="fl">3.90</span>,<span class="fl">3.92</span>,<span class="fl">3.93</span>,<span class="fl">3.94</span>,<span class="fl">3.95</span>,<span class="fl">3.95</span>,<span class="fl">3.96</span>,<span class="fl">3.97</span>,<span class="fl">3.98</span>,</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="fl">3.99</span>,<span class="fl">4.08</span>,<span class="fl">4.16</span>,<span class="fl">4.39</span>,<span class="fl">4.66</span>,<span class="fl">4.85</span>])</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>I <span class="op">=</span> np.array([<span class="fl">3.6</span>,<span class="fl">3.6</span>,<span class="fl">3.6</span>,<span class="fl">3.6</span>,<span class="fl">3.6</span>,<span class="fl">3.5</span>,<span class="fl">3.5</span>,<span class="fl">3.5</span>,<span class="fl">3.5</span>,<span class="fl">3.5</span>,<span class="fl">3.4</span>,</span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="fl">3.3</span>,<span class="fl">3.4</span>,<span class="fl">3.4</span>,<span class="fl">3.4</span>,<span class="fl">3.4</span>,<span class="fl">3.3</span>,<span class="fl">3.3</span>,<span class="fl">3.3</span>,<span class="fl">3.3</span>,<span class="fl">3.3</span>,</span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="fl">3.2</span>,<span class="fl">3.2</span>,<span class="fl">3.2</span>,<span class="fl">3.2</span>,<span class="fl">3.2</span>,<span class="fl">3.2</span>,<span class="fl">3.2</span>,<span class="fl">3.1</span>,<span class="fl">3.1</span>,<span class="fl">3.1</span>,</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="fl">3.0</span>,<span class="fl">2.9</span>,<span class="fl">2.7</span>,<span class="fl">2.2</span>,<span class="fl">1.130</span>,<span class="fl">47.7E-3</span>])</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>P <span class="op">=</span> U<span class="op">*</span>I</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<details class="code-fold">
+<summary>代码</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> [[R[i], U[i], I[i], P[i]] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">11</span>)) <span class="op">+</span> [<span class="dv">11</span>,<span class="dv">21</span>,<span class="dv">31</span>,<span class="dv">32</span>,<span class="dv">33</span>,<span class="dv">34</span>,<span class="dv">35</span>,<span class="dv">36</span>]]</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>display(Markdown(tabulate(table, headers<span class="op">=</span>[<span class="st">"R (Ω)"</span>, <span class="st">"U (V)"</span>, <span class="st">"I (mA)"</span>, <span class="st">"P (mW)"</span>])))</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> [[R[i], U[i], I[i], P[i]] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">12</span>, <span class="dv">31</span>)]</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>display(Markdown(tabulate(table, headers<span class="op">=</span>[<span class="st">"R (Ω)"</span>, <span class="st">"U (V)"</span>, <span class="st">"I (mA)"</span>, <span class="st">"P (mW)"</span>])))</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="tbl-light-on" class="quarto-layout-panel anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<div aria-describedby="tbl-light-on-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output cell-output-display cell-output-markdown quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="tbl-light-on" style="flex-basis: 50.0%;justify-content: center;">
+<div id="tbl-light-on-1" class="do-not-create-environment quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-tbl figure">
+<div aria-describedby="tbl-light-on-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table id="tbl-light-on-1" class="do-not-create-environment table">
+<thead>
+<tr class="header">
+<th style="text-align: right;">R (Ω)</th>
+<th style="text-align: right;">U (V)</th>
+<th style="text-align: right;">I (mA)</th>
+<th style="text-align: right;">P (mW)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0.0242</td>
+<td style="text-align: right;">3.6</td>
+<td style="text-align: right;">0.08712</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">100</td>
+<td style="text-align: right;">0.386</td>
+<td style="text-align: right;">3.6</td>
+<td style="text-align: right;">1.3896</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">200</td>
+<td style="text-align: right;">0.747</td>
+<td style="text-align: right;">3.6</td>
+<td style="text-align: right;">2.6892</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">300</td>
+<td style="text-align: right;">1.104</td>
+<td style="text-align: right;">3.6</td>
+<td style="text-align: right;">3.9744</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">400</td>
+<td style="text-align: right;">1.46</td>
+<td style="text-align: right;">3.6</td>
+<td style="text-align: right;">5.256</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">500</td>
+<td style="text-align: right;">1.813</td>
+<td style="text-align: right;">3.5</td>
+<td style="text-align: right;">6.3455</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">600</td>
+<td style="text-align: right;">2.16</td>
+<td style="text-align: right;">3.5</td>
+<td style="text-align: right;">7.56</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">700</td>
+<td style="text-align: right;">2.51</td>
+<td style="text-align: right;">3.5</td>
+<td style="text-align: right;">8.785</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">800</td>
+<td style="text-align: right;">2.86</td>
+<td style="text-align: right;">3.5</td>
+<td style="text-align: right;">10.01</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">900</td>
+<td style="text-align: right;">3.19</td>
+<td style="text-align: right;">3.5</td>
+<td style="text-align: right;">11.165</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1000</td>
+<td style="text-align: right;">3.48</td>
+<td style="text-align: right;">3.4</td>
+<td style="text-align: right;">11.832</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1100</td>
+<td style="text-align: right;">3.7</td>
+<td style="text-align: right;">3.3</td>
+<td style="text-align: right;">12.21</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1200</td>
+<td style="text-align: right;">3.87</td>
+<td style="text-align: right;">3.2</td>
+<td style="text-align: right;">12.384</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1300</td>
+<td style="text-align: right;">3.99</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">11.97</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1400</td>
+<td style="text-align: right;">4.08</td>
+<td style="text-align: right;">2.9</td>
+<td style="text-align: right;">11.832</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1500</td>
+<td style="text-align: right;">4.16</td>
+<td style="text-align: right;">2.7</td>
+<td style="text-align: right;">11.232</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">2000</td>
+<td style="text-align: right;">4.39</td>
+<td style="text-align: right;">2.2</td>
+<td style="text-align: right;">9.658</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">4000</td>
+<td style="text-align: right;">4.66</td>
+<td style="text-align: right;">1.13</td>
+<td style="text-align: right;">5.2658</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">inf</td>
+<td style="text-align: right;">4.85</td>
+<td style="text-align: right;">0.0477</td>
+<td style="text-align: right;">0.231345</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-tbl" id="tbl-light-on-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) （粗）
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display cell-output-markdown quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="tbl-light-on" style="flex-basis: 50.0%;justify-content: center;">
+<div id="tbl-light-on-2" class="do-not-create-environment quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-tbl figure">
+<div aria-describedby="tbl-light-on-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table id="tbl-light-on-2" class="do-not-create-environment table">
+<thead>
+<tr class="header">
+<th style="text-align: right;">R (Ω)</th>
+<th style="text-align: right;">U (V)</th>
+<th style="text-align: right;">I (mA)</th>
+<th style="text-align: right;">P (mW)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">1110</td>
+<td style="text-align: right;">3.75</td>
+<td style="text-align: right;">3.4</td>
+<td style="text-align: right;">12.75</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1120</td>
+<td style="text-align: right;">3.77</td>
+<td style="text-align: right;">3.4</td>
+<td style="text-align: right;">12.818</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1130</td>
+<td style="text-align: right;">3.78</td>
+<td style="text-align: right;">3.4</td>
+<td style="text-align: right;">12.852</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1140</td>
+<td style="text-align: right;">3.8</td>
+<td style="text-align: right;">3.4</td>
+<td style="text-align: right;">12.92</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1150</td>
+<td style="text-align: right;">3.81</td>
+<td style="text-align: right;">3.3</td>
+<td style="text-align: right;">12.573</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1160</td>
+<td style="text-align: right;">3.83</td>
+<td style="text-align: right;">3.3</td>
+<td style="text-align: right;">12.639</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1170</td>
+<td style="text-align: right;">3.84</td>
+<td style="text-align: right;">3.3</td>
+<td style="text-align: right;">12.672</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1180</td>
+<td style="text-align: right;">3.85</td>
+<td style="text-align: right;">3.3</td>
+<td style="text-align: right;">12.705</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1190</td>
+<td style="text-align: right;">3.86</td>
+<td style="text-align: right;">3.3</td>
+<td style="text-align: right;">12.738</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1200</td>
+<td style="text-align: right;">3.87</td>
+<td style="text-align: right;">3.2</td>
+<td style="text-align: right;">12.384</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1210</td>
+<td style="text-align: right;">3.9</td>
+<td style="text-align: right;">3.2</td>
+<td style="text-align: right;">12.48</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1220</td>
+<td style="text-align: right;">3.92</td>
+<td style="text-align: right;">3.2</td>
+<td style="text-align: right;">12.544</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1230</td>
+<td style="text-align: right;">3.93</td>
+<td style="text-align: right;">3.2</td>
+<td style="text-align: right;">12.576</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1240</td>
+<td style="text-align: right;">3.94</td>
+<td style="text-align: right;">3.2</td>
+<td style="text-align: right;">12.608</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1250</td>
+<td style="text-align: right;">3.95</td>
+<td style="text-align: right;">3.2</td>
+<td style="text-align: right;">12.64</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1260</td>
+<td style="text-align: right;">3.95</td>
+<td style="text-align: right;">3.2</td>
+<td style="text-align: right;">12.64</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1270</td>
+<td style="text-align: right;">3.96</td>
+<td style="text-align: right;">3.1</td>
+<td style="text-align: right;">12.276</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">1280</td>
+<td style="text-align: right;">3.97</td>
+<td style="text-align: right;">3.1</td>
+<td style="text-align: right;">12.307</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">1290</td>
+<td style="text-align: right;">3.98</td>
+<td style="text-align: right;">3.1</td>
+<td style="text-align: right;">12.338</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-tbl" id="tbl-light-on-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) （细）
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-light-on-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+表&nbsp;1: 太阳能电池的负载特性
+</figcaption>
+</figure>
+</div>
+<details class="code-fold">
+<summary>代码</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>fig.patch.set_alpha(<span class="dv">0</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>ax.patch.set_alpha(<span class="dv">0</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"U (V)"</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"I (mA)"</span>)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>ax.plot(U, I, marker<span class="op">=</span><span class="st">"o"</span>)</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>)</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>ax.set_xlim(<span class="dv">0</span>)</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="dv">0</span>)</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>fig.patch.set_alpha(<span class="dv">0</span>)</span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>ax.patch.set_alpha(<span class="dv">0</span>)</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>ax.set_xlabel(<span class="st">"R (Ω)"</span>)</span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>ax.set_ylabel(<span class="st">"P (mW)"</span>)</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>ax.plot(R, P, marker<span class="op">=</span><span class="st">"o"</span>)</span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>)</span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>ax.set_xlim((<span class="dv">0</span>, <span class="dv">2000</span>))</span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="dv">0</span>)</span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div id="fig-light-on" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-light-on-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-light-on" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-light-on-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-light-on-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="readme_files/figure-html/fig-light-on-output-1.png" data-ref-parent="fig-light-on" width="589" height="429" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-light-on-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) 输出电流与电压关系曲线
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-light-on" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-light-on-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-light-on-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="readme_files/figure-html/fig-light-on-output-2.png" data-ref-parent="fig-light-on" width="602" height="429" class="figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-light-on-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) 输出功率与负载电阻关系曲线
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-light-on-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+图&nbsp;2: 太阳能电池的负载特性
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="交叉引用" class="level4">
+<h4 class="anchored" data-anchor-id="交叉引用">交叉引用</h4>
+<p>在表格外侧包裹 <code>::: {#tbl-label}</code> 块．表格 caption 置于块的最后一行．例如：</p>
+<div id="tbl-table-example" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<div aria-describedby="tbl-table-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="table">
+<colgroup>
+<col style="width: 5%">
+<col style="width: 6%">
+<col style="width: 6%">
+<col style="width: 5%">
+<col style="width: 5%">
+</colgroup>
+<tbody>
+<tr class="odd">
+<td>a</td>
+<td rowspan="2">be</td>
+<td>c</td>
+<td>d</td>
+<td>e</td>
+</tr>
+<tr class="even">
+<td>f</td>
+<td>ew</td>
+<td>a</td>
+<td>b</td>
+</tr>
+<tr class="odd">
+<td>c</td>
+<td>d</td>
+<td colspan="2">ewfe</td>
+<td>e</td>
+</tr>
+<tr class="even">
+<td>f</td>
+<td>g</td>
+<td>h</td>
+<td>r</td>
+<td>e</td>
+</tr>
+</tbody>
+</table>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-table-example-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+表&nbsp;2: A Table
+</figcaption>
+</figure>
+</div>
+</section>
+</section>
+<section id="diagram-流程图mermaidgraphviz-等" class="level3" data-number="5.4">
+<h3 data-number="5.4" class="anchored" data-anchor-id="diagram-流程图mermaidgraphviz-等"><span class="header-section-number">5.4</span> Diagram 流程图（Mermaid、Graphviz 等）</h3>
 <p><a href="https://quarto.org/docs/authoring/diagrams.html">Quarto 文档</a></p>
 <section id="安装-2" class="level4">
 <h4 class="anchored" data-anchor-id="安装-2">安装</h4>
@@ -463,8 +1011,8 @@ Figure&nbsp;1: A line plot on a polar axis
 </ul>
 </section>
 </section>
-<section id="tikz-tikz-cd-quiver-交换图" class="level3" data-number="5.4">
-<h3 data-number="5.4" class="anchored" data-anchor-id="tikz-tikz-cd-quiver-交换图"><span class="header-section-number">5.4</span> TikZ / TikZ-cd / Quiver 交换图</h3>
+<section id="tikz-tikz-cd-quiver-交换图" class="level3" data-number="5.5">
+<h3 data-number="5.5" class="anchored" data-anchor-id="tikz-tikz-cd-quiver-交换图"><span class="header-section-number">5.5</span> TikZ / TikZ-cd / Quiver 交换图</h3>
 <p>该功能由 <code>_assets/tikz.lua</code> 实现．</p>
 <section id="安装-3" class="level4">
 <h4 class="anchored" data-anchor-id="安装-3">安装</h4>
@@ -496,7 +1044,7 @@ Remark
 <div id="callout-1" class="callout-1-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div class="proof remark">
-<p><span class="proof-title"><em>Remark</em>. </span>关于 mutool 必要性的说明：</p>
+<p><span class="proof-title"><em>注记</em>. </span>关于 mutool 必要性的说明：</p>
 <blockquote class="blockquote">
 <p>As of Ghostscript 10.01.0, this will no longer work due to the introduction of a new PDF interpreter. Therefore, an alternative conversion module based on mutool, a utility which is part of the MuPDF package, has been introduced. It’s automatically invoked if Ghostscript can’t be used and if a working mutool executable is present in a directory which is part of the system’s search path.</p>
 <p>来自 <a href="https://dvisvgm.de/Manpage/">dvisvgm manual</a></p>
@@ -574,15 +1122,15 @@ Remark
 <div id="callout-2" class="callout-2-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div class="proof remark">
-<p><span class="proof-title"><em>Remark</em>. </span>在 Beamer 中使用 TikZ 时，所在幻灯片须添加 <code>{.fragile}</code> 标记．</p>
+<p><span class="proof-title"><em>注记</em>. </span>在 Beamer 中使用 TikZ 时，所在幻灯片须添加 <code>{.fragile}</code> 标记．</p>
 </div>
 </div>
 </div>
 </div>
 </section>
 </section>
-<section id="github-actions-github-pages-网站生成" class="level3" data-number="5.5">
-<h3 data-number="5.5" class="anchored" data-anchor-id="github-actions-github-pages-网站生成"><span class="header-section-number">5.5</span> Github Actions + Github Pages 网站生成</h3>
+<section id="github-actions-github-pages-网站生成" class="level3" data-number="5.6">
+<h3 data-number="5.6" class="anchored" data-anchor-id="github-actions-github-pages-网站生成"><span class="header-section-number">5.6</span> Github Actions + Github Pages 网站生成</h3>
 <p>本仓库同时采用 Github Actions + Github Pages 自动生成 Demo 站点．</p>
 <section id="安装-4" class="level4">
 <h4 class="anchored" data-anchor-id="安装-4">安装</h4>
@@ -609,29 +1157,29 @@ Remark
 <section id="我要改字号" class="level3" data-number="6.1">
 <h3 data-number="6.1" class="anchored" data-anchor-id="我要改字号"><span class="header-section-number">6.1</span> 我要改字号！</h3>
 <p>目前仅支持 PDF 字号修改．英文文档默认字号为 10pt，中文文档默认字号为 10.5pt（五号，详见 CTeX 手册）．</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">fontsize</span><span class="kw">:</span><span class="at"> 12pt</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">fontsize</span><span class="kw">:</span><span class="at"> 12pt</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="我要-不想要目录" class="level3" data-number="6.2">
 <h3 data-number="6.2" class="anchored" data-anchor-id="我要-不想要目录"><span class="header-section-number">6.2</span> 我要 / 不想要目录！</h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> # 开启目录</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> # 开启目录</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>该设置全局 / 特定格式下均生效．</p>
 </section>
 <section id="我不想给-section-编号-我要改-section-编号格式" class="level3" data-number="6.3">
 <h3 data-number="6.3" class="anchored" data-anchor-id="我不想给-section-编号-我要改-section-编号格式"><span class="header-section-number">6.3</span> 我不想给 section 编号 / 我要改 section 编号格式！</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> # section 编号开关</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">number-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span><span class="co"> # section 编号深度</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> # section 编号开关</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">number-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span><span class="co"> # section 编号深度</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>该设置全局 / 特定格式下均生效．</p>
 </section>
 <section id="我不想给定理编号-我要改定理编号格式" class="level3" data-number="6.4">
 <h3 data-number="6.4" class="anchored" data-anchor-id="我不想给定理编号-我要改定理编号格式"><span class="header-section-number">6.4</span> 我不想给定理编号！/ 我要改定理编号格式！</h3>
 <p>Quarto 内置的定理编号系统目前无法修改（见 <a href="https://github.com/quarto-dev/quarto-cli/discussions/5479">Quarto Discussion #5479</a>），但我们提供自定义 PDF 格式定理编号的可能．（目前仍然无法实现完全关闭 PDF 格式中的定理编号）</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">custom-theorem</span><span class="kw">:</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">numbered-within</span><span class="kw">:</span><span class="at"> section</span><span class="co"> # 开启后将相对于 section（或 subsection, etc.）进行定理编号</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">numbered-alike</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> # 开启后不同类型的定理将共享编号</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">custom-theorem</span><span class="kw">:</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">numbered-within</span><span class="kw">:</span><span class="at"> section</span><span class="co"> # 开启后将相对于 section（或 subsection, etc.）进行定理编号</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">numbered-alike</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> # 开启后不同类型的定理将共享编号</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="我要改引用格式" class="level3" data-number="6.5">
 <h3 data-number="6.5" class="anchored" data-anchor-id="我要改引用格式"><span class="header-section-number">6.5</span> 我要改引用格式！</h3>
@@ -643,22 +1191,22 @@ Remark
 </section>
 <section id="我要改-beamer-幻灯片的颜色" class="level3" data-number="6.7">
 <h3 data-number="6.7" class="anchored" data-anchor-id="我要改-beamer-幻灯片的颜色"><span class="header-section-number">6.7</span> 我要改 Beamer 幻灯片的颜色！</h3>
-<div class="sourceCode" id="cb7"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">beamer</span><span class="kw">:</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">custom-color</span><span class="kw">:</span></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">define</span><span class="kw">:</span><span class="at"> </span><span class="st">"</span><span class="sc">\\</span><span class="st">definecolor{blueblk}{HTML}{1874D0}"</span><span class="co"> # 在这里用 LaTeX 自定义颜色供后面使用</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">main</span><span class="kw">:</span><span class="at"> </span><span class="st">"green!40!black"</span><span class="co"> # 主色调</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">theorem</span><span class="kw">:</span><span class="at"> </span><span class="st">"green!32!black"</span><span class="co"> # 各种定理环境颜色</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">example</span><span class="kw">:</span><span class="at"> </span><span class="st">"blueblk!50!black"</span><span class="co"> # Example / Exercise 环境颜色</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">remark</span><span class="kw">:</span><span class="at"> </span><span class="st">"white!15!black"</span><span class="co"> # Proof / Solution / Remark 环境颜色</span></span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">link</span><span class="kw">:</span><span class="at"> </span><span class="st">"lime!85!black"</span><span class="co"> # 链接颜色</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">beamer</span><span class="kw">:</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">custom-color</span><span class="kw">:</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">define</span><span class="kw">:</span><span class="at"> </span><span class="st">"</span><span class="sc">\\</span><span class="st">definecolor{blueblk}{HTML}{1874D0}"</span><span class="co"> # 在这里用 LaTeX 自定义颜色供后面使用</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">main</span><span class="kw">:</span><span class="at"> </span><span class="st">"green!40!black"</span><span class="co"> # 主色调</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">theorem</span><span class="kw">:</span><span class="at"> </span><span class="st">"green!32!black"</span><span class="co"> # 各种定理环境颜色</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">example</span><span class="kw">:</span><span class="at"> </span><span class="st">"blueblk!50!black"</span><span class="co"> # Example / Exercise 环境颜色</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">remark</span><span class="kw">:</span><span class="at"> </span><span class="st">"white!15!black"</span><span class="co"> # Proof / Solution / Remark 环境颜色</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">link</span><span class="kw">:</span><span class="at"> </span><span class="st">"lime!85!black"</span><span class="co"> # 链接颜色</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="pdf-beamer-宏包不够用我要自己导入" class="level3" data-number="6.8">
 <h3 data-number="6.8" class="anchored" data-anchor-id="pdf-beamer-宏包不够用我要自己导入"><span class="header-section-number">6.8</span> PDF / Beamer 宏包不够用，我要自己导入！</h3>
-<div class="sourceCode" id="cb8"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">include-in-header</span><span class="kw">:</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">text</span><span class="kw">:</span><span class="at"> \usepackage{euscript}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">include-in-header</span><span class="kw">:</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">text</span><span class="kw">:</span><span class="at"> \usepackage{euscript}</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>暂时不支持其它格式下的宏包导入．</p>
 </section>
 </section>
@@ -750,12 +1298,12 @@ Remark
       // flash "checked"
       button.classList.add('code-copy-button-checked');
       var currentTitle = button.getAttribute("title");
-      button.setAttribute("title", "Copied!");
+      button.setAttribute("title", "已复制");
       let tooltip;
       if (window.bootstrap) {
         button.setAttribute("data-bs-toggle", "tooltip");
         button.setAttribute("data-bs-placement", "left");
-        button.setAttribute("data-bs-title", "Copied!");
+        button.setAttribute("data-bs-title", "已复制");
         tooltip = new bootstrap.Tooltip(button, 
           { trigger: "manual", 
             customClass: "code-copy-button-tooltip",

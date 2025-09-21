@@ -18,9 +18,6 @@ format:
     include-in-header:
       text: |
         \usepackage{physics}
-  docx: default
-  gfm: default
-  pptx: default
 ---
 
 ## First

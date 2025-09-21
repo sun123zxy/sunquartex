@@ -486,12 +486,12 @@ PDF / Beamer 输出使用 BibLaTeX alphabetical，HTML 输出使用 IEEE．如�
 format:
   beamer:
     custom-color:
-      define: "\\definecolor{blueblk}{HTML}{1874D0}" # 在这里用 LaTeX 自定义颜色供后面使用
-      main: "green!40!black" # 主色调
-      theorem: "green!32!black" # 各种定理环境颜色
-      example: "blueblk!50!black" # Example / Exercise 环境颜色
-      remark: "white!15!black" # Proof / Solution / Remark 环境颜色
-      link: "lime!85!black" # 链接颜色
+      define: \definecolor{blueblk}{HTML}{1874D0} # 在这里用 LaTeX 自定义颜色供后面使用
+      main: green!40!black # 主色调
+      theorem: green!32!black # 各种定理环境颜色
+      example: blueblk!50!black # Example / Exercise 环境颜色
+      remark: white!15!black # Proof / Solution / Remark 环境颜色
+      link: lime!85!black # 链接颜色
 ```
 
 ### PDF / Beamer 宏包不够用，我要自己导入！

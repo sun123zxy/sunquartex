@@ -3,6 +3,6 @@ project:
   output-dir: _output
 
 metadata-files: 
-  - "./_format.yml"
-  - "./_article.yml"
-  - "./_filter.yml"
+  - _format.yml
+  - _article.yml
+  - _filter.yml

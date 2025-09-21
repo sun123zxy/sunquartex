@@ -1,8 +1,8 @@
 
 filters:
   - at: post-quarto
-    path: "./_extensions/pandoc-ext/list-table/list-table.lua"
-  - "./_assets/tikz.lua"
+    path: _extensions/pandoc-ext/list-table/list-table.lua
+  - _assets/tikz.lua
 
 format:
   html:

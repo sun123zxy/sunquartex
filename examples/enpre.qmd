@@ -1,5 +1,5 @@
 ---
-title: $\SunQuarTeX$-enpre Test
+title: $\SunQuarTeX$ Example - enpre
 subtitle: Subtitle Here
 author: sun123zxy
 institute: $\SunQuarTeX$
@@ -9,9 +9,7 @@ bibliography: bibliography.bib
 lang: en
 
 format:
-  beamer:
-    include-in-header:
-      text: \usepackage{euscript}
+  beamer: default
   pptx: default
 ---
 
@@ -22,8 +20,6 @@ format:
 long **long** long long long *long long long* long long long long long long long long long long long long long long long long long long sentence.
 
 long long long long long long long long long long long long long long long long long long long long long long long long long long long paragraph.
-
-This is Euscript $\mathcal{A} \neq \EuScript{A}$.
 
 ::::: {.columns}
 

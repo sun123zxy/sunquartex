@@ -1,5 +1,5 @@
 ---
-title: $\SunQuarTeX$-cnart 测试文档
+title: $\SunQuarTeX$ Example - cnart
 subtitle: 这是副标题
 author: 
   - sun123zxy

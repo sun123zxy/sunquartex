@@ -1,0 +1,28 @@
+---
+title: $\SunQuarTeX$ Example - Custom Extra Package
+subtitle: $\dv{f}{x}$ also available in title
+author: sun123zxy
+date: 2023/09/21
+abstract: This is an abstract.
+bibliography: bibliography.bib
+lang: en
+
+number-sections: true
+
+format:
+  html:
+    include-in-header: 
+      text: |
+        \(\require{physics}\)
+  pdf:
+    include-in-header:
+      text: |
+        \usepackage{physics}
+  docx: default
+  gfm: default
+  pptx: default
+---
+
+## First
+
+This is `physics`: $\dv{f}{x}$.

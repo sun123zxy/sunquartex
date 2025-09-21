@@ -14,3 +14,5 @@ wheels/
 /_output/
 
 /.luarc.json
+
+**/*.quarto_ipynb

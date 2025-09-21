@@ -1,5 +1,5 @@
 ---
-title: 课表
+title: $\SunQuarTeX$ Example - 课表
 date: 2025/09/13
 author: sun123zxy
 lang: zh

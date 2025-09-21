@@ -1,5 +1,5 @@
 ---
-title: $\SunQuarTeX$-cnpre 测试文档
+title: $\SunQuarTeX$ Example - cnpre
 subtitle: 这是副标题
 author: sun123zxy
 institute: Sunderland Quarry of Tectosilicates

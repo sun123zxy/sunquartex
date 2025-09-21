@@ -1,4 +1,4 @@
-# 课表
+# $\SunQuarTeX$ Example - 课表
 sun123zxy
 2025-09-13
 

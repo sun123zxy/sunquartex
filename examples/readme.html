@@ -224,25 +224,31 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../examples/cnart.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="math inline">\(\SunQuarTeX\)</span>-cnart 测试文档</span></a>
+ <span class="menu-text"><span class="math inline">\(\SunQuarTeX\)</span> Example - cnart</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../examples/cnpre.pdf" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="math inline">\(\SunQuarTeX\)</span>-cnpre 测试文档</span></a>
+ <span class="menu-text"><span class="math inline">\(\SunQuarTeX\)</span> Example - cnpre</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../examples/enart.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="math inline">\(\SunQuarTeX\)</span>-enart Test</span></a>
+ <span class="menu-text"><span class="math inline">\(\SunQuarTeX\)</span> Example - enart</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../examples/enpre.pdf" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="math inline">\(\SunQuarTeX\)</span>-enpre Test</span></a>
+ <span class="menu-text"><span class="math inline">\(\SunQuarTeX\)</span> Example - enpre</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../examples/extra.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="math inline">\(\SunQuarTeX\)</span> Example - Custom Extra Package</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -254,7 +260,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../examples/timetable.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">课表</span></a>
+ <span class="menu-text"><span class="math inline">\(\SunQuarTeX\)</span> Example - 课表</span></a>
   </div>
 </li>
       </ul>
@@ -377,7 +383,7 @@ Write once, present everywhere!<br>基于 Quarto 的多格式输出中英文学�
 <ul>
 <li>使用 <code>--to</code> 参数指定输出类型，包括 <code>html</code>, <code>pdf</code>， <code>beamer</code>, <code>docx</code>, <code>gfm</code>．如果已经在文档头中 <code>format</code> 选项下列明输出格式，也可不在命令行中指定该选项．</li>
 </ul>
-<p>示例文件请在 <code>examples/</code> 目录下查看．其中或包含可选支持内容，请安装相应依赖或删除对应内容后渲染．</p>
+<p>示例文件请在 <a href="examples/"><code>examples/</code></a> 目录下查看．其中或包含可选支持内容，请安装相应依赖或删除对应内容后渲染．</p>
 </section>
 <section id="写作" class="level3" data-number="3.2">
 <h3 data-number="3.2" class="anchored" data-anchor-id="写作"><span class="header-section-number">3.2</span> 写作</h3>
@@ -562,11 +568,12 @@ Write once, present everywhere!<br>基于 Quarto 的多格式输出中英文学�
 </tr>
 </tbody>
 </table>
+<p>亦见 <a href="examples/timetable.qmd"><code>examples/timetable.qmd</code></a>．</p>
 </section>
 <section id="computation-based-tables" class="level4">
 <h4 class="anchored" data-anchor-id="computation-based-tables">Computation based tables</h4>
 <p>您也可以直接使用代码生成表格：</p>
-<div id="82e7c7c5" class="cell" data-execution_count="2">
+<div id="a7ba072b" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>代码</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -1013,7 +1020,7 @@ Write once, present everywhere!<br>基于 Quarto 的多格式输出中英文学�
 </section>
 <section id="tikz-tikz-cd-quiver-交换图" class="level3" data-number="5.5">
 <h3 data-number="5.5" class="anchored" data-anchor-id="tikz-tikz-cd-quiver-交换图"><span class="header-section-number">5.5</span> TikZ / TikZ-cd / Quiver 交换图</h3>
-<p>该功能由 <code>_assets/tikz.lua</code> 实现．</p>
+<p>该功能由 <a href="_assets/tikz.lua"><code>_assets/tikz.lua</code></a> 实现．</p>
 <section id="安装-3" class="level4">
 <h4 class="anchored" data-anchor-id="安装-3">安装</h4>
 <p>如果只是输出到 PDF / Beamer，除了安装 LaTeX 发行版之外没有别的额外步骤．</p>
@@ -1204,10 +1211,15 @@ Remark
 <section id="pdf-beamer-宏包不够用我要自己导入" class="level3" data-number="6.8">
 <h3 data-number="6.8" class="anchored" data-anchor-id="pdf-beamer-宏包不够用我要自己导入"><span class="header-section-number">6.8</span> PDF / Beamer 宏包不够用，我要自己导入！</h3>
 <div class="sourceCode" id="cb11"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">include-in-header</span><span class="kw">:</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">text</span><span class="kw">:</span><span class="at"> \usepackage{euscript}</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>暂时不支持其它格式下的宏包导入．</p>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">include-in-header</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">      text</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>        \(\require{physics}\)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">include-in-header</span><span class="kw">:</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="fu">      text</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>        \usepackage{physics}</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>亦见 <a href="examples/extra.qmd"><code>examples/extra.qmd</code></a>．暂时不支持其它格式下的宏包导入．</p>
 </section>
 </section>
 <section id="qa" class="level2" data-number="7">

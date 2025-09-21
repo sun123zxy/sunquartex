@@ -1,4 +1,4 @@
-# $\SunQuarTeX$-cnart 测试文档
+# $\SunQuarTeX$ Example - cnart
 sun123zxy, Luna
 2022-12-07
 

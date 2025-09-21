@@ -49,7 +49,7 @@ PDF / Beamer 输出等可选项安装和使用方法参见后文 <a href="#sec-o
 
 - 使用 `--to` 参数指定输出类型，包括 `html`, `pdf`， `beamer`, `docx`, `gfm`．如果已经在文档头中 `format` 选项下列明输出格式，也可不在命令行中指定该选项．
 
-示例文件请在 `examples/` 目录下查看．其中或包含可选支持内容，请安装相应依赖或删除对应内容后渲染．
+示例文件请在 [`examples/`](examples/) 目录下查看．其中或包含可选支持内容，请安装相应依赖或删除对应内容后渲染．
 
 ### 写作
 
@@ -162,6 +162,8 @@ plt.show()
 |:---------------:|:------------------:|:---------------:|
 | row 2, column 1 |  row 2, column 2–3 |                 |
 | row 3, column 1 |  row 3, column 2   | row 3, column 3 |
+
+亦见 [`examples/timetable.qmd`](examples/timetable.qmd)．
 
 #### Computation based tables
 
@@ -356,7 +358,7 @@ plt.show()
 
 ### TikZ / TikZ-cd / Quiver 交换图
 
-该功能由 `_assets/tikz.lua` 实现．
+该功能由 [`_assets/tikz.lua`](_assets/tikz.lua) 实现．
 
 #### 安装
 
@@ -496,12 +498,17 @@ format:
 
 ``` yaml
 format:
+  html:
+    include-in-header: 
+      text: |
+        \(\require{physics}\)
   pdf:
     include-in-header:
-      text: \usepackage{euscript}
+      text: |
+        \usepackage{physics}
 ```
 
-暂时不支持其它格式下的宏包导入．
+亦见 [`examples/extra.qmd`](examples/extra.qmd)．暂时不支持其它格式下的宏包导入．
 
 ## Q&A
 

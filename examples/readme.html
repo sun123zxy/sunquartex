@@ -75,7 +75,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-cc4127808e6a2723a978411ee8eae105.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-a47f27cf2ec26bc38f56d1dab4c0772e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -573,7 +573,7 @@ Write once, present everywhere!<br>基于 Quarto 的多格式输出中英文学�
 <section id="computation-based-tables" class="level4">
 <h4 class="anchored" data-anchor-id="computation-based-tables">Computation based tables</h4>
 <p>您也可以直接使用代码生成表格：</p>
-<div id="8d86f9e4" class="cell" data-execution_count="2">
+<div id="b59659e9" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>代码</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -1024,15 +1024,18 @@ Write once, present everywhere!<br>基于 Quarto 的多格式输出中英文学�
 <section id="安装-3" class="level4">
 <h4 class="anchored" data-anchor-id="安装-3">安装</h4>
 <p>如果只是输出到 PDF / Beamer，除了安装 LaTeX 发行版之外没有别的额外步骤．</p>
-<p>如还需输出至其它格式：请确保 XeLaTeX、dvisvgm、mutool 已在 PATH 中，且已安装需要使用的 LaTeX 宏包（目前 TikZ 中使用的宏包无法在渲染过程中自动安装）．</p>
+<p>如还需输出至其它格式：请确保 XeLaTeX、dvisvgm、mutool 已在 PATH 中，且提前安装需要使用的 LaTeX 宏包：</p>
 <ul>
-<li><p>例如，使用 Quarto 自带的 TinyTeX 安装 <code>dvisvgm</code>：</p>
+<li><p>安装用于 TikZ 渲染的 LaTeX 宏包：</p>
+<p>新建任意空白 Quarto 文档 <code>temp.qmd</code> 并执行</p>
+<p><code>quarto render temp.qmd --to=pdf --template=_assets/suntemp-tikz.tex</code></p>
+<p>随后删除 <code>temp.qmd</code>．</p>
+<p>如果后续渲染时仍然提示缺少宏包，请手动安装，例如手动安装 <code>standalone</code> 宏包：执行 <code>tlmgr install standalone</code></p></li>
+<li><p>使用 Quarto 自带的 TinyTeX 安装 <code>dvisvgm</code>：</p>
 <ul>
-<li>先输出一次示例 PDF 自动补全大部分所需宏包．</li>
-<li>手动安装 <code>standalone</code> 宏包：执行 <code>tlmgr install standalone</code>．</li>
 <li>执行 <code>tlmgr install dvisvgm</code> 和 <code>tlmgr path add</code> 下载 dvisvgm 并添加至 PATH．</li>
 </ul></li>
-<li><p>如何安装 <code>mutool</code>：</p>
+<li><p>安装 <code>mutool</code>：</p>
 <ul>
 <li>（Linux / WSL）执行 <code>sudo apt install mupdf-tools</code>．</li>
 <li>（Windows）请自行在 <a href="https://mupdf.com/">MuPDF</a> 官网下载并安装 MuPDF，并确保 <code>mutool</code> 在 PATH 中．</li>

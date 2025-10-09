@@ -364,15 +364,23 @@ plt.show()
 
 如果只是输出到 PDF / Beamer，除了安装 LaTeX 发行版之外没有别的额外步骤．
 
-如还需输出至其它格式：请确保 XeLaTeX、dvisvgm、mutool 已在 PATH 中，且已安装需要使用的 LaTeX 宏包（目前 TikZ 中使用的宏包无法在渲染过程中自动安装）．
+如还需输出至其它格式：请确保 XeLaTeX、dvisvgm、mutool 已在 PATH 中，且提前安装需要使用的 LaTeX 宏包：
 
-- 例如，使用 Quarto 自带的 TinyTeX 安装 `dvisvgm`：
+- 安装用于 TikZ 渲染的 LaTeX 宏包：
 
-  - 先输出一次示例 PDF 自动补全大部分所需宏包．
-  - 手动安装 `standalone` 宏包：执行 `tlmgr install standalone`．
+  新建任意空白 Quarto 文档 `temp.qmd` 并执行
+
+  `quarto render temp.qmd --to=pdf --template=_assets/suntemp-tikz.tex`
+
+  随后删除 `temp.qmd`．
+
+  如果后续渲染时仍然提示缺少宏包，请手动安装，例如手动安装 `standalone` 宏包：执行 `tlmgr install standalone`
+
+- 使用 Quarto 自带的 TinyTeX 安装 `dvisvgm`：
+
   - 执行 `tlmgr install dvisvgm` 和 `tlmgr path add` 下载 dvisvgm 并添加至 PATH．
 
-- 如何安装 `mutool`：
+- 安装 `mutool`：
 
   - （Linux / WSL）执行 `sudo apt install mupdf-tools`．
   - （Windows）请自行在 [MuPDF](https://mupdf.com/) 官网下载并安装 MuPDF，并确保 `mutool` 在 PATH 中．

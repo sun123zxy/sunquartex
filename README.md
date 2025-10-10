@@ -391,6 +391,8 @@ format:
       numbered-alike: true # 开启后不同类型的定理将共享编号
 ```
 
+注意使用 ´numbered-within´ 前请先开启 ´number-sections´．
+
 ### 我要改引用格式！
 
 PDF / Beamer 输出使用 BibLaTeX alphabetical，HTML 输出使用 IEEE．如需修改，请自定义 `sun*****.cls` 和 `_format.yml` 和 CSL 文件．

@@ -18,14 +18,20 @@ Write once, present everywhere!<br/>基于 Quarto 的多格式输出中英文学
 
 ## 核心功能
 
+Quarto 基础功能：
+
 - 基于 Pandoc’s Markdown 的完备学术写作语法
 - 强大的交叉引用与定理系统功能
 - HTML、PDF/LaTeX、Beamer、Github Flavored Markdown (GFM) 全格式输出；MS Word、PPT 有限支持
 - 嵌入 Python 代码生成数据图表（Computation）
-- TikZ / [tikz-cd](https://ctan.org/pkg/tikz-cd) / [quiver](https://q.uiver.app/) 图表绘制
 - Mermaid、Graphviz 流程图绘制（Diagram）
+
+额外支持：
+
+- TikZ / [tikz-cd](https://ctan.org/pkg/tikz-cd) / [quiver](https://q.uiver.app/) 图表绘制
+- Lean 代码高亮与源码导入转 Markdown
+- RST-style list tables
 - Github Actions 自动生成 Demo 站点
-- …
 
 推荐在网页 Demo 中阅读本 README．
 
@@ -419,6 +425,22 @@ plt.show()
 
 </div>
 
+### (Preview) Lean 代码高亮与带注释源码导入
+
+[`assets/lean.xml`](assets/lean.xml) 用于 Pandoc 的 Lean 代码高亮．直接使用 `lean` 作为代码块的语言标记即可．
+
+[`_assets/lean-include.lua`](_assets/lean-include.lua) shortcode 用于直接将带有注释的 Lean 代码导入转换为 Markdown．使用如下格式即可导入：
+
+``` qmd
+{{< lean-include path/to/your_file.lean >}}
+```
+
+<div class="proof remark">
+
+<span class="proof-title">*注记*. </span>该功能仍在 Preview 阶段，目前 HTML 的目录导航和 PDF 格式的 unicode 支持存在问题．
+
+</div>
+
 ### Github Actions + Github Pages 网站生成
 
 本仓库同时采用 Github Actions + Github Pages 自动生成 Demo 站点．
@@ -554,7 +576,7 @@ format:
 
 #### 分页符
 
-``．见[官方文档](https://quarto.org/docs/authoring/markdown-basics.html#page-breaks)．
+`{{< pagebreak >}}`．见[官方文档](https://quarto.org/docs/authoring/markdown-basics.html#page-breaks)．
 
 #### YAML 文档头里的字符串到底打不打引号？
 

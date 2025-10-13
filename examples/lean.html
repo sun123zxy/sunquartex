@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.34">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Lean Include Example – SunQuarTeX</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-a47f27cf2ec26bc38f56d1dab4c0772e.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script>
+MathJax = {
+  tex: {
+    macros: {
+        SunQuarTeX: String.raw`\phantom{}\kern-.0em\lower.0ex\hbox{$\mathbf S$}\kern-.045em\lower.0ex\hbox{$\scriptstyle \mathbf U$}\kern-.045em\hbox{$\scriptstyle \mathbb N$}\kern-.0em\hbox{$\mathbb Q$}\kern-.045em\lower.0ex\hbox{$\scriptstyle \mathbf U$}\kern-.135em\lower.0ex\hbox{$\scriptstyle \mathbf A$}\kern-.09em\lower.0ex\hbox{$\scriptstyle \mathbb R$}\kern-.072em\mathbf{\TeX}`
+    }
+  }
+};
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../examples/cnart.html">Examples</a></li><li class="breadcrumb-item"><a href="../examples/lean.html">Lean Include Example</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">SunQuarTeX</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../helloworld.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">你好，<span class="math inline">\(\SunQuarTeX\)</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Examples</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../examples/cnart.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="math inline">\(\SunQuarTeX\)</span> Example - cnart</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../examples/cnpre.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="math inline">\(\SunQuarTeX\)</span> Example - cnpre</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../examples/enart.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="math inline">\(\SunQuarTeX\)</span> Example - enart</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../examples/enpre.pdf" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="math inline">\(\SunQuarTeX\)</span> Example - enpre</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../examples/extra.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="math inline">\(\SunQuarTeX\)</span> Example - Custom Extra Package</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../examples/lean.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Lean Include Example</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../examples/readme.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">README</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../examples/timetable.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="math inline">\(\SunQuarTeX\)</span> Example - 课表</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#logic-part-ii" id="toc-logic-part-ii" class="nav-link active" data-scroll-target="#logic-part-ii"><span class="header-section-number"></span> Logic (Part II)</a>
+  <ul class="collapse">
+  <li><a href="#and-and-or" id="toc-and-and-or" class="nav-link" data-scroll-target="#and-and-or"><span class="header-section-number">1</span> <code>And</code> and <code>Or</code></a></li>
+  <li><a href="#and" id="toc-and" class="nav-link" data-scroll-target="#and"><span class="header-section-number">2</span> <code>And</code> (<code>∧</code>)</a>
+  <ul class="collapse">
+  <li><a href="#iff-first-visit" id="toc-iff-first-visit" class="nav-link" data-scroll-target="#iff-first-visit"><span class="header-section-number">2.1</span> <code>Iff</code> (<code>↔︎</code>), first visit</a></li>
+  <li><a href="#or" id="toc-or" class="nav-link" data-scroll-target="#or"><span class="header-section-number">2.2</span> <code>Or</code> (<code>∨</code>)</a></li>
+  <li><a href="#comprehensive-exercises-for-and-and-or" id="toc-comprehensive-exercises-for-and-and-or" class="nav-link" data-scroll-target="#comprehensive-exercises-for-and-and-or"><span class="header-section-number">2.3</span> Comprehensive exercises for <code>And</code> and <code>Or</code></a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#forall-and-exists" id="toc-forall-and-exists" class="nav-link" data-scroll-target="#forall-and-exists"><span class="header-section-number"></span> <code>Forall</code> and <code>Exists</code></a>
+  <ul class="collapse">
+  <li><a href="#forall" id="toc-forall" class="nav-link" data-scroll-target="#forall"><span class="header-section-number">1</span> Forall (<code>∀</code>)</a></li>
+  <li><a href="#exists" id="toc-exists" class="nav-link" data-scroll-target="#exists"><span class="header-section-number">2</span> <code>Exists</code> (<code>∃</code>)</a>
+  <ul class="collapse">
+  <li><a href="#ignore-a-cosmological-remark" id="toc-ignore-a-cosmological-remark" class="nav-link" data-scroll-target="#ignore-a-cosmological-remark"><span class="header-section-number">2.1</span> [IGNORE] A cosmological remark</a></li>
+  </ul></li>
+  <li><a href="#ignore-a-cosmological-remark-continued" id="toc-ignore-a-cosmological-remark-continued" class="nav-link" data-scroll-target="#ignore-a-cosmological-remark-continued"><span class="header-section-number">3</span> [IGNORE] A cosmological remark, continued</a></li>
+  </ul></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="lean.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="lean.docx"><i class="bi bi-file-word"></i>MS Word</a></li><li><a href="lean.md"><i class="bi bi-file-code"></i>Github (GFM)</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../examples/cnart.html">Examples</a></li><li class="breadcrumb-item"><a href="../examples/lean.html">Lean Include Example</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Lean Include Example</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+<div>
+  <div class="abstract">
+    <div class="block-title">Abstract</div>
+    This file demonstrates the <code>lean-include</code> feature.
+  </div>
+</div>
+
+
+</header>
+
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode lean code-with-copy"><code class="sourceCode lean"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">import</span> Mathlib</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="logic-part-ii" class="level1" data-number="">
+<h1 data-number=""><span class="header-section-number"></span> Logic (Part II)</h1>
+<section id="and-and-or" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="and-and-or"><span class="header-section-number">1</span> <code>And</code> and <code>Or</code></h2>
+<p>In Lean’s dependent type theory, <code>∧</code> and <code>∨</code> serve as the <em>direct product</em> and the <em>direct sum</em> in the universe of <code>Prop</code>.</p>
+<p>Eagle-eyed readers may notice that <code>∧</code> and <code>∨</code> act similarly to Cartesian product and disjoint union in set theory.</p>
+<p>They are also constructed as inductive types.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode lean code-with-copy"><code class="sourceCode lean"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="pp">section</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">variable</span> (p q r : <span class="fu">Prop</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="and" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="and"><span class="header-section-number">2</span> <code>And</code> (<code>∧</code>)</h2>
+<p>The only constructor of <code>And</code> is <code>And.intro</code>, which takes a proof of <code>p</code> and a proof of <code>q</code> to produce a proof of <code>p ∧ q</code>.</p>
+<p>Regard this as the <em>universal property of the direct product</em> if you like.</p>
+<p><code>And.intro hp hq</code> can be abbreviated as <code>⟨hp, hq⟩</code>, called the <em>anonymous constructor</em>.</p>
+<p><code>constructor</code> tactic applies <code>And.intro</code> to split the goal <code>p ∧ q</code> into subgoals <code>p</code> and <code>q</code>. You may also use the anonymous constructor notation <code>⟨hp, hq⟩</code> to mean <code>And.intro hp hq</code>.</p>
+<p><code>split_ands</code> tactic is like <code>constructor</code> but works for nested <code>And</code>s.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode lean code-with-copy"><code class="sourceCode lean"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="at">#print</span> And</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>introducing <code>And</code></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode lean code-with-copy"><code class="sourceCode lean"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="at">#check</span> And.<span class="fu">intro</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>These examples, as introduction rules, are self-evidently true.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode lean code-with-copy"><code class="sourceCode lean"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> (hp : p) (hq : q) : p ∧ q <span class="op">:=</span> And.<span class="fu">intro</span> hp hq</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> (hp : p) (hq : q) : p ∧ q <span class="op">:=</span> ⟨hp, hq⟩</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> (hp : p) (hq : q) : p ∧ q <span class="op">:=</span> <span class="kw">by</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">constructor</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  · <span class="fu">exact</span> hp</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  · <span class="fu">exact</span> hq</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>[EXR] <code>→</code>–<code>∨</code> distribution. Universal property of the direct product.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode lean code-with-copy"><code class="sourceCode lean"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> (hrp : r → p) (hrq : r → q) : r → p ∧ q <span class="op">:=</span> <span class="kw">by</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">intro</span> hr</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">exact</span> ⟨hrp hr, hrq hr⟩</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>And.left</code> and <code>And.right</code> are among the elimination rules of <code>And</code>, which extract the proofs of <code>p</code> and <code>q</code>.</p>
+<p><code>rcases hpq with ⟨hp, hq⟩</code> is a tactic that breaks down the hypothesis <code>hpq : p ∧ q</code> into <code>hp : p</code> and <code>hq : q</code>. Equivalently you can use <code>let ⟨hp, hq⟩ := hpq</code>.</p>
+<p>eliminating <code>And</code></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode lean code-with-copy"><code class="sourceCode lean"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="at">#check</span> And.<span class="fu">left</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="at">#check</span> And.<span class="fu">right</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> (hpq : p ∧ q) : p <span class="op">:=</span> hpq.<span class="fu">left</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> (hpq : p ∧ q) : p <span class="op">:=</span> <span class="kw">by</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rcases</span> hpq <span class="fu">with</span> ⟨hp, _⟩</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">exact</span> hp</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> : p ∧ q → p <span class="op">:=</span> <span class="kw">by</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">intro</span> ⟨hp, _⟩ <span class="co">-- implicit break-down in `intro`</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">exact</span> hp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>[EXR] <code>And</code> is symmetric</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode lean code-with-copy"><code class="sourceCode lean"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> : p ∧ q → q ∧ p <span class="op">:=</span> <span class="kw">by</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">intro</span> hpq</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">exact</span> ⟨hpq.<span class="fu">right</span>, hpq.left⟩</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="at">#check</span> And.comm <span class="co">-- above has a name</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>[EXR] <code>→</code>–<code>∨</code> distribution, in another direction.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode lean code-with-copy"><code class="sourceCode lean"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> (hrpq : r → p ∧ q) : (r → p) ∧ (r → q) <span class="op">:=</span> <span class="kw">by</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">constructor</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  · <span class="fu">intro</span> hr</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">exact</span> (hrpq hr).<span class="fu">left</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  · <span class="fu">intro</span> hr</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">exact</span> (hrpq hr).<span class="fu">right</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>nested and</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode lean code-with-copy"><code class="sourceCode lean"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> (hpqr : p ∧ q ∧ r) : r <span class="op">:=</span> hpqr.<span class="fu">right</span>.<span class="fu">right</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> (hpqr : p ∧ q ∧ r) : r <span class="op">:=</span> <span class="kw">by</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rcases</span> hpqr <span class="fu">with</span> ⟨_, ⟨_, hr⟩⟩ <span class="co">-- anonymous constructor can be nested</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">exact</span> hr</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> (hp : p) (hq : q) (hr : r) : p ∧ q ∧ r <span class="op">:=</span> <span class="kw">by</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">exact</span> ⟨hp, ⟨hq, hr⟩⟩</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> (hp : p) (hq : q) (hr : r) : p ∧ q ∧ r <span class="op">:=</span> <span class="kw">by</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  split_ands</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  · <span class="fu">exact</span> hp</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  · <span class="fu">exact</span> hq</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  · <span class="fu">exact</span> hr</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The actual universal elimination rule of <code>And</code> is the so-called <em>decurrification</em>: From <code>(p → q → r)</code> we may deduce <code>(p ∧ q → r)</code>. This is actually a logical equivalence.</p>
+<p>Intuitively, requiring both <code>p</code> and <code>q</code> to deduce <code>r</code> is nothing but requiring <code>p</code> to deduce that <code>q</code> is sufficient to deduce <code>r</code>.</p>
+<p>[IGNORE] Decurrification is also self-evidently true in Lean’s dependent type theory.</p>
+<p>Currification is heavily used in functional programming for its convenience, Lean is no exception.</p>
+<p>You are no stranger to decurrification even if you are not a functional programmer: The <em>universal property of the tensor product of modules</em> says exactly the same: <span class="math display">\[
+\operatorname{Hom}(M \otimes N, P) \cong \operatorname{Hom}(M, \operatorname{Hom}(N, P))
+\]</span></p>
+<p>[EXR] currification</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode lean code-with-copy"><code class="sourceCode lean"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> (h : p ∧ q → r) : (p → q → r) <span class="op">:=</span> <span class="kw">by</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">intro</span> hp hq</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">exact</span> h ⟨hp, hq⟩</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>[EXR] decurrification</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode lean code-with-copy"><code class="sourceCode lean"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> (h : p → q → r) : (p ∧ q → r) <span class="op">:=</span> <span class="kw">by</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">intro</span> hpq</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">exact</span> h hpq.<span class="fu">left</span> hpq.<span class="fu">right</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> (h : p → q → r) : (p ∧ q → r) <span class="op">:=</span> <span class="kw">by</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">intro</span> ⟨hp, hq⟩ <span class="co">-- `intro` is smart enough to destructure `And`</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">exact</span> h hp hq</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> (h : p → q → r) : (p ∧ q → r) <span class="op">:=</span> <span class="kw">by</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">intro</span> ⟨hp, hq⟩</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">apply</span> h <span class="co">-- `apply` is smart enough to auto-decurrify and generate two subgoals</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  · <span class="fu">exact</span> hp</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>  · <span class="fu">exact</span> hq</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>[IGNORE] decurrification actually originates from <code>And.rec</code>, which is self-evident</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode lean code-with-copy"><code class="sourceCode lean"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="at">#check</span> And.rec</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="kw">theorem</span> <span class="fu">d</span>ecurrify (h : p → q → r) : (p ∧ q → r) <span class="op">:=</span> And.rec h</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>[EXR] <code>And.left</code> is actually a consequence of decurrification</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode lean code-with-copy"><code class="sourceCode lean"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> : p ∧ q → p <span class="op">:=</span> <span class="kw">by</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">apply</span> decurrify</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">intro</span> hp _</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">exact</span> hp</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="iff-first-visit" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="iff-first-visit"><span class="header-section-number">2.1</span> <code>Iff</code> (<code>↔︎</code>), first visit</h3>
+<p>It’s high time to introduce <code>Iff</code> here for the first time.</p>
+<p><code>Iff</code> (<code>↔︎</code>) contains two side of implications: <code>Iff.mp</code> and <code>Iff.mpr</code>.</p>
+<p>Though it is defined as a distinct inductive type, <code>Iff</code> is very similar to <code>And</code> in that you may, somehow, even use it like a <code>(p → q) ∧ (q → p)</code>. The only major difference is the name of the two components.</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode lean code-with-copy"><code class="sourceCode lean"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="at">#check</span> Iff.<span class="fu">intro</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="at">#check</span> Iff.mp</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="at">#check</span> Iff.mpr</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> : (p ↔ q) ↔ (p → q) ∧ (q → p) <span class="op">:=</span> <span class="kw">by</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">constructor</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  · <span class="fu">intro</span> h</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">exact</span> ⟨h.mp, h.mpr⟩</span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  · <span class="fu">intro</span> ⟨hpq, hqp⟩</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>    <span class="fu">exact</span> ⟨hpq, hqp⟩</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="or" class="level3" data-number="2.2">
+<h3 data-number="2.2" class="anchored" data-anchor-id="or"><span class="header-section-number">2.2</span> <code>Or</code> (<code>∨</code>)</h3>
+<p><code>Or</code> has two constructors <code>Or.inl</code> and <code>Or.inr</code>. Either a proof of <code>p</code> or a proof of <code>q</code> produces a proof of <code>p ∨ q</code>.</p>
+<p>[TODO]</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode lean code-with-copy"><code class="sourceCode lean"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="at">#print</span> Or</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="at">#check</span> Or.inl</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="at">#check</span> Or.inr</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="at">#check</span> Or.elim</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a><span class="at">#check</span> Or.rec</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>introducing <code>Or</code></p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode lean code-with-copy"><code class="sourceCode lean"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> (hp : p) : p ∨ q <span class="op">:=</span> Or.inl hp</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> (hq : q) : p ∨ q <span class="op">:=</span> <span class="kw">by</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">right</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">exact</span> hq</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>elimination rule of <code>Or</code>, universal property of the direct sum</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode lean code-with-copy"><code class="sourceCode lean"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> (hpr : p → r) (hqr : q → r) : (p ∨ q → r) <span class="op">:=</span> <span class="kw">fun</span> hpq ↦ (Or.elim hpq hpr hqr)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> (hpr : p → r) (hqr : q → r) : (p ∨ q → r) <span class="op">:=</span> (Or.elim · hpr hqr) <span class="co">-- note the use of `·`</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> (hpr : p → r) (hqr : q → r) (hpq : p ∨ q) : r <span class="op">:=</span> <span class="kw">by</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">apply</span> Or.elim hpq</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  · <span class="fu">exact</span> hpr</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>  · <span class="fu">exact</span> hqr</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> (hpr : p → r) (hqr : q → r) : (p ∨ q → r) <span class="op">:=</span> <span class="kw">fun</span></span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a>  | Or.inl hp =&gt; hpr hp</span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a>  | Or.inr hq =&gt; hqr hq</span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> (hpr : p → r) (hqr : q → r) (hpq : p ∨ q) : r <span class="op">:=</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>  <span class="kw">match</span> hpq <span class="fu">with</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a>  | Or.inl hp =&gt; hpr hp</span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a>  | Or.inr hq =&gt; hqr hq</span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> (hpr : p → r) (hqr : q → r) (hpq : p ∨ q) : r <span class="op">:=</span> <span class="kw">by</span></span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a>  <span class="kw">match</span> hpq <span class="fu">with</span></span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a>  | Or.inl hp =&gt; <span class="fu">exact</span> hpr hp</span>
+<span id="cb18-18"><a href="#cb18-18" aria-hidden="true" tabindex="-1"></a>  | Or.inr hq =&gt; <span class="fu">exact</span> hqr hq</span>
+<span id="cb18-19"><a href="#cb18-19" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> (hpr : p → r) (hqr : q → r) (hpq : p ∨ q) : r <span class="op">:=</span> <span class="kw">by</span></span>
+<span id="cb18-20"><a href="#cb18-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cases</span> hpq <span class="fu">with</span></span>
+<span id="cb18-21"><a href="#cb18-21" aria-hidden="true" tabindex="-1"></a>  | inl hp =&gt; <span class="fu">exact</span> hpr hp</span>
+<span id="cb18-22"><a href="#cb18-22" aria-hidden="true" tabindex="-1"></a>  | inr hq =&gt; <span class="fu">exact</span> hqr hq</span>
+<span id="cb18-23"><a href="#cb18-23" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> (hpr : p → r) (hqr : q → r) (hpq : p ∨ q) : r <span class="op">:=</span> <span class="kw">by</span></span>
+<span id="cb18-24"><a href="#cb18-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rcases</span> hpq <span class="fu">with</span> (hp | hq) <span class="co">-- `rcases` can also destructure `Or`</span></span>
+<span id="cb18-25"><a href="#cb18-25" aria-hidden="true" tabindex="-1"></a>  · <span class="fu">exact</span> hpr hp</span>
+<span id="cb18-26"><a href="#cb18-26" aria-hidden="true" tabindex="-1"></a>  · <span class="fu">exact</span> hqr hq</span>
+<span id="cb18-27"><a href="#cb18-27" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> (hpr : p → r) (hqr : q → r) : p ∨ q → r <span class="op">:=</span> <span class="kw">by</span></span>
+<span id="cb18-28"><a href="#cb18-28" aria-hidden="true" tabindex="-1"></a>  rintro (hp | hq) <span class="co">-- `rintro` is a combination of `intro` and `rcases`</span></span>
+<span id="cb18-29"><a href="#cb18-29" aria-hidden="true" tabindex="-1"></a>  · <span class="fu">exact</span> hpr hp</span>
+<span id="cb18-30"><a href="#cb18-30" aria-hidden="true" tabindex="-1"></a>  · <span class="fu">exact</span> hqr hq</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="comprehensive-exercises-for-and-and-or" class="level3" data-number="2.3">
+<h3 data-number="2.3" class="anchored" data-anchor-id="comprehensive-exercises-for-and-and-or"><span class="header-section-number">2.3</span> Comprehensive exercises for <code>And</code> and <code>Or</code></h3>
+<p>[EXR] distributive laws</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode lean code-with-copy"><code class="sourceCode lean"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> : p ∧ (q ∨ r) ↔ (p ∧ q) ∨ (p ∧ r) <span class="op">:=</span> <span class="kw">by</span> <span class="al">sorry</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> : p ∨ (q ∧ r) ↔ (p ∨ q) ∧ (p ∨ r) <span class="op">:=</span> <span class="kw">by</span> <span class="al">sorry</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+</section>
+<section id="forall-and-exists" class="level1" data-number="">
+<h1 data-number=""><span class="header-section-number"></span> <code>Forall</code> and <code>Exists</code></h1>
+<section id="forall" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="forall"><span class="header-section-number">1</span> Forall (<code>∀</code>)</h2>
+<p>As you may have already noticed, <code>∀</code> is just an alternative way of writing <code>→</code>. Say <code>p</code> is a predicate on a type <code>X</code>, i.e.&nbsp;of type <code>X → Prop</code>, then <code>∀ x : X, p x</code> is exactly the same as <code>(x : X) → p x</code>.</p>
+<p>Though <code>→</code> is primitive in Lean’s dependent type theory, we may still (perhaps awkwardly) state the introduction and elimination rules of <code>∀</code>:</p>
+<ul>
+<li><p>Introduction: <code>fun (x : X) ↦ (h x : p x)</code> produces a proof of <code>∀ x : X, p x</code>.</p></li>
+<li><p>Elimination: Given a proof <code>h</code> of <code>∀ x : X, p x</code>, we can obtain a proof of <code>p a</code> for any specific <code>a : X</code>. It is exactly <code>h a</code>.</p></li>
+</ul>
+<div class="sourceCode" id="cb20"><pre class="sourceCode lean code-with-copy"><code class="sourceCode lean"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="pp">section</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="kw">variable</span> {X : <span class="fu">Type</span>} (p q : X → <span class="fu">Prop</span>) (r s : <span class="fu">Prop</span>) (a b : X)</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="at">#check</span> <span class="kw">∀</span> x : X, p x</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="at">#check</span> <span class="kw">∀</span> x, p x <span class="co">-- Lean is smart enough to infer the type of `x`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>[IGNORE] Writing <code>∀</code> emphasizes that the arrow <code>→</code> is of dependent type, and the domain <code>X</code> is a type, not a proposition. But they are just purely psychological, as the following examples show.</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode lean code-with-copy"><code class="sourceCode lean"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> : (hrs : r → s) → (<span class="kw">∀</span> _ : r, s) <span class="op">:=</span> <span class="kw">by</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">intro</span> hrs</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">exact</span> hrs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="exists" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="exists"><span class="header-section-number">2</span> <code>Exists</code> (<code>∃</code>)</h2>
+<p><code>∃</code> is a bit more complicated.</p>
+<p>Slogan: <code>∀</code> is a dependent <code>→</code>, <code>∃</code> is a dependent <code>×</code> (or <code>∧</code> in <code>Prop</code> universe)</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode lean code-with-copy"><code class="sourceCode lean"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="at">#check</span> <span class="kw">∃</span> x : X, p x</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="at">#check</span> <span class="kw">∃</span> x, p x <span class="co">-- Lean is smart enough to infer the type of `x`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>∃ x : X, p x</code> means that we have the following data:</p>
+<ul>
+<li>an element <code>a : X</code>;</li>
+<li>a proof <code>h : p a</code>.</li>
+</ul>
+<p>So a pair <code>(a, h)</code> would suffice to construct a proof of <code>∃ x : X, p x</code>.</p>
+<p>This is the defining introduction rule of <code>Exists</code> as an inductive type.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode lean code-with-copy"><code class="sourceCode lean"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="at">#check</span> Exists.<span class="fu">intro</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>As like <code>And</code>, you may use the anonymous constructor notation <code>⟨a, h⟩</code> to mean <code>Exists.intro a h</code>.</p>
+<p>In tactic mode, <code>use a</code> make use of <code>Exists.intro a</code> to reduce the goal <code>∃ x : X, p x</code> to <code>p a</code>.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode lean code-with-copy"><code class="sourceCode lean"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> (a : X) (h : p a) : <span class="kw">∃</span> x, p x <span class="op">:=</span> Exists.<span class="fu">intro</span> a h</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> (a : X) (h : p a) : <span class="kw">∃</span> x, p x <span class="op">:=</span> ⟨a, h⟩</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> (a : X) (h : p a) : <span class="kw">∃</span> x, p x <span class="op">:=</span> <span class="kw">by</span> use a</span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a><span class="co">-- [EXR]</span></span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> (x y z : ℕ) (hxy : x &lt; y) (hyz : y &lt; z) : <span class="kw">∃</span> w, x &lt; w ∧ w &lt; z <span class="op">:=</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>  ⟨y, ⟨hxy, hyz⟩⟩</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Note that in the defining pair <code>(a, h)</code>, <code>h</code> is a proof of <code>p a</code>, whose type depends on <code>a</code>. Thus psychologically, you may view <code>∃ x : X, p x</code> as a dependent pair type <code>(x : X) × (p x)</code>.</p>
+<p>Have writing <code>Exists</code> as a dependent pair type reminded you of the currification process?</p>
+<p>Elimination rule: To construct the implication <code>(∃ x : X, p x) → q</code>, it suffices to have a proof of <code>(∀ x : X, p x → q)</code>, i.e.&nbsp;<code>(x : X) → p x → q</code>.</p>
+<p>In tactic mode, <code>rcases h with ⟨a, ha⟩</code> make use of this elimination rule to break down a hypothesis <code>h : ∃ x : X, p x</code> into a witness <code>a : X</code> and a proof <code>ha : p a</code>.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode lean code-with-copy"><code class="sourceCode lean"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="at">#check</span> Exists.elim</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> : (<span class="kw">∀</span> x, p x → r) → ((<span class="kw">∃</span> x, p x) → r) <span class="op">:=</span> <span class="kw">by</span></span>
+<span id="cb25-4"><a href="#cb25-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">intro</span> hf he</span>
+<span id="cb25-5"><a href="#cb25-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">exact</span> Exists.elim he hf</span>
+<span id="cb25-6"><a href="#cb25-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-7"><a href="#cb25-7" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> : (<span class="kw">∀</span> x, p x → r) → ((<span class="kw">∃</span> x, p x) → r) <span class="op">:=</span> <span class="kw">by</span></span>
+<span id="cb25-8"><a href="#cb25-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">intro</span> hf he</span>
+<span id="cb25-9"><a href="#cb25-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rcases</span> he <span class="fu">with</span> ⟨a, hpa⟩</span>
+<span id="cb25-10"><a href="#cb25-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">exact</span> hf a hpa</span>
+<span id="cb25-11"><a href="#cb25-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-12"><a href="#cb25-12" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> : (<span class="kw">∀</span> x, p x → r) → ((<span class="kw">∃</span> x, p x) → r) <span class="op">:=</span> <span class="kw">by</span></span>
+<span id="cb25-13"><a href="#cb25-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">intro</span> h ⟨a, hpa⟩ <span class="co">-- you may also `rcases` explicitly</span></span>
+<span id="cb25-14"><a href="#cb25-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">exact</span> h a hpa</span>
+<span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a><span class="co">-- [EXR] reverse direction is also true</span></span>
+<span id="cb25-17"><a href="#cb25-17" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> :  ((<span class="kw">∃</span> x, p x) → r) → (<span class="kw">∀</span> x, p x → r) <span class="op">:=</span> <span class="kw">by</span></span>
+<span id="cb25-18"><a href="#cb25-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">intro</span> h a hpa</span>
+<span id="cb25-19"><a href="#cb25-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">apply</span> h</span>
+<span id="cb25-20"><a href="#cb25-20" aria-hidden="true" tabindex="-1"></a>  use a</span>
+<span id="cb25-21"><a href="#cb25-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-22"><a href="#cb25-22" aria-hidden="true" tabindex="-1"></a><span class="co">-- [EXR]</span></span>
+<span id="cb25-23"><a href="#cb25-23" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> : (<span class="kw">∃</span> x, r ∧ p x) → r ∧ (<span class="kw">∃</span> x, r ∧ p x) <span class="op">:=</span> <span class="kw">by</span></span>
+<span id="cb25-24"><a href="#cb25-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">intro</span> ⟨a, ⟨hr, hpa⟩⟩</span>
+<span id="cb25-25"><a href="#cb25-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">exact</span> ⟨hr, ⟨a, ⟨hr, hpa⟩⟩⟩</span>
+<span id="cb25-26"><a href="#cb25-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-27"><a href="#cb25-27" aria-hidden="true" tabindex="-1"></a><span class="co">-- [EXR]</span></span>
+<span id="cb25-28"><a href="#cb25-28" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> : (<span class="kw">∃</span> x, p x ∨ q x) ↔ (<span class="kw">∃</span> x, p x) ∨ (<span class="kw">∃</span> x, q x) <span class="op">:=</span> <span class="kw">by</span></span>
+<span id="cb25-29"><a href="#cb25-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">constructor</span></span>
+<span id="cb25-30"><a href="#cb25-30" aria-hidden="true" tabindex="-1"></a>  · rintro ⟨a, (hpa | hqa)⟩</span>
+<span id="cb25-31"><a href="#cb25-31" aria-hidden="true" tabindex="-1"></a>    · <span class="fu">left</span>; use a</span>
+<span id="cb25-32"><a href="#cb25-32" aria-hidden="true" tabindex="-1"></a>    · <span class="fu">right</span>; use a</span>
+<span id="cb25-33"><a href="#cb25-33" aria-hidden="true" tabindex="-1"></a>  · rintro (⟨a, hpa⟩ | ⟨a, hqa⟩)</span>
+<span id="cb25-34"><a href="#cb25-34" aria-hidden="true" tabindex="-1"></a>    · use a; <span class="fu">left</span>; <span class="fu">exact</span> hpa</span>
+<span id="cb25-35"><a href="#cb25-35" aria-hidden="true" tabindex="-1"></a>    · use a; <span class="fu">right</span>; <span class="fu">exact</span> hqa</span>
+<span id="cb25-36"><a href="#cb25-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb25-37"><a href="#cb25-37" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="ignore-a-cosmological-remark" class="level3" data-number="2.1">
+<h3 data-number="2.1" class="anchored" data-anchor-id="ignore-a-cosmological-remark"><span class="header-section-number">2.1</span> [IGNORE] A cosmological remark</h3>
+<p>The pair <code>(a, h)</code> actually do not have type <code>(x : X) × (p x)</code>. The latter notation is actually for the <em>dependent pair type</em> (or <code>Sigma</code> type), which lives in <code>Type*</code> universe.</p>
+<p>But <code>Exists</code> should live in <code>Prop</code>, and in <code>Prop</code> universe we admit <em>proof-irrelevance</em>, i.e.&nbsp;we do not save data. So <code>Exists</code> forget the exact witness <code>a</code> once it is proved.</p>
+<p>This “forgetfulness” is revealed by the fact that there is no elimination rule <code>Exists.fst</code> to extract the witness <code>a</code> from a proof of <code>∃ x : X, p x</code>, as long as <code>X</code> lives in the <code>Type*</code> universe. (Note that <code>Exists.elim</code> can only produce propositions in <code>Prop</code>)</p>
+<p>But if <code>X</code> lives in <code>Prop</code> universe, then we do have <code>Exists.fst</code>:</p>
+<div class="sourceCode" id="cb26"><pre class="sourceCode lean code-with-copy"><code class="sourceCode lean"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="pp">section</span></span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="at">#check</span> Exists.fst</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Wait, wait, we never worked with <code>X : Prop</code> before. Say <code>p : r → Prop</code> and <code>r s : Prop</code>, what does <code>∃ hr : r, p hr</code> mean? It means that <code>r</code> and <code>p hr</code> are both true? [TODO] I don’t know how to explain this properly so far.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode lean code-with-copy"><code class="sourceCode lean"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">variable</span> (r : <span class="fu">Prop</span>) (p : r → <span class="fu">Prop</span>)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="at">#check</span> <span class="kw">∃</span> hr : r, p hr</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co">-- Prove `Exists.fst` and `Exists.snd` by `Exists.elim`</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> (he : <span class="kw">∃</span> hr : r, p hr) : r ∧ p he.fst <span class="op">:=</span> <span class="kw">by</span></span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">apply</span> Exists.elim he</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">intro</span> hr hpr</span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">exact</span> ⟨hr, hpr⟩</span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
+<section id="ignore-a-cosmological-remark-continued" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="ignore-a-cosmological-remark-continued"><span class="header-section-number">3</span> [IGNORE] A cosmological remark, continued</h2>
+<p>Same construction, different universes. Other examples are also shown below.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode lean code-with-copy"><code class="sourceCode lean"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="at">#print</span> And <span class="co">-- `×` in `Prop`</span></span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="at">#print</span> Prod <span class="co">-- `×` in `Type*`</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co">-- Forall `∀`: dependent `∏` in `Prop`</span></span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="co">-- dependent function type: dependent `∏` in `Type*`</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="at">#print</span> Or <span class="co">-- `⊕` in `Prop`</span></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="at">#print</span> Sum <span class="co">-- `⊕` in `Type*`</span></span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="at">#print</span> Exists <span class="co">-- dependent `∑` in `Prop`</span></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="at">#print</span> Sigma <span class="co">-- dependent `Σ` in `Type*`</span></span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a><span class="at">#print</span> Nonempty <span class="co">-- a proof of non-emptiness living in `Prop`</span></span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a><span class="at">#print</span> Inhabited <span class="co">-- an designated element living in `Sort*`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/sun123zxy\.github\.io\/sunquartex\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+            // default icon
+            link.classList.add("external");
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

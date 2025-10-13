@@ -253,6 +253,12 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../examples/lean.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lean Include Example</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../examples/readme.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">README</span></a>
   </div>
@@ -290,7 +296,8 @@ window.Quarto = {
   <li><a href="#表格" id="toc-表格" class="nav-link" data-scroll-target="#表格"><span class="header-section-number">5.3</span> 表格</a></li>
   <li><a href="#diagram-流程图mermaidgraphviz-等" id="toc-diagram-流程图mermaidgraphviz-等" class="nav-link" data-scroll-target="#diagram-流程图mermaidgraphviz-等"><span class="header-section-number">5.4</span> Diagram 流程图（Mermaid、Graphviz 等）</a></li>
   <li><a href="#tikz-tikz-cd-quiver-交换图" id="toc-tikz-tikz-cd-quiver-交换图" class="nav-link" data-scroll-target="#tikz-tikz-cd-quiver-交换图"><span class="header-section-number">5.5</span> TikZ / TikZ-cd / Quiver 交换图</a></li>
-  <li><a href="#github-actions-github-pages-网站生成" id="toc-github-actions-github-pages-网站生成" class="nav-link" data-scroll-target="#github-actions-github-pages-网站生成"><span class="header-section-number">5.6</span> Github Actions + Github Pages 网站生成</a></li>
+  <li><a href="#preview-lean-代码高亮与带注释源码导入" id="toc-preview-lean-代码高亮与带注释源码导入" class="nav-link" data-scroll-target="#preview-lean-代码高亮与带注释源码导入"><span class="header-section-number">5.6</span> (Preview) Lean 代码高亮与带注释源码导入</a></li>
+  <li><a href="#github-actions-github-pages-网站生成" id="toc-github-actions-github-pages-网站生成" class="nav-link" data-scroll-target="#github-actions-github-pages-网站生成"><span class="header-section-number">5.7</span> Github Actions + Github Pages 网站生成</a></li>
   </ul></li>
   <li><a href="#样式自定义" id="toc-样式自定义" class="nav-link" data-scroll-target="#样式自定义"><span class="header-section-number">6</span> 样式自定义</a>
   <ul class="collapse">
@@ -351,15 +358,20 @@ Write once, present everywhere!<br>基于 Quarto 的多格式输出中英文学�
 </p>
 <section id="核心功能" class="level2" data-number="1">
 <h2 data-number="1" class="anchored" data-anchor-id="核心功能"><span class="header-section-number">1</span> 核心功能</h2>
+<p>Quarto 基础功能：</p>
 <ul>
 <li>基于 Pandoc’s Markdown 的完备学术写作语法</li>
 <li>强大的交叉引用与定理系统功能</li>
 <li>HTML、PDF/LaTeX、Beamer、Github Flavored Markdown (GFM) 全格式输出；MS Word、PPT 有限支持</li>
 <li>嵌入 Python 代码生成数据图表（Computation）</li>
-<li>TikZ / <a href="https://ctan.org/pkg/tikz-cd">tikz-cd</a> / <a href="https://q.uiver.app/">quiver</a> 图表绘制</li>
 <li>Mermaid、Graphviz 流程图绘制（Diagram）</li>
+</ul>
+<p>额外支持：</p>
+<ul>
+<li>TikZ / <a href="https://ctan.org/pkg/tikz-cd">tikz-cd</a> / <a href="https://q.uiver.app/">quiver</a> 图表绘制</li>
+<li>Lean 代码高亮与源码导入转 Markdown</li>
+<li>RST-style list tables</li>
 <li>Github Actions 自动生成 Demo 站点</li>
-<li>…</li>
 </ul>
 <p>推荐在网页 Demo 中阅读本 README．</p>
 </section>
@@ -573,7 +585,7 @@ Write once, present everywhere!<br>基于 Quarto 的多格式输出中英文学�
 <section id="computation-based-tables" class="level4">
 <h4 class="anchored" data-anchor-id="computation-based-tables">Computation based tables</h4>
 <p>您也可以直接使用代码生成表格：</p>
-<div id="05dcdfdd" class="cell" data-execution_count="2">
+<div id="8f863fd4" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>代码</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -1139,8 +1151,32 @@ Remark
 </div>
 </section>
 </section>
-<section id="github-actions-github-pages-网站生成" class="level3" data-number="5.6">
-<h3 data-number="5.6" class="anchored" data-anchor-id="github-actions-github-pages-网站生成"><span class="header-section-number">5.6</span> Github Actions + Github Pages 网站生成</h3>
+<section id="preview-lean-代码高亮与带注释源码导入" class="level3" data-number="5.6">
+<h3 data-number="5.6" class="anchored" data-anchor-id="preview-lean-代码高亮与带注释源码导入"><span class="header-section-number">5.6</span> (Preview) Lean 代码高亮与带注释源码导入</h3>
+<p><a href="assets/lean.xml"><code>assets/lean.xml</code></a> 用于 Pandoc 的 Lean 代码高亮．直接使用 <code>lean</code> 作为代码块的语言标记即可．</p>
+<p><a href="_assets/lean-include.lua"><code>_assets/lean-include.lua</code></a> shortcode 用于直接将带有注释的 Lean 代码导入转换为 Markdown．使用如下格式即可导入：</p>
+<pre class="qmd" data-shortcodes="false"><code>{{&lt; lean-include path/to/your_file.lean &gt;}}</code></pre>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Remark
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="proof remark">
+<p><span class="proof-title"><em>注记</em>. </span>该功能仍在 Preview 阶段，目前 HTML 的目录导航和 PDF 格式的 unicode 支持存在问题．</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="github-actions-github-pages-网站生成" class="level3" data-number="5.7">
+<h3 data-number="5.7" class="anchored" data-anchor-id="github-actions-github-pages-网站生成"><span class="header-section-number">5.7</span> Github Actions + Github Pages 网站生成</h3>
 <p>本仓库同时采用 Github Actions + Github Pages 自动生成 Demo 站点．</p>
 <section id="安装-4" class="level4">
 <h4 class="anchored" data-anchor-id="安装-4">安装</h4>
@@ -1167,29 +1203,29 @@ Remark
 <section id="我要改字号" class="level3" data-number="6.1">
 <h3 data-number="6.1" class="anchored" data-anchor-id="我要改字号"><span class="header-section-number">6.1</span> 我要改字号！</h3>
 <p>目前仅支持 PDF 字号修改．英文文档默认字号为 10pt，中文文档默认字号为 10.5pt（五号，详见 CTeX 手册）．</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">fontsize</span><span class="kw">:</span><span class="at"> 12pt</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">fontsize</span><span class="kw">:</span><span class="at"> 12pt</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="我要-不想要目录" class="level3" data-number="6.2">
 <h3 data-number="6.2" class="anchored" data-anchor-id="我要-不想要目录"><span class="header-section-number">6.2</span> 我要 / 不想要目录！</h3>
-<div class="sourceCode" id="cb7"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> # 开启目录</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> # 开启目录</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>该设置全局 / 特定格式下均生效．</p>
 </section>
 <section id="我不想给-section-编号-我要改-section-编号格式" class="level3" data-number="6.3">
 <h3 data-number="6.3" class="anchored" data-anchor-id="我不想给-section-编号-我要改-section-编号格式"><span class="header-section-number">6.3</span> 我不想给 section 编号 / 我要改 section 编号格式！</h3>
-<div class="sourceCode" id="cb8"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> # section 编号开关</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">number-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span><span class="co"> # section 编号深度</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> # section 编号开关</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">number-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span><span class="co"> # section 编号深度</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>该设置全局 / 特定格式下均生效．</p>
 </section>
 <section id="我不想给定理编号-我要改定理编号格式" class="level3" data-number="6.4">
 <h3 data-number="6.4" class="anchored" data-anchor-id="我不想给定理编号-我要改定理编号格式"><span class="header-section-number">6.4</span> 我不想给定理编号！/ 我要改定理编号格式！</h3>
 <p>Quarto 内置的定理编号系统目前无法修改（见 <a href="https://github.com/quarto-dev/quarto-cli/discussions/5479">Quarto Discussion #5479</a>），但我们提供自定义 PDF 格式定理编号的可能．（目前仍然无法实现完全关闭 PDF 格式中的定理编号）</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">custom-theorem</span><span class="kw">:</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">numbered-within</span><span class="kw">:</span><span class="at"> section</span><span class="co"> # 开启后将相对于 section（或 subsection, etc.）进行定理编号</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">numbered-alike</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> # 开启后不同类型的定理将共享编号</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">custom-theorem</span><span class="kw">:</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">numbered-within</span><span class="kw">:</span><span class="at"> section</span><span class="co"> # 开启后将相对于 section（或 subsection, etc.）进行定理编号</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">numbered-alike</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> # 开启后不同类型的定理将共享编号</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>注意使用 ´numbered-within´ 前请先开启 ´number-sections´．</p>
 </section>
 <section id="我要改引用格式" class="level3" data-number="6.5">
@@ -1202,27 +1238,27 @@ Remark
 </section>
 <section id="我要改-beamer-幻灯片的颜色" class="level3" data-number="6.7">
 <h3 data-number="6.7" class="anchored" data-anchor-id="我要改-beamer-幻灯片的颜色"><span class="header-section-number">6.7</span> 我要改 Beamer 幻灯片的颜色！</h3>
-<div class="sourceCode" id="cb10"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">beamer</span><span class="kw">:</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">custom-color</span><span class="kw">:</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">define</span><span class="kw">:</span><span class="at"> \definecolor{blueblk}{HTML}{1874D0}</span><span class="co"> # 在这里用 LaTeX 自定义颜色供后面使用</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">main</span><span class="kw">:</span><span class="at"> green!40!black</span><span class="co"> # 主色调</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">theorem</span><span class="kw">:</span><span class="at"> green!32!black</span><span class="co"> # 各种定理环境颜色</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">example</span><span class="kw">:</span><span class="at"> blueblk!50!black</span><span class="co"> # Example / Exercise 环境颜色</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">remark</span><span class="kw">:</span><span class="at"> white!15!black</span><span class="co"> # Proof / Solution / Remark 环境颜色</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">link</span><span class="kw">:</span><span class="at"> lime!85!black</span><span class="co"> # 链接颜色</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">beamer</span><span class="kw">:</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">custom-color</span><span class="kw">:</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">define</span><span class="kw">:</span><span class="at"> \definecolor{blueblk}{HTML}{1874D0}</span><span class="co"> # 在这里用 LaTeX 自定义颜色供后面使用</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">main</span><span class="kw">:</span><span class="at"> green!40!black</span><span class="co"> # 主色调</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">theorem</span><span class="kw">:</span><span class="at"> green!32!black</span><span class="co"> # 各种定理环境颜色</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">example</span><span class="kw">:</span><span class="at"> blueblk!50!black</span><span class="co"> # Example / Exercise 环境颜色</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">remark</span><span class="kw">:</span><span class="at"> white!15!black</span><span class="co"> # Proof / Solution / Remark 环境颜色</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="at">      </span><span class="fu">link</span><span class="kw">:</span><span class="at"> lime!85!black</span><span class="co"> # 链接颜色</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="pdf-beamer-宏包不够用我要自己导入" class="level3" data-number="6.8">
 <h3 data-number="6.8" class="anchored" data-anchor-id="pdf-beamer-宏包不够用我要自己导入"><span class="header-section-number">6.8</span> PDF / Beamer 宏包不够用，我要自己导入！</h3>
-<div class="sourceCode" id="cb11"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">include-in-header</span><span class="kw">:</span><span class="at"> </span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="fu">      text</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>        \(\require{physics}\)</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">include-in-header</span><span class="kw">:</span></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="fu">      text</span><span class="kw">: </span><span class="ch">|</span></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a>        \usepackage{physics}</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">html</span><span class="kw">:</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">include-in-header</span><span class="kw">:</span><span class="at"> </span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">      text</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>        \(\require{physics}\)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">include-in-header</span><span class="kw">:</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a><span class="fu">      text</span><span class="kw">: </span><span class="ch">|</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>        \usepackage{physics}</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>亦见 <a href="examples/extra.qmd"><code>examples/extra.qmd</code></a>．暂时不支持其它格式下的宏包导入．</p>
 </section>
 </section>
@@ -1261,7 +1297,7 @@ Remark
 </section>
 <section id="分页符" class="level4">
 <h4 class="anchored" data-anchor-id="分页符">分页符</h4>
-<p><code></code>．见<a href="https://quarto.org/docs/authoring/markdown-basics.html#page-breaks">官方文档</a>．</p>
+<p><code data-shortcodes="false">{{&lt; pagebreak &gt;}}</code>．见<a href="https://quarto.org/docs/authoring/markdown-basics.html#page-breaks">官方文档</a>．</p>
 </section>
 <section id="yaml-文档头里的字符串到底打不打引号" class="level4">
 <h4 class="anchored" data-anchor-id="yaml-文档头里的字符串到底打不打引号">YAML 文档头里的字符串到底打不打引号？</h4>

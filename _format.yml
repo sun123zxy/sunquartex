@@ -1,5 +1,7 @@
 # --- format defaults ---
 csl: _assets/ieee.csl
+syntax-definitions: 
+  - _assets/lean.xml
 format:
   html:
     theme: _assets/custom.scss

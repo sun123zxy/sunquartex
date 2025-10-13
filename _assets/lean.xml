@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE language SYSTEM "language.dtd">
+<!--
+  KDE/KSyntaxHighlighting XML syntax definition for the Lean theorem prover.
+
+  Converted from the highlight.js definition at:
+  https://github.com/leanprover-community/highlightjs-lean
+
+  Notes:
+  - Supports line comments (-- …), nested block comments (/- … -/), and doc comments (/-- … -/, /-! … -/).
+  - Highlights definition names following def/theorem/lemma/class/instance/structure.
+  - Includes Lean-specific keywords, tactics, meta-modifiers, and literals.
+  - Handles attribute decorators @[ ... ] and attribute lines starting with `attribute`.
+-->
+<language name="LEAN" section="Scientific" version="1" kateversion="5.0"
+          extensions="*.lean"
+          mimetype="text/x-lean"
+          author="Patrick Massot (original HLJS); converted by GitHub Copilot"
+          license="MIT"
+          caseSensitive="true">
+
+  <highlighting>
+    <!-- Styles -->
+    <itemDatas>
+      <itemData name="Normal"         defStyleNum="dsNormal"/>
+      <itemData name="Keyword"        defStyleNum="dsKeyword"/>
+      <itemData name="Builtin"        defStyleNum="dsFunction"/>
+      <itemData name="Literal"        defStyleNum="dsDataType"/>
+      <itemData name="Meta"           defStyleNum="dsAttribute"/>
+      <itemData name="Section"        defStyleNum="dsPreprocessor"/>
+      <itemData name="Symbol"         defStyleNum="dsOperator"/>
+      <itemData name="FunctionName"   defStyleNum="dsFunction"/>
+      <itemData name="Comment"        defStyleNum="dsComment"/>
+      <itemData name="DocComment"     defStyleNum="dsDocumentation"/>
+      <itemData name="Attribute"      defStyleNum="dsAttribute"/>
+      <itemData name="String"         defStyleNum="dsString"/>
+      <itemData name="Number"         defStyleNum="dsDecVal"/>
+      <itemData name="Float"          defStyleNum="dsFloat"/>
+      <itemData name="Alert"          defStyleNum="dsAlert"/>
+    </itemDatas>
+
+    <!-- Keyword lists -->
+    <list name="definitionKeywords">
+      <item>def</item>
+      <item>theorem</item>
+      <item>lemma</item>
+      <item>class</item>
+      <item>instance</item>
+      <item>structure</item>
+    </list>
+
+    <list name="keywords">
+      <item>theorem</item>
+      <item>lemma</item>
+      <item>definition</item>
+      <item>def</item>
+      <item>class</item>
+      <item>structure</item>
+      <item>instance</item>
+      <item>example</item>
+      <item>inductive</item>
+      <item>coinductive</item>
+      <item>axiom</item>
+      <item>axioms</item>
+      <item>hypothesis</item>
+      <item>constant</item>
+      <item>constants</item>
+      <item>universe</item>
+      <item>universes</item>
+      <item>variable</item>
+      <item>variables</item>
+      <item>parameter</item>
+      <item>parameters</item>
+      <item>begin</item>
+      <item>end</item>
+      <item>infix</item>
+      <item>infixr</item>
+      <item>import</item>
+      <item>open</item>
+      <item>theory</item>
+      <item>prelude</item>
+      <item>renaming</item>
+      <item>hiding</item>
+      <item>exposing</item>
+      <item>calc</item>
+      <item>match</item>
+      <item>do</item>
+      <item>by</item>
+      <item>let</item>
+      <item>in</item>
+      <item>extends</item>
+      <item>fun</item>
+      <item>assume</item>
+      <!-- Unicode keywords/symbolic tokens sometimes used as keywords -->
+      <item>λ</item>
+      <item>∀</item>
+      <item>∃</item>
+      <item>⨁</item>
+      <item>Π</item>
+    </list>
+
+    <list name="builtins">
+      <item>Type</item>
+      <item>Prop</item>
+      <item>Sort</item>
+      <item>rw</item>
+      <item>rewrite</item>
+      <item>rwa</item>
+      <item>erw</item>
+      <item>subst</item>
+      <item>substs</item>
+      <item>simp</item>
+      <item>dsimp</item>
+      <item>simpa</item>
+      <item>simp_intros</item>
+      <item>finish</item>
+      <item>unfold</item>
+      <item>unfold1</item>
+      <item>dunfold</item>
+      <item>unfold_projs</item>
+      <item>unfold_coes</item>
+      <item>delta</item>
+      <item>cc</item>
+      <item>ac_reflexivity</item>
+      <item>ac_refl</item>
+      <item>existsi</item>
+      <item>cases</item>
+      <item>rcases</item>
+      <item>with</item>
+      <item>intro</item>
+      <item>intros</item>
+      <item>introv</item>
+      <item>by_cases</item>
+      <item>refl</item>
+      <item>rfl</item>
+      <item>funext</item>
+      <item>propext</item>
+      <item>exact</item>
+      <item>exacts</item>
+      <item>refine</item>
+      <item>apply</item>
+      <item>eapply</item>
+      <item>fapply</item>
+      <item>apply_with</item>
+      <item>apply_instance</item>
+      <item>induction</item>
+      <item>rename</item>
+      <item>assumption</item>
+      <item>revert</item>
+      <item>generalize</item>
+      <item>specialize</item>
+      <item>clear</item>
+      <item>contradiction</item>
+      <item>by_contradiction</item>
+      <item>by_contra</item>
+      <item>trivial</item>
+      <item>exfalso</item>
+      <item>symmetry</item>
+      <item>transitivity</item>
+      <item>destruct</item>
+      <item>constructor</item>
+      <item>econstructor</item>
+      <item>left</item>
+      <item>right</item>
+      <item>split</item>
+      <item>injection</item>
+      <item>injections</item>
+      <item>repeat</item>
+      <item>try</item>
+      <item>continue</item>
+      <item>skip</item>
+      <item>swap</item>
+      <item>solve1</item>
+      <item>abstract</item>
+      <item>all_goals</item>
+      <item>any_goals</item>
+      <item>done</item>
+      <item>fail_if_success</item>
+      <item>success_if_fail</item>
+      <item>guard_target</item>
+      <item>guard_hyp</item>
+      <item>have</item>
+      <item>replace</item>
+      <item>at</item>
+      <item>suffices</item>
+      <item>show</item>
+      <item>from</item>
+      <item>congr</item>
+      <item>congr_n</item>
+      <item>congr_arg</item>
+      <item>norm_num</item>
+      <item>ring</item>
+    </list>
+
+    <list name="literals">
+      <item>tt</item>
+      <item>ff</item>
+    </list>
+
+    <list name="meta">
+      <item>noncomputable</item>
+      <item>private</item>
+      <item>protected</item>
+      <item>meta</item>
+      <item>mutual</item>
+    </list>
+
+    <list name="sections">
+      <item>section</item>
+      <item>namespace</item>
+      <item>end</item>
+    </list>
+
+    <list name="sorry">
+      <item>sorry</item>
+      <item>admit</item>
+    </list>
+
+    <!-- Contexts -->
+    <contexts>
+      <context name="Normal" attribute="Normal" lineEndContext="#stay">
+        <!-- Comments: order matters (doc comments before generic block comments) -->
+        <StringDetect attribute="DocComment" context="DocComment" String="/--" />
+        <StringDetect attribute="DocComment" context="DocComment" String="/-!" />
+        <Detect2Chars attribute="Comment" context="BlockComment" char="/" char1="-" />
+        <Detect2Chars attribute="Comment" context="LineComment" char="-" char1="-" />
+
+        <!-- Attribute decorator @[ ... ] -->
+        <StringDetect attribute="Attribute" context="AttributeBlock" String="@[" />
+
+        <!-- Attribute line at start -->
+        <WordDetect attribute="Attribute" context="AttributeLine" String="attribute" firstNonSpace="true" />
+
+        <!-- Definition introducers: next identifier is the definition name -->
+        <keyword attribute="Keyword" context="Definition" String="definitionKeywords"/>
+
+        <!-- General keywords and groups -->
+        <keyword attribute="Keyword"  context="#stay" String="keywords"/>
+        <keyword attribute="Builtin"  context="#stay" String="builtins"/>
+        <keyword attribute="Literal"  context="#stay" String="literals"/>
+        <keyword attribute="Meta"     context="#stay" String="meta"/>
+        <keyword attribute="Section"  context="#stay" String="sections"/>
+        <keyword attribute="Alert"    context="#stay" String="sorry"/>
+
+        <!-- Hash-commands -->
+        <StringDetect attribute="Meta" context="#stay" String="#check"/>
+        <StringDetect attribute="Meta" context="#stay" String="#eval"/>
+        <StringDetect attribute="Meta" context="#stay" String="#reduce"/>
+        <StringDetect attribute="Meta" context="#stay" String="#print"/>
+
+        <!-- Symbols -->
+        <StringDetect attribute="Symbol" context="#stay" String=":="/>
+
+        <!-- Strings -->
+        <DetectChar attribute="String" context="String" char="&quot;"/>
+
+        <!-- Numbers -->
+        <Float attribute="Float"/>
+        <Int attribute="Number"/>
+      </context>
+
+      <!-- Definition context: highlight the next identifier as a function/theorem/class name -->
+      <context name="Definition" attribute="Normal" lineEndContext="#pop">
+        <!-- Skip whitespace -->
+        <DetectSpaces/>
+        <!-- The definition name (Lean identifiers; includes unicode ranges and apostrophe) -->
+        <RegExpr attribute="FunctionName"
+                 context="#pop"
+                 String="[A-Za-z_][\\w\\u207F-\\u209C\\u1D62-\\u1D6A\\u2079']*"/>
+      </context>
+
+      <!-- Line comment -->
+      <context name="LineComment" attribute="Comment" lineEndContext="#pop">
+      </context>
+
+      <!-- Nested block comment -->
+      <context name="BlockComment" attribute="Comment" lineEndContext="#stay">
+        <!-- Support nesting -->
+        <Detect2Chars attribute="Comment" context="BlockComment" char="/" char1="-" />
+        <Detect2Chars attribute="Comment" context="#pop" char="-" char1="/" />
+      </context>
+
+      <!-- Doc comment (also allows nesting like normal block comments) -->
+      <context name="DocComment" attribute="DocComment" lineEndContext="#stay">
+        <!-- Support nesting of doc and regular blocks -->
+        <StringDetect attribute="DocComment" context="DocComment" String="/--" />
+        <StringDetect attribute="DocComment" context="DocComment" String="/-!" />
+        <Detect2Chars attribute="DocComment" context="BlockComment" char="/" char1="-" />
+        <Detect2Chars attribute="DocComment" context="#pop" char="-" char1="/" />
+      </context>
+
+      <!-- Attribute decorator block @[ ... ] -->
+      <context name="AttributeBlock" attribute="Attribute" lineEndContext="#stay">
+        <StringDetect attribute="Attribute" context="#pop" String="]"/>
+      </context>
+
+      <!-- Attribute line: highlight rest of the line -->
+      <context name="AttributeLine" attribute="Attribute" lineEndContext="#pop">
+      </context>
+
+      <!-- String context with C-like escapes -->
+      <context name="String" attribute="String" lineEndContext="#pop">
+        <HlCStringChar/>
+        <DetectChar attribute="String" context="#pop" char="&quot;"/>
+      </context>
+    </contexts>
+  </highlighting>
+
+  <general>
+    <!-- Folding: simple region pairing for begin/end and section/end -->
+    <folding>
+      <begin region="Block">\\b(begin|section|namespace)\\b</begin>
+      <end region="Block">\\bend\\b</end>
+      <!-- Block comments fold as well -->
+      <begin region="Comment">/-</begin>
+      <end region="Comment">-/</end>
+    </folding>
+  </general>
+</language>

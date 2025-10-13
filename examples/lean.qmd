@@ -1,0 +1,16 @@
+---
+title: Lean Include Example
+lang: en
+abstract: This file demonstrates the `lean-include` feature.
+
+number-sections: true
+
+format:
+  html: default
+  pdf:
+    toc: true
+  docx: default
+  gfm: default
+---
+
+{{< lean-include lean.lean >}}

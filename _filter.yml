@@ -4,6 +4,9 @@ filters:
     path: _extensions/pandoc-ext/list-table/list-table.lua
   - _assets/tikz.lua
 
+shortcodes:
+  - _assets/lean-include.lua
+
 format:
   html:
     filters: 

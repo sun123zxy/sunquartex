@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lean Include Example – SunQuarTeX</title>
+<title>\SunQuarTeX Example - Lean Include – SunQuarTeX</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -153,7 +153,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../examples/cnart.html">Examples</a></li><li class="breadcrumb-item"><a href="../examples/lean.html">Lean Include Example</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../examples/cnart.html">Examples</a></li><li class="breadcrumb-item"><a href="../examples/lean.html"><span class="math inline">\(\SunQuarTeX\)</span> Example - Lean Include</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -226,7 +226,7 @@ window.Quarto = {
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../examples/lean.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Lean Include Example</span></a>
+ <span class="menu-text"><span class="math inline">\(\SunQuarTeX\)</span> Example - Lean Include</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -270,7 +270,6 @@ window.Quarto = {
   <ul class="collapse">
   <li><a href="#ignore-a-cosmological-remark" id="toc-ignore-a-cosmological-remark" class="nav-link" data-scroll-target="#ignore-a-cosmological-remark"><span class="header-section-number">2.1</span> [IGNORE] A cosmological remark</a></li>
   </ul></li>
-  <li><a href="#ignore-a-cosmological-remark-continued" id="toc-ignore-a-cosmological-remark-continued" class="nav-link" data-scroll-target="#ignore-a-cosmological-remark-continued"><span class="header-section-number">3</span> [IGNORE] A cosmological remark, continued</a></li>
   </ul></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="lean.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li><li><a href="lean.docx"><i class="bi bi-file-word"></i>MS Word</a></li><li><a href="lean.md"><i class="bi bi-file-code"></i>Github (GFM)</a></li></ul></div></nav>
@@ -278,9 +277,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../examples/cnart.html">Examples</a></li><li class="breadcrumb-item"><a href="../examples/lean.html">Lean Include Example</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../examples/cnart.html">Examples</a></li><li class="breadcrumb-item"><a href="../examples/lean.html"><span class="math inline">\(\SunQuarTeX\)</span> Example - Lean Include</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Lean Include Example</h1>
+<h1 class="title"><span class="math inline">\(\SunQuarTeX\)</span> Example - Lean Include</h1>
 </div>
 
 
@@ -568,42 +567,9 @@ window.Quarto = {
 <p>The pair <code>(a, h)</code> actually do not have type <code>(x : X) × (p x)</code>. The latter notation is actually for the <em>dependent pair type</em> (or <code>Sigma</code> type), which lives in <code>Type*</code> universe.</p>
 <p>But <code>Exists</code> should live in <code>Prop</code>, and in <code>Prop</code> universe we admit <em>proof-irrelevance</em>, i.e.&nbsp;we do not save data. So <code>Exists</code> forget the exact witness <code>a</code> once it is proved.</p>
 <p>This “forgetfulness” is revealed by the fact that there is no elimination rule <code>Exists.fst</code> to extract the witness <code>a</code> from a proof of <code>∃ x : X, p x</code>, as long as <code>X</code> lives in the <code>Type*</code> universe. (Note that <code>Exists.elim</code> can only produce propositions in <code>Prop</code>)</p>
-<p>But if <code>X</code> lives in <code>Prop</code> universe, then we do have <code>Exists.fst</code>:</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode lean code-with-copy"><code class="sourceCode lean"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="pp">section</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a><span class="at">#check</span> Exists.fst</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Wait, wait, we never worked with <code>X : Prop</code> before. Say <code>p : r → Prop</code> and <code>r s : Prop</code>, what does <code>∃ hr : r, p hr</code> mean? It means that <code>r</code> and <code>p hr</code> are both true? [TODO] I don’t know how to explain this properly so far.</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode lean code-with-copy"><code class="sourceCode lean"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="kw">variable</span> (r : <span class="fu">Prop</span>) (p : r → <span class="fu">Prop</span>)</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="at">#check</span> <span class="kw">∃</span> hr : r, p hr</span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co">-- Prove `Exists.fst` and `Exists.snd` by `Exists.elim`</span></span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> (he : <span class="kw">∃</span> hr : r, p hr) : r ∧ p he.fst <span class="op">:=</span> <span class="kw">by</span></span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">apply</span> Exists.elim he</span>
-<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">intro</span> hr hpr</span>
-<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">exact</span> ⟨hr, hpr⟩</span>
-<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="kw">end</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-</section>
-<section id="ignore-a-cosmological-remark-continued" class="level2" data-number="3">
-<h2 data-number="3" class="anchored" data-anchor-id="ignore-a-cosmological-remark-continued"><span class="header-section-number">3</span> [IGNORE] A cosmological remark, continued</h2>
-<p>Same construction, different universes. Other examples are also shown below.</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode lean code-with-copy"><code class="sourceCode lean"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="at">#print</span> And <span class="co">-- `×` in `Prop`</span></span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="at">#print</span> Prod <span class="co">-- `×` in `Type*`</span></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a><span class="co">-- Forall `∀`: dependent `∏` in `Prop`</span></span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a><span class="co">-- dependent function type: dependent `∏` in `Type*`</span></span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a><span class="at">#print</span> Or <span class="co">-- `⊕` in `Prop`</span></span>
-<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a><span class="at">#print</span> Sum <span class="co">-- `⊕` in `Type*`</span></span>
-<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a><span class="at">#print</span> Exists <span class="co">-- dependent `∑` in `Prop`</span></span>
-<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a><span class="at">#print</span> Sigma <span class="co">-- dependent `Σ` in `Type*`</span></span>
-<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a><span class="at">#print</span> Nonempty <span class="co">-- a proof of non-emptiness living in `Prop`</span></span>
-<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a><span class="at">#print</span> Inhabited <span class="co">-- an designated element living in `Sort*`</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
+</section>
 </section>
 </section>
 

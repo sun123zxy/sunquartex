@@ -1,5 +1,5 @@
 ---
-title: Lean Include Example
+title: $\SunQuarTeX$ Example - Lean Include
 lang: en
 abstract: This file demonstrates the `lean-include` feature.
 

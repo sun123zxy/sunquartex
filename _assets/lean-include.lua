@@ -14,7 +14,7 @@ function HandleComment(prefix, raw)
 end
 
 function HandleCode(raw)
-    if raw:find("^[%s%c]+$") then return nil end
+    if raw:find("^[%s%c]+$") then return -1 end
     
     -- If the block ends with "-/\n" or -/  \n", we strip that whitespace
     --
@@ -49,8 +49,8 @@ return {
     end
 
     local lst = pandoc.Blocks({})
-    for i, v in pairs(lpeg.match(G, contents)) do
-      if v then
+    for i, v in ipairs(lpeg.match(G, contents)) do
+      if v ~= -1 then
         lst:insert(v)
       end
     end

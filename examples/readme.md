@@ -610,6 +610,10 @@ format:
 
 有能力欢迎 Fork 和 Pull Request．
 
+#### 仓库太重，我想要 standalone 的单文件渲染！
+
+请移步 [quarto-render](https://github.com/sun123zxy/quarto-render)，一个独立开发的小型命令行程序使得单文件 Quarto 渲染更加方便．
+
 ### 写作相关
 
 #### 标题应该用多少个 `#`？

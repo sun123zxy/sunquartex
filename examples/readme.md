@@ -403,7 +403,9 @@ plt.show()
 
 #### 使用
 
-推荐使用 [quiver](https://q.uiver.app/) 在线编辑器生成交换图代码．交换图使用例：
+推荐使用 [quiver](https://q.uiver.app/) 在线编辑器生成交换图代码．使用例：
+
+<div id="fig-tikzcd">
 
 ``` {tikz}
 \begin{tikzcd}
@@ -418,6 +420,46 @@ plt.show()
     \arrow["{\beta \circ_1 \alpha}"', shorten <=8pt, shorten >=8pt, Rightarrow, from=4, to=3]
 \end{tikzcd}
 ```
+
+图 3: TikZ-cd / Quiver 示例
+
+</div>
+
+<div id="fig-tikz">
+
+``` {tikz}
+\begin{tikzpicture}
+
+  % left: parameter line (the t-axis)
+  \begin{scope}[shift={(-4,0)}]
+    \draw[->] (-1.5,0) -- (1.5,0) node[below right] {$t$};
+    \coordinate (T) at (-1.00, 0);
+    \fill (T) circle (1.2pt) node[below=3pt] {$t$};
+    \fill (0,0) circle (1.2pt) node[below=3pt] {$0$};
+  \end{scope}
+
+  % arrow indicating the map
+  \draw[->] (-1.8,0) -- (-0.8,0) node[midway,above] {$\operatorname{Spec} \varphi$};
+
+  % right: (x,y)-plane
+  \draw[->] (-0.1,0) -- (2.0,0) node[below] {$x$};
+  \draw[->] (0,-1.2) -- (0,1.2) node[left] {$y$};
+
+  % cusp curve y^2 = x^3 via param t -> (t^2, t^3)
+  \draw[thick,domain=-1.2:1.2,smooth,variable=\t]
+    plot ({\t*\t},{\t*\t*\t});
+  \node[right] at (1.4,1.65) {$y^2=x^3$};
+
+  % image of a sample parameter t
+  \coordinate (P) at ({1.00*1.00},{-1.00*1.00*1.00});
+  \fill (P) circle (1.4pt) node[above right] {$(t^2,t^3)$};
+
+\end{tikzpicture}
+```
+
+图 4: TikZ 示例
+
+</div>
 
 <div class="proof remark">
 

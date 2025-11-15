@@ -643,3 +643,7 @@ format:
 #### 我要输出到知乎！
 
 您可以使用 GFM 格式输出，输出内容可复制至 [markdown.com.cn](https://markdown.com.cn/editor/) 的在线编辑器转知乎格式．
+
+#### PDF 输出，LaTeX 渲染了十遍
+
+您文档的交叉引用可能存在问题．请检查文档头的 `bibliography` 选项和正文中的引用情况．

@@ -297,7 +297,7 @@ window.Quarto = {
   <li><a href="#表格" id="toc-表格" class="nav-link" data-scroll-target="#表格"><span class="header-section-number">5.4</span> 表格</a></li>
   <li><a href="#diagram-流程图mermaidgraphviz-等" id="toc-diagram-流程图mermaidgraphviz-等" class="nav-link" data-scroll-target="#diagram-流程图mermaidgraphviz-等"><span class="header-section-number">5.5</span> Diagram 流程图（Mermaid、Graphviz 等）</a></li>
   <li><a href="#tikz-tikz-cd-quiver-交换图" id="toc-tikz-tikz-cd-quiver-交换图" class="nav-link" data-scroll-target="#tikz-tikz-cd-quiver-交换图"><span class="header-section-number">5.6</span> TikZ / TikZ-cd / Quiver 交换图</a></li>
-  <li><a href="#preview-lean-代码高亮与带注释源码导入" id="toc-preview-lean-代码高亮与带注释源码导入" class="nav-link" data-scroll-target="#preview-lean-代码高亮与带注释源码导入"><span class="header-section-number">5.7</span> (Preview) Lean 代码高亮与带注释源码导入</a></li>
+  <li><a href="#lean-代码高亮与带注释源码导入" id="toc-lean-代码高亮与带注释源码导入" class="nav-link" data-scroll-target="#lean-代码高亮与带注释源码导入"><span class="header-section-number">5.7</span> Lean 代码高亮与带注释源码导入</a></li>
   <li><a href="#github-actions-github-pages-网站生成" id="toc-github-actions-github-pages-网站生成" class="nav-link" data-scroll-target="#github-actions-github-pages-网站生成"><span class="header-section-number">5.8</span> Github Actions + Github Pages 网站生成</a></li>
   </ul></li>
   <li><a href="#样式自定义" id="toc-样式自定义" class="nav-link" data-scroll-target="#样式自定义"><span class="header-section-number">6</span> 样式自定义</a>
@@ -590,7 +590,7 @@ Write once, present everywhere!<br>基于 Quarto 的多格式输出中英文学�
 <section id="computation-based-tables" class="level4">
 <h4 class="anchored" data-anchor-id="computation-based-tables">Computation based tables</h4>
 <p>您也可以直接使用代码生成表格：</p>
-<div id="14b85515" class="cell" data-execution_count="2">
+<div id="cf8e219d" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>代码</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -1219,11 +1219,12 @@ Remark
 </div>
 </section>
 </section>
-<section id="preview-lean-代码高亮与带注释源码导入" class="level3" data-number="5.7">
-<h3 data-number="5.7" class="anchored" data-anchor-id="preview-lean-代码高亮与带注释源码导入"><span class="header-section-number">5.7</span> (Preview) Lean 代码高亮与带注释源码导入</h3>
+<section id="lean-代码高亮与带注释源码导入" class="level3" data-number="5.7">
+<h3 data-number="5.7" class="anchored" data-anchor-id="lean-代码高亮与带注释源码导入"><span class="header-section-number">5.7</span> Lean 代码高亮与带注释源码导入</h3>
 <p><a href="assets/lean.xml"><code>assets/lean.xml</code></a> 用于 Pandoc 的 Lean 代码高亮．直接使用 <code>lean</code> 作为代码块的语言标记即可．</p>
 <p><a href="_assets/lean-include.lua"><code>_assets/lean-include.lua</code></a> shortcode 用于直接将带有注释的 Lean 代码导入转换为 Markdown．使用如下格式即可导入：</p>
 <pre class="qmd" data-shortcodes="false"><code>{{&lt; lean-include path/to/your_file.lean &gt;}}</code></pre>
+<p>现已支持 PDF / Beamer 输出．</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -1237,7 +1238,7 @@ Remark
 <div id="callout-3" class="callout-3-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div class="proof remark">
-<p><span class="proof-title"><em>注记</em>. </span>该功能仍在 Preview 阶段，目前 HTML 的目录导航和 PDF 格式的 unicode 支持存在问题．</p>
+<p><span class="proof-title"><em>注记</em>. </span>目前 HTML 的目录导航定位存在问题．</p>
 </div>
 </div>
 </div>
@@ -1270,7 +1271,7 @@ Remark
 <p>修改 YAML 文档头可以自定义部分默认样式．</p>
 <section id="我要改字号" class="level3" data-number="6.1">
 <h3 data-number="6.1" class="anchored" data-anchor-id="我要改字号"><span class="header-section-number">6.1</span> 我要改字号！</h3>
-<p>目前仅支持 PDF 字号修改．英文文档默认字号为 10pt，中文文档默认字号为 10.5pt（五号，详见 CTeX 手册）．</p>
+<p>目前仅支持 PDF 字号修改．英文文档默认字号为 11pt，中文文档默认字号为 10.5pt（五号，详见 CTeX 手册）．</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">fontsize</span><span class="kw">:</span><span class="at"> 12pt</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>

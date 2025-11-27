@@ -471,7 +471,7 @@ plt.show()
 
 </div>
 
-### (Preview) Lean 代码高亮与带注释源码导入
+### Lean 代码高亮与带注释源码导入
 
 [`assets/lean.xml`](assets/lean.xml) 用于 Pandoc 的 Lean 代码高亮．直接使用 `lean` 作为代码块的语言标记即可．
 
@@ -481,9 +481,11 @@ plt.show()
 {{< lean-include path/to/your_file.lean >}}
 ```
 
+现已支持 PDF / Beamer 输出．
+
 <div class="proof remark">
 
-<span class="proof-title">*注记*. </span>该功能仍在 Preview 阶段，目前 HTML 的目录导航和 PDF 格式的 unicode 支持存在问题．
+<span class="proof-title">*注记*. </span>目前 HTML 的目录导航定位存在问题．
 
 </div>
 
@@ -511,7 +513,7 @@ plt.show()
 
 ### 我要改字号！
 
-目前仅支持 PDF 字号修改．英文文档默认字号为 10pt，中文文档默认字号为 10.5pt（五号，详见 CTeX 手册）．
+目前仅支持 PDF 字号修改．英文文档默认字号为 11pt，中文文档默认字号为 10.5pt（五号，详见 CTeX 手册）．
 
 ``` yaml
 format:

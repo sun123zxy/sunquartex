@@ -459,13 +459,17 @@ g(x)    & \sum_{j=0}^{n-1} b_j x^j \arrow[rr, "\operatorname{DFT}"] \arrow[u, do
 
 ## 代码块和引用
 
-下面是代码块．
+- 行内 `print("Hello, SunQuarTeX")` 代码
+- 行内带中文 `print("你好，SunQuarTeX")` 代码
+- 行内 Lean 代码 `theorem idempotent_iff_eq : ∀ a : α, (a * a = a ↔ a = 1 ∨ a = 0)` ．
+
+行间代码：
 
 ``` python
 import numpy as np
 import matplotlib.pyplot as plt
 
-r = np.arange(0, 2, 0.01)
+r = np.arange(0, 2, 0.01) # 以步长 0.01 生成 0 到 2 之间的数
 theta = 2 * np.pi * r
 fig, ax = plt.subplots(
   subplot_kw = {'projection': 'polar'} 
@@ -488,6 +492,12 @@ plt.show()
 \TeX
 }
 \SunQuarTeX
+```
+
+``` lean
+example : (∀ x, p x → r) → ((∃ x, p x) → r) := by
+  intro h ⟨a, hpa⟩ -- you may also `rcases` explicitly
+  exact h a hpa
 ```
 
 下面是引用块和一个非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．

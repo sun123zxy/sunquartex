@@ -85,6 +85,10 @@ git push # push 到你的远程仓库
 
 ## 可选项安装与使用
 
+### Python
+
+建议您使用 uv 管理 Python 版本．`uv sync` 命令会自动安装所需的 Python 依赖．您也可以参考 `pyproject.toml` 手动安装．
+
 ### LaTeX / PDF / Beamer 输出
 
 我们没有直接使用 Quarto 默认的 PDF 输出，而是完全重新设计了输出模板（`_assets/suntemp-art.tex`, `_assets/suntemp-pre.tex`）．大动干戈的目的有个人喜好方面的考量：Quarto 默认使用 Koma-Script 系列的 `scrartcl` 文档类，而我们希望在英文环境下保留 `article` 文档类的原汁原味，也希望在中文环境下使用 `ctexart` / `ctexbeamer` 文档类获得更好的排版格式．

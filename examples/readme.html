@@ -291,13 +291,14 @@ window.Quarto = {
   <li><a href="#更新" id="toc-更新" class="nav-link" data-scroll-target="#更新"><span class="header-section-number">4</span> 更新</a></li>
   <li><a href="#sec-optional" id="toc-sec-optional" class="nav-link" data-scroll-target="#sec-optional"><span class="header-section-number">5</span> 可选项安装与使用</a>
   <ul class="collapse">
-  <li><a href="#latex-pdf-beamer-输出" id="toc-latex-pdf-beamer-输出" class="nav-link" data-scroll-target="#latex-pdf-beamer-输出"><span class="header-section-number">5.1</span> LaTeX / PDF / Beamer 输出</a></li>
-  <li><a href="#computation-功能" id="toc-computation-功能" class="nav-link" data-scroll-target="#computation-功能"><span class="header-section-number">5.2</span> Computation 功能</a></li>
-  <li><a href="#表格" id="toc-表格" class="nav-link" data-scroll-target="#表格"><span class="header-section-number">5.3</span> 表格</a></li>
-  <li><a href="#diagram-流程图mermaidgraphviz-等" id="toc-diagram-流程图mermaidgraphviz-等" class="nav-link" data-scroll-target="#diagram-流程图mermaidgraphviz-等"><span class="header-section-number">5.4</span> Diagram 流程图（Mermaid、Graphviz 等）</a></li>
-  <li><a href="#tikz-tikz-cd-quiver-交换图" id="toc-tikz-tikz-cd-quiver-交换图" class="nav-link" data-scroll-target="#tikz-tikz-cd-quiver-交换图"><span class="header-section-number">5.5</span> TikZ / TikZ-cd / Quiver 交换图</a></li>
-  <li><a href="#preview-lean-代码高亮与带注释源码导入" id="toc-preview-lean-代码高亮与带注释源码导入" class="nav-link" data-scroll-target="#preview-lean-代码高亮与带注释源码导入"><span class="header-section-number">5.6</span> (Preview) Lean 代码高亮与带注释源码导入</a></li>
-  <li><a href="#github-actions-github-pages-网站生成" id="toc-github-actions-github-pages-网站生成" class="nav-link" data-scroll-target="#github-actions-github-pages-网站生成"><span class="header-section-number">5.7</span> Github Actions + Github Pages 网站生成</a></li>
+  <li><a href="#python" id="toc-python" class="nav-link" data-scroll-target="#python"><span class="header-section-number">5.1</span> Python</a></li>
+  <li><a href="#latex-pdf-beamer-输出" id="toc-latex-pdf-beamer-输出" class="nav-link" data-scroll-target="#latex-pdf-beamer-输出"><span class="header-section-number">5.2</span> LaTeX / PDF / Beamer 输出</a></li>
+  <li><a href="#computation-功能" id="toc-computation-功能" class="nav-link" data-scroll-target="#computation-功能"><span class="header-section-number">5.3</span> Computation 功能</a></li>
+  <li><a href="#表格" id="toc-表格" class="nav-link" data-scroll-target="#表格"><span class="header-section-number">5.4</span> 表格</a></li>
+  <li><a href="#diagram-流程图mermaidgraphviz-等" id="toc-diagram-流程图mermaidgraphviz-等" class="nav-link" data-scroll-target="#diagram-流程图mermaidgraphviz-等"><span class="header-section-number">5.5</span> Diagram 流程图（Mermaid、Graphviz 等）</a></li>
+  <li><a href="#tikz-tikz-cd-quiver-交换图" id="toc-tikz-tikz-cd-quiver-交换图" class="nav-link" data-scroll-target="#tikz-tikz-cd-quiver-交换图"><span class="header-section-number">5.6</span> TikZ / TikZ-cd / Quiver 交换图</a></li>
+  <li><a href="#preview-lean-代码高亮与带注释源码导入" id="toc-preview-lean-代码高亮与带注释源码导入" class="nav-link" data-scroll-target="#preview-lean-代码高亮与带注释源码导入"><span class="header-section-number">5.7</span> (Preview) Lean 代码高亮与带注释源码导入</a></li>
+  <li><a href="#github-actions-github-pages-网站生成" id="toc-github-actions-github-pages-网站生成" class="nav-link" data-scroll-target="#github-actions-github-pages-网站生成"><span class="header-section-number">5.8</span> Github Actions + Github Pages 网站生成</a></li>
   </ul></li>
   <li><a href="#样式自定义" id="toc-样式自定义" class="nav-link" data-scroll-target="#样式自定义"><span class="header-section-number">6</span> 样式自定义</a>
   <ul class="collapse">
@@ -421,8 +422,12 @@ Write once, present everywhere!<br>基于 Quarto 的多格式输出中英文学�
 </section>
 <section id="sec-optional" class="level2" data-number="5">
 <h2 data-number="5" class="anchored" data-anchor-id="sec-optional"><span class="header-section-number">5</span> 可选项安装与使用</h2>
-<section id="latex-pdf-beamer-输出" class="level3" data-number="5.1">
-<h3 data-number="5.1" class="anchored" data-anchor-id="latex-pdf-beamer-输出"><span class="header-section-number">5.1</span> LaTeX / PDF / Beamer 输出</h3>
+<section id="python" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="python"><span class="header-section-number">5.1</span> Python</h3>
+<p>建议您使用 uv 管理 Python 版本．<code>uv sync</code> 命令会自动安装所需的 Python 依赖．您也可以参考 <code>pyproject.toml</code> 手动安装．</p>
+</section>
+<section id="latex-pdf-beamer-输出" class="level3" data-number="5.2">
+<h3 data-number="5.2" class="anchored" data-anchor-id="latex-pdf-beamer-输出"><span class="header-section-number">5.2</span> LaTeX / PDF / Beamer 输出</h3>
 <p>我们没有直接使用 Quarto 默认的 PDF 输出，而是完全重新设计了输出模板（<code>_assets/suntemp-art.tex</code>, <code>_assets/suntemp-pre.tex</code>）．大动干戈的目的有个人喜好方面的考量：Quarto 默认使用 Koma-Script 系列的 <code>scrartcl</code> 文档类，而我们希望在英文环境下保留 <code>article</code> 文档类的原汁原味，也希望在中文环境下使用 <code>ctexart</code> / <code>ctexbeamer</code> 文档类获得更好的排版格式．</p>
 <p>重新设计 PDF 模板，您可以参考 <a href="https://quarto.org/docs/journals/templates.html">Quarto 的模板自定义教程</a>．</p>
 <section id="安装" class="level4">
@@ -437,8 +442,8 @@ Write once, present everywhere!<br>基于 Quarto 的多格式输出中英文学�
 </ul>
 </section>
 </section>
-<section id="computation-功能" class="level3" data-number="5.2">
-<h3 data-number="5.2" class="anchored" data-anchor-id="computation-功能"><span class="header-section-number">5.2</span> Computation 功能</h3>
+<section id="computation-功能" class="level3" data-number="5.3">
+<h3 data-number="5.3" class="anchored" data-anchor-id="computation-功能"><span class="header-section-number">5.3</span> Computation 功能</h3>
 <p>直接嵌入 Python 代码就可以动态生成数据图表．<a href="https://quarto.org/docs/computations/python.html">Quarto 文档</a></p>
 <section id="安装-1" class="level4">
 <h4 class="anchored" data-anchor-id="安装-1">安装</h4>
@@ -484,8 +489,8 @@ Write once, present everywhere!<br>基于 Quarto 的多格式输出中英文学�
 </div>
 </section>
 </section>
-<section id="表格" class="level3" data-number="5.3">
-<h3 data-number="5.3" class="anchored" data-anchor-id="表格"><span class="header-section-number">5.3</span> 表格</h3>
+<section id="表格" class="level3" data-number="5.4">
+<h3 data-number="5.4" class="anchored" data-anchor-id="表格"><span class="header-section-number">5.4</span> 表格</h3>
 <section id="传统-markdown-表格" class="level4">
 <h4 class="anchored" data-anchor-id="传统-markdown-表格">传统 Markdown 表格</h4>
 <table class="table">
@@ -585,7 +590,7 @@ Write once, present everywhere!<br>基于 Quarto 的多格式输出中英文学�
 <section id="computation-based-tables" class="level4">
 <h4 class="anchored" data-anchor-id="computation-based-tables">Computation based tables</h4>
 <p>您也可以直接使用代码生成表格：</p>
-<div id="0981b08d" class="cell" data-execution_count="2">
+<div id="51d92c35" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>代码</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -1019,8 +1024,8 @@ Write once, present everywhere!<br>基于 Quarto 的多格式输出中英文学�
 </div>
 </section>
 </section>
-<section id="diagram-流程图mermaidgraphviz-等" class="level3" data-number="5.4">
-<h3 data-number="5.4" class="anchored" data-anchor-id="diagram-流程图mermaidgraphviz-等"><span class="header-section-number">5.4</span> Diagram 流程图（Mermaid、Graphviz 等）</h3>
+<section id="diagram-流程图mermaidgraphviz-等" class="level3" data-number="5.5">
+<h3 data-number="5.5" class="anchored" data-anchor-id="diagram-流程图mermaidgraphviz-等"><span class="header-section-number">5.5</span> Diagram 流程图（Mermaid、Graphviz 等）</h3>
 <p><a href="https://quarto.org/docs/authoring/diagrams.html">Quarto 文档</a></p>
 <section id="安装-2" class="level4">
 <h4 class="anchored" data-anchor-id="安装-2">安装</h4>
@@ -1030,8 +1035,8 @@ Write once, present everywhere!<br>基于 Quarto 的多格式输出中英文学�
 </ul>
 </section>
 </section>
-<section id="tikz-tikz-cd-quiver-交换图" class="level3" data-number="5.5">
-<h3 data-number="5.5" class="anchored" data-anchor-id="tikz-tikz-cd-quiver-交换图"><span class="header-section-number">5.5</span> TikZ / TikZ-cd / Quiver 交换图</h3>
+<section id="tikz-tikz-cd-quiver-交换图" class="level3" data-number="5.6">
+<h3 data-number="5.6" class="anchored" data-anchor-id="tikz-tikz-cd-quiver-交换图"><span class="header-section-number">5.6</span> TikZ / TikZ-cd / Quiver 交换图</h3>
 <p>该功能由 <a href="_assets/tikz.lua"><code>_assets/tikz.lua</code></a> 实现．</p>
 <section id="安装-3" class="level4">
 <h4 class="anchored" data-anchor-id="安装-3">安装</h4>
@@ -1214,8 +1219,8 @@ Remark
 </div>
 </section>
 </section>
-<section id="preview-lean-代码高亮与带注释源码导入" class="level3" data-number="5.6">
-<h3 data-number="5.6" class="anchored" data-anchor-id="preview-lean-代码高亮与带注释源码导入"><span class="header-section-number">5.6</span> (Preview) Lean 代码高亮与带注释源码导入</h3>
+<section id="preview-lean-代码高亮与带注释源码导入" class="level3" data-number="5.7">
+<h3 data-number="5.7" class="anchored" data-anchor-id="preview-lean-代码高亮与带注释源码导入"><span class="header-section-number">5.7</span> (Preview) Lean 代码高亮与带注释源码导入</h3>
 <p><a href="assets/lean.xml"><code>assets/lean.xml</code></a> 用于 Pandoc 的 Lean 代码高亮．直接使用 <code>lean</code> 作为代码块的语言标记即可．</p>
 <p><a href="_assets/lean-include.lua"><code>_assets/lean-include.lua</code></a> shortcode 用于直接将带有注释的 Lean 代码导入转换为 Markdown．使用如下格式即可导入：</p>
 <pre class="qmd" data-shortcodes="false"><code>{{&lt; lean-include path/to/your_file.lean &gt;}}</code></pre>
@@ -1238,8 +1243,8 @@ Remark
 </div>
 </div>
 </section>
-<section id="github-actions-github-pages-网站生成" class="level3" data-number="5.7">
-<h3 data-number="5.7" class="anchored" data-anchor-id="github-actions-github-pages-网站生成"><span class="header-section-number">5.7</span> Github Actions + Github Pages 网站生成</h3>
+<section id="github-actions-github-pages-网站生成" class="level3" data-number="5.8">
+<h3 data-number="5.8" class="anchored" data-anchor-id="github-actions-github-pages-网站生成"><span class="header-section-number">5.8</span> Github Actions + Github Pages 网站生成</h3>
 <p>本仓库同时采用 Github Actions + Github Pages 自动生成 Demo 站点．</p>
 <section id="安装-4" class="level4">
 <h4 class="anchored" data-anchor-id="安装-4">安装</h4>

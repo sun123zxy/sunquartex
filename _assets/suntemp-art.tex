@@ -10,10 +10,39 @@
 }{
     \zhfalse
     \documentclass[$if(fontsize)$ $fontsize$,$endif$]{article}
-    \usepackage{xeCJK}
     \def\transmodified{Last modified on}
     \def\transtoc{Table of Contents}
 }
+
+% --- fonts ---
+
+\ifzh
+    \setCJKmainfont{FandolSong-Regular.otf}[BoldFont = FandolHei-Regular.otf, ItalicFont = FandolKai-Regular.otf] % Hei represents bold, Kai represents italic
+    \ctexset{
+        section/format              += \zihao{-4}\raggedright,
+        subsection/format           += \zihao{5}\raggedright,
+        subsubsection/format        += \zihao{5}\raggedright,
+        subsubsection/numbering      = false
+    }
+\else
+    % for XeLaTeX
+
+    \usepackage{xeCJK}
+
+    % for LuaLaTeX font fallback
+
+    % \usepackage{fontspec}
+    % \usepackage{luaotfload} % for LuaLaTeX font fallback
+    
+    % \directlua{luaotfload.add_fallback("monofontfallback",{"FandolHei:mode=harf;", "Linux Libertine O:mode=harf;"})}
+    % \setmonofont{Latin Modern Mono}[RawFeature={fallback=monofontfallback}]
+
+    % \directlua{luaotfload.add_fallback("mainfontfallback",{"FandolSong:mode=harf;", "Linux Libertine O:mode=harf;"})}
+    % \setmainfont{Latin Modern Roman}[RawFeature={fallback=mainfontfallback}]
+
+    % \directlua{luaotfload.add_fallback("sansfontfallback",{"FandolHei:mode=harf;", "Linux Libertine O:mode=harf;"})}
+    % \setsansfont{Latin Modern Sans}[RawFeature={fallback=sansfontfallback}]
+\fi
 
 % --- beginning ---
 
@@ -24,15 +53,6 @@ $else$
 $endif$
 
 \usepackage[a4paper,top=2.75cm,bottom=2.25cm,left=2.75cm,right=2.75cm,marginparwidth=1.75cm]{geometry}
-\ifzh
-    \setCJKmainfont{FandolSong-Regular.otf}[BoldFont = FandolHei-Regular.otf, ItalicFont = FandolKai-Regular.otf] % Hei represents bold, Kai represents italic
-    \ctexset{
-        section/format              += \zihao{-4}\raggedright,
-        subsection/format           += \zihao{5}\raggedright,
-        subsubsection/format        += \zihao{5}\raggedright,
-        subsubsection/numbering      = false
-    }
-\fi
 
 % --- pandoc ---
 
@@ -46,10 +66,10 @@ $tightlist.tex()$
 $tables.tex()$
 $graphics.tex()$
 
-% --- adjust code font size ---
+% --- code font size ---
 
 $if(highlighting-macros)$
-\renewenvironment{Shaded} {\begin{snugshade}\small} {\end{snugshade}}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}, fontsize=\small}
 $endif$
 
 % --- bibliography ---

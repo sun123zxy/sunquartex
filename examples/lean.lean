@@ -12,11 +12,15 @@ Eagle-eyed readers may notice that `∧` and `∨` act similarly to
 Cartesian product and disjoint union in set theory.
 
 They are also constructed as inductive types.
+
+Chinese 中文测试 test.
 -/
 
 section
 
 variable (p q r : Prop)
+
+-- Chinese 中文测试 test.
 
 /-
 ## `And` (`∧`)

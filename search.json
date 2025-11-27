@@ -179,7 +179,7 @@
     "href": "examples/lean.html#and-and-or",
     "title": "\\(\\SunQuarTeX\\) Example - Lean Include",
     "section": "1 And and Or",
-    "text": "1 And and Or\nIn Lean’s dependent type theory, ∧ and ∨ serve as the direct product and the direct sum in the universe of Prop.\nEagle-eyed readers may notice that ∧ and ∨ act similarly to Cartesian product and disjoint union in set theory.\nThey are also constructed as inductive types.\nsection\n\nvariable (p q r : Prop)",
+    "text": "1 And and Or\nIn Lean’s dependent type theory, ∧ and ∨ serve as the direct product and the direct sum in the universe of Prop.\nEagle-eyed readers may notice that ∧ and ∨ act similarly to Cartesian product and disjoint union in set theory.\nThey are also constructed as inductive types.\nChinese 中文测试 test.\nsection\n\nvariable (p q r : Prop)\n\n-- Chinese 中文测试 test.",
     "crumbs": [
       "Examples",
       "$\\SunQuarTeX$ Example - Lean Include"

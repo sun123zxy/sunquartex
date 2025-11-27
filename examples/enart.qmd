@@ -60,3 +60,20 @@ $$
 
 Some Cardinality Results
 :::
+
+## Code
+
+```c++
+#include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    return 0; // 返回 0
+}
+```
+
+```lean
+example : (∀ x, p x → r) → ((∃ x, p x) → r) := by
+  intro h ⟨a, hpa⟩ -- you may also `rcases` explicitly
+  exact h a hpa
+```

@@ -11,11 +11,19 @@
 }{
     \zhfalse
     \documentclass[fontset=fandol,envcountsect]{beamer}
-    \usepackage{xeCJK}
     \def\transmodified{Last modified on}
     \def\transtoc{Table of Contents}
     \def\transreferences{References}
 }
+
+% --- fonts ---
+
+\usepackage[Medium, Scale=MatchLowercase]{juliamono} % change code font to support Unicode, e.g. Lean code
+
+\ifzh
+\else
+  \usepackage{xeCJK} % for XeLaTeX
+\fi
 
 % --- pandoc ---
 
@@ -29,10 +37,10 @@ $tightlist.tex()$
 $tables.tex()$
 $graphics.tex()$
 
-% --- adjust code font size ---
+% --- code font size ---
 
 $if(highlighting-macros)$
-\renewenvironment{Shaded} {\begin{snugshade}\scriptsize} {\end{snugshade}}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}, fontsize=\normalsize}
 $endif$
 
 % --- bibliography ---

@@ -4,17 +4,19 @@
 \RequirePackage{xstring}
 \IfBeginWith{$lang$}{zh}{
     \zhtrue
-    \documentclass[fontset=fandol,$if(fontsize)$ $fontsize$,$endif$]{ctexart}
+    \documentclass[fontset=fandol,$if(fontsize)$$fontsize$$endif$]{ctexart}
     \def\transmodified{最后更新于}
     \def\transtoc{目录}
 }{
     \zhfalse
-    \documentclass[$if(fontsize)$ $fontsize$,$endif$]{article}
+    \documentclass[$if(fontsize)$$fontsize$$else$11pt$endif$]{article}
     \def\transmodified{Last modified on}
     \def\transtoc{Table of Contents}
 }
 
 % --- fonts ---
+
+\usepackage[Medium, Scale=MatchLowercase]{juliamono} % change code font to support Unicode, e.g. Lean code
 
 \ifzh
     \setCJKmainfont{FandolSong-Regular.otf}[BoldFont = FandolHei-Regular.otf, ItalicFont = FandolKai-Regular.otf] % Hei represents bold, Kai represents italic
@@ -28,6 +30,9 @@
     % for XeLaTeX
 
     \usepackage{xeCJK}
+
+    % \usepackage{fontspec}
+    % \setmonofont{...}
 
     % for LuaLaTeX font fallback
 
@@ -69,7 +74,7 @@ $graphics.tex()$
 % --- code font size ---
 
 $if(highlighting-macros)$
-\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}, fontsize=\small}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}, fontsize=\normalsize}
 $endif$
 
 % --- bibliography ---

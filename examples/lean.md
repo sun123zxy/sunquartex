@@ -5,9 +5,9 @@
 import Mathlib
 ```
 
-# Logic (Part II)
+Logic (Part II)
 
-## `And` and `Or`
+# `And` and `Or`
 
 In Lean’s dependent type theory, `∧` and `∨` serve as
 the *direct product* and the *direct sum* in the universe of `Prop`.
@@ -23,7 +23,7 @@ section
 variable (p q r : Prop)
 ```
 
-## `And` (`∧`)
+# `And` (`∧`)
 
 The only constructor of `And` is `And.intro`, which takes a proof of `p` and a proof of `q`
 to produce a proof of `p ∧ q`.
@@ -182,7 +182,7 @@ example : p ∧ q → p := by
   exact hp
 ```
 
-### `Iff` (`↔`), first visit
+## `Iff` (`↔`), first visit
 
 It’s high time to introduce `Iff` here for the first time.
 
@@ -205,7 +205,7 @@ example : (p ↔ q) ↔ (p → q) ∧ (q → p) := by
     exact ⟨hpq, hqp⟩
 ```
 
-### `Or` (`∨`)
+## `Or` (`∨`)
 
 `Or` has two constructors `Or.inl` and `Or.inr`.
 Either a proof of `p` or a proof of `q` produces a proof of `p ∨ q`.
@@ -264,7 +264,7 @@ example (hpr : p → r) (hqr : q → r) : p ∨ q → r := by
   · exact hqr hq
 ```
 
-### Comprehensive exercises for `And` and `Or`
+## Comprehensive exercises for `And` and `Or`
 
 \[EXR\] distributive laws
 
@@ -275,9 +275,9 @@ example : p ∨ (q ∧ r) ↔ (p ∨ q) ∧ (p ∨ r) := by sorry
 end
 ```
 
-# `Forall` and `Exists`
+`Forall` and `Exists`
 
-## Forall (`∀`)
+# Forall (`∀`)
 
 As you may have already noticed, `∀` is just an alternative way of writing `→`.
 Say `p` is a predicate on a type `X`, i.e. of type `X → Prop`,
@@ -311,7 +311,7 @@ example : (hrs : r → s) → (∀ _ : r, s) := by
   exact hrs
 ```
 
-## `Exists` (`∃`)
+# `Exists` (`∃`)
 
 `∃` is a bit more complicated.
 
@@ -402,7 +402,7 @@ example : (∃ x, p x ∨ q x) ↔ (∃ x, p x) ∨ (∃ x, q x) := by
 end
 ```
 
-### \[IGNORE\] A cosmological remark
+## \[IGNORE\] A cosmological remark
 
 The pair `(a, h)` actually do not have type `(x : X) × (p x)`.
 The latter notation is actually for the *dependent pair type* (or `Sigma` type),

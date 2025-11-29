@@ -1,4 +1,4 @@
-# README {.unnumbered}
+# README
 sun123zxy
 
 <h1 align="center">
@@ -16,7 +16,7 @@ Write once, present everywhere!<br/>基于 Quarto 的多格式输出中英文学
 <a href="https://github.com/sun123zxy/sunquartex">Github 仓库</a> · <a href="https://sun123zxy.github.io/sunquartex">网页 Demo</a>
 </p>
 
-## 核心功能
+# 核心功能
 
 Quarto 基础功能：
 
@@ -35,7 +35,7 @@ Quarto 基础功能：
 
 推荐在网页 Demo 中阅读本 README．
 
-## 基础安装
+# 基础安装
 
 - 下载并安装 [quarto-cli](https://quarto.org/)．本仓库渲染使用 Quarto 版本为 1.7.34．
 
@@ -45,11 +45,11 @@ Quarto 基础功能：
 
 - 仓库根目录命令行执行 `quarto render examples/helloworld.qmd --to=html` 测试安装情况．
 
-PDF / Beamer 输出等可选项安装和使用方法参见后文 <a href="#sec-optional" class="quarto-xref">小节 5</a>．另外，纯命令行的自动化 CI 流程可参见本仓库下的 Github Actions 配置文件．
+PDF / Beamer 输出等可选项安装和使用方法参见后文 <a href="#sec-optional" class="quarto-xref">小节 0.5</a>．另外，纯命令行的自动化 CI 流程可参见本仓库下的 Github Actions 配置文件．
 
-## 基础使用
+# 基础使用
 
-### 渲染
+## 渲染
 
 在仓库根目录命令行执行 `quarto render path/to/your_file.qmd --to=your_format`．
 
@@ -57,7 +57,7 @@ PDF / Beamer 输出等可选项安装和使用方法参见后文 <a href="#sec-o
 
 示例文件请在 [`examples/`](examples/) 目录下查看．其中或包含可选支持内容，请安装相应依赖或删除对应内容后渲染．
 
-### 写作
+## 写作
 
 Quarto 使用的底层 Markdown 方言为 [Pandoc’s Markdown](https://pandoc.org/MANUAL.html#pandocs-markdown)．速成可直接参考示例文档或 [Quarto](https://quarto.org/docs/authoring/markdown-basics.html) 官方教程．
 
@@ -67,7 +67,7 @@ Quarto 使用的底层 Markdown 方言为 [Pandoc’s Markdown](https://pandoc.o
 
 （重要）在文件头声明 `lang=zh` 或 `lang=en` 调整语言．该选项会影响文档的格式和渲染方式。
 
-## 更新
+# 更新
 
 如果您文章的仓库由 Github Template 创建，或者已经在使用 Git 版本控制，我们推荐使用如下方式拉取源仓库的更新：
 
@@ -83,38 +83,38 @@ git push # push 到你的远程仓库
 - `--allow-unrelated-histories` 选项只有在第一次合并时需要添加．
 - `--no-commit` 选项用于防止自动 commit 合并．本仓库更新很不稳定，建议每次合并都手动处理．
 
-## 可选项安装与使用
+# 可选项安装与使用
 
-### Python
+## Python
 
 建议您使用 uv 管理 Python 版本．`uv sync` 命令会自动安装所需的 Python 依赖．您也可以参考 `pyproject.toml` 手动安装．
 
-### LaTeX / PDF / Beamer 输出
+## LaTeX / PDF / Beamer 输出
 
 我们没有直接使用 Quarto 默认的 PDF 输出，而是完全重新设计了输出模板（`_assets/suntemp-art.tex`, `_assets/suntemp-pre.tex`）．大动干戈的目的有个人喜好方面的考量：Quarto 默认使用 Koma-Script 系列的 `scrartcl` 文档类，而我们希望在英文环境下保留 `article` 文档类的原汁原味，也希望在中文环境下使用 `ctexart` / `ctexbeamer` 文档类获得更好的排版格式．
 
 重新设计 PDF 模板，您可以参考 [Quarto 的模板自定义教程](https://quarto.org/docs/journals/templates.html)．
 
-#### 安装
+### 安装
 
 安装 Quarto 支持的 LaTeX 发行版．若无，可使用 `quarto install tinytex --update-path` 安装．
 
-#### 使用
+### 使用
 
 正常指定 format 即可．
 
 - 可在渲染时使用 `--to=latex` 选项输出中间 `.tex` 文件．
 
-### Computation 功能
+## Computation 功能
 
 直接嵌入 Python 代码就可以动态生成数据图表．[Quarto 文档](https://quarto.org/docs/computations/python.html)
 
-#### 安装
+### 安装
 
 - 安装适当版本 Python
 - 命令行 `pip install .` 安装 `pyproject.toml` 列明的所需模块
 
-#### 使用
+### 使用
 
 使用例：
 
@@ -144,9 +144,7 @@ plt.show()
 
 </div>
 
-### 表格
-
-#### 传统 Markdown 表格
+### 传统 Markdown 表格
 
 |                  |             |             |             |
 |:----------------:|:-----------:|:-----------:|:-----------:|
@@ -155,7 +153,7 @@ plt.show()
 |   $\mathbb N$    | $\mathbb N$ | $\mathbb N$ |      ?      |
 |   $\mathbb R$    | $\mathbb R$ |      ?      | $\mathbb R$ |
 
-#### Markdown grid style tables
+### Markdown grid style tables
 
 |     |     |      |     |     |
 |-----|-----|------|-----|-----|
@@ -164,7 +162,7 @@ plt.show()
 | c   | d   | ewfe |     | e   |
 | f   | g   | h    | r   | e   |
 
-#### RST-style list tables
+### RST-style list tables
 
 我们还支持 [RST-style list tables](https://github.com/pandoc-ext/list-table)．该格式可以比较方便地合并单元格．
 
@@ -175,7 +173,7 @@ plt.show()
 
 亦见 [`examples/timetable.qmd`](examples/timetable.qmd)．
 
-#### Computation based tables
+### Computation based tables
 
 您也可以直接使用代码生成表格：
 
@@ -339,7 +337,7 @@ plt.show()
 
 </div>
 
-#### 交叉引用
+### 交叉引用
 
 在表格外侧包裹 `::: {#tbl-label}` 块．表格 caption 置于块的最后一行．例如：
 
@@ -356,21 +354,21 @@ plt.show()
 
 </div>
 
-### Diagram 流程图（Mermaid、Graphviz 等）
+## Diagram 流程图（Mermaid、Graphviz 等）
 
 [Quarto 文档](https://quarto.org/docs/authoring/diagrams.html)
 
-#### 安装
+### 安装
 
 非 HTML 格式下需要额外安装 Chrome 或 Chromium．
 
 - 若无，可使用 `quarto install tool chromium` 安装，见 [Quarto - Diagrams \# Chrome Install](https://quarto.org/docs/authoring/diagrams.html#chrome-install)
 
-### TikZ / TikZ-cd / Quiver 交换图
+## TikZ / TikZ-cd / Quiver 交换图
 
 该功能由 [`_assets/tikz.lua`](_assets/tikz.lua) 实现．
 
-#### 安装
+### 安装
 
 如果只是输出到 PDF / Beamer，除了安装 LaTeX 发行版之外没有别的额外步骤．
 
@@ -405,7 +403,7 @@ plt.show()
 
 </div>
 
-#### 使用
+### 使用
 
 推荐使用 [quiver](https://q.uiver.app/) 在线编辑器生成交换图代码．使用例：
 
@@ -471,7 +469,7 @@ plt.show()
 
 </div>
 
-### Lean 代码高亮与带注释源码导入
+## Lean 代码高亮与带注释源码导入
 
 [`assets/lean.xml`](assets/lean.xml) 用于 Pandoc 的 Lean 代码高亮．直接使用 `lean` 作为代码块的语言标记即可．
 
@@ -489,11 +487,11 @@ plt.show()
 
 </div>
 
-### Github Actions + Github Pages 网站生成
+## Github Actions + Github Pages 网站生成
 
 本仓库同时采用 Github Actions + Github Pages 自动生成 Demo 站点．
 
-#### 安装
+### 安装
 
 首次使用时，在 Actions 分页中激活 Actions，在本地手动进行第一次网站发布：
 
@@ -503,19 +501,19 @@ plt.show()
 - 执行 `quarto publish`
 - （清除环境变量）
 
-#### 使用
+### 使用
 
 以后的每次 push 均会触发 Github Actions 自动完成的网站生成．
 
-### 输出为整本书（Book）
+## 输出为整本书（Book）
 
 实验性支持 PDF / DOCX 书籍打包．请调整 `_quarto-book.yml` 的配置并在 `quarto render` 时加入 `--profile=book` 选项渲染．
 
-## 样式自定义
+# 样式自定义
 
 修改 YAML 文档头可以自定义部分默认样式．
 
-### 我要改字号！
+## 我要改字号！
 
 目前仅支持 PDF 字号修改．英文文档默认字号为 11pt，中文文档默认字号为 10.5pt（五号，详见 CTeX 手册）．
 
@@ -525,7 +523,7 @@ format:
     fontsize: 12pt
 ```
 
-### 我要 / 不想要目录！
+## 我要 / 不想要目录！
 
 ``` yaml
 toc: true # 开启目录
@@ -533,16 +531,17 @@ toc: true # 开启目录
 
 该设置全局 / 特定格式下均生效．
 
-### 我不想给 section 编号 / 我要改 section 编号格式！
+## 我不想给 section 编号 / 我要改 section 编号格式！
 
 ``` yaml
-number-sections: true # section 编号开关
+number-sections: true # section 编号开关，默认关闭
 number-depth: 3 # 从 chapter / 一级标题计起的编号深度．此时 chapter, section, subsection 被编号
+toc-depth: 3 # 目录显示深度，相对最浅标题层级计算
 ```
 
 该设置全局 / 特定格式下均生效．
 
-### 我不想给定理编号！/ 我要改定理编号格式！
+## 我不想给定理编号！/ 我要改定理编号格式！
 
 Quarto 内置的定理编号系统目前无法修改（见 [Quarto Discussion \#5479](https://github.com/quarto-dev/quarto-cli/discussions/5479)），但我们提供自定义 PDF 格式定理编号的可能．（目前仍然无法实现完全关闭 PDF 格式中的定理编号）
 
@@ -554,17 +553,19 @@ format:
       numbered-alike: true # 开启后不同类型的定理将共享编号
 ```
 
-注意使用 ´numbered-within´ 前请先开启 ´number-sections´．
+默认开启 `numbered-alike`，不相对任何标题层级编号．在输出 Book 时，默认相对于 chapter 编号．
 
-### 我要改引用格式！
+注意使用 `numbered-within` 前请先开启 `number-sections`．
+
+## 我要改引用格式！
 
 PDF / Beamer 输出使用 BibLaTeX alphabetical，HTML 输出使用 IEEE．如需修改，请自定义 `sun*****.cls` 和 `_format.yml` 和 CSL 文件．
 
-### 我要更丰富的 Callout 定理包裹样式！
+## 我要更丰富的 Callout 定理包裹样式！
 
 请移步 [sun123zxy/quarto-callouty-theorem](https://github.com/sun123zxy/quarto-callouty-theorem) 学习配置方法．
 
-### 我要改 Beamer 幻灯片的颜色！
+## 我要改 Beamer 幻灯片的颜色！
 
 ``` yaml
 format:
@@ -578,7 +579,7 @@ format:
       link: lime!85!black # 链接颜色
 ```
 
-### PDF / Beamer 宏包不够用，我要自己导入！
+## PDF / Beamer 宏包不够用，我要自己导入！
 
 ``` yaml
 format:
@@ -594,22 +595,22 @@ format:
 
 亦见 [`examples/extra.qmd`](examples/extra.qmd)．暂时不支持其它格式下的宏包导入．
 
-## Q&A
+# Q&A
 
-### 一般性的
+## 一般性的
 
-#### 示例文件编译不了！
+### 示例文件编译不了！
 
 示例文件包含了部分可选支持内容，如未安装相应依赖，请删除对应内容后渲染．
 
-#### 我不懂 Computer Science，你能不能讲人话！
+### 我不懂 Computer Science，你能不能讲人话！
 
 请您活用 AI 工具降低学习门槛！您可以：
 
 - 在网页 Demo 和 AI 聊天提问！
 - 使用 VSCode 打开本仓库，使用自带的 Github Copilot，将 README 扔进对话框，提出您的具体需求并获得人话解答．
 
-#### 我想要 XXX 功能！/ 我要自己魔改！
+### 我想要 XXX 功能！/ 我要自己魔改！
 
 仓库主要为自用，如能为您的生活带来便利欢迎取用．想要的功能欢迎提 Issue 或 Discussion！（虽然不保证会做 :p
 
@@ -620,47 +621,51 @@ format:
 
 有能力欢迎 Fork 和 Pull Request．
 
-#### 仓库太重，我想要 standalone 的单文件渲染！
+### 仓库太重，我想要 standalone 的单文件渲染！
 
 请移步 [quarto-render](https://github.com/sun123zxy/quarto-render)，一个独立开发的小型命令行程序使得单文件 Quarto 渲染更加方便．
 
-### 写作相关
+## 写作相关
 
-#### 标题应该用多少个 `#`？
+### 标题应该用多少个 `#`？
 
-一般文档建议从二级标题开始编号（[相关讨论](https://community.rstudio.com/t/why-do-default-r-markdown-quarto-templates-use-second-level-headings-instead-of-first-level-ones/162127)）
+我们推荐将一级标题视为整个文档的大标题（即 Book 中的 chapter title）．二级标题对应 section，三级标题对应 subsection．Beamer 中四级标题对应 slide．
 
-默认配置调整了 Beamer 输出格式下标题级数与幻灯片分节的对应关系，使得二级标题对应 section，三级标题对应 subsection，四级标题对应 slide：
-
-    slide-level: 4
     shift-heading-level-by: -1
+    slide-level: 4
 
-您也可以根据需要调整．参见 [Pandoc 文档](https://pandoc.org/MANUAL.html#structuring-the-slide-show)．
+Quarto 和 Pandoc 对标题层级的处理比较复杂——例如，Book 项目中 Quarto 似乎会额外对标题层级进行 -1 处理．因此我们不建议您手动调整这些设置．
 
-#### 分页符
+参见：
+
+- [相关讨论](https://community.rstudio.com/t/why-do-default-r-markdown-quarto-templates-use-second-level-headings-instead-of-first-level-ones/162127)
+- [Pandoc `--shift-heading-level-by` 文档](https://pandoc.org/MANUAL.html#option--shift-heading-level-by)
+- [Pandoc `slide-level` 文档](https://pandoc.org/MANUAL.html#structuring-the-slide-show)
+
+### 分页符
 
 `{{< pagebreak >}}`．见[官方文档](https://quarto.org/docs/authoring/markdown-basics.html#page-breaks)．
 
-#### YAML 文档头里的字符串到底打不打引号？
+### YAML 文档头里的字符串到底打不打引号？
 
 可打可不打．打了的话需要注意特殊字符的转义问题（如 `\`）．
 
-#### 用 `$` 包裹行内公式的正确格式
+### 用 `$` 包裹行内公式的正确格式
 
 示例：`我们有 $(a + b)^2 = a^2 + 2ab + b^2$．证毕．`
 
 `$` 内侧应紧接着公式中的非空格字符，外侧与中英文字符之间应有空格，与标点符号、连字符之间不留空格．参考 [Pandoc 文档](https://pandoc.org/MANUAL.html#extension-tex_math_dollars)．
 
-### 输出相关
+## 输出相关
 
-#### 写好的 Beamer 也想输出一份文稿版本的 PDF？
+### 写好的 Beamer 也想输出一份文稿版本的 PDF？
 
 理论上与文档格式兼容，可直接设置 `--to=pdf` 输出文稿版本．
 
-#### 我要输出到知乎！
+### 我要输出到知乎！
 
 您可以使用 GFM 格式输出，输出内容可复制至 [markdown.com.cn](https://markdown.com.cn/editor/) 的在线编辑器转知乎格式．
 
-#### PDF 输出，LaTeX 渲染了十遍
+### PDF 输出，LaTeX 渲染了十遍
 
 您文档的交叉引用可能存在问题．请检查文档头的 `bibliography` 选项和正文中的引用情况．

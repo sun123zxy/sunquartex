@@ -2,27 +2,27 @@
 sun123zxy, Luna
 2022-12-07
 
-## 前言
+# 前言
 
 $\SunQuarTeX$ 的具体使用方法参见 [sun123zxy/sunquartex](https://github.com/sun123zxy/sunquartex)．
 
-## 文章结构测试 $\SunQuarTeX$
+# 文章结构测试 $\SunQuarTeX$
 
 这一节测试文章结构．
 
-### 文章分 $\SunQuarTeX$ 节
+## 文章分 $\SunQuarTeX$ 节
 
 非常非常非常非常非常非*常非常非常非*常非常非常非常非常**非常非常非常**非常非常非常非常非常非常非常非常长的句子．
 
-#### 文章分分 $\SunQuarTeX$ 节
+### 文章分分 $\SunQuarTeX$ 节
 
 Quarto 支持交叉引用．比如这一节的标题就已经被打上了标签．
 
-##### 分分分 $\SunQuarTeX$ 节
+#### 分分分 $\SunQuarTeX$ 节
 
 本节中我们测试交叉引用 <a href="#sec-test" class="quarto-xref">小节 2.1.1</a>．
 
-###### 分分分分 $\SunQuarTeX$ 节
+##### 分分分分 $\SunQuarTeX$ 节
 
 这是最小的一级了．
 
@@ -30,7 +30,7 @@ $$
 \SunQuarTeX
 $$
 
-## 图片、表格、列表测试
+# 图片、表格、列表测试
 
 <div id="fig-figure">
 
@@ -105,7 +105,7 @@ $a \leq b \land b \leq c \implies a \leq c$
 
 </div>
 
-## 数学公式、定理系统测试
+# 数学公式、定理系统测试
 
 这一节我们测试数学相关内容．直接在源文件中写 raw LaTeX 就可声明公式所需的宏定义．由于 `\DeclareMathOperator` 只能在 LaTeX 的导言区使用，这里我们用 `\newcommand` + `\operatorname` 的方式替代．
 
@@ -198,7 +198,7 @@ $$
 
 </div>
 
-## 数据可视化（Table, Figure & Diagram）
+# 数据可视化（Table, Figure & Diagram）
 
 Quarto 的另一大卖点．
 
@@ -392,7 +392,7 @@ plt.show()
 
 </div>
 
-## Diagrams
+# Diagrams
 
 Quarto 原生支持使用 GraphViz 或 Mermaid 绘制有向图或流程图．我们还额外支持 TikZ / `tikzcd` 的渲染！
 
@@ -445,7 +445,7 @@ g(x)    & \sum_{j=0}^{n-1} b_j x^j \arrow[rr, "\operatorname{DFT}"] \arrow[u, do
 
 </div>
 
-## Layout
+# Layout
 
 如 [Quarto - Article Layout](https://quarto.org/docs/authoring/article-layout.html) 所述，有时可让文章某些部分超出常规的宽度限制．此功能主要在 HTML 中使用，PDF 中部分生效，其它格式不生效．
 
@@ -457,7 +457,7 @@ g(x)    & \sum_{j=0}^{n-1} b_j x^j \arrow[rr, "\operatorname{DFT}"] \arrow[u, do
 
 </div>
 
-## 代码块和引用
+# 代码块和引用
 
 - 行内 `print("Hello, SunQuarTeX")` 代码
 - 行内带中文 `print("你好，SunQuarTeX")` 代码
@@ -504,11 +504,11 @@ example : (∀ x, p x → r) → ((∃ x, p x) → r) := by
 
 > 这是一个引用块和一个非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．
 
-## HTML 专用测试
+# HTML 专用测试
 
 目前暂未处理 LaTeX/PDF 格式的 callout，MS Word 格式可兼容但效果不佳．本节后续内容将不会在 LaTeX/PDF 格式下被渲染．
 
-### Callouts
+## Callouts
 
 Quarto 具有 5 种 callout 类型：`note`，`warning`，`important`，`tip`，和 `caution`．
 
@@ -528,13 +528,13 @@ Quarto 具有 5 种 callout 类型：`note`，`warning`，`important`，`tip`，
 
 > [!TIP]
 >
-> ### 有 caption 的 callout
+> ## 有 caption 的 callout
 >
 > 这是有 caption 的 callout．
 
 > [!CAUTION]
 >
-> ### 可折叠的 callout
+> ## 可折叠的 callout
 >
 > 开启 collapse 的可折叠 caution callout．
 
@@ -546,7 +546,7 @@ Quarto 具有 5 种 callout 类型：`note`，`warning`，`important`，`tip`，
 >
 > minimal 风格的 callout 和一个和非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．
 
-## 引用、脚注测试
+# 引用、脚注测试
 
 这是一个脚注[^1]．
 

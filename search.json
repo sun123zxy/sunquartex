@@ -7,158 +7,53 @@
     "text": "SunQuarTeX\nWrite once, present everywhere!基于 Quarto 的多格式输出中英文学术写作模板库\nGithub 仓库 · 网页 Demo"
   },
   {
-    "objectID": "index.html#渲染",
-    "href": "index.html#渲染",
+    "objectID": "index.html#核心功能",
+    "href": "index.html#核心功能",
     "title": "README",
-    "section": "3.1 渲染",
-    "text": "3.1 渲染\n在仓库根目录命令行执行 quarto render path/to/your_file.qmd --to=your_format．\n\n使用 --to 参数指定输出类型，包括 html, pdf， beamer, docx, gfm．如果已经在文档头中 format 选项下列明输出格式，也可不在命令行中指定该选项．\n\n示例文件请在 examples/ 目录下查看．其中或包含可选支持内容，请安装相应依赖或删除对应内容后渲染．"
+    "section": "1 核心功能",
+    "text": "1 核心功能\nQuarto 基础功能：\n\n基于 Pandoc’s Markdown 的完备学术写作语法\n强大的交叉引用与定理系统功能\nHTML、PDF/LaTeX、Beamer、Github Flavored Markdown (GFM) 全格式输出；MS Word、PPT 有限支持\n嵌入 Python 代码生成数据图表（Computation）\nMermaid、Graphviz 流程图绘制（Diagram）\n\n额外支持：\n\nTikZ / tikz-cd / quiver 图表绘制\nLean 代码高亮与源码导入转 Markdown\nRST-style list tables\nGithub Actions 自动生成 Demo 站点\n\n推荐在网页 Demo 中阅读本 README．"
   },
   {
-    "objectID": "index.html#写作",
-    "href": "index.html#写作",
+    "objectID": "index.html#基础安装",
+    "href": "index.html#基础安装",
     "title": "README",
-    "section": "3.2 写作",
-    "text": "3.2 写作\nQuarto 使用的底层 Markdown 方言为 Pandoc’s Markdown．速成可直接参考示例文档或 Quarto 官方教程．\n文档中开头部分 --- 之间的内容称为 YAML 文档头（YAML Front Matter），用于设置文档相关元信息，也用于设置输出格式、样式等．您在自定义的过程中可能需要修改或添加它们．\n针对特定输出格式的设置请在文档头 format 下对应格式选项下设置．希望全局生效的设置（一般）可在文档头顶层设置．\n（重要）在文件头声明 lang=zh 或 lang=en 调整语言．该选项会影响文档的格式和渲染方式。"
+    "section": "2 基础安装",
+    "text": "2 基础安装\n\n下载并安装 quarto-cli．本仓库渲染使用 Quarto 版本为 1.7.34．\n\n（推荐）安装 VSCode IDE 并安装 Quarto 插件．\n\n创建新文章时使用 Github Template 以本仓库为模板建立新仓库．您也可以下载本仓库的压缩包或 clone 到本地．\n仓库根目录命令行执行 quarto render examples/helloworld.qmd --to=html 测试安装情况．\n\nPDF / Beamer 输出等可选项安装和使用方法参见后文 小节 5．另外，纯命令行的自动化 CI 流程可参见本仓库下的 Github Actions 配置文件．"
   },
   {
-    "objectID": "index.html#python",
-    "href": "index.html#python",
+    "objectID": "index.html#基础使用",
+    "href": "index.html#基础使用",
     "title": "README",
-    "section": "5.1 Python",
-    "text": "5.1 Python\n建议您使用 uv 管理 Python 版本．uv sync 命令会自动安装所需的 Python 依赖．您也可以参考 pyproject.toml 手动安装．"
+    "section": "3 基础使用",
+    "text": "3 基础使用\n\n3.1 渲染\n在仓库根目录命令行执行 quarto render path/to/your_file.qmd --to=your_format．\n\n使用 --to 参数指定输出类型，包括 html, pdf， beamer, docx, gfm．如果已经在文档头中 format 选项下列明输出格式，也可不在命令行中指定该选项．\n\n示例文件请在 examples/ 目录下查看．其中或包含可选支持内容，请安装相应依赖或删除对应内容后渲染．\n\n\n3.2 写作\nQuarto 使用的底层 Markdown 方言为 Pandoc’s Markdown．速成可直接参考示例文档或 Quarto 官方教程．\n文档中开头部分 --- 之间的内容称为 YAML 文档头（YAML Front Matter），用于设置文档相关元信息，也用于设置输出格式、样式等．您在自定义的过程中可能需要修改或添加它们．\n针对特定输出格式的设置请在文档头 format 下对应格式选项下设置．希望全局生效的设置（一般）可在文档头顶层设置．\n（重要）在文件头声明 lang=zh 或 lang=en 调整语言．该选项会影响文档的格式和渲染方式。"
   },
   {
-    "objectID": "index.html#latex-pdf-beamer-输出",
-    "href": "index.html#latex-pdf-beamer-输出",
+    "objectID": "index.html#更新",
+    "href": "index.html#更新",
     "title": "README",
-    "section": "5.2 LaTeX / PDF / Beamer 输出",
-    "text": "5.2 LaTeX / PDF / Beamer 输出\n我们没有直接使用 Quarto 默认的 PDF 输出，而是完全重新设计了输出模板（_assets/suntemp-art.tex, _assets/suntemp-pre.tex）．大动干戈的目的有个人喜好方面的考量：Quarto 默认使用 Koma-Script 系列的 scrartcl 文档类，而我们希望在英文环境下保留 article 文档类的原汁原味，也希望在中文环境下使用 ctexart / ctexbeamer 文档类获得更好的排版格式．\n重新设计 PDF 模板，您可以参考 Quarto 的模板自定义教程．\n\n安装\n安装 Quarto 支持的 LaTeX 发行版．若无，可使用 quarto install tinytex --update-path 安装．\n\n\n使用\n正常指定 format 即可．\n\n可在渲染时使用 --to=latex 选项输出中间 .tex 文件．"
+    "section": "4 更新",
+    "text": "4 更新\n如果您文章的仓库由 Github Template 创建，或者已经在使用 Git 版本控制，我们推荐使用如下方式拉取源仓库的更新：\ngit remote add sunquartex git@github.com:sun123zxy/sunquartex.git # 添加 sunquartex 作为第二远程仓库\ngit pull sunquartex master --allow-unrelated-histories --no-commit # 拉取并尝试合并 sunquartex 的更新\n# 手动处理合并冲突\ngit add .\ngit commit -m \"merge updates from sunquartex\" # commit 合并\ngit push # push 到你的远程仓库\n\n--allow-unrelated-histories 选项只有在第一次合并时需要添加．\n--no-commit 选项用于防止自动 commit 合并．本仓库更新很不稳定，建议每次合并都手动处理．"
   },
   {
-    "objectID": "index.html#computation-功能",
-    "href": "index.html#computation-功能",
+    "objectID": "index.html#sec-optional",
+    "href": "index.html#sec-optional",
     "title": "README",
-    "section": "5.3 Computation 功能",
-    "text": "5.3 Computation 功能\n直接嵌入 Python 代码就可以动态生成数据图表．Quarto 文档\n\n安装\n\n安装适当版本 Python\n命令行 pip install . 安装 pyproject.toml 列明的所需模块\n\n\n\n使用\n使用例：\n\n\n代码\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nfig.patch.set_alpha(0)\nax.patch.set_alpha(0)\n\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\n\n\n\n\n图 1: A line plot on a polar axis"
+    "section": "5 可选项安装与使用",
+    "text": "5 可选项安装与使用\n\n5.1 Python\n建议您使用 uv 管理 Python 版本．uv sync 命令会自动安装所需的 Python 依赖．您也可以参考 pyproject.toml 手动安装．\n\n\n5.2 LaTeX / PDF / Beamer 输出\n我们没有直接使用 Quarto 默认的 PDF 输出，而是完全重新设计了输出模板（_assets/suntemp-art.tex, _assets/suntemp-pre.tex）．大动干戈的目的有个人喜好方面的考量：Quarto 默认使用 Koma-Script 系列的 scrartcl 文档类，而我们希望在英文环境下保留 article 文档类的原汁原味，也希望在中文环境下使用 ctexart / ctexbeamer 文档类获得更好的排版格式．\n重新设计 PDF 模板，您可以参考 Quarto 的模板自定义教程．\n\n安装\n安装 Quarto 支持的 LaTeX 发行版．若无，可使用 quarto install tinytex --update-path 安装．\n\n\n使用\n正常指定 format 即可．\n\n可在渲染时使用 --to=latex 选项输出中间 .tex 文件．\n\n\n\n\n5.3 Computation 功能\n直接嵌入 Python 代码就可以动态生成数据图表．Quarto 文档\n\n安装\n\n安装适当版本 Python\n命令行 pip install . 安装 pyproject.toml 列明的所需模块\n\n\n\n使用\n使用例：\n\n\n代码\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nfig.patch.set_alpha(0)\nax.patch.set_alpha(0)\n\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\n\n\n\n\n图 1: A line plot on a polar axis\n\n\n\n\n\n\n\n传统 Markdown 表格\n\n\n\n\\(L_i \\times C_j\\)\n\\(2\\)\n\\(\\mathbb N\\)\n\\(\\mathbb R\\)\n\n\n\\(2\\)\n\\(4\\)\n\\(\\mathbb N\\)\n\\(\\mathbb R\\)\n\n\n\\(\\mathbb N\\)\n\\(\\mathbb N\\)\n\\(\\mathbb N\\)\n?\n\n\n\\(\\mathbb R\\)\n\\(\\mathbb R\\)\n?\n\\(\\mathbb R\\)\n\n\n\n\n\nMarkdown grid style tables\n\n\n\n\n\n\n\n\n\n\na\nbe\nc\nd\ne\n\n\nf\new\na\nb\n\n\nc\nd\newfe\ne\n\n\nf\ng\nh\nr\ne\n\n\n\n\n\nRST-style list tables\n我们还支持 RST-style list tables．该格式可以比较方便地合并单元格．\n\n\n\nrow 1, column 1\nrow 1, column 2\nrow 1, column 3\n\n\n\n\nrow 2, column 1\n row 2, column 2–3\n\n\nrow 3, column 1\nrow 3, column 2\nrow 3, column 3\n\n\n\n亦见 examples/timetable.qmd．\n\n\nComputation based tables\n您也可以直接使用代码生成表格：\n\n\n代码\nimport numpy as np\nimport math\nfrom IPython.display import Markdown, display\nfrom tabulate import tabulate\nimport matplotlib.pyplot as plt\n\nR = np.array([0,100,200,300,400,500,600,700,800,900,1000,\n1100,1110,1120,1130,1140,1150,1160,1170,1180,1190,\n1200,1210,1220,1230,1240,1250,1260,1270,1280,1290,\n1300,1400,1500,2000,4000,math.inf])\nU = np.array([24.2E-3, 0.386,0.747,1.104,1.460,1.813,2.16,2.51,2.86,3.19,3.48,\n3.70,3.75,3.77,3.78,3.80,3.81,3.83,3.84,3.85,3.86,\n3.87,3.90,3.92,3.93,3.94,3.95,3.95,3.96,3.97,3.98,\n3.99,4.08,4.16,4.39,4.66,4.85])\nI = np.array([3.6,3.6,3.6,3.6,3.6,3.5,3.5,3.5,3.5,3.5,3.4,\n3.3,3.4,3.4,3.4,3.4,3.3,3.3,3.3,3.3,3.3,\n3.2,3.2,3.2,3.2,3.2,3.2,3.2,3.1,3.1,3.1,\n3.0,2.9,2.7,2.2,1.130,47.7E-3])\nP = U*I\n\n\n\n代码\ntable = [[R[i], U[i], I[i], P[i]] for i in list(range(0, 11)) + [11,21,31,32,33,34,35,36]]\ndisplay(Markdown(tabulate(table, headers=[\"R (Ω)\", \"U (V)\", \"I (mA)\", \"P (mW)\"])))\ntable = [[R[i], U[i], I[i], P[i]] for i in range(12, 31)]\ndisplay(Markdown(tabulate(table, headers=[\"R (Ω)\", \"U (V)\", \"I (mA)\", \"P (mW)\"])))\n\n\n\n\n\n\n\n\n\n\n\n\nR (Ω)\nU (V)\nI (mA)\nP (mW)\n\n\n\n\n0\n0.0242\n3.6\n0.08712\n\n\n100\n0.386\n3.6\n1.3896\n\n\n200\n0.747\n3.6\n2.6892\n\n\n300\n1.104\n3.6\n3.9744\n\n\n400\n1.46\n3.6\n5.256\n\n\n500\n1.813\n3.5\n6.3455\n\n\n600\n2.16\n3.5\n7.56\n\n\n700\n2.51\n3.5\n8.785\n\n\n800\n2.86\n3.5\n10.01\n\n\n900\n3.19\n3.5\n11.165\n\n\n1000\n3.48\n3.4\n11.832\n\n\n1100\n3.7\n3.3\n12.21\n\n\n1200\n3.87\n3.2\n12.384\n\n\n1300\n3.99\n3\n11.97\n\n\n1400\n4.08\n2.9\n11.832\n\n\n1500\n4.16\n2.7\n11.232\n\n\n2000\n4.39\n2.2\n9.658\n\n\n4000\n4.66\n1.13\n5.2658\n\n\ninf\n4.85\n0.0477\n0.231345\n\n\n\n\n\n(a) （粗）\n\n\n\n\n\n\n\n\n\n\n\nR (Ω)\nU (V)\nI (mA)\nP (mW)\n\n\n\n\n1110\n3.75\n3.4\n12.75\n\n\n1120\n3.77\n3.4\n12.818\n\n\n1130\n3.78\n3.4\n12.852\n\n\n1140\n3.8\n3.4\n12.92\n\n\n1150\n3.81\n3.3\n12.573\n\n\n1160\n3.83\n3.3\n12.639\n\n\n1170\n3.84\n3.3\n12.672\n\n\n1180\n3.85\n3.3\n12.705\n\n\n1190\n3.86\n3.3\n12.738\n\n\n1200\n3.87\n3.2\n12.384\n\n\n1210\n3.9\n3.2\n12.48\n\n\n1220\n3.92\n3.2\n12.544\n\n\n1230\n3.93\n3.2\n12.576\n\n\n1240\n3.94\n3.2\n12.608\n\n\n1250\n3.95\n3.2\n12.64\n\n\n1260\n3.95\n3.2\n12.64\n\n\n1270\n3.96\n3.1\n12.276\n\n\n1280\n3.97\n3.1\n12.307\n\n\n1290\n3.98\n3.1\n12.338\n\n\n\n\n\n(b) （细）\n\n\n\n\n\n\n\n表 1: 太阳能电池的负载特性\n\n\n\n\n代码\nfig, ax = plt.subplots()\nfig.patch.set_alpha(0)\nax.patch.set_alpha(0)\n\nax.set_xlabel(\"U (V)\")\nax.set_ylabel(\"I (mA)\")\n\nax.plot(U, I, marker=\"o\")\nax.grid(True)\nax.set_xlim(0)\nax.set_ylim(0)\n\nplt.show()\n\n\nfig, ax = plt.subplots()\nfig.patch.set_alpha(0)\nax.patch.set_alpha(0)\n\nax.set_xlabel(\"R (Ω)\")\nax.set_ylabel(\"P (mW)\")\n\nax.plot(R, P, marker=\"o\")\nax.grid(True)\nax.set_xlim((0, 2000))\nax.set_ylim(0)\n\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\n(a) 输出电流与电压关系曲线\n\n\n\n\n\n\n\n\n\n\n\n(b) 输出功率与负载电阻关系曲线\n\n\n\n\n\n\n\n图 2: 太阳能电池的负载特性\n\n\n\n\n\n交叉引用\n在表格外侧包裹 ::: {#tbl-label} 块．表格 caption 置于块的最后一行．例如：\n\n\n\n\n\n\n\n\n\n\n\n\n\na\nbe\nc\nd\ne\n\n\nf\new\na\nb\n\n\nc\nd\newfe\ne\n\n\nf\ng\nh\nr\ne\n\n\n\n\n\n表 2: A Table\n\n\n\n\n\n\n5.4 Diagram 流程图（Mermaid、Graphviz 等）\nQuarto 文档\n\n安装\n非 HTML 格式下需要额外安装 Chrome 或 Chromium．\n\n若无，可使用 quarto install tool chromium 安装，见 Quarto - Diagrams # Chrome Install\n\n\n\n\n5.5 TikZ / TikZ-cd / Quiver 交换图\n该功能由 _assets/tikz.lua 实现．\n\n安装\n如果只是输出到 PDF / Beamer，除了安装 LaTeX 发行版之外没有别的额外步骤．\n如还需输出至其它格式：请确保 XeLaTeX、dvisvgm、mutool 已在 PATH 中，且提前安装需要使用的 LaTeX 宏包：\n\n安装用于 TikZ 渲染的 LaTeX 宏包：\n新建任意空白 Quarto 文档 temp.qmd 并执行\nquarto render temp.qmd --to=pdf --template=_assets/suntemp-tikz.tex\n随后删除 temp.qmd．\n如果后续渲染时仍然提示缺少宏包，请手动安装，例如手动安装 standalone 宏包：执行 tlmgr install standalone\n使用 Quarto 自带的 TinyTeX 安装 dvisvgm：\n\n执行 tlmgr install dvisvgm 和 tlmgr path add 下载 dvisvgm 并添加至 PATH．\n\n安装 mutool：\n\n（Linux / WSL）执行 sudo apt install mupdf-tools．\n（Windows）请自行在 MuPDF 官网下载并安装 MuPDF，并确保 mutool 在 PATH 中．\n\n\n\n\n\n\n\n\nRemark\n\n\n\n\n\n\n注记. 关于 mutool 必要性的说明：\n\nAs of Ghostscript 10.01.0, this will no longer work due to the introduction of a new PDF interpreter. Therefore, an alternative conversion module based on mutool, a utility which is part of the MuPDF package, has been introduced. It’s automatically invoked if Ghostscript can’t be used and if a working mutool executable is present in a directory which is part of the system’s search path.\n来自 dvisvgm manual\n\n\n\n\n\n\n\n使用\n推荐使用 quiver 在线编辑器生成交换图代码．使用例：\n\n\n\n\n\n\n\n\n\nB\nA\n⇝\nB\nA\n\n\n\ng\n\n\nf\n\n\nh\n\n\nh\n\n\nf\n\n\n\nα\n\n\n\nβ\n\n\n\nβ\n◦\n1\nα\n\n\n\n\n\n图 3: TikZ-cd / Quiver 示例\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nt\n\nt\n\n0\n\n\nSpec\nφ\n\n\nx\n\n\ny\n\ny\n2\n=\nx\n3\n\n(\nt\n2\n,t\n3\n)\n\n\n\n\n\n图 4: TikZ 示例\n\n\n\n\n\n\n\n\n\nRemark\n\n\n\n\n\n\n注记. 在 Beamer 中使用 TikZ 时，所在幻灯片须添加 {.fragile} 标记．\n\n\n\n\n\n\n\n5.6 Lean 代码高亮与带注释源码导入\nassets/lean.xml 用于 Pandoc 的 Lean 代码高亮．直接使用 lean 作为代码块的语言标记即可．\n_assets/lean-include.lua shortcode 用于直接将带有注释的 Lean 代码导入转换为 Markdown．使用如下格式即可导入：\n{{&lt; lean-include path/to/your_file.lean &gt;}}\n现已支持 PDF / Beamer 输出．\n\n\n\n\n\n\nRemark\n\n\n\n\n\n\n注记. 目前 HTML 的目录导航定位存在问题．\n\n\n\n\n\n\n5.7 Github Actions + Github Pages 网站生成\n本仓库同时采用 Github Actions + Github Pages 自动生成 Demo 站点．\n\n安装\n首次使用时，在 Actions 分页中激活 Actions，在本地手动进行第一次网站发布：\n\n修改 _quarto-website.yml 下 site-url 为你的域名（如您使用非 Github Pages 的默认网站域名，请在根目录下额外添加 CNAME 文件）\n\n嫌麻烦的话也可以直接删除这个选项．\n\n命令行内设置环境变量 QUARTO_PROFILE 为 website\n执行 quarto publish\n（清除环境变量）\n\n\n\n使用\n以后的每次 push 均会触发 Github Actions 自动完成的网站生成．\n\n\n\n5.8 输出为整本书（Book）\n实验性支持 PDF / DOCX 书籍打包．请调整 _quarto-book.yml 的配置并在 quarto render 时加入 --profile=book 选项渲染．"
   },
   {
-    "objectID": "index.html#表格",
-    "href": "index.html#表格",
+    "objectID": "index.html#样式自定义",
+    "href": "index.html#样式自定义",
     "title": "README",
-    "section": "5.4 表格",
-    "text": "5.4 表格\n\n传统 Markdown 表格\n\n\n\n\\(L_i \\times C_j\\)\n\\(2\\)\n\\(\\mathbb N\\)\n\\(\\mathbb R\\)\n\n\n\\(2\\)\n\\(4\\)\n\\(\\mathbb N\\)\n\\(\\mathbb R\\)\n\n\n\\(\\mathbb N\\)\n\\(\\mathbb N\\)\n\\(\\mathbb N\\)\n?\n\n\n\\(\\mathbb R\\)\n\\(\\mathbb R\\)\n?\n\\(\\mathbb R\\)\n\n\n\n\n\nMarkdown grid style tables\n\n\n\n\n\n\n\n\n\n\na\nbe\nc\nd\ne\n\n\nf\new\na\nb\n\n\nc\nd\newfe\ne\n\n\nf\ng\nh\nr\ne\n\n\n\n\n\nRST-style list tables\n我们还支持 RST-style list tables．该格式可以比较方便地合并单元格．\n\n\n\nrow 1, column 1\nrow 1, column 2\nrow 1, column 3\n\n\n\n\nrow 2, column 1\n row 2, column 2–3\n\n\nrow 3, column 1\nrow 3, column 2\nrow 3, column 3\n\n\n\n亦见 examples/timetable.qmd．\n\n\nComputation based tables\n您也可以直接使用代码生成表格：\n\n\n代码\nimport numpy as np\nimport math\nfrom IPython.display import Markdown, display\nfrom tabulate import tabulate\nimport matplotlib.pyplot as plt\n\nR = np.array([0,100,200,300,400,500,600,700,800,900,1000,\n1100,1110,1120,1130,1140,1150,1160,1170,1180,1190,\n1200,1210,1220,1230,1240,1250,1260,1270,1280,1290,\n1300,1400,1500,2000,4000,math.inf])\nU = np.array([24.2E-3, 0.386,0.747,1.104,1.460,1.813,2.16,2.51,2.86,3.19,3.48,\n3.70,3.75,3.77,3.78,3.80,3.81,3.83,3.84,3.85,3.86,\n3.87,3.90,3.92,3.93,3.94,3.95,3.95,3.96,3.97,3.98,\n3.99,4.08,4.16,4.39,4.66,4.85])\nI = np.array([3.6,3.6,3.6,3.6,3.6,3.5,3.5,3.5,3.5,3.5,3.4,\n3.3,3.4,3.4,3.4,3.4,3.3,3.3,3.3,3.3,3.3,\n3.2,3.2,3.2,3.2,3.2,3.2,3.2,3.1,3.1,3.1,\n3.0,2.9,2.7,2.2,1.130,47.7E-3])\nP = U*I\n\n\n\n代码\ntable = [[R[i], U[i], I[i], P[i]] for i in list(range(0, 11)) + [11,21,31,32,33,34,35,36]]\ndisplay(Markdown(tabulate(table, headers=[\"R (Ω)\", \"U (V)\", \"I (mA)\", \"P (mW)\"])))\ntable = [[R[i], U[i], I[i], P[i]] for i in range(12, 31)]\ndisplay(Markdown(tabulate(table, headers=[\"R (Ω)\", \"U (V)\", \"I (mA)\", \"P (mW)\"])))\n\n\n\n\n\n\n\n\n\n\n\n\nR (Ω)\nU (V)\nI (mA)\nP (mW)\n\n\n\n\n0\n0.0242\n3.6\n0.08712\n\n\n100\n0.386\n3.6\n1.3896\n\n\n200\n0.747\n3.6\n2.6892\n\n\n300\n1.104\n3.6\n3.9744\n\n\n400\n1.46\n3.6\n5.256\n\n\n500\n1.813\n3.5\n6.3455\n\n\n600\n2.16\n3.5\n7.56\n\n\n700\n2.51\n3.5\n8.785\n\n\n800\n2.86\n3.5\n10.01\n\n\n900\n3.19\n3.5\n11.165\n\n\n1000\n3.48\n3.4\n11.832\n\n\n1100\n3.7\n3.3\n12.21\n\n\n1200\n3.87\n3.2\n12.384\n\n\n1300\n3.99\n3\n11.97\n\n\n1400\n4.08\n2.9\n11.832\n\n\n1500\n4.16\n2.7\n11.232\n\n\n2000\n4.39\n2.2\n9.658\n\n\n4000\n4.66\n1.13\n5.2658\n\n\ninf\n4.85\n0.0477\n0.231345\n\n\n\n\n\n(a) （粗）\n\n\n\n\n\n\n\n\n\n\n\nR (Ω)\nU (V)\nI (mA)\nP (mW)\n\n\n\n\n1110\n3.75\n3.4\n12.75\n\n\n1120\n3.77\n3.4\n12.818\n\n\n1130\n3.78\n3.4\n12.852\n\n\n1140\n3.8\n3.4\n12.92\n\n\n1150\n3.81\n3.3\n12.573\n\n\n1160\n3.83\n3.3\n12.639\n\n\n1170\n3.84\n3.3\n12.672\n\n\n1180\n3.85\n3.3\n12.705\n\n\n1190\n3.86\n3.3\n12.738\n\n\n1200\n3.87\n3.2\n12.384\n\n\n1210\n3.9\n3.2\n12.48\n\n\n1220\n3.92\n3.2\n12.544\n\n\n1230\n3.93\n3.2\n12.576\n\n\n1240\n3.94\n3.2\n12.608\n\n\n1250\n3.95\n3.2\n12.64\n\n\n1260\n3.95\n3.2\n12.64\n\n\n1270\n3.96\n3.1\n12.276\n\n\n1280\n3.97\n3.1\n12.307\n\n\n1290\n3.98\n3.1\n12.338\n\n\n\n\n\n(b) （细）\n\n\n\n\n\n\n\n表 1: 太阳能电池的负载特性\n\n\n\n\n代码\nfig, ax = plt.subplots()\nfig.patch.set_alpha(0)\nax.patch.set_alpha(0)\n\nax.set_xlabel(\"U (V)\")\nax.set_ylabel(\"I (mA)\")\n\nax.plot(U, I, marker=\"o\")\nax.grid(True)\nax.set_xlim(0)\nax.set_ylim(0)\n\nplt.show()\n\n\nfig, ax = plt.subplots()\nfig.patch.set_alpha(0)\nax.patch.set_alpha(0)\n\nax.set_xlabel(\"R (Ω)\")\nax.set_ylabel(\"P (mW)\")\n\nax.plot(R, P, marker=\"o\")\nax.grid(True)\nax.set_xlim((0, 2000))\nax.set_ylim(0)\n\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\n(a) 输出电流与电压关系曲线\n\n\n\n\n\n\n\n\n\n\n\n(b) 输出功率与负载电阻关系曲线\n\n\n\n\n\n\n\n图 2: 太阳能电池的负载特性\n\n\n\n\n\n交叉引用\n在表格外侧包裹 ::: {#tbl-label} 块．表格 caption 置于块的最后一行．例如：\n\n\n\n\n\n\n\n\n\n\n\n\n\na\nbe\nc\nd\ne\n\n\nf\new\na\nb\n\n\nc\nd\newfe\ne\n\n\nf\ng\nh\nr\ne\n\n\n\n\n\n表 2: A Table"
+    "section": "6 样式自定义",
+    "text": "6 样式自定义\n修改 YAML 文档头可以自定义部分默认样式．\n\n6.1 我要改字号！\n目前仅支持 PDF 字号修改．英文文档默认字号为 11pt，中文文档默认字号为 10.5pt（五号，详见 CTeX 手册）．\nformat:\n  pdf:\n    fontsize: 12pt\n\n\n6.2 我要 / 不想要目录！\ntoc: true # 开启目录\n该设置全局 / 特定格式下均生效．\n\n\n6.3 我不想给 section 编号 / 我要改 section 编号格式！\nnumber-sections: true # section 编号开关，默认关闭\nnumber-depth: 3 # 从 chapter / 一级标题计起的编号深度．此时 chapter, section, subsection 被编号\ntoc-depth: 3 # 目录显示深度，相对最浅标题层级计算\n该设置全局 / 特定格式下均生效．\n\n\n6.4 我不想给定理编号！/ 我要改定理编号格式！\nQuarto 内置的定理编号系统目前无法修改（见 Quarto Discussion #5479），但我们提供自定义 PDF 格式定理编号的可能．（目前仍然无法实现完全关闭 PDF 格式中的定理编号）\nformat:\n  pdf:\n    custom-theorem:\n      numbered-within: section # 开启后将相对于 section（或 subsection, etc.）进行定理编号\n      numbered-alike: true # 开启后不同类型的定理将共享编号\n默认开启 numbered-alike，不相对任何标题层级编号．在输出 Book 时，默认相对于 chapter 编号．\n注意使用 numbered-within 前请先开启 number-sections．\n\n\n6.5 我要改引用格式！\nPDF / Beamer 输出使用 BibLaTeX alphabetical，HTML 输出使用 IEEE．如需修改，请自定义 sun*****.cls 和 _format.yml 和 CSL 文件．\n\n\n6.6 我要更丰富的 Callout 定理包裹样式！\n请移步 sun123zxy/quarto-callouty-theorem 学习配置方法．\n\n\n6.7 我要改 Beamer 幻灯片的颜色！\nformat:\n  beamer:\n    custom-color:\n      define: \\definecolor{blueblk}{HTML}{1874D0} # 在这里用 LaTeX 自定义颜色供后面使用\n      main: green!40!black # 主色调\n      theorem: green!32!black # 各种定理环境颜色\n      example: blueblk!50!black # Example / Exercise 环境颜色\n      remark: white!15!black # Proof / Solution / Remark 环境颜色\n      link: lime!85!black # 链接颜色\n\n\n6.8 PDF / Beamer 宏包不够用，我要自己导入！\nformat:\n  html:\n    include-in-header: \n      text: |\n        \\(\\require{physics}\\)\n  pdf:\n    include-in-header:\n      text: |\n        \\usepackage{physics}\n亦见 examples/extra.qmd．暂时不支持其它格式下的宏包导入．"
   },
   {
-    "objectID": "index.html#diagram-流程图mermaidgraphviz-等",
-    "href": "index.html#diagram-流程图mermaidgraphviz-等",
+    "objectID": "index.html#qa",
+    "href": "index.html#qa",
     "title": "README",
-    "section": "5.5 Diagram 流程图（Mermaid、Graphviz 等）",
-    "text": "5.5 Diagram 流程图（Mermaid、Graphviz 等）\nQuarto 文档\n\n安装\n非 HTML 格式下需要额外安装 Chrome 或 Chromium．\n\n若无，可使用 quarto install tool chromium 安装，见 Quarto - Diagrams # Chrome Install"
-  },
-  {
-    "objectID": "index.html#tikz-tikz-cd-quiver-交换图",
-    "href": "index.html#tikz-tikz-cd-quiver-交换图",
-    "title": "README",
-    "section": "5.6 TikZ / TikZ-cd / Quiver 交换图",
-    "text": "5.6 TikZ / TikZ-cd / Quiver 交换图\n该功能由 _assets/tikz.lua 实现．\n\n安装\n如果只是输出到 PDF / Beamer，除了安装 LaTeX 发行版之外没有别的额外步骤．\n如还需输出至其它格式：请确保 XeLaTeX、dvisvgm、mutool 已在 PATH 中，且提前安装需要使用的 LaTeX 宏包：\n\n安装用于 TikZ 渲染的 LaTeX 宏包：\n新建任意空白 Quarto 文档 temp.qmd 并执行\nquarto render temp.qmd --to=pdf --template=_assets/suntemp-tikz.tex\n随后删除 temp.qmd．\n如果后续渲染时仍然提示缺少宏包，请手动安装，例如手动安装 standalone 宏包：执行 tlmgr install standalone\n使用 Quarto 自带的 TinyTeX 安装 dvisvgm：\n\n执行 tlmgr install dvisvgm 和 tlmgr path add 下载 dvisvgm 并添加至 PATH．\n\n安装 mutool：\n\n（Linux / WSL）执行 sudo apt install mupdf-tools．\n（Windows）请自行在 MuPDF 官网下载并安装 MuPDF，并确保 mutool 在 PATH 中．\n\n\n\n\n\n\n\n\nRemark\n\n\n\n\n\n\n注记. 关于 mutool 必要性的说明：\n\nAs of Ghostscript 10.01.0, this will no longer work due to the introduction of a new PDF interpreter. Therefore, an alternative conversion module based on mutool, a utility which is part of the MuPDF package, has been introduced. It’s automatically invoked if Ghostscript can’t be used and if a working mutool executable is present in a directory which is part of the system’s search path.\n来自 dvisvgm manual\n\n\n\n\n\n\n\n使用\n推荐使用 quiver 在线编辑器生成交换图代码．使用例：\n\n\n\n\n\n\n\n\n\nB\nA\n⇝\nB\nA\n\n\n\ng\n\n\nf\n\n\nh\n\n\nh\n\n\nf\n\n\n\nα\n\n\n\nβ\n\n\n\nβ\n◦\n1\nα\n\n\n\n\n\n图 3: TikZ-cd / Quiver 示例\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nt\n\nt\n\n0\n\n\nSpec\nφ\n\n\nx\n\n\ny\n\ny\n2\n=\nx\n3\n\n(\nt\n2\n,t\n3\n)\n\n\n\n\n\n图 4: TikZ 示例\n\n\n\n\n\n\n\n\n\nRemark\n\n\n\n\n\n\n注记. 在 Beamer 中使用 TikZ 时，所在幻灯片须添加 {.fragile} 标记．"
-  },
-  {
-    "objectID": "index.html#lean-代码高亮与带注释源码导入",
-    "href": "index.html#lean-代码高亮与带注释源码导入",
-    "title": "README",
-    "section": "5.7 Lean 代码高亮与带注释源码导入",
-    "text": "5.7 Lean 代码高亮与带注释源码导入\nassets/lean.xml 用于 Pandoc 的 Lean 代码高亮．直接使用 lean 作为代码块的语言标记即可．\n_assets/lean-include.lua shortcode 用于直接将带有注释的 Lean 代码导入转换为 Markdown．使用如下格式即可导入：\n{{&lt; lean-include path/to/your_file.lean &gt;}}\n现已支持 PDF / Beamer 输出．\n\n\n\n\n\n\nRemark\n\n\n\n\n\n\n注记. 目前 HTML 的目录导航定位存在问题．"
-  },
-  {
-    "objectID": "index.html#github-actions-github-pages-网站生成",
-    "href": "index.html#github-actions-github-pages-网站生成",
-    "title": "README",
-    "section": "5.8 Github Actions + Github Pages 网站生成",
-    "text": "5.8 Github Actions + Github Pages 网站生成\n本仓库同时采用 Github Actions + Github Pages 自动生成 Demo 站点．\n\n安装\n首次使用时，在 Actions 分页中激活 Actions，在本地手动进行第一次网站发布：\n\n修改 _quarto-website.yml 下 site-url 为你的域名（如您使用非 Github Pages 的默认网站域名，请在根目录下额外添加 CNAME 文件）\n\n嫌麻烦的话也可以直接删除这个选项．\n\n命令行内设置环境变量 QUARTO_PROFILE 为 website\n执行 quarto publish\n（清除环境变量）\n\n\n\n使用\n以后的每次 push 均会触发 Github Actions 自动完成的网站生成．"
-  },
-  {
-    "objectID": "index.html#输出为整本书book",
-    "href": "index.html#输出为整本书book",
-    "title": "README",
-    "section": "5.9 输出为整本书（Book）",
-    "text": "5.9 输出为整本书（Book）\n实验性支持 PDF / DOCX 书籍打包．请调整 _quarto-book.yml 的配置并在 quarto render 时加入 --profile=book 选项渲染．"
-  },
-  {
-    "objectID": "index.html#我要改字号",
-    "href": "index.html#我要改字号",
-    "title": "README",
-    "section": "6.1 我要改字号！",
-    "text": "6.1 我要改字号！\n目前仅支持 PDF 字号修改．英文文档默认字号为 11pt，中文文档默认字号为 10.5pt（五号，详见 CTeX 手册）．\nformat:\n  pdf:\n    fontsize: 12pt"
-  },
-  {
-    "objectID": "index.html#我要-不想要目录",
-    "href": "index.html#我要-不想要目录",
-    "title": "README",
-    "section": "6.2 我要 / 不想要目录！",
-    "text": "6.2 我要 / 不想要目录！\ntoc: true # 开启目录\n该设置全局 / 特定格式下均生效．"
-  },
-  {
-    "objectID": "index.html#我不想给-section-编号-我要改-section-编号格式",
-    "href": "index.html#我不想给-section-编号-我要改-section-编号格式",
-    "title": "README",
-    "section": "6.3 我不想给 section 编号 / 我要改 section 编号格式！",
-    "text": "6.3 我不想给 section 编号 / 我要改 section 编号格式！\nnumber-sections: true # section 编号开关，默认关闭\nnumber-depth: 3 # 从 chapter / 一级标题计起的编号深度．此时 chapter, section, subsection 被编号\ntoc-depth: 3 # 目录显示深度，相对最浅标题层级计算\n该设置全局 / 特定格式下均生效．"
-  },
-  {
-    "objectID": "index.html#我不想给定理编号-我要改定理编号格式",
-    "href": "index.html#我不想给定理编号-我要改定理编号格式",
-    "title": "README",
-    "section": "6.4 我不想给定理编号！/ 我要改定理编号格式！",
-    "text": "6.4 我不想给定理编号！/ 我要改定理编号格式！\nQuarto 内置的定理编号系统目前无法修改（见 Quarto Discussion #5479），但我们提供自定义 PDF 格式定理编号的可能．（目前仍然无法实现完全关闭 PDF 格式中的定理编号）\nformat:\n  pdf:\n    custom-theorem:\n      numbered-within: section # 开启后将相对于 section（或 subsection, etc.）进行定理编号\n      numbered-alike: true # 开启后不同类型的定理将共享编号\n默认开启 numbered-alike，不相对任何标题层级编号．在输出 Book 时，默认相对于 chapter 编号．\n注意使用 numbered-within 前请先开启 number-sections．"
-  },
-  {
-    "objectID": "index.html#我要改引用格式",
-    "href": "index.html#我要改引用格式",
-    "title": "README",
-    "section": "6.5 我要改引用格式！",
-    "text": "6.5 我要改引用格式！\nPDF / Beamer 输出使用 BibLaTeX alphabetical，HTML 输出使用 IEEE．如需修改，请自定义 sun*****.cls 和 _format.yml 和 CSL 文件．"
-  },
-  {
-    "objectID": "index.html#我要更丰富的-callout-定理包裹样式",
-    "href": "index.html#我要更丰富的-callout-定理包裹样式",
-    "title": "README",
-    "section": "6.6 我要更丰富的 Callout 定理包裹样式！",
-    "text": "6.6 我要更丰富的 Callout 定理包裹样式！\n请移步 sun123zxy/quarto-callouty-theorem 学习配置方法．"
-  },
-  {
-    "objectID": "index.html#我要改-beamer-幻灯片的颜色",
-    "href": "index.html#我要改-beamer-幻灯片的颜色",
-    "title": "README",
-    "section": "6.7 我要改 Beamer 幻灯片的颜色！",
-    "text": "6.7 我要改 Beamer 幻灯片的颜色！\nformat:\n  beamer:\n    custom-color:\n      define: \\definecolor{blueblk}{HTML}{1874D0} # 在这里用 LaTeX 自定义颜色供后面使用\n      main: green!40!black # 主色调\n      theorem: green!32!black # 各种定理环境颜色\n      example: blueblk!50!black # Example / Exercise 环境颜色\n      remark: white!15!black # Proof / Solution / Remark 环境颜色\n      link: lime!85!black # 链接颜色"
-  },
-  {
-    "objectID": "index.html#pdf-beamer-宏包不够用我要自己导入",
-    "href": "index.html#pdf-beamer-宏包不够用我要自己导入",
-    "title": "README",
-    "section": "6.8 PDF / Beamer 宏包不够用，我要自己导入！",
-    "text": "6.8 PDF / Beamer 宏包不够用，我要自己导入！\nformat:\n  html:\n    include-in-header: \n      text: |\n        \\(\\require{physics}\\)\n  pdf:\n    include-in-header:\n      text: |\n        \\usepackage{physics}\n亦见 examples/extra.qmd．暂时不支持其它格式下的宏包导入．"
-  },
-  {
-    "objectID": "index.html#一般性的",
-    "href": "index.html#一般性的",
-    "title": "README",
-    "section": "7.1 一般性的",
-    "text": "7.1 一般性的\n\n示例文件编译不了！\n示例文件包含了部分可选支持内容，如未安装相应依赖，请删除对应内容后渲染．\n\n\n我不懂 Computer Science，你能不能讲人话！\n请您活用 AI 工具降低学习门槛！您可以：\n\n在网页 Demo 和 AI 聊天提问！\n使用 VSCode 打开本仓库，使用自带的 Github Copilot，将 README 扔进对话框，提出您的具体需求并获得人话解答．\n\n\n\n我想要 XXX 功能！/ 我要自己魔改！\n仓库主要为自用，如能为您的生活带来便利欢迎取用．想要的功能欢迎提 Issue 或 Discussion！（虽然不保证会做 :p\n我们提供的 YAML 文档头样式只覆盖了了极小一部分功能．更深入的魔改需要您\n\n进一步学习底层软件 Quarto，魔改本仓库的默认配置\n进一步学习 Pandoc，编写 LaTeX 模板 / Lua filter\n\n有能力欢迎 Fork 和 Pull Request．\n\n\n仓库太重，我想要 standalone 的单文件渲染！\n请移步 quarto-render，一个独立开发的小型命令行程序使得单文件 Quarto 渲染更加方便．"
-  },
-  {
-    "objectID": "index.html#写作相关",
-    "href": "index.html#写作相关",
-    "title": "README",
-    "section": "7.2 写作相关",
-    "text": "7.2 写作相关\n\n标题应该用多少个 #？\n我们推荐将一级标题视为整个文档的大标题（即 Book 中的 chapter title）．二级标题对应 section，三级标题对应 subsection．Beamer 中四级标题对应 slide．\n在 Pandoc 中，这对应着\nshift-heading-level-by: -1\nslide-level: 4\n但 Quarto 对标题层级的处理比较混乱——例如，Book 项目中 Quarto 似乎会额外对标题层级进行 -1 处理；shift-heading-level-by 会让小节编号系统无法正常工作．因此我们不建议您手动调整这些设置．\n参见：\n\n相关讨论\nPandoc --shift-heading-level-by 文档\nPandoc slide-level 文档\nQuarto Issue #12048\n\n\n\n分页符\n{{&lt; pagebreak &gt;}}．见官方文档．\n\n\nYAML 文档头里的字符串到底打不打引号？\n可打可不打．打了的话需要注意特殊字符的转义问题（如 \\）．\n\n\n用 $ 包裹行内公式的正确格式\n示例：我们有 $(a + b)^2 = a^2 + 2ab + b^2$．证毕．\n$ 内侧应紧接着公式中的非空格字符，外侧与中英文字符之间应有空格，与标点符号、连字符之间不留空格．参考 Pandoc 文档．"
-  },
-  {
-    "objectID": "index.html#输出相关",
-    "href": "index.html#输出相关",
-    "title": "README",
-    "section": "7.3 输出相关",
-    "text": "7.3 输出相关\n\n写好的 Beamer 也想输出一份文稿版本的 PDF？\n理论上与文档格式兼容，可直接设置 --to=pdf 输出文稿版本．\n\n\n我要输出到知乎！\n您可以使用 GFM 格式输出，输出内容可复制至 markdown.com.cn 的在线编辑器转知乎格式．\n\n\nPDF 输出，LaTeX 渲染了十遍\n您文档的交叉引用可能存在问题．请检查文档头的 bibliography 选项和正文中的引用情况．"
+    "section": "7 Q&A",
+    "text": "7 Q&A\n\n7.1 一般性的\n\n示例文件编译不了！\n示例文件包含了部分可选支持内容，如未安装相应依赖，请删除对应内容后渲染．\n\n\n我不懂 Computer Science，你能不能讲人话！\n请您活用 AI 工具降低学习门槛！您可以：\n\n在网页 Demo 和 AI 聊天提问！\n使用 VSCode 打开本仓库，使用自带的 Github Copilot，将 README 扔进对话框，提出您的具体需求并获得人话解答．\n\n\n\n我想要 XXX 功能！/ 我要自己魔改！\n仓库主要为自用，如能为您的生活带来便利欢迎取用．想要的功能欢迎提 Issue 或 Discussion！（虽然不保证会做 :p\n我们提供的 YAML 文档头样式只覆盖了了极小一部分功能．更深入的魔改需要您\n\n进一步学习底层软件 Quarto，魔改本仓库的默认配置\n进一步学习 Pandoc，编写 LaTeX 模板 / Lua filter\n\n有能力欢迎 Fork 和 Pull Request．\n\n\n仓库太重，我想要 standalone 的单文件渲染！\n请移步 quarto-render，一个独立开发的小型命令行程序使得单文件 Quarto 渲染更加方便．\n\n\n\n7.2 写作相关\n\n标题应该用多少个 #？\n一级标题被视为整个文档的大标题（即 Book 中的 chapter title），文档头标题和一级标题不应同时出现．\n二级标题对应 section，三级标题对应 subsection．Beamer 中四级标题对应 slide．在 Pandoc 中，这对应着\nshift-heading-level-by: -1\nslide-level: 4\nQuarto 对标题层级的处理比较混乱——例如，Book 项目中 Quarto 似乎会额外对标题层级进行 -1 处理；shift-heading-level-by 会让小节编号系统无法正常工作．我们做了很多 ad-hoc 的调整（例如 _assets/promote-h1.lua 将正文一级标题强制提升至 metadata 标题），因此不建议您再修改这些设置．\n参见：\n\n相关讨论\nPandoc --shift-heading-level-by 文档\nPandoc slide-level 文档\nQuarto Issue #12048\n\n\n\n分页符\n{{&lt; pagebreak &gt;}}．见官方文档．\n\n\nYAML 文档头里的字符串到底打不打引号？\n可打可不打．打了的话需要注意特殊字符的转义问题（如 \\）．\n\n\n用 $ 包裹行内公式的正确格式\n示例：我们有 $(a + b)^2 = a^2 + 2ab + b^2$．证毕．\n$ 内侧应紧接着公式中的非空格字符，外侧与中英文字符之间应有空格，与标点符号、连字符之间不留空格．参考 Pandoc 文档．\n\n\n\n7.3 输出相关\n\n写好的 Beamer 也想输出一份文稿版本的 PDF？\n理论上与文档格式兼容，可直接设置 --to=pdf 输出文稿版本．\n\n\n我要输出到知乎！\n您可以使用 GFM 格式输出，输出内容可复制至 markdown.com.cn 的在线编辑器转知乎格式．\n\n\nPDF 输出，LaTeX 渲染了十遍\n您文档的交叉引用可能存在问题．请检查文档头的 bibliography 选项和正文中的引用情况．"
   },
   {
     "objectID": "examples/cnart.html",
@@ -172,22 +67,110 @@
     ]
   },
   {
-    "objectID": "examples/cnart.html#文章分-sunquartex-节",
-    "href": "examples/cnart.html#文章分-sunquartex-节",
+    "objectID": "examples/cnart.html#前言",
+    "href": "examples/cnart.html#前言",
     "title": "\\(\\SunQuarTeX\\) Example - cnart",
-    "section": "2.1 文章分 \\(\\SunQuarTeX\\) 节",
-    "text": "2.1 文章分 \\(\\SunQuarTeX\\) 节\n非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．\n\n文章分分 \\(\\SunQuarTeX\\) 节\nQuarto 支持交叉引用．比如这一节的标题就已经被打上了标签．\n\n分分分 \\(\\SunQuarTeX\\) 节\n本节中我们测试交叉引用 小节 2.1.1．\n\n分分分分 \\(\\SunQuarTeX\\) 节\n这是最小的一级了．\n\\[\n\\SunQuarTeX\n\\]",
+    "section": "",
+    "text": "\\(\\SunQuarTeX\\) 的具体使用方法参见 sun123zxy/sunquartex．",
     "crumbs": [
       "Examples",
       "$\\SunQuarTeX$ Example - cnart"
     ]
   },
   {
-    "objectID": "examples/cnart.html#callouts",
-    "href": "examples/cnart.html#callouts",
+    "objectID": "examples/cnart.html#文章结构测试-sunquartex",
+    "href": "examples/cnart.html#文章结构测试-sunquartex",
     "title": "\\(\\SunQuarTeX\\) Example - cnart",
-    "section": "9.1 Callouts",
-    "text": "9.1 Callouts\nQuarto 具有 5 种 callout 类型：note，warning，important，tip，和 caution．\n\n\n\n\n\n\n注记\n\n\n\n普通的 note callout．\n\n\n\n\n\n\n\n\n警告\n\n\n\n这是 warning callout 和一个和非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．\n\n\n这是两个 callout 中间的一个段落．\n\n\n\n\n\n\n重要\n\n\n\n这是 important callout．\n\n\n\n\n\n\n\n\n有 caption 的 callout\n\n\n\n这是有 caption 的 callout．\n\n\n\n\n\n\n\n\n可折叠的 callout\n\n\n\n\n\n开启 collapse 的可折叠 caution callout．\n\n\n\n\n\n\n\n\n\nsimple 风格的 callout 和一个和非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．\n\n\n\n\n\n\n\n\n\nminimal 风格的 callout 和一个和非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．",
+    "section": "2 文章结构测试 \\(\\SunQuarTeX\\)",
+    "text": "2 文章结构测试 \\(\\SunQuarTeX\\)\n这一节测试文章结构．\n\n2.1 文章分 \\(\\SunQuarTeX\\) 节\n非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．\n\n文章分分 \\(\\SunQuarTeX\\) 节\nQuarto 支持交叉引用．比如这一节的标题就已经被打上了标签．\n\n分分分 \\(\\SunQuarTeX\\) 节\n本节中我们测试交叉引用 小节 2.1.1．\n\n分分分分 \\(\\SunQuarTeX\\) 节\n这是最小的一级了．\n\\[\n\\SunQuarTeX\n\\]",
+    "crumbs": [
+      "Examples",
+      "$\\SunQuarTeX$ Example - cnart"
+    ]
+  },
+  {
+    "objectID": "examples/cnart.html#图片表格列表测试",
+    "href": "examples/cnart.html#图片表格列表测试",
+    "title": "\\(\\SunQuarTeX\\) Example - cnart",
+    "section": "3 图片、表格、列表测试",
+    "text": "3 图片、表格、列表测试\n\n\n\n\n\n\n图 1: 这是一张插图\n\n\n\n交叉引用 图 1 当然也是可以的．\n这是一个紧凑列表．\n\n自反性．\n反对称性一个和非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．\n传递性．\n\n这是一个宽松列表．\n\n自反性．\n反对称性一个和非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．\n还多加了一段．\n传递性．\n\n这是一个定义列表．\n\n自反性\n\n\\(a \\sim a\\)\n\n反对称性\n\n\\(a \\leq b \\land b \\leq a \\implies a=b\\)\n\n传递性\n\n\\(a \\leq b \\land b \\leq c \\implies a \\leq c\\)\n\n\n当然也可以使用 Markdown 表格．例如 表 1 (a).\n多表格并列．加上 表 1 (b)，它们共同组成了 表 1．\n\n\n\n\n\n\n\n\n\n\n\n\\(L_i \\times C_j\\)\n\\(2\\)\n\\(\\mathbb N\\)\n\\(\\mathbb R\\)\n\n\n\\(2\\)\n\\(4\\)\n\\(\\mathbb N\\)\n\\(\\mathbb R\\)\n\n\n\\(\\mathbb N\\)\n\\(\\mathbb N\\)\n\\(\\mathbb N\\)\n?\n\n\n\\(\\mathbb R\\)\n\\(\\mathbb R\\)\n?\n\\(\\mathbb R\\)\n\n\n\n\n\n(a) 笛卡尔积\n\n\n\n\n\n\n\n\n\n\n\n\\(L_i^{C_j}\\)\n\\(2\\)\n\\(\\mathbb N\\)\n\\(\\mathbb R\\)\n\n\n\\(2\\)\n\\(4\\)\n\\(\\mathbb R\\)\n\\(2^{\\mathbb R}\\)\n\n\n\\(\\mathbb N\\)\n\\(\\mathbb N\\)\n?\n?\n\n\n\\(\\mathbb R\\)\n\\(\\mathbb R\\)\n?\n?\n\n\n\n\n\n(b) 集合幂\n\n\n\n\n\n\n\n表 1: 相关集合的势（不完整版）",
+    "crumbs": [
+      "Examples",
+      "$\\SunQuarTeX$ Example - cnart"
+    ]
+  },
+  {
+    "objectID": "examples/cnart.html#数学公式定理系统测试",
+    "href": "examples/cnart.html#数学公式定理系统测试",
+    "title": "\\(\\SunQuarTeX\\) Example - cnart",
+    "section": "4 数学公式、定理系统测试",
+    "text": "4 数学公式、定理系统测试\n这一节我们测试数学相关内容．直接在源文件中写 raw LaTeX 就可声明公式所需的宏定义．由于 \\DeclareMathOperator 只能在 LaTeX 的导言区使用，这里我们用 \\newcommand + \\operatorname 的方式替代．\n下面的公式使用了上面定义的 macro． \\[\n\\operatorname{ran}A := \\{ y \\mid (x,y) \\in A \\}\n\\]\n两个集合 \\(A, B\\) 的笛卡尔积定义为 \\[\nA \\times B = \\{\\langle x,y \\rangle \\mid x \\in A \\land y \\in B \\}\n\\]\n显然，笛卡尔积不满足交换律和结合律. 在势的视角下，它的表现如何呢？\n\n\n\n\n\n\n\n定理 1 (笛卡尔积的保势性) 这是一个有 caption 的定理.\n\\[\nA \\preccurlyeq C \\land B \\preccurlyeq D \\implies A \\times B \\preccurlyeq C \\times D\n\\]\n\n\n\n\n\n\n\n\n\n\nProof\n\n\n\n\n\n\n证. 建立单射 \\[\n\\begin{aligned}\n\\varphi: A \\times B &\\to C \\times D \\\\\n\\langle x,y \\rangle &\\mapsto \\langle f(x), g(y) \\rangle\n\\end{aligned}\n\\] 即可，其中 \\(f\\) 和 \\(g\\) 是由 \\(A \\preccurlyeq C\\) 和 \\(B \\preccurlyeq D\\) 确定的单射.\n\n\n\n\n\n\n\n\n\n\nProof (有标题的证明)\n\n\n\n\n\n\n证 (有标题的证明). 这是一个有 caption 的证明．\n\n\n\n\n\n\n\n\n\n\nProof (定理 1 的证明)\n\n\n\n\n\n\n证 (定理 1 的证明). 这是一个带复杂 caption 的证明．\n\n\n\n\n\n\n\n\n\n\n\n推论 1 等势意义下可用等势的集合替换参与笛卡尔积运算的集合，即 \\[\nA \\approx C \\land B \\approx D \\implies A \\times B \\approx C \\times D\n\\]\n这是一个没有 caption 的定理.\n\n\n\n\n\n\n\n\n\n\n\n例 1 证明 \\[\n\\mathbb R \\times \\mathbb N \\approx \\mathbb N \\times \\mathbb R \\approx \\mathbb R\n\\]\n\n\n\n\n\n\n\n\n\n\nProof\n\n\n\n\n\n\n证. 利用 定理 1 对 \\(\\mathbb R \\times 2\\) 和 \\(\\mathbb R \\times \\mathbb R\\) 夹逼，立刻得到 \\[\n\\mathbb R \\approx \\mathbb R \\times 2 \\preccurlyeq \\mathbb R \\times \\mathbb N \\preccurlyeq \\mathbb R \\times \\mathbb R \\approx \\mathbb R\n\\implies \\mathbb R \\times \\mathbb N \\approx \\mathbb N \\times \\mathbb R \\approx \\mathbb R\n\\]\n\n\n\n\n\n\n\n\n\n\nSolution\n\n\n\n\n\n\n解. 这是一个解．\n\n\n\n\n\n\n\n\n\n\nRemark\n\n\n\n\n\n\n注记. 这是一个注记．",
+    "crumbs": [
+      "Examples",
+      "$\\SunQuarTeX$ Example - cnart"
+    ]
+  },
+  {
+    "objectID": "examples/cnart.html#数据可视化table-figure-diagram",
+    "href": "examples/cnart.html#数据可视化table-figure-diagram",
+    "title": "\\(\\SunQuarTeX\\) Example - cnart",
+    "section": "5 数据可视化（Table, Figure & Diagram）",
+    "text": "5 数据可视化（Table, Figure & Diagram）\nQuarto 的另一大卖点．\n\n\n代码\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nfig.patch.set_alpha(0)\nax.patch.set_alpha(0)\n\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\n\n\n\n\n图 2: A line plot on a polar axis\n\n\n\n\n\n交叉引用 图 2 当然也是可以的.\n这里再测试一些较复杂的并列效果．（表 2, 表 2 (a), 表 2 (b), 图 3, 图 3 (a), 图 3 (b)）\n\n\n代码\nimport numpy as np\nimport math\nfrom IPython.display import Markdown, display\nfrom tabulate import tabulate\nimport matplotlib.pyplot as plt\n\nR = np.array([0,100,200,300,400,500,600,700,800,900,1000,\n1100,1110,1120,1130,1140,1150,1160,1170,1180,1190,\n1200,1210,1220,1230,1240,1250,1260,1270,1280,1290,\n1300,1400,1500,2000,4000,math.inf])\nU = np.array([24.2E-3, 0.386,0.747,1.104,1.460,1.813,2.16,2.51,2.86,3.19,3.48,\n3.70,3.75,3.77,3.78,3.80,3.81,3.83,3.84,3.85,3.86,\n3.87,3.90,3.92,3.93,3.94,3.95,3.95,3.96,3.97,3.98,\n3.99,4.08,4.16,4.39,4.66,4.85])\nI = np.array([3.6,3.6,3.6,3.6,3.6,3.5,3.5,3.5,3.5,3.5,3.4,\n3.3,3.4,3.4,3.4,3.4,3.3,3.3,3.3,3.3,3.3,\n3.2,3.2,3.2,3.2,3.2,3.2,3.2,3.1,3.1,3.1,\n3.0,2.9,2.7,2.2,1.130,47.7E-3])\nP = U*I\n\n\n\n代码\ntable = [[R[i], U[i], I[i], P[i]] for i in list(range(0, 11)) + [11,21,31,32,33,34,35,36]]\ndisplay(Markdown(tabulate(table, headers=[\"R (Ω)\", \"U (V)\", \"I (mA)\", \"P (mW)\"])))\ntable = [[R[i], U[i], I[i], P[i]] for i in range(12, 31)]\ndisplay(Markdown(tabulate(table, headers=[\"R (Ω)\", \"U (V)\", \"I (mA)\", \"P (mW)\"])))\n\n\n\n\n\n\n\n\n\n\n\n\nR (Ω)\nU (V)\nI (mA)\nP (mW)\n\n\n\n\n0\n0.0242\n3.6\n0.08712\n\n\n100\n0.386\n3.6\n1.3896\n\n\n200\n0.747\n3.6\n2.6892\n\n\n300\n1.104\n3.6\n3.9744\n\n\n400\n1.46\n3.6\n5.256\n\n\n500\n1.813\n3.5\n6.3455\n\n\n600\n2.16\n3.5\n7.56\n\n\n700\n2.51\n3.5\n8.785\n\n\n800\n2.86\n3.5\n10.01\n\n\n900\n3.19\n3.5\n11.165\n\n\n1000\n3.48\n3.4\n11.832\n\n\n1100\n3.7\n3.3\n12.21\n\n\n1200\n3.87\n3.2\n12.384\n\n\n1300\n3.99\n3\n11.97\n\n\n1400\n4.08\n2.9\n11.832\n\n\n1500\n4.16\n2.7\n11.232\n\n\n2000\n4.39\n2.2\n9.658\n\n\n4000\n4.66\n1.13\n5.2658\n\n\ninf\n4.85\n0.0477\n0.231345\n\n\n\n\n\n(a) （粗）\n\n\n\n\n\n\n\n\n\n\n\nR (Ω)\nU (V)\nI (mA)\nP (mW)\n\n\n\n\n1110\n3.75\n3.4\n12.75\n\n\n1120\n3.77\n3.4\n12.818\n\n\n1130\n3.78\n3.4\n12.852\n\n\n1140\n3.8\n3.4\n12.92\n\n\n1150\n3.81\n3.3\n12.573\n\n\n1160\n3.83\n3.3\n12.639\n\n\n1170\n3.84\n3.3\n12.672\n\n\n1180\n3.85\n3.3\n12.705\n\n\n1190\n3.86\n3.3\n12.738\n\n\n1200\n3.87\n3.2\n12.384\n\n\n1210\n3.9\n3.2\n12.48\n\n\n1220\n3.92\n3.2\n12.544\n\n\n1230\n3.93\n3.2\n12.576\n\n\n1240\n3.94\n3.2\n12.608\n\n\n1250\n3.95\n3.2\n12.64\n\n\n1260\n3.95\n3.2\n12.64\n\n\n1270\n3.96\n3.1\n12.276\n\n\n1280\n3.97\n3.1\n12.307\n\n\n1290\n3.98\n3.1\n12.338\n\n\n\n\n\n(b) （细）\n\n\n\n\n\n\n\n表 2: 太阳能电池的负载特性\n\n\n\n\n代码\nfig, ax = plt.subplots()\nfig.patch.set_alpha(0)\nax.patch.set_alpha(0)\n\nax.set_xlabel(\"U (V)\")\nax.set_ylabel(\"I (mA)\")\n\nax.plot(U, I, marker=\"o\")\nax.grid(True)\nax.set_xlim(0)\nax.set_ylim(0)\n\nplt.show()\n\n\nfig, ax = plt.subplots()\nfig.patch.set_alpha(0)\nax.patch.set_alpha(0)\n\nax.set_xlabel(\"R (Ω)\")\nax.set_ylabel(\"P (mW)\")\n\nax.plot(R, P, marker=\"o\")\nax.grid(True)\nax.set_xlim((0, 2000))\nax.set_ylim(0)\n\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\n(a) 输出电流与电压关系曲线\n\n\n\n\n\n\n\n\n\n\n\n(b) 输出功率与负载电阻关系曲线\n\n\n\n\n\n\n\n图 3: 太阳能电池的负载特性",
+    "crumbs": [
+      "Examples",
+      "$\\SunQuarTeX$ Example - cnart"
+    ]
+  },
+  {
+    "objectID": "examples/cnart.html#diagrams",
+    "href": "examples/cnart.html#diagrams",
+    "title": "\\(\\SunQuarTeX\\) Example - cnart",
+    "section": "6 Diagrams",
+    "text": "6 Diagrams\nQuarto 原生支持使用 GraphViz 或 Mermaid 绘制有向图或流程图．我们还额外支持 TikZ / tikzcd 的渲染！\n\n\n\n\n\n\n\n\n\nC\n[\nx\n]\n离散\nFourier\n变换\nC\nC\nf\n(\nx\n)\n∑\nn\n−\n1\ni\n=0\na\ni\nx\ni\n(\nf\n(\nω\nk\n))\nn\n−\n1\nk\n=0\n(\nfg\n)(\nx\n)\n∑\nn\n−\n1\nk\n=0\nx\nk\n∑\ni\n+\nj\n=\nk\na\ni\nb\nj\n(\nf\n(\nω\nkn\n)\ng\n(\nω\nkn\n))\nn\n−\n1\nk\n=0\ng\n(\nx\n)\n∑\nn\n−\n1\nj\n=0\nb\nj\nx\nj\n(\ng\n(\nω\nk\n))\nn\n−\n1\nk\n=0\n\n\nDFT\n\n\n\n\n\n\nDFT\n-1\n\n\nDFT\n\n\n\n\n\n\n\n\n\n图 4: 带中文的 tikzcd 测试图片\n\n\n\n\n\n\n\n\n\n\n\n\nB\nA\n⇝\nB\nA\n\n\n\ng\n\n\nf\n\n\nh\n\n\nh\n\n\nf\n\n\n\nα\n\n\n\nβ\n\n\n\nβ\n◦\n1\nα\n\n\n\n\n\n图 5: quiver 风格的 tikzcd 测试图片\n\n\n\n\n\n\n\n\n\n\n\n\nR\n[\nx\n]\nR\nC\nR\n[\nx\n]/\n(∏\nc\n∈\nC\n(\nx\n−\nc\n)\n)\n\n\nφ\n\n\n\n\n¯\nφ\n\n\n\n\n\n图 6: 小心多 SVG 可能产生的样式冲突",
+    "crumbs": [
+      "Examples",
+      "$\\SunQuarTeX$ Example - cnart"
+    ]
+  },
+  {
+    "objectID": "examples/cnart.html#layout",
+    "href": "examples/cnart.html#layout",
+    "title": "\\(\\SunQuarTeX\\) Example - cnart",
+    "section": "7 Layout",
+    "text": "7 Layout\n如 Quarto - Article Layout 所述，有时可让文章某些部分超出常规的宽度限制．此功能主要在 HTML 中使用，PDF 中部分生效，其它格式不生效．\n\n\n\n\n\n\n\n\n\n\n\n\n\\(n\\) 个球\n\\(r\\) 个盒\n空盒\n递推或封闭形式\n生成函数\n备注\n\n\n\n\n有标号\n无标号\n不允许\n\\[{n \\brace r} = r {n-1 \\brace r} + {n-1 \\brace r-1}\\]\n\\[\\mathrm{EGF}(x)=\\frac {(e^x - 1)^r}{r!}\\]\n第二类 Stirling 数",
+    "crumbs": [
+      "Examples",
+      "$\\SunQuarTeX$ Example - cnart"
+    ]
+  },
+  {
+    "objectID": "examples/cnart.html#代码块和引用",
+    "href": "examples/cnart.html#代码块和引用",
+    "title": "\\(\\SunQuarTeX\\) Example - cnart",
+    "section": "8 代码块和引用",
+    "text": "8 代码块和引用\n\n行内 print(\"Hello, SunQuarTeX\") 代码\n行内带中文 print(\"你好，SunQuarTeX\") 代码\n行内 Lean 代码 theorem idempotent_iff_eq : ∀ a : α, (a * a = a ↔︎ a = 1 ∨ a = 0) ．\n\n行间代码：\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01) # 以步长 0.01 生成 0 到 2 之间的数\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\\def\\SunQuarTeX{\n\\kern-.0em \\mathbb{S}\n\\kern-.0em\\lower.5ex {\\small \\mathbb U}\n\\kern-.05em {\\small \\mathbb N}\n\\kern-.0em \\mathbb{Q}\n\\kern-.02em\\raise.0ex {\\small \\mathbb{U}}\n\\kern-.1em \\lower.3ex {\\small \\mathbb{A}}\n\\kern-.08em\\lower.1ex \\mathbb{R}\n\\TeX\n}\n\\SunQuarTeX\nexample : (∀ x, p x → r) → ((∃ x, p x) → r) := by\n  intro h ⟨a, hpa⟩ -- you may also `rcases` explicitly\n  exact h a hpa\n下面是引用块和一个非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．\n\n这是一个引用块和一个非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．",
+    "crumbs": [
+      "Examples",
+      "$\\SunQuarTeX$ Example - cnart"
+    ]
+  },
+  {
+    "objectID": "examples/cnart.html#html-专用测试",
+    "href": "examples/cnart.html#html-专用测试",
+    "title": "\\(\\SunQuarTeX\\) Example - cnart",
+    "section": "9 HTML 专用测试",
+    "text": "9 HTML 专用测试\n目前暂未处理 LaTeX/PDF 格式的 callout，MS Word 格式可兼容但效果不佳．本节后续内容将不会在 LaTeX/PDF 格式下被渲染．\n\n9.1 Callouts\nQuarto 具有 5 种 callout 类型：note，warning，important，tip，和 caution．\n\n\n\n\n\n\n注记\n\n\n\n普通的 note callout．\n\n\n\n\n\n\n\n\n警告\n\n\n\n这是 warning callout 和一个和非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．\n\n\n这是两个 callout 中间的一个段落．\n\n\n\n\n\n\n重要\n\n\n\n这是 important callout．\n\n\n\n\n\n\n\n\n有 caption 的 callout\n\n\n\n这是有 caption 的 callout．\n\n\n\n\n\n\n\n\n可折叠的 callout\n\n\n\n\n\n开启 collapse 的可折叠 caution callout．\n\n\n\n\n\n\n\n\n\nsimple 风格的 callout 和一个和非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．\n\n\n\n\n\n\n\n\n\nminimal 风格的 callout 和一个和非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．",
+    "crumbs": [
+      "Examples",
+      "$\\SunQuarTeX$ Example - cnart"
+    ]
+  },
+  {
+    "objectID": "examples/cnart.html#引用脚注测试",
+    "href": "examples/cnart.html#引用脚注测试",
+    "title": "\\(\\SunQuarTeX\\) Example - cnart",
+    "section": "10 引用、脚注测试",
+    "text": "10 引用、脚注测试\n这是一个脚注1．\n1 参见 Quarto - Citations & Footnotes人脸识别是以人面部特征作为识别个体身份的一种个体生物特征识别方法 [1, p. 1]．……人脸识别的研究最早可追溯到上世纪 60 年代，Bledsoe and Chan 研究了编程计算机识别人脸的方法[2]．随后，萌芽期的人脸识别技术经历多轮蜕变，在发展中逐渐完善．然而，人脸识别的主要难点在于不同个体的人脸结构并无大异，而同一个体的人脸在不同表情、年龄、妆饰、光照等干扰因素下又往往差异显著[3]，这要求人脸识别技术既要克服类内因素的干扰，同时又要加强类间差距的显著性，而早期人脸识别方法关注人脸几何特征，识别效果不尽人意．为此，以 Eigenfaces[4] 为代表的子空间学习识别方法和 Gabor[5]、LBP[6] 等局部特征分析的滤波器提取方法在各自领域都有所突破．2014 年，应用新兴的深度卷积神经网络技术，DeepFace[7] 横空出世，以 97.35% 的 LFW 基准数据集识别准确率重塑了人脸识别领域的研究格局．随后，人脸识别技术迎来爆发式增长，并逐渐走进人们的日常生活之中．……个体层面，要加强公众的权利意识，塑造个人的“数字理性”[8]．",
     "crumbs": [
       "Examples",
       "$\\SunQuarTeX$ Example - cnart"
@@ -220,7 +203,18 @@
     "href": "examples/extra.html",
     "title": "\\(\\SunQuarTeX\\) Example - Custom Extra Package",
     "section": "",
-    "text": "1 First\nThis is physics: \\(\\dv{f}{x}\\).",
+    "text": "This is physics: \\(\\dv{f}{x}\\).",
+    "crumbs": [
+      "Examples",
+      "$\\SunQuarTeX$ Example - Custom Extra Package"
+    ]
+  },
+  {
+    "objectID": "examples/extra.html#first",
+    "href": "examples/extra.html#first",
+    "title": "\\(\\SunQuarTeX\\) Example - Custom Extra Package",
+    "section": "",
+    "text": "This is physics: \\(\\dv{f}{x}\\).",
     "crumbs": [
       "Examples",
       "$\\SunQuarTeX$ Example - Custom Extra Package"
@@ -231,51 +225,51 @@
     "href": "examples/lean.html",
     "title": "\\(\\SunQuarTeX\\) Example - Lean Include",
     "section": "",
-    "text": "import Mathlib\nLogic (Part II)",
+    "text": "import Mathlib",
     "crumbs": [
       "Examples",
       "$\\SunQuarTeX$ Example - Lean Include"
     ]
   },
   {
-    "objectID": "examples/lean.html#iff-first-visit",
-    "href": "examples/lean.html#iff-first-visit",
+    "objectID": "examples/lean.html#and-and-or",
+    "href": "examples/lean.html#and-and-or",
     "title": "\\(\\SunQuarTeX\\) Example - Lean Include",
-    "section": "2.1 Iff (↔︎), first visit",
-    "text": "2.1 Iff (↔︎), first visit\nIt’s high time to introduce Iff here for the first time.\nIff (↔︎) contains two side of implications: Iff.mp and Iff.mpr.\nThough it is defined as a distinct inductive type, Iff is very similar to And in that you may, somehow, even use it like a (p → q) ∧ (q → p). The only major difference is the name of the two components.\n#check Iff.intro\n#check Iff.mp\n#check Iff.mpr\n\nexample : (p ↔ q) ↔ (p → q) ∧ (q → p) := by\n  constructor\n  · intro h\n    exact ⟨h.mp, h.mpr⟩\n  · intro ⟨hpq, hqp⟩\n    exact ⟨hpq, hqp⟩",
+    "section": "1 And and Or",
+    "text": "1 And and Or\nIn Lean’s dependent type theory, ∧ and ∨ serve as the direct product and the direct sum in the universe of Prop.\nEagle-eyed readers may notice that ∧ and ∨ act similarly to Cartesian product and disjoint union in set theory.\nThey are also constructed as inductive types.\nsection\n\nvariable (p q r : Prop)",
     "crumbs": [
       "Examples",
       "$\\SunQuarTeX$ Example - Lean Include"
     ]
   },
   {
-    "objectID": "examples/lean.html#or",
-    "href": "examples/lean.html#or",
+    "objectID": "examples/lean.html#and",
+    "href": "examples/lean.html#and",
     "title": "\\(\\SunQuarTeX\\) Example - Lean Include",
-    "section": "2.2 Or (∨)",
-    "text": "2.2 Or (∨)\nOr has two constructors Or.inl and Or.inr. Either a proof of p or a proof of q produces a proof of p ∨ q.\n[TODO]\n#print Or\n#check Or.inl\n#check Or.inr\n#check Or.elim\n#check Or.rec\nintroducing Or\nexample (hp : p) : p ∨ q := Or.inl hp\nexample (hq : q) : p ∨ q := by\n  right\n  exact hq\nelimination rule of Or, universal property of the direct sum\nexample (hpr : p → r) (hqr : q → r) : (p ∨ q → r) := fun hpq ↦ (Or.elim hpq hpr hqr)\nexample (hpr : p → r) (hqr : q → r) : (p ∨ q → r) := (Or.elim · hpr hqr) -- note the use of `·`\nexample (hpr : p → r) (hqr : q → r) (hpq : p ∨ q) : r := by\n  apply Or.elim hpq\n  · exact hpr\n  · exact hqr\n\nexample (hpr : p → r) (hqr : q → r) : (p ∨ q → r) := fun\n  | Or.inl hp =&gt; hpr hp\n  | Or.inr hq =&gt; hqr hq\nexample (hpr : p → r) (hqr : q → r) (hpq : p ∨ q) : r :=\n  match hpq with\n  | Or.inl hp =&gt; hpr hp\n  | Or.inr hq =&gt; hqr hq\nexample (hpr : p → r) (hqr : q → r) (hpq : p ∨ q) : r := by\n  match hpq with\n  | Or.inl hp =&gt; exact hpr hp\n  | Or.inr hq =&gt; exact hqr hq\nexample (hpr : p → r) (hqr : q → r) (hpq : p ∨ q) : r := by\n  cases hpq with\n  | inl hp =&gt; exact hpr hp\n  | inr hq =&gt; exact hqr hq\nexample (hpr : p → r) (hqr : q → r) (hpq : p ∨ q) : r := by\n  rcases hpq with (hp | hq) -- `rcases` can also destructure `Or`\n  · exact hpr hp\n  · exact hqr hq\nexample (hpr : p → r) (hqr : q → r) : p ∨ q → r := by\n  rintro (hp | hq) -- `rintro` is a combination of `intro` and `rcases`\n  · exact hpr hp\n  · exact hqr hq",
+    "section": "2 And (∧)",
+    "text": "2 And (∧)\nThe only constructor of And is And.intro, which takes a proof of p and a proof of q to produce a proof of p ∧ q.\nRegard this as the universal property of the direct product if you like.\nAnd.intro hp hq can be abbreviated as ⟨hp, hq⟩, called the anonymous constructor.\nconstructor tactic applies And.intro to split the goal p ∧ q into subgoals p and q. You may also use the anonymous constructor notation ⟨hp, hq⟩ to mean And.intro hp hq.\nsplit_ands tactic is like constructor but works for nested Ands.\n#print And\nintroducing And\n#check And.intro\nThese examples, as introduction rules, are self-evidently true.\nexample (hp : p) (hq : q) : p ∧ q := And.intro hp hq\nexample (hp : p) (hq : q) : p ∧ q := ⟨hp, hq⟩\nexample (hp : p) (hq : q) : p ∧ q := by\n  constructor\n  · exact hp\n  · exact hq\n[EXR] →–∨ distribution. Universal property of the direct product.\nexample (hrp : r → p) (hrq : r → q) : r → p ∧ q := by\n  intro hr\n  exact ⟨hrp hr, hrq hr⟩\nAnd.left and And.right are among the elimination rules of And, which extract the proofs of p and q.\nrcases hpq with ⟨hp, hq⟩ is a tactic that breaks down the hypothesis hpq : p ∧ q into hp : p and hq : q. Equivalently you can use let ⟨hp, hq⟩ := hpq.\neliminating And\n#check And.left\n#check And.right\nexample (hpq : p ∧ q) : p := hpq.left\nexample (hpq : p ∧ q) : p := by\n  rcases hpq with ⟨hp, _⟩\n  exact hp\nexample : p ∧ q → p := by\n  intro ⟨hp, _⟩ -- implicit break-down in `intro`\n  exact hp\n[EXR] And is symmetric\nexample : p ∧ q → q ∧ p := by\n  intro hpq\n  exact ⟨hpq.right, hpq.left⟩\n#check And.comm -- above has a name\n[EXR] →–∨ distribution, in another direction.\nexample (hrpq : r → p ∧ q) : (r → p) ∧ (r → q) := by\n  constructor\n  · intro hr\n    exact (hrpq hr).left\n  · intro hr\n    exact (hrpq hr).right\nnested and\nexample (hpqr : p ∧ q ∧ r) : r := hpqr.right.right\nexample (hpqr : p ∧ q ∧ r) : r := by\n  rcases hpqr with ⟨_, ⟨_, hr⟩⟩ -- anonymous constructor can be nested\n  exact hr\n\nexample (hp : p) (hq : q) (hr : r) : p ∧ q ∧ r := by\n  exact ⟨hp, ⟨hq, hr⟩⟩\nexample (hp : p) (hq : q) (hr : r) : p ∧ q ∧ r := by\n  split_ands\n  · exact hp\n  · exact hq\n  · exact hr\nThe actual universal elimination rule of And is the so-called decurrification: From (p → q → r) we may deduce (p ∧ q → r). This is actually a logical equivalence.\nIntuitively, requiring both p and q to deduce r is nothing but requiring p to deduce that q is sufficient to deduce r.\n[IGNORE] Decurrification is also self-evidently true in Lean’s dependent type theory.\nCurrification is heavily used in functional programming for its convenience, Lean is no exception.\nYou are no stranger to decurrification even if you are not a functional programmer: The universal property of the tensor product of modules says exactly the same: \\[\n\\operatorname{Hom}(M \\otimes N, P) \\cong \\operatorname{Hom}(M, \\operatorname{Hom}(N, P))\n\\]\n[EXR] currification\nexample (h : p ∧ q → r) : (p → q → r) := by\n  intro hp hq\n  exact h ⟨hp, hq⟩\n[EXR] decurrification\nexample (h : p → q → r) : (p ∧ q → r) := by\n  intro hpq\n  exact h hpq.left hpq.right\n\nexample (h : p → q → r) : (p ∧ q → r) := by\n  intro ⟨hp, hq⟩ -- `intro` is smart enough to destructure `And`\n  exact h hp hq\n\nexample (h : p → q → r) : (p ∧ q → r) := by\n  intro ⟨hp, hq⟩\n  apply h -- `apply` is smart enough to auto-decurrify and generate two subgoals\n  · exact hp\n  · exact hq\n[IGNORE] decurrification actually originates from And.rec, which is self-evident\n#check And.rec\ntheorem decurrify (h : p → q → r) : (p ∧ q → r) := And.rec h\n[EXR] And.left is actually a consequence of decurrification\nexample : p ∧ q → p := by\n  apply decurrify\n  intro hp _\n  exact hp\n\n2.1 Iff (↔︎), first visit\nIt’s high time to introduce Iff here for the first time.\nIff (↔︎) contains two side of implications: Iff.mp and Iff.mpr.\nThough it is defined as a distinct inductive type, Iff is very similar to And in that you may, somehow, even use it like a (p → q) ∧ (q → p). The only major difference is the name of the two components.\n#check Iff.intro\n#check Iff.mp\n#check Iff.mpr\n\nexample : (p ↔ q) ↔ (p → q) ∧ (q → p) := by\n  constructor\n  · intro h\n    exact ⟨h.mp, h.mpr⟩\n  · intro ⟨hpq, hqp⟩\n    exact ⟨hpq, hqp⟩\n\n\n2.2 Or (∨)\nOr has two constructors Or.inl and Or.inr. Either a proof of p or a proof of q produces a proof of p ∨ q.\n[TODO]\n#print Or\n#check Or.inl\n#check Or.inr\n#check Or.elim\n#check Or.rec\nintroducing Or\nexample (hp : p) : p ∨ q := Or.inl hp\nexample (hq : q) : p ∨ q := by\n  right\n  exact hq\nelimination rule of Or, universal property of the direct sum\nexample (hpr : p → r) (hqr : q → r) : (p ∨ q → r) := fun hpq ↦ (Or.elim hpq hpr hqr)\nexample (hpr : p → r) (hqr : q → r) : (p ∨ q → r) := (Or.elim · hpr hqr) -- note the use of `·`\nexample (hpr : p → r) (hqr : q → r) (hpq : p ∨ q) : r := by\n  apply Or.elim hpq\n  · exact hpr\n  · exact hqr\n\nexample (hpr : p → r) (hqr : q → r) : (p ∨ q → r) := fun\n  | Or.inl hp =&gt; hpr hp\n  | Or.inr hq =&gt; hqr hq\nexample (hpr : p → r) (hqr : q → r) (hpq : p ∨ q) : r :=\n  match hpq with\n  | Or.inl hp =&gt; hpr hp\n  | Or.inr hq =&gt; hqr hq\nexample (hpr : p → r) (hqr : q → r) (hpq : p ∨ q) : r := by\n  match hpq with\n  | Or.inl hp =&gt; exact hpr hp\n  | Or.inr hq =&gt; exact hqr hq\nexample (hpr : p → r) (hqr : q → r) (hpq : p ∨ q) : r := by\n  cases hpq with\n  | inl hp =&gt; exact hpr hp\n  | inr hq =&gt; exact hqr hq\nexample (hpr : p → r) (hqr : q → r) (hpq : p ∨ q) : r := by\n  rcases hpq with (hp | hq) -- `rcases` can also destructure `Or`\n  · exact hpr hp\n  · exact hqr hq\nexample (hpr : p → r) (hqr : q → r) : p ∨ q → r := by\n  rintro (hp | hq) -- `rintro` is a combination of `intro` and `rcases`\n  · exact hpr hp\n  · exact hqr hq\n\n\n2.3 Comprehensive exercises for And and Or\n[EXR] distributive laws\nexample : p ∧ (q ∨ r) ↔ (p ∧ q) ∨ (p ∧ r) := by sorry\nexample : p ∨ (q ∧ r) ↔ (p ∨ q) ∧ (p ∨ r) := by sorry\n\nend",
     "crumbs": [
       "Examples",
       "$\\SunQuarTeX$ Example - Lean Include"
     ]
   },
   {
-    "objectID": "examples/lean.html#comprehensive-exercises-for-and-and-or",
-    "href": "examples/lean.html#comprehensive-exercises-for-and-and-or",
+    "objectID": "examples/lean.html#forall",
+    "href": "examples/lean.html#forall",
     "title": "\\(\\SunQuarTeX\\) Example - Lean Include",
-    "section": "2.3 Comprehensive exercises for And and Or",
-    "text": "2.3 Comprehensive exercises for And and Or\n[EXR] distributive laws\nexample : p ∧ (q ∨ r) ↔ (p ∧ q) ∨ (p ∧ r) := by sorry\nexample : p ∨ (q ∧ r) ↔ (p ∨ q) ∧ (p ∨ r) := by sorry\n\nend\n Forall and Exists",
+    "section": "1 Forall (∀)",
+    "text": "1 Forall (∀)\nAs you may have already noticed, ∀ is just an alternative way of writing →. Say p is a predicate on a type X, i.e. of type X → Prop, then ∀ x : X, p x is exactly the same as (x : X) → p x.\nThough → is primitive in Lean’s dependent type theory, we may still (perhaps awkwardly) state the introduction and elimination rules of ∀:\n\nIntroduction: fun (x : X) ↦ (h x : p x) produces a proof of ∀ x : X, p x.\nElimination: Given a proof h of ∀ x : X, p x, we can obtain a proof of p a for any specific a : X. It is exactly h a.\n\nsection\n\nvariable {X : Type} (p q : X → Prop) (r s : Prop) (a b : X)\n\n#check ∀ x : X, p x\n#check ∀ x, p x -- Lean is smart enough to infer the type of `x`\n[IGNORE] Writing ∀ emphasizes that the arrow → is of dependent type, and the domain X is a type, not a proposition. But they are just purely psychological, as the following examples show.\nexample : (hrs : r → s) → (∀ _ : r, s) := by\n  intro hrs\n  exact hrs",
     "crumbs": [
       "Examples",
       "$\\SunQuarTeX$ Example - Lean Include"
     ]
   },
   {
-    "objectID": "examples/lean.html#ignore-a-cosmological-remark",
-    "href": "examples/lean.html#ignore-a-cosmological-remark",
+    "objectID": "examples/lean.html#exists",
+    "href": "examples/lean.html#exists",
     "title": "\\(\\SunQuarTeX\\) Example - Lean Include",
-    "section": "2.1 [IGNORE] A cosmological remark",
-    "text": "2.1 [IGNORE] A cosmological remark\nThe pair (a, h) actually do not have type (x : X) × (p x). The latter notation is actually for the dependent pair type (or Sigma type), which lives in Type* universe.\nBut Exists should live in Prop, and in Prop universe we admit proof-irrelevance, i.e. we do not save data. So Exists forget the exact witness a once it is proved.\nThis “forgetfulness” is revealed by the fact that there is no elimination rule Exists.fst to extract the witness a from a proof of ∃ x : X, p x, as long as X lives in the Type* universe. (Note that Exists.elim can only produce propositions in Prop)",
+    "section": "2 Exists (∃)",
+    "text": "2 Exists (∃)\n∃ is a bit more complicated.\nSlogan: ∀ is a dependent →, ∃ is a dependent × (or ∧ in Prop universe)\n#check ∃ x : X, p x\n#check ∃ x, p x -- Lean is smart enough to infer the type of `x`\n∃ x : X, p x means that we have the following data:\n\nan element a : X;\na proof h : p a.\n\nSo a pair (a, h) would suffice to construct a proof of ∃ x : X, p x.\nThis is the defining introduction rule of Exists as an inductive type.\n#check Exists.intro\nAs like And, you may use the anonymous constructor notation ⟨a, h⟩ to mean Exists.intro a h.\nIn tactic mode, use a make use of Exists.intro a to reduce the goal ∃ x : X, p x to p a.\nexample (a : X) (h : p a) : ∃ x, p x := Exists.intro a h\nexample (a : X) (h : p a) : ∃ x, p x := ⟨a, h⟩\nexample (a : X) (h : p a) : ∃ x, p x := by use a\n\n-- [EXR]\nexample (x y z : ℕ) (hxy : x &lt; y) (hyz : y &lt; z) : ∃ w, x &lt; w ∧ w &lt; z :=\n  ⟨y, ⟨hxy, hyz⟩⟩\nNote that in the defining pair (a, h), h is a proof of p a, whose type depends on a. Thus psychologically, you may view ∃ x : X, p x as a dependent pair type (x : X) × (p x).\nHave writing Exists as a dependent pair type reminded you of the currification process?\nElimination rule: To construct the implication (∃ x : X, p x) → q, it suffices to have a proof of (∀ x : X, p x → q), i.e. (x : X) → p x → q.\nIn tactic mode, rcases h with ⟨a, ha⟩ make use of this elimination rule to break down a hypothesis h : ∃ x : X, p x into a witness a : X and a proof ha : p a.\n#check Exists.elim\n\nexample : (∀ x, p x → r) → ((∃ x, p x) → r) := by\n  intro hf he\n  exact Exists.elim he hf\n\nexample : (∀ x, p x → r) → ((∃ x, p x) → r) := by\n  intro hf he\n  rcases he with ⟨a, hpa⟩\n  exact hf a hpa\n\nexample : (∀ x, p x → r) → ((∃ x, p x) → r) := by\n  intro h ⟨a, hpa⟩ -- you may also `rcases` explicitly\n  exact h a hpa\n\n-- [EXR] reverse direction is also true\nexample :  ((∃ x, p x) → r) → (∀ x, p x → r) := by\n  intro h a hpa\n  apply h\n  use a\n\n-- [EXR]\nexample : (∃ x, r ∧ p x) → r ∧ (∃ x, r ∧ p x) := by\n  intro ⟨a, ⟨hr, hpa⟩⟩\n  exact ⟨hr, ⟨a, ⟨hr, hpa⟩⟩⟩\n\n-- [EXR]\nexample : (∃ x, p x ∨ q x) ↔ (∃ x, p x) ∨ (∃ x, q x) := by\n  constructor\n  · rintro ⟨a, (hpa | hqa)⟩\n    · left; use a\n    · right; use a\n  · rintro (⟨a, hpa⟩ | ⟨a, hqa⟩)\n    · use a; left; exact hpa\n    · use a; right; exact hqa\n\nend\n\n2.1 [IGNORE] A cosmological remark\nThe pair (a, h) actually do not have type (x : X) × (p x). The latter notation is actually for the dependent pair type (or Sigma type), which lives in Type* universe.\nBut Exists should live in Prop, and in Prop universe we admit proof-irrelevance, i.e. we do not save data. So Exists forget the exact witness a once it is proved.\nThis “forgetfulness” is revealed by the fact that there is no elimination rule Exists.fst to extract the witness a from a proof of ∃ x : X, p x, as long as X lives in the Type* universe. (Note that Exists.elim can only produce propositions in Prop)",
     "crumbs": [
       "Examples",
       "$\\SunQuarTeX$ Example - Lean Include"
@@ -286,7 +280,40 @@
     "href": "examples/enart.html",
     "title": "\\(\\SunQuarTeX\\) Example - enart",
     "section": "",
-    "text": "1 First\nThis is a reference [1, p. 1].\n\n\n\n\n\n\n\nExample 1 Prove that \\[\n\\mathbb R \\times \\mathbb N \\approx \\mathbb N \\times \\mathbb R \\approx \\mathbb R\n\\]\n\n\n\n\n\n\n\n\n\n\nProof\n\n\n\n\n\n\nProof. Obvious as follows \\[\n\\mathbb R \\approx \\mathbb R \\times 2 \\preccurlyeq \\mathbb R \\times \\mathbb N \\preccurlyeq \\mathbb R \\times \\mathbb R \\approx \\mathbb R\n\\implies \\mathbb R \\times \\mathbb N \\approx \\mathbb N \\times \\mathbb R \\approx \\mathbb R\n\\]\n\n\n\n\n\n\n2 Second\n\n\n\n\n\n\n\n\n\n\n\n\\(L_i \\times C_j\\)\n\\(2\\)\n\\(\\mathbb N\\)\n\\(\\mathbb R\\)\n\n\n\\(2\\)\n\\(4\\)\n\\(\\mathbb N\\)\n\\(\\mathbb R\\)\n\n\n\\(\\mathbb N\\)\n\\(\\mathbb N\\)\n\\(\\mathbb N\\)\n?\n\n\n\\(\\mathbb R\\)\n\\(\\mathbb R\\)\n?\n\\(\\mathbb R\\)\n\n\n\n\n\n(a) Cartesian (unsolved)\n\n\n\n\n\n\n\n\n\n\n\n\\(L_i^{C_j}\\)\n\\(2\\)\n\\(\\mathbb N\\)\n\\(\\mathbb R\\)\n\n\n\\(2\\)\n\\(4\\)\n\\(\\mathbb R\\)\n\\(2^{\\mathbb R}\\)\n\n\n\\(\\mathbb N\\)\n\\(\\mathbb N\\)\n?\n?\n\n\n\\(\\mathbb R\\)\n\\(\\mathbb R\\)\n?\n?\n\n\n\n\n\n(b) Power (unsolved)\n\n\n\n\n\n\n\nTable 1: Some Cardinality Results\n\n\n\n\n\n3 Code\n#include&lt;bits/stdc++.h&gt;\nusing namespace std;\n\nint main(){\n    return 0; // 返回 0\n}\nexample : (∀ x, p x → r) → ((∃ x, p x) → r) := by\n  intro h ⟨a, hpa⟩ -- you may also `rcases` explicitly\n  exact h a hpa\n\n\n\n\n\nReferences\n\n[1] Y. Taigman, M. Yang, M. Ranzato, and L. Wolf, “Closing the gap to human-level performance in face verification. deepface,” in Proceedings of the IEEE computer vision and pattern recognition (CVPR), p. 6.",
+    "text": "This is a reference [1, p. 1].\n\n\n\n\n\n\n\nExample 1 Prove that \\[\n\\mathbb R \\times \\mathbb N \\approx \\mathbb N \\times \\mathbb R \\approx \\mathbb R\n\\]\n\n\n\n\n\n\n\n\n\n\nProof\n\n\n\n\n\n\nProof. Obvious as follows \\[\n\\mathbb R \\approx \\mathbb R \\times 2 \\preccurlyeq \\mathbb R \\times \\mathbb N \\preccurlyeq \\mathbb R \\times \\mathbb R \\approx \\mathbb R\n\\implies \\mathbb R \\times \\mathbb N \\approx \\mathbb N \\times \\mathbb R \\approx \\mathbb R\n\\]",
+    "crumbs": [
+      "Examples",
+      "$\\SunQuarTeX$ Example - enart"
+    ]
+  },
+  {
+    "objectID": "examples/enart.html#first",
+    "href": "examples/enart.html#first",
+    "title": "\\(\\SunQuarTeX\\) Example - enart",
+    "section": "",
+    "text": "This is a reference [1, p. 1].\n\n\n\n\n\n\n\nExample 1 Prove that \\[\n\\mathbb R \\times \\mathbb N \\approx \\mathbb N \\times \\mathbb R \\approx \\mathbb R\n\\]\n\n\n\n\n\n\n\n\n\n\nProof\n\n\n\n\n\n\nProof. Obvious as follows \\[\n\\mathbb R \\approx \\mathbb R \\times 2 \\preccurlyeq \\mathbb R \\times \\mathbb N \\preccurlyeq \\mathbb R \\times \\mathbb R \\approx \\mathbb R\n\\implies \\mathbb R \\times \\mathbb N \\approx \\mathbb N \\times \\mathbb R \\approx \\mathbb R\n\\]",
+    "crumbs": [
+      "Examples",
+      "$\\SunQuarTeX$ Example - enart"
+    ]
+  },
+  {
+    "objectID": "examples/enart.html#second",
+    "href": "examples/enart.html#second",
+    "title": "\\(\\SunQuarTeX\\) Example - enart",
+    "section": "2 Second",
+    "text": "2 Second\n\n\n\n\n\n\n\n\n\n\n\n\\(L_i \\times C_j\\)\n\\(2\\)\n\\(\\mathbb N\\)\n\\(\\mathbb R\\)\n\n\n\\(2\\)\n\\(4\\)\n\\(\\mathbb N\\)\n\\(\\mathbb R\\)\n\n\n\\(\\mathbb N\\)\n\\(\\mathbb N\\)\n\\(\\mathbb N\\)\n?\n\n\n\\(\\mathbb R\\)\n\\(\\mathbb R\\)\n?\n\\(\\mathbb R\\)\n\n\n\n\n\n(a) Cartesian (unsolved)\n\n\n\n\n\n\n\n\n\n\n\n\\(L_i^{C_j}\\)\n\\(2\\)\n\\(\\mathbb N\\)\n\\(\\mathbb R\\)\n\n\n\\(2\\)\n\\(4\\)\n\\(\\mathbb R\\)\n\\(2^{\\mathbb R}\\)\n\n\n\\(\\mathbb N\\)\n\\(\\mathbb N\\)\n?\n?\n\n\n\\(\\mathbb R\\)\n\\(\\mathbb R\\)\n?\n?\n\n\n\n\n\n(b) Power (unsolved)\n\n\n\n\n\n\n\nTable 1: Some Cardinality Results",
+    "crumbs": [
+      "Examples",
+      "$\\SunQuarTeX$ Example - enart"
+    ]
+  },
+  {
+    "objectID": "examples/enart.html#code",
+    "href": "examples/enart.html#code",
+    "title": "\\(\\SunQuarTeX\\) Example - enart",
+    "section": "3 Code",
+    "text": "3 Code\n#include&lt;bits/stdc++.h&gt;\nusing namespace std;\n\nint main(){\n    return 0; // 返回 0\n}\nexample : (∀ x, p x → r) → ((∃ x, p x) → r) := by\n  intro h ⟨a, hpa⟩ -- you may also `rcases` explicitly\n  exact h a hpa",
     "crumbs": [
       "Examples",
       "$\\SunQuarTeX$ Example - enart"

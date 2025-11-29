@@ -587,7 +587,7 @@ Write once, present everywhere!<br>基于 Quarto 的多格式输出中英文学�
 <section id="computation-based-tables" class="level4">
 <h4 class="anchored" data-anchor-id="computation-based-tables">Computation based tables</h4>
 <p>您也可以直接使用代码生成表格：</p>
-<div id="1612ef5f" class="cell" data-execution_count="2">
+<div id="f9539bc3" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>代码</summary>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -1285,7 +1285,7 @@ Remark
 <section id="我不想给-section-编号-我要改-section-编号格式" class="level3" data-number="6.3">
 <h3 data-number="6.3" class="anchored" data-anchor-id="我不想给-section-编号-我要改-section-编号格式"><span class="header-section-number">6.3</span> 我不想给 section 编号 / 我要改 section 编号格式！</h3>
 <div class="sourceCode" id="cb9"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">number-sections</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span><span class="co"> # section 编号开关</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">number-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span><span class="co"> # section 编号深度</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">number-depth</span><span class="kw">:</span><span class="at"> </span><span class="dv">3</span><span class="co"> # 从 chapter / 一级标题计起的编号深度．此时 chapter, section, subsection 被编号</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>该设置全局 / 特定格式下均生效．</p>
 </section>
 <section id="我不想给定理编号-我要改定理编号格式" class="level3" data-number="6.4">
@@ -1367,7 +1367,11 @@ Remark
 <h3 data-number="7.2" class="anchored" data-anchor-id="写作相关"><span class="header-section-number">7.2</span> 写作相关</h3>
 <section id="标题应该用多少个" class="level4">
 <h4 class="anchored" data-anchor-id="标题应该用多少个">标题应该用多少个 <code>#</code>？</h4>
-<p>一般文档建议从二级标题开始编号（<a href="https://community.rstudio.com/t/why-do-default-r-markdown-quarto-templates-use-second-level-headings-instead-of-first-level-ones/162127">相关讨论</a>）；Beamer 的 <code>slide-level</code> 可自适应标题级数，但其分节固定从一级标题开始，见 Pandoc 文档．</p>
+<p>一般文档建议从二级标题开始编号（<a href="https://community.rstudio.com/t/why-do-default-r-markdown-quarto-templates-use-second-level-headings-instead-of-first-level-ones/162127">相关讨论</a>）</p>
+<p>默认配置调整了 Beamer 输出格式下标题级数与幻灯片分节的对应关系，使得二级标题对应 section，三级标题对应 subsection，四级标题对应 slide：</p>
+<pre><code>slide-level: 4
+shift-heading-level-by: -1</code></pre>
+<p>您也可以根据需要调整．参见 <a href="https://pandoc.org/MANUAL.html#structuring-the-slide-show">Pandoc 文档</a>．</p>
 </section>
 <section id="分页符" class="level4">
 <h4 class="anchored" data-anchor-id="分页符">分页符</h4>

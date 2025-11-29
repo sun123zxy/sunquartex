@@ -45,7 +45,7 @@ Quarto 基础功能：
 
 - 仓库根目录命令行执行 `quarto render examples/helloworld.qmd --to=html` 测试安装情况．
 
-PDF / Beamer 输出等可选项安装和使用方法参见后文 <a href="#sec-optional" class="quarto-xref">小节 0.5</a>．另外，纯命令行的自动化 CI 流程可参见本仓库下的 Github Actions 配置文件．
+PDF / Beamer 输出等可选项安装和使用方法参见后文 <a href="#sec-optional" class="quarto-xref">小节 5</a>．另外，纯命令行的自动化 CI 流程可参见本仓库下的 Github Actions 配置文件．
 
 # 基础使用
 
@@ -143,6 +143,8 @@ plt.show()
 图 1: A line plot on a polar axis
 
 </div>
+
+## 表格
 
 ### 传统 Markdown 表格
 
@@ -631,16 +633,21 @@ format:
 
 我们推荐将一级标题视为整个文档的大标题（即 Book 中的 chapter title）．二级标题对应 section，三级标题对应 subsection．Beamer 中四级标题对应 slide．
 
-    shift-heading-level-by: -1
-    slide-level: 4
+在 Pandoc 中，这对应着
 
-Quarto 和 Pandoc 对标题层级的处理比较复杂——例如，Book 项目中 Quarto 似乎会额外对标题层级进行 -1 处理．因此我们不建议您手动调整这些设置．
+``` yaml
+shift-heading-level-by: -1
+slide-level: 4
+```
+
+但 Quarto 对标题层级的处理比较混乱——例如，Book 项目中 Quarto 似乎会额外对标题层级进行 -1 处理；`shift-heading-level-by` 会让小节编号系统无法正常工作．因此我们不建议您手动调整这些设置．
 
 参见：
 
 - [相关讨论](https://community.rstudio.com/t/why-do-default-r-markdown-quarto-templates-use-second-level-headings-instead-of-first-level-ones/162127)
 - [Pandoc `--shift-heading-level-by` 文档](https://pandoc.org/MANUAL.html#option--shift-heading-level-by)
 - [Pandoc `slide-level` 文档](https://pandoc.org/MANUAL.html#structuring-the-slide-show)
+- [Quarto Issue \#12048](https://github.com/quarto-dev/quarto-cli/issues/12048)
 
 ### 分页符
 

@@ -1,4 +1,4 @@
-# README
+# README {.unnumbered}
 sun123zxy
 
 <h1 align="center">
@@ -43,7 +43,7 @@ Quarto 基础功能：
 
 - 创建新文章时使用 Github Template 以本仓库为模板建立新仓库．您也可以下载本仓库的压缩包或 clone 到本地．
 
-- 仓库根目录命令行执行 `quarto render helloworld.qmd --to=html` 测试安装情况．
+- 仓库根目录命令行执行 `quarto render examples/helloworld.qmd --to=html` 测试安装情况．
 
 PDF / Beamer 输出等可选项安装和使用方法参见后文 <a href="#sec-optional" class="quarto-xref">小节 5</a>．另外，纯命令行的自动化 CI 流程可参见本仓库下的 Github Actions 配置文件．
 
@@ -138,7 +138,7 @@ plt.show()
 
 <div id="fig-polar">
 
-![](readme_files/figure-commonmark/fig-polar-output-1.png)
+![](index_files/figure-commonmark/fig-polar-output-1.png)
 
 图 1: A line plot on a polar axis
 
@@ -315,7 +315,7 @@ plt.show()
 
 <div id="fig-light-on-1">
 
-<img src="readme_files/figure-commonmark/fig-light-on-output-1.png" data-ref-parent="fig-light-on" />
+<img src="index_files/figure-commonmark/fig-light-on-output-1.png" data-ref-parent="fig-light-on" />
 
 (a) 输出电流与电压关系曲线
 
@@ -327,7 +327,7 @@ plt.show()
 
 <div id="fig-light-on-2">
 
-<img src="readme_files/figure-commonmark/fig-light-on-output-2.png" data-ref-parent="fig-light-on" />
+<img src="index_files/figure-commonmark/fig-light-on-output-2.png" data-ref-parent="fig-light-on" />
 
 (b) 输出功率与负载电阻关系曲线
 
@@ -506,6 +506,10 @@ plt.show()
 #### 使用
 
 以后的每次 push 均会触发 Github Actions 自动完成的网站生成．
+
+### 输出为整本书（Book）
+
+实验性支持 PDF / DOCX 书籍打包．请调整 `_quarto-book.yml` 的配置并在 `quarto render` 时加入 `--profile=book` 选项渲染．
 
 ## 样式自定义
 

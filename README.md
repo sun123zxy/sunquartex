@@ -540,16 +540,16 @@ format:
 
 #### 标题应该用多少个 `#`？
 
-我们推荐将一级标题视为整个文档的大标题（即 Book 中的 chapter title）．二级标题对应 section，三级标题对应 subsection．Beamer 中四级标题对应 slide．
+一级标题被视为整个文档的大标题（即 Book 中的 chapter title），文档头标题和一级标题不应同时出现．
 
-在 Pandoc 中，这对应着
+二级标题对应 section，三级标题对应 subsection．Beamer 中四级标题对应 slide．在 Pandoc 中，这对应着
 
 ```yaml
 shift-heading-level-by: -1
 slide-level: 4
 ```
 
-但 Quarto 对标题层级的处理比较混乱——例如，Book 项目中 Quarto 似乎会额外对标题层级进行 -1 处理；`shift-heading-level-by` 会让小节编号系统无法正常工作．因此我们不建议您手动调整这些设置．
+Quarto 对标题层级的处理比较混乱——例如，Book 项目中 Quarto 似乎会额外对标题层级进行 -1 处理；`shift-heading-level-by` 会让小节编号系统无法正常工作．我们做了很多 ad-hoc 的调整（例如 `_assets/promote-h1.lua` 将正文一级标题强制提升至 metadata 标题），因此不建议您再修改这些设置．
 
 参见：
 

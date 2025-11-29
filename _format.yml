@@ -3,7 +3,7 @@ csl: _assets/ieee.csl
 syntax-definitions: 
   - _assets/lean.xml
 
-shift-heading-level-by: -1 # so that h2 matches section, h3 matches subsection
+shift-heading-level-by: -1 # so that h2 matches section, h3 matches subsection, and h1 becomes title
 number-depth: 3
 toc-depth: 3
 
@@ -12,6 +12,7 @@ fig-align: center
 
 format:
   html:
+    shift-heading-level-by: 0 # HTML headings should be as-is. Maybe we write a filter to retrieve h1
     theme: _assets/custom.scss
     linestretch: 1.7
     code-fold: true

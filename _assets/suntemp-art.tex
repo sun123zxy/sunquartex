@@ -56,7 +56,6 @@
         section/format              += \zihao{-4}\raggedright,
         subsection/format           += \zihao{5}\raggedright,
         subsubsection/format        += \zihao{5}\raggedright,
-        subsubsection/numbering      = false
     }
 \else
     % for XeLaTeX
@@ -84,7 +83,10 @@
 % --- section numbering ---
 
 $if(numbersections)$
-\setcounter{secnumdepth}{$if(secnumdepth)$$secnumdepth$$else$5$endif$}
+$if(secnumdepth)$
+\usepackage{calc}
+\setcounter{secnumdepth}{$secnumdepth$ - 1} % Quarto passes this wrongly. It actually counts from chapter level.
+$endif$
 $else$
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 $endif$

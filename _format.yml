@@ -3,7 +3,7 @@ csl: _assets/ieee.csl
 syntax-definitions: 
   - _assets/lean.xml
 
-number-depth: 3 # number sections, subsections
+number-depth: 3
 
 cap-location: bottom
 fig-align: center
@@ -40,7 +40,8 @@ format:
   gfm:
     wrap: preserve
   beamer:
-    # slide-level: # left default to handle automatically, see Pandoc manual
+    slide-level: 4
+    shift-heading-level-by: -1 # so that h2 matches section, h3 matches subsection
     pdf-engine: xelatex
     theme: madrid
     cite-method: biblatex # override the default csl cite method

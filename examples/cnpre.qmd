@@ -15,9 +15,9 @@ format:
   pptx: default
 ---
 
-# Section A
+## Section A
 
-### 文字
+#### 文字
 
 长长长**长长 long 长长**长长长长长*长长 long 长长*长长长长长长长长长长长长长长长长长长长长长长长长长长长句子．
 
@@ -37,7 +37,7 @@ format:
 
 :::::
 
-### 列表
+#### 列表
 
 - 这是列表．
 - 紧的列表．
@@ -62,15 +62,15 @@ format:
 
 : $a \leq b \land b \leq c \implies a \leq c$
 
-### 引用
+#### 引用
 
 哇[@deepface, {p.1}]．哇哦[@define;@eigenfaces]．嗨^[这是一个脚注．]．
 
-# Section B
+## Section B
 
-## Subsection 1
+### Subsection 1
 
-### 代码块
+#### 代码块
 
 行间代码 `print("Hello, SunQuarTeX")`.
 
@@ -89,7 +89,7 @@ example : (∀ x, p x → r) → ((∃ x, p x) → r) := by
   exact h a hpa
 ```
 
-### 表
+#### 表
 
 ::: {#tbl-panel-unsolved layout-ncol=2}
 |||||
@@ -116,13 +116,13 @@ example : (∀ x, p x → r) → ((∃ x, p x) → r) := by
 
 引用一下 [@tbl-cartesian-unsolved]．
 
-### 图
+#### 图
 
 ![这是一张插图](figure.png){#fig-figure}
 
 引用一下 [@fig-figure]．
 
-### 计算图
+#### 计算图
 
 复杂的并列效果．（[@fig-light-on], [@fig-light-on-1], [@fig-light-on-2]）
 
@@ -181,7 +181,7 @@ ax.set_ylim(0)
 plt.show()
 ```
 
-### TikZ {.fragile}
+#### TikZ {.fragile}
 
 :::{#fig-tikzcd}
 
@@ -198,9 +198,9 @@ An tikzcd image
 
 :::
 
-## Subsection 2
+### Subsection 2
 
-### 定理 {.allowframebreaks}
+#### 定理 {.allowframebreaks}
 
 :::{#thm-test}
 

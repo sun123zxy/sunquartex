@@ -446,7 +446,7 @@ toc: true # 开启目录
 
 ```yaml
 number-sections: true # section 编号开关
-number-depth: 3 # section 编号深度
+number-depth: 3 # 从 chapter / 一级标题计起的编号深度．此时 chapter, section, subsection 被编号
 ```
 
 该设置全局 / 特定格式下均生效．
@@ -537,7 +537,16 @@ format:
 
 #### 标题应该用多少个 `#`？
 
-一般文档建议从二级标题开始编号（[相关讨论](https://community.rstudio.com/t/why-do-default-r-markdown-quarto-templates-use-second-level-headings-instead-of-first-level-ones/162127)）；Beamer 的 `slide-level` 可自适应标题级数，但其分节固定从一级标题开始，见 Pandoc 文档．
+一般文档建议从二级标题开始编号（[相关讨论](https://community.rstudio.com/t/why-do-default-r-markdown-quarto-templates-use-second-level-headings-instead-of-first-level-ones/162127)）
+
+默认配置调整了 Beamer 输出格式下标题级数与幻灯片分节的对应关系，使得二级标题对应 section，三级标题对应 subsection，四级标题对应 slide：
+
+```
+slide-level: 4
+shift-heading-level-by: -1
+```
+
+您也可以根据需要调整．参见 [Pandoc 文档](https://pandoc.org/MANUAL.html#structuring-the-slide-show)．
 
 #### 分页符
 

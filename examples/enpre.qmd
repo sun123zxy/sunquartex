@@ -13,9 +13,9 @@ format:
   pptx: default
 ---
 
-# Section A
+## Section A
 
-### Texts
+#### Texts
 
 long **long** long long long *long long long* long long long long long long long long long long long long long long long long long long sentence.
 
@@ -35,7 +35,7 @@ long long long long long long long long long long long long long long long long 
 
 :::::
 
-### Lists
+#### Lists
 
 - This is a list.
 - A compact list.
@@ -60,15 +60,15 @@ Transitivity
 
 : $a \leq b \land b \leq c \implies a \leq c$
 
-### Citations
+#### Citations
 
 Blah [@deepface, {pp. 1, chapter 3, sec. 2, theorem 3}]. Blah blah [@deepface;@eigenfaces]. Blah blah blah^[This is a footnote].
 
-# Section B
+## Section B
 
-## Subsection 1
+### Subsection 1
 
-### Code
+#### Code
 
 ```c++
 #include<bits/stdc++.h>
@@ -85,7 +85,7 @@ example : (∀ x, p x → r) → ((∃ x, p x) → r) := by
   exact h a hpa
 ```
 
-### Tables
+#### Tables
 
 ::: {#tbl-panel-unsolved layout-ncol=2}
 |||||
@@ -112,13 +112,13 @@ Several results on cardinality
 
 Referable [@tbl-cartesian-unsolved].
 
-### Figures
+#### Figures
 
 ![This is a figure](figure.png){#fig-figure}
 
 Referable [@fig-figure].
 
-### Computations
+#### Computations
 
 Complex side by side. ([@fig-light-on], [@fig-light-on-1], [@fig-light-on-2])
 
@@ -178,9 +178,9 @@ ax.set_ylim(0)
 plt.show()
 ```
 
-## Subsection 2
+### Subsection 2
 
-### Theorems {.allowframebreaks}
+#### Theorems {.allowframebreaks}
 
 :::{#thm-test}
 

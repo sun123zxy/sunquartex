@@ -542,18 +542,21 @@ format:
 
 我们推荐将一级标题视为整个文档的大标题（即 Book 中的 chapter title）．二级标题对应 section，三级标题对应 subsection．Beamer 中四级标题对应 slide．
 
-```
+在 Pandoc 中，这对应着
+
+```yaml
 shift-heading-level-by: -1
 slide-level: 4
 ```
 
-Quarto 和 Pandoc 对标题层级的处理比较复杂——例如，Book 项目中 Quarto 似乎会额外对标题层级进行 -1 处理．因此我们不建议您手动调整这些设置．
+但 Quarto 对标题层级的处理比较混乱——例如，Book 项目中 Quarto 似乎会额外对标题层级进行 -1 处理；`shift-heading-level-by` 会让小节编号系统无法正常工作．因此我们不建议您手动调整这些设置．
 
 参见：
 
 - [相关讨论](https://community.rstudio.com/t/why-do-default-r-markdown-quarto-templates-use-second-level-headings-instead-of-first-level-ones/162127)
 - [Pandoc `--shift-heading-level-by` 文档](https://pandoc.org/MANUAL.html#option--shift-heading-level-by)
 - [Pandoc `slide-level` 文档](https://pandoc.org/MANUAL.html#structuring-the-slide-show)
+- [Quarto Issue #12048](https://github.com/quarto-dev/quarto-cli/issues/12048)
 
 #### 分页符
 

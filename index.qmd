@@ -1,20 +1,17 @@
 ---
-title: README
+title: README {.unnumbered}
 author: sun123zxy
 lang: zh
-
-aliases: 
-  - /index.html
 
 number-sections: true
 
 format:
   html:
     include-in-header:
-      - file: ai.html
+      - file: examples/ai.html
   pdf: default
   docx: default
   gfm: default
 ---
 
-{{< include ../README.md >}}
+{{< include README.md >}}

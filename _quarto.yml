@@ -2,7 +2,10 @@ project:
   title: SunQuarTeX
   output-dir: _output
 
+profile:
+  group: 
+    - [project, website, book]
+
 metadata-files: 
   - _format.yml
-  - _article.yml
   - _filter.yml

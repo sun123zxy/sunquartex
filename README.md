@@ -33,7 +33,7 @@ Quarto 基础功能：
 
 - 创建新文章时使用 Github Template 以本仓库为模板建立新仓库．您也可以下载本仓库的压缩包或 clone 到本地．
 
-- 仓库根目录命令行执行 `quarto render helloworld.qmd --to=html` 测试安装情况．
+- 仓库根目录命令行执行 `quarto render examples/helloworld.qmd --to=html` 测试安装情况．
 
 PDF / Beamer 输出等可选项安装和使用方法参见后文 [@sec-optional]．另外，纯命令行的自动化 CI 流程可参见本仓库下的 Github Actions 配置文件．
 
@@ -415,6 +415,10 @@ TikZ 示例
 #### 使用
 
 以后的每次 push 均会触发 Github Actions 自动完成的网站生成．
+
+### 输出为整本书（Book）
+
+实验性支持 PDF / DOCX 书籍打包．请调整 `_quarto-book.yml` 的配置并在 `quarto render` 时加入 `--profile=book` 选项渲染．
 
 ## 样式自定义
 

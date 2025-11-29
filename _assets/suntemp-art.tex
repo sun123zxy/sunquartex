@@ -1,18 +1,50 @@
-% --- lang test ---
+\RequirePackage{xstring}
+\RequirePackage{etoolbox}
+
+% --- test ---
 
 \newif\ifzh
-\RequirePackage{xstring}
-\IfBeginWith{$lang$}{zh}{
-    \zhtrue
-    \documentclass[fontset=fandol,$if(fontsize)$$fontsize$$endif$]{ctexart}
-    \def\transmodified{最后更新于}
-    \def\transtoc{目录}
-}{
-    \zhfalse
-    \documentclass[$if(fontsize)$$fontsize$$else$11pt$endif$]{article}
-    \def\transmodified{Last modified on}
-    \def\transtoc{Table of Contents}
-}
+\IfBeginWith{$lang$}{zh}{\zhtrue}{\zhfalse}
+
+\ifzh
+  $if(documentclass)$
+  \IfBeginWith{$documentclass$}{book}{
+    \def\mydocumentclass{ctexbook}
+  }{\IfBeginWith{$documentclass$}{report}{
+    \def\mydocumentclass{ctexrep}
+  }{
+    \def\mydocumentclass{ctexart}
+  }}
+  $else$
+  \def\mydocumentclass{ctexart}
+  $endif$
+\else
+  $if(documentclass)$
+  \def\mydocumentclass{$documentclass$}
+  $else$
+  \def\mydocumentclass{article}
+  $endif$
+\fi
+
+\ifzh
+  \def\transmodified{最后更新于}
+  \def\transtoc{目录}
+\else
+  \def\transmodified{Last modified on}
+  \def\transtoc{Table of Contents}
+\fi
+
+% --- documentclass ---
+
+\ifzh
+  \documentclass[fontset=fandol,$if(fontsize)$$fontsize$$endif$]{\mydocumentclass}
+\else
+  \documentclass[$if(fontsize)$$fontsize$$else$11pt$endif$]{\mydocumentclass}
+\fi
+
+% --- book ---
+
+\usepackage{bookmark}
 
 % --- fonts ---
 
@@ -49,13 +81,15 @@
     % \setsansfont{Latin Modern Sans}[RawFeature={fallback=sansfontfallback}]
 \fi
 
-% --- beginning ---
+% --- section numbering ---
 
 $if(numbersections)$
 \setcounter{secnumdepth}{$if(secnumdepth)$$secnumdepth$$else$5$endif$}
 $else$
 \setcounter{secnumdepth}{-\maxdimen} % remove section numbering
 $endif$
+
+% --- page layout ---
 
 \usepackage[a4paper,top=2.75cm,bottom=2.25cm,left=2.75cm,right=2.75cm,marginparwidth=1.75cm]{geometry}
 
@@ -99,7 +133,7 @@ $endif$
     \usepackage{titling}
     \pretitle{\begin{center} \zihao{-2} \bfseries}
     \posttitle{\par\end{center}\vskip 0.5em}
-    \usepackage{etoolbox}
+    
     \makeatletter
     \providecommand{\subtitle}[1]{
         \apptocmd{\@title}{\vskip 0.5em \par {\zihao{4} \kaishu #1 \par}}{}{}
@@ -114,7 +148,6 @@ $endif$
     \predate{\begin{center} \zihao{-4} \kaishu}
     \postdate{\par\end{center}}
 \else
-    \usepackage{etoolbox}
     \makeatletter
     \providecommand{\subtitle}[1]{
         \apptocmd{\@title}{\vskip 0.5em \par {\large #1 \par}}{}{}
@@ -125,8 +158,11 @@ $endif$
 % --- abstract ---
 
 \ifzh
+
+  \ifcsdef{myenvironment}{%
     \renewenvironment{abstract}{\subparagraph{摘要}\kaishu}{}
-    % \newenvironment{keywords}{\subparagraph{关键词}\kaishu}{}
+  }{}
+
 \fi
 
 % -- math --

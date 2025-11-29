@@ -2,6 +2,12 @@
 csl: _assets/ieee.csl
 syntax-definitions: 
   - _assets/lean.xml
+
+number-depth: 3 # number sections, subsections
+
+cap-location: bottom
+fig-align: center
+
 format:
   html:
     theme: _assets/custom.scss
@@ -26,9 +32,9 @@ format:
     include-in-header:
       text: ""
     # toc: true
-    # custom-theorem:
-      # numbered-within: section
-      # numbered-alike: true
+    custom-theorem:
+#     numbered-within: section
+      numbered-alike: true
   docx:
     reference-doc: _assets/suntemp-art.docx
   gfm:

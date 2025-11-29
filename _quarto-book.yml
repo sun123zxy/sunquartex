@@ -1,0 +1,22 @@
+project:
+  type: book
+
+book:
+  title: $\SunQuarTeX$ Example - Book 
+  author: sun123zxy
+  date: 2025/11/29
+  chapters:
+    - index.qmd
+    - part: 文章
+      chapters:
+        - examples/cnart.qmd
+        - examples/enart.qmd
+
+bibliography: examples/bibliography.bib
+
+format:
+  pdf:
+    documentclass: book
+    custom-theorem:
+      numbered-within: chapter
+      numbered-alike: true

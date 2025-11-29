@@ -1,5 +1,4 @@
 ---
-title: README {.unnumbered}
 author: sun123zxy
 lang: zh
 
@@ -13,5 +12,7 @@ format:
   docx: default
   gfm: default
 ---
+
+# README {.unnumbered}
 
 {{< include README.md >}}

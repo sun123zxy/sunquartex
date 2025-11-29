@@ -445,7 +445,7 @@ toc: true # 开启目录
 ### 我不想给 section 编号 / 我要改 section 编号格式！
 
 ```yaml
-number-sections: true # section 编号开关
+number-sections: true # section 编号开关，默认关闭
 number-depth: 3 # 从 chapter / 一级标题计起的编号深度．此时 chapter, section, subsection 被编号
 ```
 
@@ -463,7 +463,9 @@ format:
       numbered-alike: true # 开启后不同类型的定理将共享编号
 ```
 
-注意使用 ´numbered-within´ 前请先开启 ´number-sections´．
+默认开启 `numbered-alike`，不相对任何标题层级编号．在输出 Book 时，默认相对于 chapter 编号．
+
+注意使用 `numbered-within` 前请先开启 `number-sections`．
 
 ### 我要改引用格式！
 
@@ -537,16 +539,20 @@ format:
 
 #### 标题应该用多少个 `#`？
 
-一般文档建议从二级标题开始编号（[相关讨论](https://community.rstudio.com/t/why-do-default-r-markdown-quarto-templates-use-second-level-headings-instead-of-first-level-ones/162127)）
-
-默认配置调整了 Beamer 输出格式下标题级数与幻灯片分节的对应关系，使得二级标题对应 section，三级标题对应 subsection，四级标题对应 slide：
+我们推荐将一级标题视为整个文档的大标题（即 Book 中的 chapter title）．二级标题对应 section，三级标题对应 subsection．Beamer 中四级标题对应 slide．
 
 ```
-slide-level: 4
 shift-heading-level-by: -1
+slide-level: 4
 ```
 
-您也可以根据需要调整．参见 [Pandoc 文档](https://pandoc.org/MANUAL.html#structuring-the-slide-show)．
+Quarto 和 Pandoc 对标题层级的处理比较复杂——例如，Book 项目中 Quarto 似乎会额外对标题层级进行 -1 处理．因此我们不建议您手动调整这些设置．
+
+参见：
+
+- [相关讨论](https://community.rstudio.com/t/why-do-default-r-markdown-quarto-templates-use-second-level-headings-instead-of-first-level-ones/162127)
+- [Pandoc `--shift-heading-level-by` 文档](https://pandoc.org/MANUAL.html#option--shift-heading-level-by)
+- [Pandoc `slide-level` 文档](https://pandoc.org/MANUAL.html#structuring-the-slide-show)
 
 #### 分页符
 

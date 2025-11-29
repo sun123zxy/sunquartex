@@ -14,6 +14,8 @@ book:
 
 bibliography: examples/bibliography.bib
 
+shift-heading-level-by: 0 # Seemingly Quarto will -1 automatically for books. So leave this at 0.
+
 format:
   pdf:
     documentclass: book

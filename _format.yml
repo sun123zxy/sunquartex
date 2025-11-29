@@ -3,7 +3,9 @@ csl: _assets/ieee.csl
 syntax-definitions: 
   - _assets/lean.xml
 
+shift-heading-level-by: -1 # so that h2 matches section, h3 matches subsection
 number-depth: 3
+toc-depth: 3
 
 cap-location: bottom
 fig-align: center
@@ -41,7 +43,6 @@ format:
     wrap: preserve
   beamer:
     slide-level: 4
-    shift-heading-level-by: -1 # so that h2 matches section, h3 matches subsection
     pdf-engine: xelatex
     theme: madrid
     cite-method: biblatex # override the default csl cite method

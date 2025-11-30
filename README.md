@@ -572,6 +572,10 @@ Quarto 对标题层级的处理比较混乱——例如，Book 项目中 Quarto 
 
 `$` 内侧应紧接着公式中的非空格字符，外侧与中英文字符之间应有空格，与标点符号、连字符之间不留空格．参考 [Pandoc 文档](https://pandoc.org/MANUAL.html#extension-tex_math_dollars)．
 
+#### 怎么打出 \TeX, \LaTeX, \SunQuarTeX？
+
+直接写 `\TeX`, `\LaTeX`, `\SunQuarTeX`，不必置于数学环境中．我们编写了 `_assets/fancy-latex-logo.lua` 处理他们在不同格式下的渲染．
+
 ### 输出相关
 
 #### 写好的 Beamer 也想输出一份文稿版本的 PDF？

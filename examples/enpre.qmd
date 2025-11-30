@@ -1,8 +1,8 @@
 ---
-title: $\SunQuarTeX$ Example - enpre
+title: \SunQuarTeX Example - enpre
 subtitle: Subtitle Here
 author: sun123zxy
-institute: $\SunQuarTeX$
+institute: \SunQuarTeX
 date: 2024/02/22
 date-modified: 2024/02/22
 bibliography: bibliography.bib

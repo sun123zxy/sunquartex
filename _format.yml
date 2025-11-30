@@ -22,8 +22,8 @@ format:
     link-external-icon: true
     link-external-newwindow: true
     toc: true
-    include-in-header:
-      - file: _assets/html-preset.html
+    # include-in-header: # this is used to include custom HTML header content
+    #   - file: _assets/html-preset.html
   pdf:
     # keep-tex: true
     pdf-engine: xelatex
@@ -33,7 +33,7 @@ format:
     fig-pos: false
     template: _assets/suntemp-art.tex
     include-in-header:
-      text: ""
+      text: "" # Ensure that the user defined header is at the first position of header-includes
     # toc: true
     custom-theorem:
 #     numbered-within: section

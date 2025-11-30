@@ -1,9 +1,9 @@
 ---
-title: $\SunQuarTeX$ Example - cnpre
+title: \SunQuarTeX Example - cnpre
 subtitle: 这是副标题
 author: sun123zxy
 institute: Sunderland Quarry of Tectosilicates
-shortinstitute: $\SunQuarTeX$
+shortinstitute: \SunQuarTeX
 date: 2023/08/21
 date-modified: 2024/02/22
 bibliography: bibliography.bib

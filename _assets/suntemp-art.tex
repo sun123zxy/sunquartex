@@ -255,12 +255,12 @@ $endif$
 
 \fi % endthm
 
-% --- SunQuarTeX ---
-
-\newcommand{\SunQuarTeX}{\phantom{}\kern-.0em\lower.0ex\hbox{\(\mathbf S\)}\kern-.045em\lower.0ex\hbox{\(\scriptstyle \mathbf U\)}\kern-.045em\hbox{\(\scriptstyle \mathbb N\)}\kern-.0em\hbox{\(\mathbb Q\)}\kern-.045em\lower.0ex\hbox{\(\scriptstyle \mathbf U\)}\kern-.135em\lower.0ex\hbox{\(\scriptstyle \mathbf A\)}\kern-.09em\lower.0ex\hbox{\(\scriptstyle \mathbb R\)}\kern-.072em\text{\bfseries\TeX}}
-
 $if(header-includes)$
-$header-includes/first$
+$header-includes/first$ % other header includes is injected by Quarto, hence ignored
+$endif$
+
+$if(sunquartex-logo)$
+$sunquartex-logo$ % inject SunQuarTeX logo, metadata given by the Lua filter
 $endif$
 
 % --- main ---

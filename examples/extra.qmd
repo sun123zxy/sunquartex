@@ -1,5 +1,5 @@
 ---
-title: $\SunQuarTeX$ Example - Custom Extra Package
+title: \SunQuarTeX Example - Custom Extra Package
 subtitle: $\dv{f}{x}$ also available in title
 author: sun123zxy
 date: 2023/09/21

@@ -2,7 +2,7 @@ project:
   type: book
 
 book:
-  title: $\SunQuarTeX$ Example - Book 
+  title: \SunQuarTeX Example - Book 
   author: sun123zxy
   date: 2025/11/29
   chapters:

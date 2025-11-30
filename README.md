@@ -447,7 +447,7 @@ toc: true # 开启目录
 ```yaml
 number-sections: true # section 编号开关，默认关闭
 number-depth: 3 # 从 chapter / 一级标题计起的编号深度．此时 chapter, section, subsection 被编号
-toc-depth: 3 # 目录显示深度，相对最浅标题层级计算
+toc-depth: 3 # 从 chapter / 一级标题计起的目录深度．此时 chapter, section, subsection 出现在目录中
 ```
 
 该设置全局 / 特定格式下均生效．

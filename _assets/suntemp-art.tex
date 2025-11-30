@@ -291,13 +291,9 @@ $include-before$
 $endfor$
 
 $if(toc)$
-$if(toc-title)$
 \renewcommand*\contentsname{\transtoc}
-$endif$
-{
 \setcounter{tocdepth}{$toc-depth$ - 1} % Quarto passes this wrongly. It actually counts from chapter level.
 \tableofcontents
-}
 $endif$
 
 $body$

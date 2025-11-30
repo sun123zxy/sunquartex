@@ -173,6 +173,9 @@ $endif$
 % --- structures ---
 
 $if(toc)$
+
+\setcounter{tocdepth}{$toc-depth$ - 1} % Quarto passes this wrongly. It actually counts from chapter level.
+
 \AtBeginSection[]
 {
   \begin{frame}{\transtoc}
@@ -185,6 +188,7 @@ $if(toc)$
     \tableofcontents[currentsubsection]
   \end{frame}
 }
+
 $endif$
 
 $if(header-includes)$

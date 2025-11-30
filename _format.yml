@@ -44,7 +44,6 @@ format:
     wrap: preserve
   beamer:
     slide-level: 4
-    toc-depth: 2
     pdf-engine: xelatex
     theme: madrid
     cite-method: biblatex # override the default csl cite method

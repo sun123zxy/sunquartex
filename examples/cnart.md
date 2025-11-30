@@ -1,34 +1,30 @@
-# $\SunQuarTeX$ Example - cnart
+# SunQuarTeX Example - cnart
 sun123zxy, Luna
 2022-12-07
 
 # 前言
 
-$\SunQuarTeX$ 的具体使用方法参见 [sun123zxy/sunquartex](https://github.com/sun123zxy/sunquartex)．
+SunQuarTeX 的具体使用方法参见 [sun123zxy/sunquartex](https://github.com/sun123zxy/sunquartex)．
 
-# 文章结构测试 $\SunQuarTeX$
+# 文章结构测试 SunQuarTeX
 
 这一节测试文章结构．
 
-## 文章分 $\SunQuarTeX$ 节
+## 文章分 SunQuarTeX 节
 
 非常非常非常非常非常非*常非常非常非*常非常非常非常非常**非常非常非常**非常非常非常非常非常非常非常非常长的句子．
 
-### 文章分分 $\SunQuarTeX$ 节
+### 文章分分 SunQuarTeX 节
 
 Quarto 支持交叉引用．比如这一节的标题就已经被打上了标签．
 
-#### 分分分 $\SunQuarTeX$ 节
+#### 分分分 SunQuarTeX 节
 
 本节中我们测试交叉引用 <a href="#sec-test" class="quarto-xref">小节 2.1.1</a>．
 
-##### 分分分分 $\SunQuarTeX$ 节
+##### 分分分分 SunQuarTeX 节
 
-这是最小的一级了．
-
-$$
-\SunQuarTeX
-$$
+这是最小的 SunQuarTeX 一级了．
 
 # 图片、表格、列表测试
 

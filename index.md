@@ -536,7 +536,7 @@ toc: true # 开启目录
 ``` yaml
 number-sections: true # section 编号开关，默认关闭
 number-depth: 3 # 从 chapter / 一级标题计起的编号深度．此时 chapter, section, subsection 被编号
-toc-depth: 3 # 目录显示深度，相对最浅标题层级计算
+toc-depth: 3 # 从 chapter / 一级标题计起的目录深度．此时 chapter, section, subsection 出现在目录中
 ```
 
 该设置全局 / 特定格式下均生效．
@@ -660,6 +660,10 @@ Quarto 对标题层级的处理比较混乱——例如，Book 项目中 Quarto 
 示例：`我们有 $(a + b)^2 = a^2 + 2ab + b^2$．证毕．`
 
 `$` 内侧应紧接着公式中的非空格字符，外侧与中英文字符之间应有空格，与标点符号、连字符之间不留空格．参考 [Pandoc 文档](https://pandoc.org/MANUAL.html#extension-tex_math_dollars)．
+
+### 怎么打出 TeX, LaTeX, SunQuarTeX？
+
+直接写 `\TeX`, `\LaTeX`, `\SunQuarTeX`，不必置于数学环境中．我们编写了 `_assets/fancy-latex-logo.lua` 处理他们在不同格式下的渲染．
 
 ## 输出相关
 

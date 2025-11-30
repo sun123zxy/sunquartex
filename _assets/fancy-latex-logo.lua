@@ -19,7 +19,7 @@ MathJax = {
     meta['header-includes'] = header_includes
     quarto.log.output('LaTeX Fancified (-> ' .. FORMAT .. '): Added \\SunQuarTeX macro to header')
   elseif FORMAT == 'latex' or FORMAT == 'pdf' or FORMAT == 'beamer' then
-    meta['sunquartex-logo'] = pandoc.RawBlock('tex', [[\newcommand{\SunQuarTeX}{\(\mathrm{\mathbf S \;\!\! {\scriptstyle \mathbf U \;\!\! \mathbb N} \mathbb Q \;\!\! {\scriptstyle \mathbf U \;\!\! \;\!\! \mathbf A \;\!\! \mathbb R} \;\!\! \;\!\! \textbf{\TeX}}\)}]])
+    meta['sunquartex-logo'] = pandoc.RawBlock('tex', [[\newcommand{\SunQuarTeX}{\(\mathrm{\mathbf S \;\!\! {\scriptstyle \mathbf U \;\!\! \mathbb N} \mathbb Q \;\!\! {\scriptstyle \mathbf U \;\!\! \;\!\! \mathbf A \;\!\! \mathbb R} \;\!\! \;\!\! \text{\bfseries \TeX}}\)}]])
     quarto.log.output('LaTeX Fancified (-> ' .. FORMAT .. '): Added \\SunQuarTeX macro to header')
   end
   

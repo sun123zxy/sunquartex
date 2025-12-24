@@ -132,6 +132,7 @@
     }
     .reveal .slide:not(.center) {
       height: 100%;
+      overflow-y: auto;
     }
     .reveal .slide.scrollable {
       overflow-y: auto;
@@ -279,7 +280,7 @@ sun123zxy
 </dd>
 </dl>
 </section>
-<section id="citations" class="slide level3">
+<section id="citations" class="slide level3 scrollable">
 <h3>Citations</h3>
 <p>Blah <span class="citation" data-cites="deepface"><a href="#/theorems" role="doc-biblioref" onclick="">[1, pp. 1, chapter 3, sec.&nbsp;2, theorem 3]</a></span>. Blah blah <span class="citation" data-cites="deepface eigenfaces"><a href="#/theorems" role="doc-biblioref" onclick="">[1]</a>, <a href="#/theorems" role="doc-biblioref" onclick="">[2]</a></span>. Blah blah blah<sup>1</sup>.</p>
 <aside><ol class="aside-footnotes"><li id="fn1"><p>This is a footnote</p></li></ol></aside></section></section>
@@ -539,7 +540,7 @@ Figure&nbsp;2: solar panel
 'autoAnimateUnmatched': true,
 'jumpToSlide': true,
 'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
-'smaller': false,
+'smaller': true,
  
         // Display controls in the bottom right corner
         controls: false,
@@ -559,7 +560,7 @@ Figure&nbsp;2: solar panel
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',

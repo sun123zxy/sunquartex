@@ -62,4 +62,4 @@ format:
       link: lime!85!black
   # revealjs: default
   pptx:
-    slide-level: 4
+    slide-level: 3

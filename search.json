@@ -11,7 +11,7 @@
     "href": "index.html#核心功能",
     "title": "README",
     "section": "1 核心功能",
-    "text": "1 核心功能\nQuarto 基础功能：\n\n基于 Pandoc’s Markdown 的完备学术写作语法\n强大的交叉引用与定理系统功能\nHTML、PDF/LaTeX、Beamer、Github Flavored Markdown (GFM) 全格式输出；MS Word、PPT 有限支持\n嵌入 Python 代码生成数据图表（Computation）\nMermaid、Graphviz 流程图绘制（Diagram）\n\n额外支持：\n\nTikZ / tikz-cd / quiver 图表绘制\nLean 代码高亮与源码导入转 Markdown\nRST-style list tables\nGithub Actions 自动生成 Demo 站点\n\n推荐在网页 Demo 中阅读本 README．"
+    "text": "1 核心功能\nQuarto 基础功能：\n\n基于 Pandoc’s Markdown 的完备学术写作语法\n强大的交叉引用与定理系统功能\nHTML、PDF/LaTeX、Beamer、Github Flavored Markdown (GFM) 全格式输出；MS Word、PPT、Revealjs 有限支持\n嵌入 Python 代码生成数据图表（Computation）\nMermaid、Graphviz 流程图绘制（Diagram）\n\n额外支持：\n\nTikZ / tikz-cd / quiver 图表绘制\nLean 代码高亮与源码导入转 Markdown\nRST-style list tables\nGithub Actions 自动生成 Demo 站点\n\n推荐在网页 Demo 中阅读本 README．"
   },
   {
     "objectID": "index.html#基础安装",

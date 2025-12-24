@@ -22,7 +22,7 @@ Quarto 基础功能：
 
 - 基于 Pandoc’s Markdown 的完备学术写作语法
 - 强大的交叉引用与定理系统功能
-- HTML、PDF/LaTeX、Beamer、Github Flavored Markdown (GFM) 全格式输出；MS Word、PPT 有限支持
+- HTML、PDF/LaTeX、Beamer、Github Flavored Markdown (GFM) 全格式输出；MS Word、PPT、Revealjs 有限支持
 - 嵌入 Python 代码生成数据图表（Computation）
 - Mermaid、Graphviz 流程图绘制（Diagram）
 

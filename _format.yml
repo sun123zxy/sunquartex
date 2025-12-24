@@ -63,3 +63,4 @@ format:
   # revealjs: default
   pptx:
     slide-level: 3
+    reference-doc: _assets/suntemp-pre.pptx

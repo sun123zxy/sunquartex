@@ -9,6 +9,7 @@ bibliography: bibliography.bib
 lang: en
 
 format:
+  revealjs: default
   beamer: default
   pptx: default
 ---

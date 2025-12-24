@@ -10,9 +10,12 @@ bibliography: bibliography.bib
 lang: zh
 
 format:
+  revealjs:
+    toc: true
   beamer:
     toc: true
-  pptx: default
+  pptx:
+    toc: true
 ---
 
 ## Section A

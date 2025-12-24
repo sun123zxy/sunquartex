@@ -595,6 +595,10 @@ format:
 
 亦见 [`examples/extra.qmd`](examples/extra.qmd)．暂时不支持其它格式下的宏包导入．
 
+## 我要自定义 DOCX / PPTX 样式！
+
+请修改模板文件 `_assets/suntemp-art.docx` 和 `_assets/suntemp-pre.pptx`．
+
 # Q&A
 
 ## 一般性的

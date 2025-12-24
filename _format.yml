@@ -61,4 +61,5 @@ format:
       remark: white!15!black
       link: lime!85!black
   # revealjs: default
-  # pptx: default
+  pptx:
+    slide-level: 4

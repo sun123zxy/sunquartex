@@ -188,6 +188,28 @@
     ]
   },
   {
+    "objectID": "examples/enpre.html#subsection-1",
+    "href": "examples/enpre.html#subsection-1",
+    "title": "SunQuarTeX Example - enpre",
+    "section": "Subsection 1",
+    "text": "Subsection 1",
+    "crumbs": [
+      "Examples",
+      "\\SunQuarTeX Example - enpre"
+    ]
+  },
+  {
+    "objectID": "examples/enpre.html#subsection-2",
+    "href": "examples/enpre.html#subsection-2",
+    "title": "SunQuarTeX Example - enpre",
+    "section": "Subsection 2",
+    "text": "Subsection 2",
+    "crumbs": [
+      "Examples",
+      "\\SunQuarTeX Example - enpre"
+    ]
+  },
+  {
     "objectID": "examples/timetable.html",
     "href": "examples/timetable.html",
     "title": "\\(\\mathrm{\\SunQuarTeX}\\) Example - 课表",
@@ -273,6 +295,28 @@
     "crumbs": [
       "Examples",
       "\\SunQuarTeX Example - Lean Include"
+    ]
+  },
+  {
+    "objectID": "examples/cnpre.html#subsection-1",
+    "href": "examples/cnpre.html#subsection-1",
+    "title": "SunQuarTeX Example - cnpre",
+    "section": "Subsection 1",
+    "text": "Subsection 1",
+    "crumbs": [
+      "Examples",
+      "\\SunQuarTeX Example - cnpre"
+    ]
+  },
+  {
+    "objectID": "examples/cnpre.html#subsection-2",
+    "href": "examples/cnpre.html#subsection-2",
+    "title": "SunQuarTeX Example - cnpre",
+    "section": "Subsection 2",
+    "text": "Subsection 2",
+    "crumbs": [
+      "Examples",
+      "\\SunQuarTeX Example - cnpre"
     ]
   },
   {

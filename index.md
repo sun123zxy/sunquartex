@@ -40,7 +40,7 @@ Quarto 基础功能：
 
 - 下载并安装 [quarto-cli](https://quarto.org/)．本仓库渲染使用 Quarto 版本为 1.8.27．
 
-  - （推荐）安装 [VSCode](https://code.visualstudio.com/) IDE 并安装 [Quarto](https://marketplace.visualstudio.com/items?itemName=quarto.quarto) 插件．
+  - （推荐）安装 [VSCode](https://code.visualstudio.com/) IDE 并安装 [Quarto](https://marketplace.visualstudio.com/items?itemName=quarto.quarto) 插件以获得高亮、预览计算结果等功能．
 
 - 创建新文章时使用 Github Template 以本仓库为模板建立新仓库．您也可以下载本仓库的压缩包或 clone 到本地．
 
@@ -164,6 +164,12 @@ plt.show()
 </div>
 
 对于计算密集的文稿，您可能希望直接编写 `.ipynb` 文件固定执行结果．Quarto 也支持直接渲染 `.ipynb` 文件，其中的 Markdown 块内仍可使用 Quarto 特性．（参见 [示例文件](examples/jupyter.ipynb)）
+
+<div class="proof remark">
+
+<span class="proof-title">*注记*. </span>VSCode 有官方支持的 [Jupyter 插件](https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter) 用于编辑 `.ipynb` 文件．
+
+</div>
 
 ## 表格
 
@@ -693,6 +699,10 @@ Quarto 对标题层级的处理比较混乱——例如，Book 项目中 Quarto 
 ### 怎么打出 TeX, LaTeX, SunQuarTeX？
 
 直接写 `\TeX`, `\LaTeX`, `\SunQuarTeX`，不必置于数学环境中．我们编写了 `_assets/fancy-latex-logo.lua` 处理他们在不同格式下的渲染．
+
+### 方便的 SVG 草图绘制？
+
+如果您有触控笔，推荐使用 [VSCode Draw 插件](https://marketplace.visualstudio.com/items?itemName=hall.draw) 获得编辑器内的 SVG 草图绘制功能．
 
 ## 输出相关
 

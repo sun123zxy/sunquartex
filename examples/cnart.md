@@ -65,42 +65,6 @@ $a \leq b \land b \leq a \implies a=b$
 传递性  
 $a \leq b \land b \leq c \implies a \leq c$
 
-当然也可以使用 Markdown 表格．例如 <a href="#tbl-cartesian-unsolved" class="quarto-xref">表 1 (a)</a>.
-
-多表格并列．加上 <a href="#tbl-power-unsolved" class="quarto-xref">表 1 (b)</a>，它们共同组成了 <a href="#tbl-panel-unsolved" class="quarto-xref">表 1</a>．
-
-<div id="tbl-panel-unsolved">
-
-<div id="tbl-cartesian-unsolved">
-
-|                  |             |             |             |
-|:----------------:|:-----------:|:-----------:|:-----------:|
-| $L_i \times C_j$ |     $2$     | $\mathbb N$ | $\mathbb R$ |
-|       $2$        |     $4$     | $\mathbb N$ | $\mathbb R$ |
-|   $\mathbb N$    | $\mathbb N$ | $\mathbb N$ |      ?      |
-|   $\mathbb R$    | $\mathbb R$ |      ?      | $\mathbb R$ |
-
-(a) 笛卡尔积
-
-</div>
-
-<div id="tbl-power-unsolved">
-
-|             |             |             |                 |
-|:-----------:|:-----------:|:-----------:|:---------------:|
-| $L_i^{C_j}$ |     $2$     | $\mathbb N$ |   $\mathbb R$   |
-|     $2$     |     $4$     | $\mathbb R$ | $2^{\mathbb R}$ |
-| $\mathbb N$ | $\mathbb N$ |      ?      |        ?        |
-| $\mathbb R$ | $\mathbb R$ |      ?      |        ?        |
-
-(b) 集合幂
-
-</div>
-
-表 1: 相关集合的势（不完整版）
-
-</div>
-
 # 数学公式、定理系统测试
 
 这一节我们测试数学相关内容．直接在源文件中写 raw LaTeX 就可声明公式所需的宏定义．由于 `\DeclareMathOperator` 只能在 LaTeX 的导言区使用，这里我们用 `\newcommand` + `\operatorname` 的方式替代．
@@ -129,7 +93,7 @@ $$
 
 <div class="proof">
 
-<span class="proof-title">*证*. </span>建立单射
+<span class="proof-title">*证明*. </span>建立单射
 $$
 \begin{aligned}
 \varphi: A \times B &\to C \times D \\
@@ -142,13 +106,13 @@ $$
 
 <div class="proof">
 
-<span class="proof-title">*证* (有标题的证明). </span>这是一个有 caption 的证明．
+<span class="proof-title">*证明* (有标题的证明). </span>这是一个有 caption 的证明．
 
 </div>
 
 <div class="proof">
 
-<span class="proof-title">*证* (<a href="#thm-cartesian-preserve" class="quarto-xref">定理 1</a> 的证明). </span>这是一个带复杂 caption 的证明．
+<span class="proof-title">*证明* (<a href="#thm-cartesian-preserve" class="quarto-xref">定理 1</a> 的证明). </span>这是一个带复杂 caption 的证明．
 
 </div>
 
@@ -174,7 +138,7 @@ $$
 
 <div class="proof">
 
-<span class="proof-title">*证*. </span>利用 <a href="#thm-cartesian-preserve" class="quarto-xref">定理 1</a> 对 $\mathbb R \times 2$ 和 $\mathbb R \times \mathbb R$ 夹逼，立刻得到
+<span class="proof-title">*证明*. </span>利用 <a href="#thm-cartesian-preserve" class="quarto-xref">定理 1</a> 对 $\mathbb R \times 2$ 和 $\mathbb R \times \mathbb R$ 夹逼，立刻得到
 $$
 \mathbb R \approx \mathbb R \times 2 \preccurlyeq \mathbb R \times \mathbb N \preccurlyeq \mathbb R \times \mathbb R \approx \mathbb R
 \implies \mathbb R \times \mathbb N \approx \mathbb N \times \mathbb R \approx \mathbb R
@@ -226,7 +190,7 @@ plt.show()
 
 交叉引用 <a href="#fig-polar" class="quarto-xref">图 2</a> 当然也是可以的.
 
-这里再测试一些较复杂的并列效果．（<a href="#tbl-light-on" class="quarto-xref">表 2</a>, <a href="#tbl-light-on-1" class="quarto-xref">表 2 (a)</a>, <a href="#tbl-light-on-2" class="quarto-xref">表 2 (b)</a>, <a href="#fig-light-on" class="quarto-xref">图 3</a>, <a href="#fig-light-on-1" class="quarto-xref">图 3 (a)</a>, <a href="#fig-light-on-2" class="quarto-xref">图 3 (b)</a>）
+这里再测试一些较复杂的并列效果．（<a href="#tbl-light-on" class="quarto-xref">表 1</a>, <a href="#tbl-light-on-1" class="quarto-xref">表 1 (a)</a>, <a href="#tbl-light-on-2" class="quarto-xref">表 1 (b)</a>, <a href="#fig-light-on" class="quarto-xref">图 3</a>, <a href="#fig-light-on-1" class="quarto-xref">图 3 (a)</a>, <a href="#fig-light-on-2" class="quarto-xref">图 3 (b)</a>）
 
 ``` python
 import numpy as np
@@ -323,7 +287,7 @@ display(Markdown(tabulate(table, headers=["R (Ω)", "U (V)", "I (mA)", "P (mW)"]
 
 </div>
 
-表 2: 太阳能电池的负载特性
+表 1: 太阳能电池的负载特性
 
 </div>
 

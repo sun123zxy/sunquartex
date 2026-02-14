@@ -38,7 +38,7 @@ Quarto 基础功能：
 
 # 基础安装
 
-- 下载并安装 [quarto-cli](https://quarto.org/)．本仓库渲染使用 Quarto 版本为 1.7.34．
+- 下载并安装 [quarto-cli](https://quarto.org/)．本仓库渲染使用 Quarto 版本为 1.8.27．
 
   - （推荐）安装 [VSCode](https://code.visualstudio.com/) IDE 并安装 [Quarto](https://marketplace.visualstudio.com/items?itemName=quarto.quarto) 插件．
 
@@ -95,6 +95,8 @@ git push # push 到你的远程仓库
 ### 安装
 
 安装 Quarto 支持的 LaTeX 发行版．若无，可使用 `quarto install tinytex --update-path` 安装．
+
+TinyTeX 安装需要畅通的外网环境．如果您使用 Clash 作为代理，可能需要配置 TUN 模式接管全部流量．
 
 ### 使用
 
@@ -157,6 +159,8 @@ plt.show()
 |       $2$        |     $4$     | $\mathbb N$ | $\mathbb R$ |
 |   $\mathbb N$    | $\mathbb N$ | $\mathbb N$ |      ?      |
 |   $\mathbb R$    | $\mathbb R$ |      ?      | $\mathbb R$ |
+
+我们强烈建议您避免使用传统 Markdown 表格，其在新版本的 Quarto 中经常无法正常渲染．
 
 ### Markdown grid style tables
 
@@ -684,6 +688,16 @@ Quarto 对标题层级的处理比较混乱——例如，Book 项目中 Quarto 
 
 您可以使用 GFM 格式输出，输出内容可复制至 [markdown.com.cn](https://markdown.com.cn/editor/) 的在线编辑器转知乎格式．
 
-### PDF 输出，LaTeX 渲染了十遍
+### PDF 输出，LaTeX 渲染了十遍！
 
-您文档的交叉引用可能存在问题．请检查文档头的 `bibliography` 选项和正文中的引用情况．
+一般是文档的交叉引用有误所致，请检查文档头的 `bibliography` 选项和正文中的引用情况．
+
+### 每次渲染都要 `updating tlmgr` 烦死了！
+
+默认情况下，Quarto 会在每次渲染 LaTeX 时使用 TinyTeX 自动检测和下载所需宏包．但如果 Quarto 生成的 LaTeX 源文件有误，也会触发此过程．如果您频繁遇到，可以选择关闭 LaTeX 渲染的自动下载：
+
+``` yaml
+format:
+  pdf:
+    latex-auto-install: false
+```

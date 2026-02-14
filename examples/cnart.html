@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="zh-Hans" xml:lang="zh-Hans"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.34">
+<meta name="generator" content="quarto-1.8.27">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -89,14 +89,15 @@ div.csl-indent {
 <meta name="quarto:offset" content="../">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-c8ad9e5dbd60b7b70b38521ab19b7da4.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-e840ab27ffe3353be63e8483a62c2af2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-ada89b2d769bf3bcd606da0f173f4e57.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -148,7 +149,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -407,97 +408,6 @@ window.Quarto = {
 <p><span class="math inline">\(a \leq b \land b \leq c \implies a \leq c\)</span></p>
 </dd>
 </dl>
-<p>当然也可以使用 Markdown 表格．例如 <a href="#tbl-cartesian-unsolved" class="quarto-xref">表&nbsp;1 (a)</a>.</p>
-<p>多表格并列．加上 <a href="#tbl-power-unsolved" class="quarto-xref">表&nbsp;1 (b)</a>，它们共同组成了 <a href="#tbl-panel-unsolved" class="quarto-xref">表&nbsp;1</a>．</p>
-<div id="tbl-panel-unsolved" class="quarto-layout-panel anchored">
-<figure class="quarto-float quarto-float-tbl figure">
-<div aria-describedby="tbl-panel-unsolved-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="tbl-panel-unsolved" style="flex-basis: 50.0%;justify-content: center;">
-<div id="tbl-cartesian-unsolved" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-subfloat-tbl figure">
-<div aria-describedby="tbl-cartesian-unsolved-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table">
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(L_i \times C_j\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(2\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\mathbb N\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\mathbb R\)</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math inline">\(2\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(4\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\mathbb N\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\mathbb R\)</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(\mathbb N\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\mathbb N\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\mathbb N\)</span></td>
-<td style="text-align: center;">?</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math inline">\(\mathbb R\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\mathbb R\)</span></td>
-<td style="text-align: center;">?</td>
-<td style="text-align: center;"><span class="math inline">\(\mathbb R\)</span></td>
-</tr>
-</tbody>
-</table>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-tbl" id="tbl-cartesian-unsolved-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(a) 笛卡尔积
-</figcaption>
-</figure>
-</div>
-</div>
-<div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="tbl-panel-unsolved" style="flex-basis: 50.0%;justify-content: center;">
-<div id="tbl-power-unsolved" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-subfloat-tbl figure">
-<div aria-describedby="tbl-power-unsolved-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<table class="table">
-<tbody>
-<tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(L_i^{C_j}\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(2\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\mathbb N\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\mathbb R\)</span></td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math inline">\(2\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(4\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\mathbb R\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(2^{\mathbb R}\)</span></td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;"><span class="math inline">\(\mathbb N\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\mathbb N\)</span></td>
-<td style="text-align: center;">?</td>
-<td style="text-align: center;">?</td>
-</tr>
-<tr class="even">
-<td style="text-align: center;"><span class="math inline">\(\mathbb R\)</span></td>
-<td style="text-align: center;"><span class="math inline">\(\mathbb R\)</span></td>
-<td style="text-align: center;">?</td>
-<td style="text-align: center;">?</td>
-</tr>
-</tbody>
-</table>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-tbl" id="tbl-power-unsolved-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-(b) 集合幂
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-panel-unsolved-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-表&nbsp;1: 相关集合的势（不完整版）
-</figcaption>
-</figure>
-</div>
 </section>
 <section id="数学公式定理系统测试" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="数学公式定理系统测试"><span class="header-section-number">4</span> 数学公式、定理系统测试</h2>
@@ -525,19 +435,19 @@ A \preccurlyeq C \land B \preccurlyeq D \implies A \times B \preccurlyeq C \time
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">注记</span>Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>证</em>. </span>建立单射 <span class="math display">\[
+<p><span class="proof-title"><em>证明</em>. </span>建立单射 <span class="math display">\[
 \begin{aligned}
 \varphi: A \times B &amp;\to C \times D \\
 \langle x,y \rangle &amp;\mapsto \langle f(x), g(y) \rangle
@@ -548,37 +458,37 @@ Proof
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof (有标题的证明)
+<span class="screen-reader-only">注记</span>Proof (有标题的证明)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>证</em> (有标题的证明). </span>这是一个有 caption 的证明．</p>
+<p><span class="proof-title"><em>证明</em> (有标题的证明). </span>这是一个有 caption 的证明．</p>
 </div>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof (<a href="#thm-cartesian-preserve" class="quarto-xref">定理&nbsp;1</a> 的证明)
+<span class="screen-reader-only">注记</span>Proof (<a href="#thm-cartesian-preserve" class="quarto-xref">定理&nbsp;1</a> 的证明)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>证</em> (<a href="#thm-cartesian-preserve" class="quarto-xref">定理&nbsp;1</a> 的证明). </span>这是一个带复杂 caption 的证明．</p>
+<p><span class="proof-title"><em>证明</em> (<a href="#thm-cartesian-preserve" class="quarto-xref">定理&nbsp;1</a> 的证明). </span>这是一个带复杂 caption 的证明．</p>
 </div>
 </div>
 </div>
@@ -613,19 +523,19 @@ A \approx C \land B \approx D \implies A \times B \approx C \times D
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Proof
+<span class="screen-reader-only">注记</span>Proof
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
 <div id="callout-4" class="callout-4-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="proof">
-<p><span class="proof-title"><em>证</em>. </span>利用 <a href="#thm-cartesian-preserve" class="quarto-xref">定理&nbsp;1</a> 对 <span class="math inline">\(\mathbb R \times 2\)</span> 和 <span class="math inline">\(\mathbb R \times \mathbb R\)</span> 夹逼，立刻得到 <span class="math display">\[
+<p><span class="proof-title"><em>证明</em>. </span>利用 <a href="#thm-cartesian-preserve" class="quarto-xref">定理&nbsp;1</a> 对 <span class="math inline">\(\mathbb R \times 2\)</span> 和 <span class="math inline">\(\mathbb R \times \mathbb R\)</span> 夹逼，立刻得到 <span class="math display">\[
 \mathbb R \approx \mathbb R \times 2 \preccurlyeq \mathbb R \times \mathbb N \preccurlyeq \mathbb R \times \mathbb R \approx \mathbb R
 \implies \mathbb R \times \mathbb N \approx \mathbb N \times \mathbb R \approx \mathbb R
 \]</span></p>
@@ -634,12 +544,12 @@ Proof
 </div>
 </div>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Solution
+<span class="screen-reader-only">注记</span>Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -657,7 +567,7 @@ Solution
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Remark
+<span class="screen-reader-only">提示</span>Remark
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -676,7 +586,7 @@ Remark
 <div id="cell-fig-polar" class="cell" data-execution_count="1">
 <details class="code-fold">
 <summary>代码</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>)</span>
@@ -690,7 +600,7 @@ Remark
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>ax.plot(theta, r)</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>)</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="fig-polar" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -706,11 +616,11 @@ Remark
 </div>
 </div>
 <p>交叉引用 <a href="#fig-polar" class="quarto-xref">图&nbsp;2</a> 当然也是可以的.</p>
-<p>这里再测试一些较复杂的并列效果．（<a href="#tbl-light-on" class="quarto-xref">表&nbsp;2</a>, <a href="#tbl-light-on-1" class="quarto-xref">表&nbsp;2 (a)</a>, <a href="#tbl-light-on-2" class="quarto-xref">表&nbsp;2 (b)</a>, <a href="#fig-light-on" class="quarto-xref">图&nbsp;3</a>, <a href="#fig-light-on-1" class="quarto-xref">图&nbsp;3 (a)</a>, <a href="#fig-light-on-2" class="quarto-xref">图&nbsp;3 (b)</a>）</p>
-<div id="59904ff6" class="cell" data-execution_count="2">
+<p>这里再测试一些较复杂的并列效果．（<a href="#tbl-light-on" class="quarto-xref">表&nbsp;1</a>, <a href="#tbl-light-on-1" class="quarto-xref">表&nbsp;1 (a)</a>, <a href="#tbl-light-on-2" class="quarto-xref">表&nbsp;1 (b)</a>, <a href="#fig-light-on" class="quarto-xref">图&nbsp;3</a>, <a href="#fig-light-on-1" class="quarto-xref">图&nbsp;3 (a)</a>, <a href="#fig-light-on-2" class="quarto-xref">图&nbsp;3 (b)</a>）</p>
+<div id="cf930523" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>代码</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> Markdown, display</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> tabulate <span class="im">import</span> tabulate</span>
@@ -728,15 +638,15 @@ Remark
 <span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="fl">3.3</span>,<span class="fl">3.4</span>,<span class="fl">3.4</span>,<span class="fl">3.4</span>,<span class="fl">3.4</span>,<span class="fl">3.3</span>,<span class="fl">3.3</span>,<span class="fl">3.3</span>,<span class="fl">3.3</span>,<span class="fl">3.3</span>,</span>
 <span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="fl">3.2</span>,<span class="fl">3.2</span>,<span class="fl">3.2</span>,<span class="fl">3.2</span>,<span class="fl">3.2</span>,<span class="fl">3.2</span>,<span class="fl">3.2</span>,<span class="fl">3.1</span>,<span class="fl">3.1</span>,<span class="fl">3.1</span>,</span>
 <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="fl">3.0</span>,<span class="fl">2.9</span>,<span class="fl">2.7</span>,<span class="fl">2.2</span>,<span class="fl">1.130</span>,<span class="fl">47.7E-3</span>])</span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>P <span class="op">=</span> U<span class="op">*</span>I</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>P <span class="op">=</span> U<span class="op">*</span>I</span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <details class="code-fold">
 <summary>代码</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> [[R[i], U[i], I[i], P[i]] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">11</span>)) <span class="op">+</span> [<span class="dv">11</span>,<span class="dv">21</span>,<span class="dv">31</span>,<span class="dv">32</span>,<span class="dv">33</span>,<span class="dv">34</span>,<span class="dv">35</span>,<span class="dv">36</span>]]</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> [[R[i], U[i], I[i], P[i]] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">list</span>(<span class="bu">range</span>(<span class="dv">0</span>, <span class="dv">11</span>)) <span class="op">+</span> [<span class="dv">11</span>,<span class="dv">21</span>,<span class="dv">31</span>,<span class="dv">32</span>,<span class="dv">33</span>,<span class="dv">34</span>,<span class="dv">35</span>,<span class="dv">36</span>]]</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>display(Markdown(tabulate(table, headers<span class="op">=</span>[<span class="st">"R (Ω)"</span>, <span class="st">"U (V)"</span>, <span class="st">"I (mA)"</span>, <span class="st">"P (mW)"</span>])))</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>table <span class="op">=</span> [[R[i], U[i], I[i], P[i]] <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">12</span>, <span class="dv">31</span>)]</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>display(Markdown(tabulate(table, headers<span class="op">=</span>[<span class="st">"R (Ω)"</span>, <span class="st">"U (V)"</span>, <span class="st">"I (mA)"</span>, <span class="st">"P (mW)"</span>])))</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>display(Markdown(tabulate(table, headers<span class="op">=</span>[<span class="st">"R (Ω)"</span>, <span class="st">"U (V)"</span>, <span class="st">"I (mA)"</span>, <span class="st">"P (mW)"</span>])))</span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div id="tbl-light-on" class="quarto-layout-panel anchored">
 <figure class="quarto-float quarto-float-tbl figure">
@@ -1019,13 +929,13 @@ Remark
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-tbl" id="tbl-light-on-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-表&nbsp;2: 太阳能电池的负载特性
+表&nbsp;1: 太阳能电池的负载特性
 </figcaption>
 </figure>
 </div>
 <details class="code-fold">
 <summary>代码</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>fig.patch.set_alpha(<span class="dv">0</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>ax.patch.set_alpha(<span class="dv">0</span>)</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
@@ -1052,7 +962,7 @@ Remark
 <span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>ax.set_xlim((<span class="dv">0</span>, <span class="dv">2000</span>))</span>
 <span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>ax.set_ylim(<span class="dv">0</span>)</span>
 <span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 <div id="fig-light-on" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
@@ -1403,7 +1313,7 @@ Remark
 <li>行内 Lean 代码 <code>theorem idempotent_iff_eq : ∀ a : α, (a * a = a ↔︎ a = 1 ∨ a = 0)</code> ．</li>
 </ul>
 <p>行间代码：</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> np.arange(<span class="dv">0</span>, <span class="dv">2</span>, <span class="fl">0.01</span>) <span class="co"># 以步长 0.01 生成 0 到 2 之间的数</span></span>
@@ -1414,8 +1324,8 @@ Remark
 <span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>ax.plot(theta, r)</span>
 <span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>ax.set_rticks([<span class="fl">0.5</span>, <span class="dv">1</span>, <span class="fl">1.5</span>, <span class="dv">2</span>])</span>
 <span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>ax.grid(<span class="va">True</span>)</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb6"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\def\SunQuarTeX</span>{</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode latex code-with-copy"><code class="sourceCode latex"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">\def\SunQuarTeX</span>{</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">\kern</span>-.0em <span class="fu">\mathbb</span>{S}</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">\kern</span>-.0em<span class="fu">\lower</span>.5ex {<span class="fu">\small</span> <span class="fu">\mathbb</span> U}</span>
 <span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="fu">\kern</span>-.05em {<span class="fu">\small</span> <span class="fu">\mathbb</span> N}</span>
@@ -1425,10 +1335,10 @@ Remark
 <span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="fu">\kern</span>-.08em<span class="fu">\lower</span>.1ex <span class="fu">\mathbb</span>{R}</span>
 <span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="fu">\TeX</span></span>
 <span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="fu">\SunQuarTeX</span></span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb7"><pre class="sourceCode lean code-with-copy"><code class="sourceCode lean"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> : (<span class="kw">∀</span> x, p x → r) → ((<span class="kw">∃</span> x, p x) → r) <span class="op">:=</span> <span class="kw">by</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="fu">\SunQuarTeX</span></span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode lean code-with-copy"><code class="sourceCode lean"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">example</span> : (<span class="kw">∀</span> x, p x → r) → ((<span class="kw">∃</span> x, p x) → r) <span class="op">:=</span> <span class="kw">by</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">intro</span> h ⟨a, hpa⟩ <span class="co">-- you may also `rcases` explicitly</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">exact</span> h a hpa</span></code><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">exact</span> h a hpa</span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>
 <p>下面是引用块和一个非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．</p>
 <blockquote class="blockquote">
 <p>这是一个引用块和一个非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．</p>
@@ -1486,7 +1396,7 @@ Remark
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-有 caption 的 callout
+<span class="screen-reader-only">提示</span>有 caption 的 callout
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -1494,12 +1404,12 @@ Remark
 </div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-可折叠的 callout
+<span class="screen-reader-only">注意</span>可折叠的 callout
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1618,13 +1528,14 @@ Remark
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

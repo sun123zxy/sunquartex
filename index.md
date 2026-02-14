@@ -25,11 +25,12 @@ Quarto 基础功能：
 - HTML、PDF/LaTeX、Beamer、Github Flavored Markdown (GFM) 全格式输出；MS Word、PPT、Revealjs 有限支持
 - 嵌入 Python 代码生成数据图表（Computation）
 - Mermaid、Graphviz 流程图绘制（Diagram）
+- 兼容 `.ipynb` 源文件渲染
 
 额外支持：
 
 - TikZ / [tikz-cd](https://ctan.org/pkg/tikz-cd) / [quiver](https://q.uiver.app/) 图表绘制
-- Lean 代码高亮与源码导入转 Markdown
+- Lean 4 代码高亮、自动源码导入转换 Markdown
 - RST-style list tables
 - Github Actions 自动生成 Demo 站点
 
@@ -85,10 +86,6 @@ git push # push 到你的远程仓库
 
 # 可选项安装与使用
 
-## Python
-
-建议您使用 uv 管理 Python 版本．`uv sync` 命令会自动安装所需的 Python 依赖．您也可以参考 `pyproject.toml` 手动安装．
-
 ## LaTeX / PDF / Beamer 输出
 
 我们没有直接使用 Quarto 默认的 PDF 输出，而是完全重新设计了输出模板（`_assets/suntemp-art.tex`, `_assets/suntemp-pre.tex`）．大动干戈的目的有个人喜好方面的考量：Quarto 默认使用 Koma-Script 系列的 `scrartcl` 文档类，而我们希望在英文环境下保留 `article` 文档类的原汁原味，也希望在中文环境下使用 `ctexart` / `ctexbeamer` 文档类获得更好的排版格式．
@@ -107,14 +104,18 @@ git push # push 到你的远程仓库
 
 ## Computation 功能
 
-直接嵌入 Python 代码就可以动态生成数据图表．[Quarto 文档](https://quarto.org/docs/computations/python.html)
-
 ### 安装
 
-- 安装适当版本 Python
-- 命令行 `pip install .` 安装 `pyproject.toml` 列明的所需模块
+您需要在仓库中配置 Python 和 Jupyter 环境以使用 Computation 功能．
+
+- 建议您使用 uv 管理 Python 版本．`uv sync` 命令会自动安装本仓库所需的 Python 依赖．
+- 或者，在原生 Python 环境中执行 `pip install .` 安装 `pyproject.toml` 列明的所需模块．
+
+若您不需要使用部分功能，也可以参考 `pyproject.toml` 文件改动所需依赖．
 
 ### 使用
+
+Quarto 的 VSCode 插件支持类似 Jupyter Notebook 的图文混排编辑体验．您可以通过在 Markdown 中嵌入 Python 代码块来动态生成数据图表（参见 [Quarto 文档](https://quarto.org/docs/computations/python.html)）．
 
 使用例：
 
@@ -143,6 +144,10 @@ plt.show()
 图 1: A line plot on a polar axis
 
 </div>
+
+Quarto 也兼容 `.ipynb` 文件，您可以直接使用 Jupyter Notebook 编写文档并使用 Quarto 渲染输出，`.ipynb` 文件中的 Markdown 块内仍可使用 Quarto 特性．（参见 [示例文件](examples/jupyter.ipynb)）
+
+## 表格
 
 ### 传统 Markdown 表格
 

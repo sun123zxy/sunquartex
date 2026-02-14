@@ -86,11 +86,27 @@ git push # push 到你的远程仓库
 
 # 可选项安装与使用
 
+## HTML / Revealjs / GFM / DOCX / PPTX
+
+开箱即用．
+
+<div class="proof remark">
+
+<span class="proof-title">*注记*. </span>注意 HTML / Revealjs 由于后缀名冲突不能同时输出．
+
+</div>
+
 ## LaTeX / PDF / Beamer 输出
 
 我们没有直接使用 Quarto 默认的 PDF 输出，而是完全重新设计了输出模板（`_assets/suntemp-art.tex`, `_assets/suntemp-pre.tex`）．大动干戈的目的有个人喜好方面的考量：Quarto 默认使用 Koma-Script 系列的 `scrartcl` 文档类，而我们希望在英文环境下保留 `article` 文档类的原汁原味，也希望在中文环境下使用 `ctexart` / `ctexbeamer` 文档类获得更好的排版格式．
 
 重新设计 PDF 模板，您可以参考 [Quarto 的模板自定义教程](https://quarto.org/docs/journals/templates.html)．
+
+<div class="proof remark">
+
+<span class="proof-title">*注记*. </span>注意 PDF / Beamer 由于后缀名冲突不能同时输出．
+
+</div>
 
 ### 安装
 

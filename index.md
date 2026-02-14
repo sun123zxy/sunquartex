@@ -145,7 +145,7 @@ plt.show()
 
 </div>
 
-Quarto 也兼容 `.ipynb` 文件，您可以直接使用 Jupyter Notebook 编写文档并使用 Quarto 渲染输出，`.ipynb` 文件中的 Markdown 块内仍可使用 Quarto 特性．（参见 [示例文件](examples/jupyter.ipynb)）
+对于计算密集的文稿，您可能希望直接编写 `.ipynb` 文件固定执行结果．Quarto 也支持直接渲染 `.ipynb` 文件，其中的 Markdown 块内仍可使用 Quarto 特性．（参见 [示例文件](examples/jupyter.ipynb)）
 
 ## 表格
 

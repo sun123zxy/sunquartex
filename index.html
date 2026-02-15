@@ -494,6 +494,24 @@ Write once, present everywhere!<br>基于 Quarto 的多格式输出中英文学�
 <li>或者，在原生 Python 环境中执行 <code>pip install .</code> 安装 <code>pyproject.toml</code> 列明的所需模块．</li>
 </ul>
 <p>若您不需要使用部分功能，也可以参考 <code>pyproject.toml</code> 文件改动所需依赖．</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">提示</span>Remark
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div class="proof remark">
+<p><span class="proof-title"><em>注记</em>. </span>若您使用 uv 管理 Python，请在渲染前确保命令行正确激活 uv 环境，或使用 <code>uv run quarto render</code>．</p>
+</div>
+</div>
+</div>
+</div>
 <p>Quarto 的 VSCode 插件支持类似 Jupyter Notebook 的图文混排编辑体验．您可以通过在 Markdown 中嵌入 Python 代码块来动态生成数据图表（参见 <a href="https://quarto.org/docs/computations/python.html">Quarto 文档</a>）．</p>
 </section>
 <section id="使用-1" class="level4">
@@ -536,7 +554,7 @@ Write once, present everywhere!<br>基于 Quarto 的多格式输出中英文学�
 <p>并使用 <code>{sage}</code> 作为代码块标签，参见 <a href="https://github.com/orgs/quarto-dev/discussions/4231">Quarto Discussion #4231</a>．</p>
 <p>需要注意的是，需要确保当前环境的 <code>jupyter kernelspec list</code> 中已经正确安装了对应内核．</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -545,7 +563,7 @@ Write once, present everywhere!<br>基于 Quarto 的多格式输出中英文学�
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div id="callout-4" class="callout-4-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div class="proof remark">
 <p><span class="proof-title"><em>注记</em>. </span>SageMath 在 Windows 原生环境下安装极为困难，我们建议通过直接编写 <code>.ipynb</code> 在 VSCode 中通过插件远程连接 WSL 中的 Jupyter 服务器使用 SageMath 内核．</p>
@@ -559,7 +577,7 @@ Write once, present everywhere!<br>基于 Quarto 的多格式输出中英文学�
 <p>对于计算密集的文稿，您可能希望直接编写 <code>.ipynb</code> 文件固定执行结果．Quarto 也支持直接渲染 <code>.ipynb</code> 文件，其中的 Markdown 块内仍可使用 Quarto 特性．</p>
 <p>参见 <a href="./examples/jupyter.html">示例文件</a>．建议您阅读 <a href="https://quarto.org/docs/tools/jupyter-lab.html">Quarto 的 Jupyter Lab 使用介绍</a>．</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -568,7 +586,7 @@ Write once, present everywhere!<br>基于 Quarto 的多格式输出中英文学�
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse show">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div class="proof remark">
 <p><span class="proof-title"><em>注记</em>. </span>除了直接使用使用 Jupyter Lab / Notebook 编辑 <code>.ipynb</code> 文件外，也可以使用 VSCode 官方支持的 <a href="https://marketplace.visualstudio.com/items?itemName=ms-toolsai.jupyter">Jupyter 插件</a> 获得编辑器内的 Notebook 编辑体验．该插件还支持远程 Jupyter 服务器连接，您可以在本地使用 VSCode 编辑器连接远程服务器上的 Jupyter 内核进行计算．例如：您可以在 WSL 环境中安装 Jupyter 和 SageMath 内核，在 Windows 原生环境中使用 VSCode 编辑器连接 WSL 中的 Jupyter 服务器进行计算．</p>
@@ -680,7 +698,7 @@ Write once, present everywhere!<br>基于 Quarto 的多格式输出中英文学�
 <section id="computation-based-tables" class="level4">
 <h4 class="anchored" data-anchor-id="computation-based-tables">Computation based tables</h4>
 <p>您也可以直接使用代码生成表格：</p>
-<div id="a1695b15" class="cell" data-execution_count="2">
+<div id="3d3cb52d" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>代码</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -1149,7 +1167,7 @@ Write once, present everywhere!<br>基于 Quarto 的多格式输出中英文学�
 </ul></li>
 </ul>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1158,7 +1176,7 @@ Write once, present everywhere!<br>基于 Quarto 的多格式输出中英文学�
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse show">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div class="proof remark">
 <p><span class="proof-title"><em>注记</em>. </span>关于 mutool 必要性的说明：</p>
@@ -1290,7 +1308,7 @@ Write once, present everywhere!<br>基于 Quarto 的多格式输出中英文学�
 </figure>
 </div>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1299,7 +1317,7 @@ Write once, present everywhere!<br>基于 Quarto 的多格式输出中英文学�
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse show">
+<div id="callout-7" class="callout-7-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div class="proof remark">
 <p><span class="proof-title"><em>注记</em>. </span>在 Beamer 中使用 TikZ 时，所在幻灯片须添加 <code>{.fragile}</code> 标记．</p>
@@ -1316,7 +1334,7 @@ Write once, present everywhere!<br>基于 Quarto 的多格式输出中英文学�
 <pre class="qmd" data-shortcodes="false"><code>{{&lt; lean-include path/to/your_file.lean &gt;}}</code></pre>
 <p>现已支持 PDF / Beamer 输出．</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="true" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -1325,7 +1343,7 @@ Write once, present everywhere!<br>基于 Quarto 的多格式输出中英文学�
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse show">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse show">
 <div class="callout-body-container callout-body">
 <div class="proof remark">
 <p><span class="proof-title"><em>注记</em>. </span>目前 HTML 的目录导航定位存在问题．</p>

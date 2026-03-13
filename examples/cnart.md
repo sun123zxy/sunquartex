@@ -70,14 +70,12 @@ $a \leq b \land b \leq c \implies a \leq c$
 这一节我们测试数学相关内容．直接在源文件中写 raw LaTeX 就可声明公式所需的宏定义．由于 `\DeclareMathOperator` 只能在 LaTeX 的导言区使用，这里我们用 `\newcommand` + `\operatorname` 的方式替代．
 
 下面的公式使用了上面定义的 macro．
-$$
-\operatorname{ran}A := \{ y \mid (x,y) \in A \}
-$$
+
+$$\operatorname{ran}A := \{ y \mid (x,y) \in A \}$$
 
 两个集合 $A, B$ 的笛卡尔积定义为
-$$
-A \times B = \{\langle x,y \rangle \mid x \in A \land y \in B \}
-$$
+
+$$A \times B = \{\langle x,y \rangle \mid x \in A \land y \in B \}$$
 
 显然，笛卡尔积不满足交换律和结合律. 在势的视角下，它的表现如何呢？
 
@@ -85,21 +83,18 @@ $$
 
 <span class="theorem-title">**定理 1 (笛卡尔积的保势性)**</span> 这是一个有 caption 的定理.
 
-$$
-A \preccurlyeq C \land B \preccurlyeq D \implies A \times B \preccurlyeq C \times D
-$$
+$$A \preccurlyeq C \land B \preccurlyeq D \implies A \times B \preccurlyeq C \times D$$
 
 </div>
 
 <div class="proof">
 
 <span class="proof-title">*证明*. </span>建立单射
-$$
-\begin{aligned}
+
+$$\begin{aligned}
 \varphi: A \times B &\to C \times D \\
 \langle x,y \rangle &\mapsto \langle f(x), g(y) \rangle
-\end{aligned}
-$$
+\end{aligned}$$
 即可，其中 $f$ 和 $g$ 是由 $A \preccurlyeq C$ 和 $B \preccurlyeq D$ 确定的单射.
 
 </div>
@@ -119,9 +114,8 @@ $$
 <div id="cor-random" class="theorem corollary">
 
 <span class="theorem-title">**推论 1**</span> 等势意义下可用等势的集合替换参与笛卡尔积运算的集合，即
-$$
-A \approx C \land B \approx D \implies A \times B \approx C \times D
-$$
+
+$$A \approx C \land B \approx D \implies A \times B \approx C \times D$$
 
 这是一个没有 caption 的定理.
 
@@ -130,19 +124,17 @@ $$
 <div id="exm-rtimesn" class="theorem example">
 
 <span class="theorem-title">**例 1**</span> 证明
-$$
-\mathbb R \times \mathbb N \approx \mathbb N \times \mathbb R \approx \mathbb R
-$$
+
+$$\mathbb R \times \mathbb N \approx \mathbb N \times \mathbb R \approx \mathbb R$$
 
 </div>
 
 <div class="proof">
 
 <span class="proof-title">*证明*. </span>利用 <a href="#thm-cartesian-preserve" class="quarto-xref">定理 1</a> 对 $\mathbb R \times 2$ 和 $\mathbb R \times \mathbb R$ 夹逼，立刻得到
-$$
-\mathbb R \approx \mathbb R \times 2 \preccurlyeq \mathbb R \times \mathbb N \preccurlyeq \mathbb R \times \mathbb R \approx \mathbb R
-\implies \mathbb R \times \mathbb N \approx \mathbb N \times \mathbb R \approx \mathbb R
-$$
+
+$$\mathbb R \approx \mathbb R \times 2 \preccurlyeq \mathbb R \times \mathbb N \preccurlyeq \mathbb R \times \mathbb R \approx \mathbb R
+\implies \mathbb R \times \mathbb N \approx \mathbb N \times \mathbb R \approx \mathbb R$$
 
 </div>
 
@@ -534,19 +526,19 @@ Quarto 具有 5 种 callout 类型：`note`，`warning`，`important`，`tip`，
 
 <div id="ref-eigenfaces" class="csl-entry">
 
-<span class="csl-left-margin">\[4\] </span><span class="csl-right-inline">M. Turk 和 A. Pentland, 《Eigenfaces for Recognition》, *Journal of Cognitive Neuroscience*, 卷 3, 期 1, 页 71–86.</span>
+<span class="csl-left-margin">\[4\] </span><span class="csl-right-inline">M. Turk 和 A. Pentland, 《Eigenfaces for Recognition》, *Journal of Cognitive Neuroscience*, 卷 3, 期 1, 页 71～86.</span>
 
 </div>
 
 <div id="ref-gabor" class="csl-entry">
 
-<span class="csl-left-margin">\[5\] </span><span class="csl-right-inline">C. Liu 和 H. Wechsler, 《A Gabor feature classifier for face recognition》, 收入 *Proceedings Eighth IEEE International Conference on Computer Vision. ICCV 2001*, IEEE, 2001, 页 270–275.</span>
+<span class="csl-left-margin">\[5\] </span><span class="csl-right-inline">C. Liu 和 H. Wechsler, 《A Gabor feature classifier for face recognition》, 收入 *Proceedings Eighth IEEE International Conference on Computer Vision. ICCV 2001*, IEEE, 2001, 页 270～275.</span>
 
 </div>
 
 <div id="ref-lbp" class="csl-entry">
 
-<span class="csl-left-margin">\[6\] </span><span class="csl-right-inline">T. Ahonen, A. Hadid, 和 M. Pietikäinen, 《Face recognition with local binary patterns》, 收入 *European conference on computer vision*, Springer, 2004, 页 469–481.</span>
+<span class="csl-left-margin">\[6\] </span><span class="csl-right-inline">T. Ahonen, A. Hadid, 和 M. Pietikäinen, 《Face recognition with local binary patterns》, 收入 *European conference on computer vision*, Springer, 2004, 页 469～481.</span>
 
 </div>
 

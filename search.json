@@ -260,7 +260,7 @@
     "href": "index.html#基础安装",
     "title": "README",
     "section": "2 基础安装",
-    "text": "2 基础安装\n\n下载并安装 quarto-cli．本仓库渲染使用 Quarto 版本为 1.8.27．\n\n（推荐）安装 VSCode IDE 并安装 Quarto 插件以获得高亮、预览计算结果等功能．\n\n创建新文章时使用 Github Template 以本仓库为模板建立新仓库．您也可以下载本仓库的压缩包或 clone 到本地．\n仓库根目录命令行执行 quarto render examples/helloworld.qmd --to=html 测试安装情况．\n\nPDF / Beamer 输出等可选项安装和使用方法参见后文 小节 5．另外，纯命令行的自动化 CI 流程可参见本仓库下的 Github Actions 配置文件．"
+    "text": "2 基础安装\n\n下载并安装 quarto-cli．本仓库渲染使用 Quarto 版本为 1.9.34．\n\n（推荐）安装 VSCode IDE 并安装 Quarto 插件以获得高亮、预览计算结果等功能．\n\n创建新文章时使用 Github Template 以本仓库为模板建立新仓库．您也可以下载本仓库的压缩包或 clone 到本地．\n仓库根目录命令行执行 quarto render examples/helloworld.qmd --to=html 测试安装情况．\n\nPDF / Beamer 输出等可选项安装和使用方法参见后文 小节 5．另外，纯命令行的自动化 CI 流程可参见本仓库下的 Github Actions 配置文件．"
   },
   {
     "objectID": "index.html#基础使用",

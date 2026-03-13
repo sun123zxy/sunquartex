@@ -136,9 +136,8 @@ Currification is heavily used in functional programming for its convenience, Lea
 
 You are no stranger to decurrification even if you are not a functional programmer:
 The *universal property of the tensor product of modules* says exactly the same:
-$$
-\operatorname{Hom}(M \otimes N, P) \cong \operatorname{Hom}(M, \operatorname{Hom}(N, P))
-$$
+
+$$\operatorname{Hom}(M \otimes N, P) \cong \operatorname{Hom}(M, \operatorname{Hom}(N, P))$$
 
 \[EXR\] currification
 

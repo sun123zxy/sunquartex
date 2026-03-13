@@ -38,7 +38,7 @@ Quarto 基础功能：
 
 # 基础安装
 
-- 下载并安装 [quarto-cli](https://quarto.org/)．本仓库渲染使用 Quarto 版本为 1.8.27．
+- 下载并安装 [quarto-cli](https://quarto.org/)．本仓库渲染使用 Quarto 版本为 1.9.34．
 
   - （推荐）安装 [VSCode](https://code.visualstudio.com/) IDE 并安装 [Quarto](https://marketplace.visualstudio.com/items?itemName=quarto.quarto) 插件以获得高亮、预览计算结果等功能．
 
@@ -209,21 +209,68 @@ plt.show()
 
 ### Markdown grid style tables
 
-|     |     |      |     |     |
-|-----|-----|------|-----|-----|
-| a   | be  | c    | d   | e   |
-| f   |     | ew   | a   | b   |
-| c   | d   | ewfe |     | e   |
-| f   | g   | h    | r   | e   |
+<table style="width:31%;">
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+</colgroup>
+<tbody>
+<tr>
+<td>a</td>
+<td rowspan="2">be</td>
+<td>c</td>
+<td>d</td>
+<td>e</td>
+</tr>
+<tr>
+<td>f</td>
+<td>ew</td>
+<td>a</td>
+<td>b</td>
+</tr>
+<tr>
+<td>c</td>
+<td>d</td>
+<td colspan="2">ewfe</td>
+<td>e</td>
+</tr>
+<tr>
+<td>f</td>
+<td>g</td>
+<td>h</td>
+<td>r</td>
+<td>e</td>
+</tr>
+</tbody>
+</table>
 
 ### RST-style list tables
 
 我们还支持 [RST-style list tables](https://github.com/pandoc-ext/list-table)．该格式可以比较方便地合并单元格．
 
-| row 1, column 1 |  row 1, column 2   | row 1, column 3 |
-|:---------------:|:------------------:|:---------------:|
-| row 2, column 1 |  row 2, column 2–3 |                 |
-| row 3, column 1 |  row 3, column 2   | row 3, column 3 |
+<table width="1,3,3">
+<thead>
+<tr>
+<th style="text-align: center;">row 1, column 1</th>
+<th style="text-align: center;">row 1, column 2</th>
+<th style="text-align: center;">row 1, column 3</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">row 2, column 1</td>
+<td colspan="2" style="text-align: center;"> row 2, column 2–3</td>
+</tr>
+<tr>
+<td style="text-align: center;">row 3, column 1</td>
+<td style="text-align: center;">row 3, column 2</td>
+<td style="text-align: center;">row 3, column 3</td>
+</tr>
+</tbody>
+</table>
 
 亦见 [`examples/timetable.qmd`](examples/timetable.qmd)．
 
@@ -397,12 +444,43 @@ plt.show()
 
 <div id="tbl-table-example">
 
-|     |     |      |     |     |
-|-----|-----|------|-----|-----|
-| a   | be  | c    | d   | e   |
-| f   |     | ew   | a   | b   |
-| c   | d   | ewfe |     | e   |
-| f   | g   | h    | r   | e   |
+<table style="width:31%;">
+<colgroup>
+<col style="width: 5%" />
+<col style="width: 6%" />
+<col style="width: 6%" />
+<col style="width: 5%" />
+<col style="width: 5%" />
+</colgroup>
+<tbody>
+<tr>
+<td>a</td>
+<td rowspan="2">be</td>
+<td>c</td>
+<td>d</td>
+<td>e</td>
+</tr>
+<tr>
+<td>f</td>
+<td>ew</td>
+<td>a</td>
+<td>b</td>
+</tr>
+<tr>
+<td>c</td>
+<td>d</td>
+<td colspan="2">ewfe</td>
+<td>e</td>
+</tr>
+<tr>
+<td>f</td>
+<td>g</td>
+<td>h</td>
+<td>r</td>
+<td>e</td>
+</tr>
+</tbody>
+</table>
 
 表 2: A Table
 

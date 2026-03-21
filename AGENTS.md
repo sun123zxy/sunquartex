@@ -1,0 +1,1 @@
+Quarto tends to output verbose information when rendering documents, which can be token-consuming. You should use `--quiet` option by default when you don't need to debug something.

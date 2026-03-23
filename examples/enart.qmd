@@ -65,6 +65,20 @@ $$
 Some Cardinality Results
 :::
 
+:::{.proof}
+
+## A proof with caption
+
+This is a proof with caption.
+:::
+
+:::{.remark}
+
+## A remark with caption
+
+This is a remark with caption.
+:::
+
 ## Code
 
 ```c++

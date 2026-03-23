@@ -59,6 +59,18 @@ Table 1: Some Cardinality Results
 
 </div>
 
+<div class="proof">
+
+<span class="proof-title">*Proof* (A proof with caption). </span>This is a proof with caption.
+
+</div>
+
+<div class="proof remark">
+
+<span class="proof-title">*Remark* (A remark with caption). </span>This is a remark with caption.
+
+</div>
+
 # Code
 
 ``` cpp

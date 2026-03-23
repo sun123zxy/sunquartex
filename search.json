@@ -26,7 +26,7 @@
     "href": "examples/enart.html#second",
     "title": "\\(\\mathrm{\\SunQuarTeX}\\) Example - enart",
     "section": "2 Second",
-    "text": "2 Second\n\n\n\n\n\n\n\n\n\n\n\n\\(L_i \\times C_j\\)\n\\(2\\)\n\\(\\mathbb N\\)\n\\(\\mathbb R\\)\n\n\n\\(2\\)\n\\(4\\)\n\\(\\mathbb N\\)\n\\(\\mathbb R\\)\n\n\n\\(\\mathbb N\\)\n\\(\\mathbb N\\)\n\\(\\mathbb N\\)\n?\n\n\n\\(\\mathbb R\\)\n\\(\\mathbb R\\)\n?\n\\(\\mathbb R\\)\n\n\n\n\n\n(a) Cartesian (unsolved)\n\n\n\n\n\n\n\n\n\n\n\n\\(L_i^{C_j}\\)\n\\(2\\)\n\\(\\mathbb N\\)\n\\(\\mathbb R\\)\n\n\n\\(2\\)\n\\(4\\)\n\\(\\mathbb R\\)\n\\(2^{\\mathbb R}\\)\n\n\n\\(\\mathbb N\\)\n\\(\\mathbb N\\)\n?\n?\n\n\n\\(\\mathbb R\\)\n\\(\\mathbb R\\)\n?\n?\n\n\n\n\n\n(b) Power (unsolved)\n\n\n\n\n\n\n\nTable 1: Some Cardinality Results",
+    "text": "2 Second\n\n\n\n\n\n\n\n\n\n\n\n\\(L_i \\times C_j\\)\n\\(2\\)\n\\(\\mathbb N\\)\n\\(\\mathbb R\\)\n\n\n\\(2\\)\n\\(4\\)\n\\(\\mathbb N\\)\n\\(\\mathbb R\\)\n\n\n\\(\\mathbb N\\)\n\\(\\mathbb N\\)\n\\(\\mathbb N\\)\n?\n\n\n\\(\\mathbb R\\)\n\\(\\mathbb R\\)\n?\n\\(\\mathbb R\\)\n\n\n\n\n\n(a) Cartesian (unsolved)\n\n\n\n\n\n\n\n\n\n\n\n\\(L_i^{C_j}\\)\n\\(2\\)\n\\(\\mathbb N\\)\n\\(\\mathbb R\\)\n\n\n\\(2\\)\n\\(4\\)\n\\(\\mathbb R\\)\n\\(2^{\\mathbb R}\\)\n\n\n\\(\\mathbb N\\)\n\\(\\mathbb N\\)\n?\n?\n\n\n\\(\\mathbb R\\)\n\\(\\mathbb R\\)\n?\n?\n\n\n\n\n\n(b) Power (unsolved)\n\n\n\n\n\n\n\nTable 1: Some Cardinality Results\n\n\n\n\n\n\n\n\n\nNoteProof (A proof with caption)\n\n\n\n\n\n\nProof (A proof with caption). This is a proof with caption.\n\n\n\n\n\n\n\n\n\n\nTipRemark (A remark with caption)\n\n\n\n\n\n\nRemark (A remark with caption). This is a remark with caption.",
     "crumbs": [
       "Examples",
       "\\SunQuarTeX Example - enart"

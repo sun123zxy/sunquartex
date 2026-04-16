@@ -1,4 +1,4 @@
-# SunQuarTeX Example - Jupyter Notebook
+# Jupyter Notebook
 sun123zxy
 2023-02-14
 

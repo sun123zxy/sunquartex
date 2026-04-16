@@ -1,6 +1,6 @@
 ---
-title: \SunQuarTeX Example - enpre
-subtitle: Subtitle Here
+title: Presentation Example (English)
+subtitle: \SunQuarTeX Examples
 author: sun123zxy
 institute: \SunQuarTeX
 date: 2024/02/22

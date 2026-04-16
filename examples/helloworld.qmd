@@ -1,6 +1,6 @@
 ---
 title: 你好，\SunQuarTeX
-subtitle: 这是副标题
+subtitle: \SunQuarTeX Examples
 date: 2025/08/10
 author: sun123zxy
 lang: zh

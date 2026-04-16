@@ -1,9 +1,9 @@
 ---
-title: \SunQuarTeX Example - Custom Extra Package
-subtitle: $\dv{f}{x}$ also available in title
+title: Custom Extra Package
+subtitle: \SunQuarTeX Examples
 author: sun123zxy
 date: 2023/09/21
-abstract: This is an abstract.
+abstract: This is an abstract. $\dv{f}{x}$ is available in the abstract.
 bibliography: bibliography.bib
 lang: en
 

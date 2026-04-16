@@ -1,6 +1,6 @@
 ---
-title: \SunQuarTeX Example - cnart
-subtitle: 这是副标题
+title: 中文学术写作示例
+subtitle: \SunQuarTeX Examples
 author: 
   - sun123zxy
   - Luna

@@ -1,5 +1,6 @@
 ---
-title: "Curriculum Vitae"
+title: Curriculum Vitae
+subtitle: \SunQuarTeX Examples
 format:
   html: default
   pdf:

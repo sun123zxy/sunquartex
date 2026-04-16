@@ -1,4 +1,4 @@
-# SunQuarTeX Example - Lean Include
+# Lean Include
 
 
 ``` lean

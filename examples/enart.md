@@ -1,4 +1,4 @@
-# SunQuarTeX Example - enart
+# Article Example (English)
 sun123zxy
 2023-08-10
 

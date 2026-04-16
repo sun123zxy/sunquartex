@@ -1,4 +1,4 @@
-# SunQuarTeX Example - cnart
+# 中文学术写作示例
 sun123zxy, Luna
 2022-12-07
 

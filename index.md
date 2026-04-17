@@ -830,3 +830,7 @@ format:
   pdf:
     latex-auto-install: false
 ```
+
+### `tlmgr` 未找到？
+
+请检查环境变量 PATH 中是否包含了 TinyTeX 的 bin 目录．Windows 下 tlmgr 以 bat 的形式存在，命令行调用时可能需要添加后缀名 `tlmgr.bat command`．

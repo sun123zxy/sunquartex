@@ -29,6 +29,7 @@ Quarto 基础功能：
 
 额外支持：
 
+- 更好的中文 LaTeX 样式：适配 Quarto 的 CTeX 模板
 - TikZ / [tikz-cd](https://ctan.org/pkg/tikz-cd) / [quiver](https://q.uiver.app/) 图表绘制
 - Lean 4 代码高亮、自动源码导入转换 Markdown
 - RST-style list tables

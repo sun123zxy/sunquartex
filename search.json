@@ -115,7 +115,7 @@
     "href": "examples/cnart.html#文章结构测试",
     "title": "中文学术写作示例",
     "section": "2 文章结构测试 \\(\\mathrm{\\SunQuarTeX}\\)",
-    "text": "2 文章结构测试 \\(\\mathrm{\\SunQuarTeX}\\)\n这一节测试文章结构．\n\n2.1 文章分 \\(\\mathrm{\\SunQuarTeX}\\) 节\n非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．\n\n文章分分 \\(\\mathrm{\\SunQuarTeX}\\) 节\nQuarto 支持交叉引用．比如这一节的标题就已经被打上了标签．\n\n分分分 \\(\\mathrm{\\SunQuarTeX}\\) 节\n本节中我们测试交叉引用 小节 2.1.1．\n\n分分分分 \\(\\mathrm{\\SunQuarTeX}\\) 节\n这是最小的 \\(\\mathrm{\\SunQuarTeX}\\) 一级了．",
+    "text": "2 文章结构测试 \\(\\mathrm{\\SunQuarTeX}\\)\n这一节测试文章结构．\n\n2.1 文章分 \\(\\mathrm{\\SunQuarTeX}\\) 节\n非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常非常长的句子．\n\n文章分分 \\(\\mathrm{\\SunQuarTeX}\\) 节\nQuarto 支持交叉引用．比如这一节的标题就已经被打上了标签．\n\n分分分 \\(\\mathrm{\\SunQuarTeX}\\) 节\n本节中我们测试交叉引用 小节 2.1.1．测试跨页 qmd 链接和跨页 html 链接．\n\n分分分分 \\(\\mathrm{\\SunQuarTeX}\\) 节\n这是最小的 \\(\\mathrm{\\SunQuarTeX}\\) 一级了．",
     "crumbs": [
       "Examples",
       "中文学术写作示例"

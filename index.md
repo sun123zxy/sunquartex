@@ -272,7 +272,7 @@ plt.show()
 </tbody>
 </table>
 
-亦见 [`examples/timetable.qmd`](examples/timetable.qmd)．
+亦见 [`examples/timetable.qmd`](https://sun123zxy.github.io/sunquartex/examples/timetable.html)．
 
 ### Computation based tables
 
@@ -725,7 +725,7 @@ format:
         \usepackage{physics}
 ```
 
-亦见 [`examples/extra.qmd`](examples/extra.qmd)．暂时不支持其它格式下的宏包导入．
+亦见 [`examples/extra.qmd`](https://sun123zxy.github.io/sunquartex/examples/extra.html)．暂时不支持其它格式下的宏包导入．
 
 ## 我要自定义 DOCX / PPTX 样式！
 

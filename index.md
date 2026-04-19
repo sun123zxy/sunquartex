@@ -261,18 +261,17 @@ plt.show()
 </thead>
 <tbody>
 <tr>
-<td style="text-align: center;">row 2, column 1</td>
+<td rowspan="2" style="text-align: center;"> row 2–3, column 1</td>
 <td colspan="2" style="text-align: center;"> row 2, column 2–3</td>
 </tr>
 <tr>
-<td style="text-align: center;">row 3, column 1</td>
 <td style="text-align: center;">row 3, column 2</td>
 <td style="text-align: center;">row 3, column 3</td>
 </tr>
 </tbody>
 </table>
 
-亦见 [`examples/timetable.qmd`](https://sun123zxy.github.io/sunquartex/examples/timetable.html)．
+注意表头部分（第一行）不可 `rowspan` 合并．亦见 [`examples/timetable.qmd`](https://sun123zxy.github.io/sunquartex/examples/timetable.html)．
 
 ### Computation based tables
 

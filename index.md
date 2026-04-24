@@ -47,7 +47,7 @@ Quarto 基础功能：
 
 - 仓库根目录命令行执行 `quarto render examples/helloworld.qmd --to=html` 测试安装情况．
 
-PDF / Beamer 输出等可选项安装和使用方法参见后文 <a href="#sec-optional" class="quarto-xref">小节 1.5</a>．另外，纯命令行的自动化 CI 流程可参见本仓库下的 Github Actions 配置文件．
+PDF / Beamer 输出等可选项安装和使用方法参见后文 <a href="#sec-optional" class="quarto-xref">小节 0.5</a>．另外，纯命令行的自动化 CI 流程可参见本仓库下的 Github Actions 配置文件．
 
 # 基础使用
 
@@ -639,7 +639,15 @@ plt.show()
 
 ## 输出为整本书（Book）
 
-实验性支持 PDF / DOCX 书籍打包．请调整 `_quarto-book.yml` 的配置并在 `quarto render` 时加入 `--profile=book` 选项渲染．
+我们支持 HTML / PDF / DOCX 书籍打包．请阅读并调整 `_quarto-book.yml` 的配置．包括：
+
+- 书名、作者、日期、要引入的章节等
+- `site-url`：如果您希望非 HTML 格式下的不在书内的相对链接被解析到相对指定网站根目录
+- 其它渲染选项．注意书籍渲染的逻辑是将各章节直接拼接到 `chapters` 列表中首个文件处渲染．我们建议您确保此处文档头包含正确的 `lang`、合并好的 `bibliography` 和输出格式选项．
+
+图片、书内引用会被正确处理，但超链接需要额外小心：请参考 [`examples/cnart.qmd`](https://sun123zxy.github.io/sunquartex/examples/cnart.html) 中相关部分（**?@sec-link-test**）的写法处理．
+
+渲染时，请使用 `quarto render --profile=book`．
 
 # 样式自定义
 

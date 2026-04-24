@@ -39,7 +39,7 @@ Quarto 基础功能：
 
 # 基础安装
 
-- 下载并安装 [quarto-cli](https://quarto.org/)．本仓库渲染使用 Quarto 版本为 1.9.34．
+- 下载并安装 [quarto-cli](https://quarto.org/)．本仓库渲染使用 Quarto 版本为 1.9.37．
 
   - （推荐）安装 [VSCode](https://code.visualstudio.com/) IDE 并安装 [Quarto](https://marketplace.visualstudio.com/items?itemName=quarto.quarto) 插件以获得高亮、预览计算结果等功能．
 

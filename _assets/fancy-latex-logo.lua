@@ -1,5 +1,10 @@
 -- Insert custom LaTeX commands into the document header
-function Meta(meta)
+local stats = {
+  meta_fancify_status = "not-applied",
+  inline_fancified_count = 0,
+}
+
+local function Meta(meta)
   if FORMAT == 'html' then
     local header_includes = meta['header-includes']
     if not header_includes then
@@ -17,10 +22,12 @@ MathJax = {
 };
 </script>]]))
     meta['header-includes'] = header_includes
-    quarto.log.output('LaTeX Fancified (-> ' .. FORMAT .. '): Added \\SunQuarTeX macro to header')
+    stats.meta_fancify_status = 'applied'
   elseif FORMAT == 'latex' or FORMAT == 'pdf' or FORMAT == 'beamer' then
     meta['sunquartex-logo'] = pandoc.RawBlock('tex', [[\newcommand{\SunQuarTeX}{\(\mathrm{\mathbf S \;\!\! {\scriptstyle \mathbf U \;\!\! \mathbb N} \mathbb Q \;\!\! {\scriptstyle \mathbf U \;\!\! \;\!\! \mathbf A \;\!\! \mathbb R} \;\!\! \;\!\! \text{\bfseries \TeX}}\)}]])
-    quarto.log.output('LaTeX Fancified (-> ' .. FORMAT .. '): Added \\SunQuarTeX macro to header')
+    stats.meta_fancify_status = 'applied'
+  else
+    stats.meta_fancify_status = 'skipped'
   end
   
   return meta
@@ -30,7 +37,7 @@ end
 -- In HTML output, use MathJax to render the LaTeX command. \mathrm mimics the text style.
 -- In LaTeX / PDF / Beamer output, use the raw LaTeX command
 -- In other outputs, just use the plain text
-function default_config(command)
+local function default_config(command)
   return {
     html = pandoc.Math('InlineMath', '\\mathrm{\\' .. command .. '}'),
     latex = pandoc.RawInline('tex', '\\' .. command .. '{}'),
@@ -49,11 +56,7 @@ local config = {
   ["\\SunQuarTeX"] = default_config("SunQuarTeX"),
 }
 
-function Pandoc(doc)
-  return doc
-end
-
-function RawInline(el)
+local function RawInline(el)
   
   local leading = el.text:match("^(%s*)")
   local trailing = el.text:match("(%s*)$")
@@ -66,14 +69,28 @@ function RawInline(el)
   if not s then s = replacement["others"] end
   if not s then return nil end
 
-  output = pandoc.List()
+  stats.inline_fancified_count = stats.inline_fancified_count + 1
+
+  local output = pandoc.List()
   
   if leading ~= "" then output:insert(pandoc.Space()) end
   output:insert(s)
   if trailing ~= "" then output:insert(pandoc.Space()) end
   
-  quarto.log.output('LaTeX Fancified (-> ' .. FORMAT .. '): ')
-  quarto.log.output('  ' .. tostring(el) .. ' -> ' .. tostring(output))
-
   return output
 end
+
+local function Summary(doc)
+  quarto.log.output(string.format(
+    "fancy-latex-logo summary: format=%s; meta fancifier %s; %d inlines fancified",
+    FORMAT,
+    stats.meta_fancify_status,
+    stats.inline_fancified_count
+  ))
+  return doc
+end
+
+return {
+  { Meta = Meta, RawInline = RawInline },
+  { Pandoc = Summary },
+}

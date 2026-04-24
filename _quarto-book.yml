@@ -4,7 +4,8 @@ project:
 book:
   title: \SunQuarTeX Example - Book 
   author: sun123zxy
-  date: 2025/11/29
+  date: 2026/04/24
+  date-format: "[April, 2026]"
   chapters:
     - index.qmd # book's meta information follows here
     - part: 文章

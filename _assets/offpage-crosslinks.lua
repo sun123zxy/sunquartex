@@ -95,9 +95,9 @@ local function is_rewriteable_page_link(target)
   if target:match('^#') then return false end
   if target:match('^//') then return false end
   if target:match('^%a[%a%d+%-%.]*:') then return false end
-  if target:match('%.html[#?]') or target:match('%.html$') then return true end
-  if target:match('%.qmd[#?]') or target:match('%.qmd$') then return true end
-  return false
+  -- if target:match('%.html[#?]') or target:match('%.html$') then return true end
+  -- if target:match('%.qmd[#?]') or target:match('%.qmd$') then return true end
+  return true
 end
 
 --- Rewrite a relative page link target to an absolute URL.

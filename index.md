@@ -57,7 +57,7 @@ PDF / Beamer 输出等可选项安装和使用方法参见后文 <a href="#sec-o
 
 - 使用 `--to` 参数指定输出类型，包括 `html`, `pdf`， `beamer`, `docx`, `gfm`．如果已经在文档头中 `format` 选项下列明输出格式，也可不在命令行中指定该选项．
 
-示例文件请在 [`examples/`](examples/) 目录下查看．其中或包含可选支持内容，请安装相应依赖或删除对应内容后渲染．
+示例文件请在 [`examples/`](https://sun123zxy.github.io/sunquartex/examples/) 目录下查看．其中或包含可选支持内容，请安装相应依赖或删除对应内容后渲染．
 
 ## 写作
 
@@ -187,7 +187,7 @@ plt.show()
 
 对于计算密集的文稿，您可能希望直接编写 `.ipynb` 文件固定执行结果．Quarto 也支持直接渲染 `.ipynb` 文件，其中的 Markdown 块内仍可使用 Quarto 特性．
 
-参见 [示例文件](examples/jupyter.ipynb)．建议您阅读 [Quarto 的 Jupyter Lab 使用介绍](https://quarto.org/docs/tools/jupyter-lab.html)．
+参见 [示例文件](https://sun123zxy.github.io/sunquartex/examples/jupyter.ipynb)．建议您阅读 [Quarto 的 Jupyter Lab 使用介绍](https://quarto.org/docs/tools/jupyter-lab.html)．
 
 <div class="proof remark">
 
@@ -498,7 +498,7 @@ plt.show()
 
 ## TikZ / TikZ-cd / Quiver 交换图
 
-该功能由 [`_assets/tikz.lua`](_assets/tikz.lua) 实现．
+该功能由 [`_assets/tikz.lua`](https://sun123zxy.github.io/sunquartex/_assets/tikz.lua) 实现．
 
 ### 安装
 
@@ -603,9 +603,9 @@ plt.show()
 
 ## Lean 代码高亮与带注释源码导入
 
-[`assets/lean.xml`](assets/lean.xml) 用于 Pandoc 的 Lean 代码高亮．直接使用 `lean` 作为代码块的语言标记即可．
+[`assets/lean.xml`](https://sun123zxy.github.io/sunquartex/assets/lean.xml) 用于 Pandoc 的 Lean 代码高亮．直接使用 `lean` 作为代码块的语言标记即可．
 
-[`_assets/lean-include.lua`](_assets/lean-include.lua) shortcode 用于直接将带有注释的 Lean 代码导入转换为 Markdown．使用如下格式即可导入：
+[`_assets/lean-include.lua`](https://sun123zxy.github.io/sunquartex/_assets/lean-include.lua) shortcode 用于直接将带有注释的 Lean 代码导入转换为 Markdown．使用如下格式即可导入：
 
 ``` qmd
 {{< lean-include path/to/your_file.lean >}}

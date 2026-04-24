@@ -1,1 +1,2 @@
-Quarto tends to output verbose information when rendering documents, which can be token-consuming. You should use `--quiet` option by default when you don't need to debug something.
+- Quarto tends to output verbose information when rendering documents, which can be token-consuming. You should use `--quiet` option by default when you don't need to debug something.
+- We use `uv` for Python environment, make sure activating it before running quarto commands, or `uv run quarto ...`.

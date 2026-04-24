@@ -6,11 +6,12 @@ book:
   author: sun123zxy
   date: 2025/11/29
   chapters:
-    - index.qmd
+    - index.qmd # book's meta information follows here
     - part: 文章
       chapters:
         - examples/cnart.qmd
         - examples/enart.qmd
+  site-url: https://sun123zxy.github.io/sunquartex/
 
 bibliography: examples/bibliography.bib
 

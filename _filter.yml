@@ -2,7 +2,8 @@
 filters:
   - _assets/tikz.lua
   - _assets/fancy-latex-logo.lua
-  - _assets/offpage-crosslinks.lua
+  - at: post-quarto
+    path: _assets/offpage-crosslinks.lua
 
 shortcodes:
   - _assets/lean-include.lua

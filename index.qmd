@@ -13,6 +13,6 @@ format:
   gfm: default
 ---
 
-# README
+# README {.unnumbered}
 
 {{< include README.md >}}

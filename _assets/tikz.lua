@@ -1,6 +1,7 @@
 -- modified from a Pandoc filter example
 
 local system = require 'pandoc.system'
+local processed_tikz_count = 0
 
 -- if use dvi/xdv output
 -- \documentclass[tikz,dvisvgm]{standalone}
@@ -13,14 +14,15 @@ local function read_file(file)
   return content
 end
 
-local tikz_doc_template = read_file(os.getenv("QUARTO_PROJECT_DIR")..'/_assets/suntemp-tikz.tex')
+local tikz_doc_template = read_file(
+  pandoc.path.join({ quarto.project.directory, '_assets', 'suntemp-tikz.tex' })
+)
 
 local function execute_command(command, log_file)
-  print("executing: " .. command)
-  local status = os.execute(command .. ' > ' .. log_file)
+  local status = os.execute(command .. ' > ' .. log_file .. ' 2>&1')
   if status ~= true then
     local log = read_file(log_file)
-    return false, log
+    return false, command, log
   end
   return true
 end
@@ -38,14 +40,16 @@ local function tikz2image(src, filetype)
       f:write(tikz_doc_template:format(src))
       f:close()
       
-      local result, log = execute_command('xelatex mytikz.tex', 'xelatex_output.log')
+      local result, command, log = execute_command('xelatex mytikz.tex', 'xelatex_output.log')
       if not result then
+        print('Command failed: ' .. command)
         print(log)
         error("failed to compile TeX file to PDF. Logs printed above.")
       end
 
-      result, log = execute_command('dvisvgm mytikz.pdf --pdf --zoom=1.5 --font-format=woff2 --no-styles', 'dvisvgm_output.log')
+      result, command, log = execute_command('dvisvgm mytikz.pdf --pdf --zoom=1.5 --font-format=woff2 --no-styles', 'dvisvgm_output.log')
       if not result then
+        print('Command failed: ' .. command)
         print(log)
         error("failed to convert PDF file to SVG. Logs printed above.")
       end
@@ -54,12 +58,13 @@ local function tikz2image(src, filetype)
       if not str then
         error("failed to open converted SVG file")
       end
+      processed_tikz_count = processed_tikz_count + 1
       return str
     end)
   end)
 end
 
-function CodeBlock(el)
+local function code_block_filter(el)
   local type = el.classes[1]
   if type == "{tikz}" then
     if quarto.doc.is_format("pdf") or quarto.doc.is_format("beamer") then
@@ -73,3 +78,15 @@ function CodeBlock(el)
     end
   end
 end
+
+local function pandoc_filter(doc)
+  if processed_tikz_count > 0 then
+    print('tikz: ' .. processed_tikz_count .. ' tikz images successfully processed.')
+  end
+  return doc
+end
+
+return {
+  { CodeBlock = code_block_filter },
+  { Pandoc = pandoc_filter }
+}

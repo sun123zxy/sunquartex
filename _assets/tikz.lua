@@ -13,7 +13,9 @@ local function read_file(file)
   return content
 end
 
-local tikz_doc_template = read_file(os.getenv("QUARTO_PROJECT_DIR")..'/_assets/suntemp-tikz.tex')
+local tikz_doc_template = read_file(
+  pandoc.path.join({ quarto.project.directory, '_assets', 'suntemp-tikz.tex' })
+)
 
 local function execute_command(command, log_file)
   print("executing: " .. command)

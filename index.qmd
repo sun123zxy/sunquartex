@@ -5,9 +5,7 @@ lang: zh
 number-sections: true
 
 format:
-  html:
-    include-in-header:
-      - file: examples/ai.html
+  html: default
   pdf: default
   docx: default
   gfm: default

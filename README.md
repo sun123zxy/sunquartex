@@ -581,7 +581,7 @@ format:
 
 请您活用 AI 工具降低学习门槛！您可以：
 
-- 在网页 Demo 和 AI 聊天提问！
+- 把 README 丢给 AI 提问．
 - 使用 VSCode 打开本仓库，使用自带的 Github Copilot，将 README 扔进对话框，提出您的具体需求并获得人话解答．
 
 #### 我想要 XXX 功能！/ 我要自己魔改！

@@ -30,20 +30,20 @@ Quarto 支持交叉引用．比如这一节的标题就已经被打上了标签�
 
 需要链接不在书内但在站点内的文档：使用站点绝对链接
 
-- [书内、站点绝对、index 链接](https://sun123zxy.github.io/sunquartex/.)
-- [书内、站点相对、qmd 链接](https://sun123zxy.github.io/sunquartex/examples/enart.html#exm-rtimesn)
-- [书内、站点相对、html 链接](https://sun123zxy.github.io/sunquartex/examples/enart.html#exm-rtimesn)
+- [书内、站点绝对、index 链接](https://sun123zxy.github.io/sunquartex/)
+- [书内、站点绝对、qmd 链接](https://sun123zxy.github.io/sunquartex/examples/enart.html#exm-rtimesn)
+- [书内、站点绝对、html 链接](https://sun123zxy.github.io/sunquartex/examples/enart.html#exm-rtimesn)
 
 需要链接在书内的文档：使用相对链接或者标签链接
 
-- [书内、文档相对、qmd 链接](https://sun123zxy.github.io/sunquartex//home/runner/work/sunquartex/sunquartex/examples/enart.html#exm-rtimesn)
-- [书内、文档相对、html 链接](https://sun123zxy.github.io/sunquartex//home/runner/work/sunquartex/sunquartex/examples/enart.html#exm-rtimesn)
+- [书内、文档相对、qmd 链接](https://sun123zxy.github.io/sunquartex/examples/enart.html#exm-rtimesn)
+- [书内、文档相对、html 链接](https://sun123zxy.github.io/sunquartex/examples/enart.html#exm-rtimesn)
 - 标签链接 <a href="#exm-rtimesn" class="quarto-xref">例 1</a>
 
-错误示范：对不在书内、在站点内的文档使用相对链接，非 HTML 格式 Quarto 无法正确处理：
+错误示范：对不在书内、在站点内的文档使用相对链接，渲染书籍时非 HTML 格式 Quarto 可能无法正确处理：
 
-- [书外、文档相对、qmd 链接](https://sun123zxy.github.io/sunquartex//home/runner/work/sunquartex/sunquartex/examples/helloworld.html)
-- [书外、文档相对、html 链接](https://sun123zxy.github.io/sunquartex//home/runner/work/sunquartex/sunquartex/examples/helloworld.html)
+- [书外、文档相对、qmd 链接](https://sun123zxy.github.io/sunquartex/examples/helloworld.html)
+- [书外、文档相对、html 链接](https://sun123zxy.github.io/sunquartex/examples/helloworld.html)
 
 # 图片、表格、列表测试
 

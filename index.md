@@ -815,6 +815,12 @@ Quarto 对标题层级的处理比较混乱——例如，Book 项目中 Quarto 
 
 如果您有触控笔，推荐使用 [VSCode Draw 插件](https://marketplace.visualstudio.com/items?itemName=hall.draw) 获得编辑器内的 SVG 草图绘制功能．
 
+### 关于相对链接的处理
+
+如您不使用 website 或 book 输出则无需担心此部分．
+
+目前 Quarto 对相对链接的处理没有考虑到为非 HTML 格式设置 base URL．我们目前使用 `_assets/offpage-crosslinks.lua` 作为 workaround，从而使得其它格式下的相对链接被解析到 `site-url` 选项指定的网站根目录．您可以在 `_filter.yml` 中调整启用该脚本的输出格式．注意脚本可能无法正确处理 symbolic link．
+
 ## 输出相关
 
 ### 写好的 Beamer 也想输出一份文稿版本的 PDF？

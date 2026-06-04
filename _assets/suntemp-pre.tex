@@ -56,19 +56,6 @@ $endif$
 
 % -- tikz --
 
-
-% workaround for spath3 incompatibility with latest l3kernel. See https://tex.stackexchange.com/questions/762952/l3kernel-latest-update-introduce-an-incompatibility-with-tikz-library-spath3
-\ExplSyntaxOn
-\msg_redirect_name:nnn { kernel } { variant-same-as-base } { info }
-\ExplSyntaxOff
-
-\usepackage{spath3}
-
-\ExplSyntaxOn
-\msg_redirect_name:nnn { kernel } { variant-same-as-base } { error }
-\ExplSyntaxOff
-% workaround end
-
 \usepackage{tikz}
 \usepackage{tikz-cd}
 \usepackage{quiver}

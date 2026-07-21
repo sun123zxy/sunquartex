@@ -5,9 +5,12 @@ author: sun123zxy
 institute: Sunderland Quarry of Tectosilicates
 shortinstitute: \SunQuarTeX
 date: 2023/08/21
-date-modified: 2024/02/22
+date-modified: 2026/07/21
 bibliography: bibliography.bib
 lang: zh
+
+titlegraphic: figure.png
+titlegraphicoptions: width=0.2\textwidth
 
 format:
   html: default
@@ -23,7 +26,7 @@ format:
 
 长长长**长长 long 长长**长长长长长*长长 long 长长*长长长长长长长长长长长长长长长长长长长长长长长长长长长句子．
 
-长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长段落．
+长长长 $e$ 长长长 $fge$ 长长长长长长长长长长长长长长长长长长长长长长长长长段落．
 
 ::::: {.columns}
 

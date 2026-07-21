@@ -1,0 +1,20 @@
+---
+title: QR Code Test
+
+format:
+  html: default
+  beamer: default
+---
+
+#### Test 1
+
+{{< qrcode https://blog.sun123zxy.top >}}
+
+#### Test 2
+
+:::{#fig-qrcode}
+
+{{< qrcode https://blog.sun123zxy.top >}}
+
+This is a QR code
+:::

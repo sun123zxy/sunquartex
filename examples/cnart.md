@@ -89,12 +89,14 @@ $a \leq b \land b \leq c \implies a \leq c$
 这一节我们测试数学相关内容．直接在源文件中写 raw LaTeX 就可声明公式所需的宏定义．由于 `\DeclareMathOperator` 只能在 LaTeX 的导言区使用，这里我们用 `\newcommand` + `\operatorname` 的方式替代．
 
 下面的公式使用了上面定义的 macro．
-
-$$\operatorname{ran}A := \{ y \mid (x,y) \in A \}$$
+$$
+\operatorname{ran}A := \{ y \mid (x,y) \in A \}
+$$
 
 两个集合 $A, B$ 的笛卡尔积定义为
-
-$$A \times B = \{\langle x,y \rangle \mid x \in A \land y \in B \}$$
+$$
+A \times B = \{\langle x,y \rangle \mid x \in A \land y \in B \}
+$$
 
 显然，笛卡尔积不满足交换律和结合律. 在势的视角下，它的表现如何呢？
 
@@ -102,18 +104,21 @@ $$A \times B = \{\langle x,y \rangle \mid x \in A \land y \in B \}$$
 
 <span class="theorem-title">**定理 1 (笛卡尔积的保势性)**</span> 这是一个有 caption 的定理.
 
-$$A \preccurlyeq C \land B \preccurlyeq D \implies A \times B \preccurlyeq C \times D$$
+$$
+A \preccurlyeq C \land B \preccurlyeq D \implies A \times B \preccurlyeq C \times D
+$$
 
 </div>
 
 <div class="proof">
 
 <span class="proof-title">*证明*. </span>建立单射
-
-$$\begin{aligned}
+$$
+\begin{aligned}
 \varphi: A \times B &\to C \times D \\
 \langle x,y \rangle &\mapsto \langle f(x), g(y) \rangle
-\end{aligned}$$
+\end{aligned}
+$$
 即可，其中 $f$ 和 $g$ 是由 $A \preccurlyeq C$ 和 $B \preccurlyeq D$ 确定的单射.
 
 </div>
@@ -133,8 +138,9 @@ $$\begin{aligned}
 <div id="cor-random" class="theorem corollary">
 
 <span class="theorem-title">**推论 1**</span> 等势意义下可用等势的集合替换参与笛卡尔积运算的集合，即
-
-$$A \approx C \land B \approx D \implies A \times B \approx C \times D$$
+$$
+A \approx C \land B \approx D \implies A \times B \approx C \times D
+$$
 
 这是一个没有 caption 的定理.
 
@@ -143,17 +149,19 @@ $$A \approx C \land B \approx D \implies A \times B \approx C \times D$$
 <div id="exm-rtimesn" class="theorem example">
 
 <span class="theorem-title">**例 1**</span> 证明
-
-$$\mathbb R \times \mathbb N \approx \mathbb N \times \mathbb R \approx \mathbb R$$
+$$
+\mathbb R \times \mathbb N \approx \mathbb N \times \mathbb R \approx \mathbb R
+$$
 
 </div>
 
 <div class="proof">
 
 <span class="proof-title">*证明*. </span>利用 <a href="#thm-cartesian-preserve" class="quarto-xref">定理 1</a> 对 $\mathbb R \times 2$ 和 $\mathbb R \times \mathbb R$ 夹逼，立刻得到
-
-$$\mathbb R \approx \mathbb R \times 2 \preccurlyeq \mathbb R \times \mathbb N \preccurlyeq \mathbb R \times \mathbb R \approx \mathbb R
-\implies \mathbb R \times \mathbb N \approx \mathbb N \times \mathbb R \approx \mathbb R$$
+$$
+\mathbb R \approx \mathbb R \times 2 \preccurlyeq \mathbb R \times \mathbb N \preccurlyeq \mathbb R \times \mathbb R \approx \mathbb R
+\implies \mathbb R \times \mathbb N \approx \mathbb N \times \mathbb R \approx \mathbb R
+$$
 
 </div>
 
@@ -523,7 +531,7 @@ Quarto 具有 5 种 callout 类型：`note`，`warning`，`important`，`tip`，
 
 人脸识别是以人面部特征作为识别个体身份的一种个体生物特征识别方法 \[1, p. 1\]．……人脸识别的研究最早可追溯到上世纪 60 年代，Bledsoe and Chan 研究了编程计算机识别人脸的方法\[2\]．随后，萌芽期的人脸识别技术经历多轮蜕变，在发展中逐渐完善．然而，人脸识别的主要难点在于不同个体的人脸结构并无大异，而同一个体的人脸在不同表情、年龄、妆饰、光照等干扰因素下又往往差异显著\[3\]，这要求人脸识别技术既要克服类内因素的干扰，同时又要加强类间差距的显著性，而早期人脸识别方法关注人脸几何特征，识别效果不尽人意．为此，以 Eigenfaces\[4\] 为代表的子空间学习识别方法和 Gabor\[5\]、LBP\[6\] 等局部特征分析的滤波器提取方法在各自领域都有所突破．2014 年，应用新兴的深度卷积神经网络技术，DeepFace\[7\] 横空出世，以 97.35% 的 LFW 基准数据集识别准确率重塑了人脸识别领域的研究格局．随后，人脸识别技术迎来爆发式增长，并逐渐走进人们的日常生活之中．……个体层面，要加强公众的权利意识，塑造个人的“数字理性”\[8\]．
 
-<div id="refs" class="references csl-bib-body" entry-spacing="0">
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0">
 
 <div id="ref-define" class="csl-entry">
 

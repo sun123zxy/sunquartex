@@ -39,7 +39,7 @@ Quarto 基础功能：
 
 # 基础安装
 
-- 下载并安装 [quarto-cli](https://quarto.org/)．本仓库渲染使用 Quarto 版本为 1.9.37．
+- 下载并安装 [quarto-cli](https://quarto.org/)．本仓库渲染使用 Quarto 版本为 1.10.18．
 
   - （推荐）安装 [VSCode](https://code.visualstudio.com/) IDE 并安装 [Quarto](https://marketplace.visualstudio.com/items?itemName=quarto.quarto) 插件以获得高亮、预览计算结果等功能．
 
@@ -618,6 +618,21 @@ plt.show()
 <span class="proof-title">*注记*. </span>目前 HTML 的目录导航定位存在问题．
 
 </div>
+
+## QR Code
+
+做 presentation 想分享网站？我们已经接入 [quarto-qrcode](https://github.com/jmbuhr/quarto-qrcode) 插件，使用语法
+
+``` qmd
+:::{#fig-qrcode}
+
+{{< qrcode https://blog.sun123zxy.top >}}
+
+This is a QR code
+:::
+```
+
+即可加入对应网址二维码，支持 HTML / PDF / Beamer．具体使用说明请参考原插件仓库．
 
 ## Github Actions + Github Pages 网站生成
 

@@ -11,17 +11,19 @@ SunQuarTeX is powered by Quarto and LaTeX.
 <div id="exm-rtimesn" class="theorem example">
 
 <span class="theorem-title">**Example 1**</span> Prove that
-
-$$\mathbb R \times \mathbb N \approx \mathbb N \times \mathbb R \approx \mathbb R$$
+$$
+\mathbb R \times \mathbb N \approx \mathbb N \times \mathbb R \approx \mathbb R
+$$
 
 </div>
 
 <div class="proof">
 
 <span class="proof-title">*Proof*. </span>Obvious as follows
-
-$$\mathbb R \approx \mathbb R \times 2 \preccurlyeq \mathbb R \times \mathbb N \preccurlyeq \mathbb R \times \mathbb R \approx \mathbb R
-\implies \mathbb R \times \mathbb N \approx \mathbb N \times \mathbb R \approx \mathbb R$$
+$$
+\mathbb R \approx \mathbb R \times 2 \preccurlyeq \mathbb R \times \mathbb N \preccurlyeq \mathbb R \times \mathbb R \approx \mathbb R
+\implies \mathbb R \times \mathbb N \approx \mathbb N \times \mathbb R \approx \mathbb R
+$$
 
 </div>
 
@@ -88,7 +90,7 @@ example : (∀ x, p x → r) → ((∃ x, p x) → r) := by
   exact h a hpa
 ```
 
-<div id="refs" class="references csl-bib-body" entry-spacing="0">
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0">
 
 <div id="ref-deepface" class="csl-entry">
 

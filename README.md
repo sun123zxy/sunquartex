@@ -453,7 +453,7 @@ TikZ 示例
 
 做 presentation 想分享网站？我们已经接入 [quarto-qrcode](https://github.com/jmbuhr/quarto-qrcode) 插件，使用语法
 
-```qmd
+```qmd {shortcodes=false}
 :::{#fig-qrcode}
 
 {{< qrcode https://blog.sun123zxy.top >}}

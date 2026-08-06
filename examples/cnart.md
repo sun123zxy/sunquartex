@@ -177,6 +177,14 @@ $$
 
 </div>
 
+<div id="rem-numbered" class="proof remark">
+
+<span class="proof-title">*注记 1*. </span>这是一个有标号注记．
+
+</div>
+
+这是对有标号注记的引用 <a href="#rem-numbered" class="quarto-xref">Remark 1</a>．
+
 # 数据可视化（Table, Figure & Diagram）
 
 Quarto 的另一大卖点．

@@ -190,6 +190,12 @@ $$
 这是一个注记．
 :::
 
+:::{#rem-numbered}
+这是一个有标号注记．
+:::
+
+这是对有标号注记的引用 [@rem-numbered]．
+
 ## 数据可视化（Table, Figure & Diagram）
 
 Quarto 的另一大卖点．

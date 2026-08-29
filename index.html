@@ -690,7 +690,7 @@ Write once, present everywhere!<br>基于 Quarto 的多格式输出中英文学�
 <section id="computation-based-tables" class="level4">
 <h4 class="anchored" data-anchor-id="computation-based-tables">Computation based tables</h4>
 <p>您也可以直接使用代码生成表格：</p>
-<div id="48623ea2" class="cell" data-execution_count="2">
+<div id="0d7fa64b" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>代码</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -1559,6 +1559,17 @@ This is a QR code
 <section id="tlmgr-未找到" class="level4">
 <h4 class="anchored" data-anchor-id="tlmgr-未找到"><code>tlmgr</code> 未找到？</h4>
 <p>请检查环境变量 PATH 中是否包含了 TinyTeX 的 bin 目录．Windows 下 tlmgr 以 bat 的形式存在，命令行调用时可能需要添加后缀名 <code>tlmgr.bat command</code>．</p>
+</section>
+<section id="网页端-github-action-时-tinytex-tikz-安装-渲染失败" class="level4">
+<h4 class="anchored" data-anchor-id="网页端-github-action-时-tinytex-tikz-安装-渲染失败">网页端 Github Action 时 TinyTeX / TikZ 安装 / 渲染失败？</h4>
+<ul>
+<li>有时网络不稳定，请检查报错信息并重试．</li>
+<li>如果你开启了选择性渲染（<code>project.render</code>），请检查 Github Actions 文件，确保 TikZ 预渲染使用的临时文件被加入到渲染列表中：</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">render</span><span class="kw">:</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> temp.qmd</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ...</span><span class="co"> # your target files</span></span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section>

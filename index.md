@@ -863,3 +863,15 @@ format:
 ### `tlmgr` 未找到？
 
 请检查环境变量 PATH 中是否包含了 TinyTeX 的 bin 目录．Windows 下 tlmgr 以 bat 的形式存在，命令行调用时可能需要添加后缀名 `tlmgr.bat command`．
+
+### 网页端 Github Action 时 TinyTeX / TikZ 安装 / 渲染失败？
+
+- 有时网络不稳定，请检查报错信息并重试．
+- 如果你开启了选择性渲染（`project.render`），请检查 Github Actions 文件，确保 TikZ 预渲染使用的临时文件被加入到渲染列表中：
+
+``` yaml
+project:
+  render:
+    - temp.qmd
+    - ... # your target files
+```

@@ -56,39 +56,6 @@
     "text": "7 Q&A\n\n7.1 一般性的\n\n示例文件编译不了！\n示例文件包含了部分可选支持内容，如未安装相应依赖，请删除对应内容后渲染．\n\n\n我不懂 Computer Science，你能不能讲人话！\n请您活用 AI 工具降低学习门槛！您可以：\n\n把 README 丢给 AI 提问．\n使用 VSCode 打开本仓库，使用自带的 Github Copilot，将 README 扔进对话框，提出您的具体需求并获得人话解答．\n\n\n\n我想要 XXX 功能！/ 我要自己魔改！\n仓库主要为自用，如能为您的生活带来便利欢迎取用．想要的功能欢迎移步 Issue 或 Discussion 提出（不保证会做 :p）\nIssue 中跟踪了一些计划中的功能和已知问题，Q&A 没有涉及的内容可移步参考．\n我们提供的 YAML 文档头样式只覆盖了了极小一部分功能．更深入的魔改需要您\n\n进一步学习底层软件 Quarto，魔改本仓库的默认配置\n进一步学习 Pandoc，编写 LaTeX 模板 / Lua filter\n\n有能力欢迎 Fork 和 Pull Request．\n\n\n仓库太重，我想要 standalone 的单文件渲染！\n请移步 quarto-render，一个独立开发的小型命令行程序使得单文件 Quarto 渲染更加方便．\n\n\n\n7.2 写作相关\n\n标题应该用多少个 #？\n一级标题被视为整个文档的大标题（即 Book 中的 chapter title），文档头标题和一级标题不应同时出现．\n二级标题对应 section，三级标题对应 subsection．Beamer 中四级标题对应 slide．在 Pandoc 中，这对应着\nshift-heading-level-by: -1\nslide-level: 4\nQuarto 对标题层级的处理比较混乱——例如，Book 项目中 Quarto 似乎会额外对标题层级进行 -1 处理；shift-heading-level-by 会让小节编号系统无法正常工作．我们做了很多 ad-hoc 的调整（例如 _assets/promote-h1.lua 将正文一级标题强制提升至 metadata 标题），因此不建议您再修改这些设置．\n参见：\n\n相关讨论\nPandoc --shift-heading-level-by 文档\nPandoc slide-level 文档\nQuarto Issue #12048\n\n\n\n分页符\n{{&lt; pagebreak &gt;}}．见官方文档．\n\n\nYAML 文档头里的字符串到底打不打引号？\n可打可不打．打了的话需要注意特殊字符的转义问题（如 \\）．\n\n\n用 $ 包裹行内公式的正确格式\n示例：我们有 $(a + b)^2 = a^2 + 2ab + b^2$．证毕．\n$ 内侧应紧接着公式中的非空格字符，外侧与中英文字符之间应有空格，与标点符号、连字符之间不留空格．参考 Pandoc 文档．\n\n\n怎么打出 \\(\\mathrm{\\TeX}\\), \\(\\mathrm{\\LaTeX}\\), \\(\\mathrm{\\SunQuarTeX}\\)？\n直接写 \\TeX, \\LaTeX, \\SunQuarTeX，不必置于数学环境中．我们编写了 _assets/fancy-latex-logo.lua 处理他们在不同格式下的渲染．\n\n\n方便的 SVG 草图绘制？\n如果您有触控笔，推荐使用 VSCode Draw 插件 获得编辑器内的 SVG 草图绘制功能．\n\n\n关于相对链接的处理\n如您不使用 website 或 book 输出则无需担心此部分．\n目前 Quarto 对相对链接的处理没有考虑到为非 HTML 格式设置 base URL．我们目前使用 _assets/offpage-crosslinks.lua 作为 workaround，从而使得其它格式下的相对链接被解析到 site-url 选项指定的网站根目录．您可以在 _filter.yml 中调整启用该脚本的输出格式．注意脚本可能无法正确处理 symbolic link．\n\n\n\n7.3 输出相关\n\n写好的 Beamer 也想输出一份文稿版本的 PDF？\n理论上与文档格式兼容，可直接设置 --to=pdf 输出文稿版本．\n\n\n我要输出到知乎！\n您可以使用 GFM 格式输出，输出内容可复制至 markdown.com.cn 的在线编辑器转知乎格式．\n\n\nPDF 输出，LaTeX 渲染了十遍！\n一般是文档的交叉引用有误所致，请检查文档头的 bibliography 选项和正文中的引用情况．\n\n\n每次渲染都要 updating tlmgr 烦死了！\n默认情况下，Quarto 会在每次渲染 LaTeX 时使用 TinyTeX 自动检测和下载所需宏包．但如果 Quarto 生成的 LaTeX 源文件有误，也会触发此过程．如果您频繁遇到，可以选择关闭 LaTeX 渲染的自动下载：\nformat:\n  pdf:\n    latex-auto-install: false\n\n\ntlmgr 未找到？\n请检查环境变量 PATH 中是否包含了 TinyTeX 的 bin 目录．Windows 下 tlmgr 以 bat 的形式存在，命令行调用时可能需要添加后缀名 tlmgr.bat command．"
   },
   {
-    "objectID": "examples/extra.html",
-    "href": "examples/extra.html",
-    "title": "Custom Extra Package",
-    "section": "",
-    "text": "This is physics: \\(\\dv{f}{x}\\).",
-    "crumbs": [
-      "Examples",
-      "Custom Extra Package"
-    ]
-  },
-  {
-    "objectID": "examples/extra.html#first",
-    "href": "examples/extra.html#first",
-    "title": "Custom Extra Package",
-    "section": "",
-    "text": "This is physics: \\(\\dv{f}{x}\\).",
-    "crumbs": [
-      "Examples",
-      "Custom Extra Package"
-    ]
-  },
-  {
-    "objectID": "examples/helloworld.html",
-    "href": "examples/helloworld.html",
-    "title": "你好，\\(\\mathrm{\\SunQuarTeX}\\)",
-    "section": "",
-    "text": "你好，\\(\\mathrm{\\SunQuarTeX}\\)!",
-    "crumbs": [
-      "Examples",
-      "你好，\\SunQuarTeX"
-    ]
-  },
-  {
     "objectID": "examples/resume.html",
     "href": "examples/resume.html",
     "title": "Curriculum Vitae",
@@ -155,39 +122,6 @@
     ]
   },
   {
-    "objectID": "examples/timetable.html",
-    "href": "examples/timetable.html",
-    "title": "课表",
-    "section": "",
-    "text": "时间\n星期一\n星期二\n星期三\n星期四\n星期五\n\n\n\n\n08:00–09:35\n\n\n\n\n\n\n\n09:55–12:20\n群与代数的表示\nAlice MacDonald\n1–12周\n3–4节\n寺子屋I502\n代数拓扑\n八云蓝\n1–12周\n3–4节\n寺子屋F302\n\n代数拓扑\n八云蓝\n1–12周\n3–4节\n寺子屋F302\n\n\n\n13:20–14:55\n量子信息学基础\n宇佐见莲子\n1–12周\n6–7节\n京都大学3-8-1\n微分几何\n八云蓝\n1–12周\n6–7节\n寺子屋A204\n量子信息学基础\n宇佐见莲子\n1–12周\n6–7节\n京都大学3-8-1\n微分几何\n八云蓝\n1–12周\n6节–7节\n寺子屋A204\n群与代数的表示\nAlice MacDonald\n1–12周\n6–7节\n寺子屋I502\n\n\n15:15–17:40\n\n信息论与密码\n帕秋莉\n1–12周\n8–9节\n图书馆F604\n\n信息论与密码\n帕秋莉\n1–12周\n8–9节\n图书馆F604\n\n\n\n18:30–20:55\n\n\nLean 4 形式化教学\nsun123zxy\n1–12周\n11–12节\n香霖堂E909",
-    "crumbs": [
-      "Examples",
-      "课表"
-    ]
-  },
-  {
-    "objectID": "examples/jupyter.html",
-    "href": "examples/jupyter.html",
-    "title": "Jupyter Notebook",
-    "section": "",
-    "text": "This is a sample Jupyter Notebook using \\(\\mathrm{\\SunQuarTeX}\\).\nBelow is an example of a Python code cell:\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nfig.patch.set_alpha(0)\nax.patch.set_alpha(0)\n\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\n\n\n\n\nFigure 1: A line plot on a polar axis\n\n\n\n\n\nQuarto’s specific Markdown feature still works in Jupyter Notebook. For example:\n\n\n\n\n\n\n\nTheorem 1 (This) is a theorem.",
-    "crumbs": [
-      "Examples",
-      "Jupyter Notebook"
-    ]
-  },
-  {
-    "objectID": "examples/jupyter.html#title",
-    "href": "examples/jupyter.html#title",
-    "title": "Jupyter Notebook",
-    "section": "",
-    "text": "This is a sample Jupyter Notebook using \\(\\mathrm{\\SunQuarTeX}\\).\nBelow is an example of a Python code cell:\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nfig.patch.set_alpha(0)\nax.patch.set_alpha(0)\n\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\n\n\n\n\nFigure 1: A line plot on a polar axis\n\n\n\n\n\nQuarto’s specific Markdown feature still works in Jupyter Notebook. For example:\n\n\n\n\n\n\n\nTheorem 1 (This) is a theorem.",
-    "crumbs": [
-      "Examples",
-      "Jupyter Notebook"
-    ]
-  },
-  {
     "objectID": "examples/enpre.html",
     "href": "examples/enpre.html",
     "title": "Presentation Example (English)",
@@ -221,58 +155,91 @@
     ]
   },
   {
-    "objectID": "examples/lean.html",
-    "href": "examples/lean.html",
-    "title": "Lean Include",
+    "objectID": "examples/enart.html",
+    "href": "examples/enart.html",
+    "title": "Article Example (English)",
     "section": "",
-    "text": "import Mathlib",
+    "text": "This is a reference [1, p. 1].\n\\(\\mathrm{\\SunQuarTeX}\\) is powered by Quarto and \\(\\mathrm{\\LaTeX}\\).\n\n\n\n\n\n\n\nExample 1 Prove that \\[\n\\mathbb R \\times \\mathbb N \\approx \\mathbb N \\times \\mathbb R \\approx \\mathbb R\n\\]\n\n\n\n\n\n\n\n\n\n\nNoteProof\n\n\n\n\n\n\nProof. Obvious as follows \\[\n\\mathbb R \\approx \\mathbb R \\times 2 \\preccurlyeq \\mathbb R \\times \\mathbb N \\preccurlyeq \\mathbb R \\times \\mathbb R \\approx \\mathbb R\n\\implies \\mathbb R \\times \\mathbb N \\approx \\mathbb N \\times \\mathbb R \\approx \\mathbb R\n\\]",
     "crumbs": [
       "Examples",
-      "Lean Include"
+      "Article Example (English)"
     ]
   },
   {
-    "objectID": "examples/lean.html#and-and-or",
-    "href": "examples/lean.html#and-and-or",
-    "title": "Lean Include",
-    "section": "1 And and Or",
-    "text": "1 And and Or\nIn Lean’s dependent type theory, ∧ and ∨ serve as the direct product and the direct sum in the universe of Prop.\nEagle-eyed readers may notice that ∧ and ∨ act similarly to Cartesian product and disjoint union in set theory.\nThey are also constructed as inductive types.\nsection\n\nvariable (p q r : Prop)",
+    "objectID": "examples/enart.html#first",
+    "href": "examples/enart.html#first",
+    "title": "Article Example (English)",
+    "section": "",
+    "text": "This is a reference [1, p. 1].\n\\(\\mathrm{\\SunQuarTeX}\\) is powered by Quarto and \\(\\mathrm{\\LaTeX}\\).\n\n\n\n\n\n\n\nExample 1 Prove that \\[\n\\mathbb R \\times \\mathbb N \\approx \\mathbb N \\times \\mathbb R \\approx \\mathbb R\n\\]\n\n\n\n\n\n\n\n\n\n\nNoteProof\n\n\n\n\n\n\nProof. Obvious as follows \\[\n\\mathbb R \\approx \\mathbb R \\times 2 \\preccurlyeq \\mathbb R \\times \\mathbb N \\preccurlyeq \\mathbb R \\times \\mathbb R \\approx \\mathbb R\n\\implies \\mathbb R \\times \\mathbb N \\approx \\mathbb N \\times \\mathbb R \\approx \\mathbb R\n\\]",
     "crumbs": [
       "Examples",
-      "Lean Include"
+      "Article Example (English)"
     ]
   },
   {
-    "objectID": "examples/lean.html#and",
-    "href": "examples/lean.html#and",
-    "title": "Lean Include",
-    "section": "2 And (∧)",
-    "text": "2 And (∧)\nThe only constructor of And is And.intro, which takes a proof of p and a proof of q to produce a proof of p ∧ q.\nRegard this as the universal property of the direct product if you like.\nAnd.intro hp hq can be abbreviated as ⟨hp, hq⟩, called the anonymous constructor.\nconstructor tactic applies And.intro to split the goal p ∧ q into subgoals p and q. You may also use the anonymous constructor notation ⟨hp, hq⟩ to mean And.intro hp hq.\nsplit_ands tactic is like constructor but works for nested Ands.\n#print And\nintroducing And\n#check And.intro\nThese examples, as introduction rules, are self-evidently true.\nexample (hp : p) (hq : q) : p ∧ q := And.intro hp hq\nexample (hp : p) (hq : q) : p ∧ q := ⟨hp, hq⟩\nexample (hp : p) (hq : q) : p ∧ q := by\n  constructor\n  · exact hp\n  · exact hq\n[EXR] →–∨ distribution. Universal property of the direct product.\nexample (hrp : r → p) (hrq : r → q) : r → p ∧ q := by\n  intro hr\n  exact ⟨hrp hr, hrq hr⟩\nAnd.left and And.right are among the elimination rules of And, which extract the proofs of p and q.\nrcases hpq with ⟨hp, hq⟩ is a tactic that breaks down the hypothesis hpq : p ∧ q into hp : p and hq : q. Equivalently you can use let ⟨hp, hq⟩ := hpq.\neliminating And\n#check And.left\n#check And.right\nexample (hpq : p ∧ q) : p := hpq.left\nexample (hpq : p ∧ q) : p := by\n  rcases hpq with ⟨hp, _⟩\n  exact hp\nexample : p ∧ q → p := by\n  intro ⟨hp, _⟩ -- implicit break-down in `intro`\n  exact hp\n[EXR] And is symmetric\nexample : p ∧ q → q ∧ p := by\n  intro hpq\n  exact ⟨hpq.right, hpq.left⟩\n#check And.comm -- above has a name\n[EXR] →–∨ distribution, in another direction.\nexample (hrpq : r → p ∧ q) : (r → p) ∧ (r → q) := by\n  constructor\n  · intro hr\n    exact (hrpq hr).left\n  · intro hr\n    exact (hrpq hr).right\nnested and\nexample (hpqr : p ∧ q ∧ r) : r := hpqr.right.right\nexample (hpqr : p ∧ q ∧ r) : r := by\n  rcases hpqr with ⟨_, ⟨_, hr⟩⟩ -- anonymous constructor can be nested\n  exact hr\n\nexample (hp : p) (hq : q) (hr : r) : p ∧ q ∧ r := by\n  exact ⟨hp, ⟨hq, hr⟩⟩\nexample (hp : p) (hq : q) (hr : r) : p ∧ q ∧ r := by\n  split_ands\n  · exact hp\n  · exact hq\n  · exact hr\nThe actual universal elimination rule of And is the so-called decurrification: From (p → q → r) we may deduce (p ∧ q → r). This is actually a logical equivalence.\nIntuitively, requiring both p and q to deduce r is nothing but requiring p to deduce that q is sufficient to deduce r.\n[IGNORE] Decurrification is also self-evidently true in Lean’s dependent type theory.\nCurrification is heavily used in functional programming for its convenience, Lean is no exception.\nYou are no stranger to decurrification even if you are not a functional programmer: The universal property of the tensor product of modules says exactly the same: \\[\n\\operatorname{Hom}(M \\otimes N, P) \\cong \\operatorname{Hom}(M, \\operatorname{Hom}(N, P))\n\\]\n[EXR] currification\nexample (h : p ∧ q → r) : (p → q → r) := by\n  intro hp hq\n  exact h ⟨hp, hq⟩\n[EXR] decurrification\nexample (h : p → q → r) : (p ∧ q → r) := by\n  intro hpq\n  exact h hpq.left hpq.right\n\nexample (h : p → q → r) : (p ∧ q → r) := by\n  intro ⟨hp, hq⟩ -- `intro` is smart enough to destructure `And`\n  exact h hp hq\n\nexample (h : p → q → r) : (p ∧ q → r) := by\n  intro ⟨hp, hq⟩\n  apply h -- `apply` is smart enough to auto-decurrify and generate two subgoals\n  · exact hp\n  · exact hq\n[IGNORE] decurrification actually originates from And.rec, which is self-evident\n#check And.rec\ntheorem decurrify (h : p → q → r) : (p ∧ q → r) := And.rec h\n[EXR] And.left is actually a consequence of decurrification\nexample : p ∧ q → p := by\n  apply decurrify\n  intro hp _\n  exact hp\n\n2.1 Iff (↔︎), first visit\nIt’s high time to introduce Iff here for the first time.\nIff (↔︎) contains two side of implications: Iff.mp and Iff.mpr.\nThough it is defined as a distinct inductive type, Iff is very similar to And in that you may, somehow, even use it like a (p → q) ∧ (q → p). The only major difference is the name of the two components.\n#check Iff.intro\n#check Iff.mp\n#check Iff.mpr\n\nexample : (p ↔ q) ↔ (p → q) ∧ (q → p) := by\n  constructor\n  · intro h\n    exact ⟨h.mp, h.mpr⟩\n  · intro ⟨hpq, hqp⟩\n    exact ⟨hpq, hqp⟩\n\n\n2.2 Or (∨)\nOr has two constructors Or.inl and Or.inr. Either a proof of p or a proof of q produces a proof of p ∨ q.\n[TODO]\n#print Or\n#check Or.inl\n#check Or.inr\n#check Or.elim\n#check Or.rec\nintroducing Or\nexample (hp : p) : p ∨ q := Or.inl hp\nexample (hq : q) : p ∨ q := by\n  right\n  exact hq\nelimination rule of Or, universal property of the direct sum\nexample (hpr : p → r) (hqr : q → r) : (p ∨ q → r) := fun hpq ↦ (Or.elim hpq hpr hqr)\nexample (hpr : p → r) (hqr : q → r) : (p ∨ q → r) := (Or.elim · hpr hqr) -- note the use of `·`\nexample (hpr : p → r) (hqr : q → r) (hpq : p ∨ q) : r := by\n  apply Or.elim hpq\n  · exact hpr\n  · exact hqr\n\nexample (hpr : p → r) (hqr : q → r) : (p ∨ q → r) := fun\n  | Or.inl hp =&gt; hpr hp\n  | Or.inr hq =&gt; hqr hq\nexample (hpr : p → r) (hqr : q → r) (hpq : p ∨ q) : r :=\n  match hpq with\n  | Or.inl hp =&gt; hpr hp\n  | Or.inr hq =&gt; hqr hq\nexample (hpr : p → r) (hqr : q → r) (hpq : p ∨ q) : r := by\n  match hpq with\n  | Or.inl hp =&gt; exact hpr hp\n  | Or.inr hq =&gt; exact hqr hq\nexample (hpr : p → r) (hqr : q → r) (hpq : p ∨ q) : r := by\n  cases hpq with\n  | inl hp =&gt; exact hpr hp\n  | inr hq =&gt; exact hqr hq\nexample (hpr : p → r) (hqr : q → r) (hpq : p ∨ q) : r := by\n  rcases hpq with (hp | hq) -- `rcases` can also destructure `Or`\n  · exact hpr hp\n  · exact hqr hq\nexample (hpr : p → r) (hqr : q → r) : p ∨ q → r := by\n  rintro (hp | hq) -- `rintro` is a combination of `intro` and `rcases`\n  · exact hpr hp\n  · exact hqr hq\n\n\n2.3 Comprehensive exercises for And and Or\n[EXR] distributive laws\nexample : p ∧ (q ∨ r) ↔ (p ∧ q) ∨ (p ∧ r) := by sorry\nexample : p ∨ (q ∧ r) ↔ (p ∨ q) ∧ (p ∨ r) := by sorry\n\nend",
+    "objectID": "examples/enart.html#second",
+    "href": "examples/enart.html#second",
+    "title": "Article Example (English)",
+    "section": "2 Second",
+    "text": "2 Second\n\n\n\n\n\n\n\n\n\n\n\n\\(L_i \\times C_j\\)\n\\(2\\)\n\\(\\mathbb N\\)\n\\(\\mathbb R\\)\n\n\n\\(2\\)\n\\(4\\)\n\\(\\mathbb N\\)\n\\(\\mathbb R\\)\n\n\n\\(\\mathbb N\\)\n\\(\\mathbb N\\)\n\\(\\mathbb N\\)\n?\n\n\n\\(\\mathbb R\\)\n\\(\\mathbb R\\)\n?\n\\(\\mathbb R\\)\n\n\n\n\n\n(a) Cartesian (unsolved)\n\n\n\n\n\n\n\n\n\n\n\n\\(L_i^{C_j}\\)\n\\(2\\)\n\\(\\mathbb N\\)\n\\(\\mathbb R\\)\n\n\n\\(2\\)\n\\(4\\)\n\\(\\mathbb R\\)\n\\(2^{\\mathbb R}\\)\n\n\n\\(\\mathbb N\\)\n\\(\\mathbb N\\)\n?\n?\n\n\n\\(\\mathbb R\\)\n\\(\\mathbb R\\)\n?\n?\n\n\n\n\n\n(b) Power (unsolved)\n\n\n\n\n\n\n\nTable 1: Some Cardinality Results\n\n\n\n\n\n\n\n\n\nNoteProof (A proof with caption)\n\n\n\n\n\n\nProof (A proof with caption). This is a proof with caption.\n\n\n\n\n\n\n\n\n\n\nTipRemark (A remark with caption)\n\n\n\n\n\n\nRemark (A remark with caption). This is a remark with caption.",
     "crumbs": [
       "Examples",
-      "Lean Include"
+      "Article Example (English)"
     ]
   },
   {
-    "objectID": "examples/lean.html#forall",
-    "href": "examples/lean.html#forall",
-    "title": "Lean Include",
-    "section": "1 Forall (∀)",
-    "text": "1 Forall (∀)\nAs you may have already noticed, ∀ is just an alternative way of writing →. Say p is a predicate on a type X, i.e. of type X → Prop, then ∀ x : X, p x is exactly the same as (x : X) → p x.\nThough → is primitive in Lean’s dependent type theory, we may still (perhaps awkwardly) state the introduction and elimination rules of ∀:\n\nIntroduction: fun (x : X) ↦ (h x : p x) produces a proof of ∀ x : X, p x.\nElimination: Given a proof h of ∀ x : X, p x, we can obtain a proof of p a for any specific a : X. It is exactly h a.\n\nsection\n\nvariable {X : Type} (p q : X → Prop) (r s : Prop) (a b : X)\n\n#check ∀ x : X, p x\n#check ∀ x, p x -- Lean is smart enough to infer the type of `x`\n[IGNORE] Writing ∀ emphasizes that the arrow → is of dependent type, and the domain X is a type, not a proposition. But they are just purely psychological, as the following examples show.\nexample : (hrs : r → s) → (∀ _ : r, s) := by\n  intro hrs\n  exact hrs",
+    "objectID": "examples/enart.html#code",
+    "href": "examples/enart.html#code",
+    "title": "Article Example (English)",
+    "section": "3 Code",
+    "text": "3 Code\n#include&lt;bits/stdc++.h&gt;\nusing namespace std;\n\nint main(){\n    return 0; // 返回 0\n}\nexample : (∀ x, p x → r) → ((∃ x, p x) → r) := by\n  intro h ⟨a, hpa⟩ -- you may also `rcases` explicitly\n  exact h a hpa",
     "crumbs": [
       "Examples",
-      "Lean Include"
+      "Article Example (English)"
     ]
   },
   {
-    "objectID": "examples/lean.html#exists",
-    "href": "examples/lean.html#exists",
-    "title": "Lean Include",
-    "section": "2 Exists (∃)",
-    "text": "2 Exists (∃)\n∃ is a bit more complicated.\nSlogan: ∀ is a dependent →, ∃ is a dependent × (or ∧ in Prop universe)\n#check ∃ x : X, p x\n#check ∃ x, p x -- Lean is smart enough to infer the type of `x`\n∃ x : X, p x means that we have the following data:\n\nan element a : X;\na proof h : p a.\n\nSo a pair (a, h) would suffice to construct a proof of ∃ x : X, p x.\nThis is the defining introduction rule of Exists as an inductive type.\n#check Exists.intro\nAs like And, you may use the anonymous constructor notation ⟨a, h⟩ to mean Exists.intro a h.\nIn tactic mode, use a make use of Exists.intro a to reduce the goal ∃ x : X, p x to p a.\nexample (a : X) (h : p a) : ∃ x, p x := Exists.intro a h\nexample (a : X) (h : p a) : ∃ x, p x := ⟨a, h⟩\nexample (a : X) (h : p a) : ∃ x, p x := by use a\n\n-- [EXR]\nexample (x y z : ℕ) (hxy : x &lt; y) (hyz : y &lt; z) : ∃ w, x &lt; w ∧ w &lt; z :=\n  ⟨y, ⟨hxy, hyz⟩⟩\nNote that in the defining pair (a, h), h is a proof of p a, whose type depends on a. Thus psychologically, you may view ∃ x : X, p x as a dependent pair type (x : X) × (p x).\nHave writing Exists as a dependent pair type reminded you of the currification process?\nElimination rule: To construct the implication (∃ x : X, p x) → q, it suffices to have a proof of (∀ x : X, p x → q), i.e. (x : X) → p x → q.\nIn tactic mode, rcases h with ⟨a, ha⟩ make use of this elimination rule to break down a hypothesis h : ∃ x : X, p x into a witness a : X and a proof ha : p a.\n#check Exists.elim\n\nexample : (∀ x, p x → r) → ((∃ x, p x) → r) := by\n  intro hf he\n  exact Exists.elim he hf\n\nexample : (∀ x, p x → r) → ((∃ x, p x) → r) := by\n  intro hf he\n  rcases he with ⟨a, hpa⟩\n  exact hf a hpa\n\nexample : (∀ x, p x → r) → ((∃ x, p x) → r) := by\n  intro h ⟨a, hpa⟩ -- you may also `rcases` explicitly\n  exact h a hpa\n\n-- [EXR] reverse direction is also true\nexample :  ((∃ x, p x) → r) → (∀ x, p x → r) := by\n  intro h a hpa\n  apply h\n  use a\n\n-- [EXR]\nexample : (∃ x, r ∧ p x) → r ∧ (∃ x, r ∧ p x) := by\n  intro ⟨a, ⟨hr, hpa⟩⟩\n  exact ⟨hr, ⟨a, ⟨hr, hpa⟩⟩⟩\n\n-- [EXR]\nexample : (∃ x, p x ∨ q x) ↔ (∃ x, p x) ∨ (∃ x, q x) := by\n  constructor\n  · rintro ⟨a, (hpa | hqa)⟩\n    · left; use a\n    · right; use a\n  · rintro (⟨a, hpa⟩ | ⟨a, hqa⟩)\n    · use a; left; exact hpa\n    · use a; right; exact hqa\n\nend\n\n2.1 [IGNORE] A cosmological remark\nThe pair (a, h) actually do not have type (x : X) × (p x). The latter notation is actually for the dependent pair type (or Sigma type), which lives in Type* universe.\nBut Exists should live in Prop, and in Prop universe we admit proof-irrelevance, i.e. we do not save data. So Exists forget the exact witness a once it is proved.\nThis “forgetfulness” is revealed by the fact that there is no elimination rule Exists.fst to extract the witness a from a proof of ∃ x : X, p x, as long as X lives in the Type* universe. (Note that Exists.elim can only produce propositions in Prop)",
+    "objectID": "examples/jupyter.html",
+    "href": "examples/jupyter.html",
+    "title": "Jupyter Notebook",
+    "section": "",
+    "text": "This is a sample Jupyter Notebook using \\(\\mathrm{\\SunQuarTeX}\\).\nBelow is an example of a Python code cell:\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nfig.patch.set_alpha(0)\nax.patch.set_alpha(0)\n\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\n\n\n\n\nFigure 1: A line plot on a polar axis\n\n\n\n\n\nQuarto’s specific Markdown feature still works in Jupyter Notebook. For example:\n\n\n\n\n\n\n\nTheorem 1 (This) is a theorem.",
     "crumbs": [
       "Examples",
-      "Lean Include"
+      "Jupyter Notebook"
+    ]
+  },
+  {
+    "objectID": "examples/jupyter.html#title",
+    "href": "examples/jupyter.html#title",
+    "title": "Jupyter Notebook",
+    "section": "",
+    "text": "This is a sample Jupyter Notebook using \\(\\mathrm{\\SunQuarTeX}\\).\nBelow is an example of a Python code cell:\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nfig.patch.set_alpha(0)\nax.patch.set_alpha(0)\n\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\n\n\n\n\nFigure 1: A line plot on a polar axis\n\n\n\n\n\nQuarto’s specific Markdown feature still works in Jupyter Notebook. For example:\n\n\n\n\n\n\n\nTheorem 1 (This) is a theorem.",
+    "crumbs": [
+      "Examples",
+      "Jupyter Notebook"
+    ]
+  },
+  {
+    "objectID": "examples/timetable.html",
+    "href": "examples/timetable.html",
+    "title": "课表",
+    "section": "",
+    "text": "时间\n星期一\n星期二\n星期三\n星期四\n星期五\n\n\n\n\n08:00–09:35\n\n\n\n\n\n\n\n09:55–12:20\n群与代数的表示\nAlice MacDonald\n1–12周\n3–4节\n寺子屋I502\n代数拓扑\n八云蓝\n1–12周\n3–4节\n寺子屋F302\n\n代数拓扑\n八云蓝\n1–12周\n3–4节\n寺子屋F302\n\n\n\n13:20–14:55\n量子信息学基础\n宇佐见莲子\n1–12周\n6–7节\n京都大学3-8-1\n微分几何\n八云蓝\n1–12周\n6–7节\n寺子屋A204\n量子信息学基础\n宇佐见莲子\n1–12周\n6–7节\n京都大学3-8-1\n微分几何\n八云蓝\n1–12周\n6节–7节\n寺子屋A204\n群与代数的表示\nAlice MacDonald\n1–12周\n6–7节\n寺子屋I502\n\n\n15:15–17:40\n\n信息论与密码\n帕秋莉\n1–12周\n8–9节\n图书馆F604\n\n信息论与密码\n帕秋莉\n1–12周\n8–9节\n图书馆F604\n\n\n\n18:30–20:55\n\n\nLean 4 形式化教学\nsun123zxy\n1–12周\n11–12节\n香霖堂E909",
+    "crumbs": [
+      "Examples",
+      "课表"
+    ]
+  },
+  {
+    "objectID": "examples/helloworld.html",
+    "href": "examples/helloworld.html",
+    "title": "你好，\\(\\mathrm{\\SunQuarTeX}\\)",
+    "section": "",
+    "text": "你好，\\(\\mathrm{\\SunQuarTeX}\\)!",
+    "crumbs": [
+      "Examples",
+      "你好，\\SunQuarTeX"
     ]
   },
   {
@@ -408,6 +375,61 @@
     ]
   },
   {
+    "objectID": "examples/lean.html",
+    "href": "examples/lean.html",
+    "title": "Lean Include",
+    "section": "",
+    "text": "import Mathlib",
+    "crumbs": [
+      "Examples",
+      "Lean Include"
+    ]
+  },
+  {
+    "objectID": "examples/lean.html#and-and-or",
+    "href": "examples/lean.html#and-and-or",
+    "title": "Lean Include",
+    "section": "1 And and Or",
+    "text": "1 And and Or\nIn Lean’s dependent type theory, ∧ and ∨ serve as the direct product and the direct sum in the universe of Prop.\nEagle-eyed readers may notice that ∧ and ∨ act similarly to Cartesian product and disjoint union in set theory.\nThey are also constructed as inductive types.\nsection\n\nvariable (p q r : Prop)",
+    "crumbs": [
+      "Examples",
+      "Lean Include"
+    ]
+  },
+  {
+    "objectID": "examples/lean.html#and",
+    "href": "examples/lean.html#and",
+    "title": "Lean Include",
+    "section": "2 And (∧)",
+    "text": "2 And (∧)\nThe only constructor of And is And.intro, which takes a proof of p and a proof of q to produce a proof of p ∧ q.\nRegard this as the universal property of the direct product if you like.\nAnd.intro hp hq can be abbreviated as ⟨hp, hq⟩, called the anonymous constructor.\nconstructor tactic applies And.intro to split the goal p ∧ q into subgoals p and q. You may also use the anonymous constructor notation ⟨hp, hq⟩ to mean And.intro hp hq.\nsplit_ands tactic is like constructor but works for nested Ands.\n#print And\nintroducing And\n#check And.intro\nThese examples, as introduction rules, are self-evidently true.\nexample (hp : p) (hq : q) : p ∧ q := And.intro hp hq\nexample (hp : p) (hq : q) : p ∧ q := ⟨hp, hq⟩\nexample (hp : p) (hq : q) : p ∧ q := by\n  constructor\n  · exact hp\n  · exact hq\n[EXR] →–∨ distribution. Universal property of the direct product.\nexample (hrp : r → p) (hrq : r → q) : r → p ∧ q := by\n  intro hr\n  exact ⟨hrp hr, hrq hr⟩\nAnd.left and And.right are among the elimination rules of And, which extract the proofs of p and q.\nrcases hpq with ⟨hp, hq⟩ is a tactic that breaks down the hypothesis hpq : p ∧ q into hp : p and hq : q. Equivalently you can use let ⟨hp, hq⟩ := hpq.\neliminating And\n#check And.left\n#check And.right\nexample (hpq : p ∧ q) : p := hpq.left\nexample (hpq : p ∧ q) : p := by\n  rcases hpq with ⟨hp, _⟩\n  exact hp\nexample : p ∧ q → p := by\n  intro ⟨hp, _⟩ -- implicit break-down in `intro`\n  exact hp\n[EXR] And is symmetric\nexample : p ∧ q → q ∧ p := by\n  intro hpq\n  exact ⟨hpq.right, hpq.left⟩\n#check And.comm -- above has a name\n[EXR] →–∨ distribution, in another direction.\nexample (hrpq : r → p ∧ q) : (r → p) ∧ (r → q) := by\n  constructor\n  · intro hr\n    exact (hrpq hr).left\n  · intro hr\n    exact (hrpq hr).right\nnested and\nexample (hpqr : p ∧ q ∧ r) : r := hpqr.right.right\nexample (hpqr : p ∧ q ∧ r) : r := by\n  rcases hpqr with ⟨_, ⟨_, hr⟩⟩ -- anonymous constructor can be nested\n  exact hr\n\nexample (hp : p) (hq : q) (hr : r) : p ∧ q ∧ r := by\n  exact ⟨hp, ⟨hq, hr⟩⟩\nexample (hp : p) (hq : q) (hr : r) : p ∧ q ∧ r := by\n  split_ands\n  · exact hp\n  · exact hq\n  · exact hr\nThe actual universal elimination rule of And is the so-called decurrification: From (p → q → r) we may deduce (p ∧ q → r). This is actually a logical equivalence.\nIntuitively, requiring both p and q to deduce r is nothing but requiring p to deduce that q is sufficient to deduce r.\n[IGNORE] Decurrification is also self-evidently true in Lean’s dependent type theory.\nCurrification is heavily used in functional programming for its convenience, Lean is no exception.\nYou are no stranger to decurrification even if you are not a functional programmer: The universal property of the tensor product of modules says exactly the same: \\[\n\\operatorname{Hom}(M \\otimes N, P) \\cong \\operatorname{Hom}(M, \\operatorname{Hom}(N, P))\n\\]\n[EXR] currification\nexample (h : p ∧ q → r) : (p → q → r) := by\n  intro hp hq\n  exact h ⟨hp, hq⟩\n[EXR] decurrification\nexample (h : p → q → r) : (p ∧ q → r) := by\n  intro hpq\n  exact h hpq.left hpq.right\n\nexample (h : p → q → r) : (p ∧ q → r) := by\n  intro ⟨hp, hq⟩ -- `intro` is smart enough to destructure `And`\n  exact h hp hq\n\nexample (h : p → q → r) : (p ∧ q → r) := by\n  intro ⟨hp, hq⟩\n  apply h -- `apply` is smart enough to auto-decurrify and generate two subgoals\n  · exact hp\n  · exact hq\n[IGNORE] decurrification actually originates from And.rec, which is self-evident\n#check And.rec\ntheorem decurrify (h : p → q → r) : (p ∧ q → r) := And.rec h\n[EXR] And.left is actually a consequence of decurrification\nexample : p ∧ q → p := by\n  apply decurrify\n  intro hp _\n  exact hp\n\n2.1 Iff (↔︎), first visit\nIt’s high time to introduce Iff here for the first time.\nIff (↔︎) contains two side of implications: Iff.mp and Iff.mpr.\nThough it is defined as a distinct inductive type, Iff is very similar to And in that you may, somehow, even use it like a (p → q) ∧ (q → p). The only major difference is the name of the two components.\n#check Iff.intro\n#check Iff.mp\n#check Iff.mpr\n\nexample : (p ↔ q) ↔ (p → q) ∧ (q → p) := by\n  constructor\n  · intro h\n    exact ⟨h.mp, h.mpr⟩\n  · intro ⟨hpq, hqp⟩\n    exact ⟨hpq, hqp⟩\n\n\n2.2 Or (∨)\nOr has two constructors Or.inl and Or.inr. Either a proof of p or a proof of q produces a proof of p ∨ q.\n[TODO]\n#print Or\n#check Or.inl\n#check Or.inr\n#check Or.elim\n#check Or.rec\nintroducing Or\nexample (hp : p) : p ∨ q := Or.inl hp\nexample (hq : q) : p ∨ q := by\n  right\n  exact hq\nelimination rule of Or, universal property of the direct sum\nexample (hpr : p → r) (hqr : q → r) : (p ∨ q → r) := fun hpq ↦ (Or.elim hpq hpr hqr)\nexample (hpr : p → r) (hqr : q → r) : (p ∨ q → r) := (Or.elim · hpr hqr) -- note the use of `·`\nexample (hpr : p → r) (hqr : q → r) (hpq : p ∨ q) : r := by\n  apply Or.elim hpq\n  · exact hpr\n  · exact hqr\n\nexample (hpr : p → r) (hqr : q → r) : (p ∨ q → r) := fun\n  | Or.inl hp =&gt; hpr hp\n  | Or.inr hq =&gt; hqr hq\nexample (hpr : p → r) (hqr : q → r) (hpq : p ∨ q) : r :=\n  match hpq with\n  | Or.inl hp =&gt; hpr hp\n  | Or.inr hq =&gt; hqr hq\nexample (hpr : p → r) (hqr : q → r) (hpq : p ∨ q) : r := by\n  match hpq with\n  | Or.inl hp =&gt; exact hpr hp\n  | Or.inr hq =&gt; exact hqr hq\nexample (hpr : p → r) (hqr : q → r) (hpq : p ∨ q) : r := by\n  cases hpq with\n  | inl hp =&gt; exact hpr hp\n  | inr hq =&gt; exact hqr hq\nexample (hpr : p → r) (hqr : q → r) (hpq : p ∨ q) : r := by\n  rcases hpq with (hp | hq) -- `rcases` can also destructure `Or`\n  · exact hpr hp\n  · exact hqr hq\nexample (hpr : p → r) (hqr : q → r) : p ∨ q → r := by\n  rintro (hp | hq) -- `rintro` is a combination of `intro` and `rcases`\n  · exact hpr hp\n  · exact hqr hq\n\n\n2.3 Comprehensive exercises for And and Or\n[EXR] distributive laws\nexample : p ∧ (q ∨ r) ↔ (p ∧ q) ∨ (p ∧ r) := by sorry\nexample : p ∨ (q ∧ r) ↔ (p ∨ q) ∧ (p ∨ r) := by sorry\n\nend",
+    "crumbs": [
+      "Examples",
+      "Lean Include"
+    ]
+  },
+  {
+    "objectID": "examples/lean.html#forall",
+    "href": "examples/lean.html#forall",
+    "title": "Lean Include",
+    "section": "1 Forall (∀)",
+    "text": "1 Forall (∀)\nAs you may have already noticed, ∀ is just an alternative way of writing →. Say p is a predicate on a type X, i.e. of type X → Prop, then ∀ x : X, p x is exactly the same as (x : X) → p x.\nThough → is primitive in Lean’s dependent type theory, we may still (perhaps awkwardly) state the introduction and elimination rules of ∀:\n\nIntroduction: fun (x : X) ↦ (h x : p x) produces a proof of ∀ x : X, p x.\nElimination: Given a proof h of ∀ x : X, p x, we can obtain a proof of p a for any specific a : X. It is exactly h a.\n\nsection\n\nvariable {X : Type} (p q : X → Prop) (r s : Prop) (a b : X)\n\n#check ∀ x : X, p x\n#check ∀ x, p x -- Lean is smart enough to infer the type of `x`\n[IGNORE] Writing ∀ emphasizes that the arrow → is of dependent type, and the domain X is a type, not a proposition. But they are just purely psychological, as the following examples show.\nexample : (hrs : r → s) → (∀ _ : r, s) := by\n  intro hrs\n  exact hrs",
+    "crumbs": [
+      "Examples",
+      "Lean Include"
+    ]
+  },
+  {
+    "objectID": "examples/lean.html#exists",
+    "href": "examples/lean.html#exists",
+    "title": "Lean Include",
+    "section": "2 Exists (∃)",
+    "text": "2 Exists (∃)\n∃ is a bit more complicated.\nSlogan: ∀ is a dependent →, ∃ is a dependent × (or ∧ in Prop universe)\n#check ∃ x : X, p x\n#check ∃ x, p x -- Lean is smart enough to infer the type of `x`\n∃ x : X, p x means that we have the following data:\n\nan element a : X;\na proof h : p a.\n\nSo a pair (a, h) would suffice to construct a proof of ∃ x : X, p x.\nThis is the defining introduction rule of Exists as an inductive type.\n#check Exists.intro\nAs like And, you may use the anonymous constructor notation ⟨a, h⟩ to mean Exists.intro a h.\nIn tactic mode, use a make use of Exists.intro a to reduce the goal ∃ x : X, p x to p a.\nexample (a : X) (h : p a) : ∃ x, p x := Exists.intro a h\nexample (a : X) (h : p a) : ∃ x, p x := ⟨a, h⟩\nexample (a : X) (h : p a) : ∃ x, p x := by use a\n\n-- [EXR]\nexample (x y z : ℕ) (hxy : x &lt; y) (hyz : y &lt; z) : ∃ w, x &lt; w ∧ w &lt; z :=\n  ⟨y, ⟨hxy, hyz⟩⟩\nNote that in the defining pair (a, h), h is a proof of p a, whose type depends on a. Thus psychologically, you may view ∃ x : X, p x as a dependent pair type (x : X) × (p x).\nHave writing Exists as a dependent pair type reminded you of the currification process?\nElimination rule: To construct the implication (∃ x : X, p x) → q, it suffices to have a proof of (∀ x : X, p x → q), i.e. (x : X) → p x → q.\nIn tactic mode, rcases h with ⟨a, ha⟩ make use of this elimination rule to break down a hypothesis h : ∃ x : X, p x into a witness a : X and a proof ha : p a.\n#check Exists.elim\n\nexample : (∀ x, p x → r) → ((∃ x, p x) → r) := by\n  intro hf he\n  exact Exists.elim he hf\n\nexample : (∀ x, p x → r) → ((∃ x, p x) → r) := by\n  intro hf he\n  rcases he with ⟨a, hpa⟩\n  exact hf a hpa\n\nexample : (∀ x, p x → r) → ((∃ x, p x) → r) := by\n  intro h ⟨a, hpa⟩ -- you may also `rcases` explicitly\n  exact h a hpa\n\n-- [EXR] reverse direction is also true\nexample :  ((∃ x, p x) → r) → (∀ x, p x → r) := by\n  intro h a hpa\n  apply h\n  use a\n\n-- [EXR]\nexample : (∃ x, r ∧ p x) → r ∧ (∃ x, r ∧ p x) := by\n  intro ⟨a, ⟨hr, hpa⟩⟩\n  exact ⟨hr, ⟨a, ⟨hr, hpa⟩⟩⟩\n\n-- [EXR]\nexample : (∃ x, p x ∨ q x) ↔ (∃ x, p x) ∨ (∃ x, q x) := by\n  constructor\n  · rintro ⟨a, (hpa | hqa)⟩\n    · left; use a\n    · right; use a\n  · rintro (⟨a, hpa⟩ | ⟨a, hqa⟩)\n    · use a; left; exact hpa\n    · use a; right; exact hqa\n\nend\n\n2.1 [IGNORE] A cosmological remark\nThe pair (a, h) actually do not have type (x : X) × (p x). The latter notation is actually for the dependent pair type (or Sigma type), which lives in Type* universe.\nBut Exists should live in Prop, and in Prop universe we admit proof-irrelevance, i.e. we do not save data. So Exists forget the exact witness a once it is proved.\nThis “forgetfulness” is revealed by the fact that there is no elimination rule Exists.fst to extract the witness a from a proof of ∃ x : X, p x, as long as X lives in the Type* universe. (Note that Exists.elim can only produce propositions in Prop)",
+    "crumbs": [
+      "Examples",
+      "Lean Include"
+    ]
+  },
+  {
     "objectID": "examples/cnpre.html",
     "href": "examples/cnpre.html",
     "title": "中文幻灯片示例",
@@ -441,6 +463,28 @@
     ]
   },
   {
+    "objectID": "examples/extra.html",
+    "href": "examples/extra.html",
+    "title": "Custom Extra Package",
+    "section": "",
+    "text": "This is physics: \\(\\dv{f}{x}\\).",
+    "crumbs": [
+      "Examples",
+      "Custom Extra Package"
+    ]
+  },
+  {
+    "objectID": "examples/extra.html#first",
+    "href": "examples/extra.html#first",
+    "title": "Custom Extra Package",
+    "section": "",
+    "text": "This is physics: \\(\\dv{f}{x}\\).",
+    "crumbs": [
+      "Examples",
+      "Custom Extra Package"
+    ]
+  },
+  {
     "objectID": "examples/qrcode.html",
     "href": "examples/qrcode.html",
     "title": "QR Code Test",
@@ -449,50 +493,6 @@
     "crumbs": [
       "Examples",
       "QR Code Test"
-    ]
-  },
-  {
-    "objectID": "examples/enart.html",
-    "href": "examples/enart.html",
-    "title": "Article Example (English)",
-    "section": "",
-    "text": "This is a reference [1, p. 1].\n\\(\\mathrm{\\SunQuarTeX}\\) is powered by Quarto and \\(\\mathrm{\\LaTeX}\\).\n\n\n\n\n\n\n\nExample 1 Prove that \\[\n\\mathbb R \\times \\mathbb N \\approx \\mathbb N \\times \\mathbb R \\approx \\mathbb R\n\\]\n\n\n\n\n\n\n\n\n\n\nNoteProof\n\n\n\n\n\n\nProof. Obvious as follows \\[\n\\mathbb R \\approx \\mathbb R \\times 2 \\preccurlyeq \\mathbb R \\times \\mathbb N \\preccurlyeq \\mathbb R \\times \\mathbb R \\approx \\mathbb R\n\\implies \\mathbb R \\times \\mathbb N \\approx \\mathbb N \\times \\mathbb R \\approx \\mathbb R\n\\]",
-    "crumbs": [
-      "Examples",
-      "Article Example (English)"
-    ]
-  },
-  {
-    "objectID": "examples/enart.html#first",
-    "href": "examples/enart.html#first",
-    "title": "Article Example (English)",
-    "section": "",
-    "text": "This is a reference [1, p. 1].\n\\(\\mathrm{\\SunQuarTeX}\\) is powered by Quarto and \\(\\mathrm{\\LaTeX}\\).\n\n\n\n\n\n\n\nExample 1 Prove that \\[\n\\mathbb R \\times \\mathbb N \\approx \\mathbb N \\times \\mathbb R \\approx \\mathbb R\n\\]\n\n\n\n\n\n\n\n\n\n\nNoteProof\n\n\n\n\n\n\nProof. Obvious as follows \\[\n\\mathbb R \\approx \\mathbb R \\times 2 \\preccurlyeq \\mathbb R \\times \\mathbb N \\preccurlyeq \\mathbb R \\times \\mathbb R \\approx \\mathbb R\n\\implies \\mathbb R \\times \\mathbb N \\approx \\mathbb N \\times \\mathbb R \\approx \\mathbb R\n\\]",
-    "crumbs": [
-      "Examples",
-      "Article Example (English)"
-    ]
-  },
-  {
-    "objectID": "examples/enart.html#second",
-    "href": "examples/enart.html#second",
-    "title": "Article Example (English)",
-    "section": "2 Second",
-    "text": "2 Second\n\n\n\n\n\n\n\n\n\n\n\n\\(L_i \\times C_j\\)\n\\(2\\)\n\\(\\mathbb N\\)\n\\(\\mathbb R\\)\n\n\n\\(2\\)\n\\(4\\)\n\\(\\mathbb N\\)\n\\(\\mathbb R\\)\n\n\n\\(\\mathbb N\\)\n\\(\\mathbb N\\)\n\\(\\mathbb N\\)\n?\n\n\n\\(\\mathbb R\\)\n\\(\\mathbb R\\)\n?\n\\(\\mathbb R\\)\n\n\n\n\n\n(a) Cartesian (unsolved)\n\n\n\n\n\n\n\n\n\n\n\n\\(L_i^{C_j}\\)\n\\(2\\)\n\\(\\mathbb N\\)\n\\(\\mathbb R\\)\n\n\n\\(2\\)\n\\(4\\)\n\\(\\mathbb R\\)\n\\(2^{\\mathbb R}\\)\n\n\n\\(\\mathbb N\\)\n\\(\\mathbb N\\)\n?\n?\n\n\n\\(\\mathbb R\\)\n\\(\\mathbb R\\)\n?\n?\n\n\n\n\n\n(b) Power (unsolved)\n\n\n\n\n\n\n\nTable 1: Some Cardinality Results\n\n\n\n\n\n\n\n\n\nNoteProof (A proof with caption)\n\n\n\n\n\n\nProof (A proof with caption). This is a proof with caption.\n\n\n\n\n\n\n\n\n\n\nTipRemark (A remark with caption)\n\n\n\n\n\n\nRemark (A remark with caption). This is a remark with caption.",
-    "crumbs": [
-      "Examples",
-      "Article Example (English)"
-    ]
-  },
-  {
-    "objectID": "examples/enart.html#code",
-    "href": "examples/enart.html#code",
-    "title": "Article Example (English)",
-    "section": "3 Code",
-    "text": "3 Code\n#include&lt;bits/stdc++.h&gt;\nusing namespace std;\n\nint main(){\n    return 0; // 返回 0\n}\nexample : (∀ x, p x → r) → ((∃ x, p x) → r) := by\n  intro h ⟨a, hpa⟩ -- you may also `rcases` explicitly\n  exact h a hpa",
-    "crumbs": [
-      "Examples",
-      "Article Example (English)"
     ]
   }
 ]

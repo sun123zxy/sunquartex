@@ -1,3 +1,4 @@
 - Quarto tends to output verbose information when rendering documents, which can be token-consuming. You should use `--quiet` option by default when you don't need to debug something.
 - We use `uv` for Python environment, make sure activating it before running quarto commands, or `uv run quarto ...`.
 - When writing Lua filters, do not guess the usage. Make sure you have actually fetched and read [Quarto's Lua filter API](https://quarto.org/docs/extensions/lua-api.html) and [Pandoc's Lua filter API](https://pandoc.org/lua-filters.html).
+- Quarto has its cross-reference system. Use it appropriately instead of abusing Markdown styling. See [Quarto's cross-reference documentation](https://quarto.org/docs/authoring/cross-references.html) before writing.

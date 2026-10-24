@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Two column layout – SunQuarTeX</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-4a48f36394f52df167541d5c0fa082cb.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script>
+MathJax = {
+  tex: {
+    macros: {
+        SunQuarTeX: String.raw`\mathrm{\mathbf S \;\!\! {\scriptstyle \mathbf U \;\!\! \mathbb N} \mathbb Q \;\!\! {\scriptstyle \mathbf U \;\!\! \;\!\! \mathbf A \;\!\! \mathbb R} \;\!\! \;\!\! \mathbf{\TeX}}`
+    }
+  }
+};
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating slimcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../examples/cnart.html">Examples</a></li><li class="breadcrumb-item"><a href="../examples/two-columns.html">Two column layout</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="../">SunQuarTeX</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Examples</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../examples/cnart.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">中文学术写作示例</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../examples/cnpre.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">中文幻灯片示例</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../examples/enart.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Article Example (English)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../examples/enpre.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Presentation Example (English)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../examples/extra.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Custom Extra Package</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../examples/helloworld.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">你好，<span class="math inline">\(\mathrm{\SunQuarTeX}\)</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../examples/jupyter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Jupyter Notebook</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../examples/lean.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Lean Include</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../examples/qrcode.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">QR Code Test</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../examples/resume.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Curriculum Vitae</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../examples/timetable.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">课表</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../examples/two-columns.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Two column layout</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage">Usage</a></li>
+  <li><a href="#example-usage" id="toc-example-usage" class="nav-link" data-scroll-target="#example-usage">Example usage</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full column-body" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../examples/cnart.html">Examples</a></li><li class="breadcrumb-item"><a href="../examples/two-columns.html">Two column layout</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Two column layout</h1>
+<p class="subtitle lead"><span class="math inline">\(\mathrm{\SunQuarTeX}\)</span> Examples</p>
+</div>
+
+
+
+<div class="quarto-title-meta column-body">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<blockquote class="blockquote">
+<p>This is an early-access feature. For reference only.</p>
+</blockquote>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Two column layout is a style of organizing content on a page where the text is divided into two vertical columns. Consider the following circumstance: you are writing a expository essay on a complex topic. You want to present your ideas in a clear and organized manner, while providing as much side information as possible for those readers who are not familiar with the topic. In this case, splitting the content into two columns creates a compact and effective way.</p>
+<p>The left column contains the main text, clean and with a clear flow of mind. Experts or a second-time reader should be able to read it without any content from the right column. Such an exposition may inevitably include some concise slogan-like sentences. So the right column is provided for you to put side notes, clarifications of gaps, proofs, references … anything that is helpful for beginners but a little distracting for experts.</p>
+<p>Note that this does not necessarily require a physical separation of the two columns on the page, but rather having two “layers” of content: the main text and the side notes. It is more like a systematic and extensive use of footnotes. These notes can be either long or short, explaining a single word, a single sentence, or a whole paragraph in the main text. The idea is “We are brief and concise in the main text to keep the flow of mind, but if you don’t get the gist, redirect to side notes for more details.”.</p>
+</section>
+<section id="usage" class="level2">
+<h2 class="anchored" data-anchor-id="usage">Usage</h2>
+<p>See the source code of this page for the frontmatter.</p>
+<p>Use fenced divs for side notes: <code>::: {#rem-xxx .column-margin} ... :::</code>. Reference each note in the main text with <code>(@rem-xxx)</code>. Do not restrict to <code>rem</code>; use any other suitable prefix when appropriate.</p>
+<p>Write the margin-note divs before the main text div that references them. Otherwise they will create blank space in the right column.</p>
+<p>We choose to refrain from footnotes because Quarto’s implementation conflicts a little when mixing different margin system. Footnotes are actually good, but there are bugs on the Quarto side.</p>
+</section>
+<section id="example-usage" class="level2 page-columns page-full">
+<h2 class="anchored" data-anchor-id="example-usage">Example usage</h2>
+<p><strong>Motivation.</strong> To study mathematical objects that depend on a family of open sets or parameters, we need a universal way to assemble compatible families of data into a single object. Category theory formulates such universal assemblies as limits and colimits of diagrams.</p>
+
+<div class="no-row-height column-margin column-container"><div id="def-small-category" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 1 (Small category)</strong></span> A category <span class="math inline">\(\mathcal I\)</span> is <em>small</em> if <span class="math inline">\(\operatorname{Ob}(\mathcal I)\)</span> and <span class="math inline">\(\operatorname{Mor}(\mathcal I)\)</span> are sets rather than proper classes. This prevents set-theoretic paradoxes when forming products <span class="math inline">\(\prod_{i\in\mathcal I}D(i)\)</span> in <span class="math inline">\(\mathcal A\)</span>.</p>
+</div><div id="rem-diagonal-morphisms" class="proof remark">
+<p><span class="proof-title"><em>Remark 1</em> (Action of <span class="math inline">\(\Delta\)</span> on morphisms). </span>Given <span class="math inline">\(f:A\to B\)</span> in <span class="math inline">\(\mathcal A\)</span>, <span class="math inline">\(\Delta(f):\Delta(A)\to\Delta(B)\)</span> is the natural transformation with component <span class="math inline">\(\Delta(f)_i=f\)</span> at every <span class="math inline">\(i\in\mathcal I\)</span> (natural since <span class="math inline">\(\operatorname{id}_B\circ f=f\circ\operatorname{id}_A\)</span>).</p>
+</div><div id="rem-unique-limit" class="proof remark">
+<p><span class="proof-title"><em>Remark 2</em> (Uniqueness of terminal cones up to canonical isomorphism). </span>Why is a limit unique up to unique isomorphism? If <span class="math inline">\((L,\{\pi_i\})\)</span> and <span class="math inline">\((L',\{\pi_i'\})\)</span> are two limit cones over <span class="math inline">\(D\)</span>, terminality gives unique morphisms <span class="math inline">\(\varphi:L\to L'\)</span> (<span class="math inline">\(\pi_i'\circ\varphi=\pi_i\)</span>) and <span class="math inline">\(\psi:L'\to L\)</span> (<span class="math inline">\(\pi_i\circ\psi=\pi_i'\)</span>). Then <span class="math inline">\(\pi_i\circ(\psi\circ\varphi)=\pi_i=\pi_i\circ\operatorname{id}_L\)</span> for all <span class="math inline">\(i\in\mathcal I\)</span>. Since <span class="math inline">\(\operatorname{id}_L\)</span> is the unique morphism <span class="math inline">\(L\to L\)</span> compatible with <span class="math inline">\(\{\pi_i\}\)</span>, we must have <span class="math inline">\(\psi\circ\varphi=\operatorname{id}_L\)</span>, and symmetrically <span class="math inline">\(\varphi\circ\psi=\operatorname{id}_{L'}\)</span>.</p>
+</div><div id="rem-module-limits" class="proof remark">
+<p><span class="proof-title"><em>Remark 3</em> (Concrete construction of limits and colimits in <span class="math inline">\(\operatorname{Mod}_R\)</span> and <span class="math inline">\(\operatorname{Ab}\)</span>). </span>For any commutative ring <span class="math inline">\(R\)</span>, the category <span class="math inline">\(\operatorname{Mod}_R\)</span> (and <span class="math inline">\(\operatorname{Ab}=\operatorname{Mod}_{\mathbb Z}\)</span>) is both complete and cocomplete because every small diagram <span class="math inline">\(D:\mathcal I\to\operatorname{Mod}_R\)</span> admits a canonical limit and colimit:</p>
+<ul>
+<li><em>Limit (submodule of compatible tuples):</em> Inside the product <span class="math inline">\(\prod_{i\in\mathcal I}D(i)\)</span> with projections <span class="math inline">\(\pi_k\)</span>, <span class="math display">\[
+\begin{aligned}
+\varprojlim_{i\in\mathcal I}D(i)&amp;:=\left\{(x_i)_{i\in\mathcal I}\in\prod_{i\in\mathcal I}D(i)\;\middle|\;\right.\\
+&amp;\qquad\left.D(u)(x_i)=x_j\text{ for all }(u:i\to j)\in\operatorname{Mor}(\mathcal I)\right\}
+\end{aligned}
+\]</span></li>
+<li><em>Colimit (quotient of direct sum):</em> Inside <span class="math inline">\(\bigoplus_{i\in\mathcal I}D(i)\)</span> with insertions <span class="math inline">\(\operatorname{in}_i:D(i)\hookrightarrow\bigoplus_{k\in\mathcal I}D(k)\)</span>, <span class="math display">\[
+\begin{aligned}
+\varinjlim_{i\in\mathcal I}D(i)&amp;:=\left(\bigoplus_{i\in\mathcal I}D(i)\right)\big/N\\
+N&amp;=\operatorname{Span}_R\left\{\operatorname{in}_j(D(u)(x_i))-\operatorname{in}_i(x_i)\;\middle|\;\right.\\
+&amp;\qquad\left.u:i\to j,\ x_i\in D(i)\right\}
+\end{aligned}
+\]</span></li>
+</ul>
+</div></div>
+
+
+<div id="def-diagrams-limits" class="theorem definition">
+<p><span class="theorem-title"><strong>Definition 2 (Diagrams, cones, limits, colimits, and completeness)</strong></span> Let <span class="math inline">\(\mathcal I\)</span> be a small category (<a href="#def-small-category" class="quarto-xref">Definition&nbsp;1</a>) and let <span class="math inline">\(\mathcal A\)</span> be a category. A functor <span class="math inline">\(D:\mathcal I\to\mathcal A\)</span> is called a <em>diagram of shape <span class="math inline">\(\mathcal I\)</span></em>, and <span class="math inline">\(\operatorname{Func}(\mathcal I,\mathcal A)\)</span> denotes the category of such diagrams with natural transformations as morphisms. For each object <span class="math inline">\(A\in\mathcal A\)</span>, the <em>constant diagram</em> <span class="math inline">\(\Delta(A):\mathcal I\to\mathcal A\)</span> sends every <span class="math inline">\(i\in\mathcal I\)</span> to <span class="math inline">\(A\)</span> and every morphism <span class="math inline">\(u:i\to j\)</span> to <span class="math inline">\(\operatorname{id}_A\)</span>; this defines the <em>diagonal functor</em> <span class="math inline">\(\Delta:\mathcal A\to\operatorname{Func}(\mathcal I,\mathcal A)\)</span> (<a href="#rem-diagonal-morphisms" class="quarto-xref">Remark&nbsp;1</a>).</p>
+<ol type="1">
+<li><p><strong>Cones and limits:</strong> A <em>cone over <span class="math inline">\(D\)</span> with vertex <span class="math inline">\(A\)</span></em> is a natural transformation <span class="math inline">\(\pi:\Delta(A)\to D\)</span>, i.e., a family <span class="math inline">\(\{\pi_i:A\to D(i)\}_{i\in\mathcal I}\)</span> satisfying <span class="math inline">\(D(u)\circ\pi_i=\pi_j\)</span> for all <span class="math inline">\(u:i\to j\)</span>. A <em>limit</em> of <span class="math inline">\(D\)</span> is a terminal cone <span class="math inline">\((L,\{\pi_i\}_{i\in\mathcal I})\)</span> over <span class="math inline">\(D\)</span> (<a href="#rem-unique-limit" class="quarto-xref">Remark&nbsp;2</a>): every cone <span class="math inline">\((A,\{f_i\}_{i\in\mathcal I})\)</span> over <span class="math inline">\(D\)</span> factors through a unique morphism <span class="math inline">\(\bar f:A\to L\)</span> with <span class="math inline">\(\pi_i\circ\bar f=f_i\)</span> for all <span class="math inline">\(i\in\mathcal I\)</span>:</p>
+<div id="fig-cones-and-cocones" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-cones-and-cocones-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="tikz">
+<!--?xml version='1.0' encoding='UTF-8'?-->
+<!-- This file was generated by dvisvgm 3.6 -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="312.21pt" height="147.615pt" viewbox="0 0 208.14 98.41">
+<style type="text/css">
+@font-face{font-family:FBIPCW-CMSY7;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAAHgAAoAAAAAA7AAAAGWAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAANApoawsGAAE2AiQDCAQgBYJcByAb/AIArgZsJz3jZAxUe23C8CZL/roUQgjxqxEEp95/sjmcDqIaFKykY9syasFKmhhwzftqWib+/5JmFTqNFiqKpkjcbDrQ4Y7OrXWgB/I8jyiMyGL/74G7ev4JDQtuueMHD/S2skgz/3kSB5YUSIIRNg+kPdgbJhoVxM7cpz5JpGY2xuy3DUVW44CGvOZ3Guw9BrMkogOCGswG5m13T4sxa6pF4HEoVn4gAGAOEhRgQCFwaX5QtgSsi7k87j8JACSgBAFGsARQAogx6vKMyvv37G1RCj7yeRWeCer0/T+F598d++bhr5Xt7hxa/JpqAAECHg5noMlmxqMRRPMs5Q+0SEDAwid55LKzpExKdBzBQfIiACHk3hjSOEdJpqEicaEmiwp6dnEUohRA8KrIQbMbgWE1BcvuWESmz5HiDzMvZV5zhQRlrSDjbqpDTDdL3fOjRu/pz6edIaGnkbWabW6X2gHUrSpubyHjaVyCBJJlCWQ4DbXDqbdagBidOYKK9aJ2yGei6g46fqDn0Ts9WjOQoEujANh/AAAA) format('woff2');}
+@font-face{font-family:XDTRFF-CMMI5;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAALMAAoAAAAABNAAAAKDAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAANAqDBII+CwgAATYCJAMMBCAFglwHIBvTA0CuCmxwv0IRDOV12EhZDMTxyB/kcxQP8PvjPfc+fBgTGpSXJIdiR4W40IhQF+r2hsblPaxRHTQz1dYdVzNRZrufbjLZBEaDqAsks0QzzIMCCbgeC5211h0eoc7+95b+iWxAJ4DPbg301JN6CWVeeGsYYKKjACPSQLaJ2BkhiDXtlY5OSOIYpElGvB/f/W9E4wrh7xQIGHAOCbzK1iMZkQBpl5gEBRKBWiwKEJGgcQiN4Hp1U6mA3WTYVRi9K6ATr3Py6ZwGXAekgChWzMZpxXZtec0Mt/dwc9q7KLtU9tw2XvcDnr6nZ68PyNcup95swzZ3MIv1e9UPPc8/cZft5sZuAw9nbT703OnENbVnlgDIZO20n28n3XmsNHG7NAtM4QK+BbrXZjp4+3I/DLh4V96u2Hy4dZ4lGyKPI0o3P53a/42ncHkB7BelrWXhyoE8k3wm6rL2X3Nk4e+hMrvWgUUwfMnyP31LNROqK5kKDZ5j+jL3JH5dAmXn89JEr6Ih3SZlvb/dUKBCJdx9arm+3FqTvpyMUZ0PemxgY7ERDjrXN57jbiz3MRVEg7NQNkvfmiQf2l80fV4MAAQEfi150wNJ7a80SdknFZMiNr5EqQgCiQJxNSVOkQXtJhGxH/gzVQgSC/IHdKnceRAQ1BDRVKUamqnQQXOVhpfLtdIDE9IyQTebiKZaRdFMsyKaa9VRlptqoU9Q34DNepm5uVhYaJra21sbtt8jXS2dg96b6h1hGdGpGZHxYn0tI2AqUbwk6dKESyFmL1GYXEngxYwbFxYsaDJlz541Qx5EbKmiJUogpkuLDo8sdUJNHXwPCktCZHs5TIZoqZFHiiemT4sRGAM=) format('woff2');}
+@font-face{font-family:NQUDBD-CMMI7;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAAT4AAoAAAAAB+wAAASuAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAAVAqIaIZUCxAAATYCJAMcBCAFglwHIBsZBhEVoweCfCTGMZEH7i2aeOnn303/3IRa8I0EqAA1A6qemqeEiTt9YhXDaj4zyZon5l8VosndfonmkGriWROX0x/bfgNNAP+nvXgWeBdYFnkarXkeWWnA0ts2qdNBgigpwr4leIauADxbUTO4AGyxJ5MKaIoe+jWoIAZ5AAiuQKwF6GDxpq3LzBoav47DFI1DeoKBnJoqATDkAIrSREILZO4WcYcRoGEZbMEv4Nd7NDQsrX926spU11TTeMl4HiBKuSEkOneAxkcHiAS0xCAC0LRrKstAlgYmsPO8HHYqiDhdO0qKX7+u4ZjrJRwjGupxkHcOzZutstqEQp438GynF+85NsYQI9ZlZkbVZ3Ry9AdPNZ2XhGd8bF0BNpI8x3uxLEsM9YySQp73OsYL6574OM8TZzX23mA7FTS0v8ubEY52D1GbzF0cc3pM03lNWHdAbXEGBA4Lh++lHDrmxT5nxsZMPNsZzLNnnqgdh4LrhtVmVunQH80b4YyHmePcjbg6PtzhWMR2HqtTW1QM4+wCS3vgKK/1cpCkjbQcjzhOW8f0+x/H3k4/ONDBs8e0tQEfPDdaCcpO1Ro6w6/lL+1/Uh3nvJ0ncs+98nJ4sayWdRwSnlFbGBXHdJEWm/IeH9MZSNpI2/FUjrn7EnVqlzEcR5xFSsMxniVGuEwrRdkpx63wS48CxY5htcK6P4joU3n3v1bbFM79AdaDmg6/QV57o/xdbZzrlj+jp+N+rl9u2YM1WmEj9nb1mk8+2VDxLrb21LT/nzff+DGtTh/nOkDVz8X25X+TXkrVNM4SFmNo6fa5LLz55QT0tSWlSAuNU21vZmZjITZMnEFW+rt8//OPX30ZoysK8HZE/isxlbyUB31ZKTEpzB+bsgL9Q0/jYgPVkPj/42ktk31o261umPdKHvwl6Hasu9q4ccY27Ks5ihSRjpJXYcLP1KeRr/Fi+Pl566hZCwvwTDCbUDm2OLP0a0lBjhlbn3PHYJOJy6HFVX9eT8RmxzRnB/+bK82UQplpviYr4NrV1XB8OJYzxySlu5n83iNnMQ0S8lPdX3701p1xfS2VHi4G2amsE3lk+nv3v2z5e/95qbwseAmGAi3aq5FSeX+lu2TdWUEkF7LPzfXJMt/lEtncgK8+/mlaDmzllDVnSLZwvhRp3Kgqs9IctHI8UTnRBwsz8wNRbaUH1mvNii4EX9xX+ROkbUr/R0b70JoYH338vpxetSlDXka9Ufy8pcJddbBaSj9/48vzAn3iglqLXaORKMzjdR74fdn17NPHCIlqz1XgCBB/5W7yRPs8aep/7rgAoJ6KxFuxF9C4w/oZ+799iJh6bl8FiCK3oCvEkqE4fy0COwVGdBxKsMOgBwTATel4S+KMsBcQg1IYzQREpDXJhZCX5Eok6DBBBdGAQ+UBiAaKnCSgguWSCwoskisV2OeEwujoaVP/TG5rWWUNnU1H5pSWFiZc4tai9EbDwsv8OxZvXbFp67I1uhh9PORYZ431tthsiY10Sq2zGJesVaZSDVo2WqQcpTwUSmCSfJMVrTe3lk4UPaOA+ebaMc0F84CL84V2lNrFtlph048vs4ZODL14OAUA) format('woff2');}
+@font-face{font-family:OYFEXR-CMR10;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAAJIAAoAAAAAA/gAAAH/AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAANAqBLIExCwgAATYCJAMKBCAFglwHIBtEA1HUijUnC/C3Ak7GdgTvrRIuFmETi17KqktUaGFOaZrNJBx8h4gnvC4z+ZjS3P5ly0/F81973blvN1UnlC4Th/0Y14TECIxhkM1YlEE1Z1in3IJAI8k4i/AkB6ISspndKbeWNA8yiLDd8A1wNmd3YGyjun91G73dsr39Fvk8x6Wd8PX7rK/FqOvnw9BYglW/t5RitTWwxRk82l9b6AVhO57IAvq7QGDngQWWBJRgCGESBBJioAMLCHpnVL2TyElE9tuCls9A6qP6txdJmSPOCp0Twg953DO3s28GmkAAGAMUGjaaYKO7QtcF+zHsxsYfAGhgjsI1bgEdEDlKZ/3RPRzybY/H32x2Y3eG+dJsN7vd5RCfVrWlvz7Hft/ftaobKoos+w3DfvoqfTA02i0auvD+eTwFvH/E5EPEDhXz6v7/3HMwRBQD2da5BwACIABfvUGqh4ideo2hNFgqEJqBYjLlQQAAVcizmgTNkYCAfLt2T4I3mw4DzwwamzkM2XyNwQQM2FeAeAIABEMPKJpHYBi2BcXgezXt483DaN7jziW0znDCaLh4O6PO4GqeMU+0Nv3lpjsWmHU2gNPU2MzaStuCQNhUC703EZXn4ZaToOUUlmBkkNG2sNQ3NSFgpGPIEG890bZQ7yQtHzRcEWjZ6Fva6BoTMNOxAQMA8wc=) format('woff2');}
+@font-face{font-family:PCPXEO-CMR7;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAAJ8AAoAAAAABJQAAAIzAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAARAqCMIF9CwwAATYCJAMUBCAFglYHIBukA0Aeg+NuGcoQQ1nKuBsv9eXyePhctveT7N5RWvNnHK1bFK41xaAEEqnxoBQ5srPZJC8Y3X0rqRQr7P/vb/JfrfMCmgCebeyJdOkaIpF23uUfNEoXBvYp0d6pnqhWslnSGGP2jUOOn6hFRPpK2/+TaiyJ5+agEGToLUbmfK5fkkOA2BosQ0UWEADUChIyJuEFJhH0gK6uhDVisFo1okv170UnCGuNsB+OPQHeASiAJIQY7F/gIPi4NjaWNzO7d0xWjHu1Ti1N9GMiQ9MRTE25jEeOCkfHTpJnPHHuZj9x4ZTn1Cf0li62Y8fcI92jo2GWPBaO01OXkxPnZtQyE0GJhn6/RZaoUxlKaUQW2bikNCG/C0bGP8ZiAW7qHNogXQW1iBjVWNyyysv/IM9WWr+5Qj/FzD1MMBP5ozjJ/COlPPCoBZToV9xFe3mUfKP8+8jwG3cOFh6v0JsWH5+M1MqISU/hVbVVpBUAAsHVR9q1D43mDym+8EaNJGNTv0KQVaRtMGUWbxCIUiH2ITzWJfbbpskEXCA0FupM2JP6fUIgjCBAMWBEgMaAeQi0BmxBoN8sWXhR+oRlpjOzmBaMGpaJWlaf9esZPf7e557XbA1sXY1spAys7FUu1XM5adn44KF0j8DksITkkCheBWllMBAjSqwkiYLE42UlRiBANNsMLluujNiQYsCKPRXOUJQEYWJE4yVHmmw2MvGj6/l+a6BA8Jc2ugMlC5MgeIgovBRIU4bn) format('woff2');}
+@font-face{font-family:TUELZZ-CMMI10;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAAUEAAoAAAAACFwAAAS7AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAARAqJWIcwCxIAATYCJAMgBCAFgmIHIBtvBgAehXGbU4UiFOFLdZotuPX379Z7cjFvCevOhvLMAqx5SFg1QZ6aVkT+dvrVLs8LN3r7CyGBPIIwSxIPI4rwQA9o1Tn/073TFmXR58ZfAFb7vbvWBJtTTzDCsRal3woojQOmVMTb5UzpqRuAlU5sBjgAPej5/0rTbRD7C9OgLQHEHHBxGEhDwdlUTJAjlTUsUVbG8MiSlwEAFVgAlKVRiY1APtr9cwaxyvhI2lSl3eabywMG9HzL5QAkALsAsH/kY5spGgZF+ivQynITS1c74KHCFUI1U271GzfjmT37RQc3L6hoSmVR9Vrx/Q+daFpM2Xr2+1jxBT973C66+JIRpTHZvdK4j1guef8e3r2jTOARgzIlYvdT94+miz79lNn5gRYe2GefYd9oslcuiNpNCwtClUVl59ZbWoVhU5a0f+dSlDPnP014+alTmsTNZme4VsAHRvhTBtPv11/HGb+Cmcm20gMFY5y4FTu8cHZGv8EYQVCWdPvUVRipzlfuMSHFaneX2YqblVTl8xWiTuOv2ho0Mp5BvCd+w9ilctsl7wuuW4/6nTdRhA22+V381MtqFeHmnmCb/zHDhRuuVifG6azTVrctB5QHXlHTscwSujXoZMT569Bj34/0VdH5jPSqHNtyRHnuHUHUqTbcjBh/7WK2N717Jxx74Zj8t+cPQ88h7/12Fz+90FhgzCYkJun6blVWiE58YVM96kY1JE/2YJf7Wl9+IdeAxfXf9b7pflstub+pCDHolEB2XiB/Y3v4p3sS7E2YWKVwyr3j/Mt3pnQsN3ENiuouSpZGC5Lj+Fh0OPlf7PoGVuUZlw+vZt7sMFiyUH0tFsYK0euwge/UkZXURDpqbMLilKEJEehOmLOGI5AC8T7ayA6hhT0k15WTZiyNB4MB3b9hjGMWg6eLWY3tOZFYTZZH6vrgdGZNTw4ZFFwRRg7UfKKD5mwxo240klyvjYrS1iX1o2RWf0NmRPzX2BnYkzCxSqZDb1wWvzPVofYZqMpQfPW2jtKUbpRyx/XnVzNvvteNa8bjuVHI7OaEqtWJdmk1CpqLFZSkxkHVTw1dx6g/6aEmqA99Zdt1pa5o9jaf+nOtGb6Y0g+Om1ilcE66I7qQOIysaIbkSxcTw5aB580LlqcAexJ1sXv8yqsLFGgmVxt9O4jm5ZAKt8u8v+sTn7NlRZrBfKaw9yOeIGdXCR4eZOTlaGRuh/3+qc956eX0FCzdHGmiDuOqP0559ja7M9xJISVO7SajiEw6ka3A9O9M1V3/ZBEnK6sJj6lNWOXrLhW61vhI5NWFX8yeIqMBKFZ8F1Zvb72yZesW+c0GOLF01L0SfQ0AfEjStTfBnaF6ZW/YyMcvg95dp4PyJWjZEyEgl8C/csC19kdhxQzbFCcA+sFAQagLxlDJXHaeTULGc4g481wSfseF7C3Dgi0CwLiKtfNsjsp4DpUBnsvRlqIQ4dz5q/P3dMspY1hsWlqIPi4uSkNcF3Zq1IQfc7dfiYKm0vqm4kp3rXoF6FWrVKNRg0J13MWpVmCfVoViFCZWGhpD6MXVRtEg0KxUvVKJwVZxp6FGZOoIWtVnmjs0dUEqT6tJXqBJqfofL1bJnZbaCiwA) format('woff2');}
+
+</style>
+<g id="page1">
+<text font-family="TUELZZ-CMMI10" font-size="9.96" x="80.326031" y="-66.939526" transform="matrix(1.000261 0 0 1.000261 -35.804 96.571)">A</text>
+<text font-family="TUELZZ-CMMI10" font-size="9.96" x="155.927296" y="-66.939526" transform="matrix(1.000261 0 0 1.000261 -41.921 96.571)">D</text>
+<text font-family="OYFEXR-CMR10" font-size="9.96" x="164.450071" y="-66.939526" transform="matrix(1.000261 0 0 1.000261 -41.921 96.571)">(</text>
+<text font-family="TUELZZ-CMMI10" font-size="9.96" x="168.32406" y="-66.939526" transform="matrix(1.000261 0 0 1.000261 -41.921 96.571)">i</text>
+<text font-family="OYFEXR-CMR10" font-size="9.96" x="171.755164" y="-66.939526" transform="matrix(1.000261 0 0 1.000261 -41.921 96.571)">)</text>
+<text font-family="TUELZZ-CMMI10" font-size="9.96" x="190.343312" y="-66.939526" transform="matrix(1.000261 0 0 1.000261 -35.984994 96.571)">C</text>
+<text font-family="TUELZZ-CMMI10" font-size="9.96" x="225.378166" y="-66.939526" transform="matrix(1.000261 0 0 1.000261 -42.541009 96.571)">D</text>
+<text font-family="OYFEXR-CMR10" font-size="9.96" x="233.900932" y="-66.939526" transform="matrix(1.000261 0 0 1.000261 -42.541009 96.571)">(</text>
+<text font-family="TUELZZ-CMMI10" font-size="9.96" x="237.77492" y="-66.939526" transform="matrix(1.000261 0 0 1.000261 -42.541009 96.571)">j</text>
+<text font-family="OYFEXR-CMR10" font-size="9.96" x="242.446711" y="-66.939526" transform="matrix(1.000261 0 0 1.000261 -42.541009 96.571)">)</text>
+<text font-family="TUELZZ-CMMI10" font-size="9.96" x="46.202939" y="-22.789051" transform="matrix(1.000261 0 0 1.000261 -41.921 96.571)">D</text>
+<text font-family="OYFEXR-CMR10" font-size="9.96" x="54.725713" y="-22.789051" transform="matrix(1.000261 0 0 1.000261 -41.921 96.571)">(</text>
+<text font-family="TUELZZ-CMMI10" font-size="9.96" x="58.598703" y="-22.789051" transform="matrix(1.000261 0 0 1.000261 -41.921 96.571)">i</text>
+<text font-family="OYFEXR-CMR10" font-size="9.96" x="62.030805" y="-22.789051" transform="matrix(1.000261 0 0 1.000261 -41.921 96.571)">)</text>
+<text font-family="TUELZZ-CMMI10" font-size="9.96" x="80.326031" y="-22.789051" transform="matrix(1.000261 0 0 1.000261 -35.458 96.571)">L</text>
+<text font-family="TUELZZ-CMMI10" font-size="9.96" x="115.068962" y="-22.789051" transform="matrix(1.000261 0 0 1.000261 -42.541 96.571)">D</text>
+<text font-family="OYFEXR-CMR10" font-size="9.96" x="123.591737" y="-22.789051" transform="matrix(1.000261 0 0 1.000261 -42.541 96.571)">(</text>
+<text font-family="TUELZZ-CMMI10" font-size="9.96" x="127.465726" y="-22.789051" transform="matrix(1.000261 0 0 1.000261 -42.541 96.571)">j</text>
+<text font-family="OYFEXR-CMR10" font-size="9.96" x="132.137506" y="-22.789051" transform="matrix(1.000261 0 0 1.000261 -42.541 96.571)">)</text>
+<text font-family="TUELZZ-CMMI10" font-size="9.96" x="190.343312" y="-22.789051" transform="matrix(1.000261 0 0 1.000261 -36.095994 96.571)">B</text>
+<path d="M43.38094 33.46403L21.21314 62.14007" stroke="#000" fill="none" stroke-width=".3985" stroke-miterlimit="10"></path>
+<path d="M24.250101 62.120578C22.883633 61.54274 21.831823 61.795864 21.091324 62.297704C21.390446 61.454669 21.370451 60.373014 20.467028 59.196172" stroke="#000" fill="none" stroke-width=".398484" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path>
+<text font-family="NQUDBD-CMMI7" font-size="6.97" x="32.050526" y="-22.782579" transform="matrix(1.000545 0 0 1.000545 -9.279999 67.052)">f</text>
+<text font-family="XDTRFF-CMMI5" font-size="4.98" x="35.943617" y="-21.793311" transform="matrix(1.000261 0 0 1.000261 -9.279999 67.052)">i</text>
+<path d="M53.2653 33.46403L75.83773 62.14221" stroke="#000" fill="none" stroke-width=".3985" stroke-miterlimit="10"></path>
+<path d="M76.558052 59.19191C75.664973 60.37661 75.65445 61.458392 75.96094 62.29877C75.21608 61.803436 74.1621 61.559532 72.800752 62.149309" stroke="#000" fill="none" stroke-width=".398482" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path>
+<text font-family="NQUDBD-CMMI7" font-size="6.97" x="32.050526" y="-22.782579" transform="matrix(1.000545 0 0 1.000545 34.953 66.444)">f</text>
+<text font-family="XDTRFF-CMMI5" font-size="4.98" x="35.943617" y="-21.793311" transform="matrix(1.000261 0 0 1.000261 34.953 66.444)">j</text>
+<path d="M48.27862 33.46403V62.72104" stroke="#000" fill="none" stroke-width=".3985" stroke-miterlimit="10" stroke-dasharray="2.7894 1.59395"></path>
+<path d="M50.66952 60.848164C49.23495 61.226734 48.55757 62.070314 48.27862 62.920274C47.99967 62.070314 47.32229 61.226734 45.88772 60.848164" stroke="#000" fill="none" stroke-width=".3985" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path>
+<path d="M39.73492 54.03908H56.82234V42.54445H39.73492Z" fill="#fff"></path>
+<text font-family="FBIPCW-CMSY7" font-size="6.97" x="32.050526" y="-22.782579" transform="matrix(1.000545 0 0 1.000545 9.813999 73.331)">∃</text>
+<text font-family="PCPXEO-CMR7" font-size="6.97" x="36.559072" y="-22.782579" transform="matrix(1.000545 0 0 1.000545 9.813999 73.331)">!<tspan x="41.807207" y="-24.621576">¯</tspan></text>
+<text font-family="NQUDBD-CMMI7" font-size="6.97" x="40.173103" y="-22.782579" transform="matrix(1.000545 0 0 1.000545 9.813999 73.331)">f</text>
+<path d="M40.39541 71.2857H28.89132" stroke="#000" fill="none" stroke-width=".3985" stroke-miterlimit="10"></path>
+<path d="M30.764188 73.676609C30.385618 72.242039 29.542038 71.564659 28.692078 71.285709C29.542038 71.006759 30.385618 70.329379 30.764188 68.894809" stroke="#000" fill="none" stroke-width=".3985" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path>
+<text font-family="NQUDBD-CMMI7" font-size="6.97" x="32.050526" y="-22.782579" transform="matrix(1.000545 0 0 1.000545 -1.530998 99.43)">π</text>
+<text font-family="XDTRFF-CMMI5" font-size="4.98" x="36.717415" y="-21.793311" transform="matrix(1.000261 0 0 1.000261 -1.530998 99.43)">i</text>
+<path d="M56.16184 71.2857H67.66593" stroke="#000" fill="none" stroke-width=".3985" stroke-miterlimit="10"></path>
+<path d="M65.79305 68.894809C66.17162 70.329379 67.0152 71.006759 67.86516 71.285709C67.0152 71.564659 66.17162 72.242039 65.79305 73.676609" stroke="#000" fill="none" stroke-width=".3985" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path>
+<text font-family="NQUDBD-CMMI7" font-size="6.97" x="32.050526" y="-22.782579" transform="matrix(1.000545 0 0 1.000545 25.855 99.43)">π</text>
+<text font-family="XDTRFF-CMMI5" font-size="4.98" x="36.717415" y="-21.793311" transform="matrix(1.000261 0 0 1.000261 25.855 99.43)">j</text>
+<path d="M26.01592 80.1161C38.25661 89.21844 58.92101 89.21844 70.84196 80.35385" stroke="#000" fill="none" stroke-width=".3985" stroke-miterlimit="10"></path>
+<path d="M67.912487 79.552946C69.072263 80.478167 70.153353 80.518339 71.001819 80.235C70.486252 80.966003 70.213548 82.012904 70.765787 83.38991" stroke="#000" fill="none" stroke-width=".398483" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path>
+<text font-family="NQUDBD-CMMI7" font-size="6.97" x="32.050526" y="-22.782579" transform="matrix(1.000545 0 0 1.000545 7.688004 117.313999)">D</text>
+<text font-family="PCPXEO-CMR7" font-size="6.97" x="38.77586" y="-22.782579" transform="matrix(1.000545 0 0 1.000545 7.688004 117.313999)">(</text>
+<text font-family="NQUDBD-CMMI7" font-size="6.97" x="41.887163" y="-22.782579" transform="matrix(1.000545 0 0 1.000545 7.688004 117.313999)">u</text>
+<text font-family="PCPXEO-CMR7" font-size="6.97" x="46.594597" y="-22.782579" transform="matrix(1.000545 0 0 1.000545 7.688004 117.313999)">)</text>
+<path d="M138.2463 27.1243H149.5162" stroke="#000" fill="none" stroke-width=".3985" stroke-miterlimit="10"></path>
+<path d="M147.64332 24.733402C148.02189 26.167972 148.86547 26.845352 149.71543 27.124302C148.86547 27.403252 148.02189 28.080632 147.64332 29.515202" stroke="#000" fill="none" stroke-width=".3985" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path>
+<text font-family="NQUDBD-CMMI7" font-size="6.97" x="32.050526" y="-22.782579" transform="matrix(1.000545 0 0 1.000545 108.96 46.577)">ι</text>
+<text font-family="XDTRFF-CMMI5" font-size="4.98" x="35.007865" y="-21.793311" transform="matrix(1.000261 0 0 1.000261 108.96 46.577)">i</text>
+<path d="M178.40244 27.1243H167.13254" stroke="#000" fill="none" stroke-width=".3985" stroke-miterlimit="10"></path>
+<path d="M169.00543 29.515202C168.62686 28.080632 167.78328 27.403252 166.93332 27.124302C167.78328 26.845352 168.62686 26.167972 169.00543 24.733402" stroke="#000" fill="none" stroke-width=".3985" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path>
+<text font-family="NQUDBD-CMMI7" font-size="6.97" x="32.050526" y="-22.782579" transform="matrix(1.000545 0 0 1.000545 137.16501 45.608)">ι</text>
+<text font-family="XDTRFF-CMMI5" font-size="4.98" x="35.007865" y="-21.793311" transform="matrix(1.000261 0 0 1.000261 137.16501 45.608)">j</text>
+<path d="M135.87002 18.2939C148.21465 9.19156 169.0544 9.19156 181.07838 18.05745" stroke="#000" fill="none" stroke-width=".3985" stroke-miterlimit="10"></path>
+<path d="M180.989896 15.021777C180.44326 16.401002 180.720212 17.446777 181.23874 18.175673C180.389138 17.895786 179.30823 17.940349 178.152233 18.870265" stroke="#000" fill="none" stroke-width=".398479" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path>
+<text font-family="NQUDBD-CMMI7" font-size="6.97" x="32.050526" y="-22.782579" transform="matrix(1.000545 0 0 1.000545 117.734 30.172)">D</text>
+<text font-family="PCPXEO-CMR7" font-size="6.97" x="38.77586" y="-22.782579" transform="matrix(1.000545 0 0 1.000545 117.734 30.172)">(</text>
+<text font-family="NQUDBD-CMMI7" font-size="6.97" x="41.887163" y="-22.782579" transform="matrix(1.000545 0 0 1.000545 117.734 30.172)">u</text>
+<text font-family="PCPXEO-CMR7" font-size="6.97" x="46.594597" y="-22.782579" transform="matrix(1.000545 0 0 1.000545 117.734 30.172)">)</text>
+<path d="M130.78059 35.9547L151.71587 62.80528" stroke="#000" fill="none" stroke-width=".3985" stroke-miterlimit="10"></path>
+<path d="M152.449732 59.858252C151.551215 61.038863 151.535732 62.120602 151.83837 62.96239C151.095778 62.463638 150.042911 62.2149 148.678852 62.798437" stroke="#000" fill="none" stroke-width=".398488" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path>
+<text font-family="NQUDBD-CMMI7" font-size="6.97" x="32.050526" y="-22.782579" transform="matrix(1.000545 0 0 1.000545 99.914 77.681)">g</text>
+<text font-family="XDTRFF-CMMI5" font-size="4.98" x="35.945617" y="-21.793311" transform="matrix(1.000261 0 0 1.000261 99.914 77.681)">i</text>
+<path d="M186.36455 35.9547L165.05035 62.80743" stroke="#000" fill="none" stroke-width=".3985" stroke-miterlimit="10"></path>
+<path d="M168.087212 62.826924C166.728311 62.231591 165.673358 62.471176 164.92649 62.96345C165.236411 62.124346 165.230315 61.042548 164.342106 59.854223" stroke="#000" fill="none" stroke-width=".398475" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path>
+<text font-family="NQUDBD-CMMI7" font-size="6.97" x="32.050526" y="-22.782579" transform="matrix(1.000545 0 0 1.000545 145.862 77.681)">g</text>
+<text font-family="XDTRFF-CMMI5" font-size="4.98" x="35.945617" y="-21.793311" transform="matrix(1.000261 0 0 1.000261 145.862 77.681)">j</text>
+<path d="M158.32436 33.46403V62.72104" stroke="#000" fill="none" stroke-width=".3985" stroke-miterlimit="10" stroke-dasharray="2.7894 1.59395"></path>
+<path d="M160.71526 60.848164C159.28069 61.226734 158.60331 62.070314 158.32436 62.920274C158.04541 62.070314 157.36803 61.226734 155.93346 60.848164" stroke="#000" fill="none" stroke-width=".3985" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path>
+<path d="M150.04548 53.5382H166.60327V43.04534H150.04548Z" fill="#fff"></path>
+<text font-family="FBIPCW-CMSY7" font-size="6.97" x="32.050526" y="-22.782579" transform="matrix(1.000545 0 0 1.000545 120.124 72.83)">∃</text>
+<text font-family="PCPXEO-CMR7" font-size="6.97" x="36.559072" y="-22.782579" transform="matrix(1.000545 0 0 1.000545 120.124 72.83)">!<tspan x="40.46227">¯</tspan></text>
+<text font-family="NQUDBD-CMMI7" font-size="6.97" x="40.173103" y="-22.782579" transform="matrix(1.000545 0 0 1.000545 120.124 72.83)">g</text>
+</g>
+</svg>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-cones-and-cocones-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Universal factorizations for limits and colimits
+</figcaption>
+</figure>
+</div></li>
+<li><p><strong>Cocones and colimits:</strong> Dually, a <em>cocone under <span class="math inline">\(D\)</span> with vertex <span class="math inline">\(B\)</span></em> is a natural transformation <span class="math inline">\(\iota:D\to\Delta(B)\)</span> (<span class="math inline">\(\iota_j\circ D(u)=\iota_i\)</span>). A <em>colimit</em> of <span class="math inline">\(D\)</span> is an initial cocone <span class="math inline">\((C,\{\iota_i\}_{i\in\mathcal I})\)</span> under <span class="math inline">\(D\)</span>: every cocone <span class="math inline">\((B,\{g_i\}_{i\in\mathcal I})\)</span> factors uniquely as <span class="math inline">\(g_i=\bar g\circ\iota_i\)</span> for <span class="math inline">\(\bar g:C\to B\)</span>.</p></li>
+<li><p><strong>Completeness and cocompleteness:</strong> The category <span class="math inline">\(\mathcal A\)</span> is <em>complete</em> if every diagram <span class="math inline">\(D:\mathcal I\to\mathcal A\)</span> from a small category <span class="math inline">\(\mathcal I\)</span> admits a limit in <span class="math inline">\(\mathcal A\)</span>, and <em>cocomplete</em> if every such diagram admits a colimit in <span class="math inline">\(\mathcal A\)</span> (<a href="#rem-module-limits" class="quarto-xref">Remark&nbsp;3</a>).</p></li>
+</ol>
+</div>
+<p><strong>Motivation.</strong> A limit of a single diagram <span class="math inline">\(D\)</span> is determined only up to unique isomorphism. However, once we choose a specific terminal cone <span class="math inline">\((\varprojlim_{\mathcal I}D,\{\pi_i^D\})\)</span> for each diagram <span class="math inline">\(D\)</span>, the universal property automatically makes <span class="math inline">\(\varprojlim_{\mathcal I}\)</span> and <span class="math inline">\(\varinjlim_{\mathcal I}\)</span> functors that are right and left adjoint to <span class="math inline">\(\Delta\)</span>.</p>
+
+<div class="no-row-height column-margin column-container"><div id="rem-choosing-cones" class="proof remark">
+<p><span class="proof-title"><em>Remark 4</em> (Why defining a limit functor requires choosing terminal cones). </span>In <a href="#def-diagrams-limits" class="quarto-xref">Definition&nbsp;2</a> (1), “being a limit” is a property of a cone <span class="math inline">\((L,\pi)\)</span>, not a single canonical object in an abstract category <span class="math inline">\(\mathcal A\)</span>. To define an actual functor <span class="math inline">\(\varprojlim_{\mathcal I}:\operatorname{Func}(\mathcal I,\mathcal A)\to\mathcal A\)</span>, we must first assign to each object <span class="math inline">\(D\in\operatorname{Func}(\mathcal I,\mathcal A)\)</span> a chosen terminal cone <span class="math inline">\((L_D,\pi^D)\)</span> (using the canonical submodule/quotient in <span class="math inline">\(\operatorname{Mod}_R\)</span>, or global choice in an abstract complete category). Different choices of terminal cones yield canonically isomorphic limit functors by <a href="#rem-unique-limit" class="quarto-xref">Remark&nbsp;2</a>.</p>
+</div></div><div id="prp-limit-adjunction" class="theorem proposition">
+<p><span class="theorem-title"><strong>Proposition 1 (Functoriality of limits and colimits via diagonal adjunction)</strong></span> Let <span class="math inline">\(\mathcal I\)</span> be a small category and let <span class="math inline">\(\mathcal A\)</span> be a complete and cocomplete category. Choosing a limit cone <span class="math inline">\((\varprojlim_{\mathcal I}D,\{\pi_i^D\})\)</span> and a colimit cocone <span class="math inline">\((\varinjlim_{\mathcal I}D,\{\iota_i^D\})\)</span> for each <span class="math inline">\(D\in\operatorname{Func}(\mathcal I,\mathcal A)\)</span> (<a href="#rem-choosing-cones" class="quarto-xref">Remark&nbsp;4</a>) defines functors <span class="math inline">\(\varprojlim_{\mathcal I},\varinjlim_{\mathcal I}:\operatorname{Func}(\mathcal I,\mathcal A)\to\mathcal A\)</span> that are right and left adjoint to <span class="math inline">\(\Delta:\mathcal A\to\operatorname{Func}(\mathcal I,\mathcal A)\)</span>: <span class="math display">\[
+\begin{aligned}
+\operatorname{Hom}_{\operatorname{Func}(\mathcal I,\mathcal A)}(\Delta(A),D)
+&amp;\xrightarrow{\sim}\operatorname{Hom}_{\mathcal A}\left(A,\varprojlim_{\mathcal I}D\right)\\
+\operatorname{Hom}_{\mathcal A}\left(\varinjlim_{\mathcal I}D,B\right)
+&amp;\xrightarrow{\sim}\operatorname{Hom}_{\operatorname{Func}(\mathcal I,\mathcal A)}(D,\Delta(B))
+\end{aligned}
+\]</span></p>
+</div>
+
+<div class="no-row-height column-margin column-container"><div id="rem-composite-cone" class="proof remark">
+<p><span class="proof-title"><em>Remark 5</em> (Diagrammatic check that <span class="math inline">\(\alpha\circ\pi^D\)</span> is a cone over <span class="math inline">\(D'\)</span>). </span>Why does composing <span class="math inline">\(\pi^D\)</span> with a natural transformation <span class="math inline">\(\alpha:D\to D'\)</span> produce a cone over <span class="math inline">\(D'\)</span>? Because for every morphism <span class="math inline">\(u:i\to j\)</span> in <span class="math inline">\(\mathcal I\)</span>, the cone identity <span class="math inline">\(D(u)\circ\pi_i^D=\pi_j^D\)</span> and the naturality square <span class="math inline">\(D'(u)\circ\alpha_i=\alpha_j\circ D(u)\)</span> paste together into a commutative rectangle:</p>
+<div id="fig-composite-cone" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-composite-cone-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="tikz">
+<!--?xml version='1.0' encoding='UTF-8'?-->
+<!-- This file was generated by dvisvgm 3.6 -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" width="270.525pt" height="109.65pt" viewbox="0 0 180.35 73.1">
+<style type="text/css">
+@font-face{font-family:LTUJIK-CMR7;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAAIsAAoAAAAABAgAAAHjAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAANAqBQIE7CwgAATYCJAMKBCAFglYHIBtIAwCOwrblE2Mq4lCXOfmKiodq7Pf27r5gIomQqSaV6dZJgdgIkSF19vr92r47T26IujZC9Yh/qVhkaNaYvMX7QDegDwR2PtxoYG9AiYUS9gMG9IpFAWdh5q3N9tnMlNUREenXDDX+YlaH8l1u/4Vm0sRnKBxiANqFBY/y+tlcAgz7zKpEFbjOTFBQMa2bnEazDjRN4CAT+5n5CwhABV0UXAB3ADRAiCVFhWipV4gldg7Dk8pUSCRvy4kUtxoyZ/AyWzI8sRfzxbBjSZ9EQZIpBJG8jFbmKv7P87hFvg5uFTWutZQbk3d/RZmr3LzzwTzHzoczw06UH3XH/ZhTH7zkQJ6TfcSz6a7GKbcqf49N3XpJiMj4gt1y9fYR5DbGYF0BCASrmxcDORzPb1Ztmr+RUVToKyCoEoVLYdErAAClIH40CoVQLUEgkB/0hQBjKLqbIWMCdAxZrEGX7HQPmmeLKtqAsCqUeDOrGHRIJ+iS+TDo3Okh1V9wbotMTAoPi7AKiIp3ufo27axtZ2rPmWsUNpc1NJdUaR2snSFAjSq1mjQqUk8rSo1CXl4tUqIk4cJEsBIgSjwXyXKXBmVqVNOyY80WD0Kq1YrUy1sFFL6DfG20CjUr06BZiSpaDqw5owLsPA==) format('woff2');}
+@font-face{font-family:HJTYEB-CMMI5;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAAM4AAoAAAAABYQAAALsAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAAPAqEKIM8CwoAATYCJAMQBCAFglwHIBtdBAiOw8YNZZMprFx5knio7tm73f03948/JUVehHHTTB5B4CEEHvgd2b0/ew+OCJT5AFqoiqZu6g/w4jEBuGwuiid4l9ALBt5jk/IAE32KVDN3YcpHOslqneXxpvxckLGPWoAA4oNd3XFAcwvQv+pAvVEAuA74Bj7l/sqKBiILcQn3QELW1XUPEEACRxYOeDJBJxWCOZlEfRO7gDxcvfvsGuzBzYMvgJ+hIro7F3aaFk3JO5gbTUlJTUyh0mlOxvPnns88HnmUiN6hvFayfjo4gEeTVv/S++XLFy/k9l5Q51RHfM+BRN0cX//x9qxviUqPzIHH1gOhfn51b+9+riGJjUcqHR1Uri6uUvV++WPvy8eCPTweHjwdMKC5/VK4u5vG2Zm9CKDF+tkA/27UPSQ19cyDBebgIXgecPhojcSzFw+EzP8NKOmR6JTcfnntUckjz8CprKhwMjh0fo1Xw0I7VoxVBsQaWMnl2zeh/keadE4fFZ2HPxRrZcTQnHOfjr6JtrniMMSeLXbpwXzao5+uobOIW3yEZZJADhupVb7lOFlHTaa4T/eDpyJSOpjfrJCL9Ijllksuh36aSuF8MgrJVxw8JfS3oh6KSbV6LGxYqKH5W6Mc+mopUN5EjRaOGnaih2LOh6PgIhk2xvPHo17qEraKHKupFBaV7+HCdrgUCy0aZuSfyOtpKuFnLhgLF2jXVLdlpj3kG2/55WoBAA1o4HEafB7MbPCfnHgA6lLEC2IHAAaM/gCke6CeIMWlBAGBpMK0nxdiEBh+IAUBxdRpAvqpCEqQGbe+0DHPlA0Nv9LRSa1PPNTgoKIAIsQuKHg8YhQCLiUKEY+ugUrF0tli/SWj2th5+FqaKZo7Otpq3gOEqpKKPnrxPhGRFZueFZ0ooq6kBeaSJUqRKUOkNCIcJYuIZ5LYsOPBlyUzisw5SmtLk1dhLV2sZElEqFKiQkFrO8nZDt0GI8owuYMxQpZY6YxHSyRCnRItOAAAAAA=) format('woff2');}
+@font-face{font-family:PCPXEO-CMR10;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAAI8AAoAAAAAA/gAAAHxAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAANAqBLIExCwgAATYCJAMKBCAFglwHIBtEAyMRFmstwF8m2MbMHuuPIRBncLQRAgU7mJCl5LHUKPPd+m8Zl04c2rkkHr7243fu7vumCkSGRsOzWPfk0qxUphOSaehUKhsATjmWLA40CfwCd/7ewDkXuP7bFvYqkG6KKrzAx9c2WtpFTn+DVa+/a66uUFdgizN4tL+20AvCdjyRBfR3gcDOAwssCSjBEMIkCCTEQAcWEPTOqHonkZOI7LcFOd7FSzWkt+nD/+4XkuIvR7aiAa0lBD/kzMUr59Wat5AVZAEBQCkgIaNbFuhWGUelElgoBfOllD8BIINaJKzjEKAChOjvDz15c38qSfnZleXv7v5+CCrmy2mFEYSLvl/1/Fr4vldPfiCK/Tb2njrpqs9Xh27N9g9dZ46ut892Dch7if7cj2sEnQ9nrkTs6NFPtOL/uNvhkymKi4aeOveAIHz8RA0C/+qZuaJeo0gy1EsgyAoS++yLowEASAnxzBn7BLJ+AQLkRtdJ2sym0qyNGk2GqNVsdt6o36YsqgZh1EGg0u8CNXrdpFa/E740rr9X0z7ePMwFc7Vw1n5ABff6xdttrK67mmfME2dmtNkPZvTW6q7gYrbcbXtrOr3oovfmuWCuFs7ag+mC21XprTejxZx2O1wZEq3nvXWrk3R90D7R3f1osx/MaK8jAJs/AAA=) format('woff2');}
+@font-face{font-family:ZVJZVP-CMMI7;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAAREAAoAAAAABogAAAP7AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAATAqGGIRpCwwAATYCJAMUBCAFglwHIBseBRHVm0NBvirgydBcDhW62+YNGAFrjaId1E6fEjH0R/WF+NUXh9XQ0vpEItxyBNRY29OXJlRCFbMQ6R8SHwpUvEInVLHUmc50sYnL/d7NYcseuDattQXSLuBI8yau+UVZAlH6YJWjgUWd7zyKZ4UD3M6jzqfTcU076wEJA4kDK5DwAyscDWRgA9v5Jv5/optuIC8NTm6bAtCrA3MjSyIY9ZxfG2zAgQac8KC22PTEuXiRNhpHAnglRun2Fed/E3q0SrDmB3weub25y/iKi5YzHhQeLpDiCK+AQryBjv+QyxTC91gBO5AAtIo+5lb9walsALOVFrF/JAEZQvz/U8R+whCJGZLNbWtriqIt6zQE7/mG9ov/1//wk/xsAYEsvPbUwg8UZN7LkkSh/OAwEmgsso5Olq8oR7RY30GHFPe35ZheVJjmtC4rpNZ66gkypWVs7Dh0MrpGnpQjiIzVvkjXvnHgriwqExFRWQscXWt2kMryFVJSZVLooMGgRylh1LlrserU3VxNRg8oizXuHJqUssRyRGxco7/gfXdPsVJmEFOoHPKcOJGvkC/GC6lsRl7MtrDq0KJ132wWiyD2gnQ92m4E3/IyRVWxK0b4c1EVIYNFRNUrNRNe7ZjDIqagR55tZHYEtqJ3oGQ8QEaz2h8upQhSjlSs6M/saHJfK1nJ0k4t1ltWaMJlyyQrOzVKu5Wq1VpI5aXgm8qWtPX3iR7spv3ji9CDBXAYr6eFL592yE2oMSL6+8nhm3vXyJL2Ee8lQZe9P4pAJPJBPNsfAv2ZpGjg+fbf7tYCizG3daJn1G5JxUfc5wmvVH64deqcZePjUCaVC0Zch7yknG5tvpu+tw98Jkg7EwIZqjxvyBebQhm8aJyiYjqX6bQuqObwBEka71+8WHcgdAnXolsemc6w2UehTJHakvhmOXzazBvIh+Qs0AdO9QyCnUPcs6BAoHfA9pcDOhvh8pnBuY8eh1JkPVEln8d5cAzPzNU4Zjnz1AKyFVGWU6DyvkQVWB44/WJL0UPJXNHI6rJ7g2yUszAIueJ/mEYMme5wvsdh8pxENJtUMVqupMRTYv6dtuCSLLqNDrBIenEeBgJAAJzMfpXP14QzbPl/4Vl8QRME6OMBm6F6MUK2vWH5ulFG9mONRVHKmBsBlkXCTgP6bRdgAHhVEzIGLxQ0i1Ax/PvbjMzAwNwCsvNzAsIoR0BpUAFjVD6ghPUfudQf1aJCJlrMpwObiUREv8ksjY+MNSw8T9+jv+kvN92xc3JkhrupsZm1lbYFp0BTLT89UZARrbelBbhLSIjQRTHattQ3NeFkyogJH/B2Jjad+jhAK06zr5UZNvqWLe8aczJnxAoM) format('woff2');}
+@font-face{font-family:FBIPCW-CMMI10;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAAMwAAoAAAAABYQAAALmAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAAPAqEIIMoCwoAATYCJAMQBCAFgmIHIBtPBAgehXGzE01UCnyX7bkIRzzkn/ju7vrTlCuFIk9kYI1PfPEBTXA6H9H+/+SVPxlxISclZhayC72eljhVvgn9DzDfe+Jm2hpeQBPA9qKyzku7sEsoDCOYP5Y+PvCLRU+Kb+6yRj6mCXFpeXt6+HlBpQhSDSSQT3TjL6wqx/EpiZwNGgAzABvgp9yvxCAg0xda8D8Kgl6dggQK2L3MUiJ1YBQI1KicQkDIyLQIrcEVHNMXgA9QkMWDhwj9Al3XyavJsT+nSYR18HXYt39oHl1m+1ufjnm5iwvXMxyOjrSOnOSOZA8P7emD/WHNy8qLsm1jagvO9lgztKstHSk1NTFEGrK1m9XH9RfvyzZJOUnNSbXJtQ4KD27b19fTRRsb9dq0powW7kG2uM3GHcaCu5tUE9I6Kjy/j00johsPjMp2ZBrEnff36aWbkuHPcmEEsoeVB8SWjnqtyi9xeOju+fWZcyyaVg2RWWgZ1Z4eYpeF2j2Wfb1dvfucV4bjJBq7BDwqySrysrWYa7SAIxnxD3axgMifLig+KNpcOyBOa555r1pYlL8AWu1z1vSRliPF+7aA3Arl82W9QeQE4gV+TgE5ghSad3ewiKGWA8Ub58iNqH2J895SklqDxiwS25qHkHWF7Nb3vDIMpQTY2HTPbRPMw9HaG+dUvXeKfKJuyyB5eiaKmMVYXVKVZ9Nlo1VY3KiA05rp26YAEECA969pIS/Ota9UAhHUtXm6hIvoXQAr1LJxQPYNImJ3hCTrpBZohDfIxgDcRIB2y6hHVZtMCIMcvcc1Fg63YJDmBha16xtx5xAgTQOELHPHEUkK5UhE5XNkklprOsz8jaL/IJs35JlY8510+BYWJjh2+w9xXWzceeh+wj8xJC4xKEL+rO4F4IsSIVqCeAFiybMQxZ/ei2SIx4Q1Pic6+CxYMIHDOIJHjRMiSiR5OF3YGmjkRZp7PhtB/9xXSiX1lyhE3MGDRJB3lq4LCBQA) format('woff2');}
+@font-face{font-family:OYFEXR-LMRoman7-Regular;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAAJkAAoAAAAABHQAAAIYAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAAPAqBcIFXCwgAATYCJAMMBCAFgwkHIBuhAwAehU3ZLRaHePJ0PmeqIuuyCOL3a7P75A6VRjUNhUYpl/ih0aERaaKtUoMf2dlsLg8YSV6sRFZQBaoiyv5/6hz/DbwpEgRGfV5AT0tq0UZo4CGNR0kmg8/bc39jZoznoq8kbVCiD1VCI19xO3+rUFFWvKWESlABtIMFxzBcp0QAuQGhZvydgHobMtzO/0GiYBUmsApvG+iqkAaE/2j4/7FpLbrAz4GKS2ACQAWk3GRloWJwjdpj09NT97MzjxMn1DFsijxq65CFO+KuZ1907z+WHT3mOpFr2lFbO6NbnXY9R5MD3FjHsCryyMY+Df/M0eLx7omSMZc2KoM9G9mDUJSfhQvK4PvsSOSm6Jh1klG0kYawuszYZn6FYytZt0WBF+xfq3OeFSZfj5+djNYqwHWlbomqxL6uF6jxPV9i9TRJ8wudmsYcD2r38KD6BSAQPMztqAcw6P5TYnhom/6lS64BYwmCzU6AvIMjysQQQnYJAYIKG1pese9QITjtBhIYIwGrDZQz38zY4rsN0uPTNhnBRKWCsMhr5qtDBL5Z18B3h8b8045d2do9AExpOHiZm3k6y4Uu93WWckquoySvSBVuQa87NIWQmBIRLagirw627DiLFS1IDA0OvJgz48mZHPFNynEWJkKyKEESuAuTIBFBrBiClMhT9AEWaoyXPEiSMKEnHyydoFApCBKliBBNkAp56jANAAAA) format('woff2');}
+@font-face{font-family:XDTRFF-CMSY7;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAAJ8AAoAAAAABGQAAAIzAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAAPAqCEIFlCwgAATYCJAMMBCAFglwHIBuCAyAeA+7GOV0rSvBEhZxiQpOMoJxtLwnP80oGidA4ZIWv0QxWYiUO1w6Ny3uACQOcKCcYiUCE24hwd98iKIgk1IiSIMdI8r9u8cflxaXd2sNyb551jl9ggQcchQk2vtgJWEh5GJll3tpe+yRH6XYjIv06IeefUtAhXehuQ1fSy3htDqVg4F2iHwLP1ishECC9miKM/68I5A7bQ7uobUFCxhpMYA3uDugqQhKJyRhO2+/9QSmZAVJU/SBqABRAiElKxM6c2J2cWOGqxGpqWA3bYgWMRjP6jh2+s4El1tPDwInVsObPHc/PbbH5wsojvezaDeFKZvW5Y8+5I6Gnli7cGehUW93NZLnW9It1TXKqUtPSZORqSbqcUO3KmMvPlTJ/iaowgBmQVNtpP1hOG306QmpkwWzAx8FdrpRiQndRayLHST8pvnQ6xnnwWrkkTSszHsqX4Q1UtsiWhSYQfws9vt83HMvsKZ2ohSgZNAsACAS/oSbek6T9h4YV8LdNuk2zgL4kETs/kw4ofxJ6G4wqFwSRCigE2RNkIKAdejvNMNXF2Ex3jJx019hteWhPEUzUgXBlYrrYC9IdW1m6a6+6G3roO9f4tbPXSc/OxsBARtfc1lntujxSkJVf6b2B3uGXEBybEBjOU5JVBboihYsSL46/GDzmIvn514vgRI8dGwYMyNBlzpYzNQ78xYgVLFIEHgWy5BPIMIkQTbwLkd/L+0jG4ydBsFgJAoXjUSJLFQwA) format('woff2');}
+@font-face{font-family:NQUDBD-CMSY10;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAAJMAAoAAAAABAwAAAICAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAAPAqBMIEgCwgAATYCJAMMBCAFgmIHIBtDA2CuBuzGYWEcCItQRPEo2Go5UHi9tfll5+KBb7/2d94si0sS9VCIZA2NQ+lqCUreUBBvhESV/90n5n7vi0pygbgNd43ilaN7qCRCIxR6IM44ugdcHGPEnVyRsnnArVBj7s0Zo+XVN73/7+358nQ2/JvOdOfZ+oEFFtAfOAoT7PhAOoFFaRGmYeauNsVHutc1O+VDHnaIkUfblwXJSXLzT/ZGFT66YyjwAC8NfBlus74x2gZ2w1ZjGUP/RxDr4g8CAPw/SEAEFRhooAKTA6Qx0dAlwlQqq/d+K8JEpJE8ZBDMAkgBCGitBVNFDz19qUhFxeaB+nXp9MT+9ubsUFC5b9/zx5lpnl3N3/Rh73rhXkUuSa7/+/nWIj23IcPNGvvzJfGgpLluXJplXC3IrPCCclFd+br1f8YyXKVzHt/qewAIIMDIwYLrJNOfwATS/2dJPiAHXRpt2UYKxiXH79YCMUFYRKNSGdnQZgLUeWYNEiI6RUSiswgYdZqI/UAerQgGWooHGrNsRDPpdWoWtWXNpnfZ8AW8HMj031Y6t6CEIigvmVNUEQxcdJdBXyAweb48o3m0Y2i0rcca9sVA6tOj34hhLQZZ5ejTbP+3V64CJSgEihcpR5EKQQGlWgwa0qFPL6sgn0AC0mKvbGxYCs0f32iCVbNRHYaMatPDKswnhgEA) format('woff2');}
+@font-face{font-family:HAMMWE-CMSY5;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAAHgAAoAAAAAA4wAAAGYAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAANApEUwsGAAE2AiQDCAQgBYJcByAb5AJgPgxwh9LELxY3MKFiYUeSQu3cO039gRUK5NqJ6GPst/e+K3giW7LUPTS6lkglRVJgSAX+//t5/yJF3vEfOcq8tCiKLLBZlA6HMuFZZYLKcZk06+REvh9EEw8KMimRIqigvkphNTNOWipy2nLHB/zAt4WRZv7zwAJrbQElGGHzQNoLhhYGmvVN5VGSE0qU0r4taOQ3SUt91j/Ya8yL4yKQNuEbgPf0PKmC7lgs1H0ugWxUjwDw/weFBpbUgiWNY6CpKRyf///wmz8rAAo0EcyAFQBNQGbV9IkHlTvOW8FevwyTaMd9jtNsvgaAIHx8O7G+u+omNpS6AdBVIHQ3KG4Fs6RTQBXy7RaFMkOBwNT3EsZEDTYNTdgysMe2oRND35ZILc2eOBQGbNqqsWVtx7atQ+479dwb/RXzNOhCTPkYD8YyyjnaCSzvb94YX11pUh9Oqm0isRbw6GrrGRspGyBQV0nZQEeQC0IpPgwPFJOhSCobGKrr6iAELD4dgbqjbCBfBqVLF8wRJRN1QxNVbYSEZaEGMHwA) format('woff2');}
+@font-face{font-family:TUELZZ-LMRoman10-Regular;src:url(data:application/x-font-woff2;base64,d09GMgABAAAAAAKEAAoAAAAABQgAAAI6AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAABmAARAqCbIIzCwoAATYCJAMQBCAFgxIHIBsSBCCO0SdjzBxxVM1lxHFURFA/9+69l+STKpJwUW0toG81kSKP47/uVFUJQOvz/4977/tGo2ax/bNoJ6PKTQmKcNzm/5r6Px7IHdC1SAocebX386JbJehEJpg0G+iNaIDjWaS5q8bksbQYt318JDlBjlnUDiXpFXP+z9PWQvQiFLAMMkArsOA6nNzV5ALBpeKi4f8aFM9IC2u1aUBCxjCswDCcGmhrS7hUpBiuGXnz0vQmuSAqcHPQ+g3QXzwXSYgBCtubGrOL9idF2LEZKxSb+qd9UwxziomZ0cWmaToDPPAqiuFxX/ZcHxq7smm8iAKWBA7Wr8fite/mZfTQoOX1Y/70ZRQMrNv+XaXSJGG94hZ7H+I+tW7aAEs7vK23tDvylsU7/E0qgxzlDV/W4k5qvVcWuN9iKmnTG03o8WAZFYlC35ccSUYkN0DAtXIqHGxOlP/YRi3a93MwhEcpaW5fvu5fS7HD8RR3bv/4vGsACATLi3E3qUyn33bGgTbySjoE2IuCYD8vkvdI8bI7hAyEGCBmQNYpwG6EwkaQJRp13VNN6BR2YRxZ4KWeBbwyzgh2D3vBioIMYVCSiRdqJXhp1Cheqa3BbvQcFPzOcNrcLCraOyghwXjKM/6jSzuOr2Zugpq7b71nWTX5lTW5xRJLExsIEixCqWLpSpgzEyWatyAJEhjXV7SxCNlyVSuSrkKMbBUq5StVQsKcSSDo65QEo6erki3rxmeoJ5GlRr5KNXIVk7BkwgaWAgA=) format('woff2');}
+
+</style>
+<g id="page1">
+<text font-family="TUELZZ-LMRoman10-Regular" font-size="9.96" x="32.859422" y="-81.180808" transform="matrix(1.000261 0 0 1.000261 -28.575 96.589008)">lim</text>
+<text font-family="NQUDBD-CMSY10" font-size="9.96" x="32.859422" y="-76.033152" transform="matrix(1.000261 0 0 1.000261 -28.575 96.589008)">←<tspan x="38.954941">−</tspan></text>
+<text font-family="XDTRFF-CMSY7" font-size="6.97" x="46.68155" y="-76.509288" transform="matrix(1.000545 0 0 1.000545 -28.575 96.589008)">I</text>
+<text font-family="FBIPCW-CMMI10" font-size="9.96" x="53.811953" y="-81.180808" transform="matrix(1.000261 0 0 1.000261 -28.575 96.589008)">D</text>
+<text font-family="FBIPCW-CMMI10" font-size="9.96" x="102.51024" y="-81.180808" transform="matrix(1.000261 0 0 1.000261 -23.686 96.589008)">D</text>
+<text font-family="PCPXEO-CMR10" font-size="9.96" x="111.033022" y="-81.180808" transform="matrix(1.000261 0 0 1.000261 -23.686 96.589008)">(</text>
+<text font-family="FBIPCW-CMMI10" font-size="9.96" x="114.906012" y="-81.180808" transform="matrix(1.000261 0 0 1.000261 -23.686 96.589008)">i</text>
+<text font-family="PCPXEO-CMR10" font-size="9.96" x="118.337116" y="-81.180808" transform="matrix(1.000261 0 0 1.000261 -23.686 96.589008)">)</text>
+<text font-family="FBIPCW-CMMI10" font-size="9.96" x="169.289808" y="-81.180808" transform="matrix(1.000261 0 0 1.000261 -25.083992 96.589008)">D</text>
+<text font-family="XDTRFF-CMSY7" font-size="6.97" x="177.762085" y="-84.771783" transform="matrix(1.000545 0 0 1.000545 -25.083992 96.589008)">′</text>
+<text font-family="PCPXEO-CMR10" font-size="9.96" x="180.606844" y="-81.180808" transform="matrix(1.000261 0 0 1.000261 -25.083992 96.589008)">(</text>
+<text font-family="FBIPCW-CMMI10" font-size="9.96" x="184.480832" y="-81.180808" transform="matrix(1.000261 0 0 1.000261 -25.083992 96.589008)">i</text>
+<text font-family="PCPXEO-CMR10" font-size="9.96" x="187.911947" y="-81.180808" transform="matrix(1.000261 0 0 1.000261 -25.083992 96.589008)">)</text>
+<text font-family="TUELZZ-LMRoman10-Regular" font-size="9.96" x="32.859422" y="-34.853902" transform="matrix(1.000261 0 0 1.000261 -28.575 96.589008)">lim</text>
+<text font-family="NQUDBD-CMSY10" font-size="9.96" x="32.859422" y="-29.705246" transform="matrix(1.000261 0 0 1.000261 -28.575 96.589008)">←<tspan x="38.954941">−</tspan></text>
+<text font-family="XDTRFF-CMSY7" font-size="6.97" x="46.68155" y="-30.194537" transform="matrix(1.000545 0 0 1.000545 -28.575 96.589008)">I</text>
+<text font-family="FBIPCW-CMMI10" font-size="9.96" x="53.811953" y="-34.853902" transform="matrix(1.000261 0 0 1.000261 -28.575 96.589008)">D</text>
+<text font-family="FBIPCW-CMMI10" font-size="9.96" x="102.51024" y="-34.853902" transform="matrix(1.000261 0 0 1.000261 -24.306 96.589008)">D</text>
+<text font-family="PCPXEO-CMR10" font-size="9.96" x="111.033022" y="-34.853902" transform="matrix(1.000261 0 0 1.000261 -24.306 96.589008)">(</text>
+<text font-family="FBIPCW-CMMI10" font-size="9.96" x="114.906012" y="-34.853902" transform="matrix(1.000261 0 0 1.000261 -24.306 96.589008)">j</text>
+<text font-family="PCPXEO-CMR10" font-size="9.96" x="119.577785" y="-34.853902" transform="matrix(1.000261 0 0 1.000261 -24.306 96.589008)">)</text>
+<text font-family="FBIPCW-CMMI10" font-size="9.96" x="169.289808" y="-34.853902" transform="matrix(1.000261 0 0 1.000261 -25.703993 96.589008)">D</text>
+<text font-family="XDTRFF-CMSY7" font-size="6.97" x="177.762085" y="-38.457033" transform="matrix(1.000545 0 0 1.000545 -25.703993 96.589008)">′</text>
+<text font-family="PCPXEO-CMR10" font-size="9.96" x="180.606844" y="-34.853902" transform="matrix(1.000261 0 0 1.000261 -25.703993 96.589008)">(</text>
+<text font-family="FBIPCW-CMMI10" font-size="9.96" x="184.480832" y="-34.853902" transform="matrix(1.000261 0 0 1.000261 -25.703993 96.589008)">j</text>
+<text font-family="PCPXEO-CMR10" font-size="9.96" x="189.152623" y="-34.853902" transform="matrix(1.000261 0 0 1.000261 -25.703993 96.589008)">)</text>
+<path d="M38.27009 12.89567H73.95904" stroke="#000" fill="none" stroke-width=".3985" stroke-miterlimit="10"></path>
+<path d="M72.08616 10.504772C72.46473 11.939342 73.30831 12.616722 74.15827 12.895672C73.30831 13.174622 72.46473 13.852002 72.08616 15.286572" stroke="#000" fill="none" stroke-width=".3985" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path>
+<text font-family="ZVJZVP-CMMI7" font-size="6.97" x="13.825462" y="-34.844003" transform="matrix(1.000545 0 0 1.000545 36.926 43.42)">π</text>
+<text font-family="HJTYEB-CMMI5" font-size="4.98" x="18.737109" y="-37.859117" transform="matrix(1.000261 0 0 1.000261 36.926 43.42)">D<tspan x="18.487174" y="-32.861422">i</tspan></text>
+<path d="M103.04978 12.89567H139.3591" stroke="#000" fill="none" stroke-width=".3985" stroke-miterlimit="10"></path>
+<path d="M137.48623 10.504772C137.8648 11.939342 138.70838 12.616722 139.55834 12.895672C138.70838 13.174622 137.8648 13.852002 137.48623 15.286572" stroke="#000" fill="none" stroke-width=".3985" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path>
+<text font-family="ZVJZVP-CMMI7" font-size="6.97" x="13.825462" y="-34.844003" transform="matrix(1.000545 0 0 1.000545 103.403 44.416)">α</text>
+<text font-family="HJTYEB-CMMI5" font-size="4.98" x="19.007039" y="-33.857161" transform="matrix(1.000261 0 0 1.000261 103.403 44.416)">i</text>
+<path d="M19.03542 23.8867V50.5645" stroke="#000" fill="none" stroke-width=".3985" stroke-miterlimit="10"></path>
+<path d="M21.426324 48.69163C19.991754 49.0702 19.314374 49.91378 19.035424 50.76374C18.756474 49.91378 18.079094 49.0702 16.644524 48.69163" stroke="#000" fill="none" stroke-width=".3985" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path>
+<text font-family="OYFEXR-LMRoman7-Regular" font-size="6.97" x="13.825462" y="-34.844003" transform="matrix(1.000545 0 0 1.000545 -3.796997 74.673)">id</text>
+<path d="M88.70365 21.72607V50.0066" stroke="#000" fill="none" stroke-width=".3985" stroke-miterlimit="10"></path>
+<path d="M91.09455 48.13372C89.65998 48.51229 88.9826 49.35587 88.70365 50.20583C88.4247 49.35587 87.74732 48.51229 86.31275 48.13372" stroke="#000" fill="none" stroke-width=".3985" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path>
+<text font-family="ZVJZVP-CMMI7" font-size="6.97" x="13.825462" y="-34.844003" transform="matrix(1.000545 0 0 1.000545 77.217 72.672)">D</text>
+<text font-family="LTUJIK-CMR7" font-size="6.97" x="20.550796" y="-34.844003" transform="matrix(1.000545 0 0 1.000545 77.217 72.672)">(</text>
+<text font-family="ZVJZVP-CMMI7" font-size="6.97" x="23.6621" y="-34.844003" transform="matrix(1.000545 0 0 1.000545 77.217 72.672)">u</text>
+<text font-family="LTUJIK-CMR7" font-size="6.97" x="28.369532" y="-34.844003" transform="matrix(1.000545 0 0 1.000545 77.217 72.672)">)</text>
+<path d="M155.50123 21.72607V49.98884" stroke="#000" fill="none" stroke-width=".3985" stroke-miterlimit="10"></path>
+<path d="M157.89212 48.115964C156.45755 48.494534 155.78017 49.338114 155.50122 50.188074C155.22227 49.338114 154.54489 48.494534 153.11032 48.115964" stroke="#000" fill="none" stroke-width=".3985" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path>
+<text font-family="ZVJZVP-CMMI7" font-size="6.97" x="13.825462" y="-34.844003" transform="matrix(1.000545 0 0 1.000545 144.014 72.935)">D</text>
+<text font-family="HAMMWE-CMSY5" font-size="4.98" x="20.556634" y="-37.859117" transform="matrix(1.000261 0 0 1.000261 144.014 72.935)">′</text>
+<text font-family="LTUJIK-CMR7" font-size="6.97" x="23.243328" y="-34.844003" transform="matrix(1.000545 0 0 1.000545 144.014 72.935)">(</text>
+<text font-family="ZVJZVP-CMMI7" font-size="6.97" x="26.355631" y="-34.844003" transform="matrix(1.000545 0 0 1.000545 144.014 72.935)">u</text>
+<text font-family="LTUJIK-CMR7" font-size="6.97" x="31.063067" y="-34.844003" transform="matrix(1.000545 0 0 1.000545 144.014 72.935)">)</text>
+<path d="M38.27009 59.23546H73.33868" stroke="#000" fill="none" stroke-width=".3985" stroke-miterlimit="10"></path>
+<path d="M71.4658 56.84456C71.84437 58.27913 72.68795 58.95651 73.53791 59.23546C72.68795 59.51441 71.84437 60.19179 71.4658 61.62636" stroke="#000" fill="none" stroke-width=".3985" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path>
+<text font-family="ZVJZVP-CMMI7" font-size="6.97" x="13.825462" y="-34.844003" transform="matrix(1.000545 0 0 1.000545 36.616 102.854999)">π</text>
+<text font-family="HJTYEB-CMMI5" font-size="4.98" x="18.737109" y="-37.859117" transform="matrix(1.000261 0 0 1.000261 36.616 102.854999)">D<tspan x="18.487174" y="-32.861422">j</tspan></text>
+<path d="M103.67014 59.23546H138.73873" stroke="#000" fill="none" stroke-width=".3985" stroke-miterlimit="10"></path>
+<path d="M136.86587 56.84456C137.24444 58.27913 138.08802 58.95651 138.93798 59.23546C138.08802 59.51441 137.24444 60.19179 136.86587 61.62636" stroke="#000" fill="none" stroke-width=".3985" stroke-miterlimit="10" stroke-linejoin="round" stroke-linecap="round"></path>
+<text font-family="ZVJZVP-CMMI7" font-size="6.97" x="13.825462" y="-34.844003" transform="matrix(1.000545 0 0 1.000545 103.12 99.447)">α</text>
+<text font-family="HJTYEB-CMMI5" font-size="4.98" x="19.007039" y="-33.857161" transform="matrix(1.000261 0 0 1.000261 103.12 99.447)">j</text>
+</g>
+</svg>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-composite-cone-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Composition of a cone with a natural transformation
+</figcaption>
+</figure>
+</div>
+<p>Thus <span class="math inline">\(D'(u)\circ(\alpha_i\circ\pi_i^D)=\alpha_j\circ\pi_j^D\)</span>.</p>
+</div><div id="rem-limit-functoriality" class="proof remark">
+<p><span class="proof-title"><em>Remark 6</em> (Unpacking functoriality of <span class="math inline">\(\varprojlim_{\mathcal I}\)</span>). </span>Given <span class="math inline">\(\alpha:D\to D'\)</span> and <span class="math inline">\(\beta:D'\to D''\)</span>, for every <span class="math inline">\(i\in\mathcal I\)</span> we have <span class="math display">\[
+\begin{aligned}
+\pi_i^{D''}\circ\left(\varprojlim\beta\circ\varprojlim\alpha\right)
+&amp;=\beta_i\circ\pi_i^{D'}\circ\varprojlim\alpha\\
+&amp;=\beta_i\circ\alpha_i\circ\pi_i^D\\
+&amp;=(\beta\circ\alpha)_i\circ\pi_i^D
+\end{aligned}
+\]</span> Since <span class="math inline">\(\varprojlim(\beta\circ\alpha)\)</span> is the unique morphism <span class="math inline">\(L_D\to L_{D''}\)</span> satisfying this identity for all <span class="math inline">\(i\in\mathcal I\)</span>, <span class="math inline">\(\varprojlim(\beta\circ\alpha)=\varprojlim\beta\circ\varprojlim\alpha\)</span>.</p>
+</div><div id="rem-adjunction-naturality" class="proof remark">
+<p><span class="proof-title"><em>Remark 7</em> (Naturality of the adjunction). </span>For <span class="math inline">\(\bar f\in\operatorname{Hom}_{\mathcal A}(A,L_D)\)</span>, the bijection <span class="math inline">\(\Psi(\bar f)_i=\pi_i^D\circ\bar f\)</span> is natural in <span class="math inline">\(D\)</span> because for <span class="math inline">\(\alpha:D\to D'\)</span>, <span class="math display">\[
+\begin{aligned}
+\Psi\left(\left(\varprojlim\alpha\right)\circ\bar f\right)_i
+&amp;=\pi_i^{D'}\circ\left(\varprojlim\alpha\right)\circ\bar f\\
+&amp;=\alpha_i\circ\pi_i^D\circ\bar f\\
+&amp;=(\alpha\circ\Psi(\bar f))_i
+\end{aligned}
+\]</span> It is natural in <span class="math inline">\(A\)</span> by associativity of composition.</p>
+</div></div>
+
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Given a natural transformation <span class="math inline">\(\alpha:D\to D'\)</span>, composing the cone <span class="math inline">\(\pi^D:\Delta(\varprojlim_{\mathcal I}D)\to D\)</span> with <span class="math inline">\(\alpha\)</span> yields a cone <span class="math inline">\(\alpha\circ\pi^D\)</span> over <span class="math inline">\(D'\)</span> (<a href="#rem-composite-cone" class="quarto-xref">Remark&nbsp;5</a>). By the terminal property of <span class="math inline">\((\varprojlim_{\mathcal I}D',\pi^{D'})\)</span>, there exists a unique morphism <span class="math inline">\(\varprojlim_{\mathcal I}\alpha:\varprojlim_{\mathcal I}D\to\varprojlim_{\mathcal I}D'\)</span> satisfying <span class="math inline">\(\pi_i^{D'}\circ(\varprojlim_{\mathcal I}\alpha)=\alpha_i\circ\pi_i^D\)</span> for all <span class="math inline">\(i\in\mathcal I\)</span>. Uniqueness of universal factorizations immediately forces <span class="math inline">\(\varprojlim_{\mathcal I}(\beta\circ\alpha)=(\varprojlim_{\mathcal I}\beta)\circ(\varprojlim_{\mathcal I}\alpha)\)</span> and <span class="math inline">\(\varprojlim_{\mathcal I}(\operatorname{id}_D)=\operatorname{id}\)</span> (<a href="#rem-limit-functoriality" class="quarto-xref">Remark&nbsp;6</a>). Finally, by <a href="#def-diagrams-limits" class="quarto-xref">Definition&nbsp;2</a> (1), morphisms <span class="math inline">\(\Delta(A)\to D\)</span> in <span class="math inline">\(\operatorname{Func}(\mathcal I,\mathcal A)\)</span> are cones over <span class="math inline">\(D\)</span> with vertex <span class="math inline">\(A\)</span>, which bijectively correspond via composition with <span class="math inline">\(\pi^D\)</span> to morphisms <span class="math inline">\(A\to\varprojlim_{\mathcal I}D\)</span> in <span class="math inline">\(\mathcal A\)</span> naturally in both variables (<a href="#rem-adjunction-naturality" class="quarto-xref">Remark&nbsp;7</a>). The dual argument establishes functoriality of <span class="math inline">\(\varinjlim_{\mathcal I}\)</span> and <span class="math inline">\(\varinjlim_{\mathcal I}\dashv\Delta\)</span>.</p>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/sun123zxy\.github\.io\/sunquartex\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+            // target, if specified
+            link.setAttribute("target", "_blank");
+            if (link.getAttribute("rel") === null) {
+              link.setAttribute("rel", "noopener");
+            }
+            // default icon
+            link.classList.add("external");
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

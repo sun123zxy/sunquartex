@@ -1,0 +1,199 @@
+---
+title: Two column layout
+subtitle: \SunQuarTeX Examples
+
+bibliography: bibliography.bib
+
+format:
+  html:
+    reference-location: margin
+    citation-location: margin
+    page-layout: full
+    grid: 
+      margin-width: 50%
+    callouty-theorem: false
+---
+
+> This is an early-access feature. For reference only.
+
+## Introduction
+
+Two column layout is a style of organizing content on a page where the text is divided into two vertical columns. Consider the following circumstance: you are writing a expository essay on a complex topic. You want to present your ideas in a clear and organized manner, while providing as much side information as possible for those readers who are not familiar with the topic. In this case, splitting the content into two columns creates a compact and effective way.
+
+The left column contains the main text, clean and with a clear flow of mind. Experts or a second-time reader should be able to read it without any content from the right column. Such an exposition may inevitably include some concise slogan-like sentences. So the right column is provided for you to put side notes, clarifications of gaps, proofs, references ... anything that is helpful for beginners but a little distracting for experts.
+
+Note that this does not necessarily require a physical separation of the two columns on the page, but rather having two "layers" of content: the main text and the side notes. It is more like a systematic and extensive use of footnotes. These notes can be either long or short, explaining a single word, a single sentence, or a whole paragraph in the main text. The idea is "We are brief and concise in the main text to keep the flow of mind, but if you don't get the gist, redirect to side notes for more details.".
+
+## Usage
+
+See the source code of this page for the frontmatter.
+
+Use fenced divs for side notes: `::: {#rem-xxx .column-margin} ... :::`. Reference each note in the main text with `(@rem-xxx)`. Do not restrict to `rem`; use any other suitable prefix when appropriate.
+
+Write the margin-note divs before the main text div that references them. Otherwise they will create blank space in the right column.
+
+We choose to refrain from footnotes because Quarto's implementation conflicts a little when mixing different margin system. Footnotes are actually good, but there are bugs on the Quarto side.
+
+## Example usage
+
+**Motivation.** To study mathematical objects that depend on a family of open sets or parameters, we need a universal way to assemble compatible families of data into a single object. Category theory formulates such universal assemblies as limits and colimits of diagrams.
+
+::: {#def-small-category .column-margin}
+## Small category
+
+A category $\mathcal I$ is *small* if $\operatorname{Ob}(\mathcal I)$ and $\operatorname{Mor}(\mathcal I)$ are sets rather than proper classes. This prevents set-theoretic paradoxes when forming products $\prod_{i\in\mathcal I}D(i)$ in $\mathcal A$.
+:::
+
+::: {#rem-diagonal-morphisms .column-margin}
+## Action of $\Delta$ on morphisms
+
+Given $f:A\to B$ in $\mathcal A$, $\Delta(f):\Delta(A)\to\Delta(B)$ is the natural transformation with component $\Delta(f)_i=f$ at every $i\in\mathcal I$ (natural since $\operatorname{id}_B\circ f=f\circ\operatorname{id}_A$).
+:::
+
+::: {#rem-unique-limit .column-margin}
+## Uniqueness of terminal cones up to canonical isomorphism
+
+Why is a limit unique up to unique isomorphism? If $(L,\{\pi_i\})$ and $(L',\{\pi_i'\})$ are two limit cones over $D$, terminality gives unique morphisms $\varphi:L\to L'$ ($\pi_i'\circ\varphi=\pi_i$) and $\psi:L'\to L$ ($\pi_i\circ\psi=\pi_i'$). Then $\pi_i\circ(\psi\circ\varphi)=\pi_i=\pi_i\circ\operatorname{id}_L$ for all $i\in\mathcal I$. Since $\operatorname{id}_L$ is the unique morphism $L\to L$ compatible with $\{\pi_i\}$, we must have $\psi\circ\varphi=\operatorname{id}_L$, and symmetrically $\varphi\circ\psi=\operatorname{id}_{L'}$.
+:::
+
+::: {#rem-module-limits .column-margin}
+## Concrete construction of limits and colimits in $\operatorname{Mod}_R$ and $\operatorname{Ab}$
+
+For any commutative ring $R$, the category $\operatorname{Mod}_R$ (and $\operatorname{Ab}=\operatorname{Mod}_{\mathbb Z}$) is both complete and cocomplete because every small diagram $D:\mathcal I\to\operatorname{Mod}_R$ admits a canonical limit and colimit:
+
+- *Limit (submodule of compatible tuples):* Inside the product $\prod_{i\in\mathcal I}D(i)$ with projections $\pi_k$,
+  $$
+  \begin{aligned}
+  \varprojlim_{i\in\mathcal I}D(i)&:=\left\{(x_i)_{i\in\mathcal I}\in\prod_{i\in\mathcal I}D(i)\;\middle|\;\right.\\
+  &\qquad\left.D(u)(x_i)=x_j\text{ for all }(u:i\to j)\in\operatorname{Mor}(\mathcal I)\right\}
+  \end{aligned}
+  $$
+- *Colimit (quotient of direct sum):* Inside $\bigoplus_{i\in\mathcal I}D(i)$ with insertions $\operatorname{in}_i:D(i)\hookrightarrow\bigoplus_{k\in\mathcal I}D(k)$,
+  $$
+  \begin{aligned}
+  \varinjlim_{i\in\mathcal I}D(i)&:=\left(\bigoplus_{i\in\mathcal I}D(i)\right)\big/N\\
+  N&=\operatorname{Span}_R\left\{\operatorname{in}_j(D(u)(x_i))-\operatorname{in}_i(x_i)\;\middle|\;\right.\\
+  &\qquad\left.u:i\to j,\ x_i\in D(i)\right\}
+  \end{aligned}
+  $$
+:::
+
+::: {#def-diagrams-limits}
+## Diagrams, cones, limits, colimits, and completeness
+
+Let $\mathcal I$ be a small category (@def-small-category) and let $\mathcal A$ be a category. A functor $D:\mathcal I\to\mathcal A$ is called a *diagram of shape $\mathcal I$*, and $\operatorname{Func}(\mathcal I,\mathcal A)$ denotes the category of such diagrams with natural transformations as morphisms. For each object $A\in\mathcal A$, the *constant diagram* $\Delta(A):\mathcal I\to\mathcal A$ sends every $i\in\mathcal I$ to $A$ and every morphism $u:i\to j$ to $\operatorname{id}_A$; this defines the *diagonal functor* $\Delta:\mathcal A\to\operatorname{Func}(\mathcal I,\mathcal A)$ (@rem-diagonal-morphisms).
+
+1. **Cones and limits:** A *cone over $D$ with vertex $A$* is a natural transformation $\pi:\Delta(A)\to D$, i.e., a family $\{\pi_i:A\to D(i)\}_{i\in\mathcal I}$ satisfying $D(u)\circ\pi_i=\pi_j$ for all $u:i\to j$. A *limit* of $D$ is a terminal cone $(L,\{\pi_i\}_{i\in\mathcal I})$ over $D$ (@rem-unique-limit): every cone $(A,\{f_i\}_{i\in\mathcal I})$ over $D$ factors through a unique morphism $\bar f:A\to L$ with $\pi_i\circ\bar f=f_i$ for all $i\in\mathcal I$:
+   
+   ::: {#fig-cones-and-cocones}
+
+   ```{tikz}
+   \begin{tikzcd}[column sep=small, row sep=large]
+     & A && D(i) & C & D(j) \\
+     D(i) & L & D(j) && B
+     \arrow["{f_i}"', from=1-2, to=2-1]
+     \arrow["{f_j}", from=1-2, to=2-3]
+     \arrow["{\exists!\,\bar f}"{description}, dashed, from=1-2, to=2-2]
+     \arrow["{\pi_i}", from=2-2, to=2-1]
+     \arrow["{\pi_j}"', from=2-2, to=2-3]
+     \arrow["{D(u)}"', curve={height=18pt}, from=2-1, to=2-3]
+     \arrow["{\iota_i}", from=1-4, to=1-5]
+     \arrow["{\iota_j}"', from=1-6, to=1-5]
+     \arrow["{D(u)}", curve={height=-18pt}, from=1-4, to=1-6]
+     \arrow["{g_i}"', from=1-4, to=2-5]
+     \arrow["{g_j}", from=1-6, to=2-5]
+     \arrow["{\exists!\,\bar g}"{description}, dashed, from=1-5, to=2-5]
+   \end{tikzcd}
+   ```
+
+   Universal factorizations for limits and colimits
+   :::
+
+2. **Cocones and colimits:** Dually, a *cocone under $D$ with vertex $B$* is a natural transformation $\iota:D\to\Delta(B)$ ($\iota_j\circ D(u)=\iota_i$). A *colimit* of $D$ is an initial cocone $(C,\{\iota_i\}_{i\in\mathcal I})$ under $D$: every cocone $(B,\{g_i\}_{i\in\mathcal I})$ factors uniquely as $g_i=\bar g\circ\iota_i$ for $\bar g:C\to B$.
+3. **Completeness and cocompleteness:** The category $\mathcal A$ is *complete* if every diagram $D:\mathcal I\to\mathcal A$ from a small category $\mathcal I$ admits a limit in $\mathcal A$, and *cocomplete* if every such diagram admits a colimit in $\mathcal A$ (@rem-module-limits).
+
+:::
+
+**Motivation.** A limit of a single diagram $D$ is determined only up to unique isomorphism. However, once we choose a specific terminal cone $(\varprojlim_{\mathcal I}D,\{\pi_i^D\})$ for each diagram $D$, the universal property automatically makes $\varprojlim_{\mathcal I}$ and $\varinjlim_{\mathcal I}$ functors that are right and left adjoint to $\Delta$.
+
+::: {#rem-choosing-cones .column-margin}
+## Why defining a limit functor requires choosing terminal cones
+
+In @def-diagrams-limits (1), “being a limit” is a property of a cone $(L,\pi)$, not a single canonical object in an abstract category $\mathcal A$. To define an actual functor $\varprojlim_{\mathcal I}:\operatorname{Func}(\mathcal I,\mathcal A)\to\mathcal A$, we must first assign to each object $D\in\operatorname{Func}(\mathcal I,\mathcal A)$ a chosen terminal cone $(L_D,\pi^D)$ (using the canonical submodule/quotient in $\operatorname{Mod}_R$, or global choice in an abstract complete category). Different choices of terminal cones yield canonically isomorphic limit functors by @rem-unique-limit.
+:::
+
+::: {#prp-limit-adjunction}
+## Functoriality of limits and colimits via diagonal adjunction
+
+Let $\mathcal I$ be a small category and let $\mathcal A$ be a complete and cocomplete category. Choosing a limit cone $(\varprojlim_{\mathcal I}D,\{\pi_i^D\})$ and a colimit cocone $(\varinjlim_{\mathcal I}D,\{\iota_i^D\})$ for each $D\in\operatorname{Func}(\mathcal I,\mathcal A)$ (@rem-choosing-cones) defines functors $\varprojlim_{\mathcal I},\varinjlim_{\mathcal I}:\operatorname{Func}(\mathcal I,\mathcal A)\to\mathcal A$ that are right and left adjoint to $\Delta:\mathcal A\to\operatorname{Func}(\mathcal I,\mathcal A)$:
+$$
+\begin{aligned}
+\operatorname{Hom}_{\operatorname{Func}(\mathcal I,\mathcal A)}(\Delta(A),D)
+&\xrightarrow{\sim}\operatorname{Hom}_{\mathcal A}\left(A,\varprojlim_{\mathcal I}D\right)\\
+\operatorname{Hom}_{\mathcal A}\left(\varinjlim_{\mathcal I}D,B\right)
+&\xrightarrow{\sim}\operatorname{Hom}_{\operatorname{Func}(\mathcal I,\mathcal A)}(D,\Delta(B))
+\end{aligned}
+$$
+:::
+
+::: {#rem-composite-cone .column-margin}
+## Diagrammatic check that $\alpha\circ\pi^D$ is a cone over $D'$
+
+Why does composing $\pi^D$ with a natural transformation $\alpha:D\to D'$ produce a cone over $D'$? Because for every morphism $u:i\to j$ in $\mathcal I$, the cone identity $D(u)\circ\pi_i^D=\pi_j^D$ and the naturality square $D'(u)\circ\alpha_i=\alpha_j\circ D(u)$ paste together into a commutative rectangle:
+
+::: {#fig-composite-cone}
+
+```{tikz}
+\begin{tikzcd}[column sep=large, row sep=large]
+  {\varprojlim_{\mathcal I}D} & D(i) & D'(i) \\
+  {\varprojlim_{\mathcal I}D} & D(j) & D'(j)
+  \arrow["{\pi_i^D}", from=1-1, to=1-2]
+  \arrow["{\alpha_i}", from=1-2, to=1-3]
+  \arrow["{\operatorname{id}}"', from=1-1, to=2-1]
+  \arrow["{D(u)}", from=1-2, to=2-2]
+  \arrow["{D'(u)}", from=1-3, to=2-3]
+  \arrow["{\pi_j^D}"', from=2-1, to=2-2]
+  \arrow["{\alpha_j}"', from=2-2, to=2-3]
+\end{tikzcd}
+```
+
+Composition of a cone with a natural transformation
+:::
+
+Thus $D'(u)\circ(\alpha_i\circ\pi_i^D)=\alpha_j\circ\pi_j^D$.
+:::
+
+::: {#rem-limit-functoriality .column-margin}
+## Unpacking functoriality of $\varprojlim_{\mathcal I}$
+
+Given $\alpha:D\to D'$ and $\beta:D'\to D''$, for every $i\in\mathcal I$ we have
+$$
+\begin{aligned}
+\pi_i^{D''}\circ\left(\varprojlim\beta\circ\varprojlim\alpha\right)
+&=\beta_i\circ\pi_i^{D'}\circ\varprojlim\alpha\\
+&=\beta_i\circ\alpha_i\circ\pi_i^D\\
+&=(\beta\circ\alpha)_i\circ\pi_i^D
+\end{aligned}
+$$
+Since $\varprojlim(\beta\circ\alpha)$ is the unique morphism $L_D\to L_{D''}$ satisfying this identity for all $i\in\mathcal I$, $\varprojlim(\beta\circ\alpha)=\varprojlim\beta\circ\varprojlim\alpha$.
+:::
+
+::: {#rem-adjunction-naturality .column-margin}
+
+## Naturality of the adjunction
+
+For $\bar f\in\operatorname{Hom}_{\mathcal A}(A,L_D)$, the bijection $\Psi(\bar f)_i=\pi_i^D\circ\bar f$ is natural in $D$ because for $\alpha:D\to D'$,
+$$
+\begin{aligned}
+\Psi\left(\left(\varprojlim\alpha\right)\circ\bar f\right)_i
+&=\pi_i^{D'}\circ\left(\varprojlim\alpha\right)\circ\bar f\\
+&=\alpha_i\circ\pi_i^D\circ\bar f\\
+&=(\alpha\circ\Psi(\bar f))_i
+\end{aligned}
+$$
+It is natural in $A$ by associativity of composition.
+:::
+
+::: {.proof}
+Given a natural transformation $\alpha:D\to D'$, composing the cone $\pi^D:\Delta(\varprojlim_{\mathcal I}D)\to D$ with $\alpha$ yields a cone $\alpha\circ\pi^D$ over $D'$ (@rem-composite-cone). By the terminal property of $(\varprojlim_{\mathcal I}D',\pi^{D'})$, there exists a unique morphism $\varprojlim_{\mathcal I}\alpha:\varprojlim_{\mathcal I}D\to\varprojlim_{\mathcal I}D'$ satisfying $\pi_i^{D'}\circ(\varprojlim_{\mathcal I}\alpha)=\alpha_i\circ\pi_i^D$ for all $i\in\mathcal I$. Uniqueness of universal factorizations immediately forces $\varprojlim_{\mathcal I}(\beta\circ\alpha)=(\varprojlim_{\mathcal I}\beta)\circ(\varprojlim_{\mathcal I}\alpha)$ and $\varprojlim_{\mathcal I}(\operatorname{id}_D)=\operatorname{id}$ (@rem-limit-functoriality). Finally, by @def-diagrams-limits (1), morphisms $\Delta(A)\to D$ in $\operatorname{Func}(\mathcal I,\mathcal A)$ are cones over $D$ with vertex $A$, which bijectively correspond via composition with $\pi^D$ to morphisms $A\to\varprojlim_{\mathcal I}D$ in $\mathcal A$ naturally in both variables (@rem-adjunction-naturality). The dual argument establishes functoriality of $\varinjlim_{\mathcal I}$ and $\varinjlim_{\mathcal I}\dashv\Delta$.
+:::

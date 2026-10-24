@@ -146,19 +146,25 @@ local function apply_div_callout_overrides(callout_tbl, source_attr)
     return
   end
 
-  local attrs = source_attr.attributes
-  for _, key in ipairs({"type", "appearance"}) do
-    if attrs[key] ~= nil then
-      callout_tbl[key] = attrs[key]
+  local attr = pandoc.Attr("", source_attr.classes)
+  for key, value in pairs(source_attr.attributes) do
+    if key == "type" or key == "appearance" then
+      callout_tbl[key] = value
+    elseif key == "collapse" or key == "icon" then
+      local parsed = parse_boolean_attr(value, key)
+      if parsed ~= nil then
+        callout_tbl[key] = parsed
+      end
+    else
+      attr.attributes[key] = value
     end
   end
+  callout_tbl.attr = attr
 
-  for _, key in ipairs({"collapse", "icon"}) do
-    local parsed = parse_boolean_attr(attrs[key], key)
-    if parsed ~= nil then
-      callout_tbl[key] = parsed
-    end
-  end
+  -- Remove the classes and attributes now transferred to the callout.
+  -- Leave the theorem's identifier and name unchanged.
+  source_attr.classes = pandoc.List()
+  source_attr.attributes = {}
 end
 
 local function calloutify(el, is_proof)

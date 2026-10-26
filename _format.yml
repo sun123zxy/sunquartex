@@ -13,7 +13,9 @@ fig-align: center
 format:
   html:
     shift-heading-level-by: 0 # HTML headings should be as-is. Maybe we write a filter to retrieve h1
-    theme: _assets/custom.scss
+    theme:
+      light: [flatly, _assets/custom.scss]
+      dark: [darkly, _assets/custom.scss]
     linestretch: 1.7
     code-fold: true
     html-math-method: mathjax

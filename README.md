@@ -580,6 +580,18 @@ format:
 
 亦见 [`examples/extra.qmd`](examples/extra.qmd)．暂时不支持其它格式下的宏包导入．
 
+### 自定义主题？
+
+```yaml
+format:
+  html:
+    theme:
+      light: [flatly, _assets/custom.scss]
+      dark: [darkly, _assets/custom.scss]
+```
+
+更改前面的 `flatly` / `darkly` 为 [Bootswatch 主题之一](https://quarto.org/docs/output-formats/html-themes.html) 即可迅速更改正常 / 暗色模式下的网页主题．
+
 ### 我要自定义 DOCX / PPTX 样式！
 
 请修改模板文件 `_assets/suntemp-art.docx` 和 `_assets/suntemp-pre.pptx`．

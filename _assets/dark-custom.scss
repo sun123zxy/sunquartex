@@ -1,0 +1,8 @@
+/*-- scss:rules --*/
+
+.cell-output img {
+  filter: invert(1) hue-rotate(180deg);
+}
+.tikz svg{
+  filter: invert(1) hue-rotate(180deg) drop-shadow(0 0 .3px);
+}

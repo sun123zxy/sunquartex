@@ -115,7 +115,7 @@
     "href": "examples/two-columns.html#usage",
     "title": "Two column layout",
     "section": "Usage",
-    "text": "Usage\nSee the source code of this page for the frontmatter.\nUse fenced divs for side notes: ::: {#rem-xxx .column-margin} ... :::. Reference each note in the main text with (@rem-xxx). Do not restrict to rem; use any other suitable prefix when appropriate.\nPlace a margin-note div one div after the main text div that references it, so that they are aligned vertically.\nWe choose to refrain from footnotes because Quarto’s implementation conflicts a little when mixing different margin system. Footnotes are actually good, but there are bugs on the Quarto side.",
+    "text": "Usage\nSee the source code of this page for the frontmatter.\nUse fenced divs for side notes: ::: {#rem-xxx .column-margin} ... :::. Reference each note in the main text with (@rem-xxx). Do not restrict to rem; use any other suitable prefix when appropriate.\nPlace the margin-note directly after the main text div that references it, so that they are aligned vertically.\nWe choose to refrain from footnotes because Quarto’s implementation conflicts a little when mixing different margin system. Footnotes are actually good, but there are bugs on the Quarto side.",
     "crumbs": [
       "Examples",
       "Two column layout"

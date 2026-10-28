@@ -30,7 +30,7 @@ See the source code of this page for the frontmatter.
 
 Use fenced divs for side notes: `::: {#rem-xxx .column-margin} ... :::`. Reference each note in the main text with `(@rem-xxx)`. Do not restrict to `rem`; use any other suitable prefix when appropriate.
 
-Place a margin-note div one div after the main text div that references it, so that they are aligned vertically.
+Place the margin-note directly after the main text div that references it, so that they are aligned vertically.
 
 We choose to refrain from footnotes because Quarto's implementation conflicts a little when mixing different margin system. Footnotes are actually good, but there are bugs on the Quarto side.
 

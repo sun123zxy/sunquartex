@@ -56,127 +56,6 @@
     "text": "7 Q&A\n\n7.1 一般性的\n\n示例文件编译不了！\n示例文件包含了部分可选支持内容，如未安装相应依赖，请删除对应内容后渲染．\n\n\n我不懂 Computer Science，你能不能讲人话！\n请您活用 AI 工具降低学习门槛！您可以：\n\n把 README 丢给 AI 提问．\n使用 VSCode 打开本仓库，使用自带的 Github Copilot，将 README 扔进对话框，提出您的具体需求并获得人话解答．\n\n\n\n我想要 XXX 功能！/ 我要自己魔改！\n仓库主要为自用，如能为您的生活带来便利欢迎取用．想要的功能欢迎移步 Issue 或 Discussion 提出（不保证会做 :p）\nIssue 中跟踪了一些计划中的功能和已知问题，Q&A 没有涉及的内容可移步参考．\n我们提供的 YAML 文档头样式只覆盖了了极小一部分功能．更深入的魔改需要您\n\n进一步学习底层软件 Quarto，魔改本仓库的默认配置\n进一步学习 Pandoc，编写 LaTeX 模板 / Lua filter\n\n有能力欢迎 Fork 和 Pull Request．\n\n\n仓库太重，我想要 standalone 的单文件渲染！\n请移步 quarto-render，一个独立开发的小型命令行程序使得单文件 Quarto 渲染更加方便．\n\n\n\n7.2 写作相关\n\n标题应该用多少个 #？\n一级标题被视为整个文档的大标题（即 Book 中的 chapter title），文档头标题和一级标题不应同时出现．\n二级标题对应 section，三级标题对应 subsection．Beamer 中四级标题对应 slide．在 Pandoc 中，这对应着\nshift-heading-level-by: -1\nslide-level: 4\nQuarto 对标题层级的处理比较混乱——例如，Book 项目中 Quarto 似乎会额外对标题层级进行 -1 处理；shift-heading-level-by 会让小节编号系统无法正常工作．我们做了很多 ad-hoc 的调整（例如 _assets/promote-h1.lua 将正文一级标题强制提升至 metadata 标题），因此不建议您再修改这些设置．\n参见：\n\n相关讨论\nPandoc --shift-heading-level-by 文档\nPandoc slide-level 文档\nQuarto Issue #12048\n\n\n\n分页符\n{{&lt; pagebreak &gt;}}．见官方文档．\n\n\nYAML 文档头里的字符串到底打不打引号？\n可打可不打．打了的话需要注意特殊字符的转义问题（如 \\）．\n\n\n用 $ 包裹行内公式的正确格式\n示例：我们有 $(a + b)^2 = a^2 + 2ab + b^2$．证毕．\n$ 内侧应紧接着公式中的非空格字符，外侧与中英文字符之间应有空格，与标点符号、连字符之间不留空格．参考 Pandoc 文档．\n\n\n怎么打出 \\(\\mathrm{\\TeX}\\), \\(\\mathrm{\\LaTeX}\\), \\(\\mathrm{\\SunQuarTeX}\\)？\n直接写 \\TeX, \\LaTeX, \\SunQuarTeX，不必置于数学环境中．我们编写了 _assets/fancy-latex-logo.lua 处理他们在不同格式下的渲染．\n\n\n方便的 SVG 草图绘制？\n如果您有触控笔，推荐使用 VSCode Draw 插件 获得编辑器内的 SVG 草图绘制功能．\n\n\n关于相对链接的处理\n如您不使用 website 或 book 输出则无需担心此部分．\n目前 Quarto 对相对链接的处理没有考虑到为非 HTML 格式设置 base URL．我们目前使用 _assets/offpage-crosslinks.lua 作为 workaround，从而使得其它格式下的相对链接被解析到 site-url 选项指定的网站根目录．您可以在 _filter.yml 中调整启用该脚本的输出格式．注意脚本可能无法正确处理 symbolic link．\n\n\n\n7.3 输出相关\n\n写好的 Beamer 也想输出一份文稿版本的 PDF？\n理论上与文档格式兼容，可直接设置 --to=pdf 输出文稿版本．\n\n\n我要输出到知乎！\n您可以使用 GFM 格式输出，输出内容可复制至 markdown.com.cn 的在线编辑器转知乎格式．\n\n\nPDF 输出，LaTeX 渲染了十遍！\n一般是文档的交叉引用有误所致，请检查文档头的 bibliography 选项和正文中的引用情况．\n\n\n每次渲染都要 updating tlmgr 烦死了！\n默认情况下，Quarto 会在每次渲染 LaTeX 时使用 TinyTeX 自动检测和下载所需宏包．但如果 Quarto 生成的 LaTeX 源文件有误，也会触发此过程．如果您频繁遇到，可以选择关闭 LaTeX 渲染的自动下载：\nformat:\n  pdf:\n    latex-auto-install: false\n\n\ntlmgr 未找到？\n请检查环境变量 PATH 中是否包含了 TinyTeX 的 bin 目录．Windows 下 tlmgr 以 bat 的形式存在，命令行调用时可能需要添加后缀名 tlmgr.bat command．\n\n\n网页端 Github Action 时 TinyTeX / TikZ 安装 / 渲染失败？\n\n有时网络不稳定，请检查报错信息并重试．\n如果你开启了选择性渲染（project.render），请检查 Github Actions 文件，确保 TikZ 预渲染使用的临时文件被加入到渲染列表中：\n\nproject:\n  render:\n    - temp.qmd\n    - ... # your target files"
   },
   {
-    "objectID": "examples/jupyter.html",
-    "href": "examples/jupyter.html",
-    "title": "Jupyter Notebook",
-    "section": "",
-    "text": "This is a sample Jupyter Notebook using \\(\\mathrm{\\SunQuarTeX}\\).\nBelow is an example of a Python code cell:\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nfig.patch.set_alpha(0)\nax.patch.set_alpha(0)\n\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\n\n\n\n\nFigure 1: A line plot on a polar axis\n\n\n\n\n\nQuarto’s specific Markdown feature still works in Jupyter Notebook. For example:\n\n\n\n\n\n\n\nTheorem 1 (This) is a theorem.",
-    "crumbs": [
-      "Examples",
-      "Jupyter Notebook"
-    ]
-  },
-  {
-    "objectID": "examples/jupyter.html#title",
-    "href": "examples/jupyter.html#title",
-    "title": "Jupyter Notebook",
-    "section": "",
-    "text": "This is a sample Jupyter Notebook using \\(\\mathrm{\\SunQuarTeX}\\).\nBelow is an example of a Python code cell:\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nfig.patch.set_alpha(0)\nax.patch.set_alpha(0)\n\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\n\n\n\n\nFigure 1: A line plot on a polar axis\n\n\n\n\n\nQuarto’s specific Markdown feature still works in Jupyter Notebook. For example:\n\n\n\n\n\n\n\nTheorem 1 (This) is a theorem.",
-    "crumbs": [
-      "Examples",
-      "Jupyter Notebook"
-    ]
-  },
-  {
-    "objectID": "examples/helloworld.html",
-    "href": "examples/helloworld.html",
-    "title": "你好，\\(\\mathrm{\\SunQuarTeX}\\)",
-    "section": "",
-    "text": "你好，\\(\\mathrm{\\SunQuarTeX}\\)!",
-    "crumbs": [
-      "Examples",
-      "你好，\\SunQuarTeX"
-    ]
-  },
-  {
-    "objectID": "examples/two-columns.html",
-    "href": "examples/two-columns.html",
-    "title": "Two column layout",
-    "section": "",
-    "text": "This is an early-access feature. For reference only.",
-    "crumbs": [
-      "Examples",
-      "Two column layout"
-    ]
-  },
-  {
-    "objectID": "examples/two-columns.html#introduction",
-    "href": "examples/two-columns.html#introduction",
-    "title": "Two column layout",
-    "section": "Introduction",
-    "text": "Introduction\nTwo column layout is a style of organizing content on a page where the text is divided into two vertical columns. Consider the following circumstance: you are writing a expository essay on a complex topic. You want to present your ideas in a clear and organized manner, while providing as much side information as possible for those readers who are not familiar with the topic. In this case, splitting the content into two columns creates a compact and effective way.\nThe left column contains the main text, clean and with a clear flow of mind. Experts or a second-time reader should be able to read it without any content from the right column. Such an exposition may inevitably include some concise slogan-like sentences. So the right column is provided for you to put side notes, clarifications of gaps, proofs, references … anything that is helpful for beginners but a little distracting for experts.\nNote that this does not necessarily require a physical separation of the two columns on the page, but rather having two “layers” of content: the main text and the side notes. It is more like a systematic and extensive use of footnotes. These notes can be either long or short, explaining a single word, a single sentence, or a whole paragraph in the main text. The idea is “We are brief and concise in the main text to keep the flow of mind, but if you don’t get the gist, redirect to side notes for more details.”.",
-    "crumbs": [
-      "Examples",
-      "Two column layout"
-    ]
-  },
-  {
-    "objectID": "examples/two-columns.html#usage",
-    "href": "examples/two-columns.html#usage",
-    "title": "Two column layout",
-    "section": "Usage",
-    "text": "Usage\nSee the source code of this page for the frontmatter.\nUse fenced divs for side notes: ::: {#rem-xxx .column-margin} ... :::. Reference each note in the main text with (@rem-xxx). Do not restrict to rem; use any other suitable prefix when appropriate.\nPlace the margin-note directly after the main text div that references it, so that they are aligned vertically.\nWe choose to refrain from footnotes because Quarto’s implementation conflicts a little when mixing different margin system. Footnotes are actually good, but there are bugs on the Quarto side.",
-    "crumbs": [
-      "Examples",
-      "Two column layout"
-    ]
-  },
-  {
-    "objectID": "examples/two-columns.html#example-usage",
-    "href": "examples/two-columns.html#example-usage",
-    "title": "Two column layout",
-    "section": "Example usage",
-    "text": "Example usage\nMotivation. To study mathematical objects that depend on a family of open sets or parameters, we need a universal way to assemble compatible families of data into a single object. Category theory formulates such universal assemblies as limits and colimits of diagrams.\n\nDefinition 1 (Diagrams, cones, limits, colimits, and completeness) Let \\(\\mathcal I\\) be a small category (Definition 2) and let \\(\\mathcal A\\) be a category. A functor \\(D:\\mathcal I\\to\\mathcal A\\) is called a diagram of shape \\(\\mathcal I\\), and \\(\\operatorname{Func}(\\mathcal I,\\mathcal A)\\) denotes the category of such diagrams with natural transformations as morphisms. For each object \\(A\\in\\mathcal A\\), the constant diagram \\(\\Delta(A):\\mathcal I\\to\\mathcal A\\) sends every \\(i\\in\\mathcal I\\) to \\(A\\) and every morphism \\(u:i\\to j\\) to \\(\\operatorname{id}_A\\); this defines the diagonal functor \\(\\Delta:\\mathcal A\\to\\operatorname{Func}(\\mathcal I,\\mathcal A)\\) (Remark 1).\n\nCones and limits: A cone over \\(D\\) with vertex \\(A\\) is a natural transformation \\(\\pi:\\Delta(A)\\to D\\), i.e., a family \\(\\{\\pi_i:A\\to D(i)\\}_{i\\in\\mathcal I}\\) satisfying \\(D(u)\\circ\\pi_i=\\pi_j\\) for all \\(u:i\\to j\\). A limit of \\(D\\) is a terminal cone \\((L,\\{\\pi_i\\}_{i\\in\\mathcal I})\\) over \\(D\\) (Remark 2): every cone \\((A,\\{f_i\\}_{i\\in\\mathcal I})\\) over \\(D\\) factors through a unique morphism \\(\\bar f:A\\to L\\) with \\(\\pi_i\\circ\\bar f=f_i\\) for all \\(i\\in\\mathcal I\\):\n\n\n\n\n\n\n\n\n\nA\nD\n(\ni\n)\nC\nD\n(\nj\n)\nD\n(\ni\n)\nL\nD\n(\nj\n)\nB\n\n\nf\ni\n\n\nf\nj\n\n\n\n∃\n!¯\nf\n\n\nπ\ni\n\n\nπ\nj\n\n\nD\n(\nu\n)\n\n\nι\ni\n\n\nι\nj\n\n\nD\n(\nu\n)\n\n\ng\ni\n\n\ng\nj\n\n\n\n∃\n!¯\ng\n\n\n\n\n\nFigure 1: Universal factorizations for limits and colimits\n\n\n\nCocones and colimits: Dually, a cocone under \\(D\\) with vertex \\(B\\) is a natural transformation \\(\\iota:D\\to\\Delta(B)\\) (\\(\\iota_j\\circ D(u)=\\iota_i\\)). A colimit of \\(D\\) is an initial cocone \\((C,\\{\\iota_i\\}_{i\\in\\mathcal I})\\) under \\(D\\): every cocone \\((B,\\{g_i\\}_{i\\in\\mathcal I})\\) factors uniquely as \\(g_i=\\bar g\\circ\\iota_i\\) for \\(\\bar g:C\\to B\\).\nCompleteness and cocompleteness: The category \\(\\mathcal A\\) is complete if every diagram \\(D:\\mathcal I\\to\\mathcal A\\) from a small category \\(\\mathcal I\\) admits a limit in \\(\\mathcal A\\), and cocomplete if every such diagram admits a colimit in \\(\\mathcal A\\) (Remark 3).\n\n\n\n\nDefinition 2 (Small category) A category \\(\\mathcal I\\) is small if \\(\\operatorname{Ob}(\\mathcal I)\\) and \\(\\operatorname{Mor}(\\mathcal I)\\) are sets rather than proper classes. This prevents set-theoretic paradoxes when forming products \\(\\prod_{i\\in\\mathcal I}D(i)\\) in \\(\\mathcal A\\).\n\nRemark 1 (Action of \\(\\Delta\\) on morphisms). Given \\(f:A\\to B\\) in \\(\\mathcal A\\), \\(\\Delta(f):\\Delta(A)\\to\\Delta(B)\\) is the natural transformation with component \\(\\Delta(f)_i=f\\) at every \\(i\\in\\mathcal I\\) (natural since \\(\\operatorname{id}_B\\circ f=f\\circ\\operatorname{id}_A\\)).\n\nRemark 2 (Uniqueness of terminal cones up to canonical isomorphism). Why is a limit unique up to unique isomorphism? If \\((L,\\{\\pi_i\\})\\) and \\((L',\\{\\pi_i'\\})\\) are two limit cones over \\(D\\), terminality gives unique morphisms \\(\\varphi:L\\to L'\\) (\\(\\pi_i'\\circ\\varphi=\\pi_i\\)) and \\(\\psi:L'\\to L\\) (\\(\\pi_i\\circ\\psi=\\pi_i'\\)). Then \\(\\pi_i\\circ(\\psi\\circ\\varphi)=\\pi_i=\\pi_i\\circ\\operatorname{id}_L\\) for all \\(i\\in\\mathcal I\\). Since \\(\\operatorname{id}_L\\) is the unique morphism \\(L\\to L\\) compatible with \\(\\{\\pi_i\\}\\), we must have \\(\\psi\\circ\\varphi=\\operatorname{id}_L\\), and symmetrically \\(\\varphi\\circ\\psi=\\operatorname{id}_{L'}\\).\n\nRemark 3 (Concrete construction of limits and colimits in \\(\\operatorname{Mod}_R\\) and \\(\\operatorname{Ab}\\)). For any commutative ring \\(R\\), the category \\(\\operatorname{Mod}_R\\) (and \\(\\operatorname{Ab}=\\operatorname{Mod}_{\\mathbb Z}\\)) is both complete and cocomplete because every small diagram \\(D:\\mathcal I\\to\\operatorname{Mod}_R\\) admits a canonical limit and colimit:\n\nLimit (submodule of compatible tuples): Inside the product \\(\\prod_{i\\in\\mathcal I}D(i)\\) with projections \\(\\pi_k\\), \\[\n\\begin{aligned}\n\\varprojlim_{i\\in\\mathcal I}D(i)&:=\\left\\{(x_i)_{i\\in\\mathcal I}\\in\\prod_{i\\in\\mathcal I}D(i)\\;\\middle|\\;\\right.\\\\\n&\\qquad\\left.D(u)(x_i)=x_j\\text{ for all }(u:i\\to j)\\in\\operatorname{Mor}(\\mathcal I)\\right\\}\n\\end{aligned}\n\\]\nColimit (quotient of direct sum): Inside \\(\\bigoplus_{i\\in\\mathcal I}D(i)\\) with insertions \\(\\operatorname{in}_i:D(i)\\hookrightarrow\\bigoplus_{k\\in\\mathcal I}D(k)\\), \\[\n\\begin{aligned}\n\\varinjlim_{i\\in\\mathcal I}D(i)&:=\\left(\\bigoplus_{i\\in\\mathcal I}D(i)\\right)\\big/N\\\\\nN&=\\operatorname{Span}_R\\left\\{\\operatorname{in}_j(D(u)(x_i))-\\operatorname{in}_i(x_i)\\;\\middle|\\;\\right.\\\\\n&\\qquad\\left.u:i\\to j,\\ x_i\\in D(i)\\right\\}\n\\end{aligned}\n\\]\n\n\n\n\nMotivation. A limit of a single diagram \\(D\\) is determined only up to unique isomorphism. However, once we choose a specific terminal cone \\((\\varprojlim_{\\mathcal I}D,\\{\\pi_i^D\\})\\) for each diagram \\(D\\), the universal property automatically makes \\(\\varprojlim_{\\mathcal I}\\) and \\(\\varinjlim_{\\mathcal I}\\) functors that are right and left adjoint to \\(\\Delta\\).\n\nProposition 1 (Functoriality of limits and colimits via diagonal adjunction) Let \\(\\mathcal I\\) be a small category and let \\(\\mathcal A\\) be a complete and cocomplete category. Choosing a limit cone \\((\\varprojlim_{\\mathcal I}D,\\{\\pi_i^D\\})\\) and a colimit cocone \\((\\varinjlim_{\\mathcal I}D,\\{\\iota_i^D\\})\\) for each \\(D\\in\\operatorname{Func}(\\mathcal I,\\mathcal A)\\) (Remark 4) defines functors \\(\\varprojlim_{\\mathcal I},\\varinjlim_{\\mathcal I}:\\operatorname{Func}(\\mathcal I,\\mathcal A)\\to\\mathcal A\\) that are right and left adjoint to \\(\\Delta:\\mathcal A\\to\\operatorname{Func}(\\mathcal I,\\mathcal A)\\): \\[\n\\begin{aligned}\n\\operatorname{Hom}_{\\operatorname{Func}(\\mathcal I,\\mathcal A)}(\\Delta(A),D)\n&\\xrightarrow{\\sim}\\operatorname{Hom}_{\\mathcal A}\\left(A,\\varprojlim_{\\mathcal I}D\\right)\\\\\n\\operatorname{Hom}_{\\mathcal A}\\left(\\varinjlim_{\\mathcal I}D,B\\right)\n&\\xrightarrow{\\sim}\\operatorname{Hom}_{\\operatorname{Func}(\\mathcal I,\\mathcal A)}(D,\\Delta(B))\n\\end{aligned}\n\\]\n\n\n\nRemark 4 (Why defining a limit functor requires choosing terminal cones). In Definition 1 (1), “being a limit” is a property of a cone \\((L,\\pi)\\), not a single canonical object in an abstract category \\(\\mathcal A\\). To define an actual functor \\(\\varprojlim_{\\mathcal I}:\\operatorname{Func}(\\mathcal I,\\mathcal A)\\to\\mathcal A\\), we must first assign to each object \\(D\\in\\operatorname{Func}(\\mathcal I,\\mathcal A)\\) a chosen terminal cone \\((L_D,\\pi^D)\\) (using the canonical submodule/quotient in \\(\\operatorname{Mod}_R\\), or global choice in an abstract complete category). Different choices of terminal cones yield canonically isomorphic limit functors by Remark 2.\n\nProof. Given a natural transformation \\(\\alpha:D\\to D'\\), composing the cone \\(\\pi^D:\\Delta(\\varprojlim_{\\mathcal I}D)\\to D\\) with \\(\\alpha\\) yields a cone \\(\\alpha\\circ\\pi^D\\) over \\(D'\\) (Remark 5). By the terminal property of \\((\\varprojlim_{\\mathcal I}D',\\pi^{D'})\\), there exists a unique morphism \\(\\varprojlim_{\\mathcal I}\\alpha:\\varprojlim_{\\mathcal I}D\\to\\varprojlim_{\\mathcal I}D'\\) satisfying \\(\\pi_i^{D'}\\circ(\\varprojlim_{\\mathcal I}\\alpha)=\\alpha_i\\circ\\pi_i^D\\) for all \\(i\\in\\mathcal I\\). Uniqueness of universal factorizations immediately forces \\(\\varprojlim_{\\mathcal I}(\\beta\\circ\\alpha)=(\\varprojlim_{\\mathcal I}\\beta)\\circ(\\varprojlim_{\\mathcal I}\\alpha)\\) and \\(\\varprojlim_{\\mathcal I}(\\operatorname{id}_D)=\\operatorname{id}\\) (Remark 6). Finally, by Definition 1 (1), morphisms \\(\\Delta(A)\\to D\\) in \\(\\operatorname{Func}(\\mathcal I,\\mathcal A)\\) are cones over \\(D\\) with vertex \\(A\\), which bijectively correspond via composition with \\(\\pi^D\\) to morphisms \\(A\\to\\varprojlim_{\\mathcal I}D\\) in \\(\\mathcal A\\) naturally in both variables (Remark 7). The dual argument establishes functoriality of \\(\\varinjlim_{\\mathcal I}\\) and \\(\\varinjlim_{\\mathcal I}\\dashv\\Delta\\).\n\n\n\nRemark 5 (Diagrammatic check that \\(\\alpha\\circ\\pi^D\\) is a cone over \\(D'\\)). Why does composing \\(\\pi^D\\) with a natural transformation \\(\\alpha:D\\to D'\\) produce a cone over \\(D'\\)? Because for every morphism \\(u:i\\to j\\) in \\(\\mathcal I\\), the cone identity \\(D(u)\\circ\\pi_i^D=\\pi_j^D\\) and the naturality square \\(D'(u)\\circ\\alpha_i=\\alpha_j\\circ D(u)\\) paste together into a commutative rectangle:\n\n\n\n\n\n\n\n\n\nlim\n←−\nI\nD\nD\n(\ni\n)\nD\n′\n(\ni\n)\nlim\n←−\nI\nD\nD\n(\nj\n)\nD\n′\n(\nj\n)\n\n\nπ\nDi\n\n\nα\ni\n\n\nid\n\n\nD\n(\nu\n)\n\n\nD\n′\n(\nu\n)\n\n\nπ\nDj\n\n\nα\nj\n\n\n\n\n\nFigure 2: Composition of a cone with a natural transformation\n\n\n\nThus \\(D'(u)\\circ(\\alpha_i\\circ\\pi_i^D)=\\alpha_j\\circ\\pi_j^D\\).\n\nRemark 6 (Unpacking functoriality of \\(\\varprojlim_{\\mathcal I}\\)). Given \\(\\alpha:D\\to D'\\) and \\(\\beta:D'\\to D''\\), for every \\(i\\in\\mathcal I\\) we have \\[\n\\begin{aligned}\n\\pi_i^{D''}\\circ\\left(\\varprojlim\\beta\\circ\\varprojlim\\alpha\\right)\n&=\\beta_i\\circ\\pi_i^{D'}\\circ\\varprojlim\\alpha\\\\\n&=\\beta_i\\circ\\alpha_i\\circ\\pi_i^D\\\\\n&=(\\beta\\circ\\alpha)_i\\circ\\pi_i^D\n\\end{aligned}\n\\] Since \\(\\varprojlim(\\beta\\circ\\alpha)\\) is the unique morphism \\(L_D\\to L_{D''}\\) satisfying this identity for all \\(i\\in\\mathcal I\\), \\(\\varprojlim(\\beta\\circ\\alpha)=\\varprojlim\\beta\\circ\\varprojlim\\alpha\\).\n\nRemark 7 (Naturality of the adjunction). For \\(\\bar f\\in\\operatorname{Hom}_{\\mathcal A}(A,L_D)\\), the bijection \\(\\Psi(\\bar f)_i=\\pi_i^D\\circ\\bar f\\) is natural in \\(D\\) because for \\(\\alpha:D\\to D'\\), \\[\n\\begin{aligned}\n\\Psi\\left(\\left(\\varprojlim\\alpha\\right)\\circ\\bar f\\right)_i\n&=\\pi_i^{D'}\\circ\\left(\\varprojlim\\alpha\\right)\\circ\\bar f\\\\\n&=\\alpha_i\\circ\\pi_i^D\\circ\\bar f\\\\\n&=(\\alpha\\circ\\Psi(\\bar f))_i\n\\end{aligned}\n\\] It is natural in \\(A\\) by associativity of composition.",
-    "crumbs": [
-      "Examples",
-      "Two column layout"
-    ]
-  },
-  {
-    "objectID": "examples/timetable.html",
-    "href": "examples/timetable.html",
-    "title": "课表",
-    "section": "",
-    "text": "时间\n星期一\n星期二\n星期三\n星期四\n星期五\n\n\n\n\n08:00–09:35\n\n\n\n\n\n\n\n09:55–12:20\n群与代数的表示\nAlice MacDonald\n1–12周\n3–4节\n寺子屋I502\n代数拓扑\n八云蓝\n1–12周\n3–4节\n寺子屋F302\n\n代数拓扑\n八云蓝\n1–12周\n3–4节\n寺子屋F302\n\n\n\n13:20–14:55\n量子信息学基础\n宇佐见莲子\n1–12周\n6–7节\n京都大学3-8-1\n微分几何\n八云蓝\n1–12周\n6–7节\n寺子屋A204\n量子信息学基础\n宇佐见莲子\n1–12周\n6–7节\n京都大学3-8-1\n微分几何\n八云蓝\n1–12周\n6节–7节\n寺子屋A204\n群与代数的表示\nAlice MacDonald\n1–12周\n6–7节\n寺子屋I502\n\n\n15:15–17:40\n\n信息论与密码\n帕秋莉\n1–12周\n8–9节\n图书馆F604\n\n信息论与密码\n帕秋莉\n1–12周\n8–9节\n图书馆F604\n\n\n\n18:30–20:55\n\n\nLean 4 形式化教学\nsun123zxy\n1–12周\n11–12节\n香霖堂E909",
-    "crumbs": [
-      "Examples",
-      "课表"
-    ]
-  },
-  {
-    "objectID": "examples/enpre.html",
-    "href": "examples/enpre.html",
-    "title": "Presentation Example (English)",
-    "section": "",
-    "text": "long long long long long long long long long long long long long long long long long long long long long long long long long long sentence.\nlong long long long long long long long long long long long long long long long long long long long long long long long long long long paragraph.\n\n\n\nleft bar.\nnarrow narrow narrow narrow narrow narrow narrow narrow narrow narrow narrow narrow left bar.\n\n\n\nright bar.\nwide wide wide wide wide wide wide wide wide wide wide wide wide wide wide wide wide right bar.\n\n\n\n\n\n\n\nThis is a list.\nA compact list.\n\nWow.\n\nThis is a list.\nA sparse list.\n\nA definition list below.\n\nReflexivity\n\n\\(a \\sim a\\)\n\nAntisymmetry\n\n\\(a \\leq b \\land b \\leq a \\implies a=b\\)\n\nTransitivity\n\n\\(a \\leq b \\land b \\leq c \\implies a \\leq c\\)\n\n\n\n\n\nBlah [1, pp. 1, chapter 3, sec. 2, theorem 3]. Blah blah [1], [2]. Blah blah blah1.\n1 This is a footnote",
-    "crumbs": [
-      "Examples",
-      "Presentation Example (English)"
-    ]
-  },
-  {
-    "objectID": "examples/enpre.html#section-a",
-    "href": "examples/enpre.html#section-a",
-    "title": "Presentation Example (English)",
-    "section": "",
-    "text": "long long long long long long long long long long long long long long long long long long long long long long long long long long sentence.\nlong long long long long long long long long long long long long long long long long long long long long long long long long long long paragraph.\n\n\n\nleft bar.\nnarrow narrow narrow narrow narrow narrow narrow narrow narrow narrow narrow narrow left bar.\n\n\n\nright bar.\nwide wide wide wide wide wide wide wide wide wide wide wide wide wide wide wide wide right bar.\n\n\n\n\n\n\n\nThis is a list.\nA compact list.\n\nWow.\n\nThis is a list.\nA sparse list.\n\nA definition list below.\n\nReflexivity\n\n\\(a \\sim a\\)\n\nAntisymmetry\n\n\\(a \\leq b \\land b \\leq a \\implies a=b\\)\n\nTransitivity\n\n\\(a \\leq b \\land b \\leq c \\implies a \\leq c\\)\n\n\n\n\n\nBlah [1, pp. 1, chapter 3, sec. 2, theorem 3]. Blah blah [1], [2]. Blah blah blah1.\n1 This is a footnote",
-    "crumbs": [
-      "Examples",
-      "Presentation Example (English)"
-    ]
-  },
-  {
-    "objectID": "examples/enpre.html#section-b",
-    "href": "examples/enpre.html#section-b",
-    "title": "Presentation Example (English)",
-    "section": "Section B",
-    "text": "Section B\n\nSubsection 1\n\nCode\n#include&lt;bits/stdc++.h&gt;\nusing namespace std;\n\nint main(){\n    return 0; // 返回 0\n}\nexample : (∀ x, p x → r) → ((∃ x, p x) → r) := by\n  intro h ⟨a, hpa⟩ -- you may also `rcases` explicitly\n  exact h a hpa\n\n\nFigures\n\n\n\n\n\n\nFigure 1: This is a figure\n\n\n\nReferable Figure 1.\n\n\nComputations\nBeamer format temporarily disabled due to Quarto Issue #13372.\nComplex side by side. (Figure 2, Figure 2 (a), Figure 2 (b))\n\n\nCode\nimport numpy as np\nimport math\nfrom IPython.display import Markdown, display\nfrom tabulate import tabulate\nimport matplotlib.pyplot as plt\n\nR = np.array([0,100,200,300,400,500,600,700,800,900,1000,\n1100,1110,1120,1130,1140,1150,1160,1170,1180,1190,\n1200,1210,1220,1230,1240,1250,1260,1270,1280,1290,\n1300,1400,1500,2000,4000,math.inf])\nU = np.array([24.2E-3, 0.386,0.747,1.104,1.460,1.813,2.16,2.51,2.86,3.19,3.48,\n3.70,3.75,3.77,3.78,3.80,3.81,3.83,3.84,3.85,3.86,\n3.87,3.90,3.92,3.93,3.94,3.95,3.95,3.96,3.97,3.98,\n3.99,4.08,4.16,4.39,4.66,4.85])\nI = np.array([3.6,3.6,3.6,3.6,3.6,3.5,3.5,3.5,3.5,3.5,3.4,\n3.3,3.4,3.4,3.4,3.4,3.3,3.3,3.3,3.3,3.3,\n3.2,3.2,3.2,3.2,3.2,3.2,3.2,3.1,3.1,3.1,\n3.0,2.9,2.7,2.2,1.130,47.7E-3])\nP = U*I\n\n\n\nCode\nfig, ax = plt.subplots()\n\nax.set_xlabel(\"U (V)\")\nax.set_ylabel(\"I (mA)\")\n\nax.plot(U, I, marker=\"o\")\nax.grid(True)\nax.set_xlim(0)\nax.set_ylim(0)\n\nplt.show()\n\n\nfig, ax = plt.subplots()\n\nax.set_xlabel(\"R (Ω)\")\nax.set_ylabel(\"P (mW)\")\n\nax.plot(R, P, marker=\"o\")\nax.grid(True)\nax.set_xlim((0, 2000))\nax.set_ylim(0)\n\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\n(a) I-U\n\n\n\n\n\n\n\n\n\n\n\n(b) P-R\n\n\n\n\n\n\n\nFigure 2: solar panel\n\n\n\n\n\n\nSubsection 2\n\nTheorems\n\n\n\n\n\n\n\nTheorem 1 (Test) This is a theorem. \\[\n\\sum_{d \\mid n} \\varphi(d) = n\n\\]\n\n\n\n\n\n\n\n\n\n\nNoteProof\n\n\n\n\n\n\nProof. This is a proof ended with a display math. \\[\n\\sum_{d \\mid n} \\mu(d) = [n=1]\n\\]\n\n\n\n\n\n\n\n\n\n\nNoteProof\n\n\n\n\n\n\nProof. This is a really really really really really really really really really really really really really really really really really really really really long proof.\n\n\n\n\n\n\n\n\n\n\n\nDefinition 1 This is a definition.\n\n\n\n\n\n\n\n\n\n\n\nExample 1 (An example) This is an example.\n\n\n\n\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\n\nSolution. This is the solution to the example.\n\n\n\n\n\n\n\n\n\n\n\nExercise 1 This is an exercise.\n\n\n\n\n\n\n\n\n\n\nTipRemark\n\n\n\n\n\n\nRemark. This is a remark of Exercise 1.\n\n\n\n\n\n\n\n\n\n\n\nLemma 1 This is a lemma.\n\n\n\n\n\n\n\n\n\n\n\nCorollary 1 This is a corollary of Theorem 1.\n\n\n\n\n\n\n\n\n\n\n\nProposition 1 This is a proposition.\n\n\n\n\n\n\n\n\n\n\n\nConjecture 1 This is a conjecture.",
-    "crumbs": [
-      "Examples",
-      "Presentation Example (English)"
-    ]
-  },
-  {
     "objectID": "examples/enart.html",
     "href": "examples/enart.html",
     "title": "Article Example (English)",
@@ -218,17 +97,6 @@
     "crumbs": [
       "Examples",
       "Article Example (English)"
-    ]
-  },
-  {
-    "objectID": "examples/qrcode.html",
-    "href": "examples/qrcode.html",
-    "title": "QR Code Test",
-    "section": "",
-    "text": "Test 1\n\n\n    \n\n\nTest 2\n\n\n\n\n\n    \n\n\nFigure 1: This is a QR code",
-    "crumbs": [
-      "Examples",
-      "QR Code Test"
     ]
   },
   {
@@ -287,58 +155,91 @@
     ]
   },
   {
-    "objectID": "examples/extra.html",
-    "href": "examples/extra.html",
-    "title": "Custom Extra Package",
+    "objectID": "examples/resume.html",
+    "href": "examples/resume.html",
+    "title": "Curriculum Vitae",
     "section": "",
-    "text": "This is physics: \\(\\dv{f}{x}\\).",
+    "text": "Name: Usami Renko\nEmail: usamir@ukyoto.edu.jp\nHomepage: https://blog.usamir.top/",
     "crumbs": [
       "Examples",
-      "Custom Extra Package"
+      "Curriculum Vitae"
     ]
   },
   {
-    "objectID": "examples/extra.html#first",
-    "href": "examples/extra.html#first",
-    "title": "Custom Extra Package",
-    "section": "",
-    "text": "This is physics: \\(\\dv{f}{x}\\).",
+    "objectID": "examples/resume.html#education",
+    "href": "examples/resume.html#education",
+    "title": "Curriculum Vitae",
+    "section": "Education",
+    "text": "Education\n\n2038/09–2042/06 | UKyoto | Bachelor of Physics\n\nGrades (by the end of 6th semester)\n\nGPA: 3.9 / 4.0\nGPA Ranking: 3 / 233\n\n\n\nUndergraduate Thesis\n\nAdvisor: Prof. Yumemi Okazaki, UKyoto\nStudying Area: Grand Unified Theory, Supersymmetry, String Theory, Quantum Gravity\n\n\n\nAwards\n\n\n\n\n\n\n\n\n\nDate\nRound\nAward\nIssued by\n\n\n\n\n2039/12\n2038–2039\nExcellent Student\nUKyoto\n\n\n\n\n\nScholarships\n\n\n\n\n\n\n\n\n\nDate\nRound\nScholarship\nIssued by\n\n\n\n\n2039/11\n2038–2039\nUKyoto Scholarship for Outstanding Students\nUKyoto\n\n\n2040/03\n2039–2040\nWestern Scholarship\nTeam Shenzhen Bob",
     "crumbs": [
       "Examples",
-      "Custom Extra Package"
+      "Curriculum Vitae"
     ]
   },
   {
-    "objectID": "examples/cnpre.html",
-    "href": "examples/cnpre.html",
-    "title": "中文幻灯片示例",
-    "section": "",
-    "text": "长长长长长 long 长长长长长长长长长 long 长长长长长长长长长长长长长长长长长长长长长长长长长长长长长句子．\n长长长 \\(e\\) 长长长 \\(fge\\) 长长长长长长长长长长长长长长长长长长长长长长长长长段落．\n\n\n\n左栏．\n窄窄窄窄窄窄窄窄窄窄窄窄窄窄窄窄窄的左栏．\n\n\n\n右栏．\n宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽的右栏．\n\n\n\n\n\n\n\n这是列表．\n紧的列表．\n\n噢\n\n这是列表．\n松的列表．\n\n下面是一个定义列表．\n\n自反性\n\n\\(a \\sim a\\)\n\n反对称性\n\n\\(a \\leq b \\land b \\leq a \\implies a=b\\)\n\n传递性\n\n\\(a \\leq b \\land b \\leq c \\implies a \\leq c\\)\n\n\n\n\n\n哇[1, p.1]．哇哦[2], [3]．嗨1．\n1 这是一个脚注．",
+    "objectID": "examples/resume.html#competitions",
+    "href": "examples/resume.html#competitions",
+    "title": "Curriculum Vitae",
+    "section": "Competitions",
+    "text": "Competitions\n\nGeoGuessr\n\n\n\n\n\n\n\n\nDate\nCompetition\nPrize\n\n\n\n\n2039/12/15\nGeoGuessr World Championship 2039\n5nd Place\n\n\n2040/11/30\nGeoGuessr World Championship 2040\n2nd Place",
     "crumbs": [
       "Examples",
-      "中文幻灯片示例"
+      "Curriculum Vitae"
     ]
   },
   {
-    "objectID": "examples/cnpre.html#section-a",
-    "href": "examples/cnpre.html#section-a",
-    "title": "中文幻灯片示例",
-    "section": "",
-    "text": "长长长长长 long 长长长长长长长长长 long 长长长长长长长长长长长长长长长长长长长长长长长长长长长长长句子．\n长长长 \\(e\\) 长长长 \\(fge\\) 长长长长长长长长长长长长长长长长长长长长长长长长长段落．\n\n\n\n左栏．\n窄窄窄窄窄窄窄窄窄窄窄窄窄窄窄窄窄的左栏．\n\n\n\n右栏．\n宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽的右栏．\n\n\n\n\n\n\n\n这是列表．\n紧的列表．\n\n噢\n\n这是列表．\n松的列表．\n\n下面是一个定义列表．\n\n自反性\n\n\\(a \\sim a\\)\n\n反对称性\n\n\\(a \\leq b \\land b \\leq a \\implies a=b\\)\n\n传递性\n\n\\(a \\leq b \\land b \\leq c \\implies a \\leq c\\)\n\n\n\n\n\n哇[1, p.1]．哇哦[2], [3]．嗨1．\n1 这是一个脚注．",
+    "objectID": "examples/resume.html#talks",
+    "href": "examples/resume.html#talks",
+    "title": "Curriculum Vitae",
+    "section": "Talks",
+    "text": "Talks\n\n\n\n\n\n\n\n\nDate\nTitle\nLinks\n\n\n\n\n2040/11/30\nIntroduction to Formal Physics with Lean 4\nonsite (en) latest (en)\n\n\n\nIntroducing Physlib: Digitalizing Physics in Lean 4.\n\n\n\n2039/09/15\nAnalytical Mechanics, Differential Manifolds and Symplectic Geometry\nonsite (en)\n\n\n\nUTokyo–UKyoto Student Physics Workshop",
     "crumbs": [
       "Examples",
-      "中文幻灯片示例"
+      "Curriculum Vitae"
     ]
   },
   {
-    "objectID": "examples/cnpre.html#section-b",
-    "href": "examples/cnpre.html#section-b",
-    "title": "中文幻灯片示例",
-    "section": "Section B",
-    "text": "Section B\n\nSubsection 1\n\n代码块\n行间代码 print(\"Hello, SunQuarTeX\").\n#include&lt;bits/stdc++.h&gt;\nusing namespace std;\n\nint main(){\n    return 0; // 返回 0\n}\nexample : (∀ x, p x → r) → ((∃ x, p x) → r) := by\n  intro h ⟨a, hpa⟩ -- you may also `rcases` explicitly\n  exact h a hpa\n\n\n图\n\n\n\n\n\n\n图 1: 这是一张插图\n\n\n\n引用一下 图 1．\n\n\n计算图\nBeamer format temporarily disabled due to Quarto Issue #13372.\n复杂的并列效果．（图 2, 图 2 (a), 图 2 (b)）\n\n\n代码\nimport numpy as np\nimport math\nfrom IPython.display import Markdown, display\nimport matplotlib.pyplot as plt\n\nR = np.array([0,100,200,300,400,500,600,700,800,900,1000,\n1100,1110,1120,1130,1140,1150,1160,1170,1180,1190,\n1200,1210,1220,1230,1240,1250,1260,1270,1280,1290,\n1300,1400,1500,2000,4000,math.inf])\nU = np.array([24.2E-3, 0.386,0.747,1.104,1.460,1.813,2.16,2.51,2.86,3.19,3.48,\n3.70,3.75,3.77,3.78,3.80,3.81,3.83,3.84,3.85,3.86,\n3.87,3.90,3.92,3.93,3.94,3.95,3.95,3.96,3.97,3.98,\n3.99,4.08,4.16,4.39,4.66,4.85])\nI = np.array([3.6,3.6,3.6,3.6,3.6,3.5,3.5,3.5,3.5,3.5,3.4,\n3.3,3.4,3.4,3.4,3.4,3.3,3.3,3.3,3.3,3.3,\n3.2,3.2,3.2,3.2,3.2,3.2,3.2,3.1,3.1,3.1,\n3.0,2.9,2.7,2.2,1.130,47.7E-3])\nP = U*I\n\n\n\n代码\nfig, ax = plt.subplots()\n\nax.set_xlabel(\"U (V)\")\nax.set_ylabel(\"I (mA)\")\n\nax.plot(U, I, marker=\"o\")\nax.grid(True)\nax.set_xlim(0)\nax.set_ylim(0)\n\nplt.show()\n\n\nfig, ax = plt.subplots()\n\nax.set_xlabel(\"R (Ω)\")\nax.set_ylabel(\"P (mW)\")\n\nax.plot(R, P, marker=\"o\")\nax.grid(True)\nax.set_xlim((0, 2000))\nax.set_ylim(0)\n\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\n(a) 输出电流与电压关系曲线\n\n\n\n\n\n\n\n\n\n\n\n(b) 输出功率与负载电阻关系曲线\n\n\n\n\n\n\n\n图 2: 太阳能电池的负载特性\n\n\n\n\n\nTikZ\n\n\n\n\n\n\n\n\n\nC\n[\nx\n]\nC\nC\nf\n(\nx\n)\n∑\nn\n−\n1\ni\n=0\na\ni\nx\ni\n(\nf\n(\nω\nk\n))\nn\n−\n1\nk\n=0\n(\nfg\n)(\nx\n)\n∑\nn\n−\n1\nk\n=0\nx\nk\n∑\ni\n+\nj\n=\nk\na\ni\nb\nj\n(\nf\n(\nω\nkn\n)\ng\n(\nω\nkn\n))\nn\n−\n1\nk\n=0\ng\n(\nx\n)\n∑\nn\n−\n1\nj\n=0\nb\nj\nx\nj\n(\ng\n(\nω\nk\n))\nn\n−\n1\nk\n=0\n\n\nDFT\n\n\n\n\n\n\nDFT\n-1\n\n\nDFT\n\n\n\n\n\n\n\n\n\n图 3: An tikzcd image\n\n\n\n\n\n\nSubsection 2\n\n定理\n\n\n\n\n\n\n\n定理 1 (测试定理) 这是一个定理． \\[\n\\sum_{d \\mid n} \\varphi(d) = n\n\\]\n\n\n\n\n\n\n\n\n\n\n注记Proof\n\n\n\n\n\n\n证明. 这是一个以公式结尾的证明． \\[\n\\sum_{d \\mid n} \\mu(d) = [n=1]\n\\]\n\n\n\n\n\n\n\n\n\n\n注记Proof\n\n\n\n\n\n\n证明. 这是一个比较长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长的证明．\n\n\n\n\n\n\n\n\n\n\n\n定义 1 这是一个定义．\n\n\n\n\n\n\n\n\n\n\n\n例 1 (一个例子) 这是一个例子．\n\n\n\n\n\n\n\n\n\n\n注记Solution\n\n\n\n\n\n\n解. 这是例子的解．\n\n\n\n\n\n\n\n\n\n\n\n习题 1 这是一个练习．\n\n\n\n\n\n\n\n\n\n\n提示Remark\n\n\n\n\n\n\n注记. 这是一个注记，习题 1 的注记．\n\n\n\n\n\n\n\n\n\n\n\n引理 1 这是一个引理．\n\n\n\n\n\n\n\n\n\n\n\n推论 1 这是一个推论，定理 1 的推论．\n\n\n\n\n\n\n\n\n\n\n\n命题 1 这是一个命题．\n\n\n\n\n\n\n\n\n\n\n\n猜想 1 这是一个猜想．",
+    "objectID": "examples/resume.html#programs",
+    "href": "examples/resume.html#programs",
+    "title": "Curriculum Vitae",
+    "section": "Programs",
+    "text": "Programs\n\n\n\n\n\n\n\n\nDate\nProgram\nLinks\n\n\n\n\n2039/11–2040/12\nSupernatural Borders and Where to Find Them\n\n\n\n\nInnovation and Entrepreneurship Training Program for College Students\nWe study the supernatural borders, a class of spatial boundaries that can be crossed with certain conditions. The concept is originated from the string theory, but recent investigations have provided evidence for the existence of supernatural borders in our world. We aim to systematically study the properties of supernatural borders, identify them in the real world and explore their potential applications.\nRole: Project Leader\nJoint with: Maribel Hearn",
     "crumbs": [
       "Examples",
-      "中文幻灯片示例"
+      "Curriculum Vitae"
+    ]
+  },
+  {
+    "objectID": "examples/resume.html#skills",
+    "href": "examples/resume.html#skills",
+    "title": "Curriculum Vitae",
+    "section": "Skills",
+    "text": "Skills\n\nFormal Languages General programming language familiarity. (Python / Lean 4)\nFormalizing Physics Contributor of Physlib 4. Work experience in formalization and annotation in Lean 4.\nTypesetting Experienced user of Markdown, \\(\\mathrm{\\LaTeX}\\), Quarto and \\(\\mathrm{\\SunQuarTeX}\\).\nGeoGuesser Top 1% player in GeoGuessr.\nNatural Languages:\n\nJapanese: Native\nEnglish:\n\nIELTS Academic 7.5 (8.5 / 8 / 6.5 / 6.5)",
+    "crumbs": [
+      "Examples",
+      "Curriculum Vitae"
+    ]
+  },
+  {
+    "objectID": "examples/jupyter.html",
+    "href": "examples/jupyter.html",
+    "title": "Jupyter Notebook",
+    "section": "",
+    "text": "This is a sample Jupyter Notebook using \\(\\mathrm{\\SunQuarTeX}\\).\nBelow is an example of a Python code cell:\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nfig.patch.set_alpha(0)\nax.patch.set_alpha(0)\n\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\n\n\n\n\nFigure 1: A line plot on a polar axis\n\n\n\n\n\nQuarto’s specific Markdown feature still works in Jupyter Notebook. For example:\n\n\n\n\n\n\n\nTheorem 1 (This) is a theorem.",
+    "crumbs": [
+      "Examples",
+      "Jupyter Notebook"
+    ]
+  },
+  {
+    "objectID": "examples/jupyter.html#title",
+    "href": "examples/jupyter.html#title",
+    "title": "Jupyter Notebook",
+    "section": "",
+    "text": "This is a sample Jupyter Notebook using \\(\\mathrm{\\SunQuarTeX}\\).\nBelow is an example of a Python code cell:\n\n\nCode\nimport numpy as np\nimport matplotlib.pyplot as plt\n\nr = np.arange(0, 2, 0.01)\ntheta = 2 * np.pi * r\nfig, ax = plt.subplots(\n  subplot_kw = {'projection': 'polar'} \n)\nfig.patch.set_alpha(0)\nax.patch.set_alpha(0)\n\nax.plot(theta, r)\nax.set_rticks([0.5, 1, 1.5, 2])\nax.grid(True)\nplt.show()\n\n\n\n\n\n\n\n\nFigure 1: A line plot on a polar axis\n\n\n\n\n\nQuarto’s specific Markdown feature still works in Jupyter Notebook. For example:\n\n\n\n\n\n\n\nTheorem 1 (This) is a theorem.",
+    "crumbs": [
+      "Examples",
+      "Jupyter Notebook"
     ]
   },
   {
@@ -474,69 +375,168 @@
     ]
   },
   {
-    "objectID": "examples/resume.html",
-    "href": "examples/resume.html",
-    "title": "Curriculum Vitae",
+    "objectID": "examples/cnpre.html",
+    "href": "examples/cnpre.html",
+    "title": "中文幻灯片示例",
     "section": "",
-    "text": "Name: Usami Renko\nEmail: usamir@ukyoto.edu.jp\nHomepage: https://blog.usamir.top/",
+    "text": "长长长长长 long 长长长长长长长长长 long 长长长长长长长长长长长长长长长长长长长长长长长长长长长长长句子．\n长长长 \\(e\\) 长长长 \\(fge\\) 长长长长长长长长长长长长长长长长长长长长长长长长长段落．\n\n\n\n左栏．\n窄窄窄窄窄窄窄窄窄窄窄窄窄窄窄窄窄的左栏．\n\n\n\n右栏．\n宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽的右栏．\n\n\n\n\n\n\n\n这是列表．\n紧的列表．\n\n噢\n\n这是列表．\n松的列表．\n\n下面是一个定义列表．\n\n自反性\n\n\\(a \\sim a\\)\n\n反对称性\n\n\\(a \\leq b \\land b \\leq a \\implies a=b\\)\n\n传递性\n\n\\(a \\leq b \\land b \\leq c \\implies a \\leq c\\)\n\n\n\n\n\n哇[1, p.1]．哇哦[2], [3]．嗨1．\n1 这是一个脚注．",
     "crumbs": [
       "Examples",
-      "Curriculum Vitae"
+      "中文幻灯片示例"
     ]
   },
   {
-    "objectID": "examples/resume.html#education",
-    "href": "examples/resume.html#education",
-    "title": "Curriculum Vitae",
-    "section": "Education",
-    "text": "Education\n\n2038/09–2042/06 | UKyoto | Bachelor of Physics\n\nGrades (by the end of 6th semester)\n\nGPA: 3.9 / 4.0\nGPA Ranking: 3 / 233\n\n\n\nUndergraduate Thesis\n\nAdvisor: Prof. Yumemi Okazaki, UKyoto\nStudying Area: Grand Unified Theory, Supersymmetry, String Theory, Quantum Gravity\n\n\n\nAwards\n\n\n\n\n\n\n\n\n\nDate\nRound\nAward\nIssued by\n\n\n\n\n2039/12\n2038–2039\nExcellent Student\nUKyoto\n\n\n\n\n\nScholarships\n\n\n\n\n\n\n\n\n\nDate\nRound\nScholarship\nIssued by\n\n\n\n\n2039/11\n2038–2039\nUKyoto Scholarship for Outstanding Students\nUKyoto\n\n\n2040/03\n2039–2040\nWestern Scholarship\nTeam Shenzhen Bob",
+    "objectID": "examples/cnpre.html#section-a",
+    "href": "examples/cnpre.html#section-a",
+    "title": "中文幻灯片示例",
+    "section": "",
+    "text": "长长长长长 long 长长长长长长长长长 long 长长长长长长长长长长长长长长长长长长长长长长长长长长长长长句子．\n长长长 \\(e\\) 长长长 \\(fge\\) 长长长长长长长长长长长长长长长长长长长长长长长长长段落．\n\n\n\n左栏．\n窄窄窄窄窄窄窄窄窄窄窄窄窄窄窄窄窄的左栏．\n\n\n\n右栏．\n宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽宽的右栏．\n\n\n\n\n\n\n\n这是列表．\n紧的列表．\n\n噢\n\n这是列表．\n松的列表．\n\n下面是一个定义列表．\n\n自反性\n\n\\(a \\sim a\\)\n\n反对称性\n\n\\(a \\leq b \\land b \\leq a \\implies a=b\\)\n\n传递性\n\n\\(a \\leq b \\land b \\leq c \\implies a \\leq c\\)\n\n\n\n\n\n哇[1, p.1]．哇哦[2], [3]．嗨1．\n1 这是一个脚注．",
     "crumbs": [
       "Examples",
-      "Curriculum Vitae"
+      "中文幻灯片示例"
     ]
   },
   {
-    "objectID": "examples/resume.html#competitions",
-    "href": "examples/resume.html#competitions",
-    "title": "Curriculum Vitae",
-    "section": "Competitions",
-    "text": "Competitions\n\nGeoGuessr\n\n\n\n\n\n\n\n\nDate\nCompetition\nPrize\n\n\n\n\n2039/12/15\nGeoGuessr World Championship 2039\n5nd Place\n\n\n2040/11/30\nGeoGuessr World Championship 2040\n2nd Place",
+    "objectID": "examples/cnpre.html#section-b",
+    "href": "examples/cnpre.html#section-b",
+    "title": "中文幻灯片示例",
+    "section": "Section B",
+    "text": "Section B\n\nSubsection 1\n\n代码块\n行间代码 print(\"Hello, SunQuarTeX\").\n#include&lt;bits/stdc++.h&gt;\nusing namespace std;\n\nint main(){\n    return 0; // 返回 0\n}\nexample : (∀ x, p x → r) → ((∃ x, p x) → r) := by\n  intro h ⟨a, hpa⟩ -- you may also `rcases` explicitly\n  exact h a hpa\n\n\n图\n\n\n\n\n\n\n图 1: 这是一张插图\n\n\n\n引用一下 图 1．\n\n\n计算图\nBeamer format temporarily disabled due to Quarto Issue #13372.\n复杂的并列效果．（图 2, 图 2 (a), 图 2 (b)）\n\n\n代码\nimport numpy as np\nimport math\nfrom IPython.display import Markdown, display\nimport matplotlib.pyplot as plt\n\nR = np.array([0,100,200,300,400,500,600,700,800,900,1000,\n1100,1110,1120,1130,1140,1150,1160,1170,1180,1190,\n1200,1210,1220,1230,1240,1250,1260,1270,1280,1290,\n1300,1400,1500,2000,4000,math.inf])\nU = np.array([24.2E-3, 0.386,0.747,1.104,1.460,1.813,2.16,2.51,2.86,3.19,3.48,\n3.70,3.75,3.77,3.78,3.80,3.81,3.83,3.84,3.85,3.86,\n3.87,3.90,3.92,3.93,3.94,3.95,3.95,3.96,3.97,3.98,\n3.99,4.08,4.16,4.39,4.66,4.85])\nI = np.array([3.6,3.6,3.6,3.6,3.6,3.5,3.5,3.5,3.5,3.5,3.4,\n3.3,3.4,3.4,3.4,3.4,3.3,3.3,3.3,3.3,3.3,\n3.2,3.2,3.2,3.2,3.2,3.2,3.2,3.1,3.1,3.1,\n3.0,2.9,2.7,2.2,1.130,47.7E-3])\nP = U*I\n\n\n\n代码\nfig, ax = plt.subplots()\n\nax.set_xlabel(\"U (V)\")\nax.set_ylabel(\"I (mA)\")\n\nax.plot(U, I, marker=\"o\")\nax.grid(True)\nax.set_xlim(0)\nax.set_ylim(0)\n\nplt.show()\n\n\nfig, ax = plt.subplots()\n\nax.set_xlabel(\"R (Ω)\")\nax.set_ylabel(\"P (mW)\")\n\nax.plot(R, P, marker=\"o\")\nax.grid(True)\nax.set_xlim((0, 2000))\nax.set_ylim(0)\n\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\n(a) 输出电流与电压关系曲线\n\n\n\n\n\n\n\n\n\n\n\n(b) 输出功率与负载电阻关系曲线\n\n\n\n\n\n\n\n图 2: 太阳能电池的负载特性\n\n\n\n\n\nTikZ\n\n\n\n\n\n\n\n\n\nC\n[\nx\n]\nC\nC\nf\n(\nx\n)\n∑\nn\n−\n1\ni\n=0\na\ni\nx\ni\n(\nf\n(\nω\nk\n))\nn\n−\n1\nk\n=0\n(\nfg\n)(\nx\n)\n∑\nn\n−\n1\nk\n=0\nx\nk\n∑\ni\n+\nj\n=\nk\na\ni\nb\nj\n(\nf\n(\nω\nkn\n)\ng\n(\nω\nkn\n))\nn\n−\n1\nk\n=0\ng\n(\nx\n)\n∑\nn\n−\n1\nj\n=0\nb\nj\nx\nj\n(\ng\n(\nω\nk\n))\nn\n−\n1\nk\n=0\n\n\nDFT\n\n\n\n\n\n\nDFT\n-1\n\n\nDFT\n\n\n\n\n\n\n\n\n\n图 3: An tikzcd image\n\n\n\n\n\n\nSubsection 2\n\n定理\n\n\n\n\n\n\n\n定理 1 (测试定理) 这是一个定理． \\[\n\\sum_{d \\mid n} \\varphi(d) = n\n\\]\n\n\n\n\n\n\n\n\n\n\n注记Proof\n\n\n\n\n\n\n证明. 这是一个以公式结尾的证明． \\[\n\\sum_{d \\mid n} \\mu(d) = [n=1]\n\\]\n\n\n\n\n\n\n\n\n\n\n注记Proof\n\n\n\n\n\n\n证明. 这是一个比较长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长长的证明．\n\n\n\n\n\n\n\n\n\n\n\n定义 1 这是一个定义．\n\n\n\n\n\n\n\n\n\n\n\n例 1 (一个例子) 这是一个例子．\n\n\n\n\n\n\n\n\n\n\n注记Solution\n\n\n\n\n\n\n解. 这是例子的解．\n\n\n\n\n\n\n\n\n\n\n\n习题 1 这是一个练习．\n\n\n\n\n\n\n\n\n\n\n提示Remark\n\n\n\n\n\n\n注记. 这是一个注记，习题 1 的注记．\n\n\n\n\n\n\n\n\n\n\n\n引理 1 这是一个引理．\n\n\n\n\n\n\n\n\n\n\n\n推论 1 这是一个推论，定理 1 的推论．\n\n\n\n\n\n\n\n\n\n\n\n命题 1 这是一个命题．\n\n\n\n\n\n\n\n\n\n\n\n猜想 1 这是一个猜想．",
     "crumbs": [
       "Examples",
-      "Curriculum Vitae"
+      "中文幻灯片示例"
     ]
   },
   {
-    "objectID": "examples/resume.html#talks",
-    "href": "examples/resume.html#talks",
-    "title": "Curriculum Vitae",
-    "section": "Talks",
-    "text": "Talks\n\n\n\n\n\n\n\n\nDate\nTitle\nLinks\n\n\n\n\n2040/11/30\nIntroduction to Formal Physics with Lean 4\nonsite (en) latest (en)\n\n\n\nIntroducing Physlib: Digitalizing Physics in Lean 4.\n\n\n\n2039/09/15\nAnalytical Mechanics, Differential Manifolds and Symplectic Geometry\nonsite (en)\n\n\n\nUTokyo–UKyoto Student Physics Workshop",
+    "objectID": "examples/timetable.html",
+    "href": "examples/timetable.html",
+    "title": "课表",
+    "section": "",
+    "text": "时间\n星期一\n星期二\n星期三\n星期四\n星期五\n\n\n\n\n08:00–09:35\n\n\n\n\n\n\n\n09:55–12:20\n群与代数的表示\nAlice MacDonald\n1–12周\n3–4节\n寺子屋I502\n代数拓扑\n八云蓝\n1–12周\n3–4节\n寺子屋F302\n\n代数拓扑\n八云蓝\n1–12周\n3–4节\n寺子屋F302\n\n\n\n13:20–14:55\n量子信息学基础\n宇佐见莲子\n1–12周\n6–7节\n京都大学3-8-1\n微分几何\n八云蓝\n1–12周\n6–7节\n寺子屋A204\n量子信息学基础\n宇佐见莲子\n1–12周\n6–7节\n京都大学3-8-1\n微分几何\n八云蓝\n1–12周\n6节–7节\n寺子屋A204\n群与代数的表示\nAlice MacDonald\n1–12周\n6–7节\n寺子屋I502\n\n\n15:15–17:40\n\n信息论与密码\n帕秋莉\n1–12周\n8–9节\n图书馆F604\n\n信息论与密码\n帕秋莉\n1–12周\n8–9节\n图书馆F604\n\n\n\n18:30–20:55\n\n\nLean 4 形式化教学\nsun123zxy\n1–12周\n11–12节\n香霖堂E909",
     "crumbs": [
       "Examples",
-      "Curriculum Vitae"
+      "课表"
     ]
   },
   {
-    "objectID": "examples/resume.html#programs",
-    "href": "examples/resume.html#programs",
-    "title": "Curriculum Vitae",
-    "section": "Programs",
-    "text": "Programs\n\n\n\n\n\n\n\n\nDate\nProgram\nLinks\n\n\n\n\n2039/11–2040/12\nSupernatural Borders and Where to Find Them\n\n\n\n\nInnovation and Entrepreneurship Training Program for College Students\nWe study the supernatural borders, a class of spatial boundaries that can be crossed with certain conditions. The concept is originated from the string theory, but recent investigations have provided evidence for the existence of supernatural borders in our world. We aim to systematically study the properties of supernatural borders, identify them in the real world and explore their potential applications.\nRole: Project Leader\nJoint with: Maribel Hearn",
+    "objectID": "examples/helloworld.html",
+    "href": "examples/helloworld.html",
+    "title": "你好，\\(\\mathrm{\\SunQuarTeX}\\)",
+    "section": "",
+    "text": "你好，\\(\\mathrm{\\SunQuarTeX}\\)!",
     "crumbs": [
       "Examples",
-      "Curriculum Vitae"
+      "你好，\\SunQuarTeX"
     ]
   },
   {
-    "objectID": "examples/resume.html#skills",
-    "href": "examples/resume.html#skills",
-    "title": "Curriculum Vitae",
-    "section": "Skills",
-    "text": "Skills\n\nFormal Languages General programming language familiarity. (Python / Lean 4)\nFormalizing Physics Contributor of Physlib 4. Work experience in formalization and annotation in Lean 4.\nTypesetting Experienced user of Markdown, \\(\\mathrm{\\LaTeX}\\), Quarto and \\(\\mathrm{\\SunQuarTeX}\\).\nGeoGuesser Top 1% player in GeoGuessr.\nNatural Languages:\n\nJapanese: Native\nEnglish:\n\nIELTS Academic 7.5 (8.5 / 8 / 6.5 / 6.5)",
+    "objectID": "examples/qrcode.html",
+    "href": "examples/qrcode.html",
+    "title": "QR Code Test",
+    "section": "",
+    "text": "Test 1\n\n\n    \n\n\nTest 2\n\n\n\n\n\n    \n\n\nFigure 1: This is a QR code",
     "crumbs": [
       "Examples",
-      "Curriculum Vitae"
+      "QR Code Test"
+    ]
+  },
+  {
+    "objectID": "examples/enpre.html",
+    "href": "examples/enpre.html",
+    "title": "Presentation Example (English)",
+    "section": "",
+    "text": "long long long long long long long long long long long long long long long long long long long long long long long long long long sentence.\nlong long long long long long long long long long long long long long long long long long long long long long long long long long long paragraph.\n\n\n\nleft bar.\nnarrow narrow narrow narrow narrow narrow narrow narrow narrow narrow narrow narrow left bar.\n\n\n\nright bar.\nwide wide wide wide wide wide wide wide wide wide wide wide wide wide wide wide wide right bar.\n\n\n\n\n\n\n\nThis is a list.\nA compact list.\n\nWow.\n\nThis is a list.\nA sparse list.\n\nA definition list below.\n\nReflexivity\n\n\\(a \\sim a\\)\n\nAntisymmetry\n\n\\(a \\leq b \\land b \\leq a \\implies a=b\\)\n\nTransitivity\n\n\\(a \\leq b \\land b \\leq c \\implies a \\leq c\\)\n\n\n\n\n\nBlah [1, pp. 1, chapter 3, sec. 2, theorem 3]. Blah blah [1], [2]. Blah blah blah1.\n1 This is a footnote",
+    "crumbs": [
+      "Examples",
+      "Presentation Example (English)"
+    ]
+  },
+  {
+    "objectID": "examples/enpre.html#section-a",
+    "href": "examples/enpre.html#section-a",
+    "title": "Presentation Example (English)",
+    "section": "",
+    "text": "long long long long long long long long long long long long long long long long long long long long long long long long long long sentence.\nlong long long long long long long long long long long long long long long long long long long long long long long long long long long paragraph.\n\n\n\nleft bar.\nnarrow narrow narrow narrow narrow narrow narrow narrow narrow narrow narrow narrow left bar.\n\n\n\nright bar.\nwide wide wide wide wide wide wide wide wide wide wide wide wide wide wide wide wide right bar.\n\n\n\n\n\n\n\nThis is a list.\nA compact list.\n\nWow.\n\nThis is a list.\nA sparse list.\n\nA definition list below.\n\nReflexivity\n\n\\(a \\sim a\\)\n\nAntisymmetry\n\n\\(a \\leq b \\land b \\leq a \\implies a=b\\)\n\nTransitivity\n\n\\(a \\leq b \\land b \\leq c \\implies a \\leq c\\)\n\n\n\n\n\nBlah [1, pp. 1, chapter 3, sec. 2, theorem 3]. Blah blah [1], [2]. Blah blah blah1.\n1 This is a footnote",
+    "crumbs": [
+      "Examples",
+      "Presentation Example (English)"
+    ]
+  },
+  {
+    "objectID": "examples/enpre.html#section-b",
+    "href": "examples/enpre.html#section-b",
+    "title": "Presentation Example (English)",
+    "section": "Section B",
+    "text": "Section B\n\nSubsection 1\n\nCode\n#include&lt;bits/stdc++.h&gt;\nusing namespace std;\n\nint main(){\n    return 0; // 返回 0\n}\nexample : (∀ x, p x → r) → ((∃ x, p x) → r) := by\n  intro h ⟨a, hpa⟩ -- you may also `rcases` explicitly\n  exact h a hpa\n\n\nFigures\n\n\n\n\n\n\nFigure 1: This is a figure\n\n\n\nReferable Figure 1.\n\n\nComputations\nBeamer format temporarily disabled due to Quarto Issue #13372.\nComplex side by side. (Figure 2, Figure 2 (a), Figure 2 (b))\n\n\nCode\nimport numpy as np\nimport math\nfrom IPython.display import Markdown, display\nfrom tabulate import tabulate\nimport matplotlib.pyplot as plt\n\nR = np.array([0,100,200,300,400,500,600,700,800,900,1000,\n1100,1110,1120,1130,1140,1150,1160,1170,1180,1190,\n1200,1210,1220,1230,1240,1250,1260,1270,1280,1290,\n1300,1400,1500,2000,4000,math.inf])\nU = np.array([24.2E-3, 0.386,0.747,1.104,1.460,1.813,2.16,2.51,2.86,3.19,3.48,\n3.70,3.75,3.77,3.78,3.80,3.81,3.83,3.84,3.85,3.86,\n3.87,3.90,3.92,3.93,3.94,3.95,3.95,3.96,3.97,3.98,\n3.99,4.08,4.16,4.39,4.66,4.85])\nI = np.array([3.6,3.6,3.6,3.6,3.6,3.5,3.5,3.5,3.5,3.5,3.4,\n3.3,3.4,3.4,3.4,3.4,3.3,3.3,3.3,3.3,3.3,\n3.2,3.2,3.2,3.2,3.2,3.2,3.2,3.1,3.1,3.1,\n3.0,2.9,2.7,2.2,1.130,47.7E-3])\nP = U*I\n\n\n\nCode\nfig, ax = plt.subplots()\n\nax.set_xlabel(\"U (V)\")\nax.set_ylabel(\"I (mA)\")\n\nax.plot(U, I, marker=\"o\")\nax.grid(True)\nax.set_xlim(0)\nax.set_ylim(0)\n\nplt.show()\n\n\nfig, ax = plt.subplots()\n\nax.set_xlabel(\"R (Ω)\")\nax.set_ylabel(\"P (mW)\")\n\nax.plot(R, P, marker=\"o\")\nax.grid(True)\nax.set_xlim((0, 2000))\nax.set_ylim(0)\n\nplt.show()\n\n\n\n\n\n\n\n\n\n\n\n\n(a) I-U\n\n\n\n\n\n\n\n\n\n\n\n(b) P-R\n\n\n\n\n\n\n\nFigure 2: solar panel\n\n\n\n\n\n\nSubsection 2\n\nTheorems\n\n\n\n\n\n\n\nTheorem 1 (Test) This is a theorem. \\[\n\\sum_{d \\mid n} \\varphi(d) = n\n\\]\n\n\n\n\n\n\n\n\n\n\nNoteProof\n\n\n\n\n\n\nProof. This is a proof ended with a display math. \\[\n\\sum_{d \\mid n} \\mu(d) = [n=1]\n\\]\n\n\n\n\n\n\n\n\n\n\nNoteProof\n\n\n\n\n\n\nProof. This is a really really really really really really really really really really really really really really really really really really really really long proof.\n\n\n\n\n\n\n\n\n\n\n\nDefinition 1 This is a definition.\n\n\n\n\n\n\n\n\n\n\n\nExample 1 (An example) This is an example.\n\n\n\n\n\n\n\n\n\n\nNoteSolution\n\n\n\n\n\n\nSolution. This is the solution to the example.\n\n\n\n\n\n\n\n\n\n\n\nExercise 1 This is an exercise.\n\n\n\n\n\n\n\n\n\n\nTipRemark\n\n\n\n\n\n\nRemark. This is a remark of Exercise 1.\n\n\n\n\n\n\n\n\n\n\n\nLemma 1 This is a lemma.\n\n\n\n\n\n\n\n\n\n\n\nCorollary 1 This is a corollary of Theorem 1.\n\n\n\n\n\n\n\n\n\n\n\nProposition 1 This is a proposition.\n\n\n\n\n\n\n\n\n\n\n\nConjecture 1 This is a conjecture.",
+    "crumbs": [
+      "Examples",
+      "Presentation Example (English)"
+    ]
+  },
+  {
+    "objectID": "examples/two-columns.html",
+    "href": "examples/two-columns.html",
+    "title": "Two column layout",
+    "section": "",
+    "text": "This is an early-access feature. For reference only.",
+    "crumbs": [
+      "Examples",
+      "Two column layout"
+    ]
+  },
+  {
+    "objectID": "examples/two-columns.html#introduction",
+    "href": "examples/two-columns.html#introduction",
+    "title": "Two column layout",
+    "section": "Introduction",
+    "text": "Introduction\nTwo column layout is a style of organizing content on a page where the text is divided into two vertical columns. Consider the following circumstance: you are writing a expository essay on a complex topic. You want to present your ideas in a clear and organized manner, while providing as much side information as possible for those readers who are not familiar with the topic. In this case, splitting the content into two columns creates a compact and effective way.\nThe left column contains the main text, clean and with a clear flow of mind. Experts or a second-time reader should be able to read it without any content from the right column. Such an exposition may inevitably include some concise slogan-like sentences. So the right column is provided for you to put side notes, clarifications of gaps, proofs, references … anything that is helpful for beginners but a little distracting for experts.\nNote that this does not necessarily require a physical separation of the two columns on the page, but rather having two “layers” of content: the main text and the side notes. It is more like a systematic and extensive use of footnotes. These notes can be either long or short, explaining a single word, a single sentence, or a whole paragraph in the main text. The idea is “We are brief and concise in the main text to keep the flow of mind, but if you don’t get the gist, redirect to side notes for more details.”.",
+    "crumbs": [
+      "Examples",
+      "Two column layout"
+    ]
+  },
+  {
+    "objectID": "examples/two-columns.html#usage",
+    "href": "examples/two-columns.html#usage",
+    "title": "Two column layout",
+    "section": "Usage",
+    "text": "Usage\nSee the source code of this page for the frontmatter.\nUse fenced divs for side notes: ::: {#rem-xxx .column-margin} ... :::. Reference each note in the main text with (@rem-xxx). Do not restrict to rem; use any other suitable prefix when appropriate.\nPlace the margin-note directly after the main text div that references it, so that they are aligned vertically.\nWe choose to refrain from footnotes because Quarto’s implementation conflicts a little when mixing different margin system. Footnotes are actually good, but there are bugs on the Quarto side.",
+    "crumbs": [
+      "Examples",
+      "Two column layout"
+    ]
+  },
+  {
+    "objectID": "examples/two-columns.html#example-usage",
+    "href": "examples/two-columns.html#example-usage",
+    "title": "Two column layout",
+    "section": "Example usage",
+    "text": "Example usage\nMotivation. To study mathematical objects that depend on a family of open sets or parameters, we need a universal way to assemble compatible families of data into a single object. Category theory formulates such universal assemblies as limits and colimits of diagrams.\n\nDefinition 1 (Diagrams, cones, limits, colimits, and completeness) Let \\(\\mathcal I\\) be a small category (Definition 2) and let \\(\\mathcal A\\) be a category. A functor \\(D:\\mathcal I\\to\\mathcal A\\) is called a diagram of shape \\(\\mathcal I\\), and \\(\\operatorname{Func}(\\mathcal I,\\mathcal A)\\) denotes the category of such diagrams with natural transformations as morphisms. For each object \\(A\\in\\mathcal A\\), the constant diagram \\(\\Delta(A):\\mathcal I\\to\\mathcal A\\) sends every \\(i\\in\\mathcal I\\) to \\(A\\) and every morphism \\(u:i\\to j\\) to \\(\\operatorname{id}_A\\); this defines the diagonal functor \\(\\Delta:\\mathcal A\\to\\operatorname{Func}(\\mathcal I,\\mathcal A)\\) (Remark 1).\n\nCones and limits: A cone over \\(D\\) with vertex \\(A\\) is a natural transformation \\(\\pi:\\Delta(A)\\to D\\), i.e., a family \\(\\{\\pi_i:A\\to D(i)\\}_{i\\in\\mathcal I}\\) satisfying \\(D(u)\\circ\\pi_i=\\pi_j\\) for all \\(u:i\\to j\\). A limit of \\(D\\) is a terminal cone \\((L,\\{\\pi_i\\}_{i\\in\\mathcal I})\\) over \\(D\\) (Remark 2): every cone \\((A,\\{f_i\\}_{i\\in\\mathcal I})\\) over \\(D\\) factors through a unique morphism \\(\\bar f:A\\to L\\) with \\(\\pi_i\\circ\\bar f=f_i\\) for all \\(i\\in\\mathcal I\\):\n\n\n\n\n\n\n\n\n\nA\nD\n(\ni\n)\nC\nD\n(\nj\n)\nD\n(\ni\n)\nL\nD\n(\nj\n)\nB\n\n\nf\ni\n\n\nf\nj\n\n\n\n∃\n!¯\nf\n\n\nπ\ni\n\n\nπ\nj\n\n\nD\n(\nu\n)\n\n\nι\ni\n\n\nι\nj\n\n\nD\n(\nu\n)\n\n\ng\ni\n\n\ng\nj\n\n\n\n∃\n!¯\ng\n\n\n\n\n\nFigure 1: Universal factorizations for limits and colimits\n\n\n\nCocones and colimits: Dually, a cocone under \\(D\\) with vertex \\(B\\) is a natural transformation \\(\\iota:D\\to\\Delta(B)\\) (\\(\\iota_j\\circ D(u)=\\iota_i\\)). A colimit of \\(D\\) is an initial cocone \\((C,\\{\\iota_i\\}_{i\\in\\mathcal I})\\) under \\(D\\): every cocone \\((B,\\{g_i\\}_{i\\in\\mathcal I})\\) factors uniquely as \\(g_i=\\bar g\\circ\\iota_i\\) for \\(\\bar g:C\\to B\\).\nCompleteness and cocompleteness: The category \\(\\mathcal A\\) is complete if every diagram \\(D:\\mathcal I\\to\\mathcal A\\) from a small category \\(\\mathcal I\\) admits a limit in \\(\\mathcal A\\), and cocomplete if every such diagram admits a colimit in \\(\\mathcal A\\) (Remark 3).\n\n\n\n\nDefinition 2 (Small category) A category \\(\\mathcal I\\) is small if \\(\\operatorname{Ob}(\\mathcal I)\\) and \\(\\operatorname{Mor}(\\mathcal I)\\) are sets rather than proper classes. This prevents set-theoretic paradoxes when forming products \\(\\prod_{i\\in\\mathcal I}D(i)\\) in \\(\\mathcal A\\).\n\nRemark 1 (Action of \\(\\Delta\\) on morphisms). Given \\(f:A\\to B\\) in \\(\\mathcal A\\), \\(\\Delta(f):\\Delta(A)\\to\\Delta(B)\\) is the natural transformation with component \\(\\Delta(f)_i=f\\) at every \\(i\\in\\mathcal I\\) (natural since \\(\\operatorname{id}_B\\circ f=f\\circ\\operatorname{id}_A\\)).\n\nRemark 2 (Uniqueness of terminal cones up to canonical isomorphism). Why is a limit unique up to unique isomorphism? If \\((L,\\{\\pi_i\\})\\) and \\((L',\\{\\pi_i'\\})\\) are two limit cones over \\(D\\), terminality gives unique morphisms \\(\\varphi:L\\to L'\\) (\\(\\pi_i'\\circ\\varphi=\\pi_i\\)) and \\(\\psi:L'\\to L\\) (\\(\\pi_i\\circ\\psi=\\pi_i'\\)). Then \\(\\pi_i\\circ(\\psi\\circ\\varphi)=\\pi_i=\\pi_i\\circ\\operatorname{id}_L\\) for all \\(i\\in\\mathcal I\\). Since \\(\\operatorname{id}_L\\) is the unique morphism \\(L\\to L\\) compatible with \\(\\{\\pi_i\\}\\), we must have \\(\\psi\\circ\\varphi=\\operatorname{id}_L\\), and symmetrically \\(\\varphi\\circ\\psi=\\operatorname{id}_{L'}\\).\n\nRemark 3 (Concrete construction of limits and colimits in \\(\\operatorname{Mod}_R\\) and \\(\\operatorname{Ab}\\)). For any commutative ring \\(R\\), the category \\(\\operatorname{Mod}_R\\) (and \\(\\operatorname{Ab}=\\operatorname{Mod}_{\\mathbb Z}\\)) is both complete and cocomplete because every small diagram \\(D:\\mathcal I\\to\\operatorname{Mod}_R\\) admits a canonical limit and colimit:\n\nLimit (submodule of compatible tuples): Inside the product \\(\\prod_{i\\in\\mathcal I}D(i)\\) with projections \\(\\pi_k\\), \\[\n\\begin{aligned}\n\\varprojlim_{i\\in\\mathcal I}D(i)&:=\\left\\{(x_i)_{i\\in\\mathcal I}\\in\\prod_{i\\in\\mathcal I}D(i)\\;\\middle|\\;\\right.\\\\\n&\\qquad\\left.D(u)(x_i)=x_j\\text{ for all }(u:i\\to j)\\in\\operatorname{Mor}(\\mathcal I)\\right\\}\n\\end{aligned}\n\\]\nColimit (quotient of direct sum): Inside \\(\\bigoplus_{i\\in\\mathcal I}D(i)\\) with insertions \\(\\operatorname{in}_i:D(i)\\hookrightarrow\\bigoplus_{k\\in\\mathcal I}D(k)\\), \\[\n\\begin{aligned}\n\\varinjlim_{i\\in\\mathcal I}D(i)&:=\\left(\\bigoplus_{i\\in\\mathcal I}D(i)\\right)\\big/N\\\\\nN&=\\operatorname{Span}_R\\left\\{\\operatorname{in}_j(D(u)(x_i))-\\operatorname{in}_i(x_i)\\;\\middle|\\;\\right.\\\\\n&\\qquad\\left.u:i\\to j,\\ x_i\\in D(i)\\right\\}\n\\end{aligned}\n\\]\n\n\n\n\nMotivation. A limit of a single diagram \\(D\\) is determined only up to unique isomorphism. However, once we choose a specific terminal cone \\((\\varprojlim_{\\mathcal I}D,\\{\\pi_i^D\\})\\) for each diagram \\(D\\), the universal property automatically makes \\(\\varprojlim_{\\mathcal I}\\) and \\(\\varinjlim_{\\mathcal I}\\) functors that are right and left adjoint to \\(\\Delta\\).\n\nProposition 1 (Functoriality of limits and colimits via diagonal adjunction) Let \\(\\mathcal I\\) be a small category and let \\(\\mathcal A\\) be a complete and cocomplete category. Choosing a limit cone \\((\\varprojlim_{\\mathcal I}D,\\{\\pi_i^D\\})\\) and a colimit cocone \\((\\varinjlim_{\\mathcal I}D,\\{\\iota_i^D\\})\\) for each \\(D\\in\\operatorname{Func}(\\mathcal I,\\mathcal A)\\) (Remark 4) defines functors \\(\\varprojlim_{\\mathcal I},\\varinjlim_{\\mathcal I}:\\operatorname{Func}(\\mathcal I,\\mathcal A)\\to\\mathcal A\\) that are right and left adjoint to \\(\\Delta:\\mathcal A\\to\\operatorname{Func}(\\mathcal I,\\mathcal A)\\): \\[\n\\begin{aligned}\n\\operatorname{Hom}_{\\operatorname{Func}(\\mathcal I,\\mathcal A)}(\\Delta(A),D)\n&\\xrightarrow{\\sim}\\operatorname{Hom}_{\\mathcal A}\\left(A,\\varprojlim_{\\mathcal I}D\\right)\\\\\n\\operatorname{Hom}_{\\mathcal A}\\left(\\varinjlim_{\\mathcal I}D,B\\right)\n&\\xrightarrow{\\sim}\\operatorname{Hom}_{\\operatorname{Func}(\\mathcal I,\\mathcal A)}(D,\\Delta(B))\n\\end{aligned}\n\\]\n\n\n\nRemark 4 (Why defining a limit functor requires choosing terminal cones). In Definition 1 (1), “being a limit” is a property of a cone \\((L,\\pi)\\), not a single canonical object in an abstract category \\(\\mathcal A\\). To define an actual functor \\(\\varprojlim_{\\mathcal I}:\\operatorname{Func}(\\mathcal I,\\mathcal A)\\to\\mathcal A\\), we must first assign to each object \\(D\\in\\operatorname{Func}(\\mathcal I,\\mathcal A)\\) a chosen terminal cone \\((L_D,\\pi^D)\\) (using the canonical submodule/quotient in \\(\\operatorname{Mod}_R\\), or global choice in an abstract complete category). Different choices of terminal cones yield canonically isomorphic limit functors by Remark 2.\n\nProof. Given a natural transformation \\(\\alpha:D\\to D'\\), composing the cone \\(\\pi^D:\\Delta(\\varprojlim_{\\mathcal I}D)\\to D\\) with \\(\\alpha\\) yields a cone \\(\\alpha\\circ\\pi^D\\) over \\(D'\\) (Remark 5). By the terminal property of \\((\\varprojlim_{\\mathcal I}D',\\pi^{D'})\\), there exists a unique morphism \\(\\varprojlim_{\\mathcal I}\\alpha:\\varprojlim_{\\mathcal I}D\\to\\varprojlim_{\\mathcal I}D'\\) satisfying \\(\\pi_i^{D'}\\circ(\\varprojlim_{\\mathcal I}\\alpha)=\\alpha_i\\circ\\pi_i^D\\) for all \\(i\\in\\mathcal I\\). Uniqueness of universal factorizations immediately forces \\(\\varprojlim_{\\mathcal I}(\\beta\\circ\\alpha)=(\\varprojlim_{\\mathcal I}\\beta)\\circ(\\varprojlim_{\\mathcal I}\\alpha)\\) and \\(\\varprojlim_{\\mathcal I}(\\operatorname{id}_D)=\\operatorname{id}\\) (Remark 6). Finally, by Definition 1 (1), morphisms \\(\\Delta(A)\\to D\\) in \\(\\operatorname{Func}(\\mathcal I,\\mathcal A)\\) are cones over \\(D\\) with vertex \\(A\\), which bijectively correspond via composition with \\(\\pi^D\\) to morphisms \\(A\\to\\varprojlim_{\\mathcal I}D\\) in \\(\\mathcal A\\) naturally in both variables (Remark 7). The dual argument establishes functoriality of \\(\\varinjlim_{\\mathcal I}\\) and \\(\\varinjlim_{\\mathcal I}\\dashv\\Delta\\).\n\n\n\nRemark 5 (Diagrammatic check that \\(\\alpha\\circ\\pi^D\\) is a cone over \\(D'\\)). Why does composing \\(\\pi^D\\) with a natural transformation \\(\\alpha:D\\to D'\\) produce a cone over \\(D'\\)? Because for every morphism \\(u:i\\to j\\) in \\(\\mathcal I\\), the cone identity \\(D(u)\\circ\\pi_i^D=\\pi_j^D\\) and the naturality square \\(D'(u)\\circ\\alpha_i=\\alpha_j\\circ D(u)\\) paste together into a commutative rectangle:\n\n\n\n\n\n\n\n\n\nlim\n←−\nI\nD\nD\n(\ni\n)\nD\n′\n(\ni\n)\nlim\n←−\nI\nD\nD\n(\nj\n)\nD\n′\n(\nj\n)\n\n\nπ\nDi\n\n\nα\ni\n\n\nid\n\n\nD\n(\nu\n)\n\n\nD\n′\n(\nu\n)\n\n\nπ\nDj\n\n\nα\nj\n\n\n\n\n\nFigure 2: Composition of a cone with a natural transformation\n\n\n\nThus \\(D'(u)\\circ(\\alpha_i\\circ\\pi_i^D)=\\alpha_j\\circ\\pi_j^D\\).\n\nRemark 6 (Unpacking functoriality of \\(\\varprojlim_{\\mathcal I}\\)). Given \\(\\alpha:D\\to D'\\) and \\(\\beta:D'\\to D''\\), for every \\(i\\in\\mathcal I\\) we have \\[\n\\begin{aligned}\n\\pi_i^{D''}\\circ\\left(\\varprojlim\\beta\\circ\\varprojlim\\alpha\\right)\n&=\\beta_i\\circ\\pi_i^{D'}\\circ\\varprojlim\\alpha\\\\\n&=\\beta_i\\circ\\alpha_i\\circ\\pi_i^D\\\\\n&=(\\beta\\circ\\alpha)_i\\circ\\pi_i^D\n\\end{aligned}\n\\] Since \\(\\varprojlim(\\beta\\circ\\alpha)\\) is the unique morphism \\(L_D\\to L_{D''}\\) satisfying this identity for all \\(i\\in\\mathcal I\\), \\(\\varprojlim(\\beta\\circ\\alpha)=\\varprojlim\\beta\\circ\\varprojlim\\alpha\\).\n\nRemark 7 (Naturality of the adjunction). For \\(\\bar f\\in\\operatorname{Hom}_{\\mathcal A}(A,L_D)\\), the bijection \\(\\Psi(\\bar f)_i=\\pi_i^D\\circ\\bar f\\) is natural in \\(D\\) because for \\(\\alpha:D\\to D'\\), \\[\n\\begin{aligned}\n\\Psi\\left(\\left(\\varprojlim\\alpha\\right)\\circ\\bar f\\right)_i\n&=\\pi_i^{D'}\\circ\\left(\\varprojlim\\alpha\\right)\\circ\\bar f\\\\\n&=\\alpha_i\\circ\\pi_i^D\\circ\\bar f\\\\\n&=(\\alpha\\circ\\Psi(\\bar f))_i\n\\end{aligned}\n\\] It is natural in \\(A\\) by associativity of composition.",
+    "crumbs": [
+      "Examples",
+      "Two column layout"
+    ]
+  },
+  {
+    "objectID": "examples/extra.html",
+    "href": "examples/extra.html",
+    "title": "Custom Extra Package",
+    "section": "",
+    "text": "This is physics: \\(\\dv{f}{x}\\).",
+    "crumbs": [
+      "Examples",
+      "Custom Extra Package"
+    ]
+  },
+  {
+    "objectID": "examples/extra.html#first",
+    "href": "examples/extra.html#first",
+    "title": "Custom Extra Package",
+    "section": "",
+    "text": "This is physics: \\(\\dv{f}{x}\\).",
+    "crumbs": [
+      "Examples",
+      "Custom Extra Package"
     ]
   }
 ]

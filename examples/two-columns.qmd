@@ -7,7 +7,6 @@ bibliography: bibliography.bib
 format:
   html:
     reference-location: margin
-    citation-location: margin
     page-layout: full
     grid: 
       margin-width: 50%

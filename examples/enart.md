@@ -1,5 +1,5 @@
 # Article Example (English)
-sun123zxy
+Alice Margatroid, Bob Kirisame
 2023-08-10
 
 # First

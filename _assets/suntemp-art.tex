@@ -134,31 +134,43 @@ $endif$
 
 \usepackage{orcidlink}
 
+\usepackage{titling}
 \ifzh
     % title
-    \usepackage{titling}
     \pretitle{\begin{center} \zihao{-2} \bfseries}
     \posttitle{\par\end{center}\vskip 0.5em}
-    
-    \makeatletter
-    \providecommand{\subtitle}[1]{
-        \apptocmd{\@title}{\vskip 0.5em \par {\zihao{4} \kaishu #1 \par}}{}{}
-    }
-    \makeatother
-    % author
+\fi
+
+\makeatletter
+\providecommand{\subtitle}[1]{
+    \apptocmd{\@title}{\vskip 0.5em \par {\ifzh \zihao{4} \kaishu \else \large \fi #1 \par}}{}{}
+}
+\makeatother
+
+% author
+\ifzh
     \preauthor{\begin{center}\zihao{-4}\kaishu % \kaishu for Chinese only
         \lineskip 0.5em%
         \begin{tabular}[t]{c}}
-    \postauthor{\end{tabular}\par\end{center}}
-    % date
+\else
+    \preauthor{\begin{center}\begin{tabular}[t]{c}}
+\fi
+
+\postauthor{
+    \end{tabular}\par\end{center}
+    $if(by-affiliation)$
+        \begin{center}\small
+    $for(by-affiliation)$
+        \textsuperscript{$it.number$}~$it.name$$if(it.department)$, $it.department$$endif$$if(it.group)$, $it.group$$endif$$if(it.address)$, $it.address$$endif$$if(it.city)$, $it.city$$endif$$if(it.region)$, $it.region$$endif$$if(it.postal-code)$ $it.postal-code$$endif$$if(it.country)$, $it.country$$endif$\par
+    $endfor$
+        \end{center}
+    $endif$
+}
+
+% date
+\ifzh
     \predate{\begin{center} \zihao{-4} \kaishu}
     \postdate{\par\end{center}}
-\else
-    \makeatletter
-    \providecommand{\subtitle}[1]{
-        \apptocmd{\@title}{\vskip 0.5em \par {\large #1 \par}}{}{}
-    }
-\makeatother
 \fi
 
 % --- abstract ---
@@ -283,22 +295,10 @@ $endif$
 \author{
 $if(by-author)$%
 $for(by-author)$%
-\textsc{%
 $it.name.literal$%
+$if(it.affiliations)$\textsuperscript{$for(it.affiliations)$$it.number$$sep$,$endfor$}$endif$
 $if(it.orcid)$\,\orcidlink{$it.orcid$}$endif$%
-}%
 $if(it.email)$\\ \texttt{$it.email$}$endif$%
-$for(it.affiliations)$%
-$if(it.name)$\\ $it.name$$endif$%
-$if(it.department)$\\ $it.department$$endif$%
-$if(it.group)$\\ $it.group$$endif$%
-$if(it.address)$\\ {\small $it.address$}$endif$%
-$if(it.city)$\\ {\small $it.city$$if(it.region)$, $it.region$$endif$$if(it.postal-code)$ $it.postal-code$$endif$}%
-$elseif(it.region)$\\ {\small $it.region$$if(it.postal-code)$ $it.postal-code$$endif$}%
-$elseif(it.postal-code)$\\ {\small $it.postal-code$}$endif$%
-$if(it.country)$\\ {\small $it.country$}$endif$%
-%
-$endfor$%
 $sep$ \and%
 $endfor$%
 $else$%

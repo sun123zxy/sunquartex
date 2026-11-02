@@ -1,25 +1,34 @@
 ---
 title: Article Example (English)
 subtitle: \SunQuarTeX Examples
+
 author:
   - name: Alice Margatroid
     orcid: 1123-5813-2134-5589
     email: alice@example.com
     affiliations:
-      - name: \SunQuarTeX
-        address: Example Avenue 1
-        city: Example City
-        state: Example State
-        postal-code: 12345
+      - ref: dev
+      - ref: user
   - name: Bob Kirisame
     orcid: 9987-5297-8976-5521
     email: bob@example.com
     affiliations:
-      - name: \SunQuarTeX
-        address: Example Avenue 2
-        city: Example City
-        state: Example State
-        postal-code: 12345
+      - ref: user
+
+affiliations:
+  - id: user
+    name: \SunQuarTeX User Group
+    address: 1 Example Avenue
+    city: Example City
+    state: Example State
+    postal-code: 12345
+  - id: dev
+    name: \SunQuarTeX Dev Team
+    address: 2 Example Avenue
+    city: Example City
+    state: Example State
+    postal-code: 12345
+
 date: 2023/08/10
 date-modified: 2026/11/02
 abstract: This is an abstract.

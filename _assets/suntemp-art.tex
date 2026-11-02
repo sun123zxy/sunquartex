@@ -160,10 +160,18 @@ $endif$
     \end{tabular}\par\end{center}
     $if(by-affiliation)$
         \begin{center}\small
-    $for(by-affiliation)$
-        \textsuperscript{$it.number$}~$it.name$$if(it.department)$, $it.department$$endif$$if(it.group)$, $it.group$$endif$$if(it.address)$, $it.address$$endif$$if(it.city)$, $it.city$$endif$$if(it.region)$, $it.region$$endif$$if(it.postal-code)$ $it.postal-code$$endif$$if(it.country)$, $it.country$$endif$\par
-    $endfor$
-        \end{center}
+        $for(by-affiliation)$
+            \textsuperscript{$it.number$}~%
+            $it.name$%
+            $if(it.department)$, $it.department$$endif$%
+            $if(it.group)$, $it.group$$endif$%
+            $if(it.address)$, $it.address$$endif$%
+            $if(it.city)$, $it.city$$endif$%
+            $if(it.region)$, $it.region$$endif$%
+            $if(it.postal-code)$ $it.postal-code$$endif$%
+            $if(it.country)$, $it.country$$endif$\par%
+        $endfor$
+            \end{center}
     $endif$
 }
 
@@ -176,11 +184,9 @@ $endif$
 % --- abstract ---
 
 \ifzh
-
   \ifcsdef{myenvironment}{%
     \renewenvironment{abstract}{\subparagraph{摘要}\kaishu}{}
   }{}
-
 \fi
 
 % -- math --
@@ -296,7 +302,7 @@ $endif$
 $if(by-author)$%
 $for(by-author)$%
 $it.name.literal$%
-$if(it.affiliations)$\textsuperscript{$for(it.affiliations)$$it.number$$sep$,$endfor$}$endif$
+$if(it.affiliations)$\textsuperscript{$for(it.affiliations)$$it.number$$sep$,$endfor$}$endif$%
 $if(it.orcid)$\,\orcidlink{$it.orcid$}$endif$%
 $if(it.email)$\\ \texttt{$it.email$}$endif$%
 $sep$ \and%

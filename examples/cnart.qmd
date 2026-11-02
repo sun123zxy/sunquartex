@@ -1,11 +1,27 @@
 ---
 title: 中文学术写作示例
-subtitle: \SunQuarTeX Examples
+subtitle: \SunQuarTeX 示例集
 author: 
-  - sun123zxy
-  - Luna
+  - name: 张三
+    orcid: 1123-5813-2134-5589
+    email: zhangsan@example.com
+    affiliations:
+      - name: \SunQuarTeX
+        address: 例子大道 1 号
+        city: 例城
+        state: 例省
+        postal-code: 12345
+  - name: 李四
+    orcid: 9987-5297-8976-5521
+    email: lisi@example.com
+    affiliations:
+      - name: \SunQuarTeX
+        address: 例子大道 2 号
+        city: 例城
+        state: 例省
+        postal-code: 12345
 date: 2022/12/07
-date-modified: 2026/05/02
+date-modified: 2026/11/02
 abstract: 使用 Quarto Markdown 语法，支持输出至 HTML、PDF/LaTeX、MS Word 等多种格式的中文学术写作工具，覆盖交叉引用、插图绘制、定理系统等多种功能．
 bibliography: bibliography.bib
 lang: zh

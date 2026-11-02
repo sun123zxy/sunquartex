@@ -131,6 +131,9 @@ $endif$
 \floatplacement{table}{H}
 
 % --- titling ---
+
+\usepackage{orcidlink}
+
 \ifzh
     % title
     \usepackage{titling}
@@ -277,7 +280,31 @@ $if(subtitle)$
 \subtitle{$subtitle$}
 $endif$
 
-\author{$for(author)$$author$$sep$ \and $endfor$}
+\author{
+$if(by-author)$%
+$for(by-author)$%
+\textsc{%
+$it.name.literal$%
+$if(it.orcid)$\,\orcidlink{$it.orcid$}$endif$%
+}%
+$if(it.email)$\\ \texttt{$it.email$}$endif$%
+$for(it.affiliations)$%
+$if(it.name)$\\ $it.name$$endif$%
+$if(it.department)$\\ $it.department$$endif$%
+$if(it.group)$\\ $it.group$$endif$%
+$if(it.address)$\\ {\small $it.address$}$endif$%
+$if(it.city)$\\ {\small $it.city$$if(it.region)$, $it.region$$endif$$if(it.postal-code)$ $it.postal-code$$endif$}%
+$elseif(it.region)$\\ {\small $it.region$$if(it.postal-code)$ $it.postal-code$$endif$}%
+$elseif(it.postal-code)$\\ {\small $it.postal-code$}$endif$%
+$if(it.country)$\\ {\small $it.country$}$endif$%
+%
+$endfor$%
+$sep$ \and%
+$endfor$%
+$else$%
+$for(author)$$author$$sep$ \and $endfor$%
+$endif$%
+}
 
 \date{$date$$if(date-modified)$\thanks{\transmodified \space $date-modified$.}$endif$}
 

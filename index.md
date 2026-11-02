@@ -848,6 +848,28 @@ Quarto 对标题层级的处理比较混乱——例如，Book 项目中 Quarto 
 
 目前 Quarto 对相对链接的处理没有考虑到为非 HTML 格式设置 base URL．我们目前使用 `_assets/offpage-crosslinks.lua` 作为 workaround，从而使得其它格式下的相对链接被解析到 `site-url` 选项指定的网站根目录．您可以在 `_filter.yml` 中调整启用该脚本的输出格式．注意脚本可能无法正确处理 symbolic link．
 
+### 关于多作者、多机构的文档头设置
+
+见 `examples/cnart.qmd` 和 `examples/enart.qmd`，以及 [Quarto 文档](https://quarto.org/docs/authoring/front-matter.html#authors-and-affiliations)．
+
+### 关于文档附录
+
+注意区分书籍附录和文档附录．文档附录目前 Quarto 没有很好的跨格式支持，见 [Quarto Issue \#10928](https://github.com/quarto-dev/quarto-cli/issues/10928)）．我们建议您使用如下方式确保 HTML / PDF 格式下的正常渲染：
+
+```` md
+```{=latex}
+\appendix
+```
+
+## Computational Results {.appendix}
+
+This is an numbered appendix section for computational results.
+
+## Acknowledgments {.appendix .unnumbered}
+
+This is an unnumbered appendix section for acknowledgments.
+````
+
 ## 输出相关
 
 ### 写好的 Beamer 也想输出一份文稿版本的 PDF？

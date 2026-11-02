@@ -867,7 +867,7 @@ Write once, present everywhere!<br>基于 Quarto 的多格式输出中英文学�
 <section id="computation-based-tables" class="level4">
 <h4 class="anchored" data-anchor-id="computation-based-tables">Computation based tables</h4>
 <p>您也可以直接使用代码生成表格：</p>
-<div id="1624f2f9" class="cell" data-execution_count="2">
+<div id="25e85984" class="cell" data-execution_count="2">
 <details class="code-fold">
 <summary>代码</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -1720,6 +1720,25 @@ This is a QR code
 <p>如您不使用 website 或 book 输出则无需担心此部分．</p>
 <p>目前 Quarto 对相对链接的处理没有考虑到为非 HTML 格式设置 base URL．我们目前使用 <code>_assets/offpage-crosslinks.lua</code> 作为 workaround，从而使得其它格式下的相对链接被解析到 <code>site-url</code> 选项指定的网站根目录．您可以在 <code>_filter.yml</code> 中调整启用该脚本的输出格式．注意脚本可能无法正确处理 symbolic link．</p>
 </section>
+<section id="关于多作者多机构的文档头设置" class="level4">
+<h4 class="anchored" data-anchor-id="关于多作者多机构的文档头设置">关于多作者、多机构的文档头设置</h4>
+<p>见 <code>examples/cnart.qmd</code> 和 <code>examples/enart.qmd</code>，以及 <a href="https://quarto.org/docs/authoring/front-matter.html#authors-and-affiliations">Quarto 文档</a>．</p>
+</section>
+<section id="关于文档附录" class="level4">
+<h4 class="anchored" data-anchor-id="关于文档附录">关于文档附录</h4>
+<p>注意区分书籍附录和文档附录．文档附录目前 Quarto 没有很好的跨格式支持，见 <a href="https://github.com/quarto-dev/quarto-cli/issues/10928">Quarto Issue #10928</a>）．我们建议您使用如下方式确保 HTML / PDF 格式下的正常渲染：</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode md code-with-copy"><code class="sourceCode markdown"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="in">```{=latex}</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="in">\appendix</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a><span class="fu">## Computational Results {.appendix}</span></span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>This is an numbered appendix section for computational results.</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a><span class="fu">## Acknowledgments {.appendix .unnumbered}</span></span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>This is an unnumbered appendix section for acknowledgments.</span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
 </section>
 <section id="输出相关" class="level3" data-number="7.3">
 <h3 data-number="7.3" class="anchored" data-anchor-id="输出相关"><span class="header-section-number">7.3</span> 输出相关</h3>
@@ -1738,9 +1757,9 @@ This is a QR code
 <section id="每次渲染都要-updating-tlmgr-烦死了" class="level4">
 <h4 class="anchored" data-anchor-id="每次渲染都要-updating-tlmgr-烦死了">每次渲染都要 <code>updating tlmgr</code> 烦死了！</h4>
 <p>默认情况下，Quarto 会在每次渲染 LaTeX 时使用 TinyTeX 自动检测和下载所需宏包．但如果 Quarto 生成的 LaTeX 源文件有误，也会触发此过程．如果您频繁遇到，可以选择关闭 LaTeX 渲染的自动下载：</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">latex-auto-install</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">format</span><span class="kw">:</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">pdf</span><span class="kw">:</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="fu">latex-auto-install</span><span class="kw">:</span><span class="at"> </span><span class="ch">false</span></span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>
 </section>
 <section id="tlmgr-未找到" class="level4">
 <h4 class="anchored" data-anchor-id="tlmgr-未找到"><code>tlmgr</code> 未找到？</h4>
@@ -1752,10 +1771,10 @@ This is a QR code
 <li>有时网络不稳定，请检查报错信息并重试．</li>
 <li>如果你开启了选择性渲染（<code>project.render</code>），请检查 Github Actions 文件，确保 TikZ 预渲染使用的临时文件被加入到渲染列表中：</li>
 </ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">render</span><span class="kw">:</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> temp.qmd</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ...</span><span class="co"> # your target files</span></span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode yaml code-with-copy"><code class="sourceCode yaml"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">project</span><span class="kw">:</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="at">  </span><span class="fu">render</span><span class="kw">:</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> temp.qmd</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="at">    </span><span class="kw">-</span><span class="at"> ...</span><span class="co"> # your target files</span></span></code></pre></div><button title="复制到剪贴板" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 </section>

@@ -24,12 +24,14 @@ affiliations:
     address: 示例大道 1 号
     city: 例城
     state: 例省
+    country: 例国
     postal-code: 12345
   - id: dev
     name: \SunQuarTeX 开发组
     address: 示例大道 2 号
     city: 例城
     state: 例省
+    country: 例国
     postal-code: 12345
 
 abstract: 使用 Quarto Markdown 语法，支持输出至 HTML、PDF/LaTeX、MS Word 等多种格式的中文学术写作工具，覆盖交叉引用、插图绘制、定理系统等多种功能．

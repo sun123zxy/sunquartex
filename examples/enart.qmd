@@ -7,8 +7,8 @@ author:
     orcid: 1123-5813-2134-5589
     email: alice@example.com
     affiliations:
-      - ref: dev
       - ref: user
+      - ref: dev
   - name: Bob Kirisame
     orcid: 9987-5297-8976-5521
     email: bob@example.com
@@ -18,17 +18,15 @@ author:
 affiliations:
   - id: user
     name: \SunQuarTeX User Group
-    address: 1 Example Avenue
     city: Example City
     state: Example State
-    country: 例国
+    country: Example Country
     postal-code: 12345
   - id: dev
     name: \SunQuarTeX Dev Team
-    address: 2 Example Avenue
     city: Example City
     state: Example State
-    country: 例国
+    country: Example Country
     postal-code: 12345
 
 date: 2023/08/10

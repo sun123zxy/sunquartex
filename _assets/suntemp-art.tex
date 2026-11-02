@@ -167,8 +167,7 @@ $endif$
             $if(it.group)$, $it.group$$endif$%
             $if(it.address)$, $it.address$$endif$%
             $if(it.city)$, $it.city$$endif$%
-            $if(it.region)$, $it.region$$endif$%
-            $if(it.postal-code)$ $it.postal-code$$endif$%
+            $if(it.region)$, $it.region$$endif$ $if(it.postal-code)$ $it.postal-code$$endif$%
             $if(it.country)$, $it.country$$endif$\par%
         $endfor$
             \end{center}
@@ -177,16 +176,21 @@ $endif$
 
 % date
 \ifzh
-    \predate{\begin{center} \zihao{-4} \kaishu}
-    \postdate{\par\end{center}}
+    \predate{$if(date)$\begin{center} \zihao{-4} \kaishu$endif$}
+    \postdate{$if(date)$\par\end{center}$endif$}
+\else
+    \predate{$if(date)$\begin{center}$endif$}
+    \postdate{$if(date)$\par\end{center}$endif$}
 \fi
 
 % --- abstract ---
 
 \ifzh
-  \ifcsdef{myenvironment}{%
-    \renewenvironment{abstract}{\subparagraph{摘要}\kaishu}{}
-  }{}
+  %\ifcsdef{myenvironment}{%
+    \renewenvironment{abstract}{\zihao{-5} \textbf{摘要} \kaishu}{}
+  %}{}
+\else
+  \renewenvironment{abstract}{\noindent \small \textbf{Abstract.}}{}
 \fi
 
 % -- math --
@@ -312,7 +316,7 @@ $for(author)$$author$$sep$ \and $endfor$%
 $endif$%
 }
 
-\date{$date$$if(date-modified)$\thanks{\transmodified \space $date-modified$.}$endif$}
+\date{$if(date)$$date$$if(date-modified)$\thanks{\transmodified \space $date-modified$.}$endif$$endif$}
 
 \begin{document}
 

@@ -5,8 +5,6 @@ subtitle: \SunQuarTeX Examples
 bibliography: bibliography.bib
 
 number-sections: true
-custom-theorem:
-  numbered-within: section
 
 format:
   html:
@@ -15,7 +13,9 @@ format:
     grid: 
       margin-width: 50%
     # callouty-theorem: false
-  pdf: default
+  pdf:
+    custom-theorem:
+      numbered-within: section
 ---
 
 ## Introduction

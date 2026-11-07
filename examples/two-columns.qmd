@@ -27,7 +27,7 @@ Note that this does not necessarily require a physical separation of the two col
 
 See the source code of this page for the frontmatter.
 
-Use fenced divs for side notes: `::: {#rem-xxx .column-margin} ... :::`. Reference each note in the main text with `(@rem-xxx)`. Do not restrict to `rem`; use any other suitable prefix when appropriate.
+Use fenced divs for side notes: `::: {#rem-xxx .column-margin} ... :::`. Reference each note in the main text with `(@rem-xxx)`. Do not restrict to `rem`; use any other suitable prefix when appropriate. For nested div, remember to use more colons to indicate the level of nesting.
 
 Place the margin-note directly after the main text div that references it, so that they are aligned vertically.
 
@@ -37,7 +37,7 @@ We choose to refrain from footnotes because Quarto's implementation conflicts a 
 
 **Motivation.** To study mathematical objects that depend on a family of open sets or parameters, we need a universal way to assemble compatible families of data into a single object. Category theory formulates such universal assemblies as limits and colimits of diagrams.
 
-::: {#def-diagrams-limits}
+::::: {#def-diagrams-limits}
 ## Diagrams, cones, limits, colimits, and completeness
 
 Let $\mathcal I$ be a small category (@def-small-category) and let $\mathcal A$ be a category. A functor $D:\mathcal I\to\mathcal A$ is called a *diagram of shape $\mathcal I$*, and $\operatorname{Func}(\mathcal I,\mathcal A)$ denotes the category of such diagrams with natural transformations as morphisms. For each object $A\in\mathcal A$, the *constant diagram* $\Delta(A):\mathcal I\to\mathcal A$ sends every $i\in\mathcal I$ to $A$ and every morphism $u:i\to j$ to $\operatorname{id}_A$; this defines the *diagonal functor* $\Delta:\mathcal A\to\operatorname{Func}(\mathcal I,\mathcal A)$ (@rem-diagonal-morphisms).
@@ -71,7 +71,7 @@ Let $\mathcal I$ be a small category (@def-small-category) and let $\mathcal A$ 
 2. **Cocones and colimits:** Dually, a *cocone under $D$ with vertex $B$* is a natural transformation $\iota:D\to\Delta(B)$ ($\iota_j\circ D(u)=\iota_i$). A *colimit* of $D$ is an initial cocone $(C,\{\iota_i\}_{i\in\mathcal I})$ under $D$: every cocone $(B,\{g_i\}_{i\in\mathcal I})$ factors uniquely as $g_i=\bar g\circ\iota_i$ for $\bar g:C\to B$.
 3. **Completeness and cocompleteness:** The category $\mathcal A$ is *complete* if every diagram $D:\mathcal I\to\mathcal A$ from a small category $\mathcal I$ admits a limit in $\mathcal A$, and *cocomplete* if every such diagram admits a colimit in $\mathcal A$ (@rem-module-limits).
 
-:::
+:::::
 
 ::: {#def-small-category .column-margin}
 ## Small category
@@ -139,7 +139,7 @@ In @def-diagrams-limits (1), “being a limit” is a property of a cone $(L,\pi
 Given a natural transformation $\alpha:D\to D'$, composing the cone $\pi^D:\Delta(\varprojlim_{\mathcal I}D)\to D$ with $\alpha$ yields a cone $\alpha\circ\pi^D$ over $D'$ (@rem-composite-cone). By the terminal property of $(\varprojlim_{\mathcal I}D',\pi^{D'})$, there exists a unique morphism $\varprojlim_{\mathcal I}\alpha:\varprojlim_{\mathcal I}D\to\varprojlim_{\mathcal I}D'$ satisfying $\pi_i^{D'}\circ(\varprojlim_{\mathcal I}\alpha)=\alpha_i\circ\pi_i^D$ for all $i\in\mathcal I$. Uniqueness of universal factorizations immediately forces $\varprojlim_{\mathcal I}(\beta\circ\alpha)=(\varprojlim_{\mathcal I}\beta)\circ(\varprojlim_{\mathcal I}\alpha)$ and $\varprojlim_{\mathcal I}(\operatorname{id}_D)=\operatorname{id}$ (@rem-limit-functoriality). Finally, by @def-diagrams-limits (1), morphisms $\Delta(A)\to D$ in $\operatorname{Func}(\mathcal I,\mathcal A)$ are cones over $D$ with vertex $A$, which bijectively correspond via composition with $\pi^D$ to morphisms $A\to\varprojlim_{\mathcal I}D$ in $\mathcal A$ naturally in both variables (@rem-adjunction-naturality). The dual argument establishes functoriality of $\varinjlim_{\mathcal I}$ and $\varinjlim_{\mathcal I}\dashv\Delta$.
 :::
 
-::: {#rem-composite-cone .column-margin}
+::::: {#rem-composite-cone .column-margin}
 ## Diagrammatic check that $\alpha\circ\pi^D$ is a cone over $D'$
 
 Why does composing $\pi^D$ with a natural transformation $\alpha:D\to D'$ produce a cone over $D'$? Because for every morphism $u:i\to j$ in $\mathcal I$, the cone identity $D(u)\circ\pi_i^D=\pi_j^D$ and the naturality square $D'(u)\circ\alpha_i=\alpha_j\circ D(u)$ paste together into a commutative rectangle:
@@ -164,7 +164,7 @@ Composition of a cone with a natural transformation
 :::
 
 Thus $D'(u)\circ(\alpha_i\circ\pi_i^D)=\alpha_j\circ\pi_j^D$.
-:::
+:::::
 
 ::: {#rem-limit-functoriality .column-margin}
 ## Unpacking functoriality of $\varprojlim_{\mathcal I}$

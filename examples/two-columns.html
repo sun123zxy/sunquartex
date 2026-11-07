@@ -47,9 +47,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-d245192ffdbb297129103cffda55d616.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../site_libs/bootstrap/bootstrap-dark-c208e0a5ccf32a46b5d252640a6b7882.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-d245192ffdbb297129103cffda55d616.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-7b52313c2ad095c5451ae11645b56332.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-442ed94835c92fd0053c5ec7ebfe7d53.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-7b52313c2ad095c5451ae11645b56332.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -411,11 +411,12 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage">Usage</a></li>
-  <li><a href="#example-usage" id="toc-example-usage" class="nav-link" data-scroll-target="#example-usage">Example usage</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#usage" id="toc-usage" class="nav-link" data-scroll-target="#usage"><span class="header-section-number">2</span> Usage</a></li>
+  <li><a href="#format-specific-behavior" id="toc-format-specific-behavior" class="nav-link" data-scroll-target="#format-specific-behavior"><span class="header-section-number">3</span> Format-specific behavior</a></li>
+  <li><a href="#example-usage" id="toc-example-usage" class="nav-link" data-scroll-target="#example-usage"><span class="header-section-number">4</span> Example usage</a></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="two-columns.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content page-columns page-full column-body" id="quarto-document-content">
@@ -441,25 +442,32 @@ window.Quarto = {
 </header>
 
 
-<blockquote class="blockquote">
-<p>This is an early-access feature. For reference only.</p>
-</blockquote>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<section id="introduction" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">1</span> Introduction</h2>
 <p>Two column layout is a style of organizing content on a page where the text is divided into two vertical columns. Consider the following circumstance: you are writing a expository essay on a complex topic. You want to present your ideas in a clear and organized manner, while providing as much side information as possible for those readers who are not familiar with the topic. In this case, splitting the content into two columns creates a compact and effective way.</p>
 <p>The left column contains the main text, clean and with a clear flow of mind. Experts or a second-time reader should be able to read it without any content from the right column. Such an exposition may inevitably include some concise slogan-like sentences. So the right column is provided for you to put side notes, clarifications of gaps, proofs, references … anything that is helpful for beginners but a little distracting for experts.</p>
 <p>Note that this does not necessarily require a physical separation of the two columns on the page, but rather having two “layers” of content: the main text and the side notes. It is more like a systematic and extensive use of footnotes. These notes can be either long or short, explaining a single word, a single sentence, or a whole paragraph in the main text. The idea is “We are brief and concise in the main text to keep the flow of mind, but if you don’t get the gist, redirect to side notes for more details.”.</p>
 </section>
-<section id="usage" class="level2">
-<h2 class="anchored" data-anchor-id="usage">Usage</h2>
+<section id="usage" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="usage"><span class="header-section-number">2</span> Usage</h2>
 <p>See the source code of this page for the frontmatter.</p>
-<p>Use fenced divs for side notes: <code>::: {#rem-xxx .column-margin} ... :::</code>. Reference each note in the main text with <code>(@rem-xxx)</code>. Do not restrict to <code>rem</code>; use any other suitable prefix when appropriate.</p>
+<p>Use fenced divs for side notes: <code>::: {#rem-xxx .aside} ... :::</code>. Reference each note in the main text with <code>(@rem-xxx)</code>. Do not restrict to <code>rem</code>; use any other suitable prefix when appropriate. For nested div, remember to use more colons to indicate the level of nesting.</p>
 <p>Place the margin-note directly after the main text div that references it, so that they are aligned vertically.</p>
 <p>We choose to refrain from footnotes because Quarto’s implementation conflicts a little when mixing different margin system. Footnotes are actually good, but there are bugs on the Quarto side.</p>
 </section>
-<section id="example-usage" class="level2 page-columns page-full">
-<h2 class="anchored" data-anchor-id="example-usage">Example usage</h2>
+<section id="format-specific-behavior" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="format-specific-behavior"><span class="header-section-number">3</span> Format-specific behavior</h2>
+<p>In HTML this is real two columns, while in PDF we choose to put the side notes in an appendix at the end of the document.</p>
+</section>
+<section id="example-usage" class="level2 page-columns page-full" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="example-usage"><span class="header-section-number">4</span> Example usage</h2>
 <p><strong>Motivation.</strong> To study mathematical objects that depend on a family of open sets or parameters, we need a universal way to assemble compatible families of data into a single object. Category theory formulates such universal assemblies as limits and colimits of diagrams.</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
 <div id="def-diagrams-limits" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 1 (Diagrams, cones, limits, colimits, and completeness)</strong></span> Let <span class="math inline">\(\mathcal I\)</span> be a small category (<a href="#def-small-category" class="quarto-xref">Definition&nbsp;2</a>) and let <span class="math inline">\(\mathcal A\)</span> be a category. A functor <span class="math inline">\(D:\mathcal I\to\mathcal A\)</span> is called a <em>diagram of shape <span class="math inline">\(\mathcal I\)</span></em>, and <span class="math inline">\(\operatorname{Func}(\mathcal I,\mathcal A)\)</span> denotes the category of such diagrams with natural transformations as morphisms. For each object <span class="math inline">\(A\in\mathcal A\)</span>, the <em>constant diagram</em> <span class="math inline">\(\Delta(A):\mathcal I\to\mathcal A\)</span> sends every <span class="math inline">\(i\in\mathcal I\)</span> to <span class="math inline">\(A\)</span> and every morphism <span class="math inline">\(u:i\to j\)</span> to <span class="math inline">\(\operatorname{id}_A\)</span>; this defines the <em>diagonal functor</em> <span class="math inline">\(\Delta:\mathcal A\to\operatorname{Func}(\mathcal I,\mathcal A)\)</span> (<a href="#rem-diagonal-morphisms" class="quarto-xref">Remark&nbsp;1</a>).</p>
 <ol type="1">
@@ -570,14 +578,75 @@ Figure&nbsp;1: Universal factorizations for limits and colimits
 <li><p><strong>Completeness and cocompleteness:</strong> The category <span class="math inline">\(\mathcal A\)</span> is <em>complete</em> if every diagram <span class="math inline">\(D:\mathcal I\to\mathcal A\)</span> from a small category <span class="math inline">\(\mathcal I\)</span> admits a limit in <span class="math inline">\(\mathcal A\)</span>, and <em>cocomplete</em> if every such diagram admits a colimit in <span class="math inline">\(\mathcal A\)</span> (<a href="#rem-module-limits" class="quarto-xref">Remark&nbsp;3</a>).</p></li>
 </ol>
 </div>
+</div>
+</div>
+</div>
 
-<div class="no-row-height column-margin column-container"><div id="def-small-category" class="theorem definition">
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<div id="def-small-category" class="theorem definition">
 <p><span class="theorem-title"><strong>Definition 2 (Small category)</strong></span> A category <span class="math inline">\(\mathcal I\)</span> is <em>small</em> if <span class="math inline">\(\operatorname{Ob}(\mathcal I)\)</span> and <span class="math inline">\(\operatorname{Mor}(\mathcal I)\)</span> are sets rather than proper classes. This prevents set-theoretic paradoxes when forming products <span class="math inline">\(\prod_{i\in\mathcal I}D(i)\)</span> in <span class="math inline">\(\mathcal A\)</span>.</p>
-</div><div id="rem-diagonal-morphisms" class="proof remark">
+</div>
+</div>
+</div>
+</div>
+</div><div class="margin-aside">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Remark (Action of <span class="math inline">\(\Delta\)</span> on morphisms)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div id="rem-diagonal-morphisms" class="proof remark">
 <p><span class="proof-title"><em>Remark 1</em> (Action of <span class="math inline">\(\Delta\)</span> on morphisms). </span>Given <span class="math inline">\(f:A\to B\)</span> in <span class="math inline">\(\mathcal A\)</span>, <span class="math inline">\(\Delta(f):\Delta(A)\to\Delta(B)\)</span> is the natural transformation with component <span class="math inline">\(\Delta(f)_i=f\)</span> at every <span class="math inline">\(i\in\mathcal I\)</span> (natural since <span class="math inline">\(\operatorname{id}_B\circ f=f\circ\operatorname{id}_A\)</span>).</p>
-</div><div id="rem-unique-limit" class="proof remark">
+</div>
+</div>
+</div>
+</div>
+</div><div class="margin-aside">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Remark (Uniqueness of terminal cones up to canonical isomorphism)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div id="rem-unique-limit" class="proof remark">
 <p><span class="proof-title"><em>Remark 2</em> (Uniqueness of terminal cones up to canonical isomorphism). </span>Why is a limit unique up to unique isomorphism? If <span class="math inline">\((L,\{\pi_i\})\)</span> and <span class="math inline">\((L',\{\pi_i'\})\)</span> are two limit cones over <span class="math inline">\(D\)</span>, terminality gives unique morphisms <span class="math inline">\(\varphi:L\to L'\)</span> (<span class="math inline">\(\pi_i'\circ\varphi=\pi_i\)</span>) and <span class="math inline">\(\psi:L'\to L\)</span> (<span class="math inline">\(\pi_i\circ\psi=\pi_i'\)</span>). Then <span class="math inline">\(\pi_i\circ(\psi\circ\varphi)=\pi_i=\pi_i\circ\operatorname{id}_L\)</span> for all <span class="math inline">\(i\in\mathcal I\)</span>. Since <span class="math inline">\(\operatorname{id}_L\)</span> is the unique morphism <span class="math inline">\(L\to L\)</span> compatible with <span class="math inline">\(\{\pi_i\}\)</span>, we must have <span class="math inline">\(\psi\circ\varphi=\operatorname{id}_L\)</span>, and symmetrically <span class="math inline">\(\varphi\circ\psi=\operatorname{id}_{L'}\)</span>.</p>
-</div><div id="rem-module-limits" class="proof remark">
+</div>
+</div>
+</div>
+</div>
+</div><div class="margin-aside">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Remark (Concrete construction of limits and colimits in <span class="math inline">\(\operatorname{Mod}_R\)</span> and <span class="math inline">\(\operatorname{Ab}\)</span>)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div id="rem-module-limits" class="proof remark">
 <p><span class="proof-title"><em>Remark 3</em> (Concrete construction of limits and colimits in <span class="math inline">\(\operatorname{Mod}_R\)</span> and <span class="math inline">\(\operatorname{Ab}\)</span>). </span>For any commutative ring <span class="math inline">\(R\)</span>, the category <span class="math inline">\(\operatorname{Mod}_R\)</span> (and <span class="math inline">\(\operatorname{Ab}=\operatorname{Mod}_{\mathbb Z}\)</span>) is both complete and cocomplete because every small diagram <span class="math inline">\(D:\mathcal I\to\operatorname{Mod}_R\)</span> admits a canonical limit and colimit:</p>
 <ul>
 <li><em>Limit (submodule of compatible tuples):</em> Inside the product <span class="math inline">\(\prod_{i\in\mathcal I}D(i)\)</span> with projections <span class="math inline">\(\pi_k\)</span>, <span class="math display">\[
@@ -594,10 +663,20 @@ N&amp;=\operatorname{Span}_R\left\{\operatorname{in}_j(D(u)(x_i))-\operatorname{
 \end{aligned}
 \]</span></li>
 </ul>
+</div>
+</div>
+</div>
+</div>
 </div></div>
 
 
 <p><strong>Motivation.</strong> A limit of a single diagram <span class="math inline">\(D\)</span> is determined only up to unique isomorphism. However, once we choose a specific terminal cone <span class="math inline">\((\varprojlim_{\mathcal I}D,\{\pi_i^D\})\)</span> for each diagram <span class="math inline">\(D\)</span>, the universal property automatically makes <span class="math inline">\(\varprojlim_{\mathcal I}\)</span> and <span class="math inline">\(\varinjlim_{\mathcal I}\)</span> functors that are right and left adjoint to <span class="math inline">\(\Delta\)</span>.</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
 <div id="prp-limit-adjunction" class="theorem proposition">
 <p><span class="theorem-title"><strong>Proposition 1 (Functoriality of limits and colimits via diagonal adjunction)</strong></span> Let <span class="math inline">\(\mathcal I\)</span> be a small category and let <span class="math inline">\(\mathcal A\)</span> be a complete and cocomplete category. Choosing a limit cone <span class="math inline">\((\varprojlim_{\mathcal I}D,\{\pi_i^D\})\)</span> and a colimit cocone <span class="math inline">\((\varinjlim_{\mathcal I}D,\{\iota_i^D\})\)</span> for each <span class="math inline">\(D\in\operatorname{Func}(\mathcal I,\mathcal A)\)</span> (<a href="#rem-choosing-cones" class="quarto-xref">Remark&nbsp;4</a>) defines functors <span class="math inline">\(\varprojlim_{\mathcal I},\varinjlim_{\mathcal I}:\operatorname{Func}(\mathcal I,\mathcal A)\to\mathcal A\)</span> that are right and left adjoint to <span class="math inline">\(\Delta:\mathcal A\to\operatorname{Func}(\mathcal I,\mathcal A)\)</span>: <span class="math display">\[
 \begin{aligned}
@@ -608,14 +687,62 @@ N&amp;=\operatorname{Span}_R\left\{\operatorname{in}_j(D(u)(x_i))-\operatorname{
 \end{aligned}
 \]</span></p>
 </div>
-
-<div class="no-row-height column-margin column-container"><div id="rem-choosing-cones" class="proof remark">
-<p><span class="proof-title"><em>Remark 4</em> (Why defining a limit functor requires choosing terminal cones). </span>In <a href="#def-diagrams-limits" class="quarto-xref">Definition&nbsp;1</a> (1), “being a limit” is a property of a cone <span class="math inline">\((L,\pi)\)</span>, not a single canonical object in an abstract category <span class="math inline">\(\mathcal A\)</span>. To define an actual functor <span class="math inline">\(\varprojlim_{\mathcal I}:\operatorname{Func}(\mathcal I,\mathcal A)\to\mathcal A\)</span>, we must first assign to each object <span class="math inline">\(D\in\operatorname{Func}(\mathcal I,\mathcal A)\)</span> a chosen terminal cone <span class="math inline">\((L_D,\pi^D)\)</span> (using the canonical submodule/quotient in <span class="math inline">\(\operatorname{Mod}_R\)</span>, or global choice in an abstract complete category). Different choices of terminal cones yield canonically isomorphic limit functors by <a href="#rem-unique-limit" class="quarto-xref">Remark&nbsp;2</a>.</p>
-</div></div><div class="proof">
-<p><span class="proof-title"><em>Proof</em>. </span>Given a natural transformation <span class="math inline">\(\alpha:D\to D'\)</span>, composing the cone <span class="math inline">\(\pi^D:\Delta(\varprojlim_{\mathcal I}D)\to D\)</span> with <span class="math inline">\(\alpha\)</span> yields a cone <span class="math inline">\(\alpha\circ\pi^D\)</span> over <span class="math inline">\(D'\)</span> (<a href="#rem-composite-cone" class="quarto-xref">Remark&nbsp;5</a>). By the terminal property of <span class="math inline">\((\varprojlim_{\mathcal I}D',\pi^{D'})\)</span>, there exists a unique morphism <span class="math inline">\(\varprojlim_{\mathcal I}\alpha:\varprojlim_{\mathcal I}D\to\varprojlim_{\mathcal I}D'\)</span> satisfying <span class="math inline">\(\pi_i^{D'}\circ(\varprojlim_{\mathcal I}\alpha)=\alpha_i\circ\pi_i^D\)</span> for all <span class="math inline">\(i\in\mathcal I\)</span>. Uniqueness of universal factorizations immediately forces <span class="math inline">\(\varprojlim_{\mathcal I}(\beta\circ\alpha)=(\varprojlim_{\mathcal I}\beta)\circ(\varprojlim_{\mathcal I}\alpha)\)</span> and <span class="math inline">\(\varprojlim_{\mathcal I}(\operatorname{id}_D)=\operatorname{id}\)</span> (<a href="#rem-limit-functoriality" class="quarto-xref">Remark&nbsp;6</a>). Finally, by <a href="#def-diagrams-limits" class="quarto-xref">Definition&nbsp;1</a> (1), morphisms <span class="math inline">\(\Delta(A)\to D\)</span> in <span class="math inline">\(\operatorname{Func}(\mathcal I,\mathcal A)\)</span> are cones over <span class="math inline">\(D\)</span> with vertex <span class="math inline">\(A\)</span>, which bijectively correspond via composition with <span class="math inline">\(\pi^D\)</span> to morphisms <span class="math inline">\(A\to\varprojlim_{\mathcal I}D\)</span> in <span class="math inline">\(\mathcal A\)</span> naturally in both variables (<a href="#rem-adjunction-naturality" class="quarto-xref">Remark&nbsp;7</a>). The dual argument establishes functoriality of <span class="math inline">\(\varinjlim_{\mathcal I}\)</span> and <span class="math inline">\(\varinjlim_{\mathcal I}\dashv\Delta\)</span>.</p>
+</div>
+</div>
 </div>
 
-<div class="no-row-height column-margin column-container"><div id="rem-composite-cone" class="proof remark">
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Remark (Why defining a limit functor requires choosing terminal cones)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div id="rem-choosing-cones" class="proof remark">
+<p><span class="proof-title"><em>Remark 4</em> (Why defining a limit functor requires choosing terminal cones). </span>In <a href="#def-diagrams-limits" class="quarto-xref">Definition&nbsp;1</a> (1), “being a limit” is a property of a cone <span class="math inline">\((L,\pi)\)</span>, not a single canonical object in an abstract category <span class="math inline">\(\mathcal A\)</span>. To define an actual functor <span class="math inline">\(\varprojlim_{\mathcal I}:\operatorname{Func}(\mathcal I,\mathcal A)\to\mathcal A\)</span>, we must first assign to each object <span class="math inline">\(D\in\operatorname{Func}(\mathcal I,\mathcal A)\)</span> a chosen terminal cone <span class="math inline">\((L_D,\pi^D)\)</span> (using the canonical submodule/quotient in <span class="math inline">\(\operatorname{Mod}_R\)</span>, or global choice in an abstract complete category). Different choices of terminal cones yield canonically isomorphic limit functors by <a href="#rem-unique-limit" class="quarto-xref">Remark&nbsp;2</a>.</p>
+</div>
+</div>
+</div>
+</div>
+</div></div><div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span>Given a natural transformation <span class="math inline">\(\alpha:D\to D'\)</span>, composing the cone <span class="math inline">\(\pi^D:\Delta(\varprojlim_{\mathcal I}D)\to D\)</span> with <span class="math inline">\(\alpha\)</span> yields a cone <span class="math inline">\(\alpha\circ\pi^D\)</span> over <span class="math inline">\(D'\)</span> (<a href="#rem-composite-cone" class="quarto-xref">Remark&nbsp;5</a>). By the terminal property of <span class="math inline">\((\varprojlim_{\mathcal I}D',\pi^{D'})\)</span>, there exists a unique morphism <span class="math inline">\(\varprojlim_{\mathcal I}\alpha:\varprojlim_{\mathcal I}D\to\varprojlim_{\mathcal I}D'\)</span> satisfying <span class="math inline">\(\pi_i^{D'}\circ(\varprojlim_{\mathcal I}\alpha)=\alpha_i\circ\pi_i^D\)</span> for all <span class="math inline">\(i\in\mathcal I\)</span>. Uniqueness of universal factorizations immediately forces <span class="math inline">\(\varprojlim_{\mathcal I}(\beta\circ\alpha)=(\varprojlim_{\mathcal I}\beta)\circ(\varprojlim_{\mathcal I}\alpha)\)</span> and <span class="math inline">\(\varprojlim_{\mathcal I}(\operatorname{id}_D)=\operatorname{id}\)</span> (<a href="#rem-limit-functoriality" class="quarto-xref">Remark&nbsp;6</a>). Finally, by <a href="#def-diagrams-limits" class="quarto-xref">Definition&nbsp;1</a> (1), morphisms <span class="math inline">\(\Delta(A)\to D\)</span> in <span class="math inline">\(\operatorname{Func}(\mathcal I,\mathcal A)\)</span> are cones over <span class="math inline">\(D\)</span> with vertex <span class="math inline">\(A\)</span>, which bijectively correspond via composition with <span class="math inline">\(\pi^D\)</span> to morphisms <span class="math inline">\(A\to\varprojlim_{\mathcal I}D\)</span> in <span class="math inline">\(\mathcal A\)</span> naturally in both variables (<a href="#rem-adjunction-naturality" class="quarto-xref">Remark&nbsp;7</a>). The dual argument establishes functoriality of <span class="math inline">\(\varinjlim_{\mathcal I}\)</span> and <span class="math inline">\(\varinjlim_{\mathcal I}\dashv\Delta\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="no-row-height column-margin column-container"><div class="margin-aside">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Remark (Diagrammatic check that <span class="math inline">\(\alpha\circ\pi^D\)</span> is a cone over <span class="math inline">\(D'\)</span>)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div id="rem-composite-cone" class="proof remark">
 <p><span class="proof-title"><em>Remark 5</em> (Diagrammatic check that <span class="math inline">\(\alpha\circ\pi^D\)</span> is a cone over <span class="math inline">\(D'\)</span>). </span>Why does composing <span class="math inline">\(\pi^D\)</span> with a natural transformation <span class="math inline">\(\alpha:D\to D'\)</span> produce a cone over <span class="math inline">\(D'\)</span>? Because for every morphism <span class="math inline">\(u:i\to j\)</span> in <span class="math inline">\(\mathcal I\)</span>, the cone identity <span class="math inline">\(D(u)\circ\pi_i^D=\pi_j^D\)</span> and the naturality square <span class="math inline">\(D'(u)\circ\alpha_i=\alpha_j\circ D(u)\)</span> paste together into a commutative rectangle:</p>
 <div id="fig-composite-cone" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -706,7 +833,24 @@ Figure&nbsp;2: Composition of a cone with a natural transformation
 </figure>
 </div>
 <p>Thus <span class="math inline">\(D'(u)\circ(\alpha_i\circ\pi_i^D)=\alpha_j\circ\pi_j^D\)</span>.</p>
-</div><div id="rem-limit-functoriality" class="proof remark">
+</div>
+</div>
+</div>
+</div>
+</div><div class="margin-aside">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Remark (Unpacking functoriality of <span class="math inline">\(\varprojlim_{\mathcal I}\)</span>)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div id="rem-limit-functoriality" class="proof remark">
 <p><span class="proof-title"><em>Remark 6</em> (Unpacking functoriality of <span class="math inline">\(\varprojlim_{\mathcal I}\)</span>). </span>Given <span class="math inline">\(\alpha:D\to D'\)</span> and <span class="math inline">\(\beta:D'\to D''\)</span>, for every <span class="math inline">\(i\in\mathcal I\)</span> we have <span class="math display">\[
 \begin{aligned}
 \pi_i^{D''}\circ\left(\varprojlim\beta\circ\varprojlim\alpha\right)
@@ -715,7 +859,24 @@ Figure&nbsp;2: Composition of a cone with a natural transformation
 &amp;=(\beta\circ\alpha)_i\circ\pi_i^D
 \end{aligned}
 \]</span> Since <span class="math inline">\(\varprojlim(\beta\circ\alpha)\)</span> is the unique morphism <span class="math inline">\(L_D\to L_{D''}\)</span> satisfying this identity for all <span class="math inline">\(i\in\mathcal I\)</span>, <span class="math inline">\(\varprojlim(\beta\circ\alpha)=\varprojlim\beta\circ\varprojlim\alpha\)</span>.</p>
-</div><div id="rem-adjunction-naturality" class="proof remark">
+</div>
+</div>
+</div>
+</div>
+</div><div class="margin-aside">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Tip</span>Remark (Naturality of the adjunction)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<div id="rem-adjunction-naturality" class="proof remark">
 <p><span class="proof-title"><em>Remark 7</em> (Naturality of the adjunction). </span>For <span class="math inline">\(\bar f\in\operatorname{Hom}_{\mathcal A}(A,L_D)\)</span>, the bijection <span class="math inline">\(\Psi(\bar f)_i=\pi_i^D\circ\bar f\)</span> is natural in <span class="math inline">\(D\)</span> because for <span class="math inline">\(\alpha:D\to D'\)</span>, <span class="math display">\[
 \begin{aligned}
 \Psi\left(\left(\varprojlim\alpha\right)\circ\bar f\right)_i
@@ -724,6 +885,10 @@ Figure&nbsp;2: Composition of a cone with a natural transformation
 &amp;=(\alpha\circ\Psi(\bar f))_i
 \end{aligned}
 \]</span> It is natural in <span class="math inline">\(A\)</span> by associativity of composition.</p>
+</div>
+</div>
+</div>
+</div>
 </div></div>
 
 

@@ -67,7 +67,11 @@ def main():
                     return {
                         duplicateIds:ids.filter((id,i)=>ids.indexOf(id)!==i),
                         brokenImages:[...document.images].filter(i=>!i.complete || !i.naturalWidth).length,
-                        brokenRefs:[...document.querySelectorAll('a.quarto-xref')].filter(a=>!document.querySelector(a.getAttribute('href'))).length,
+                        brokenRefs:[...document.querySelectorAll('a.quarto-xref')].filter(a=>{
+                            const target=new URL(a.getAttribute('href'),location.href);
+                            if(target.origin!==location.origin || target.pathname!==location.pathname) return false;
+                            return target.hash && !document.getElementById(decodeURIComponent(target.hash.slice(1)));
+                        }).length,
                         imageOverflow:[...document.querySelectorAll('.tikz img, .tikz svg')].some(i=>i.getBoundingClientRect().right>innerWidth+1)
                     };
                 }''')

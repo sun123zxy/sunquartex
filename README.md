@@ -427,6 +427,8 @@ TikZ-cd / Quiver 示例
 TikZ 示例
 :::
 
+HTML 输出将每张 SVG 作为独立图片嵌入，保留矢量图，同时避免同页多张图的裁剪路径与字体定义相互影响．[完整示例](examples/tikz.qmd)包含交换图及方形、圆形裁剪，可对照 HTML 与 PDF 输出．
+
 :::{.remark}
 
 在 Beamer 中使用 TikZ 时，所在幻灯片须添加 `{.fragile}` 标记．

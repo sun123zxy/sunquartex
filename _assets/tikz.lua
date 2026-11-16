@@ -72,7 +72,11 @@ local function code_block_filter(el)
     elseif quarto.doc.is_format("html") then
       local filetype = 'svg'
       local svg = tikz2image(el.text, filetype)
-      return pandoc.Div(pandoc.RawInline("html", svg), pandoc.Attr("", {"tikz"}))
+      -- Each conversion starts IDs such as cp0 and page1 afresh. Keep the SVG
+      -- in its own image document so clipping paths and fonts cannot collide.
+      local source = "data:image/svg+xml;base64," .. quarto.base64.encode(svg)
+      local image = pandoc.Image({pandoc.Str("TikZ diagram")}, source)
+      return pandoc.Div({pandoc.Plain({image})}, pandoc.Attr("", {"tikz"}))
     else
       return el
     end

@@ -375,8 +375,48 @@ quiver 风格的 tikzcd 测试图片
 \end{tikzcd}
 ```
 
-小心多 SVG 可能产生的样式冲突
+多项式求值映射诱导的交换图
 
+:::
+
+下面的交换三角形在 HTML 和 PDF 中使用同一份 TikZ 源码，见 @fig-triangle．
+
+:::{#fig-triangle}
+
+```{tikz}
+\begin{tikzcd}
+  A \arrow[r, "f"] \arrow[dr, "g \circ f"'] & B \arrow[d, "g"] \\
+  & C
+\end{tikzcd}
+```
+
+交换三角形
+:::
+
+@fig-square 和 @fig-circle 对填色区域分别作方形和圆形裁剪．两图放在同一页面时，也应各自保持正确的轮廓；HTML 与 PDF 应显示相同的形状．
+
+:::{#fig-square}
+
+```{tikz}
+\begin{tikzpicture}
+  \clip (-1,-1) rectangle (1,1);
+  \fill[blue!60] (-1.5,-1.5) rectangle (1.5,1.5);
+\end{tikzpicture}
+```
+
+方形裁剪
+:::
+
+:::{#fig-circle}
+
+```{tikz}
+\begin{tikzpicture}
+  \clip (0,0) circle (1);
+  \fill[orange!80] (-1.5,-1.5) rectangle (1.5,1.5);
+\end{tikzpicture}
+```
+
+圆形裁剪
 :::
 
 ## Layout

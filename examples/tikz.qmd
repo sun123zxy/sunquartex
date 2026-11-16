@@ -1,0 +1,52 @@
+---
+title: TikZ and commuting diagrams
+lang: en
+format:
+  html: default
+  pdf: default
+---
+
+## A commuting triangle {#sec-triangle}
+
+The same TikZ source is used for the PDF figure and the HTML image in
+@fig-triangle.
+
+::: {#fig-triangle}
+
+```{tikz}
+\begin{tikzcd}
+  A \arrow[r, "f"] \arrow[dr, "g \circ f"'] & B \arrow[d, "g"] \\
+  & C
+\end{tikzcd}
+```
+
+A commuting triangle.
+:::
+
+## Clipping paths {#sec-clipping}
+
+@fig-square and @fig-circle use different clipping paths on the same page.
+
+::: {#fig-square}
+
+```{tikz}
+\begin{tikzpicture}
+  \clip (-1,-1) rectangle (1,1);
+  \fill[blue!60] (-1.5,-1.5) rectangle (1.5,1.5);
+\end{tikzpicture}
+```
+
+A square clipping path.
+:::
+
+::: {#fig-circle}
+
+```{tikz}
+\begin{tikzpicture}
+  \clip (0,0) circle (1);
+  \fill[orange!80] (-1.5,-1.5) rectangle (1.5,1.5);
+\end{tikzpicture}
+```
+
+A circular clipping path.
+:::

@@ -466,21 +466,19 @@ This is a QR code
 
 ### Github Actions + Github Pages 网站生成
 
-本仓库同时采用 Github Actions + Github Pages 自动生成 Demo 站点．
+本仓库采用 GitHub Actions 官方工作流 + GitHub Pages 自动生成并部署 Demo 站点．
 
 #### 安装
 
-首次使用时，在 Actions 分页中激活 Actions，在本地手动进行第一次网站发布：
+首次使用时，在 GitHub 仓库页面完成以下设置：
 
-- 修改 `_quarto-website.yml` 下 `site-url` 为你的域名（如您使用非 Github Pages 的默认网站域名，请在根目录下额外添加 CNAME 文件）
+- 前往 **Settings → Pages → Build and deployment → Source**，将发布源选为 **GitHub Actions**（并在 Actions 分页中激活 Actions）．
+- 按需修改 `_quarto-website.yml` 下的 `site-url` 为你的域名（如使用非 GitHub Pages 默认域名，可在仓库 Pages 设置中配置自定义域名）
   - 嫌麻烦的话也可以直接删除这个选项．
-- 命令行内设置环境变量 `QUARTO_PROFILE` 为 `website`
-- 执行 `quarto publish`
-- （清除环境变量）
 
 #### 使用
 
-以后的每次 push 均会触发 Github Actions 自动完成的网站生成．
+以后的每次向 `master` 的 push（或在 Actions 分页手动触发工作流）均会触发 GitHub Actions 自动完成网站生成与部署，无需再在本地执行 `quarto publish` 或维护 `gh-pages` 分支．
 
 ### 输出为整本书（Book）
 

@@ -36,8 +36,6 @@ jobs:
       
       # To update PATH
       - name: Set up TinyTeX via Quarto manually
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           quarto install tinytex --update-path
       - name: Update TeX packages

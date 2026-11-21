@@ -466,7 +466,7 @@ This is a QR code
 
 ### Github Actions + Github Pages 网站生成
 
-本仓库采用 GitHub Actions 官方工作流 + GitHub Pages 自动生成并部署 Demo 站点．
+本仓库采用 GitHub Actions 官方工作流 + GitHub Pages 自动生成并部署 Demo 站点．注意我们没有采用 `quarto publish` 的默认方式，后者需要维护 `gh-pages` 分支很麻烦．
 
 #### 安装
 
@@ -478,7 +478,7 @@ This is a QR code
 
 #### 使用
 
-以后的每次向 `master` 的 push（或在 Actions 分页手动触发工作流）均会触发 GitHub Actions 自动完成网站生成与部署，无需再在本地执行 `quarto publish` 或维护 `gh-pages` 分支．
+以后的每次向 `master` 的 push（或在 Actions 分页手动触发工作流）均会触发 GitHub Actions 自动完成网站生成与部署．
 
 ### 输出为整本书（Book）
 

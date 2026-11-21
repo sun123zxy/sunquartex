@@ -2,18 +2,24 @@ on:
   push:
     branches:
       - master
+  pull_request:
+    branches:
+      - master
+  workflow_dispatch:
 
 name: Render and Publish to Github Pages
 
-# you need these permissions to publish to GitHub pages
-permissions: 
-  contents: write
-  pages: write
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.event_name == 'pull_request' && format('pages-pr-{0}', github.event.pull_request.number) || 'pages' }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
-  build-deploy:
+  build:
+    name: Render Quarto website
     runs-on: ubuntu-latest
-    
     steps:
       - name: Check out repository
         uses: actions/checkout@v6
@@ -63,12 +69,32 @@ jobs:
 
       # - name: Render Quarto Project
       #   uses: quarto-dev/quarto-actions/render@v2
-      
-      # NOTE: If Publishing to GitHub Pages, set the permissions correctly (see top of this yaml)
-      - name: Publish to GitHub Pages (and render)
-        uses: quarto-dev/quarto-actions/publish@v2
-        with:
-          target: gh-pages
+
+      - name: Render Quarto Website
+        run: quarto render
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # this secret is always available for github actions
           QUARTO_PROFILE: website
+
+      - name: Upload Pages artifact
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _output
+
+  deploy:
+    if: github.event_name != 'pull_request'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

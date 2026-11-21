@@ -70,6 +70,14 @@ local function code_block_filter(el)
     if quarto.doc.is_format("pdf") or quarto.doc.is_format("beamer") then
       return pandoc.RawInline("latex", el.text)
     elseif quarto.doc.is_format("html") then
+      if processed_tikz_count == 0 then
+        -- Quarto's error() logs the message. Lua's assertion stops the render.
+        for _, command in ipairs({ 'xelatex', 'dvisvgm' }) do
+          assert(pcall(pandoc.pipe, command, { '--version' }, ''),
+            "HTML TikZ rendering requires " .. command .. ". Install it and make sure '" ..
+            command .. " --version' runs in the same terminal as Quarto.")
+        end
+      end
       local filetype = 'svg'
       local svg = tikz2image(el.text, filetype)
       -- Each conversion starts IDs such as cp0 and page1 afresh. Keep the SVG
